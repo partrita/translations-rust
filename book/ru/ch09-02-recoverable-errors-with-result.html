@@ -1,0 +1,566 @@
+<!DOCTYPE HTML>
+<html lang="ru" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Исправимые ошибки с Result - The Rust Programming Language</title>
+
+
+        <!-- Custom HTML head -->
+
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-L455DH98TK"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+        
+          gtag('config', 'G-L455DH98TK');
+        </script>
+        
+        
+        <script>
+            (function () {
+                // See these pages for details:
+                // https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls
+                // https://developers.google.com/search/docs/crawling-indexing/javascript/javascript-seo-basics
+        
+                function gen_canonical_href(lang) {
+        
+                    let base = "https://rust-lang-translations.org/book";
+        
+                    let canonical_href;
+                    if (lang == "en") {
+                        canonical_href = `${base}/ch09-02-recoverable-errors-with-result.md`;
+                    } else {
+                        canonical_href = `${base}/${lang}/ch09-02-recoverable-errors-with-result.md`;
+                    }
+                    canonical_href = canonical_href.slice(0, -"md".length) + "html";
+                    if (canonical_href.endsWith("/index.html")) {
+                        canonical_href = canonical_href.slice(0, -"index.html".length);
+                    }
+                    return canonical_href;
+                }
+        
+                const canonical_href = gen_canonical_href("ru");
+
+                let link = document.createElement("link");
+                link.rel = "canonical";
+                link.href = canonical_href;
+                document.head.appendChild(link);
+        
+        
+                const langs = ["en"  , "ja"  , "ru"  , "ko" ];
+        
+                for (const lang of langs) {
+                    const canonical_href = gen_canonical_href(lang);
+        
+                    let link = document.createElement("link");
+                    link.rel = "alternate";
+                    link.hreflang = lang;
+                    link.href = canonical_href;
+                    document.head.appendChild(link);
+                }
+            })()
+        </script>
+        
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="ferris.css">
+        <link rel="stylesheet" href="theme/2018-edition.css">
+        <link rel="stylesheet" href="theme/semantic-notes.css">
+        <link rel="stylesheet" href="theme/listing.css">
+        <link rel="stylesheet" href="theme/language-picker.css">
+
+
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">The Rust Programming Language</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/rust-lang-translations/project" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="Исправимые-ошибки-с-result"><a class="header" href="#Исправимые-ошибки-с-result">Исправимые ошибки с <code>Result</code></a></h2>
+<p>Многие ошибки не являются настолько критичными, чтобы останавливать всю программу. Иногда, когда в функции происходит сбой, необходимо просто правильно его интерпретировать и обработать. К примеру, при попытке открыть файл может произойти ошибка из-за отсутствия файла. В этом случае вы, возможно, захотите создать новый файл, а не останавливать всю программу.</p>
+<p>Вспомните про перечисление <code>Result</code> и его варианты <code>Ok</code> и <code>Err</code>, которыми мы пользовались в разделе <a href="ch02-00-guessing-game-tutorial.html#%D0%9E%D0%B1%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0-%D0%B2%D0%BE%D0%B7%D0%BC%D0%BE%D0%B6%D0%BD%D1%8B%D1%85-%D0%BE%D1%88%D0%B8%D0%B1%D0%BE%D0%BA-%D1%81-%D0%BF%D0%BE%D0%BC%D0%BE%D1%89%D1%8C%D1%8E-result">"Обработка возможных ошибок с помощью <code>Result</code>"</a><!-- ignore --> Главы 2. Его определение выглядит так:</p>
+<pre><pre class="playground"><code class="language-rust edition2021"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>enum Result&lt;T, E&gt; {
+    Ok(T),
+    Err(E),
+}
+<span class="boring">}</span></code></pre></pre>
+<p><code>T</code> и <code>E</code> — это параметры обобщённого типа; мы обсудим обобщённые типы более подробно в Главе 10. Всё, что вам нужно знать прямо сейчас — это то, что <code>T</code> представляет тип значения, которое будет возвращено внутри варианта <code>Ok</code> в случае успеха, а <code>E</code> — тип ошибки, которая будет возвращена внутри варианта <code>Err</code> в случае сбоя. Благодаря параметрам обобщённого типа в определении <code>Result</code>, мы можем использовать его в тех случаях, когда типы значения в случае успешного и неудачного выполнения различны.</p>
+<p>Давайте вызовем функцию, которая возвращает значение <code>Result</code>, потому что может потерпеть неудачу. В Листинге 9-3 мы пытаемся открыть файл.</p>
+<Listing number="9-3" file-name="src/main.rs" caption="Opening a file">
+<pre><pre class="playground"><code class="language-rust edition2021">use std::fs::File;
+
+fn main() {
+    let greeting_file_result = File::open("hello.txt");
+}</code></pre></pre>
+</Listing>
+<p>Возвращаемый тип <code>File::open</code> — <code>Result&lt;T, E&gt;</code>. Параметр обобщённого типа <code>T</code> заменяется реализацией <code>File::open</code> конкретным типом <code>std::fs::File</code>, представляющим дескриптор файла. Параметр <code>E</code>, обозначающий значение ошибки, заменяется конкретным типом <code>std::io::Error</code>. Итого, такой тип возвращаемого значения означает, что вызов функции <code>File::open</code> может удаться или не удаться. В случае успеха, мы получим дескриптор файла, при помощи которого мы сможем писать в файл или читать из него. В случае неудачи (например, если файл не существует или у нас нет доступа к нему), функция <code>File::open</code> сообщит нам, что пошло не так. Получаемые нами значения отлично подходят для их обёртки в варианты перечисления <code>Result</code>.</p>
+<p>В случае успеха выполнения <code>File::open</code>, значением переменной <code>greeting_file_result</code> будет экземпляр <code>Ok</code>, содержащий дескриптор файла. В случае неудачи, значение в переменной <code>greeting_file_result</code> будет экземпляром <code>Err</code>, содержащим дополнительную информацию о том, какая именно ошибка произошла.</p>
+<p>Необходимо дописать в код Листинга 9-3 выполнение разных действий в зависимости от значения, которое вернёт вызов <code>File::open</code>. Листинг 9-4 показывает один из способов обработки <code>Result</code> — использование выражения <code>match</code> (которое было рассмотрено в Главе 6).</p>
+<Listing number="9-4" file-name="src/main.rs" caption="Using a `match` expression to handle the `Result` variants that might be returned">
+<pre><pre class="playground"><code class="language-rust should_panic edition2021">use std::fs::File;
+
+fn main() {
+    let greeting_file_result = File::open("hello.txt");
+
+    let greeting_file = match greeting_file_result {
+        Ok(file) =&gt; file,
+        Err(error) =&gt; panic!("При открытии файла произошла ошибка: {error:?}"),
+    };
+}</code></pre></pre>
+</Listing>
+<p>Обратите внимание, что как перечисление <code>Option</code>, так и перечисление <code>Result</code> и его варианты подключаются в область видимости по умолчанию, поэтому не нужно указывать <code>Result::</code> перед использованием вариантов <code>Ok</code> и <code>Err</code> в ветках выражения <code>match</code>.</p>
+<p>Если результатом будет <code>Ok</code>, этот код вернёт значение <code>file</code> из варианта <code>Ok</code>, а мы затем присвоим переменной <code>greeting_file</code> полученный дескриптор файла. После <code>match</code> мы сможем его для чтения или записи.</p>
+<p>Другая ветвь <code>match</code> обрабатывает случай, когда мы получаем значение <code>Err</code> после вызова <code>File::open</code>. В этом примере мы решили вызвать макрос <code>panic!</code>. Если в нашей текущей директории нет файла с именем <em>hello.txt</em>, но мы всё же выполним этот код, то мы увидим следующее сообщение от макроса <code>panic!</code>:</p>
+<pre><code class="language-console">$ cargo run
+   Compiling error-handling v0.1.0 (file:///projects/error-handling)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.73s
+     Running `target/debug/error-handling`
+thread 'main' panicked at src/main.rs:8:23:
+При открытии файла произошла ошибка: Os { code: 2, kind: NotFound, message: "No such file or directory" }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+</code></pre>
+<p>Как обычно, данное сообщение точно говорит, что пошло не так.</p>
+<h3 id="Обработка-перечня-ошибок"><a class="header" href="#Обработка-перечня-ошибок">Обработка перечня ошибок</a></h3>
+<p>Код в Листинге 9-4 будет вызывать <code>panic!</code> независимо причины неудачи при вызове <code>File::open</code>. Однако мы хотим предпринимать различные действия для разных причин сбоя. Допустим, мы хотим, чтобы если открытие <code>File::open</code> не удалось из-за отсутствия файла, то файл создавался и возвращался его дескриптор. Если же вызов <code>File::open</code> не удался по любой другой причине (например, потому что у нас не было прав на открытие файла), то мы всё так же хотим вызывать <code>panic!</code> как у нас сделано в Листинге 9-4. Для реализации перечисленного мы добавим вложенное выражение <code>match</code>, как показано в Листинге 9-5.</p>
+<Listing number="9-5" file-name="src/main.rs" caption="Handling different kinds of errors in different ways">
+<!-- ignore this test because otherwise it creates hello.txt which causes other
+tests to fail lol -->
+<pre><code class="language-rust ignore">use std::fs::File;
+use std::io::ErrorKind;
+
+fn main() {
+    let greeting_file_result = File::open("hello.txt");
+
+    let greeting_file = match greeting_file_result {
+        Ok(file) =&gt; file,
+        Err(error) =&gt; match error.kind() {
+            ErrorKind::NotFound =&gt; match File::create("hello.txt") {
+                Ok(fc) =&gt; fc,
+                Err(e) =&gt; panic!("При создании файла произошла ошибка: {e:?}"),
+            },
+            other_error =&gt; {
+                panic!("При открытии файла произошла ошибка: {other_error:?}");
+            }
+        },
+    };
+}</code></pre>
+</Listing>
+<p>Типом значения ошибки, возвращаемого функцией <code>File::open</code> в варианте <code>Err</code>, является <code>io::Error</code> — структура из стандартной библиотеки. Данная структура имеет метод <code>kind</code>, который можно вызвать для получения значения <code>io::ErrorKind</code>. Перечисление <code>io::ErrorKind</code> имеет варианты, представляющие различные типы ошибок, которые могут появиться при выполнении операций ввода-вывода. Вариант, который мы хотим сейчас использовать — <code>ErrorKind::NotFound</code>. Он сообщает о том, что файл, который мы пытаемся открыть, не существует. Во второй строчке нашей программы мы передаём <code>greeting_file_result</code> в выражение <code>match</code>; если произойдёт ошибка, мы вызовем на ней метод <code>kind()</code> и передадим возвращаемое значение во вложенный <code>match</code>.</p>
+<p>Во вложенном <code>match</code> мы хотим проверить, не является ли значение, возвращаемое функцией <code>error.kind()</code>, вариантом <code>NotFound</code> перечисления <code>ErrorKind</code>. Если оно является, то мы пытаемся создать файл с помощью <code>File::create</code>. Однако, поскольку <code>File::create</code> тоже может завершиться с ошибкой, нам нужна вторая ветвь во вложенном <code>match</code>. Если файл не может быть создан, выводится иное сообщение об ошибке. Вторую ветвь внешнего <code>match</code> мы не меняем. Итого, программа паникует при любой ошибке, кроме ошибки отсутствия файла.</p>
+<blockquote>
+<h4 id="Альтернативы-использованию-match-с-resultt-e"><a class="header" href="#Альтернативы-использованию-match-с-resultt-e">Альтернативы использованию <code>match</code> с <code>Result&lt;T, E&gt;</code></a></h4>
+<p>Как много <code>match</code>! Выражение <code>match</code> является очень полезным, но в то же время довольно примитивным. В Главе 13 вы узнаете о замыканиях, которые используются со многими методами типа <code>Result&lt;T, E&gt;</code>. Эти методы куда лаконичнее, чем прямая обработка значений <code>Result&lt;T, E&gt;</code> через <code>match</code>.</p>
+<p>Например, программу из Листинга 9-5 можно вот так переписать с использованием замыканий и метода <code>unwrap_or_else</code>:</p>
+<!-- CAN'T EXTRACT SEE https://github.com/rust-lang/mdBook/issues/1127 -->
+<pre><code class="language-rust ignore">use std::fs::File;
+use std::io::ErrorKind;
+
+fn main() {
+    let greeting_file = File::open("hello.txt").unwrap_or_else(|error| {
+        if error.kind() == ErrorKind::NotFound {
+            File::create("hello.txt").unwrap_or_else(|error| {
+                panic!("При создании файла произошла ошибка: {error:?}");
+            })
+        } else {
+            panic!("При открытии файла произошла ошибка: {error:?}");
+        }
+    });
+}</code></pre>
+<p>Хотя данный код имеет такое же поведение, как и код Листинга 9-5, он не содержит ни одного выражения <code>match</code> и, плюсом, легче читается. Рекомендуем вам вернуться к этому примеру после того, как прочитаете Главу 13 и заглянете в документацию метода <code>unwrap_or_else</code>. С этими методами вы сможете обрабатывать ошибки без необходимости писать многоуровневые выражения <code>match</code>.</p>
+</blockquote>
+<h4 id="Простая-паника-при-ошибке-методы-unwrap-и-expect"><a class="header" href="#Простая-паника-при-ошибке-методы-unwrap-и-expect">Простая паника при ошибке: методы <code>unwrap</code> и <code>expect</code></a></h4>
+<p>Использование <code>match</code> работает достаточно хорошо, но оно может быть довольно многословным и не всегда хорошо передавать смысл. Тип <code>Result&lt;T, E&gt;</code> имеет множество вспомогательных методов для выполнения различных, более специфических задач. Метод <code>unwrap</code> — это метод, реализованный так же, как и выражение <code>match</code>, которое мы написали в Листинге 9-4. Если значение <code>Result</code> является вариантом <code>Ok</code>, <code>unwrap</code> возвращает значение внутри <code>Ok</code>. Если значение <code>Result</code> — вариант <code>Err</code>, то <code>unwrap</code> вызовет макрос <code>panic!</code>. Вот пример использования <code>unwrap</code>:</p>
+<Listing file-name="src/main.rs">
+<pre><pre class="playground"><code class="language-rust should_panic edition2021">use std::fs::File;
+
+fn main() {
+    let greeting_file = File::open("hello.txt").unwrap();
+}</code></pre></pre>
+</Listing>
+<p>Если мы запустим этот код при отсутствии файла <em>hello.txt</em>, то увидим сообщение об ошибке из вызова <code>panic!</code> методом <code>unwrap</code>:</p>
+<!-- manual-regeneration
+cd listings/ch09-error-handling/no-listing-04-unwrap
+cargo run
+copy and paste relevant text
+-->
+<pre><code class="language-text">thread 'main' panicked at src/main.rs:4:49:
+called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: "No such file or directory" }
+</code></pre>
+<p>Другой метод, похожий на <code>unwrap</code> — это <code>expect</code>, позволяющий указать собственное сообщение об ошибке для макроса <code>panic!</code>. Использование <code>expect</code> вместо <code>unwrap</code> с предоставлением хорошего сообщения об ошибке выражает ваше намерение и делает более простым отслеживание источника паники. Вот пример использования <code>expect</code>:</p>
+<Listing file-name="src/main.rs">
+<pre><pre class="playground"><code class="language-rust should_panic edition2021">use std::fs::File;
+
+fn main() {
+    let greeting_file = File::open("hello.txt")
+        .expect("hello.txt должен быть доступен этому проекту");
+}</code></pre></pre>
+</Listing>
+<p>Метод <code>expect</code> используется так же, как <code>unwrap</code>: либо возвращается дескриптор файла, либо вызывается макрос <code>panic!</code>. Наше сообщение об ошибке, переданное <code>expect</code>, будет передано в <code>panic!</code> и заменит стандартное используемое сообщение. Вот как это выглядит:</p>
+<!-- manual-regeneration
+cd listings/ch09-error-handling/no-listing-05-expect
+cargo run
+copy and paste relevant text
+-->
+<pre><code class="language-text">thread 'main' panicked at src/main.rs:5:10:
+hello.txt должен быть доступен этому проекту: Os { code: 2, kind: NotFound, message: "No such file or directory" }
+</code></pre>
+<p>В реальных программах часто используется <code>expect</code> вместо <code>unwrap</code>, а также добавляется комментарий о том, почему предполагается, что ошибки не произойдёт. Даже если предположение окажется неверным, у вас будет больше информации для отладки.</p>
+<h3 id="Проброс-ошибок"><a class="header" href="#Проброс-ошибок">Проброс ошибок</a></h3>
+<p>Если вы пишете функцию, реализация которой вызывает что-то, что может завершиться ошибкой, то вместо обработки ошибки в этой же функции вы можете вернуть в вызывающий код ошибку целиком, чтобы уже он мог решить, что с ней делать. Такой приём известен как <em>проброс ошибки</em>. Благодаря нему мы даём больше контроля вызывающему коду, которому может быть яснее, как следует обрабатывать ошибку.</p>
+<p>Например, код Листинга 9-6 содержит функцию, читающую имя пользователя из файла. Если файл не существует или не может быть прочтён, то функция возвращает ошибку в код, который вызвал данную функцию.</p>
+<Listing number="9-6" file-name="src/main.rs" caption="A function that returns errors to the calling code using `match`">
+<!-- Deliberately not using rustdoc_include here; the `main` function in the
+file panics. We do want to include it for reader experimentation purposes, but
+don't want to include it for rustdoc testing purposes. -->
+<pre><pre class="playground"><code class="language-rust edition2021"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>use std::fs::File;
+use std::io::{self, Read};
+
+fn read_username_from_file() -&gt; Result&lt;String, io::Error&gt; {
+    let username_file_result = File::open("hello.txt");
+
+    let mut username_file = match username_file_result {
+        Ok(file) =&gt; file,
+        Err(e) =&gt; return Err(e),
+    };
+
+    let mut username = String::new();
+
+    match username_file.read_to_string(&amp;mut username) {
+        Ok(_) =&gt; Ok(username),
+        Err(e) =&gt; Err(e),
+    }
+}
+<span class="boring">}</span></code></pre></pre>
+</Listing>
+<p>Эта функция может быть написана гораздо более коротким способом, но мы начнём с того, что многое сделаем вручную, чтобы дать вам понимание обработки ошибок; в конце покажем более короткий способ. Давайте сначала рассмотрим тип возвращаемого значения: <code>Result&lt;String, io::Error&gt;</code>. То есть, наша функция будет возвращать тип <code>Result&lt;T, E&gt;</code> где параметр обобщённого типа <code>T</code> был заменён конкретным типом <code>String</code>, а <code>E</code> — типом <code>io::Error</code>.</p>
+<p>Если эта функция выполнится без проблем, то код, вызывающий эту функцию, получит значение <code>Ok</code>, содержащее <code>String</code> — имя пользователя, прочитанное этой функцией из файла. Если функция столкнётся с какими-либо проблемами, вызывающий код получит значение <code>Err</code>, содержащее экземпляр <code>io::Error</code>, который содержит дополнительную информацию о том, какие проблемы возникли. Мы выбрали <code>io::Error</code> в качестве возвращаемого типа этой функции, поскольку он — тип значения ошибки, возвращаемого из обеих операций, которые мы вызываем в теле этой функции и которые могут завершиться неудачей: функции <code>File::open</code> и метода <code>read_to_string</code>.</p>
+<p>Тело функции начинается с вызова <code>File::open</code>. Затем мы обрабатываем значение <code>Result</code> с помощью <code>match</code>, аналогично <code>match</code> из Дистинга 9-4. Если <code>File::open</code> завершается успешно, то дескриптор файла в <code>file</code> (переменной шаблона) становится значением в изменяемой переменной <code>username_file</code>, и функция продолжает свою работу. В случае неудачи, вместо вызова <code>panic!</code> мы используем ключевое слово <code>return</code> для досрочного возвращения значения ошибки из <code>File::open</code> (которое было сохранено в <code>e</code> — переменной шаблона) обратно в вызывающий код как значение ошибки этой функции.</p>
+<p>Таким образом, если у нас есть файловый дескриптор в <code>username_file</code>, функция создаёт новую <code>String</code> в переменной <code>username</code> и вызывает метод <code>read_to_string</code> на файловом дескрипторе (который в <code>username_file</code>), чтобы записать содержимое файла в <code>username</code>. Метод <code>read_to_string</code> также возвращает <code>Result</code>, потому что он может потерпеть неудачу, даже если <code>File::open</code> завершился успешно. Поэтому нам нужен ещё один <code>match</code> для обработки этого <code>Result</code>. Если <code>read_to_string</code> завершится успешно, то наша собственная функция выполнила свою работу, а потому мы возвращаем из неё имя пользователя из файла (которое теперь находится в <code>username</code>), обернув его в <code>Ok</code>. Если же <code>read_to_string</code> потерпит неудачу, мы возвращаем значение ошибки таким же образом, как мы возвращали значение ошибки в <code>match</code>, который обрабатывал возвращаемое значение <code>File::open</code>. Однако нам не нужно явно указывать <code>return</code>, потому что всё это — последнее выражение в функции.</p>
+<p>После исполнения функции код, вызывающий ей, будет обрабатывать полученное значение: либо <code>Ok</code>, содержащее имя пользователя, либо различные <code>Err</code>, содержащие ошибки типа <code>io::Error</code>. Вызывающий код должен будет решить, что делать с этими значениями. Если вызывающий код получает значение <code>Err</code>, он может вызвать <code>panic!</code> и завершить работу программы; может использовать имя пользователя по умолчанию; может найти имя пользователя, например, не в файле. У нас нет информации о том, что на самом деле пытается сделать вызывающий код, поэтому мы пробрасываем всю информацию об успехе или ошибках "выше", чтобы она могла обрабатываться соответствующим образом.</p>
+<p>Эта схема проброса ошибок столь распространена, что в Rust был добавлен оператор вопросительного знака <code>?</code>, упрощающий проделанную нами работу.</p>
+<h4 id="Простой-проброс-ошибки-оператор-"><a class="header" href="#Простой-проброс-ошибки-оператор-">Простой проброс ошибки: оператор <code>?</code></a></h4>
+<p>В Листинге 9-7 показана реализация <code>read_username_from_file</code>, которая имеет ту же функциональность, что и в Листинге 9-6, но в этой реализации используется оператор <code>?</code>.</p>
+<Listing number="9-7" file-name="src/main.rs" caption="A function that returns errors to the calling code using the `?` operator">
+<!-- Deliberately not using rustdoc_include here; the `main` function in the
+file panics. We do want to include it for reader experimentation purposes, but
+don't want to include it for rustdoc testing purposes. -->
+<pre><pre class="playground"><code class="language-rust edition2021"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>use std::fs::File;
+use std::io::{self, Read};
+
+fn read_username_from_file() -&gt; Result&lt;String, io::Error&gt; {
+    let mut username_file = File::open("hello.txt")?;
+    let mut username = String::new();
+    username_file.read_to_string(&amp;mut username)?;
+    Ok(username)
+}
+<span class="boring">}</span></code></pre></pre>
+</Listing>
+<p>Оператор <code>?</code>, расположенный после <code>Result</code>, работает почти так же, как и те выражения <code>match</code>, которые мы использовали для обработки значений <code>Result</code> в Листинге 9-6. Если в качестве значения <code>Result</code> будет <code>Ok</code>, то значение внутри <code>Ok</code> будет возвращено из этого выражения, и программа продолжит работу. Если же значение представляет собой <code>Err</code>, то <code>Err</code> будет возвращено из всей функции, как если бы мы использовали ключевое слово <code>return</code>, так что значение ошибки будет передано в вызывающий код.</p>
+<p>Существует разница между тем, что делает выражение <code>match</code> из Листинга 9-6 и тем, что делает оператор <code>?</code>: значения ошибок, для которых вызван оператор <code>?</code>, проходят через функцию <code>from</code>, определённую в трейте <code>From</code> стандартной библиотеки, которая используется для преобразования значений из одного типа в другой. Когда оператор <code>?</code> вызывает функцию <code>from</code>, полученный тип ошибки преобразуется в тип ошибки, определённый в возвращаемом типе текущей функции. Это полезно, когда функция возвращает только один тип ошибки, для описания всех возможных вариантов сбоев, даже если её отдельные компоненты могут выходить из строя по разным причинам.</p>
+<p>Например, мы могли бы изменить функцию <code>read_username_from_file</code> в Листинге 9-7 так, чтобы возвращать пользовательский тип ошибки под именем <code>OurError</code>. Если мы определим <code>impl From&lt;io::Error&gt; for OurError</code> (чтобы получить возможность создавать экземпляры <code>OurError</code> из <code>io::Error</code>), то оператор <code>?</code>, вызываемый в теле <code>read_username_from_file</code>, вызовет <code>from</code> и преобразует типы ошибок без необходимости добавления дополнительного кода в функцию.</p>
+<p>Обращаясь к Листингу 9-7 как к примеру, оператор <code>?</code> в конце вызова <code>File::open</code> вернёт значение внутри <code>Ok</code> в переменную <code>username_file</code>. Если произойдёт ошибка, оператор <code>?</code> выполнит преждевременный возврат значения <code>Err</code> вызывающему коду. То же самое относится к оператору <code>?</code> в конце вызова <code>read_to_string</code>.</p>
+<p>Оператор <code>?</code> позволил избавиться от большого количества шаблонного кода и упростить реализацию этой функции. Мы могли бы даже ещё больше сократить этот код, если бы использовали цепочку вызовов методов сразу после <code>?</code>, как показано в Листинге 9-8.</p>
+<Listing number="9-8" file-name="src/main.rs" caption="Chaining method calls after the `?` operator">
+<!-- Deliberately not using rustdoc_include here; the `main` function in the
+file panics. We do want to include it for reader experimentation purposes, but
+don't want to include it for rustdoc testing purposes. -->
+<pre><pre class="playground"><code class="language-rust edition2021"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>use std::fs::File;
+use std::io::{self, Read};
+
+fn read_username_from_file() -&gt; Result&lt;String, io::Error&gt; {
+    let mut username = String::new();
+
+    File::open("hello.txt")?.read_to_string(&amp;mut username)?;
+
+    Ok(username)
+}
+<span class="boring">}</span></code></pre></pre>
+</Listing>
+<p>Мы перенесли создание новой <code>String</code> в <code>username</code> в начало функции; эта часть не изменилась. Вместо создания переменной <code>username_file</code>, мы вызвали <code>read_to_string</code> непосредственно на результате <code>File::open("hello.txt")?</code>. У нас по-прежнему есть <code>?</code> в конце вызова <code>read_to_string</code>, и мы по-прежнему возвращаем значение <code>Ok</code>, содержащее <code>username</code>, когда и <code>File::open</code> и <code>read_to_string</code> завершаются успешно, а не возвращают ошибки. Функциональность снова такая же, как в Листинге 9-6 и Листинге 9-7; это просто другой, более эргономичный способ её написания.</p>
+<p>Листинг 9-9 демонстрирует ещё более короткое определение нашей функции с помощью <code>fs::read_to_string</code>.</p>
+<Listing number="9-9" file-name="src/main.rs" caption="Using `fs::read_to_string` instead of opening and then reading the file">
+<!-- Deliberately not using rustdoc_include here; the `main` function in the
+file panics. We do want to include it for reader experimentation purposes, but
+don't want to include it for rustdoc testing purposes. -->
+<pre><pre class="playground"><code class="language-rust edition2021"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>use std::fs;
+use std::io;
+
+fn read_username_from_file() -&gt; Result&lt;String, io::Error&gt; {
+    fs::read_to_string("hello.txt")
+}
+<span class="boring">}</span></code></pre></pre>
+</Listing>
+<p>Чтение файла в строку — довольно распространённая операция, так что стандартная библиотека предоставляет удобную функцию <code>fs::read_to_string</code>, которая открывает файл, создаёт новую <code>String</code>, читает содержимое файла, размещает его в <code>String</code> и возвращает её. Конечно, использование функции <code>fs::read_to_string</code> не даёт возможности объяснить обработку всех ошибок, поэтому мы сначала изучили длинный способ.</p>
+<h4 id="Где-можно-использовать-оператор-"><a class="header" href="#Где-можно-использовать-оператор-">Где можно использовать оператор <code>?</code></a></h4>
+<p>Оператор <code>?</code> может использоваться только в функциях, тип возвращаемого значения которых совместим со значением, для которого используется <code>?</code>. Это потому что оператор <code>?</code> определён так, чтобы выполнять преждевременный возврат значения из функции таким же образом, как и выражение <code>match</code>, определённое в Листинге 9-6. В Листинге 9-6 <code>match</code> использовало значение <code>Result</code>, а ветвь с преждевременным возвратом значения вернула значение <code>Err(e)</code>. Тип возвращаемого значения функции должен быть <code>Result</code>, чтобы он был совместим с этим <code>return</code>.</p>
+<p>Давайте посмотрим на ошибку, которую мы получим, если воспользуемся оператором <code>?</code> в функции <code>main</code> с типом возвращаемого значения, несовместимым с типом значения, для которого мы используем <code>?</code>. Взгляните на Листинг 9-10:</p>
+<Listing number="9-10" file-name="src/main.rs" caption="Attempting to use the `?` in the `main` function that returns `()` won’t compile.">
+<pre><code class="language-rust ignore does_not_compile">use std::fs::File;
+
+fn main() {
+    let greeting_file = File::open("hello.txt")?;
+}</code></pre>
+</Listing>
+<p>Этот код открывает файл, что может не удасться. Оператор <code>?</code> выводит для себя тип <code>Result</code>, возвращаемый <code>File::open</code>, но функция <code>main</code> возвращает тип <code>()</code>, а не <code>Result</code>. Если мы скомпилируем этот код, мы получим следующее сообщение об ошибке:</p>
+<pre><code class="language-console">$ cargo run
+   Compiling error-handling v0.1.0 (file:///projects/error-handling)
+error[E0277]: the `?` operator can only be used in a function that returns `Result` or `Option` (or another type that implements `FromResidual`)
+ --&gt; src/main.rs:4:48
+  |
+3 | fn main() {
+  | --------- this function should return `Result` or `Option` to accept `?`
+4 |     let greeting_file = File::open("hello.txt")?;
+  |                                                ^ cannot use the `?` operator in a function that returns `()`
+  |
+  = help: the trait `FromResidual&lt;Result&lt;Infallible, std::io::Error&gt;&gt;` is not implemented for `()`
+help: consider adding return type
+  |
+3 ~ fn main() -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt; {
+4 |     let greeting_file = File::open("hello.txt")?;
+5 +     Ok(())
+  |
+
+For more information about this error, try `rustc --explain E0277`.
+error: could not compile `error-handling` (bin "error-handling") due to 1 previous error
+</code></pre>
+<p>Эта ошибка указывает на то, что оператор <code>?</code> разрешено использовать только в функции, которая возвращает <code>Result</code>, <code>Option</code> или другой тип, реализующий <code>FromResidual</code>.</p>
+<p>Для исправления ошибки есть два варианта. Один — изменить возвращаемый тип вашей функции так, чтобы он был совместим со значением, для которого вы используете оператор <code>?</code>, если ничто этому не препятствует. Другой — использовать <code>match</code> или один из методов <code>Result&lt;T, E&gt;</code> для обработки <code>Result&lt;T, E&gt;</code> любым подходящим способом.</p>
+<p>В сообщении об ошибке также упоминалось, что <code>?</code> можно использовать и на значениях <code>Option&lt;T&gt;</code>. Как и при использовании <code>?</code> на <code>Result</code>, вы можете использовать <code>?</code> на <code>Option</code> только в функции, которая возвращает <code>Option</code>. Поведение оператора <code>?</code> при вызове <code>Option&lt;T&gt;</code> похоже на его поведение при вызове <code>Result&lt;T, E&gt;</code>: если значение равно <code>None</code>, то <code>None</code> будет сразу же будет возвращено из функции. Если же значение — <code>Some</code>, то значение внутри <code>Some</code> будет результирующим значением выражения, и функция продолжает исполняться. В Листинге 9-11 приведён пример функции, которая находит последний символ первой строки заданного текста.</p>
+<Listing number="9-11" caption="Using the `?` operator on an `Option<T>` value">
+<pre><pre class="playground"><code class="language-rust edition2021">fn last_char_of_first_line(text: &amp;str) -&gt; Option&lt;char&gt; {
+    text.lines().next()?.chars().last()
+}
+<span class="boring">
+</span><span class="boring">fn main() {
+</span><span class="boring">    assert_eq!(
+</span><span class="boring">        last_char_of_first_line("Привет!\nКак ты?"),
+</span><span class="boring">        Some('!')
+</span><span class="boring">    );
+</span><span class="boring">
+</span><span class="boring">    assert_eq!(last_char_of_first_line(""), None);
+</span><span class="boring">    assert_eq!(last_char_of_first_line("\nсойдёт"), None);
+</span><span class="boring">}</span></code></pre></pre>
+</Listing>
+<p>Эта функция возвращает <code>Option&lt;char&gt;</code>, потому что может быть, что строка будет не пустой и символ будет найден, а может быть, что его и не будет. Этот код принимает строковый срез <code>text</code> и вызывает на нём метод <code>lines</code>, который возвращает итератор всех строчек в строке. Поскольку эта функция хочет проверить первую строку, она вызывает <code>next</code> у итератора, чтобы получить первое значение от итератора. Если <code>text</code> является пустой строкой, этот вызов <code>next</code> вернёт <code>None</code>, и в этом случае мы используем <code>?</code> чтобы остановить и вернуть <code>None</code> из <code>last_char_of_first_line</code>. Если <code>text</code> не является пустой строкой, <code>next</code> вернёт значение <code>Some</code>, содержащее строковый срез первой строки в <code>text</code>.</p>
+<p>Символ <code>?</code> извлекает строковый срез, и мы можем вызвать на нём метод <code>chars</code>, чтобы получить итератор символов. Нас интересует последний символ в первой строке, поэтому мы вызываем <code>last</code>, чтобы вернуть последний элемент в итераторе. Вернётся <code>Option</code>, потому что возможно, что первая строка пуста: <code>например</code>, если <code>text</code> начинается с пустой строки, но имеет символы в других строках, как в <code>"\nсойдёт"</code>. Однако, если в первой строке есть последний символ, он будет возвращён в варианте <code>Some</code>. Оператор <code>?</code> в середине даёт нам лаконичный способ выразить эту логику, позволяя реализовать функцию в одной строке. Если бы мы не могли использовать оператор <code>?</code> в <code>Option</code>, нам пришлось бы реализовать эту логику, используя больше вызовов методов или выражение <code>match</code>.</p>
+<p>Обратите внимание: вы можете использовать оператор <code>?</code> на <code>Result</code> в функции, которая возвращает <code>Result</code>; вы можете использовать оператор <code>?</code> на <code>Option</code> в функции, которая возвращает <code>Option</code>; но вы не можете пытаться использовать один вместо другого. Оператор <code>?</code> не будет автоматически преобразовывать <code>Result</code> в <code>Option</code> или наоборот; в этих случаях вы можете использовать такие методы, как метод <code>ok</code> для <code>Result</code> или метод <code>ok_or</code> для <code>Option</code>, чтобы выполнять преобразование явно.</p>
+<p>До сих пор все функции <code>main</code>, которые мы использовали, возвращали <code>()</code>. Функция <code>main</code> — особенная, потому что это точка входа и выхода исполняемых программ, и существуют ограничения на тип возвращаемого значения, необходимые для того, что программы вели себя так, как ожидается.</p>
+<p>К счастью, <code>main</code> ещё может возвращать <code>Result&lt;(), E&gt;</code>. В Листинге 9-12 используется код из Листинга 9-10, но мы изменили возвращаемый тип <code>main</code> на <code>Result&lt;(), Box&lt;dyn Error&gt;&gt;</code> и добавили возвращаемое значение <code>Ok(())</code> в конец. Теперь этот код компилируется.</p>
+<Listing number="9-12" file-name="src/main.rs" caption="Changing `main` to return `Result<(), E>` allows the use of the `?` operator on `Result` values.">
+<pre><code class="language-rust ignore">use std::error::Error;
+use std::fs::File;
+
+fn main() -&gt; Result&lt;(), Box&lt;dyn Error&gt;&gt; {
+    let greeting_file = File::open("hello.txt")?;
+
+    Ok(())
+}</code></pre>
+</Listing>
+<p>Тип <code>Box&lt;dyn Error&gt;</code> — это <em>трейт-объект</em>, о которых мы поговорим в разделе <a href="ch18-02-trait-objects.html#%D0%98%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-%D1%82%D1%80%D0%B5%D0%B9%D1%82-%D0%BE%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%D0%BE%D0%B2-%D0%BF%D0%BE%D0%B7%D0%B2%D0%BE%D0%BB%D1%8F%D1%8E%D1%89%D0%B8%D1%85-%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D1%8C-%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%B8%D1%8F-%D1%80%D0%B0%D0%B7%D0%BD%D1%8B%D1%85-%D1%82%D0%B8%D0%BF%D0%BE%D0%B2">"Использование трейт-объектов, позволяющих использовать значения разных типов"</a><!-- ignore --> Главы 18. Пока что вы можете считать, что <code>Box&lt;dyn Error&gt;</code> означает "любой вид ошибки". Использование <code>?</code> для значения <code>Result</code> в функции <code>main</code> с типом ошибки <code>Box&lt;dyn Error&gt;</code> допустимо, так как позволяет вернуть любое значение <code>Err</code> раньше времени. Даже если тело этой функции <code>main</code> будет возвращать только ошибки типа <code>std::io::Error</code>, указав <code>Box&lt;dyn Error&gt;</code>, эта сигнатура останется корректной, даже если в тело <code>main</code> будет добавлен код, возвращающий другие ошибки.</p>
+<p>Если функция <code>main</code> возвращает <code>Result&lt;(), E&gt;</code>, то программа завершится со значением <code>0</code>, если <code>main</code> вернёт <code>Ok(())</code>, но завершится с ненулевым значением, если <code>main</code> вернёт значение <code>Err</code>. Программы, написанные на C, при выходе возвращают целые числа: успешно завершённые программы возвращают целое число <code>0</code>, а программы с ошибкой возвращают целое число, отличное от <code>0</code>. Rust также возвращает целые числа из программ, чтобы быть совместимым с этим соглашением.</p>
+<p>Функция <code>main</code> может возвращать любые типы, реализующие <a href="https://doc.rust-lang.org/std/process/trait.Termination.html">трейт <code>std::process::Termination</code></a><!-- ignore -->, который содержит функцию <code>report</code>, возвращающую <code>ExitCode</code>. Обратитесь к документации стандартной библиотеки за дополнительной информацией о реализации трейта <code>Termination</code> для ваших собственных типов.</p>
+<p>Теперь, когда мы обсудили детали вызова <code>panic!</code> и возврата <code>Result</code>, давайте вернёмся к тому, как решить, какой из случаев подходит для какой ситуации.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="ch09-01-unrecoverable-errors-with-panic.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="ch09-03-to-panic-or-not-to-panic.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="ch09-01-unrecoverable-errors-with-panic.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="ch09-03-to-panic-or-not-to-panic.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="ferris.js"></script>
+        <script src="theme/language-picker.js"></script>
+
+
+    </div>
+    </body>
+</html>

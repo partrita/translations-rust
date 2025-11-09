@@ -1,0 +1,460 @@
+<!DOCTYPE HTML>
+<html lang="ru" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Функции - The Rust Programming Language</title>
+
+
+        <!-- Custom HTML head -->
+
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-L455DH98TK"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+        
+          gtag('config', 'G-L455DH98TK');
+        </script>
+        
+        
+        <script>
+            (function () {
+                // See these pages for details:
+                // https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls
+                // https://developers.google.com/search/docs/crawling-indexing/javascript/javascript-seo-basics
+        
+                function gen_canonical_href(lang) {
+        
+                    let base = "https://rust-lang-translations.org/book";
+        
+                    let canonical_href;
+                    if (lang == "en") {
+                        canonical_href = `${base}/ch03-03-how-functions-work.md`;
+                    } else {
+                        canonical_href = `${base}/${lang}/ch03-03-how-functions-work.md`;
+                    }
+                    canonical_href = canonical_href.slice(0, -"md".length) + "html";
+                    if (canonical_href.endsWith("/index.html")) {
+                        canonical_href = canonical_href.slice(0, -"index.html".length);
+                    }
+                    return canonical_href;
+                }
+        
+                const canonical_href = gen_canonical_href("ru");
+
+                let link = document.createElement("link");
+                link.rel = "canonical";
+                link.href = canonical_href;
+                document.head.appendChild(link);
+        
+        
+                const langs = ["en"  , "ja"  , "ru"  , "ko" ];
+        
+                for (const lang of langs) {
+                    const canonical_href = gen_canonical_href(lang);
+        
+                    let link = document.createElement("link");
+                    link.rel = "alternate";
+                    link.hreflang = lang;
+                    link.href = canonical_href;
+                    document.head.appendChild(link);
+                }
+            })()
+        </script>
+        
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="ferris.css">
+        <link rel="stylesheet" href="theme/2018-edition.css">
+        <link rel="stylesheet" href="theme/semantic-notes.css">
+        <link rel="stylesheet" href="theme/listing.css">
+        <link rel="stylesheet" href="theme/language-picker.css">
+
+
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">The Rust Programming Language</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/rust-lang-translations/project" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="Функции"><a class="header" href="#Функции">Функции</a></h2>
+<p>Функции — это неотъемлемая часть программ на Rust. Вы уже увидели одну из некоторых наиболее важных функций языка — функцию <code>main</code>, являющуюся точкой входа большинства программа. Вы также знакомы с ключевым словом <code>fn</code>, используемым для объявления новых функций.</p>
+<p>Принятым в Rust стилем написания имён функций и переменных является <em>snake case</em> — в нём используются буквы только в нижнем регистре, а слова разделяются нижними подчёркиваниями. Вот программа, содержащая пример определения функции:</p>
+<p><span class="filename">Файл: src/main.rs</span></p>
+<pre><pre class="playground"><code class="language-rust edition2021">fn main() {
+    println!("Hello, world!");
+
+    another_function();
+}
+
+fn another_function() {
+    println!("Другая функция.");
+}</code></pre></pre>
+<p>Функция в Rust определяется с помощью <code>fn</code>, за которым следует имя функции и пара круглых скобок. Фигурные скобки используются для указания компилятору, где начинается и заканчивается тело функции.</p>
+<p>Мы можем вызвать любую определённую нами функцию, написав её имя и пару круглых скобок. Поскольку <code>another_function</code> определена в программе, она может быть вызвана из функции <code>main</code>. Обратите внимание, что мы определили <code>another_function</code> <em>после</em> функцией <code>main</code>, однако мы могли бы её определить и перед ней. Rust нет разницы, в каком порядке вы определяете функции — важно только, чтобы они были определены в той области видимости, из которой их получится вызвать там, где они нужны.</p>
+<p>Создадим новый исполняемый проект под названием <em>functions</em>, чтобы в нём изучить работу функций. Поместите пример <code>another_function</code> в <em>src/main.rs</em> и запустите его. Вы увидите следующий вывод:</p>
+<pre><code class="language-console">$ cargo run
+   Compiling functions v0.1.0 (file:///projects/functions)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.28s
+     Running `target/debug/functions`
+Hello, world!
+Другая функция.
+</code></pre>
+<p>Выражения исполняются в том порядке, в каком они записаны в функции <code>main</code>. Первым печатается сообщение "Hello, world!", и только потом вызывается <code>another_function</code> и печатается её сообщение.</p>
+<h3 id="Параметры"><a class="header" href="#Параметры">Параметры</a></h3>
+<p>Мы можем определить функцию с <em>параметрами</em> — специальными переменными, являющимися частью сигнатуры функции. Если функция имеет параметры, то чтобы её вызвать, вы должны предоставить ей конкретные значения каждого параметра. Строго говоря, передаваемые значения называются <em>аргументами</em>, но в обиходе слова <em>параметр</em> и <em>аргумент</em> взаимозаменяемы и могут использоваться чтобы говорить как о переменных в определении функции, так и о конкретных значениях, передаваемых функции при её вызове.</p>
+<p>Добавим функции <code>another_function</code> параметр:</p>
+<p><span class="filename">Файл: src/main.rs</span></p>
+<pre><pre class="playground"><code class="language-rust edition2021">fn main() {
+    another_function(5);
+}
+
+fn another_function(x: i32) {
+    println!("Значение x: {x}");
+}</code></pre></pre>
+<p>Попробуйте запустить эту программу. Вы должны увидеть следующий вывод:</p>
+<pre><code class="language-console">$ cargo run
+   Compiling functions v0.1.0 (file:///projects/functions)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 1.21s
+     Running `target/debug/functions`
+Значение x: 5
+</code></pre>
+<p>Функция <code>another_function</code> имеет один параметр под названием <code>x</code>. Тип <code>x</code> определён как <code>i32</code>. Когда мы вызываем функцию <code>another_function</code> с аргументом <code>5</code>, макрос <code>println!</code> принимает переменную <code>x</code> нашей функции и помещает вместо неё её значение <code>5</code> на место метки подстановки.</p>
+<p>Вы <em>должны</em> указывать тип каждого параметра при объявлении функции. Такая особенность Rust сделана намеренно: требуя аннотировать тип сразу при определении функции, компилятор избавляет вас от необходимости самому уточнять тип при каждом использовании функции. Компилятор также может дать более полезные сообщения об ошибках, если будет знать, какие типы функция ожидает получить.</p>
+<p>Чтобы определить функцию с несколькими параметрами, разделите их запятыми; вот так:</p>
+<p><span class="filename">Файл: src/main.rs</span></p>
+<pre><pre class="playground"><code class="language-rust edition2021">fn main() {
+    print_labeled_measurement(5, 'ч');
+}
+
+fn print_labeled_measurement(value: i32, unit_label: char) {
+    println!("Физическая величина: {value}{unit_label}");
+}</code></pre></pre>
+<p>В этом примере определяется функция <code>print_labeled_measurement</code>, имеющая два параметра. Первый параметр <code>value</code> имеет тип <code>i32</code>. Второй — <code>unit_label</code>, имеет тип <code>char</code>. Данная функция печатает величину <code>value</code> с её размерностью <code>unit_label</code>.</p>
+<p>Запустите этот код. Для этого замените код в вашем файле <em>src/main.rs</em> проекта <em>functions</em> примером выше и запустите его с помощью <code>cargo run</code>:</p>
+<pre><code class="language-console">$ cargo run
+   Compiling functions v0.1.0 (file:///projects/functions)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.31s
+     Running `target/debug/functions`
+Физическая величина: 5ч
+</code></pre>
+<p>Поскольку мы вызвали функцию с аргументами <code>5</code> и <code>'ч'</code> (соответственно параметрам <code>value</code> и <code>unit_label</code>), вывод программы содержит эти значения.</p>
+<h3 id="Инструкции-и-выражения"><a class="header" href="#Инструкции-и-выражения">Инструкции и выражения</a></h3>
+<p>Тело функции состоит из последовательности инструкций и (необязательно) выражения в конце. Пока что ни одна из рассмотренных нами функций не имела завершающего выражения, но вы уже видели применение выражений в инструкциях. Поскольку Rust — это язык, основенный на выражениях, важно понять разницу между инструкциями и выражениями; другие языки часто не имеют подобного разделения. Давайте посмотрим, чем являются инструкции и выражения и как их отличия влияют на работу функций.</p>
+<ul>
+<li><strong>Инструкция</strong> — это некоторое действие; она не возвращает значение.</li>
+<li><strong>Выражение</strong> — это последовательность вычислений, производящая некоторое значение.</li>
+</ul>
+<p>На самом деле, мы уже использовали инструкции и выражения. Создание переменной и приписывание ей значения с помощью ключегового слова <code>let</code> — это инструкция. Посмотрите в Листинг 3-1: <code>let y = 6;</code> является инструкцией.</p>
+<Listing number="3-1" file-name="src/main.rs" caption="A `main` function declaration containing one statement">
+<pre><pre class="playground"><code class="language-rust edition2021">fn main() {
+    let y = 6;
+}</code></pre></pre>
+</Listing>
+<p>Определения функций — это тоже инструкция; вообще, весь предыдущий пример сам по себе является выражением. (Но как мы увидим далее, <em>вызов</em> функции инструкцией не является.)</p>
+<p>Инструкции не возвращают значений. Следовательно, вы не можете присвоить инструкцию <code>let</code> другой переменной, как в коде ниже — вы получите ошибку:</p>
+<p><span class="filename">Файл: src/main.rs</span></p>
+<pre><code class="language-rust ignore does_not_compile">fn main() {
+    let x = (let y = 6);
+}</code></pre>
+<p>Если вы запустите эту программу, вы получите следующую ошибку:</p>
+<pre><code class="language-console">$ cargo run
+   Compiling functions v0.1.0 (file:///projects/functions)
+error: expected expression, found `let` statement
+ --&gt; src/main.rs:2:14
+  |
+2 |     let x = (let y = 6);
+  |              ^^^
+  |
+  = note: only supported directly in conditions of `if` and `while` expressions
+
+warning: unnecessary parentheses around assigned value
+ --&gt; src/main.rs:2:13
+  |
+2 |     let x = (let y = 6);
+  |             ^         ^
+  |
+  = note: `#[warn(unused_parens)]` on by default
+help: remove these parentheses
+  |
+2 -     let x = (let y = 6);
+2 +     let x = let y = 6;
+  |
+
+warning: `functions` (bin "functions") generated 1 warning
+error: could not compile `functions` (bin "functions") due to 1 previous error; 1 warning emitted
+</code></pre>
+<p>Выражение <code>let y = 6</code> не возвращает значений, так что <code>x</code> не с чем связывать. Это отличается от того, что обычно происходит в других языках, вроде C или Ruby: в них присвоение значения возвращает присвоенное значение. В таких языках возможны конструкции вроде <code>x = y = 6</code>: переменной <code>y</code> будет присвоена <code>6</code>, и это присвоение само по себе вернёт ту же <code>6</code> и присвоит её переменной <code>x</code>. В Rust такое сделать не выйдет.</p>
+<p>Выражения вычисляются в значение; они составляют основную долю кода, который вы будете писать на Rust. Например, математические операции (вроде <code>5 + 6</code>) являются выражениями (выражение <code>5 + 6</code> вычислится в значение <code>11</code>). Выражения могут быть частью инструкций: например, <code>6</code> в инструкции <code>let y = 6;</code> в Листинге 3-1 является выражением, которое вычисляется в значение <code>6</code>. Вызов функции тоже является выражением, равно как и вызов макроса. Новый блок кода, определённый фигурными скобками, тоже является выражением; например:</p>
+<p><span class="filename">Файл: src/main.rs</span></p>
+<pre><pre class="playground"><code class="language-rust edition2021">fn main() {
+    let y = {
+        let x = 3;
+        x + 1
+    };
+
+    println!("Значение y: {y}");
+}</code></pre></pre>
+<p>Это выражение ...</p>
+<pre><code class="language-rust ignore">{
+    let x = 3;
+    x + 1
+}</code></pre>
+<p>... является блоком кода, который (в данном случае) вычисляется в <code>4</code>. Это значение, как часть инструкции <code>let</code>, связывается с переменной <code>y</code>. Обратите внимание, что строка <code>x + 1</code> не завершается точкой с запятой. Выражения не включают в себя точку с запятой. Если вы добавите точку с запятой в конец выражения, вы превратите его в инструкцию, и оно перестанет возвращать значение, в которое вычисляется. Помните об этом, пока мы будем рассматривать возвращение значений функциями и выражениями.</p>
+<h3 id="Функции-возвращающие-значения"><a class="header" href="#Функции-возвращающие-значения">Функции, возвращающие значения</a></h3>
+<p>Функции могут возвращать значения коду, который их вызывает. Возвращаемые значения не обозначаются именами, но мы должны указывать их тип после стрелки (<code>-&gt;</code>). В Rust, возвращаемым значением функции является значение последнего выражения в её теле. Вы можете вернуть значение из функции раньше её завершения, использовав ключевое слово <code>return</code> и указав значение, которое хотите вернуть, но большинство функций неявно возвращают значение последнего выражения. Вот пример функции, возвращающей значение:</p>
+<p><span class="filename">Файл: src/main.rs</span></p>
+<pre><pre class="playground"><code class="language-rust edition2021">fn five() -&gt; i32 {
+    5
+}
+
+fn main() {
+    let x = five();
+
+    println!("Значение x: {x}");
+}</code></pre></pre>
+<p>В функции <code>five</code> нет ни вызовов функций, ни макросов, ни даже инструкций <code>let</code> — только единственное число <code>5</code>. Это абсолютно корректная функция в языке Rust. Обратите внимание, что возвращаемый тип функции тоже указан — припиской <code>-&gt; i32</code>. Попробуйте запустить этот пример; вы должны увидеть вывод такой же, как этот:</p>
+<pre><code class="language-console">$ cargo run
+   Compiling functions v0.1.0 (file:///projects/functions)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.30s
+     Running `target/debug/functions`
+Значение x: 5
+</code></pre>
+<p><code>5</code> в функции <code>five</code> — это её возвращаемое значение, поэтому тип возвращаемого значения определён как <code>i32</code>. Рассмотрим это внимательнее: здесь есть два важных момента. Во-первых, строчка <code>let x = five();</code> показывает, что мы используем возвращаемое значение функции для инициализации переменной. Поскольку функция <code>five</code> возвращает <code>5</code>, эта строчка эквивалентна строчке ниже:</p>
+<pre><pre class="playground"><code class="language-rust edition2021"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let x = 5;
+<span class="boring">}</span></code></pre></pre>
+<p>Во-вторых, функция <code>five</code> не имеет параметров и у неё определён тип возвращаемого значения. Однако телом функции является просто <code>5</code> без точки с запятой, так как это выражение вычисляется в значение, которое мы хотим вернуть.</p>
+<p>Посмотрим на другой пример:</p>
+<p><span class="filename">Файл: src/main.rs</span></p>
+<pre><pre class="playground"><code class="language-rust edition2021">fn main() {
+    let x = plus_one(5);
+
+    println!("Значение x: {x}");
+}
+
+fn plus_one(x: i32) -&gt; i32 {
+    x + 1
+}</code></pre></pre>
+<p>Запуск этого кода напечатает <code>Значение x: 6</code>. Но есть мы поставим точку с запятой в конце строки <code>x + 1</code> (превратив её тем самым из выражения в инструкцию), мы получим ошибку:</p>
+<p><span class="filename">Файл: src/main.rs</span></p>
+<pre><code class="language-rust ignore does_not_compile">fn main() {
+    let x = plus_one(5);
+
+    println!("Значение x: {x}");
+}
+
+fn plus_one(x: i32) -&gt; i32 {
+    x + 1;
+}</code></pre>
+<p>Компилирование этого кода вызовет ошибку:</p>
+<pre><code class="language-console">$ cargo run
+   Compiling functions v0.1.0 (file:///projects/functions)
+error[E0308]: mismatched types
+ --&gt; src/main.rs:7:24
+  |
+7 | fn plus_one(x: i32) -&gt; i32 {
+  |    --------            ^^^ expected `i32`, found `()`
+  |    |
+  |    implicitly returns `()` as its body has no tail or `return` expression
+8 |     x + 1;
+  |          - help: remove this semicolon to return this value
+
+For more information about this error, try `rustc --explain E0308`.
+error: could not compile `functions` (bin "functions") due to 1 previous error
+</code></pre>
+<p>Главное сообщение об ошибке (<code>mismatched types</code>) вызвано проблемой в определяемой нами функции. Определение функции <code>plus_one</code> говорит о том, что она возвращает <code>i32</code>, но инструкция ни во что не вычисляется, что выражается возвращением типа <code>()</code> — unit. Следовательно, функции нечего возвращать, и это противоречит её определению, что и вызывает ошибку компиляции. В выводе выше, Rust предлагает потенциальное (и, в общем-то, правильное) решение проблемы: убрать точку с запятой.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="ch03-02-data-types.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="ch03-04-comments.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="ch03-02-data-types.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="ch03-04-comments.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="ferris.js"></script>
+        <script src="theme/language-picker.js"></script>
+
+
+    </div>
+    </body>
+</html>

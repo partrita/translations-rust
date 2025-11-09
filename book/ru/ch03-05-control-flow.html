@@ -1,0 +1,569 @@
+<!DOCTYPE HTML>
+<html lang="ru" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Управление потоком - The Rust Programming Language</title>
+
+
+        <!-- Custom HTML head -->
+
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-L455DH98TK"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+        
+          gtag('config', 'G-L455DH98TK');
+        </script>
+        
+        
+        <script>
+            (function () {
+                // See these pages for details:
+                // https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls
+                // https://developers.google.com/search/docs/crawling-indexing/javascript/javascript-seo-basics
+        
+                function gen_canonical_href(lang) {
+        
+                    let base = "https://rust-lang-translations.org/book";
+        
+                    let canonical_href;
+                    if (lang == "en") {
+                        canonical_href = `${base}/ch03-05-control-flow.md`;
+                    } else {
+                        canonical_href = `${base}/${lang}/ch03-05-control-flow.md`;
+                    }
+                    canonical_href = canonical_href.slice(0, -"md".length) + "html";
+                    if (canonical_href.endsWith("/index.html")) {
+                        canonical_href = canonical_href.slice(0, -"index.html".length);
+                    }
+                    return canonical_href;
+                }
+        
+                const canonical_href = gen_canonical_href("ru");
+
+                let link = document.createElement("link");
+                link.rel = "canonical";
+                link.href = canonical_href;
+                document.head.appendChild(link);
+        
+        
+                const langs = ["en"  , "ja"  , "ru"  , "ko" ];
+        
+                for (const lang of langs) {
+                    const canonical_href = gen_canonical_href(lang);
+        
+                    let link = document.createElement("link");
+                    link.rel = "alternate";
+                    link.hreflang = lang;
+                    link.href = canonical_href;
+                    document.head.appendChild(link);
+                }
+            })()
+        </script>
+        
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="ferris.css">
+        <link rel="stylesheet" href="theme/2018-edition.css">
+        <link rel="stylesheet" href="theme/semantic-notes.css">
+        <link rel="stylesheet" href="theme/listing.css">
+        <link rel="stylesheet" href="theme/language-picker.css">
+
+
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">The Rust Programming Language</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/rust-lang-translations/project" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="Управление-потоком"><a class="header" href="#Управление-потоком">Управление потоком</a></h2>
+<p>Важнейшей частью большинства языков программирования являются операторы ветвления и циклы — конструкции, позволяющие запускать код, только если (или: пока) некоторое условие истинно. Наиболее распространёнными конструкциями, позволяющими вам управлять потоком исполнения программы на Rust, являются выражения <code>if</code> и циклы.</p>
+<h3 id="Выражения-if"><a class="header" href="#Выражения-if">Выражения <code>if</code></a></h3>
+<p>Выражение <code>if</code> позволяет вам исполнять код в зависимости от истинности условий. Вы определяете условие исполнения, а потом используете <code>if</code>, чтобы указать программе: "Исполни этот код, если условие истинно; иначе — ничего не делай".</p>
+<p>Создайте новый проект в своей директории <em>projects</em> и назовите его <em>branches</em>. В нём мы будем изучать выражение <code>if</code>. Заполните файл <em>src/main.rs</em> этим кодом:</p>
+<p><span class="filename">Файл: src/main.rs</span></p>
+<pre><pre class="playground"><code class="language-rust edition2021">fn main() {
+    let number = 3;
+
+    if number &lt; 5 {
+        println!("условие оказалось истинно");
+    } else {
+        println!("условие оказалось ложно");
+    }
+}</code></pre></pre>
+<p>Все выражения <code>if</code> состоят с ключевого слова <code>if</code> и следующего за ним условия. В нашем случае, условие проверяет, меньше ли, чем 5, переменная <code>number</code>. В фигурных скобках, сразу после условия, мы размещаем код, который надо исполнить, если условие истинно. Блоки кода, связанные с условиями в выражениях <code>if</code>, иногда называются <em>ветвями</em> — аналогично ветвям в выражении <code>match</code>, которое мы обсуждали в разделе ["Сравнение догадки с загаданным числом"] (ch02-00-guessing-game-tutorial.html#Сравнение-догадки-с-загаданным-числом) <!-- ignore --> Главы 2.</p>
+<p>Это не обязательно, но мы можем добавить выражение <code>else</code>, которое указывает на код, который нужно запустить в случае, если условие оказалось ложным. Если вы не напишете выражение <code>else</code>, а условие окажется ложным, программа просто пропустит блок кода при <code>if</code> и продолжит исполнять всё, что следует за ним.</p>
+<p>Попробуйте запустить этот код; вы должны увидеть следующий вывод:</p>
+<pre><code class="language-console">$ cargo run
+   Compiling branches v0.1.0 (file:///projects/branches)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.31s
+     Running `target/debug/branches`
+условие оказалось истинно
+</code></pre>
+<p>Изменим значение <code>number</code> на значение, которое сделает условие ложным:</p>
+<pre><code class="language-rust ignore"><span class="boring">fn main() {
+</span>    let number = 7;
+<span class="boring">
+</span><span class="boring">    if number &lt; 5 {
+</span><span class="boring">        println!("условие оказалось истинно");
+</span><span class="boring">    } else {
+</span><span class="boring">        println!("условие оказалось ложно");
+</span><span class="boring">    }
+</span><span class="boring">}</span></code></pre>
+<p>Снова запустите программу и взгляните на вывод:</p>
+<pre><code class="language-console">$ cargo run
+   Compiling branches v0.1.0 (file:///projects/branches)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.31s
+     Running `target/debug/branches`
+условие оказалось ложным
+</code></pre>
+<p>Стоит также отметить, что условие всегда <em>должно</em> иметь тип <code>bool</code>, иначе мы получим ошибку компиляции. Например, попробуем запустить следующий код:</p>
+<p><span class="filename">Файл: src/main.rs</span></p>
+<pre><code class="language-rust ignore does_not_compile">fn main() {
+    let number = 3;
+
+    if number {
+        println!("number было тройкой");
+    }
+}</code></pre>
+<p>Условие при <code>if</code> вычислилось в значение <code>3</code>, и Rust бросил ошибку:</p>
+<pre><code class="language-console">$ cargo run
+   Compiling branches v0.1.0 (file:///projects/branches)
+error[E0308]: mismatched types
+ --&gt; src/main.rs:4:8
+  |
+4 |     if number {
+  |        ^^^^^^ expected `bool`, found integer
+
+For more information about this error, try `rustc --explain E0308`.
+error: could not compile `branches` (bin "branches") due to 1 previous error
+</code></pre>
+<p>Ошибка свидетельствует о том, что Rust оиждал увидеть здесь <code>bool</code>, но получил целое число. В отличие от таких языков как Ruby и JavaScript, в Rust нет возможности интерпретировать не логические типы как логические. Вы всегда должны использовать с <code>if</code> условие, являющееся выражением, которое вычисляется в логическое значение. Если вы хотите запустить блок кода только если <code>number</code> не равно <code>0</code>, нужно предоставить выражению <code>if</code> вот такое условие:</p>
+<p><span class="filename">Файл: src/main.rs</span></p>
+<pre><pre class="playground"><code class="language-rust edition2021">fn main() {
+    let number = 3;
+
+    if number != 0 {
+        println!("number оказалось не равно нулю");
+    }
+}</code></pre></pre>
+<p>Запустив этот код, вы увидите текст <code>number оказалось не равно нулю</code>.</p>
+<h4 id="Обработка-нескольких-условий-с-помощью-else-if"><a class="header" href="#Обработка-нескольких-условий-с-помощью-else-if">Обработка нескольких условий с помощью <code>else if</code></a></h4>
+<p>Вы можете проверять несколько условий, объединив <code>if</code> и <code>else</code> в одно выражение <code>else if</code>. Например:</p>
+<p><span class="filename">Файл: src/main.rs</span></p>
+<pre><pre class="playground"><code class="language-rust edition2021">fn main() {
+    let number = 6;
+
+    if number % 4 == 0 {
+        println!("number делится на 4");
+    } else if number % 3 == 0 {
+        println!("number делится на 3");
+    } else if number % 2 == 0 {
+        println!("number делится на 2");
+    } else {
+        println!("number не делится ни на 4, ни на 3, ни на 2");
+    }
+}</code></pre></pre>
+<p>Эта программа потенциально может завершиться четырьмя разными путями. Запустив её, вы увидите этот вывод:</p>
+<pre><code class="language-console">$ cargo run
+   Compiling branches v0.1.0 (file:///projects/branches)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.31s
+     Running `target/debug/branches`
+number делится 3
+</code></pre>
+<p>В этой программе происходит поочерёдная проверка каждого выражения <code>if</code>. Как только программа встретит условие, вычисляющееся в <code>true</code>, исполнится соответствующий блок кода. Обратите внимание, что хотя 6 делится на 2, мы не видим ни <code>number делится на 2</code> (сообщение предпоследней ветви), ни <code>number не делится ни на 4, ни на 3, ни на 2</code> (сообщение ветви <code>else</code>). Причина в том, что на первом же истинном условии проверка и останавливается — идущие далее условия не проверяются.</p>
+<p>Использование большого количества выражений <code>else if</code> — верный способ сделать свой код запутанным и непонятным. Если вы используете больше одного такого оператора, возможно, вашей программе нужен рефакторинг. Глава 6 расскажет вам об операторе ветвления <code>match</code>, который отлично подойдёт для подобных случаев.</p>
+<h4 id="Использование-if-в-инструкции-let"><a class="header" href="#Использование-if-в-инструкции-let">Использование <code>if</code> в инструкции <code>let</code></a></h4>
+<p>Поскольку <code>if</code> — это выражение, мы можем использовать его в правой части инструкции <code>let</code>, чтобы условием управлять тем, что присваивается переменной. Посмотрите на Листинг 3-2.</p>
+<Listing number="3-2" file-name="src/main.rs" caption="Assigning the result of an `if` expression to a variable">
+<pre><pre class="playground"><code class="language-rust edition2021">fn main() {
+    let condition = true;
+    let number = if condition { 5 } else { 6 };
+
+    println!("Значение number: {number}");
+}</code></pre></pre>
+</Listing>
+<p>Переменная <code>number</code> связывается со значением, в которое вычислится выражение <code>if</code>. Запустите этот код и посмотрите, что выйдет:</p>
+<pre><code class="language-console">$ cargo run
+   Compiling branches v0.1.0 (file:///projects/branches)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.30s
+     Running `target/debug/branches`
+Значение number: 5
+</code></pre>
+<p>Помните, что 1) блоки кода вычисляются в значение последнего их выражения и 2) числа сами по себе тоже являются выражениями. В нашем случае, значение всего выражения <code>if</code> зависит от того, какой исполнится блок кода. Из этого следует, что значение каждого блока кода должно иметь один и тот же тип. В Листинге 3-2 всё имеенно так: обе ветви <code>if</code> и ветвь <code>else</code> вычисляются в целое число типа <code>i32</code>. Если ветви будут вычисляться в значения разных типов (как показано в примере ниже), вы получите ошибку:</p>
+<p><span class="filename">Файл: src/main.rs</span></p>
+<pre><code class="language-rust ignore does_not_compile">fn main() {
+    let condition = true;
+
+    let number = if condition { 5 } else { "шесть" };
+
+    println!("Значение number: {number}");
+}</code></pre>
+<p>Если попытаться скомпилировать этот код, мы получим ошибку. Значения ветвей <code>if</code> и <code>else</code> имеют разные типы, и Rust как раз указывает, где находится ошибка:</p>
+<pre><code class="language-console">$ cargo run
+   Compiling branches v0.1.0 (file:///projects/branches)
+error[E0308]: `if` and `else` have incompatible types
+ --&gt; src/main.rs:4:44
+  |
+4 |     let number = if condition { 5 } else { "шесть" };
+  |                                 -          ^^^^^^^ expected integer, found `&amp;str`
+  |                                 |
+  |                                 expected because of this
+
+For more information about this error, try `rustc --explain E0308`.
+error: could not compile `branches` (bin "branches") due to 1 previous error
+</code></pre>
+<p>Выражение в блоке <code>if</code> вычисляется в целое число, а выражение блоке <code>else</code> — в строку. Такое недопустимо, поскольку типы переменных должны быть постоянны и известны уже на этапе компиляции. Компилятор должен знать тип <code>number</code>, чтобы иметь возможность проверить, корректно ли мы применяем переменную <code>number</code> дальше в программе. Поддержка неопределённости типов сделала бы компилятор Rust значительно более сложным, лишила бы нас многих гарантий формальной корректности кода, и позволила бы писать крайне запутанные программы — даже когда мы того не хотим.</p>
+<h3 id="Повторное-исполнение-кода-с-помощью-циклов"><a class="header" href="#Повторное-исполнение-кода-с-помощью-циклов">Повторное исполнение кода с помощью циклов</a></h3>
+<p>Часто нужно исполнить некоторый объём кода больше, чем единожды. Для этого в Rust существуют несколько видов <em>циклов</em>, которые позволяют исполнить блок кода и затем вернуться к его началу. Чтобы опробовать циклы, создайте новый проект и назовите его <em>loops</em>.</p>
+<p>В Rust есть три вида циклов: <code>loop</code>, <code>while</code> и <code>for</code>. Попробуем каждый из них.</p>
+<h4 id="Повторение-кода-с-помощью-loop"><a class="header" href="#Повторение-кода-с-помощью-loop">Повторение кода с помощью <code>loop</code></a></h4>
+<p>Ключевое слово <code>loop</code> означает, что следующий за ним блок кода надо исполнять бесконечно, раз за разом — до тех пор, пока вы явно не прикажете циклу остановиться.</p>
+<p>Замените код в файле <em>src/main.rs</em> в директории <em>loops</em> на код из примера ниже:</p>
+<p><span class="filename">Файл: src/main.rs</span></p>
+<pre><code class="language-rust ignore">fn main() {
+    loop {
+        println!("и ещё раз,");
+    }
+}</code></pre>
+<p>Запустив эту программу, мы увидим строку <code>и ещё раз,</code>, одну за другой, бесконечно. Мы можем остановить это, вручную прервав исполнение программы. Большинство консолей поддерживают сочетание клавиш <kbd>Ctrl</kbd>-<kbd>C</kbd>, которое прерывает работу программы. Попробуем запустить наш пример и остановить его:</p>
+<!-- manual-regeneration
+cd listings/ch03-common-programming-concepts/no-listing-32-loop
+cargo run
+CTRL-C
+-->
+<pre><code class="language-console">$ cargo run
+   Compiling loops v0.1.0 (file:///projects/loops)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.08s
+     Running `target/debug/loops`
+и ещё раз,
+и ещё раз,
+и ещё раз,
+и ещё раз,
+^Cи ещё раз,
+</code></pre>
+<p>Символ <code>^C</code> означает, что вы нажали <kbd>Ctrl</kbd>-<kbd>C</kbd>. Возможно, вы не увидите строчку <code>и ещё раз,</code> после <code>^C</code> — всё зависит от того, в какой момент программа воспримет сигнал остановки.</p>
+<p>Естественно, в Rust есть способ программно выйти из цикла. Если вы напишете ключевое слово <code>break</code> внутри цикла, то когда исполнение до него дойдёт, цикл завершится. К слову, мы уже его использовали: вспомните, как мы реализовали <a href="ch02-00-guessing-game-tutorial.html#%D0%97%D0%B0%D0%B2%D0%B5%D1%80%D1%88%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B8%D0%B3%D1%80%D1%8B-%D0%BF%D0%BE%D1%81%D0%BB%D0%B5-%D0%BF%D1%80%D0%B0%D0%B2%D0%B8%D0%BB%D1%8C%D0%BD%D0%BE%D0%B9-%D0%B4%D0%BE%D0%B3%D0%B0%D0%B4%D0%BA%D0%B8">"Завершение игры после правильной догадки"</a><!-- ignore --> в нашей игре в угадайку из Главы 2.</p>
+<p>Мы также тогда использовали ключевое слово <code>continue</code> — оно указывает циклу пропустить исполнение оставшегося кода и сразу продолжить с новой итерации цикла.</p>
+<h4 id="Вычисление-циклов-в-значения"><a class="header" href="#Вычисление-циклов-в-значения">Вычисление циклов в значения</a></h4>
+<p>Одним из применений цикла <code>loop</code> является повторная попытка исполнить операцию, которая может не удасться — до тех пор, пока не будет достигнут успех. (Например, проверка не то, закончил ли исполняться параллельный поток.) Вам также может быть нужно вернуть результат этой операции из цикла, чтобы дальше обработать его. Это можно сделать, добавив после выражения <code>break</code> то значение, которое вы хотите вернуть из цикла. Посмотрите пример:</p>
+<pre><pre class="playground"><code class="language-rust edition2021">fn main() {
+    let mut counter = 0;
+
+    let result = loop {
+        counter += 1;
+
+        if counter == 10 {
+            break counter * 2;
+        }
+    };
+
+    println!("result равна {result}");
+}</code></pre></pre>
+<p>Мы объявили переменную <code>counter</code> перед циклом и инициализировали её значением <code>0</code>. Затем, мы объявили переменную <code>result</code>, в которой будет содержаться значение, которое вернёт цикл. На каждой итерации цикла мы прибавляем <code>1</code> к переменной <code>counter</code>, а потом проверяем, не равна ли <code>counter</code> значению <code>10</code>. Когда это условие окажется верным, ключевое слово <code>break</code> прервёт исполнение цикла и вернёт из него значение <code>counter * 2</code>. Мы также поставили точку с запятой в самом конце, чтобы закончить инструкцию, связывающую <code>result</code> со значением, в которое вычисляется цикл. Наконец, мы печатаем значение <code>result</code> — в нашем случае оно оказывается равным <code>20</code>.</p>
+<p>Вы также можете использовать в цикле ключевое слово <code>return</code>. В отличие от <code>break</code> (которое завершит исполнение только своего <em>цикла</em>), <code>return</code> завершит исполнение сразу всей <em>функции</em>.</p>
+<h4 id="Указание-на-конкретный-цикл-с-помощью-меток-циклов"><a class="header" href="#Указание-на-конкретный-цикл-с-помощью-меток-циклов">Указание на конкретный цикл с помощью меток циклов</a></h4>
+<p>Если вы работаете во вложенных циклах, <code>break</code> и <code>continue</code> будут относиться только к тому циклу, в которых они написаны. При необходимости вы можете уточнить, с каким из вложенных циклов они должны работать, написав <em>метку цикла</em> после <code>break</code> или <code>continue</code>. Метки циклов записываются перед началом цикла и начинаются с апострофа. Вот пример с одним вложенным циклом:</p>
+<pre><pre class="playground"><code class="language-rust edition2021">fn main() {
+    let mut count = 0;
+    'counting_up: loop {
+        println!("count = {count}");
+        let mut remaining = 10;
+
+        loop {
+            println!("remaining = {remaining}");
+            if remaining == 9 {
+                break;
+            }
+            if count == 2 {
+                break 'counting_up;
+            }
+            remaining -= 1;
+        }
+
+        count += 1;
+    }
+    println!("Окончательное значение count = {count}");
+}</code></pre></pre>
+<p>Внешний цикл обозначен меткой <code>'counting_up</code>; он будет запущен от 0 до 2. Внутренний цикл никак не помечен; он будет отсчитывать от 10 до 9. Первый <code>break</code> не имеет метки, так что он прерывает исполнение <em>своего</em> цикла — внутреннего. Инструкция <code>break 'counting_up;</code> завершит исполнение внешнего цикла. Этот код напечатает:</p>
+<pre><code class="language-console">$ cargo run
+   Compiling loops v0.1.0 (file:///projects/loops)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.58s
+     Running `target/debug/loops`
+count = 0
+remaining = 10
+remaining = 9
+count = 1
+remaining = 10
+remaining = 9
+count = 2
+remaining = 10
+Окончательное значение count = 2
+</code></pre>
+<h4 id="Условные-циклы-с-while"><a class="header" href="#Условные-циклы-с-while">Условные циклы с <code>while</code></a></h4>
+<p>Часто бывает нужно исполнять некоторый код, пока истинно некоторое условие; когда же условие перестаёт быть истинным, программа прерывает повтор цикла. Описанный механизм вполне можно реализовать с помощью <code>loop</code>, <code>if</code>, <code>else</code> и <code>break</code>; можете попробовать это в качестве тренировки. Однако, в многих языках программирования подобного рода цикл уже реализован, и Rust — не исключение. В нём такой цикл называется <code>while</code>. Программа в Листинге 3-3 использует <code>while</code> для отсчёта трёх и, в конце, печатает сообщение, после чего завершается.</p>
+<Listing number="3-3" file-name="src/main.rs" caption="Using a `while` loop to run code while a condition holds true">
+<pre><pre class="playground"><code class="language-rust edition2021">fn main() {
+    let mut number = 3;
+
+    while number != 0 {
+        println!("{number}!");
+
+        number -= 1;
+    }
+
+    println!("ПОЕХАЛИ!!!");
+}</code></pre></pre>
+</Listing>
+<p>Эта конструкция серьёзно облегчает создание циклов с условием остановки: код получается проще и чище. Пока условие вычисляется в <code>true</code>, код запускается; иначе, цикл прерывается.</p>
+<h4 id="Перебор-элементов-коллекции-с-for"><a class="header" href="#Перебор-элементов-коллекции-с-for">Перебор элементов коллекции с <code>for</code></a></h4>
+<p>Вы также можете использовать конструкцию <code>while</code>, чтобы пройтись по элементам коллекций (например, массива). Например, цикл в Листинге 3-4 напечатает каждый элемент массива <code>a</code>.</p>
+<Listing number="3-4" file-name="src/main.rs" caption="Looping through each element of a collection using a `while` loop">
+<pre><pre class="playground"><code class="language-rust edition2021">fn main() {
+    let a = [10, 20, 30, 40, 50];
+    let mut index = 0;
+
+    while index &lt; 5 {
+        println!("элемент: {}", a[index]);
+
+        index += 1;
+    }
+}</code></pre></pre>
+</Listing>
+<p>Это код поочерёдно проходится по каждому элементу массива. Он начинает с элемента по индексу <code>0</code>, и затем перебирает индексы до последнего (то есть, до тех пор, пока <code>index &lt; 5</code> не окажется <code>false</code>). Запустив этот код, вы увидите список всех элементов массива:</p>
+<pre><code class="language-console">$ cargo run
+   Compiling loops v0.1.0 (file:///projects/loops)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.32s
+     Running `target/debug/loops`
+элемент: 10
+элемент: 20
+элемент: 30
+элемент: 40
+элемент: 50
+</code></pre>
+<p>Все пять элементов массива появились на экране, как и ожидалось. Хотя переменная <code>index</code> и достигает в какой-то момент значения <code>5</code>, цикл проверит условие на истинность и потому завершится раньше, чем произойдёт попытка получить шестой элемент массива.</p>
+<p>Однако такой подход легко может привести к ошибке: можно легко получить панику из-за попытки получить элемент за пределами массива. Например, если вы оставите в массиве <code>a</code> лишь четыре элемента, а обновить определение условного цикла до <code>while index &lt; 4</code>, программа вызовет панику. А ещё это очень медленно: обращение к элементам массива с помощью переменной вынуждает компилятор добавить тормозящие код проверки на выход за пределы массива — и такие проверки нужно будет проводить на каждой итерации; всё это совершенно точно является излишеством.</p>
+<p>Более лакончиным способом перебрать элементы коллекции является цикл <code>for</code>. Пример цикла <code>for</code> приведён в Листинге 3-5.</p>
+<Listing number="3-5" file-name="src/main.rs" caption="Looping through each element of a collection using a `for` loop">
+<pre><pre class="playground"><code class="language-rust edition2021">fn main() {
+    let a = [10, 20, 30, 40, 50];
+
+    for element in a {
+        println!("элемент: {element}");
+    }
+}</code></pre></pre>
+</Listing>
+<p>Запустив этот код, мы увидим тот же вывод, что и в случае Листинга 3-4. Но куда более важно то, что мы повысили надёжность нашего кода, избавив его от возможных ошибок, связанных как с попытками получить элемент за пределами массива, так и с преждевременной остановкой перебора.</p>
+<p>С циклом <code>for</code> ваш код самостоятельно подстроится под изменения в коллекции, и вам не понадобится следить за двумя участками кода, как это приходилось бы делать в Листинге 3-4."</p>
+<p>Безопасность и простота циклов <code>for</code> делают его наиболее часто используемым циклом в Rust. Даже в случаях, когда вы хотите запустить некоторый код произвольное точное количество раз (например, как в цикле в Листинге 3-3), большинство программистов на Rust применят для этого цикл <code>for</code>. Если онкретнее, они воспользуются <code>Range</code> — структуре стандартной библиотеки, которая генерирует последовательность всех чисел между двумя границами (включая нижнюю границу, но не включая верхнюю).</p>
+<p>Вот как будет выглядить обратный отсчёт с помощью цикла <code>for</code> и метода <code>rev</code>, переворачивающего генерируемую последовательность:</p>
+<p><span class="filename">Файл: src/main.rs</span></p>
+<pre><pre class="playground"><code class="language-rust edition2021">fn main() {
+    for number in (1..4).rev() {
+        println!("{number}!");
+    }
+    println!("ПОЕХАЛИ!!!");
+}</code></pre></pre>
+<p>Этот код чуть приятнее; не так ли?</p>
+<h2 id="Подведём-итоги"><a class="header" href="#Подведём-итоги">Подведём итоги</a></h2>
+<p>Вы проделали большую работу! Эта глава была внушительной: вы узнали о переменных, неделимых и составных типах, функциях, комментариях, условных операторах ветвления и о циклах! Чтобы отработать изученное, попробуйте написать следующие программы:</p>
+<ul>
+<li>Конвертер температур из градусов Фаренгейта в Цельсия (и наоборот).</li>
+<li>Функция генерации _n_ого числа Фибоначчи.</li>
+<li>Программа, печатающая текст рождественской английской народной песни <a href="https://en.wikipedia.org/wiki/The_Twelve_Days_of_Christmas_(song)#Lyrics">"The Twelve Days of Christmas"</a>.</li>
+</ul>
+<p>В следующей главе мы обсудим владение — концепцию Rust, которой обычно <em>нет</em> в других языках программирования.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="ch03-04-comments.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="ch04-00-understanding-ownership.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="ch03-04-comments.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="ch04-00-understanding-ownership.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="ferris.js"></script>
+        <script src="theme/language-picker.js"></script>
+
+
+    </div>
+    </body>
+</html>

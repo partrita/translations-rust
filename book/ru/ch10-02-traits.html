@@ -1,0 +1,655 @@
+<!DOCTYPE HTML>
+<html lang="ru" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Трейты: определение схожего поведения - The Rust Programming Language</title>
+
+
+        <!-- Custom HTML head -->
+
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-L455DH98TK"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+        
+          gtag('config', 'G-L455DH98TK');
+        </script>
+        
+        
+        <script>
+            (function () {
+                // See these pages for details:
+                // https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls
+                // https://developers.google.com/search/docs/crawling-indexing/javascript/javascript-seo-basics
+        
+                function gen_canonical_href(lang) {
+        
+                    let base = "https://rust-lang-translations.org/book";
+        
+                    let canonical_href;
+                    if (lang == "en") {
+                        canonical_href = `${base}/ch10-02-traits.md`;
+                    } else {
+                        canonical_href = `${base}/${lang}/ch10-02-traits.md`;
+                    }
+                    canonical_href = canonical_href.slice(0, -"md".length) + "html";
+                    if (canonical_href.endsWith("/index.html")) {
+                        canonical_href = canonical_href.slice(0, -"index.html".length);
+                    }
+                    return canonical_href;
+                }
+        
+                const canonical_href = gen_canonical_href("ru");
+
+                let link = document.createElement("link");
+                link.rel = "canonical";
+                link.href = canonical_href;
+                document.head.appendChild(link);
+        
+        
+                const langs = ["en"  , "ja"  , "ru"  , "ko" ];
+        
+                for (const lang of langs) {
+                    const canonical_href = gen_canonical_href(lang);
+        
+                    let link = document.createElement("link");
+                    link.rel = "alternate";
+                    link.hreflang = lang;
+                    link.href = canonical_href;
+                    document.head.appendChild(link);
+                }
+            })()
+        </script>
+        
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="ferris.css">
+        <link rel="stylesheet" href="theme/2018-edition.css">
+        <link rel="stylesheet" href="theme/semantic-notes.css">
+        <link rel="stylesheet" href="theme/listing.css">
+        <link rel="stylesheet" href="theme/language-picker.css">
+
+
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">The Rust Programming Language</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/rust-lang-translations/project" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="Трейты-определение-схожего-поведения"><a class="header" href="#Трейты-определение-схожего-поведения">Трейты: определение схожего поведения</a></h2>
+<p><em>Трейт</em> определяет функциональность, которой обладает конкретный тип и которая может использоваться с другими типами. Мы можем использовать трейты для определения общего поведения абстрактным образом. Мы можем использовать <em>ограничение по трейтам</em>, чтобы указать, что обобщённый тип может быть заменён на любой тип с некоторым известным поведением.</p>
+<blockquote>
+<p>Примечание: Трейты схожи с таким механизмом как <em>интерфейсы</em>, но всё же они различаются.</p>
+</blockquote>
+<h3 id="Определение-трейта"><a class="header" href="#Определение-трейта">Определение трейта</a></h3>
+<p>Поведение типа определяется теми методами, которые мы можем вызвать на данном типе. Различные типы разделяют одинаковое поведение, если мы можем вызвать одни и те же методы у этих типов. Определение трейтов — это способ сгруппировать сигнатуры методов вместе для того, чтобы описать общее поведение, необходимое для достижения определённой цели.</p>
+<p>Например, пусть есть несколько структур, которые имеют различные структуру и объём текста: структура <code>NewsArticle</code>, которая содержит новость, напечатанную в каком-то месте мира, и структура <code>Tweet</code>, которая содержит 280 символов текста твита плюс мета-данные, обозначающие, является ли твит новым или ответом на другой твит.</p>
+<p>Мы хотим создать библиотечный крейт новостного агрегатора <code>aggregator</code>, который может отображать сводку данных, сохранённых в экземплярах структур <code>NewsArticle</code> или <code>Tweet</code>. Чтобы реализовать это, нам необходимо иметь возможность получить сводку на основе данных структуры, и мы можем запросить эту сводку, вызвав метод <code>summarize</code>. Листинг 10-12 показывает определение трейта <code>Summary</code>, выражающего это поведение.</p>
+<Listing number="10-12" file-name="src/lib.rs" caption="A `Summary` trait that consists of the behavior provided by a `summarize` method">
+<pre><code class="language-rust noplayground">pub trait Summary {
+    fn summarize(&amp;self) -&gt; String;
+}</code></pre>
+</Listing>
+<p>Здесь мы объявляем трейт с использованием ключевого слова <code>trait</code>, а затем указываем его название (в нашем случае — <code>Summary</code>). Также мы объявляем трейт как <code>pub</code>, что позволяет крейтам, зависящим от нашего крейта, использовать наш трейт, примеры чего мы увидим далее. Внутри фигурных скобок объявляются сигнатуры методов, которые описывают поведение типов, реализующих данный трейт; в данном случае, поведение определяется только одной сигнатурой метода <code>fn summarize(&amp;self) -&gt; String</code>.</p>
+<p>После сигнатуры метода, вместо его тела мы пишем точку с запятой. Каждый тип,  реализующий данный трейт, должен будет предоставить свою собственную реализацию данного метода. Компилятор обеспечит, что любой тип, реализующий трейт <code>Summary</code>, будет также иметь и метод <code>summarize</code>, объявленный с точно такой же сигнатурой.</p>
+<p>Трейт может определять сигнатуры нескольких методов: сигнатуры методов перечисляются по одной на каждой строке и должны закачиваться точкой с запятой.</p>
+<h3 id="Реализация-трейта-для-типа"><a class="header" href="#Реализация-трейта-для-типа">Реализация трейта для типа</a></h3>
+<p>Теперь, после того как мы определили желаемое поведение, используя трейт <code>Summary</code>, можно реализовывать его у типов нашего новостного агрегатора. Листинг 10-13 показывает реализацию трейта <code>Summary</code> для структуры <code>NewsArticle</code>, которая использует для создания сводки в методе <code>summarize</code> заголовок, автора и место публикации статьи. Для структуры <code>Tweet</code> мы определяем реализацию <code>summarize</code>, используя имя пользователя и следующий за ним полный текст твита, полагая, что содержание твита уже ограничено 280 символами.</p>
+<Listing number="10-13" file-name="src/lib.rs" caption="Implementing the `Summary` trait on the `NewsArticle` and `Tweet` types">
+<pre><code class="language-rust noplayground"><span class="boring">pub trait Summary {
+</span><span class="boring">    fn summarize(&amp;self) -&gt; String;
+</span><span class="boring">}
+</span><span class="boring">
+</span>pub struct NewsArticle {
+    pub headline: String,
+    pub location: String,
+    pub author: String,
+    pub content: String,
+}
+
+impl Summary for NewsArticle {
+    fn summarize(&amp;self) -&gt; String {
+        format!("{} ({} из {})", self.headline, self.author, self.location)
+    }
+}
+
+pub struct Tweet {
+    pub username: String,
+    pub content: String,
+    pub reply: bool,
+    pub retweet: bool,
+}
+
+impl Summary for Tweet {
+    fn summarize(&amp;self) -&gt; String {
+        format!("{}: {}", self.username, self.content)
+    }
+}</code></pre>
+</Listing>
+<p>Реализация трейта для типа аналогична реализации обычных методов. Разница в том, что после <code>impl</code> мы указываем имя трейта, который мы хотим реализовать, затем используем ключевое слово <code>for</code>, а затем указываем имя типа, для которого мы хотим сделать реализацию трейта. Внутри блока <code>impl</code> мы помещаем сигнатуру метода, объявленную в трейте. Вместо точки с запятой в конце, после каждой сигнатуры пишутся фигурные скобки, и тело метода заполняется конкретным кодом, реализующим поведение, которое мы хотим получить от методов трейта для конкретного типа.</p>
+<p>Теперь, когда наш библиотечный крейт реализовывает трейт <code>Summary</code> для <code>NewsArticle</code> и <code>Tweet</code>, программисты, использующие наш крейт, могут вызывать методы трейта у экземпляров типов <code>NewsArticle</code> и <code>Tweet</code> точно так же, как если бы это были обычные методы. Единственное отличие состоит в том, что программист должен ввести трейт в область видимости точно так же, как и типы. Вот пример того как бинарный крейт может использовать наш новостной агрегатор:</p>
+<pre><code class="language-rust ignore">use aggregator::{Summary, Tweet};
+
+fn main() {
+    let tweet = Tweet {
+        username: String::from("horse_ebooks"),
+        content: String::from(
+            "конечно, вы уже наверное знаете, народ, ...",
+        ),
+        reply: false,
+        retweet: false,
+    };
+
+    println!("1 новый твит: {}", tweet.summarize());
+}</code></pre>
+<p>Данный код напечатает: <code>1 новый твит: horse_ebooks: конечно, вы уже наверное знаете, народ, ...</code>.</p>
+<p>Другие крейты, которые зависят от <code>aggregator</code>, также могут включать трейт <code>Summary</code> в область видимости для реализации <code>Summary</code> для своих собственных типов. Одно ограничение, на которое следует обратить внимание, заключается в том, что мы можем реализовать трейт для типа только в том случае, если хотя бы или трейт, или тип определяются <em>нашим</em> крейтом. Например, мы можем реализовать стандартный библиотечный трейт <code>Display</code> на собственном типе <code>Tweet</code> как часть функциональности нашего крейта <code>aggregator</code>, потому что тип <code>Tweet</code> является локальным для крейта <code>aggregator</code>. Также мы можем реализовать <code>Summary</code> для <code>Vec&lt;T&gt;</code> в нашем крейте <code>aggregator</code>, потому что трейт <code>Summary</code> является локальным для нашего крейта <code>aggregator</code>.</p>
+<p>Но мы не можем реализовать чужие трейты для чужих типов. Например, мы не можем реализовать трейт <code>Display</code> для <code>Vec&lt;T&gt;</code> внутри нашего крейта <code>aggregator</code>, потому что и <code>Display</code>, и <code>Vec&lt;T&gt;</code> оба определены в стандартной библиотеке, а не в нашем крейте <code>aggregator</code>. Это ограничение является частью свойства, называемого <em>последовательностью</em> (англ. <em>coherence</em>), а точнее — <em>правила сироты</em> (англ. <em>orphan rule</em>), которое называется так потому, что не представлен родительский тип. Это правило гарантирует, что код других людей не может сломать ваш код, и наоборот. Без этого правила два крейта могли бы реализовать один трейт для одного типа, и Rust не смог бы понять, какой реализацией нужно пользоваться.</p>
+<h3 id="Реализация-поведения-по-умолчанию"><a class="header" href="#Реализация-поведения-по-умолчанию">Реализация поведения по умолчанию</a></h3>
+<p>Иногда бывает полезно задать поведение по умолчанию для некоторых или всех методов трейта вместо того, чтобы требовать реализации всех методов для каждого типа. Такое поведение по умолчанию можно будет (уже непосредственно при реализации трейта) как оставить, так и переопределить.</p>
+<p>В Листинге 10-14 показано, мы определяем сводку по умолчанию для метода <code>summarize</code> трейта <code>Summary</code>, вместо того, чтобы определять лишь сигнатуру метода, как мы делали ранее в Листинге 10-12.</p>
+<Listing number="10-14" file-name="src/lib.rs" caption="Defining a `Summary` trait with a default implementation of the `summarize` method">
+<pre><code class="language-rust noplayground">pub trait Summary {
+    fn summarize(&amp;self) -&gt; String {
+        String::from("(Читать далее...)")
+    }
+}
+<span class="boring">
+</span><span class="boring">pub struct NewsArticle {
+</span><span class="boring">    pub headline: String,
+</span><span class="boring">    pub location: String,
+</span><span class="boring">    pub author: String,
+</span><span class="boring">    pub content: String,
+</span><span class="boring">}
+</span><span class="boring">
+</span><span class="boring">impl Summary for NewsArticle {}
+</span><span class="boring">
+</span><span class="boring">pub struct Tweet {
+</span><span class="boring">    pub username: String,
+</span><span class="boring">    pub content: String,
+</span><span class="boring">    pub reply: bool,
+</span><span class="boring">    pub retweet: bool,
+</span><span class="boring">}
+</span><span class="boring">
+</span><span class="boring">impl Summary for Tweet {
+</span><span class="boring">    fn summarize(&amp;self) -&gt; String {
+</span><span class="boring">        format!("{}: {}", self.username, self.content)
+</span><span class="boring">    }
+</span><span class="boring">}</span></code></pre>
+</Listing>
+<p>Для использования реализации по умолчанию при создании сводки экземпляров <code>NewsArticle</code>, мы указываем пустой блок при <code>impl Summary for NewsArticle {}</code>.</p>
+<p>Хотя мы больше не определяем метод <code>summarize</code> непосредственно на <code>NewsArticle</code>, мы предоставили реализацию по умолчанию и указали, что <code>NewsArticle</code> реализует трейт <code>Summary</code>. В результате мы всё ещё можем вызвать метод <code>summarize</code> у экземпляра <code>NewsArticle</code>; например, вот так:</p>
+<pre><code class="language-rust ignore"><span class="boring">use aggregator::{self, NewsArticle, Summary};
+</span><span class="boring">
+</span><span class="boring">fn main() {
+</span>    let article = NewsArticle {
+        headline: String::from("«Питтсбург Пингвинз» выиграли Кубок Стэнли!"),
+        location: String::from("Питтсбург, штат Пенсильвания, США"),
+        author: String::from("Пингвин Айсбург"),
+        content: String::from(
+            "«Питтсбург Пингвинз» вновь оказалась лучшей \
+             хоккейной командой в НХЛ.",
+        ),
+    };
+
+    println!("Новости! {}", article.summarize());
+<span class="boring">}</span></code></pre>
+<p>Этот код печатает <code>Новости! (Читать далее...)</code>.</p>
+<p>Создание реализации по умолчанию не требует от нас изменений чего-либо в реализации <code>Summary</code> для <code>Tweet</code> из Листинга 10-13. Причина заключается в том, что синтаксис для переопределения реализации по умолчанию является таким же, как синтаксис для реализации метода трейта, который не имеет реализации по умолчанию.</p>
+<p>Реализации по умолчанию могут вызывать другие методы в том же трейте, даже если эти другие методы не имеют реализации по умолчанию. Таким образом, трейт может предоставить много полезной функциональности, а от разработчиков требует указывать только небольшую его часть. Например, мы могли бы определить трейт <code>Summary</code>, имеющий метод <code>summarize_author</code> без реализации по умолчанию, а затем определить метод <code>summarize</code> который имеет реализацию по умолчанию, вызывающую метод <code>summarize_author</code>:</p>
+<pre><code class="language-rust noplayground">pub trait Summary {
+    fn summarize_author(&amp;self) -&gt; String;
+
+    fn summarize(&amp;self) -&gt; String {
+        format!("(Читать далее, от {}...)", self.summarize_author())
+    }
+}
+<span class="boring">
+</span><span class="boring">pub struct Tweet {
+</span><span class="boring">    pub username: String,
+</span><span class="boring">    pub content: String,
+</span><span class="boring">    pub reply: bool,
+</span><span class="boring">    pub retweet: bool,
+</span><span class="boring">}
+</span><span class="boring">
+</span><span class="boring">impl Summary for Tweet {
+</span><span class="boring">    fn summarize_author(&amp;self) -&gt; String {
+</span><span class="boring">        format!("@{}", self.username)
+</span><span class="boring">    }
+</span><span class="boring">}</span></code></pre>
+<p>Чтобы использовать такую версию трейта <code>Summary</code>, при реализации трейта для типа нужно определить только метод <code>summarize_author</code>:</p>
+<pre><code class="language-rust ignore"><span class="boring">pub trait Summary {
+</span><span class="boring">    fn summarize_author(&amp;self) -&gt; String;
+</span><span class="boring">
+</span><span class="boring">    fn summarize(&amp;self) -&gt; String {
+</span><span class="boring">        format!("(Читать далее, от {}...)", self.summarize_author())
+</span><span class="boring">    }
+</span><span class="boring">}
+</span><span class="boring">
+</span><span class="boring">pub struct Tweet {
+</span><span class="boring">    pub username: String,
+</span><span class="boring">    pub content: String,
+</span><span class="boring">    pub reply: bool,
+</span><span class="boring">    pub retweet: bool,
+</span><span class="boring">}
+</span><span class="boring">
+</span>impl Summary for Tweet {
+    fn summarize_author(&amp;self) -&gt; String {
+        format!("@{}", self.username)
+    }
+}</code></pre>
+<p>После того, как мы определим <code>summarize_author</code>, можно вызвать <code>summarize</code> для экземпляров структуры <code>Tweet</code>, и реализация по умолчанию метода <code>summarize</code> будет вызывать определение <code>summarize_author</code>, которое мы уже предоставили. Так как мы реализовали метод <code>summarize_author</code> трейта <code>Summary</code>, то трейт даёт нам поведение метода <code>summarize</code> без необходимости писать ещё какой-либо код. Вот как это выглядит:</p>
+<pre><code class="language-rust ignore"><span class="boring">use aggregator::{self, Summary, Tweet};
+</span><span class="boring">
+</span><span class="boring">fn main() {
+</span>    let tweet = Tweet {
+        username: String::from("horse_ebooks"),
+        content: String::from(
+            "конечно, вы уже наверное знаете, народ, ...",
+        ),
+        reply: false,
+        retweet: false,
+    };
+
+    println!("1 новый твит: {}", tweet.summarize());
+<span class="boring">}</span></code></pre>
+<p>Этот код печатает <code>1 новый твит: (Читать далее, от @horse_ebooks...)</code></p>
+<p>Обратите внимание, что невозможно вызвать реализацию по умолчанию из переопределённой реализации того же метода.</p>
+<h3 id="Трейты-как-параметры"><a class="header" href="#Трейты-как-параметры">Трейты как параметры</a></h3>
+<p>Теперь, когда вы знаете, как определять и реализовывать трейты, мы можем изучить, как использовать трейты, чтобы определить функции, которые принимают много различных типов. Мы используем трейт <code>Summary</code> (реализованный для типов <code>NewsArticle</code> и <code>Tweet</code>) в Листинге 10-13, чтобы определить функцию <code>notify</code>, которая вызывает метод <code>summarize</code> для его параметра <code>item</code> некоторого типа, реализующего трейт <code>Summary</code>. Для этого мы используем синтаксис <code>impl Trait</code>:</p>
+<pre><code class="language-rust ignore"><span class="boring">pub trait Summary {
+</span><span class="boring">    fn summarize(&amp;self) -&gt; String;
+</span><span class="boring">}
+</span><span class="boring">
+</span><span class="boring">pub struct NewsArticle {
+</span><span class="boring">    pub headline: String,
+</span><span class="boring">    pub location: String,
+</span><span class="boring">    pub author: String,
+</span><span class="boring">    pub content: String,
+</span><span class="boring">}
+</span><span class="boring">
+</span><span class="boring">impl Summary for NewsArticle {
+</span><span class="boring">    fn summarize(&amp;self) -&gt; String {
+</span><span class="boring">        format!("{} ({} из {})", self.headline, self.author, self.location)
+</span><span class="boring">    }
+</span><span class="boring">}
+</span><span class="boring">
+</span><span class="boring">pub struct Tweet {
+</span><span class="boring">    pub username: String,
+</span><span class="boring">    pub content: String,
+</span><span class="boring">    pub reply: bool,
+</span><span class="boring">    pub retweet: bool,
+</span><span class="boring">}
+</span><span class="boring">
+</span><span class="boring">impl Summary for Tweet {
+</span><span class="boring">    fn summarize(&amp;self) -&gt; String {
+</span><span class="boring">        format!("{}: {}", self.username, self.content)
+</span><span class="boring">    }
+</span><span class="boring">}
+</span><span class="boring">
+</span>pub fn notify(item: &amp;impl Summary) {
+    println!("Срочные новости! {}", item.summarize());
+}</code></pre>
+<p>Вместо конкретного типа у параметра <code>item</code> указывается ключевое слово <code>impl</code> и имя трейта. Этот параметр может принимать любой тип, который реализует указанный трейт. В теле <code>notify</code> мы можем вызывать любые методы у экземпляра <code>item</code>, которые приходят с трейтом <code>Summary</code>, такие как метод <code>summarize</code>. Мы можем вызвать <code>notify</code> и передать в него любой экземпляр <code>NewsArticle</code> или <code>Tweet</code>. Код, который вызывает данную функцию с любым другим типом, таким как <code>String</code> или <code>i32</code>, не будет компилироваться, потому что эти типы не реализуют трейт <code>Summary</code>.</p>
+<!-- Old headings. Do not remove or links may break. -->
+<p><a id="fixing-the-largest-function-with-trait-bounds"></a></p>
+<h4 id="Ограничение-по-трейтам"><a class="header" href="#Ограничение-по-трейтам">Ограничение по трейтам</a></h4>
+<p>Синтаксис <code>impl Trait</code> работает для простых случаев, но на самом деле является  синтаксическим сахаром для более длинной конструкции — <em>ограничения по трейтам</em>:</p>
+<pre><code class="language-rust ignore">pub fn notify&lt;T: Summary&gt;(item: &amp;T) {
+    println!("Срочные новости! {}", item.summarize());
+}</code></pre>
+<p>Эта более длинная форма эквивалентна предыдущему примеру, но она более многословна. Мы помещаем объявление параметра обобщённого типа с ограничением по трейту после двоеточия внутри угловых скобок.</p>
+<p>Синтаксис <code>impl Trait</code> удобен, он более коротко выражает нужное в простых случах, в то время как более полный синтаксис с ограничением по трейтам может выразить большую сложность прочих случаев. Например, у нас может быть два аргумента, которые реализуют трейт <code>Summary</code>. Использование для этого синтаксиса <code>impl Trait</code> выглядит так:</p>
+<pre><code class="language-rust ignore">pub fn notify(item1: &amp;impl Summary, item2: &amp;impl Summary) {</code></pre>
+<p>Использовать <code>impl Trait</code> удобнее, если мы хотим разрешить функции иметь разные типы для <code>item1</code> и <code>item2</code> (но оба типа должны реализовывать <code>Summary</code>). Если же мы хотим заставить оба параметра иметь один и тот же тип, то нам следует использовать вот такое ограничение по трейту:</p>
+<pre><code class="language-rust ignore">pub fn notify&lt;T: Summary&gt;(item1: &amp;T, item2: &amp;T) {</code></pre>
+<p>Обобщённый тип <code>T</code> указан для типов параметров <code>item1</code> и <code>item2</code> и ограничивает функцию так, что конкретные значения типов аргументов <code>item1</code> и <code>item2</code> должны быть одинаковыми.</p>
+<h4 id="Ограничение-по-нескольким-трейтам-с-помощью-оператора-"><a class="header" href="#Ограничение-по-нескольким-трейтам-с-помощью-оператора-">Ограничение по нескольким трейтам с помощью оператора <code>+</code></a></h4>
+<p>Мы также можем указать ограничение по более чем одному трейту. Допустим, мы хотим, чтобы функция <code>notify</code> могла содержимое свеого аргумента и выводить на экран целиком, и получать его сводку с помощью метода <code>summarize</code>. Для этого мы указываем, что параметр <code>item</code> функции <code>notify</code> должен реализовывать два трейта: <code>Display</code> и <code>Summary</code>. Это делается с помощью оператора <code>+</code>:</p>
+<pre><code class="language-rust ignore">pub fn notify(item: &amp;(impl Summary + Display)) {</code></pre>
+<p>Оператор <code>+</code> также можно использовать и для ограничения обобщённого типа по его трейтам:</p>
+<pre><code class="language-rust ignore">pub fn notify&lt;T: Summary + Display&gt;(item: &amp;T) {</code></pre>
+<p>Поскольку ограничение по двум трейтам предписывает аргументу реализовывать оба трейта, тело функции <code>notify</code> может и вызывать <code>summarize</code>, и использовать <code>{}</code> для использования <code>item</code> в форматированном выводе.</p>
+<h4 id="Вынос-за-where-ограничений-по-трейтам"><a class="header" href="#Вынос-за-where-ограничений-по-трейтам">Вынос за <code>where</code> ограничений по трейтам</a></h4>
+<p>Использование слишком большого количества ограничений по трейтам имеет свои недостатки. Каждый обобщённый тип имеет свои ограничения по трейтам, поэтому функции с несколькими параметрами обобщённого типа могут содержать очень много информации об ограничениях между названием функции и списком её параметров, что затрудняет чтение её сигнатуры. По этой причине в Rust есть альтернативный синтаксис для определения ограничений по трейтам: размещение их за ключевым словом <code>where</code> после сигнатуры функции. Поэтому вместо того, чтобы писать так:</p>
+<pre><code class="language-rust ignore">fn some_function&lt;T: Display + Clone, U: Clone + Debug&gt;(t: &amp;T, u: &amp;U) -&gt; i32 {</code></pre>
+<p>можно использовать <code>where</code>, вот так:</p>
+<pre><code class="language-rust ignore">fn some_function&lt;T, U&gt;(t: &amp;T, u: &amp;U) -&gt; i32
+where
+    T: Display + Clone,
+    U: Clone + Debug,
+{
+<span class="boring">    unimplemented!()
+</span><span class="boring">}</span></code></pre>
+<p>Сигнатура этой функции менее загромождена: название функции, список параметров, и возвращаемый тип находятся рядом, а сигнатура не загромождена оговорками про ограничения по трейтам.</p>
+<h3 id="Возврат-значений-типа-реализующего-определённые-трейты"><a class="header" href="#Возврат-значений-типа-реализующего-определённые-трейты">Возврат значений типа, реализующего определённые трейты</a></h3>
+<p>Также можно использовать запись <code>impl Trait</code> вместо конкретного типа возвращаемого значения в сигнатуре функции, чтобы вернуть значение некоторого типа, реализующего трейт:</p>
+<pre><code class="language-rust ignore"><span class="boring">pub trait Summary {
+</span><span class="boring">    fn summarize(&amp;self) -&gt; String;
+</span><span class="boring">}
+</span><span class="boring">
+</span><span class="boring">pub struct NewsArticle {
+</span><span class="boring">    pub headline: String,
+</span><span class="boring">    pub location: String,
+</span><span class="boring">    pub author: String,
+</span><span class="boring">    pub content: String,
+</span><span class="boring">}
+</span><span class="boring">
+</span><span class="boring">impl Summary for NewsArticle {
+</span><span class="boring">    fn summarize(&amp;self) -&gt; String {
+</span><span class="boring">        format!("{} ({} из {})", self.headline, self.author, self.location)
+</span><span class="boring">    }
+</span><span class="boring">}
+</span><span class="boring">
+</span><span class="boring">pub struct Tweet {
+</span><span class="boring">    pub username: String,
+</span><span class="boring">    pub content: String,
+</span><span class="boring">    pub reply: bool,
+</span><span class="boring">    pub retweet: bool,
+</span><span class="boring">}
+</span><span class="boring">
+</span><span class="boring">impl Summary for Tweet {
+</span><span class="boring">    fn summarize(&amp;self) -&gt; String {
+</span><span class="boring">        format!("{}: {}", self.username, self.content)
+</span><span class="boring">    }
+</span><span class="boring">}
+</span><span class="boring">
+</span>fn returns_summarizable() -&gt; impl Summary {
+    Tweet {
+        username: String::from("horse_ebooks"),
+        content: String::from(
+            "конечно, вы уже наверное знаете, народ, ...",
+        ),
+        reply: false,
+        retweet: false,
+    }
+}</code></pre>
+<p>Используя <code>impl Summary</code> для типа возвращаемого значения, мы указываем, что функция <code>returns_summarizable</code> возвращает некоторый тип, который реализует трейт <code>Summary</code>, не обозначая конкретный тип. В этом случае <code>returns_summarizable</code> возвращает <code>Tweet</code>, но код, вызывающий эту функцию, этого не знает.</p>
+<p>Возможность возвращать тип, который определяется только реализуемым им трейтом, особенно полезна в контексте замыканий и итераторов, которые мы рассмотрим в Главе 13. Замыкания и итераторы создают типы, которые знает только компилятор, или же типы, которые очень долго указывать. Запись <code>impl Trait</code> позволяет кратко указать, что функция возвращает некоторый тип, который реализует трейт <code>Iterator</code> без необходимости писать очень длинный тип.</p>
+<p>Однако, <code>impl Trait</code> можно использовать, только если функция всегда возвращает значение одного типа. Например, данный код, который возвращает значение или типа <code>NewsArticle</code>, или типа <code>Tweet</code>, но в качестве возвращаемого типа объявляет <code>impl Summary</code>, не будет работать:</p>
+<pre><code class="language-rust ignore does_not_compile"><span class="boring">pub trait Summary {
+</span><span class="boring">    fn summarize(&amp;self) -&gt; String;
+</span><span class="boring">}
+</span><span class="boring">
+</span><span class="boring">pub struct NewsArticle {
+</span><span class="boring">    pub headline: String,
+</span><span class="boring">    pub location: String,
+</span><span class="boring">    pub author: String,
+</span><span class="boring">    pub content: String,
+</span><span class="boring">}
+</span><span class="boring">
+</span><span class="boring">impl Summary for NewsArticle {
+</span><span class="boring">    fn summarize(&amp;self) -&gt; String {
+</span><span class="boring">        format!("{} ({} из {})", self.headline, self.author, self.location)
+</span><span class="boring">    }
+</span><span class="boring">}
+</span><span class="boring">
+</span><span class="boring">pub struct Tweet {
+</span><span class="boring">    pub username: String,
+</span><span class="boring">    pub content: String,
+</span><span class="boring">    pub reply: bool,
+</span><span class="boring">    pub retweet: bool,
+</span><span class="boring">}
+</span><span class="boring">
+</span><span class="boring">impl Summary for Tweet {
+</span><span class="boring">    fn summarize(&amp;self) -&gt; String {
+</span><span class="boring">        format!("{}: {}", self.username, self.content)
+</span><span class="boring">    }
+</span><span class="boring">}
+</span><span class="boring">
+</span>fn returns_summarizable(switch: bool) -&gt; impl Summary {
+    if switch {
+        NewsArticle {
+            headline: String::from(
+                "«Питтсбург Пингвинз» выиграли Кубок Стэнли!",
+            ),
+            location: String::from("Питтсбург, штат Пенсильвания, США"),
+            author: String::from("Пингвин Айсбург"),
+            content: String::from(
+                "«Питтсбург Пингвинз» вновь оказалась лучшей \
+                 хоккейной командой в НХЛ.",
+            ),
+        }
+    } else {
+        Tweet {
+            username: String::from("horse_ebooks"),
+            content: String::from(
+                "конечно, вы уже наверное знаете, народ, ...",
+            ),
+            reply: false,
+            retweet: false,
+        }
+    }
+}</code></pre>
+<p>Неоднозначность возвращаемого типа не допустима из-за того, как синтаксис <code>impl Trait</code> реализован в компиляторе. Мы рассмотрим, как (всё же) написать функцию с подобным поведением в разделе <a href="ch18-02-trait-objects.html#%D0%98%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-%D1%82%D1%80%D0%B5%D0%B9%D1%82-%D0%BE%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%D0%BE%D0%B2-%D0%BF%D0%BE%D0%B7%D0%B2%D0%BE%D0%BB%D1%8F%D1%8E%D1%89%D0%B8%D1%85-%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D1%8C-%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%B8%D1%8F-%D1%80%D0%B0%D0%B7%D0%BD%D1%8B%D1%85-%D1%82%D0%B8%D0%BF%D0%BE%D0%B2">"Использование трейт-объектов, позволяющих использовать значения разных типов"</a><!-- ignore --> Главы 18.</p>
+<h3 id="Использование-ограничений-по-трейту-для-избирательной-реализации-методов"><a class="header" href="#Использование-ограничений-по-трейту-для-избирательной-реализации-методов">Использование ограничений по трейту для избирательной реализации методов</a></h3>
+<p>Ограничив по трейту обобщённый тип при блоке <code>impl</code>, мы можем избирательно реализовать методы для тех типов, которые реализуют указанные трейты. Например, тип <code>Pair&lt;T&gt;</code> в Листинге 10-15 всегда реализует функцию <code>new</code>, возвращающую новый экземпляр <code>Pair&lt;T&gt;</code> (напомним из раздела <a href="ch05-03-method-syntax.html#%D0%9E%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BC%D0%B5%D1%82%D0%BE%D0%B4%D0%BE%D0%B2">"Определение методов"</a><!-- ignore --> Главы 5, что <code>Self</code> — это псевдоним типа при блоке <code>impl</code>; в нашем случае этим типом является <code>Pair&lt;T&gt;</code>). Но в следующем блоке <code>impl Pair&lt;T&gt;</code> реализует метод <code>cmp_display</code> только в том случае, если его тип <code>T</code> реализует трейт <code>PartialOrd</code> (который позволяет сравнивать значения), и трейт <code>Display</code> (который позволяет печатать значения).</p>
+<Listing number="10-15" file-name="src/lib.rs" caption="Conditionally implementing methods on a generic type depending on trait bounds">
+<pre><code class="language-rust noplayground">use std::fmt::Display;
+
+struct Pair&lt;T&gt; {
+    x: T,
+    y: T,
+}
+
+impl&lt;T&gt; Pair&lt;T&gt; {
+    fn new(x: T, y: T) -&gt; Self {
+        Self { x, y }
+    }
+}
+
+impl&lt;T: Display + PartialOrd&gt; Pair&lt;T&gt; {
+    fn cmp_display(&amp;self) {
+        if self.x &gt;= self.y {
+            println!("Слева ({}) — наибольшее", self.x);
+        } else {
+            println!("Справа ({}) — наибольшее", self.y);
+        }
+    }
+}</code></pre>
+</Listing>
+<p>Мы также можем избирательно реализовать трейт для всех типов, которые реализуют другой трейт. Реализация трейта для всех типов, которые удовлетворяют ограничениям по трейтам, называются <em>сплошной реализацией</em>, и она широко используется в стандартной библиотеке Rust. Например, стандартная библиотека реализует трейт <code>ToString</code> для всех типов, которые реализуют трейт <code>Display</code>. Блок <code>impl</code>, делающий это, выглядит примерно так:</p>
+<pre><code class="language-rust ignore">impl&lt;T: Display&gt; ToString for T {
+    // --код сокращён--
+}</code></pre>
+<p>Благодаря такой сплошной реализации можно вызвать метод <code>to_string</code>, определённый трейтом <code>ToString</code>, для любого типа, который реализует трейт <code>Display</code>. Например, мы можем превратить целые числа в их соответствующие значения <code>String</code>, потому что целые числа реализуют трейт <code>Display</code>:</p>
+<pre><pre class="playground"><code class="language-rust edition2021"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let s = 3.to_string();
+<span class="boring">}</span></code></pre></pre>
+<p>В документации к трейтам, их сплошные реализации можно увидеть в разделе "Implementors".</p>
+<p>Трейты и ограничения по трейтам позволяют нам писать более абстрактный код с помощью параметров обобщённого типа, а также позволяют указать компилятору, что мы хотим, чтобы у обобщённого типа было опредёленное поведение. Затем компилятор может использовать информацию об ограничениях по трейтам, чтобы проверить, что все конкретные типы, используемые в нашем коде, реализуют нужное поведение. В языках с динамической типизацией мы получили бы ошибку во время выполнения, если бы вызвали метод для типа, в котором этот метод не определен. Но Rust переносит эти ошибки на время компиляции, а потому он обязывает нас устранять проблемы ещё до того, как код будет запущен. Кроме того, нам не нужно писать код, который проверяет поведение во время выполнения, потому что мы уже проверили его во время компиляции. Это повышает производительность без необходимости отказываться от гибкости обобщённых типов, функций и методов.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="ch10-01-syntax.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="ch10-03-lifetime-syntax.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="ch10-01-syntax.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="ch10-03-lifetime-syntax.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="ferris.js"></script>
+        <script src="theme/language-picker.js"></script>
+
+
+    </div>
+    </body>
+</html>

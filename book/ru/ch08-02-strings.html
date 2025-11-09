@@ -1,0 +1,509 @@
+<!DOCTYPE HTML>
+<html lang="ru" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Хранение текста в кодировке UTF-8 с помощью строк - The Rust Programming Language</title>
+
+
+        <!-- Custom HTML head -->
+
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-L455DH98TK"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+        
+          gtag('config', 'G-L455DH98TK');
+        </script>
+        
+        
+        <script>
+            (function () {
+                // See these pages for details:
+                // https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls
+                // https://developers.google.com/search/docs/crawling-indexing/javascript/javascript-seo-basics
+        
+                function gen_canonical_href(lang) {
+        
+                    let base = "https://rust-lang-translations.org/book";
+        
+                    let canonical_href;
+                    if (lang == "en") {
+                        canonical_href = `${base}/ch08-02-strings.md`;
+                    } else {
+                        canonical_href = `${base}/${lang}/ch08-02-strings.md`;
+                    }
+                    canonical_href = canonical_href.slice(0, -"md".length) + "html";
+                    if (canonical_href.endsWith("/index.html")) {
+                        canonical_href = canonical_href.slice(0, -"index.html".length);
+                    }
+                    return canonical_href;
+                }
+        
+                const canonical_href = gen_canonical_href("ru");
+
+                let link = document.createElement("link");
+                link.rel = "canonical";
+                link.href = canonical_href;
+                document.head.appendChild(link);
+        
+        
+                const langs = ["en"  , "ja"  , "ru"  , "ko" ];
+        
+                for (const lang of langs) {
+                    const canonical_href = gen_canonical_href(lang);
+        
+                    let link = document.createElement("link");
+                    link.rel = "alternate";
+                    link.hreflang = lang;
+                    link.href = canonical_href;
+                    document.head.appendChild(link);
+                }
+            })()
+        </script>
+        
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="ferris.css">
+        <link rel="stylesheet" href="theme/2018-edition.css">
+        <link rel="stylesheet" href="theme/semantic-notes.css">
+        <link rel="stylesheet" href="theme/listing.css">
+        <link rel="stylesheet" href="theme/language-picker.css">
+
+
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">The Rust Programming Language</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/rust-lang-translations/project" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="Хранение-текста-в-кодировке-utf-8-с-помощью-строк"><a class="header" href="#Хранение-текста-в-кодировке-utf-8-с-помощью-строк">Хранение текста в кодировке UTF-8 с помощью строк</a></h2>
+<p>Мы уже говорили о строках в Главе 4, но пришло время рассмотреть их более подробно. Новички в Rust обычно застревают на строках из-за трёх причин: 1) пристрастие компилятора Rust к выявлению возможных ошибок, 2) строки сложнее, чем (как многим программистам кажется) могли бы быть, и 3) UTF-8. Эти факторы объединяются таким образом, что текущая тема может показаться сложной, если вы пришли из других языков программирования.</p>
+<p>Мы говорим о строках в контексте коллекций, потому что строки в Rust — это список байтов плюс некоторые методы для работы с ними как с текстом. В этом разделе мы поговорим об операциях над <code>String</code>, такими как создание, обновление и чтение. Мы также обсудим, чем <code>String</code> отличается от других коллекций, а именно, как обращение к <code>String</code> по индексу осложняется различиями между тем, как люди и компьютеры интерпретируют данные в <code>String</code>.</p>
+<h3 id="Что-такое-строка"><a class="header" href="#Что-такое-строка">Что такое строка?</a></h3>
+<p>Сначала мы определим значение термина <em>строка</em>. В ядре языка Rust есть лишь один строковый тип — срез строки <code>str</code>, обычно используемый в заимствованном виде как <code>&amp;str</code>. В Главе 4 мы говорили о <em>срезах строк</em>, которые являются ссылками на некоторые строковые данные в кодировке UTF-8. Например, строковые литералы хранятся в двоичном файле программы и потому являются срезами строк.</p>
+<p>Тип <code>String</code>, предоставляемый стандартной библиотекой Rust, не встроен в ядро языка. Он является расширяемым, изменяемым, владеющим строковым типом текста в кодировке UTF-8. Когда программисты на Rust говорят о "строках", то они обычно имеют в виду как тип <code>String</code>, так и строковые срезы <code>&amp;str</code>, а не какой-либо один из них. Хотя этот раздел в основном посвящён <code>String</code>, оба типа интенсивно используются в стандартной библиотеке Rust. Оба — и <code>String</code>, и строковые срезы — работают по кодировке UTF-8.</p>
+<h3 id="Создание-новых-строк"><a class="header" href="#Создание-новых-строк">Создание новых строк</a></h3>
+<p>Многие из тех операций, которые доступны <code>Vec&lt;T&gt;</code>, доступны также и для <code>String</code>, потому что <code>String</code> фактически реализован как обёртка вокруг вектора байтов с некоторыми дополнительными гарантиями, ограничениями и возможностями. Примером функции, работа которой одинакова что для <code>Vec&lt;T&gt;</code>, что для <code>String</code>, является функция <code>new</code>, создающая новый экземпляр типа. Посмотрите на Листинг 8-11.</p>
+<Listing number="8-11" caption="Creating a new, empty `String`">
+<pre><pre class="playground"><code class="language-rust edition2021"><span class="boring">fn main() {
+</span>    let mut s = String::new();
+<span class="boring">}</span></code></pre></pre>
+</Listing>
+<p>Эта строка создаёт новую пустую строку <code>s</code>, в которую мы можем затем загрузить данные. Часто у нас есть некоторые начальные данные, которые мы хотим назначить строке. Для этого мы используем метод <code>to_string</code> доступный для любого типа, который реализует трейт <code>Display</code>, как у строковых литералов. Листинг 8-12 показывает эти два способа.</p>
+<Listing number="8-12" caption="Using the `to_string` method to create a `String` from a string literal">
+<pre><pre class="playground"><code class="language-rust edition2021"><span class="boring">fn main() {
+</span>    let data = "исходный текст";
+
+    let s = data.to_string();
+
+    // Этот метод также можно вызвать напрямую на литерале:
+    let s = "исходный текст".to_string();
+<span class="boring">}</span></code></pre></pre>
+</Listing>
+<p>Этот код создаёт строку с текстом <code>исходный текст</code>.</p>
+<p>Мы также можем использовать функцию <code>String::from</code> для создания <code>String</code> из строкового литерала. Код Листинга 8-13 является эквивалентным коду из Листинга 8-12, использующему функцию <code>to_string</code>:</p>
+<Listing number="8-13" caption="Using the `String::from` function to create a `String` from a string literal">
+<pre><pre class="playground"><code class="language-rust edition2021"><span class="boring">fn main() {
+</span>    let s = String::from("исходный текст");
+<span class="boring">}</span></code></pre></pre>
+</Listing>
+<p>Поскольку строки используются для очень многих вещей, для них есть много инструментов, решающих одну и ту же задачу. Некоторые из них могут показаться избыточными, но у всех них есть свой смысл! В данном случае, <code>String::from</code> и <code>to_string</code> делают одно и тоже, поэтому выбор зависит от того, какой из них будет короче и понятнее.</p>
+<p>Помните, что строки хранятся в кодировке UTF-8, поэтому в них можно использовать любой правильно закодированный текст, как показано в Листинге 8-14.</p>
+<Listing number="8-14" caption="Storing greetings in different languages in strings">
+<pre><pre class="playground"><code class="language-rust edition2021"><span class="boring">fn main() {
+</span>    let hello = String::from("السلام عليكم");
+    let hello = String::from("Dobrý den");
+    let hello = String::from("Hello");
+    let hello = String::from("שלום");
+    let hello = String::from("नमस्ते");
+    let hello = String::from("こんにちは");
+    let hello = String::from("안녕하세요");
+    let hello = String::from("你好");
+    let hello = String::from("Olá");
+    let hello = String::from("Здравствуйте");
+    let hello = String::from("Hola");
+<span class="boring">}</span></code></pre></pre>
+</Listing>
+<p>Всё это — корректные значения типа <code>String</code>.</p>
+<h3 id="Обновление-текста"><a class="header" href="#Обновление-текста">Обновление текста</a></h3>
+<p>Строка <code>String</code> может увеличиваться в размере, а её содержимое может меняться, как и содержимое <code>Vec&lt;T&gt;</code> при вставке в него дополнительных данных. Кроме того, можно использовать оператор <code>+</code> или макрос <code>format!</code> для объединения нескольких <code>String</code> в одну.</p>
+<h4 id="Присоединение-к-строке-с-помощью-push_str-и-push"><a class="header" href="#Присоединение-к-строке-с-помощью-push_str-и-push">Присоединение к строке с помощью <code>push_str</code> и <code>push</code></a></h4>
+<p>Мы можем нарастить <code>String</code>, используя метод <code>push_str</code> который добавит в исходное значение новый строковый срез, как показано в Листинге 8-15.</p>
+<Listing number="8-15" caption="Appending a string slice to a `String` using the `push_str` method">
+<pre><pre class="playground"><code class="language-rust edition2021"><span class="boring">fn main() {
+</span>    let mut s = String::from("foo");
+    s.push_str("bar");
+<span class="boring">}</span></code></pre></pre>
+</Listing>
+<p>После этих двух строк кода <code>s</code> будет содержать <code>foobar</code>. Метод <code>push_str</code> принимает строковый срез, потому что мы не всегда хотим владеть входным параметром. Например, код в Листинге 8-16 показывает случай, когда будет нежелательно поведение, при котором мы не сможем использовать <code>s2</code> после её добавления к содержимому <code>s1</code>.</p>
+<Listing number="8-16" caption="Using a string slice after appending its contents to a `String`">
+<pre><pre class="playground"><code class="language-rust edition2021"><span class="boring">fn main() {
+</span>    let mut s1 = String::from("foo");
+    let s2 = "bar";
+    s1.push_str(s2);
+    println!("s2: {s2}");
+<span class="boring">}</span></code></pre></pre>
+</Listing>
+<p>Если бы метод <code>push_str</code> стал владельцем переменной <code>s2</code>, мы не смогли бы напечатать его значение в последней строке. Однако этот код работает так, как мы ожидали!</p>
+<p>Метод <code>push</code> принимает один символ в качестве параметра и добавляет его к <code>String</code>. В Листинге 8-17 показан код, добавляющий букву <em>e</em> к <code>String</code>, используя метод <code>push</code>.</p>
+<Listing number="8-17" caption="Adding one character to a `String` value using `push`">
+<pre><pre class="playground"><code class="language-rust edition2021"><span class="boring">fn main() {
+</span>    let mut s = String::from("not");
+    s.push('e');
+<span class="boring">}</span></code></pre></pre>
+</Listing>
+<p>В результате <code>s</code> будет содержать <code>note</code>.</p>
+<h4 id="Объединение-строк-с-помощью-оператора--или-макроса-format"><a class="header" href="#Объединение-строк-с-помощью-оператора--или-макроса-format">Объединение строк с помощью оператора <code>+</code> или макроса <code>format!</code></a></h4>
+<p>Часто хочется объединить две существующие строки. Один из возможных способов — это использовать оператор <code>+</code>, как показано в Листинге 8-18.</p>
+<Listing number="8-18" caption="Using the `+` operator to combine two `String` values into a new `String` value">
+<pre><pre class="playground"><code class="language-rust edition2021"><span class="boring">fn main() {
+</span>    let s1 = String::from("Hello, ");
+    let s2 = String::from("world!");
+    let s3 = s1 + &amp;s2; // обратите внимание, что s1 здесь была перемещена в метод
+                       // и далее не может быть использована
+<span class="boring">}</span></code></pre></pre>
+</Listing>
+<p>Строка <code>s3</code> будет содержать <code>Hello, world!</code>. Причина того, что <code>s1</code> после добавления больше не действительна, и причина, по которой мы использовали ссылку на <code>s2</code>, имеют отношение к сигнатуре метода, вызываемого при использовании оператора <code>+</code>. Оператор <code>+</code> использует метод <code>add</code>, чья сигнатура выглядит примерно так:</p>
+<pre><code class="language-rust ignore">fn add(self, s: &amp;str) -&gt; String {</code></pre>
+<p>В стандартной библиотеке вы увидите метод <code>add</code> определённым с использованием обобщённых и связанных типов. Здесь мы привели вам сигнатуру, подставив конкретные типы, заменяющие обобщённый; это и происходит, когда данный метод вызывается со значениями <code>String</code>. Мы обсудим обобщённые типы в Главе 10. Эта сигнатура даёт нам ключ к пониманию особенностей оператора <code>+</code>.</p>
+<p>Во-первых, перед <code>s2</code> мы видим <code>&amp;</code>, что означает, что мы складываем <em>ссылку</em> на вторую строку с первой строкой. Это происходит из-за параметра <code>s</code> в функции <code>add</code>: мы можем добавить только <code>&amp;str</code> к <code>String</code>; мы не можем сложить два значения <code>String</code>. Но подождите: тип <code>&amp;s2</code> — это <code>&amp;String</code>, а не <code>&amp;str</code>, который мы определили во втором параметре <code>add</code>. Так почему код в Листинге 8-18 компилируется?</p>
+<p>Причина, по которой мы можем использовать <code>&amp;s2</code> в вызове <code>add</code> заключается в том, что компилятор может <em>привести</em> аргумент типа <code>&amp;String</code> к типу <code>&amp;str</code>. Когда мы вызываем метод <code>add</code>, Rust использует приведение ссылок при разыменовывании, которое превращает <code>&amp;s2</code> в <code>&amp;s2[..]</code>. Мы подробно обсудим приведение ссылок при разыменовывании в Главе 15. Так как <code>add</code> не забирает во владение параметр <code>s</code>, <code>s2</code> по прежнему будет действительной <code>String</code> после операции конкатенации.</p>
+<p>Во-вторых, как можно видеть в сигнатуре, <code>add</code> забирает <code>self</code> во владение, потому что <code>self</code> в сигнатуре указан <em>без</em> <code>&amp;</code>. Это означает, что <code>s1</code> в Листинге 8-18 будет перемещён в вызов <code>add</code> и больше не будет действителен после этого вызова. Не смотря на то, что код <code>let s3 = s1 + &amp;s2;</code> выглядит так, как будто он скопирует обе строки и создаст новую, эта инструкция фактически забирает во владение переменную <code>s1</code>, присоединяет к ней копию содержимого <code>s2</code>, а затем возвращает владение результатом. Другими словами, это выглядит, как будто код создаёт множество копий, но это не так; данная реализация более эффективна, чем копирование.</p>
+<p>Если нужно объединить несколько строк, использование оператора <code>+</code> приводит к громоздким конструкциям:</p>
+<pre><pre class="playground"><code class="language-rust edition2021"><span class="boring">fn main() {
+</span>    let s1 = String::from("tic");
+    let s2 = String::from("tac");
+    let s3 = String::from("toe");
+
+    let s = s1 + "-" + &amp;s2 + "-" + &amp;s3;
+<span class="boring">}</span></code></pre></pre>
+<p>Здесь переменная <code>s</code> будет содержать <code>tic-tac-toe</code>. С множеством символов <code>+</code> и <code>"</code> становится трудно понять, что происходит. Для более сложного комбинирования строк можно использовать макрос <code>format!</code>:</p>
+<pre><pre class="playground"><code class="language-rust edition2021"><span class="boring">fn main() {
+</span>    let s1 = String::from("tic");
+    let s2 = String::from("tac");
+    let s3 = String::from("toe");
+
+    let s = format!("{s1}-{s2}-{s3}");
+<span class="boring">}</span></code></pre></pre>
+<p>Этот код так же связывает переменную <code>s</code> со значением <code>tic-tac-toe</code>. Макрос <code>format!</code> работает тем же образом, что и макрос <code>println!</code>, но вместо вывода на экран возвращает результирующую <code>String</code>. Версия кода с использованием <code>format!</code> значительно легче читается: кроме того, код, сгенерированный макросом <code>format!</code>, использует ссылки, а значит не забирает во владение ни одну из переданных строк.</p>
+<h3 id="Обращение-к-строке-по-индексу"><a class="header" href="#Обращение-к-строке-по-индексу">Обращение к строке по индексу</a></h3>
+<p>Доступ к отдельным символам в строке с помощью взятия ссылки на них по индексу является допустимой и распространённой операцией во многих других языках программирования. Тем не менее, если вы попытаетесь получить доступ к частям <code>String</code>, используя синтаксис индексации, то получите ошибку. Рассмотрим неверный код Листинга 8-19.</p>
+<Listing number="8-19" caption="Attempting to use indexing syntax with a String">
+<pre><code class="language-rust ignore does_not_compile"><span class="boring">fn main() {
+</span>    let s1 = String::from("hello");
+    let h = s1[0];
+<span class="boring">}</span></code></pre>
+</Listing>
+<p>Этот код приведёт к следующей ошибке:</p>
+<pre><code class="language-console">$ cargo run
+   Compiling collections v0.1.0 (file:///projects/collections)
+error[E0277]: the type `str` cannot be indexed by `{integer}`
+ --&gt; src/main.rs:3:16
+  |
+3 |     let h = s1[0];
+  |                ^ string indices are ranges of `usize`
+  |
+  = help: the trait `SliceIndex&lt;str&gt;` is not implemented for `{integer}`, which is required by `String: Index&lt;_&gt;`
+  = note: you can use `.chars().nth()` or `.bytes().nth()`
+          for more information, see chapter 8 in The Book: &lt;https://doc.rust-lang.org/book/ch08-02-strings.html#indexing-into-strings&gt;
+  = help: the trait `SliceIndex&lt;[_]&gt;` is implemented for `usize`
+  = help: for that trait implementation, expected `[_]`, found `str`
+  = note: required for `String` to implement `Index&lt;{integer}&gt;`
+
+For more information about this error, try `rustc --explain E0277`.
+error: could not compile `collections` (bin "collections") due to 1 previous error
+</code></pre>
+<p>Ошибка и примечание говорят, что в Rust строки не поддерживают индексацию. Но почему так? Чтобы ответить на этот вопрос, нужно обсудить то, как Rust хранит строки в памяти.</p>
+<h4 id="Внутреннее-устройство"><a class="header" href="#Внутреннее-устройство">Внутреннее устройство</a></h4>
+<p>Тип <code>String</code> является оболочкой над типом <code>Vec&lt;u8&gt;</code>. Давайте посмотрим на несколько корректным образом закодированных строк в UTF-8 из примера Листинга 8-14. Начнём с этой:</p>
+<pre><pre class="playground"><code class="language-rust edition2021"><span class="boring">fn main() {
+</span><span class="boring">    let hello = String::from("السلام عليكم");
+</span><span class="boring">    let hello = String::from("Dobrý den");
+</span><span class="boring">    let hello = String::from("Hello");
+</span><span class="boring">    let hello = String::from("שלום");
+</span><span class="boring">    let hello = String::from("नमस्ते");
+</span><span class="boring">    let hello = String::from("こんにちは");
+</span><span class="boring">    let hello = String::from("안녕하세요");
+</span><span class="boring">    let hello = String::from("你好");
+</span><span class="boring">    let hello = String::from("Olá");
+</span><span class="boring">    let hello = String::from("Здравствуйте");
+</span>    let hello = String::from("Hola");
+<span class="boring">}</span></code></pre></pre>
+<p>В этом случае <code>len</code> будет <code>4</code>, что означает, что вектор хранит строку <code>"Hola"</code> длиной 4 байта. Каждая из этих букв занимает один байт при кодировании в UTF-8. Но как насчёт следующей строки?</p>
+<pre><pre class="playground"><code class="language-rust edition2021"><span class="boring">fn main() {
+</span><span class="boring">    let hello = String::from("السلام عليكم");
+</span><span class="boring">    let hello = String::from("Dobrý den");
+</span><span class="boring">    let hello = String::from("Hello");
+</span><span class="boring">    let hello = String::from("שלום");
+</span><span class="boring">    let hello = String::from("नमस्ते");
+</span><span class="boring">    let hello = String::from("こんにちは");
+</span><span class="boring">    let hello = String::from("안녕하세요");
+</span><span class="boring">    let hello = String::from("你好");
+</span><span class="boring">    let hello = String::from("Olá");
+</span>    let hello = String::from("Здравствуйте");
+<span class="boring">    let hello = String::from("Hola");
+</span><span class="boring">}</span></code></pre></pre>
+<p>Отвечая на вопрос, какова длина строки, вы можете ответить 12. Однако ответ Rust — 24, что равно числу байтов, необходимых для кодирования "Здравствуйте" в UTF-8. Так происходит потому, что каждый символ Unicode в этой строке занимает 2 байта памяти. Следовательно, обращение по индексу к отдельным байтам строки не всегда бы соответствовало полноценному символу Unicode. Для демонстрации рассмотрим этот (недопустимый) код Rust:</p>
+<pre><code class="language-rust ignore does_not_compile">let hello = "Здравствуйте";
+let answer = &amp;hello[0];</code></pre>
+<p>Вы уже знаете, что <code>answer</code> не будет содержать <code>З</code> — первую букву строки, но не первый байт. При кодировке в UTF-8, первый байт буквы <code>З</code> равен <code>208</code>, а второй — <code>151</code>, поэтому значение в <code>answer</code> на самом деле должно быть <code>208</code>, но само по себе <code>208</code> не является действительным символом. Число <code>208</code> — это, скорее всего, не то, что хотел бы получить пользователь: ведь он ожидает первую букву этой строки; тем не менее, именно это является лучшим, что Rust мог бы предоставлять по индексу 0. Пользователи обычно не хотят получать сырые байты, даже если строка содержит только латинские буквы: если бы <code>&amp;"hi"[0]</code> было допустимым кодом, который возвращал байтовое значение, он возвращал бы <code>104</code>, а не <code>h</code>.</p>
+<p>Таким образом, чтобы предотвратить возврат непредвиденного значения, вызывающего ошибки, которые не могут быть сразу обнаружены, Rust просто не компилирует такой код и предотвращает недопонимание на ранних этапах процесса разработки.</p>
+<h4 id="Байты-символы-unicode-и-кластеры-графем"><a class="header" href="#Байты-символы-unicode-и-кластеры-графем">Байты, символы Unicode и кластеры графем</a></h4>
+<p>Another point about UTF-8 is that there are actually three relevant ways to look at strings from Rust’s perspective: as bytes, scalar values, and grapheme clusters (the closest thing to what we would call <em>letters</em>).</p>
+<p>Если посмотреть на слово "नमस्ते" языка хинди, написанное письмом деванагари, то оно хранится как вектор значений <code>u8</code>, который выглядит следующим образом:</p>
+<pre><code class="language-text">[224, 164, 168, 224, 164, 174, 224, 164, 184, 224, 165, 141, 224, 164, 164,
+224, 165, 135]
+</code></pre>
+<p>Эти 18 байт являются именно тем, как компьютеры в конечном итоге сохранят в памяти эту строку. Если мы посмотрим на это слово как на символы Unicode (которыми и является тип <code>char</code>), то байты предстанут перед нами в таком виде:</p>
+<pre><code class="language-text">['न', 'म', 'स', '्', 'त', 'े']
+</code></pre>
+<p>Здесь есть шесть значений <code>char</code>, но четвёртый и шестой являются не буквами: они — это диакритика, то есть специальные значки, которые не имеют смысла сами по себе. Наконец, если мы посмотрим на байты как на кластеры графем, то получим то, что человек назвал бы словом на хинди, состоящим из четырёх графем:</p>
+<pre><code class="language-text">["न", "म", "स्", "ते"]
+</code></pre>
+<p>Rust предоставляет различные способы интерпретации необработанных (хранимых в удобном компьютеру виде) строковых данных, так, чтобы каждой программе можно было выбрать необходимую интерпретацию, независимо от того, на каком человеческом языке представлены эти данные.</p>
+<p>Последняя причина, по которой Rust не позволяет нам обращаться к <code>String</code> по индексу для получения символов, является то, что программисты ожидают, что операции индексирования всегда имеют постоянное время выполнения — <em>O(1)</em>. Но невозможно гарантировать такую производительность для <code>String</code>, потому что Rust понадобилось бы проходиться по содержимому от начала до индекса, чтобы определить, сколько было действительных символов.</p>
+<h3 id="Взятие-срезов-строк"><a class="header" href="#Взятие-срезов-строк">Взятие срезов строк</a></h3>
+<p>Использование индексов со строками часто является плохой идеей, потому что не ясно, каким должен быть возвращаемый тип такой операции: байтом, символом, кластером графем или срезом строки. Поэтому Rust просит вас быть более конкретным, если действительно требуется использовать индексы для создания срезов строк.</p>
+<p>Вместо индексации с помощью указания индекса в <code>[]</code>, вы можете использовать в <code>[]</code> оператор диапазона, чтобы создавать срез строки:</p>
+<pre><pre class="playground"><code class="language-rust edition2021"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let hello = "Здравствуйте";
+
+let s = &amp;hello[0..4];
+<span class="boring">}</span></code></pre></pre>
+<p>Здесь переменная <code>s</code> будет иметь тип <code>&amp;str</code> и содержаит первые четыре байта строки. Ранее мы упоминали, что каждый из этих символов занимал по два байта, что означает, что <code>s</code> будет содержать <code>Зд</code>.</p>
+<p>Что бы произошло, если бы мы использовали <code>&amp;hello[0..1]</code>? Ответ: Rust бы запаниковал во время выполнения точно так же, как если бы обращались к недействительному индексу в векторе:</p>
+<pre><code class="language-console">$ cargo run
+   Compiling collections v0.1.0 (file:///projects/collections)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.43s
+     Running `target/debug/collections`
+thread 'main' panicked at src/main.rs:4:19:
+byte index 1 is not a char boundary; it is inside 'З' (bytes 0..2) of `Здравствуйте`
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+</code></pre>
+<p>Вы должны использовать диапазоны для создания срезов строк с осторожностью, потому что это может привести к сбою вашей программы.</p>
+<h3 id="Методы-для-перебора-строк"><a class="header" href="#Методы-для-перебора-строк">Методы для перебора строк</a></h3>
+<p>Лучший способ работать с фрагментами строк — чётко указать, нужны ли вам символы или байты. Для получения символов Unicode используйте метод <code>chars</code>. Вызов <code>chars</code> на "Зд" выделит и вернёт два значения типа <code>char</code>, и вы можете проитерироваться по результату для доступа к каждому элементу:</p>
+<pre><pre class="playground"><code class="language-rust edition2021"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>for c in "Зд".chars() {
+    println!("{c}");
+}
+<span class="boring">}</span></code></pre></pre>
+<p>Код напечатает следующее:</p>
+<pre><code class="language-text">З
+д
+</code></pre>
+<p>Если же вам нужны сырые байты, вам нужен метод <code>bytes</code>. Он возвращает непосредственно байты, и это может быть полезно в некоторых задачах:</p>
+<pre><pre class="playground"><code class="language-rust edition2021"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>for b in "Зд".bytes() {
+    println!("{b}");
+}
+<span class="boring">}</span></code></pre></pre>
+<p>Этот код выведет четыре байта, составляющих эту строку:</p>
+<pre><code class="language-text">208
+151
+208
+180
+</code></pre>
+<p>Но делая так, обязательно помните, что символы Unicode могут состоять более чем из одного байта.</p>
+<p>Извлечение кластеров графем из строк, как в случае с письмом деванагари, является сложным, поэтому эта функциональность не предусмотрена стандартной библиотекой. На <a href="https://crates.io/">crates.io</a><!-- ignore --> можно найти крейты с необходимыми вам инструментами.</p>
+<h3 id="Строки-не-так-просты"><a class="header" href="#Строки-не-так-просты">Строки не так просты</a></h3>
+<p>Подводя итог, становится ясно, что строки сложны. Различные языки программирования реализуют строки по-своему, и все — по-своему сложно. В Rust решили сделать правильную обработку данных <code>String</code> поведением по умолчанию для всех программ Rust, что означает, что программисты должны заранее продумать обработку текста в кодировке UTF-8. Этот компромисс раскрывает большую сложность строк, чем в других языках программирования, но это предотвращает от необходимости обрабатывать ошибки, связанные с не-ASCII символами, которые могут появиться позже в ходе разработки.</p>
+<p>Хорошая новость состоит в том, что стандартная библиотека предлагает множество инструментов для типов <code>String</code> и <code>&amp;str</code>, которые могут помочь правильно обрабатывать эти сложные ситуации. Обязательно ознакомьтесь с документацией, чтобы узнать о таких полезных методах, как <code>contains</code> (для поиска в строке) и <code>replace</code> (для замены частей строки другой строкой).</p>
+<p>Давайте переключимся на что-то немного менее сложное: хеш-таблицы!</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="ch08-01-vectors.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="ch08-03-hash-maps.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="ch08-01-vectors.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="ch08-03-hash-maps.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="ferris.js"></script>
+        <script src="theme/language-picker.js"></script>
+
+
+    </div>
+    </body>
+</html>

@@ -1,0 +1,322 @@
+<!DOCTYPE HTML>
+<html lang="ru" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Размещение модулей в разных файлах - The Rust Programming Language</title>
+
+
+        <!-- Custom HTML head -->
+
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-L455DH98TK"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+        
+          gtag('config', 'G-L455DH98TK');
+        </script>
+        
+        
+        <script>
+            (function () {
+                // See these pages for details:
+                // https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls
+                // https://developers.google.com/search/docs/crawling-indexing/javascript/javascript-seo-basics
+        
+                function gen_canonical_href(lang) {
+        
+                    let base = "https://rust-lang-translations.org/book";
+        
+                    let canonical_href;
+                    if (lang == "en") {
+                        canonical_href = `${base}/ch07-05-separating-modules-into-different-files.md`;
+                    } else {
+                        canonical_href = `${base}/${lang}/ch07-05-separating-modules-into-different-files.md`;
+                    }
+                    canonical_href = canonical_href.slice(0, -"md".length) + "html";
+                    if (canonical_href.endsWith("/index.html")) {
+                        canonical_href = canonical_href.slice(0, -"index.html".length);
+                    }
+                    return canonical_href;
+                }
+        
+                const canonical_href = gen_canonical_href("ru");
+
+                let link = document.createElement("link");
+                link.rel = "canonical";
+                link.href = canonical_href;
+                document.head.appendChild(link);
+        
+        
+                const langs = ["en"  , "ja"  , "ru"  , "ko" ];
+        
+                for (const lang of langs) {
+                    const canonical_href = gen_canonical_href(lang);
+        
+                    let link = document.createElement("link");
+                    link.rel = "alternate";
+                    link.hreflang = lang;
+                    link.href = canonical_href;
+                    document.head.appendChild(link);
+                }
+            })()
+        </script>
+        
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="ferris.css">
+        <link rel="stylesheet" href="theme/2018-edition.css">
+        <link rel="stylesheet" href="theme/semantic-notes.css">
+        <link rel="stylesheet" href="theme/listing.css">
+        <link rel="stylesheet" href="theme/language-picker.css">
+
+
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">The Rust Programming Language</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/rust-lang-translations/project" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="Размещение-модулей-в-разных-файлах"><a class="header" href="#Размещение-модулей-в-разных-файлах">Размещение модулей в разных файлах</a></h2>
+<p>До сих пор все примеры в этой главе определяли несколько модулей в одном файле. Когда модули становятся большими, вы можете захотеть переместить их определения в отдельные файлы, чтобы упростить навигацию по коду.</p>
+<p>Для начала, давайте рассмотрим код Листинга 7-17, в котором было несколько модулей ресторана. Мы будем извлекать модули в файлы вместо того, чтобы определять все модули в файле корня крейта. В нашем случае, корень крейта — это <em>src/lib.rs</em>, но это разделение также работает и с бинарными крейтами, у которых корнем крейта будет <em>src/main.rs</em>.</p>
+<p>Сначала, мы извлечём модуль <code>front_of_house</code> в свой собственный файл. Удалите код внутри фигурных скобок для модуля <code>front_of_house</code>, оставив только объявление <code>mod front_of_house;</code>, так что теперь <em>src/lib.rs</em> содержит код, показанный в Листинге 7-21. Обратите внимание, что этот вариант не скомпилируется, пока мы не создадим файл <em>src/front_of_house.rs</em> с кодом из Листинга 7-22.</p>
+<Listing number="7-21" file-name="src/lib.rs" caption="Declaring the `front_of_house` module whose body will be in *src/front_of_house.rs*">
+<pre><code class="language-rust ignore does_not_compile">mod front_of_house;
+
+pub use crate::front_of_house::hosting;
+
+pub fn eat_at_restaurant() {
+    hosting::add_to_waitlist();
+}</code></pre>
+</Listing>
+<p>Затем поместим код, который был в фигурных скобках, в новый файл с именем <em>src/front_of_house.rs</em>, как показано в Листинге 7-22. Компилятор знает, что нужно искать в этом файле, потому что он наткнулся в корневом модуле крейта на объявление модуля с именем <code>front_of_house</code>.</p>
+<Listing number="7-22" file-name="src/front_of_house.rs" caption="Definitions inside the `front_of_house` module in *src/front_of_house.rs*">
+<pre><code class="language-rust ignore">pub mod hosting {
+    pub fn add_to_waitlist() {}
+}</code></pre>
+</Listing>
+<p>Обратите внимание, что вам нужно только <em>один</em> раз загрузить файл с помощью объявления <code>mod</code> в вашем дереве модулей. Как только компилятор узнает, что файл является частью проекта (и узнает, где в дереве модулей находится код из-за того, куда вы поместили инструкцию <code>mod</code>), другие файлы в вашем проекте должны ссылаться на код загруженного файла, используя путь к месту, где он был объявлен, как описано в разделе <a href="ch07-03-paths-for-referring-to-an-item-in-the-module-tree.html">"Пути для ссылки на элемент в дереве модулей"</a><!-- ignore -->. Другими словами, <code>mod</code> — это не операция "подключения", которую вы могли видеть в других языках программирования.</p>
+<p>Далее мы извлечём модуль <code>hosting</code> в его собственный файл. Процесс немного отличается, потому что <code>hosting</code> является дочерним модулем для <code>front_of_house</code>, а не корня крейта. Мы поместим файл для <code>hosting</code> в новый каталог, который будет назван по имени его предка в дереве модулей (в данном случае — <em>src/front_of_house/</em>).</p>
+<p>Чтобы начать перенос <code>hosting</code>, мы поменяем <em>src/front_of_house.rs</em> так, чтобы он содержал только объявление модуля <code>hosting</code>:</p>
+<Listing file-name="src/front_of_house.rs">
+<pre><code class="language-rust ignore">pub mod hosting;</code></pre>
+</Listing>
+<p>Затем мы создаём директорию <em>src/front_of_house</em> и файл <em>hosting.rs</em>, в котором будут определения, написанные в модуле <code>hosting</code>:</p>
+<Listing file-name="src/front_of_house/hosting.rs">
+<pre><code class="language-rust ignore">pub fn add_to_waitlist() {}</code></pre>
+</Listing>
+<p>Если вместо этого мы поместим <em>hosting.rs</em> в директорию <em>src</em>, компилятор будет думать, что код в <em>hosting.rs</em> это модуль <code>hosting</code>, объявленный в корне крейта, а не объявленный как дочерний модуль <code>front_of_house</code>. Правила компилятора для проверки того, какие файлы содержат код каких модулей, предполагают, что каталоги и файлы точно соответствуют дереву модулей.</p>
+<blockquote>
+<h3 id="Альтернативные-пути-к-файлам"><a class="header" href="#Альтернативные-пути-к-файлам">Альтернативные пути к файлам</a></h3>
+<p>До сих пор мы рассматривали наиболее идиоматические пути к файлам, используемые компилятором Rust, но Rust также поддерживает и старый стиль пути к файлу. Для модуля с именем <code>front_of_house</code>, объявленного в корне крейта, компилятор будет искать код модуля в:</p>
+<ul>
+<li><em>src/front_of_house.rs</em> (современный стиль; использовался нами до сих пор)</li>
+<li><em>src/front_of_house/mod.rs</em> (старый стиль; всё ещё поддерживается)</li>
+</ul>
+<p>Для модуля с именем <code>hosting</code>, который является подмодулем <code>front_of_house</code>, компилятор будет искать код модуля в:</p>
+<ul>
+<li><em>src/front_of_house/hosting.rs</em> (современный стиль; использовался нами до сих пор)</li>
+<li><em>src/front_of_house/hosting/mod.rs</em> (старый стиль; всё ещё поддерживается)</li>
+</ul>
+<p>Если вы используете оба стиля для одного и того же модуля, вы получите ошибку компиляции. Использование сочетания обоих стилей для разных модулей в одном проекте допустимо, но это может сбивать с толку людей, перемещающихся по вашему проекту.</p>
+<p>Основным недостатком стиля, в котором используются файлы с именами <em>mod.rs</em>, является то, что в вашем проекте может оказаться много файлов с именами <em>mod.rs</em>, что может привести к путанице, если вы одновременно откроете их в редакторе.</p>
+</blockquote>
+<p>Мы перенесли код каждого модуля в отдельный файл, а дерево модулей осталось прежним. Вызовы функций в <code>eat_at_restaurant</code> будут работать без каких-либо изменений, несмотря на то, что определения находятся в разных файлах. Этот метод позволяет перемещать модули в новые файлы по мере их разрастания.</p>
+<p>Обратите внимание, что инструкция <code>pub use crate::front_of_house::hosting</code> в <em>src/lib.rs</em> также не изменилась, и <code>use</code> не влияет на то, какие файлы компилируются как часть крейта. Ключевое слово <code>mod</code> объявляет модули, и Rust ищет код, который входит в этот модуль, в файле с тем же именем, что и у модуля.</p>
+<h2 id="Подведём-итоги"><a class="header" href="#Подведём-итоги">Подведём итоги</a></h2>
+<p>Rust позволяет разбивать пакет на несколько крейтов, а крейт — на модули, так что вы можете ссылаться на элементы, определённые в одном модуле, из другого модуля. Это можно делать при помощи указания абсолютных или относительных путей. Эти пути можно добавить в область видимости инструкцией <code>use</code>, поэтому вы можете пользоваться более короткими путями для многократного использования элементов в этой области видимости. Код модуля по умолчанию является приватным,  но можно сделать определения общедоступными, добавив ключевое слово <code>pub</code>.</p>
+<p>В следующей главе мы рассмотрим некоторые коллекции данных из стандартной библиотеки, которые вы можете использовать в своём (хорошо теперь организованном) коде.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="ch07-04-bringing-paths-into-scope-with-the-use-keyword.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="ch08-00-common-collections.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="ch07-04-bringing-paths-into-scope-with-the-use-keyword.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="ch08-00-common-collections.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="ferris.js"></script>
+        <script src="theme/language-picker.js"></script>
+
+
+    </div>
+    </body>
+</html>
