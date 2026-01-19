@@ -7109,7 +7109,7 @@ msgstr "서로 다른 레지스트리에서 이름이 같은 크레이트에 의
 msgid ""
 "To support this Cargo supports a `package` key in the `[dependencies]` "
 "section of which package should be depended on:"
-msgstr 이를 지원하기 위해 Cargo는 `[dependencies]` 섹션에서 어떤 패키지에 의존해야 하는지를 지정하는 `package` 키를 지원합니다."
+msgstr "이를 지원하기 위해 Cargo는 `[dependencies]` 섹션에서 어떤 패키지에 의존해야 하는지를 지정하는 `package` 키를 지원합니다."
 
 #: src/reference/specifying-dependencies.md:574
 msgid ""
