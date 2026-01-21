@@ -2023,8 +2023,7 @@ msgid ""
 "`TryInto` trait is in scope (which is the case in Rust 2021), this causes an "
 "ambiguity. Should the call be to `MyTrait::try_into` or "
 "`std::convert::TryInto::try_into`?"
-msgstr ""
-정적 디스패치 메서드와 달리, 트레이트 객체에서 트레이트 메서드를 호출할 때 해당 트레이트가 범위 내에 있어야 할 필요는 없습니다. 위 코드는 범위 내에 메서드 이름이 충돌하는 트레이트가 없는 한 정상적으로 작동합니다. `TryInto` 트레이트가 범위 내에 있는 경우(Rust 2021의 경우), 이는 모호성을 발생시킵니다. `MyTrait::try_into`를 호출해야 할까요, 아니면 `std::convert::TryInto::try_into`를 호출해야 할까요?
+msgstr "정적 디스패치 메서드와 달리, 트레이트 객체에서 트레이트 메서드를 호출할 때 해당 트레이트가 범위 내에 있어야 할 필요는 없습니다. 위 코드는 범위 내에 메서드 이름이 충돌하는 트레이트가 없는 한 정상적으로 작동합니다. `TryInto` 트레이트가 범위 내에 있는 경우(Rust 2021의 경우), 이는 모호성을 발생시킵니다. `MyTrait::try_into`를 호출해야 할까요, 아니면 `std::convert::TryInto::try_into`를 호출해야 할까요?"
 
 #: src/rust-2021/prelude.md:106
 msgid ""
@@ -2263,13 +2262,13 @@ msgid ""
 "being built without the \"unicode\" feature, the `words_with_breaks` method "
 "doesn't exist, and the build will fail with an error that the method is "
 "missing."
-msgstr ""
+msgstr "우리 패키지에서는 `bstr`의 [`words_with_breaks`](https://docs.rs/bstr/0.2.16/bstr/trait.ByteSlice.html#method.words_with_breaks) 메서드를 사용하고 있는데, 이를 위해서는 `bstr`의 \"unicode\" 기능을 활성화해야 합니다. 이는 과거에는 Cargo가 두 패키지 간에 `bstr`의 기능을 통합했기 때문에 작동했습니다. 하지만 Rust 2021로 업데이트한 후에는, 새로운 리졸버가 `bstr`을 두 번 빌드하는데, 한 번은 기본 기능으로(빌드 의존성으로서), 다른 한 번은 기능 없이(일반 의존성으로서) 빌드합니다. `bstr`이 이제 \"unicode\" 기능 없이 빌드되기 때문에 `words_with_breaks` 메서드가 존재하지 않으며, 메서드가 없다는 오류와 함께 빌드가 실패합니다."
 
 #: src/rust-2021/default-cargo-resolver.md:79
 msgid ""
 "The solution here is to ensure that the dependency is declared with the "
 "features you are actually using. For example:"
-msgstr ""
+msgstr "해결책은 의존성이 실제로 사용하는 기능과 함께 선언되도록 하는 것입니다. 예를 들면:"
 
 #: src/rust-2021/default-cargo-resolver.md:82
 msgid ""
@@ -2279,6 +2278,11 @@ msgid ""
 "[\"unicode\"] }\n"
 "```"
 msgstr ""
+"```toml\n"
+"[dependencies]\n"
+"bstr = { version = \"0.2.16\", default-features = false, features = "
+"[\"unicode\"] }\n"
+"```"
 
 #: src/rust-2021/default-cargo-resolver.md:87
 msgid ""
@@ -2291,25 +2295,25 @@ msgid ""
 "correct dependency declaration into your own project. The features will be "
 "unified, as long as they match the unification rules of the new resolver. "
 "Those are:"
-msgstr ""
+msgstr "어떤 경우에는, 직접 제어할 수 없는 서드파티 의존성에서 문제가 발생할 수 있습니다. 해당 프로젝트에 패치를 제출하여 문제가 되는 의존성에 대해 올바른 기능 세트를 선언하도록 시도해 볼 수 있습니다. 또는, 자신의 `Cargo.toml` 파일 내에서 어떤 의존성에든 기능을 추가할 수 있습니다. 예를 들어, 위에 제시된 `bstr` 예제가 어떤 서드파티 의존성에 선언되어 있다면, 올바른 의존성 선언을 자신의 프로젝트에 복사하기만 하면 됩니다. 새로운 리졸버의 통합 규칙과 일치하는 한 기능들은 통합될 것입니다. 그 규칙들은 다음과 같습니다:"
 
 #: src/rust-2021/default-cargo-resolver.md:93
 msgid ""
 "Features enabled on platform-specific dependencies for targets not currently "
 "being built are ignored."
-msgstr ""
+msgstr "현재 빌드되지 않는 타겟에 대한 플랫폼별 의존성에서 활성화된 기능은 무시됩니다."
 
 #: src/rust-2021/default-cargo-resolver.md:94
 msgid ""
 "Build-dependencies and proc-macros do not share features with normal "
 "dependencies."
-msgstr ""
+msgstr "빌드 의존성과 절차적 매크로(proc-macros)는 일반 의존성과 기능을 공유하지 않습니다."
 
 #: src/rust-2021/default-cargo-resolver.md:95
 msgid ""
 "Dev-dependencies do not activate features unless building a target that "
 "needs them (like tests or examples)."
-msgstr ""
+msgstr "개발 의존성(Dev-dependencies)은 이를 필요로 하는 타겟(테스트나 예제 등)을 빌드하지 않는 한 기능을 활성화하지 않습니다."
 
 #: src/rust-2021/default-cargo-resolver.md:97
 msgid ""
@@ -2317,7 +2321,7 @@ msgid ""
 "and [`diesel_migrations`](https://crates.io/crates/diesel_migrations). These "
 "packages provide database support, and the database is selected using a "
 "feature, like this:"
-msgstr ""
+msgstr "실제 예로 [`diesel`](https://crates.io/crates/diesel)과 [`diesel_migrations`](https://crates.io/crates/diesel_migrations)를 사용하는 경우가 있습니다. 이 패키지들은 데이터베이스 지원을 제공하며, 다음과 같이 기능을 사용하여 데이터베이스를 선택합니다:"
 
 #: src/rust-2021/default-cargo-resolver.md:100
 msgid ""
@@ -2327,6 +2331,11 @@ msgid ""
 "diesel_migrations = \"1.4.0\"\n"
 "```"
 msgstr ""
+"```toml\n"
+"[dependencies]\n"
+"diesel = { version = \"1.4.7\", features = [\"postgres\"] }\n"
+"diesel_migrations = \"1.4.0\"\n"
+"```"
 
 #: src/rust-2021/default-cargo-resolver.md:106
 msgid ""
@@ -2336,13 +2345,13 @@ msgid ""
 "After updating to the new resolver, it fails to build because now there are "
 "two copies of `diesel`, and the one built for the proc-macro is missing the "
 "\"postgres\" feature."
-msgstr ""
+msgstr "문제는 `diesel_migrations`가 내부적으로 `diesel`에 의존하는 절차적 매크로를 가지고 있는데, 이 절차적 매크로는 자신의 `diesel` 사본이 나머지 의존성 그래프와 동일한 기능을 활성화하고 있다고 가정한다는 점입니다. 새로운 리졸버로 업데이트한 후에는 `diesel`의 사본이 두 개가 되고, 절차적 매크로를 위해 빌드된 사본에는 \"postgres\" 기능이 빠져 있기 때문에 빌드에 실패하게 됩니다."
 
 #: src/rust-2021/default-cargo-resolver.md:109
 msgid ""
 "A solution here is to add `diesel` as a build-dependency with the required "
 "features, for example:"
-msgstr ""
+msgstr "해결책은 `diesel`을 필요한 기능과 함께 빌드 의존성으로 추가하는 것입니다. 예를 들면:"
 
 #: src/rust-2021/default-cargo-resolver.md:111
 msgid ""
@@ -2351,23 +2360,27 @@ msgid ""
 "diesel = { version = \"1.4.7\", features = [\"postgres\"] }\n"
 "```"
 msgstr ""
+"```toml\n"
+"[build-dependencies]\n"
+"diesel = { version = \"1.4.7\", features = [\"postgres\"] }\n"
+"```"
 
 #: src/rust-2021/default-cargo-resolver.md:116
 msgid ""
 "This causes Cargo to add \"postgres\" as a feature for host dependencies "
 "(proc-macros and build-dependencies). Now, the `diesel_migrations` proc-"
 "macro will get the \"postgres\" feature enabled, and it will build correctly."
-msgstr ""
+msgstr "이렇게 하면 Cargo가 \"postgres\"를 호스트 의존성(절차적 매크로 및 빌드 의존성)을 위한 기능으로 추가하게 됩니다. 이제 `diesel_migrations` 절차적 매크로는 \"postgres\" 기능이 활성화된 상태로 올바르게 빌드될 것입니다."
 
 #: src/rust-2021/default-cargo-resolver.md:119
 msgid ""
 "The 2.0 release of `diesel` (currently in development) does not have this "
 "problem as it has been restructured to not have this dependency requirement."
-msgstr ""
+msgstr "`diesel` 2.0 릴리스(현재 개발 중)는 이 종속성 요구 사항이 없도록 구조가 변경되었으므로 이 문제가 발생하지 않습니다."
 
 #: src/rust-2021/default-cargo-resolver.md:121
 msgid "Exploring features"
-msgstr ""
+msgstr "기능 탐색"
 
 #: src/rust-2021/default-cargo-resolver.md:123
 msgid ""
@@ -2376,6 +2389,8 @@ msgid ""
 "`cargo tree` can be used to explore the dependency graph, and to see which "
 "features are being enabled, and importantly _why_ they are being enabled."
 msgstr ""
+"[`cargo tree`](../../cargo/commands/cargo-tree.html) 명령은 새로운 리졸버로의 이전을 돕기 위해 상당히 개선되었습니다. "
+"`cargo tree`를 사용하여 의존성 그래프를 탐색하고, 어떤 기능이 활성화되었는지, 그리고 중요하게는 _왜_ 활성화되었는지 확인할 수 있습니다."
 
 #: src/rust-2021/default-cargo-resolver.md:126
 msgid ""
@@ -2383,24 +2398,27 @@ msgid ""
 "tell you when a package is being built multiple times. Taking the `bstr` "
 "example from earlier, we might see:"
 msgstr ""
+"한 가지 방법은 `--duplicates` 플래그(줄여서 `-d`)를 사용하는 것입니다. 이 플래그는 패키지가 여러 번 빌드될 때 이를 알려줍니다. "
+"앞서 본 `bstr` 예제를 보면 다음과 같습니다:"
 
 #: src/rust-2021/default-cargo-resolver.md:141
 msgid ""
 "This output tells us that `bstr` is built twice, and shows the chain of "
 "dependencies that led to its inclusion in both cases."
-msgstr ""
+msgstr "이 출력은 `bstr`이 두 번 빌드되었음을 알려주며, 두 경우 모두 포함되게 된 의존성 체인을 보여줍니다."
 
 #: src/rust-2021/default-cargo-resolver.md:143
 msgid ""
 "You can print which features each package is using with the `-f` flag, like "
 "this:"
-msgstr ""
+msgstr "`-f` 플래그를 사용하여 각 패키지가 어떤 기능을 사용하고 있는지 다음과 같이 출력할 수 있습니다:"
 
 #: src/rust-2021/default-cargo-resolver.md:149
 msgid ""
 "This tells Cargo to change the \"format\" of the output, where it will print "
 "both the package and the enabled features."
 msgstr ""
+"이는 Cargo에게 출력의 \"형식\"을 변경하도록 지시하여, 패키지와 활성화된 기능을 모두 출력하게 합니다."
 
 #: src/rust-2021/default-cargo-resolver.md:151
 msgid ""
@@ -2412,6 +2430,10 @@ msgid ""
 "the dependency graph is large, and we're not quite sure who is depending on "
 "`bstr`, the following command will show that:"
 msgstr ""
+"또한 `-e` 플래그를 사용하여 표시할 \"엣지(edges)\"를 지정할 수 있습니다. 예를 들어, `cargo tree -e features`는 각 의존성 사이에서 어떤 기능이 "
+"각 의존성에 의해 추가되고 있는지 보여줍니다. 이 옵션은 트리를 \"반전\"시키는 데 사용할 수 있는 `-i` 플래그와 함께 사용할 때 더 유용합니다. "
+"이를 통해 기능이 특정 의존성으로 어떻게 _흘러 들어가는지_ 볼 수 있습니다. 예를 들어, 의존성 그래프가 크고 누가 `bstr`에 의존하고 있는지 "
+"확실하지 않은 경우, 다음 명령이 이를 보여줍니다:"
 
 #: src/rust-2021/default-cargo-resolver.md:157
 msgid ""
@@ -2433,6 +2455,23 @@ msgid ""
 "└── bstr feature \"unicode\" (*)\n"
 "```"
 msgstr ""
+"```console\n"
+"> cargo tree -e features -i bstr\n"
+"bstr v0.2.16\n"
+"├── bstr feature \"default\"\n"
+"│   [build-dependencies]\n"
+"│   └── bar v0.1.0\n"
+"│       └── bar feature \"default\"\n"
+"│           └── foo v0.1.0 (/MyProjects/foo)\n"
+"├── bstr feature \"lazy_static\"\n"
+"│   └── bstr feature \"unicode\"\n"
+"│       └── bstr feature \"default\" (*)\n"
+"├── bstr feature \"regex-automata\"\n"
+"│   └── bstr feature \"unicode\" (*)\n"
+"├── bstr feature \"std\"\n"
+"│   └── bstr feature \"default\" (*)\n"
+"└── bstr feature \"unicode\" (*)\n"
+"```"
 
 #: src/rust-2021/default-cargo-resolver.md:175
 msgid ""
@@ -2441,6 +2480,9 @@ msgid ""
 "with the \"default\" feature. We can further see that `bstr`'s  \"default\" "
 "feature enables \"unicode\" (among other features)."
 msgstr ""
+"이 출력 스니펫은 `foo` 프로젝트가 \"default\" 기능을 가진 `bar`에 의존하고 있음을 보여줍니다. "
+"그리고 `bar`는 \"default\" 기능을 가진 `bstr`에 빌드 의존성으로 의존합니다. "
+"더 나아가 `bstr`의 \"default\" 기능이 (다른 기능들 중에서) \"unicode\"를 활성화한다는 것을 알 수 있습니다."
 
 #: src/rust-2021/IntoIterator-for-arrays.md:5
 msgid "Arrays implement `IntoIterator` in _all_ editions."
@@ -2627,7 +2669,7 @@ msgstr "// 구조체의 한 필드에서 이동\n"
 #: src/rust-2021/panic-macro-consistency.md:53
 #: src/rust-2021/panic-macro-consistency.md:54
 msgid "\"{}\""
-msgstr ""
+msgstr "\"{}\""
 
 #: src/rust-2021/disjoint-capture-in-closures.md:22
 msgid "// Ok: Still use another field of the struct\n"
@@ -2687,7 +2729,7 @@ msgstr "클로저가 구현하는 트레이트 변경([세부 정보](#trait-imp
 msgid ""
 "Whenever any of the scenarios below are detected, `cargo fix` will insert a "
 "\"dummy let\" into your closure to force it to capture the entire variable:"
-msgstr ""
+msgstr "아래 시나리오 중 하나라도 감지되면, `cargo fix`는 클로저에 \"dummy let\"을 삽입하여 전체 변수를 캡처하도록 강제합니다:"
 
 #: src/rust-2021/disjoint-capture-in-closures.md:54
 msgid "// \\\"Dummy let\\\" that forces `x` to be captured in its entirety\\n"
@@ -2699,7 +2741,7 @@ msgstr "// 그렇지 않으면 여기에서 `x.0`만 캡처됩니다\n"
 
 #: src/rust-2021/disjoint-capture-in-closures.md:58
 msgid "\"{:?}\""
-msgstr ""
+msgstr "\"{:?}\""
 
 #: src/rust-2021/disjoint-capture-in-closures.md:62
 msgid ""
@@ -2780,6 +2822,8 @@ msgid ""
 "// In Rust 2018, captures all of `t`.\n"
 "            // In Rust 2021, captures only `t.0`\n"
 msgstr ""
+"// Rust 2018에서는 `t` 전체를 캡처합니다.\n"
+"            // Rust 2021에서는 `t.0`만 캡처합니다.\n"
 
 #: src/rust-2021/disjoint-capture-in-closures.md:114
 msgid ""
@@ -2789,6 +2833,11 @@ msgid ""
 "        // In Rust 2021, `c` and `t.0` are both dropped when we\n"
 "        // exit this block.\n"
 msgstr ""
+"// Rust 2018에서는 이 블록을 나갈 때 `c` (그리고 `t`)가 모두 드롭됩니다.\n"
+"        //\n"
+"        //\n"
+"        // Rust 2021에서는 이 블록을 나갈 때 `c`와 `t.0`가 모두 드롭됩니다.\n"
+"        //\n"
 
 #: src/rust-2021/disjoint-capture-in-closures.md:120
 msgid ""
@@ -2915,7 +2964,7 @@ msgstr "`panic!()` 매크로는 두 개 이상의 인수로 호출될 때만 문
 
 #: src/rust-2021/panic-macro-consistency.md:29
 msgid "\"{\""
-msgstr ""
+msgstr "\"{\""
 
 #: src/rust-2021/panic-macro-consistency.md:30
 msgid "// Error: First argument must be a format string literal\n"
@@ -3035,7 +3084,7 @@ msgstr "키워드를 특별하게 취급하지 않으므로 예를 들어 `match
 msgid ""
 "Insert whitespace between the identifier and the subsequent `#`, `\"`, or "
 "`'` to avoid errors."
-msgstr ""
+msgstr "오류를 방지하려면 식별자와 그 뒤에 오는 `#`, `\"`, 또는 `'` 사이에 공백을 삽입하세요."
 
 #: src/rust-2021/reserved-syntax.md:10
 msgid "Edition migrations will help you insert whitespace in such cases."
@@ -3148,7 +3197,7 @@ msgid ""
 "this would cause code that use a lifetime `'gen` to fail to compile. Raw "
 "lifetimes allow the migration lint to modify those lifetimes to `'r#gen` "
 "which do allow keywords."
-msgstr ""
+msgstr "원시 라이프타임(Raw lifetimes)은 새로운 키워드를 도입하는 최신 에디션으로 마이그레이션할 수 있는 기능을 지원하기 위해 2021 에디션에 도입되었습니다. 이는 식별자에 대해 동일한 기능을 제공하는 [원시 식별자(raw identifiers)](../../reference/identifiers.html#raw-identifiers)와 유사합니다. 예를 들어, 2024 에디션에는 `gen` 키워드가 도입되었습니다. 라이프타임은 키워드가 될 수 없으므로, `'gen` 라이프타임을 사용하는 코드는 컴파일에 실패하게 됩니다. 원시 라이프타임을 사용하면 마이그레이션 린트가 이러한 라이프타임을 키워드로 허용되는 `'r#gen`으로 수정할 수 있습니다."
 
 #: src/rust-2021/raw-lifetimes.md:11
 msgid ""
@@ -3318,7 +3367,7 @@ msgstr "패턴에서 최상위 수준의 `|` 사용과 일치하지 않는 `$_:p
 
 #: src/rust-2021/or-patterns-macro-rules.md:57
 msgid "// TODO: implementation\n"
-msgstr ""
+msgstr "// TODO: 구현\n"
 
 #: src/rust-2021/or-patterns-macro-rules.md:60
 msgid ""
@@ -3326,13 +3375,7 @@ msgid ""
 msgstr "// 이 매크로는 `$x:pat`가 `|`와 일치하지 않기 때문에 Rust 2018에서 작동합니다:\n"
 
 #: src/rust-2021/or-patterns-macro-rules.md:63
-msgid ""
-"// In Rust 2021 however, the `$_:pat` fragment matches `|` and is not "
-"allowed\n"
-"// to be followed by a `|`. To make sure this macro still works in Rust "
-"2021\n"
-"// change the macro to the following:\n"
-msgstr ""
+msgid "" "// In Rust 2021 however, the `$_:pat` fragment matches `|` and is not " "allowed\n" "// to be followed by a `|`. To make sure this macro still works in Rust " "2021\n" "// change the macro to the following:\n" msgstr "" "// 그러나 Rust 2021에서는 `$_:pat` 파편(fragment)이 `|`와 일치하며, 그 뒤에\n" "// `|`가 오는 것이 허용되지 않습니다. 이 매크로가 Rust 2021에서도 계속 작동하도록\n" "// 매크로를 다음과 같이 변경하세요:\n"
 
 #: src/rust-2021/or-patterns-macro-rules.md:68
 msgid ""
@@ -3385,31 +3428,34 @@ msgstr "\"unicode escapes \\u{00E6} work\""
 
 #: src/rust-2021/c-string-literals.md:27
 msgid "b\"unicode escapes \\xc3\\xa6 work\\0\""
-msgstr ""
+msgstr "b\"unicode escapes \\xc3\\xa6 work\\0\""
 
 #: src/rust-2021/c-string-literals.md:30
 msgid "\"unicode characters αβγ encoded as UTF-8\""
-msgstr ""
+msgstr "\"unicode characters αβγ encoded as UTF-8\""
 
 #: src/rust-2021/c-string-literals.md:32
 msgid ""
 "b\"unicode characters \\xce\\xb1\\xce\\xb2\\xce\\xb3 encoded as UTF-8\\0\""
 msgstr ""
+"b\"unicode characters \\xce\\xb1\\xce\\xb2\\xce\\xb3 encoded as UTF-8\\0\""
 
 #: src/rust-2021/c-string-literals.md:37
 msgid ""
 "\"strings can continue \\\n"
 "        on multiple lines\""
 msgstr ""
+"\"strings can continue \\\n"
+"        on multiple lines\""
 
 #: src/rust-2021/c-string-literals.md:39
 msgid "b\"strings can continue on multiple lines\\0\""
-msgstr ""
+msgstr "b\"strings can continue on multiple lines\\0\""
 
 #: src/rust-2021/c-string-literals.md:43
 msgid ""
 "C-strings do not allow interior NUL bytes (such as with a `\\0` escape)."
-msgstr ""
+msgstr "C-문자열은 내부 NUL 바이트(`\\0` 이스케이프와 같은)를 허용하지 않습니다."
 
 #: src/rust-2021/c-string-literals.md:45
 msgid ""
@@ -3419,57 +3465,62 @@ msgid ""
 "be included by surrounding the quotes with the `#` character. Multiple `#` "
 "characters can be used to avoid ambiguity with internal `\"#` sequences."
 msgstr ""
+"일반 문자열과 마찬가지로 C-문자열도 `cr` 접두사가 붙은 \"원시(raw)\" 구문을 지원합니다. "
+"이러한 원시 C-문자열은 백슬래시 이스케이프를 처리하지 않으므로 백슬래시가 포함된 문자열을 작성하기가 더 쉽습니다. "
+"따옴표를 `#` 문자로 감싸서 큰따옴표를 포함할 수 있습니다. 내부의 `\"#` 시퀀스와의 모호성을 피하기 위해 여러 개의 `#` 문자를 사용할 수 있습니다."
 
 #: src/rust-2021/c-string-literals.md:51
 msgid "r\"foo\""
-msgstr ""
+msgstr "r\"foo\""
 
 #: src/rust-2021/c-string-literals.md:51 src/rust-2024/reserved-syntax.md:25
 #: src/rust-2024/reserved-syntax.md:27
 msgid "\"foo\""
-msgstr ""
+msgstr "\"foo\""
 
 #: src/rust-2021/c-string-literals.md:51
 msgid "// Number signs can be used to embed interior double quotes.\n"
-msgstr ""
+msgstr "// 숫자 기호(#)를 사용하여 내부에 큰따옴표를 포함할 수 있습니다.\n"
 
 #: src/rust-2021/c-string-literals.md:53
 msgid "r#\"\"foo\"\"#"
-msgstr ""
+msgstr "r#\"\"foo\"\"#"
 
 #: src/rust-2021/c-string-literals.md:53
 msgid "\"\\\"foo\\\"\""
-msgstr ""
+msgstr "\"\\\"foo\\\"\""
 
 #: src/rust-2021/c-string-literals.md:53
 msgid "// This requires two #.\n"
-msgstr ""
+msgstr "// 이것은 두 개의 #이 필요합니다.\n"
 
 #: src/rust-2021/c-string-literals.md:55
 msgid "r##\"\"foo\"#\"##"
-msgstr ""
+msgstr "r##\"\"foo\"#\"##"
 
 #: src/rust-2021/c-string-literals.md:55
 msgid "\"\\\"foo\\\"#\""
-msgstr ""
+msgstr "\"\\\"foo\\\"#\""
 
 #: src/rust-2021/c-string-literals.md:55
 msgid "// Escapes are not processed.\n"
-msgstr ""
+msgstr "// 이스케이프는 처리되지 않습니다.\n"
 
 #: src/rust-2021/c-string-literals.md:57
 msgid "r\"C:\\foo\""
-msgstr ""
+msgstr "r\"C:\\foo\""
 
 #: src/rust-2021/c-string-literals.md:57
 msgid "\"C:\\\\foo\""
-msgstr ""
+msgstr "\"C:\\\\foo\""
 
 #: src/rust-2021/c-string-literals.md:60
 msgid ""
 "See [The Reference](../../reference/tokens.html#c-string-and-raw-c-string-"
 "literals) for more details."
 msgstr ""
+"자세한 내용은 [참조 문서](../../reference/tokens.html#c-string-and-raw-c-string-"
+"literals)를 확인하세요."
 
 #: src/rust-2021/c-string-literals.md:67
 msgid ""
@@ -3477,28 +3528,30 @@ msgid ""
 "sequence of tokens that looks similar to `c\"…\"` or `cr\"…\"`, which "
 "previous to the 2021 edition would tokenize as two separate tokens, but in "
 "2021 appears as a single token."
-msgstr ""
+msgstr "마이그레이션은 `c\"…\"` 또는 `cr\"…\"`와 유사하게 보이는 토큰 시퀀스를 가정했을 수 있는 매크로에 대해서만 필요합니다. 이러한 시퀀스는 2021 에디션 이전에는 두 개의 별개 토큰으로 토큰화되었지만, 2021 에디션에서는 단일 토큰으로 나타납니다."
 
-#: src/rust-2021/c-string-literals.md:69
+#: src/rust-2021/c-string-literals.md:67
 msgid ""
 "As part of the [syntax reservation](reserved-syntax.md) for the 2021 "
 "edition, any macro input which may run into this issue should issue a "
 "warning from the `rust_2021_prefixes_incompatible_syntax` migration lint. "
 "See that chapter for more detail."
 msgstr ""
+"2021 에디션을 위한 [구문 예약](reserved-syntax.md)의 일환으로, 이 문제가 발생할 수 있는 모든 매크로 입력은 "
+"`rust_2021_prefixes_incompatible_syntax` 마이그레이션 린트에서 경고를 발생시켜야 합니다. 자세한 내용은 해당 챕터를 참조하세요."
 
 #: src/rust-2024/index.md:5
 msgid "[\\#3501](https://rust-lang.github.io/rfcs/3501-edition-2024.html)"
-msgstr ""
+msgstr "[\\#3501](https://rust-lang.github.io/rfcs/3501-edition-2024.html)"
 
 #: src/rust-2024/index.md:6
 msgid "1.85.0"
-msgstr ""
+msgstr "1.85.0"
 
 #: src/rust-2024/language.md:3
 msgid ""
 "The following chapters detail changes to the language in the 2024 Edition."
-msgstr ""
+msgstr "다음 챕터에서는 2024 에디션의 언어 변경 사항에 대해 자세히 설명합니다."
 
 #: src/rust-2024/rpit-lifetime-capture.md:3
 msgid ""
@@ -3507,24 +3560,24 @@ msgid ""
 "3498), including how to use opaque type _precise capturing_ (introduced in "
 "[RFC 3617](https://github.com/rust-lang/rfcs/pull/3617)) to migrate your "
 "code."
-msgstr ""
+msgstr "이 장에서는 [RFC 3498](https://github.com/rust-lang/rfcs/pull/3498)에서 도입된 **라이프타임 캡처 규칙 2024(Lifetime Capture Rules 2024)**와 관련된 변경 사항을 설명하며, 여기에는 코드를 마이그레이션하기 위해 불투명 타입(opaque type)의 _정밀 캡처(precise capturing)_([RFC 3617](https://github.com/rust-lang/rfcs/pull/3617)에서 도입됨)를 사용하는 방법이 포함됩니다."
 
 #: src/rust-2024/rpit-lifetime-capture.md:10
 msgid ""
 "In Rust 2024, _all_ in-scope generic parameters, including lifetime "
 "parameters, are implicitly captured when the `use<..>` bound is not present."
-msgstr ""
+msgstr "Rust 2024에서는 `use<..>` 바운드가 없을 때 라이프타임 매개변수를 포함한 범위 내의 _모든_ 제네릭 매개변수가 암시적으로 캡처됩니다."
 
 #: src/rust-2024/rpit-lifetime-capture.md:11
 msgid ""
 "Uses of the `Captures` trick (`Captures<..>` bounds) and of the outlives "
 "trick (e.g. `'_` bounds) can be replaced by `use<..>` bounds (in all "
 "editions) or removed entirely (in Rust 2024)."
-msgstr ""
+msgstr "`Captures` 트릭(`Captures<..>` 바운드) 및 outlives 트릭(예: `'_` 바운드)의 사용은 (모든 에디션에서) `use<..>` 바운드로 대체되거나 (Rust 2024에서) 완전히 제거될 수 있습니다."
 
 #: src/rust-2024/rpit-lifetime-capture.md:15
 msgid "Capturing"
-msgstr ""
+msgstr "캡처링"
 
 #: src/rust-2024/rpit-lifetime-capture.md:17
 msgid ""
@@ -3536,6 +3589,10 @@ msgid ""
 "explaining how the edition-specific implicit capturing rules work.  These "
 "`use<..>` bounds look like this:"
 msgstr ""
+"RPIT(반환 위치 impl Trait) 불투명 타입에서 제네릭 매개변수를 _캡처_하면 해당 매개변수를 해당하는 숨겨진 타입에서 사용할 수 있습니다.  "
+"Rust 1.82에서는 캡처할 제네릭 매개변수를 명시적으로 지정할 수 있는 `use<..>` 바운드를 추가했습니다.  "
+"이는 코드를 Rust 2024로 마이그레이션하는 데 도움이 되며, 이 챕터에서 에디션별 암시적 캡처 규칙이 어떻게 작동하는지 설명하는 데에도 유용합니다.  "
+"이러한 `use<..>` 바운드는 다음과 같습니다:"
 
 #: src/rust-2024/rpit-lifetime-capture.md:21
 msgid ""
@@ -3544,6 +3601,10 @@ msgid ""
 "    //\n"
 "    //                                It captures `'a` and `T`.\n"
 msgstr ""
+"//                                ~~~~~~~~~~~~~~~~~~~~~~~\n"
+"    //                             이것은 RPIT 불투명 타입입니다.\n"
+"    //\n"
+"    //                                이것은 `'a`와 `T`를 캡처합니다.\n"
 
 #: src/rust-2024/rpit-lifetime-capture.md:26
 msgid ""
@@ -3552,42 +3613,48 @@ msgid ""
 "  //\n"
 "  // This type can use `'a` and `T` because they were captured.\n"
 msgstr ""
+"//~~~~~~\n"
+"  // 숨겨진 타입은: `(&'a (), T)`입니다.\n"
+"  //\n"
+"  // 이 타입은 `'a`와 `T`가 캡처되었기 때문에 이를 사용할 수 있습니다.\n"
 
-#: src/rust-2024/rpit-lifetime-capture.md:33
+#: src/rust-2024/rpit-lifetime-capture.md:28
 msgid ""
 "The generic parameters that are captured affect how the opaque type can be "
 "used.  E.g., this is an error because the lifetime is captured despite the "
 "fact that the hidden type does not use the lifetime:"
 msgstr ""
+"캡처된 제네릭 매개변수는 불투명 타입을 사용하는 방식에 영향을 미칩니다.  "
+"예를 들어, 숨겨진 타입이 라이프타임을 사용하지 않음에도 불구하고 라이프타임이 캡처되기 때문에 다음은 오류입니다:"
 
 #: src/rust-2024/rpit-lifetime-capture.md:40
 msgid "//~^ ERROR lifetime may not live long enough\n"
-msgstr ""
+msgstr "//~^ 오류: 라이프타임이 충분히 오래 지속되지 않을 수 있습니다\n"
 
 #: src/rust-2024/rpit-lifetime-capture.md:44
 msgid "Conversely, this is OK:"
-msgstr ""
+msgstr "반대로, 다음은 괜찮습니다:"
 
 #: src/rust-2024/rpit-lifetime-capture.md:50
 msgid "//~ OK\n"
-msgstr ""
+msgstr "//~ OK\n"
 
 #: src/rust-2024/rpit-lifetime-capture.md:54
 msgid "Edition-specific rules when no `use<..>` bound is present"
-msgstr ""
+msgstr "`use<..>` 바운드가 없을 때의 에디션별 규칙"
 
 #: src/rust-2024/rpit-lifetime-capture.md:56
 msgid ""
 "If the `use<..>` bound is not present, then the compiler uses edition-"
 "specific rules to decide which in-scope generic parameters to capture "
 "implicitly."
-msgstr ""
+msgstr "`use<..>` 바운드가 없는 경우, 컴파일러는 에디션별 규칙을 사용하여 범위 내의 어떤 제네릭 매개변수를 암시적으로 캡처할지 결정합니다."
 
 #: src/rust-2024/rpit-lifetime-capture.md:58
 msgid ""
 "In all editions, all in-scope type and const generic parameters are captured "
 "implicitly when the `use<..>` bound is not present.  E.g.:"
-msgstr ""
+msgstr "모든 에디션에서 `use<..>` 바운드가 없을 때 범위 내의 모든 타입 및 상수 제네릭 매개변수는 암시적으로 캡처됩니다. 예를 들면:"
 
 #: src/rust-2024/rpit-lifetime-capture.md:61
 msgid ""
@@ -3596,25 +3663,27 @@ msgid ""
 "//\n"
 "// In all editions, the above is equivalent to:\n"
 msgstr ""
+"//                                    ~~~~~~~~~~\n"
+"//                         여기에 `use<..>` 바운드가 없습니다.\n"
+"//\n"
+"// 모든 에디션에서 위 코드는 다음과 동일합니다:\n"
 
-#: src/rust-2024/rpit-lifetime-capture.md:69
+#: src/rust-2024/rpit-lifetime-capture.md:65
 msgid ""
-"In Rust 2021 and earlier editions, when the `use<..>` bound is not present, "
-"generic lifetime parameters are only captured when they appear syntactically "
-"within a bound in RPIT opaque types in the signature of bare functions and "
-"associated functions and methods within inherent impls.  However, starting "
 "in Rust 2024, these in-scope generic lifetime parameters are unconditionally "
 "captured.  E.g.:"
 msgstr ""
+"Rust 2024에서, 범위 내의 이러한 제네릭 라이프타임 매개변수들은 무조건 캡처됩니다.  "
+"예:"
 
 #: src/rust-2024/rpit-lifetime-capture.md:72
 #: src/rust-2024/rpit-lifetime-capture.md:110
 msgid "// In Rust 2021 and earlier, the above is equivalent to:\n"
-msgstr ""
+msgstr "// Rust 2021 및 이전 버전에서 위 코드는 다음과 같습니다:\n"
 
 #: src/rust-2024/rpit-lifetime-capture.md:74
 msgid "// In Rust 2024 and later, it's equivalent to:\n"
-msgstr ""
+msgstr "// Rust 2024 및 이후 버전에서 이는 다음과 같습니다:\n"
 
 #: src/rust-2024/rpit-lifetime-capture.md:79
 msgid ""
@@ -3624,22 +3693,29 @@ msgid ""
 "all of which implicitly capture all in-scope generic lifetime parameters in "
 "all editions when the `use<..>` bound is not present."
 msgstr ""
+"이로써 트레이트 impl 내의 연관 함수 및 메서드 시그니처에 있는 RPIT 불투명 타입, 트레이트 정의 내에서의 RPIT 사용(RPITIT), "
+"`async fn`에 의해 생성된 불투명 `Future` 타입과 동작이 일관되게 됩니다. 이들은 모두 `use<..>` 바운드가 없을 때 "
+"모든 에디션에서 범위 내의 모든 제네릭 라이프타임 매개변수를 암시적으로 캡처합니다."
 
 #: src/rust-2024/rpit-lifetime-capture.md:81
 msgid "Outer generic parameters"
-msgstr ""
+msgstr "외부 제네릭 매개변수"
 
 #: src/rust-2024/rpit-lifetime-capture.md:83
 msgid ""
 "Generic parameters from an outer impl are considered to be in scope when "
 "deciding what is implicitly captured.  E.g.:"
 msgstr ""
+"암시적으로 캡처되는 것을 결정할 때 외부 impl의 제네릭 매개변수는 범위 내에 있는 것으로 간주됩니다.  "
+"예:"
 
 #: src/rust-2024/rpit-lifetime-capture.md:87
 msgid ""
 "//   ~~~~~~~~~~~~~~~~~\n"
 "// These generic parameters are in scope.\n"
 msgstr ""
+"//   ~~~~~~~~~~~~~~~~~\n"
+"// 이 제네릭 매개변수들은 범위 내에 있습니다.\n"
 
 #: src/rust-2024/rpit-lifetime-capture.md:91
 msgid ""
@@ -3651,16 +3727,23 @@ msgid ""
 "    //\n"
 "    // In all editions, it's equivalent to:\n"
 msgstr ""
+"//            ~       ~~~~~~~~~~\n"
+"    //            ^ 이 제네릭도 범위 내에 있습니다.\n"
+"    //                    ^\n"
+"    //                    |\n"
+"    //     여기에 `use<..>` 바운드가 없습니다.\n"
+"    //\n"
+"    // 모든 에디션에서 이는 다음과 같습니다:\n"
 
 #: src/rust-2024/rpit-lifetime-capture.md:102
 msgid "Lifetimes from higher-ranked binders"
-msgstr ""
+msgstr "고차(higher-ranked) 바인더의 라이프타임"
 
 #: src/rust-2024/rpit-lifetime-capture.md:104
 msgid ""
 "Similarly, generic lifetime parameters introduced into scope by a higher-"
 "ranked `for<..>` binder are considered to be in scope.  E.g.:"
-msgstr ""
+msgstr "마찬가지로, 고차 `for<..>` 바인더에 의해 범위에 도입된 제네릭 라이프타임 매개변수도 범위 내에 있는 것으로 간주됩니다. 예:"
 
 #: src/rust-2024/rpit-lifetime-capture.md:112
 msgid ""
@@ -3670,16 +3753,23 @@ msgid ""
 "// However, note that the capturing of higher-ranked lifetimes in\n"
 "// nested opaque types is not yet supported.\n"
 msgstr ""
+"// Rust 2024 및 이후 버전에서 이는 다음과 같습니다:\n"
+"//fn f_2024() -> impl for<'a> Tr<'a, Ty = impl Copy + use<'a>> {}\n"
+"//                                        ~~~~~~~~~~~~~~~~~~~~\n"
+"// 그러나 고차 라이프타임의 캡처는\n"
+"// 중첩된 불투명 타입에서는 아직 지원되지 않습니다.\n"
 
 #: src/rust-2024/rpit-lifetime-capture.md:120
 msgid "Argument position impl Trait (APIT)"
-msgstr ""
+msgstr "인수 위치 impl Trait (APIT)"
 
 #: src/rust-2024/rpit-lifetime-capture.md:122
 msgid ""
 "Anonymous (i.e. unnamed) generic parameters created by the use of APIT "
 "(argument position impl Trait) are considered to be in scope.  E.g.:"
 msgstr ""
+"APIT(인수 위치 impl Trait) 사용으로 생성된 익명(즉, 이름 없는) 제네릭 매개변수도 범위 내에 있는 것으로 간주됩니다.  "
+"예:"
 
 #: src/rust-2024/rpit-lifetime-capture.md:125
 msgid ""
@@ -3688,6 +3778,10 @@ msgid ""
 "//\n"
 "// The above is *roughly* equivalent to:\n"
 msgstr ""
+"//               ~~~~~~~~~~\n"
+"//           이것을 APIT라고 부릅니다.\n"
+"//\n"
+"// 위 코드는 *대략* 다음과 같습니다:\n"
 
 #: src/rust-2024/rpit-lifetime-capture.md:133
 msgid ""
@@ -3697,10 +3791,12 @@ msgid ""
 "parameter in a `use<..>` bound other than by converting it to a named "
 "generic parameter."
 msgstr ""
+"전자가 후자와 _정확히_ 동일하지는 않다는 점에 유의하세요. 제네릭 매개변수에 이름을 지정하면 터보피시(turbofish) 구문을 사용하여 인수를 제공할 수 있기 때문입니다. "
+"익명 제네릭 매개변수를 명명된 제네릭 매개변수로 변환하지 않고 `use<..>` 바운드에 명시적으로 포함할 수 있는 방법은 없습니다."
 
 #: src/rust-2024/rpit-lifetime-capture.md:137
 msgid "Migrating while avoiding overcapturing"
-msgstr ""
+msgstr "과도한 캡처(overcapturing)를 피하면서 마이그레이션하기"
 
 #: src/rust-2024/rpit-lifetime-capture.md:139
 msgid ""
@@ -3711,21 +3807,24 @@ msgid ""
 "bounds where needed such that no additional lifetimes are captured in Rust "
 "2024."
 msgstr ""
+"`impl_trait_overcaptures` 린트는 Rust 2024에서 추가 라이프타임을 캡처하게 될 RPIT 불투명 타입을 플래그합니다.  "
+"이 린트는 `cargo fix --edition`을 실행할 때 자동으로 적용되는 `rust-2024-compatibility` 린트 그룹의 일부입니다.  "
+"대부분의 경우, 이 린트는 Rust 2024에서 추가 라이프타임이 캡처되지 않도록 필요한 곳에 `use<..>` 바운드를 자동으로 삽입할 수 있습니다."
 
 #: src/rust-2024/rpit-lifetime-capture.md:141
 #: src/rust-2024/match-ergonomics.md:106
 msgid "To migrate your code to be compatible with Rust 2024, run:"
-msgstr ""
+msgstr "코드를 Rust 2024와 호환되도록 마이그레이션하려면 다음을 실행하세요:"
 
 #: src/rust-2024/rpit-lifetime-capture.md:147 src/rust-2024/gen-keyword.md:25
 #: src/rust-2024/intoiterator-box-slice.md:56
 #: src/rust-2024/newly-unsafe-functions.md:50
 msgid "For example, this will change:"
-msgstr ""
+msgstr "예를 들어, 이것은 다음과 같이 변경됩니다:"
 
 #: src/rust-2024/rpit-lifetime-capture.md:153
 msgid "...into:"
-msgstr ""
+msgstr "...을 다음으로:"
 
 #: src/rust-2024/rpit-lifetime-capture.md:159
 msgid ""
@@ -3733,10 +3832,12 @@ msgid ""
 "`'a` lifetime parameter.  By adding this bound, the migration lint preserves "
 "the existing semantics."
 msgstr ""
+"Rust 2024에서 이 `use<>` 바운드가 없으면 불투명 타입은 `'a` 라이프타임 매개변수를 캡처하게 됩니다.  "
+"이 바운드를 추가함으로써 마이그레이션 린트는 기존 의미를 보존합니다."
 
 #: src/rust-2024/rpit-lifetime-capture.md:161
 msgid "Migrating cases involving APIT"
-msgstr ""
+msgstr "APIT와 관련된 케이스 마이그레이션"
 
 #: src/rust-2024/rpit-lifetime-capture.md:163
 msgid ""
@@ -3745,6 +3846,9 @@ msgid ""
 "`use<..>` bound.  In these cases, the lint will alert you that a change may "
 "need to be made manually.  E.g., given:"
 msgstr ""
+"경우에 따라 린트가 변경을 자동으로 수행할 수 없는 경우가 있는데, 이는 제네릭 매개변수가 `use<..>` 바운드 내에 나타날 수 있도록 이름을 지정해야 하기 때문입니다.  "
+"이러한 경우 린트는 수동으로 변경해야 할 수도 있음을 알려줍니다.  "
+"예를 들어, 다음과 같은 경우:"
 
 #: src/rust-2024/rpit-lifetime-capture.md:166
 msgid ""
@@ -3756,6 +3860,11 @@ msgid ""
 "//~| NOTE specifically, this lifetime is in scope but not mentioned in the "
 "type's bounds\n"
 msgstr ""
+"//   ^^                ~~~~~~~~~~\n"
+"//               이것은 APIT의 사용입니다.\n"
+"//\n"
+"//~^ 경고 `impl Sized`는 2024 에디션에서 의도한 것보다 더 많은 라이프타임을 캡처할 것입니다\n"
+"//~| 참고 구체적으로, 이 라이프타임은 범위 내에 있지만 타입의 바운드에서 언급되지 않았습니다\n"
 
 #: src/rust-2024/rpit-lifetime-capture.md:178
 msgid ""
@@ -3763,27 +3872,29 @@ msgid ""
 "the fact that the generic type parameter must be named in the `use<..>` "
 "bound.  To convert this code to Rust 2024 without capturing the lifetime, "
 "you must name that type parameter.  E.g.:"
-msgstr ""
+msgstr "APIT의 사용과 제네릭 타입 매개변수가 `use<..>` 바운드에서 명명되어야 한다는 사실 때문에 코드를 자동으로 변환할 수 없습니다. 라이프타임을 캡처하지 않고 이 코드를 Rust 2024로 변환하려면 해당 타입 매개변수의 이름을 지정해야 합니다. 예:"
 
 #: src/rust-2024/rpit-lifetime-capture.md:182
 msgid ""
 "//       ~~~~~~~~\n"
 "// The type parameter has been named here.\n"
 msgstr ""
+"//       ~~~~~~~~\n"
+"// 여기에 타입 매개변수의 이름이 지정되었습니다.\n"
 
-#: src/rust-2024/rpit-lifetime-capture.md:191
+#: src/rust-2024/rpit-lifetime-capture.md:189
 msgid ""
-"Note that this changes the API of the function slightly as a type argument "
-"can now be explicitly provided for this parameter using turbofish syntax.  "
 "If this is undesired, you might consider instead whether you can simply "
 "continue to omit the `use<..>` bound and allow the lifetime to be captured.  "
 "This might be particularly desirable if you might in the future want to use "
 "that lifetime in the hidden type and would like to save space for that."
 msgstr ""
+"이것이 원하지 않는 경우, 대신 `use<..>` 바운드를 계속 생략하고 라이프타임이 캡처되도록 허용할 수 있는지 고려해 볼 수 있습니다.  "
+"이는 나중에 숨겨진 타입에서 해당 라이프타임을 사용하고 싶고 그 공간을 확보해 두고 싶은 경우에 특히 바람직할 수 있습니다."
 
 #: src/rust-2024/rpit-lifetime-capture.md:193
 msgid "Migrating away from the `Captures` trick"
-msgstr ""
+msgstr "`Captures` 트릭에서 마이그레이션하기"
 
 #: src/rust-2024/rpit-lifetime-capture.md:195
 msgid ""
@@ -3791,36 +3902,42 @@ msgid ""
 "1.82, correctly capturing a lifetime in an RPIT opaque type often required "
 "using the `Captures` trick.  E.g.:"
 msgstr ""
+"Rust 1.82에서 정확한 캡처 `use<..>` 바운드가 도입되기 전에는 RPIT 불투명 타입에서 라이프타임을 올바르게 캡처하려면 종종 `Captures` 트릭을 사용해야 했습니다.  "
+"예:"
 
 #: src/rust-2024/rpit-lifetime-capture.md:202
 msgid ""
 "//                                           ~~~~~~~~~~~~~~~~~~~~~\n"
 "//                            This is called the `Captures` trick.\n"
 msgstr ""
+"//                                           ~~~~~~~~~~~~~~~~~~~~~\n"
+"//                            이것을 `Captures` 트릭이라고 부릅니다.\n"
 
 #: src/rust-2024/rpit-lifetime-capture.md:213
 msgid ""
 "With the `use<..>` bound syntax, the `Captures` trick is no longer needed "
 "and can be replaced with the following in all editions:"
-msgstr ""
+msgstr "`use<..>` 바운드 구문을 사용하면 `Captures` 트릭은 더 이상 필요하지 않으며 모든 에디션에서 다음과 같이 대체될 수 있습니다."
 
 #: src/rust-2024/rpit-lifetime-capture.md:225
 #: src/rust-2024/rpit-lifetime-capture.md:269
 msgid ""
 "In Rust 2024, the `use<..>` bound can often be omitted entirely, and the "
 "above can be written simply as:"
-msgstr ""
+msgstr "Rust 2024에서는 `use<..>` 바운드를 완전히 생략할 수 있는 경우가 많으며, 위 코드는 다음과 같이 간단하게 작성할 수 있습니다."
 
-#: src/rust-2024/rpit-lifetime-capture.md:237
+#: src/rust-2024/rpit-lifetime-capture.md:236
 msgid ""
 "There is no automatic migration for this, and the `Captures` trick still "
 "works in Rust 2024, but you might want to consider migrating code manually "
 "away from using this old trick."
 msgstr ""
+"이에 대한 자동 마이그레이션은 없으며 `Captures` 트릭은 Rust 2024에서도 여전히 작동하지만, "
+"이 오래된 트릭을 사용하는 코드에서 수동으로 마이그레이션하는 것을 고려할 수 있습니다."
 
 #: src/rust-2024/rpit-lifetime-capture.md:239
 msgid "Migrating away from the outlives trick"
-msgstr ""
+msgstr "Outlives 트릭에서 마이그레이션하기"
 
 #: src/rust-2024/rpit-lifetime-capture.md:241
 msgid ""
@@ -3828,20 +3945,24 @@ msgid ""
 "1.82, it was common to use the \"outlives trick\" when a lifetime needed to "
 "be used in the hidden type of some opaque.  E.g.:"
 msgstr ""
+"Rust 1.82에서 정확한 캡처 `use<..>` 바운드가 도입되기 전에는 일부 불투명 타입의 숨겨진 타입에서 라이프타임을 사용해야 할 때 "
+"\"outlives 트릭\"을 사용하는 것이 일반적이었습니다. 예:"
 
 #: src/rust-2024/rpit-lifetime-capture.md:245
 msgid ""
 "//    ~~~~                                 ~~~~\n"
 "    //    ^                     This is the outlives trick.\n"
-"    //    |\n"
-"    // This bound is needed only for the trick.\n"
 msgstr ""
+"//    ~~~~                                 ~~~~\n"
+"    //    ^                     이것이 outlives 트릭입니다.\n"
 
 #: src/rust-2024/rpit-lifetime-capture.md:249
 msgid ""
 "//  ~~~~~~\n"
 "// The hidden type is `(&'a (), T)`.\n"
 msgstr ""
+"//  ~~~~~~\n"
+"// 숨겨진 타입은 `(&'a (), T)`입니다.\n"
 
 #: src/rust-2024/rpit-lifetime-capture.md:255
 msgid ""
@@ -3850,27 +3971,27 @@ msgid ""
 "components within `T` are independent from the lifetime `'a`, we're required "
 "to add a `T: 'a` bound in order to make the trick work.  This created undue "
 "and surprising restrictions on callers."
-msgstr ""
+msgstr "이 트릭은 `Captures` 트릭보다 덜 복잡하지만(less baroque), 정확성도 떨어집니다. 위 예제에서 볼 수 있듯이, `T` 내의 모든 라이프타임 구성 요소가 라이프타임 `'a`와 무관하더라도 트릭이 작동하도록 하려면 `T: 'a` 바운드를 추가해야 합니다. 이로 인해 호출자에게 불필요하고 예상치 못한 제약이 생겼습니다."
 
 #: src/rust-2024/rpit-lifetime-capture.md:257
 msgid ""
 "Using precise capturing, you can write the above instead, in all editions, "
 "as:"
-msgstr ""
+msgstr "정밀 캡처를 사용하면 모든 에디션에서 위 코드를 다음과 같이 대신 작성할 수 있습니다."
 
 #: src/rust-2024/rpit-lifetime-capture.md:281
 msgid ""
 "There is no automatic migration for this, and the outlives trick still works "
 "in Rust 2024, but you might want to consider migrating code manually away "
 "from using this old trick."
-msgstr ""
+msgstr "이에 대한 자동 마이그레이션은 없으며 outlives 트릭은 Rust 2024에서도 여전히 작동하지만, 이 오래된 트릭을 사용하는 코드에서 수동으로 마이그레이션하는 것을 고려할 수 있습니다."
 
 #: src/rust-2024/temporary-if-let-scope.md:5
 msgid ""
 "In an `if let $pat = $expr { .. } else { .. }` expression, the temporary "
 "values generated from evaluating `$expr` will be dropped before the program "
 "enters the `else` branch instead of after."
-msgstr ""
+msgstr "`if let $pat = $expr { .. } else { .. }` 표현식에서, `$expr`을 평가하여 생성된 임시 값은 프로그램이 `else` 분기로 들어가기 전(종료 후가 아님)에 드롭됩니다."
 
 #: src/rust-2024/temporary-if-let-scope.md:9
 msgid ""
@@ -3878,28 +3999,28 @@ msgid ""
 "reference/expressions.html#temporaries) in the scrutinee[^scrutinee] of an "
 "`if let` expression. This is intended to help reduce the potentially "
 "unexpected behavior involved with the temporary living for too long."
-msgstr ""
+msgstr "2024 에디션은 `if let` 표현식의 검사 대상(scrutinee)[^scrutinee]에 있는 [임시 값](../../reference/expressions.html#temporaries)의 드롭 범위를 변경합니다. 이는 임시 값이 너무 오래 유지됨으로써 발생할 수 있는 잠재적인 예기치 않은 동작을 줄이기 위한 것입니다."
 
 #: src/rust-2024/temporary-if-let-scope.md:11
 msgid ""
 "Before 2024, the temporaries could be extended beyond the `if let` "
 "expression itself. For example:"
-msgstr ""
+msgstr "2024년 이전에는 임시 변수가 `if let` 표현식 자체를 넘어 확장될 수 있었습니다. 예를 들어:"
 
 #: src/rust-2024/temporary-if-let-scope.md:14
 #: src/rust-2024/temporary-tail-expr-scope.md:17
 msgid "// Before 2024\n"
-msgstr ""
+msgstr "// 2024년 이전\n"
 
 #: src/rust-2024/temporary-if-let-scope.md:19
 #: src/rust-2024/temporary-if-let-scope.md:40
 #: src/rust-2024/temporary-if-let-scope.md:72
 msgid "\"value is {x}\""
-msgstr ""
+msgstr "\"값은 {x}\""
 
 #: src/rust-2024/temporary-if-let-scope.md:26
 msgid "// <--- Read lock is dropped here in 2021\n"
-msgstr ""
+msgstr "// <--- 2021에서는 여기에서 읽기 잠금이 해제됩니다\n"
 
 #: src/rust-2024/temporary-if-let-scope.md:30
 msgid ""
@@ -3907,7 +4028,7 @@ msgid ""
 "`value.read()` will not be dropped until after the `if let` expression (that "
 "is, after the `else` block). In the case where the `else` block is executed, "
 "this causes a deadlock when it attempts to acquire a write lock."
-msgstr ""
+msgstr "이 예제에서 `value.read()` 호출로 생성된 임시 읽기 잠금은 `if let` 표현식 이후(즉, `else` 블록 이후)까지 드롭되지 않습니다. `else` 블록이 실행되는 경우, 쓰기 잠금을 획득하려고 시도할 때 교착 상태(deadlock)가 발생합니다."
 
 #: src/rust-2024/temporary-if-let-scope.md:32
 msgid ""
@@ -3915,28 +4036,31 @@ msgid ""
 "the then-block is completely evaluated or the program control enters the "
 "`else` block."
 msgstr ""
+"2024 에디션에서는 임시 변수의 라이프타임을 then 블록이 완전히 평가되거나 프로그램 제어가 `else` 블록으로 들어가는 시점으로 단축합니다."
 
 #: src/rust-2024/temporary-if-let-scope.md:35
 msgid "// Starting with 2024\n"
-msgstr ""
+msgstr "// 2024부터\n"
 
 #: src/rust-2024/temporary-if-let-scope.md:42
 msgid "// <--- Read lock is dropped here in 2024\n"
-msgstr ""
+msgstr "// <--- 2024에서는 여기에서 읽기 잠금이 해제됩니다\n"
 
 #: src/rust-2024/temporary-if-let-scope.md:52
 msgid ""
 "See the [temporary scope rules](../../reference/destructors.html#temporary-"
 "scopes) for more information about how temporary scopes are extended. See "
 "the [tail expression temporary scope](temporary-tail-expr-scope.md) chapter "
-"for a similar change made to tail expressions."
+"for a related change."
 msgstr ""
+"임시 스코프가 확장되는 방식에 대한 자세한 내용은 [임시 스코프 규칙](../../reference/destructors.html#temporary-"
+"scopes)을 참조하세요. 관련 변경 사항은 [꼬리 표현식 임시 스코프](temporary-tail-expr-scope.md) 장을 참조하세요."
 
 #: src/rust-2024/temporary-if-let-scope.md:54
 msgid ""
 "The [scrutinee](../../reference/glossary.html#scrutinee) is the expression "
 "being matched on in the `if let` expression."
-msgstr ""
+msgstr "[검사 대상(scrutinee)](../../reference/glossary.html#scrutinee)은 `if let` 표현식에서 매칭되는 표현식입니다."
 
 #: src/rust-2024/temporary-if-let-scope.md:63
 msgid ""
@@ -3944,7 +4068,7 @@ msgid ""
 "`match` scrutinee are extended past the end of the `match` expression "
 "(typically to the end of the statement), which is the same as the 2021 "
 "behavior of `if let`."
-msgstr ""
+msgstr "`if let`을 `match`로 다시 작성하는 것은 항상 안전합니다. `match` 검사 대상의 임시 값은 `match` 표현식의 끝(보통 문장의 끝)까지 연장되는데, 이는 `if let`의 2021 에디션 동작과 동일합니다."
 
 #: src/rust-2024/temporary-if-let-scope.md:65
 msgid ""
@@ -3955,10 +4079,13 @@ msgid ""
 "instance, the earlier example may be rewritten into the following when the "
 "suggestion from `cargo fix` is accepted:"
 msgstr ""
+"[`if_let_rescope`](../../rustc/lints/listing/allowed-by-default.html#if-"
+"let-rescope) 린트는 이 변경으로 인해 라이프타임 문제가 발생하거나 린트가 `if let`의 검사 대상(scrutinee)에서 사용자 정의, 사소하지 않은 "
+"`Drop` 소멸자가 있는 임시 값이 생성됨을 감지할 때 수정을 제안합니다. 예를 들어, `cargo fix`의 제안이 수락되면 이전 예제는 다음과 같이 다시 작성될 수 있습니다:"
 
 #: src/rust-2024/temporary-if-let-scope.md:81
 msgid "// <--- Read lock is dropped here in both 2021 and 2024\n"
-msgstr ""
+msgstr "// <--- 2021 및 2024 모두에서 여기에서 읽기 잠금이 해제됩니다\n"
 
 #: src/rust-2024/temporary-if-let-scope.md:85
 msgid ""
@@ -3967,6 +4094,8 @@ msgid ""
 "temporaries are held past the `else` clause, in which case you may want to "
 "retain the old behavior."
 msgstr ""
+"이 특정 예제에서는 앞서 언급한 교착 상태 때문에 이것이 원하는 바가 아닐 수 있습니다! "
+"그러나 일부 시나리오에서는 임시 변수가 `else` 절을 지나서 유지된다고 가정할 수 있으며, 이 경우 이전 동작을 유지하고 싶을 수 있습니다."
 
 #: src/rust-2024/temporary-if-let-scope.md:87
 msgid ""
@@ -3974,7 +4103,7 @@ msgid ""
 "let-rescope) lint is part of the `rust-2024-compatibility` lint group which "
 "is included in the automatic edition migration. In order to migrate your "
 "code to be Rust 2024 Edition compatible, run:"
-msgstr ""
+msgstr "[`if_let_rescope`](../../rustc/lints/listing/allowed-by-default.html#if-let-rescope) 린트는 자동 에디션 마이그레이션에 포함된 `rust-2024-compatibility` 린트 그룹의 일부입니다. 코드를 Rust 2024 에디션과 호환되도록 마이그레이션하려면 다음을 실행하세요."
 
 #: src/rust-2024/temporary-if-let-scope.md:93
 msgid ""
@@ -3982,14 +4111,13 @@ msgid ""
 "`if let` to `match` and decide what is the behavior that you need with "
 "respect to when temporaries are dropped. If you determine that the change is "
 "unnecessary, then you can revert the change back to `if let`."
-msgstr ""
+msgstr "마이그레이션 후에는 `if let`에서 `match`로의 모든 변경 사항을 검토하고, 임시 값이 드롭되는 시점과 관련하여 필요한 동작이 무엇인지 결정하는 것이 권장됩니다. 변경이 불필요하다고 판단되면 변경 사항을 다시 `if let`으로 되돌릴 수 있습니다."
 
-#: src/rust-2024/temporary-if-let-scope.md:95
-#: src/rust-2024/temporary-tail-expr-scope.md:92
+#: src/rust-2024/temporary-if-let-scope.md:104
 msgid ""
 "If you want to manually inspect these warnings without performing the "
 "edition migration, you can enable the lint with:"
-msgstr ""
+msgstr "에디션 마이그레이션을 수행하지 않고 이러한 경고를 수동으로 검사하려면 다음과 같이 린트를 활성화할 수 있습니다."
 
 #: src/rust-2024/temporary-if-let-scope.md:98
 #: src/rust-2024/temporary-tail-expr-scope.md:95
@@ -4000,7 +4128,7 @@ msgstr ""
 #: src/rust-2024/gen-keyword.md:52 src/rust-2024/reserved-syntax.md:59
 #: src/rust-2024/prelude.md:74 src/rust-2024/newly-unsafe-functions.md:72
 msgid "// Add this to the root of your crate to do a manual migration.\n"
-msgstr ""
+msgstr "// 수동 마이그레이션을 수행하려면 크레이트 루트에 이것을 추가하세요.\n"
 
 #: src/rust-2024/temporary-tail-expr-scope.md:5
 msgid ""
@@ -4010,6 +4138,8 @@ msgid ""
 "before local variables, and are sometimes not extended to the next larger "
 "temporary scope."
 msgstr ""
+"[함수](../../reference/items/functions.html) 또는 클로저 본문, 또는 [블록](../../reference/expressions/block-expr.html)의 "
+"꼬리 표현식을 평가할 때 생성된 임시 값은 이제 지역 변수보다 먼저 삭제될 수 있으며, 때로는 다음으로 큰 임시 스코프로 확장되지 않을 수 있습니다."
 
 #: src/rust-2024/temporary-tail-expr-scope.md:12
 msgid ""
@@ -4019,18 +4149,21 @@ msgid ""
 "expressions can live longer than the block itself, and are dropped later "
 "than the local variable bindings, as in the following example:"
 msgstr ""
+"2024 에디션은 꼬리 표현식의 [임시 값](../../reference/expressions.html#temporaries) 삭제 순서를 변경합니다. "
+"2024 에디션 이전에는 꼬리 표현식의 임시 값이 블록 자체보다 오래 살 수 있고 지역 변수 바인딩보다 나중에 삭제된다는 사실이 종종 놀라움으로 다가왔습니다. "
+"다음 예를 참조하세요:"
 
 #: src/rust-2024/temporary-tail-expr-scope.md:20
 msgid "\"..\""
-msgstr ""
+msgstr "\"..\""
 
 #: src/rust-2024/temporary-tail-expr-scope.md:21
 msgid "// error[E0597]: `c` does not live long enough\n"
-msgstr ""
+msgstr "// error[E0597]: `c`가 충분히 오래 지속되지 않습니다\n"
 
 #: src/rust-2024/temporary-tail-expr-scope.md:25
 msgid "This yields the following error with the 2021 Edition:"
-msgstr ""
+msgstr "2021 에디션에서는 다음과 같은 오류가 발생합니다:"
 
 #: src/rust-2024/temporary-tail-expr-scope.md:27
 msgid ""
@@ -4046,37 +4179,46 @@ msgid ""
 "  |     borrowed value does not live long enough\n"
 "  |     a temporary with access to the borrow is created here ...\n"
 "5 | }\n"
+msgstr ""
+"```text\n"
+"error[E0597]: `c`가 충분히 오래 지속되지 않습니다\n"
+" --> src/lib.rs:4:5\n"
+"  |\n"
+"3 |     let c = RefCell::new(\"..\");\n"
+"  |         - 바인딩 `c`가 여기에서 선언되었습니다\n"
+"4 |     c.borrow().len() // error[E0597]: `c`가 충분히 오래 지속되지 않습니다\n"
+"  |     ^---------\n"
+"  |     |\n"
+"  |     빌린 값이 충분히 오래 지속되지 않습니다\n"
+"  |     여기에서 빌림에 접근할 수 있는 임시 값이 생성됩니다 ...\n"
+"5 | }\n"
 "  | -\n"
 "  | |\n"
-"  | `c` dropped here while still borrowed\n"
-"  | ... and the borrow might be used here, when that temporary is dropped "
-"and runs the destructor for type `Ref<'_, &str>`\n"
+"  | `c`가 여전히 빌려진 상태에서 여기에서 삭제되었습니다\n"
+"  | ... 그리고 해당 임시 값이 삭제되고 `Ref<'_, &str>` 타입의 소멸자가 실행될 때 여기에서 빌림이 사용될 수 있습니다\n"
 "  |\n"
-"  = note: the temporary is part of an expression at the end of a block;\n"
-"          consider forcing this temporary to be dropped sooner, before the "
-"block's local variables are dropped\n"
-"help: for example, you could save the expression's value in a new local "
-"variable `x` and then make `x` be the expression at the end of the block\n"
+"  = 참고: 임시 값은 블록 끝에 있는 표현식의 일부입니다;\n"
+"          이 임시 값이 블록의 지역 변수가 삭제되기 전에 더 빨리 삭제되도록 강제하는 것을 고려해보세요\n"
+"도움말: 예를 들어, 표현식의 값을 새 지역 변수 `x`에 저장한 다음 `x`를 블록 끝에 있는 표현식으로 만들 수 있습니다\n"
 "  |\n"
-"4 |     let x = c.borrow().len(); x // error[E0597]: `c` does not live long "
-"enough\n"
+"4 |     let x = c.borrow().len(); x // error[E0597]: `c`가 충분히 오래 지속되지 않습니다\n"
 "  |     +++++++                 +++\n"
 "\n"
-"For more information about this error, try `rustc --explain E0597`.\n"
+"이 오류에 대한 자세한 내용은 `rustc --explain E0597`을 시도해보세요.\n"
 "```"
 msgstr ""
 
-#: src/rust-2024/temporary-tail-expr-scope.md:54
+#: src/rust-2024/temporary-tail-expr-scope.md:10
 msgid ""
 "In 2021 the local variable `c` is dropped before the temporary created by "
 "`c.borrow()`. The 2024 Edition changes this so that the temporary value "
 "`c.borrow()` is dropped first, followed by dropping the local variable `c`, "
 "allowing the code to compile as expected."
-msgstr ""
+msgstr "2021 에디션에서는 지역 변수 `c`가 `c.borrow()`에 의해 생성된 임시 값보다 먼저 드롭됩니다. 2024 에디션에서는 이를 변경하여 임시 값 `c.borrow()`가 먼저 드롭되고 이어서 지역 변수 `c`가 드롭되도록 하여 코드가 예상대로 컴파일되도록 합니다."
 
 #: src/rust-2024/temporary-tail-expr-scope.md:56
 msgid "Temporary scope may be narrowed"
-msgstr ""
+msgstr "임시 스코프가 축소될 수 있습니다"
 
 #: src/rust-2024/temporary-tail-expr-scope.md:58
 msgid ""
@@ -4090,35 +4232,40 @@ msgid ""
 "dropped immediately at the end of the block (before any local variables in "
 "the block)."
 msgstr ""
+"표현식을 평가하기 위해 임시 값이 생성되면, 해당 임시 값은 [임시 스코프 규칙](../../reference/"
+"destructors.html#temporary-scopes)에 따라 삭제됩니다. 이러한 규칙은 임시 값이 얼마나 오래 유지될지를 정의합니다. "
+"2024년 이전에는 블록의 꼬리 표현식에서 나온 임시 변수가 블록 외부로 확장되어 다음 임시 스코프 경계까지 유지되었습니다. "
+"많은 경우 이는 명령문이나 함수 본문의 끝이었습니다. 2024년에는 꼬리 표현식의 임시 변수가 이제 블록의 끝에서(블록 내의 어떤 지역 변수보다 먼저) "
+"즉시 삭제될 수 있습니다."
 
 #: src/rust-2024/temporary-tail-expr-scope.md:60
 msgid ""
 "This narrowing of the temporary scope may cause programs to fail to compile "
 "in 2024. For example:"
-msgstr ""
+msgstr "이러한 임시 스코프의 축소로 인해 2024년에는 프로그램 컴파일이 실패할 수 있습니다. 예를 들어:"
 
 #: src/rust-2024/temporary-tail-expr-scope.md:63
 msgid "// This example works in 2021, but fails to compile in 2024.\n"
-msgstr ""
+msgstr "// 이 예제는 2021에서는 작동하지만 2024에서는 컴파일에 실패합니다.\n"
 
 #: src/rust-2024/temporary-tail-expr-scope.md:65
 #: src/rust-2024/temporary-tail-expr-scope.md:75
 msgid "\"1234\""
-msgstr ""
+msgstr "\"1234\""
 
-#: src/rust-2024/temporary-tail-expr-scope.md:69
+#: src/rust-2024/temporary-tail-expr-scope.md:44
 msgid ""
 "In this example, in 2021, the temporary `String` is extended outside of the "
 "block, past the call to `len()`, and is dropped at the end of the statement. "
 "In 2024, it is dropped immediately at the end of the block, causing a "
 "compile error about the temporary being dropped while borrowed."
-msgstr ""
+msgstr "이 예제에서 2021 에디션의 경우 임시 `String`은 블록 외부로 확장되어 `len()` 호출을 지나 문장 끝에서 드롭됩니다. 2024 에디션에서는 블록 끝에서 즉시 드롭되므로, 빌려온(borrowed) 상태에서 임시 값이 드롭된다는 컴파일 오류가 발생합니다."
 
 #: src/rust-2024/temporary-tail-expr-scope.md:71
 msgid ""
 "The solution for these kinds of situations is to lift the block expression "
 "out to a local variable so that the temporary lives long enough:"
-msgstr ""
+msgstr "이러한 상황에 대한 해결책은 임시 값이 충분히 오래 유지되도록 블록 표현식을 지역 변수로 끌어내는 것입니다."
 
 #: src/rust-2024/temporary-tail-expr-scope.md:80
 msgid ""
@@ -4128,67 +4275,66 @@ msgid ""
 "live longer than they normally would. Because the `String` temporary is "
 "behind a reference, the `String` temporary is extended long enough for the "
 "next statement to call `len()` on it."
-msgstr ""
+msgstr "이 특정 예제는 [임시 라이프타임 연장(temporary lifetime extension)](../../reference/destructors.html#temporary-lifetime-extension)을 활용합니다. 임시 라이프타임 연장은 임시 값이 평소보다 더 오래 유지되도록 허용하는 특정 규칙 세트입니다. `String` 임시 값이 참조 뒤에 있기 때문에, `String` 임시 값은 다음 문장에서 `len()`을 호출할 수 있을 만큼 충분히 연장됩니다."
 
 #: src/rust-2024/temporary-tail-expr-scope.md:82
 msgid ""
 "See the [`if let` temporary scope](temporary-if-let-scope.md) chapter for a "
 "similar change made to temporary scopes of `if let` expressions."
-msgstr ""
+msgstr "`if let` 표현식의 임시 스코프에 적용된 유사한 변경 사항은 [`if let` 임시 스코프](temporary-if-let-scope.md) 장을 참조하세요."
 
-#: src/rust-2024/temporary-tail-expr-scope.md:90
+#: src/rust-2024/temporary-tail-expr-scope.md:73
 msgid ""
 "Unfortunately, there are no semantics-preserving rewrites to shorten the "
 "lifetime for temporary values in tail expressions[^RFC3606]. The "
-"[`tail_expr_drop_order`](../../rustc/lints/listing/allowed-by-"
-"default.html#tail-expr-drop-order) lint detects if a temporary value with a "
-"custom, non-trivial `Drop` destructor is generated in a tail expression. "
-"Warnings from this lint will appear when running `cargo fix --edition`, but "
-"will otherwise not automatically make any changes. It is recommended to "
-"manually inspect the warnings and determine whether or not you need to make "
-"any adjustments."
-msgstr ""
+"[`tail_expr_drop_order`](../../rustc/lints/listing/allowed-by-default.html#tail-expr-drop-order) "
+"lint detects if a temporary value with a custom, non-trivial `Drop` "
+"destructor is generated in a tail expression. Warnings from this lint will "
+"appear when running `cargo fix --edition`, but will otherwise not "
+"automatically make any changes. It is recommended to manually inspect the "
+"warnings and determine whether or not you need to make any adjustments."
+msgstr "안타깝게도, 테일 표현식의 임시 값 라이프타임을 단축하기 위한 의미 보존형 다시 작성(semantics-preserving rewrites) 방법은 없습니다[^RFC3606]. [`tail_expr_drop_order`](../../rustc/lints/listing/allowed-by-default.html#tail-expr-drop-order) 린트는 테일 표현식에서 사용자 정의, 사소하지 않은 `Drop` 소멸자가 있는 임시 값이 생성되는지 감지합니다. 이 린트의 경고는 `cargo fix --edition`을 실행할 때 나타나지만, 그 외에는 자동으로 변경 사항을 만들지 않습니다. 경고를 수동으로 검사하고 조정이 필요한지 여부를 결정하는 것이 권장됩니다."
 
 #: src/rust-2024/temporary-tail-expr-scope.md:99
 msgid ""
 "Details are documented at [RFC 3606](https://github.com/rust-lang/rfcs/pull/"
 "3606)"
-msgstr ""
+msgstr "자세한 내용은 [RFC 3606](https://github.com/rust-lang/rfcs/pull/3606)에 기록되어 있습니다."
 
 #: src/rust-2024/match-ergonomics.md:5
 msgid ""
 "Writing `mut`, `ref`, or `ref mut` on a binding is only allowed within a "
 "pattern when the pattern leading up to that binding is fully explicit (i.e. "
 "when it does not use match ergonomics)."
-msgstr ""
+msgstr "바인딩에 `mut`, `ref` 또는 `ref mut`을 작성하는 것은 해당 바인딩으로 이어지는 패턴이 완전히 명시적인 경우(즉, 매치 인간공학을 사용하지 않는 경우)에만 패턴 내에서 허용됩니다."
 
 #: src/rust-2024/match-ergonomics.md:6
 msgid ""
 "Put differently, when the default binding mode is not `move`, writing `mut`, "
 "`ref`, or `ref mut` on a binding is an error."
-msgstr ""
+msgstr "달리 표현하면, 기본 바인딩 모드가 `move`가 아닐 때 바인딩에 `mut`, `ref` 또는 `ref mut`을 작성하는 것은 오류입니다."
 
 #: src/rust-2024/match-ergonomics.md:7
 msgid ""
 "Reference patterns (`&` or `&mut`) are only allowed within the fully-"
 "explicit prefix of a pattern."
-msgstr ""
+msgstr "참조 패턴(`&` 또는 `&mut`)은 패턴의 완전히 명시적인 접두사 내에서만 허용됩니다."
 
 #: src/rust-2024/match-ergonomics.md:8
 msgid ""
 "Put differently, reference patterns can only match against references in the "
 "scrutinee when the default binding mode is `move`."
-msgstr ""
+msgstr "달리 표현하면, 참조 패턴은 기본 바인딩 모드가 `move`일 때만 검사 대상(scrutinee)의 참조와 매칭될 수 있습니다."
 
 #: src/rust-2024/match-ergonomics.md:12
 msgid "Background"
-msgstr ""
+msgstr "배경"
 
 #: src/rust-2024/match-ergonomics.md:14
 msgid ""
 "Within `match`, `let`, and other constructs, we match a _pattern_ against a "
 "_scrutinee_.  E.g.:"
-msgstr ""
+msgstr "`match`, `let` 및 기타 구문 내에서 우리는 _검사 대상(scrutinee)_에 대해 _패턴_을 매칭합니다. 예:"
 
 #: src/rust-2024/match-ergonomics.md:17
 msgid ""
@@ -4196,24 +4342,27 @@ msgid ""
 "//  ~~~~~~~~~~~~~~~   ~~~~~~~~~~~~\n"
 "//      Pattern        Scrutinee\n"
 msgstr ""
+"// x: &()\n"
+"//  ~~~~~~~~~~~~~~~   ~~~~~~~~~~~~\n"
+"//        패턴           검사 대상\n"
 
 #: src/rust-2024/match-ergonomics.md:22
 msgid ""
 "Such a pattern is called fully explicit because it does not elide (i.e. "
 "\"skip\" or \"pass\") any references within the scrutinee.  By contrast, "
 "this otherwise-equivalent pattern is not fully explicit:"
-msgstr ""
+msgstr "이러한 패턴은 검사 대상 내의 어떤 참조도 생략(즉, \"건너뛰기\" 또는 \"통과\")하지 않기 때문에 완전히 명시적(fully explicit)이라고 불립니다. 대조적으로, 기능적으로 동일한 다음 패턴은 완전히 명시적이지 않습니다."
 
 #: src/rust-2024/match-ergonomics.md:25 src/rust-2024/match-ergonomics.md:73
 #: src/rust-2024/match-ergonomics.md:81
 msgid "// x: &()\n"
-msgstr ""
+msgstr "// x: &()\n"
 
 #: src/rust-2024/match-ergonomics.md:28
 msgid ""
 "Patterns such as this are said to be using match ergonomics, originally "
 "introduced in [RFC 2005](https://github.com/rust-lang/rfcs/pull/2005)."
-msgstr ""
+msgstr "이와 같은 패턴은 원래 [RFC 2005](https://github.com/rust-lang/rfcs/pull/2005)에서 도입된 매치 인간공학을 사용한다고 합니다."
 
 #: src/rust-2024/match-ergonomics.md:30
 msgid ""
@@ -4222,21 +4371,21 @@ msgid ""
 "of `move`, `ref mut`, or `ref`, and it starts as `move`.  When we reach a "
 "binding, unless an explicit binding mode is provided, the default binding "
 "mode is used to decide the binding's type."
-msgstr ""
+msgstr "매치 인간공학하에서, 패턴을 검사 대상에 대해 점진적으로 매칭함에 따라 기본 바인딩 모드를 추적합니다. 이 모드는 `move`, `ref mut` 또는 `ref` 중 하나일 수 있으며, `move`로 시작합니다. 바인딩에 도달했을 때 명시적인 바인딩 모드가 제공되지 않으면, 기본 바인딩 모드를 사용하여 바인딩의 타입을 결정합니다."
 
 #: src/rust-2024/match-ergonomics.md:32
 msgid ""
 "For example, here we provide an explicit binding mode, causing `x` to be "
 "bound by reference:"
-msgstr ""
+msgstr "예를 들어, 여기서 명시적인 바인딩 모드를 제공하여 `x`가 참조에 의해 바인딩되도록 합니다."
 
 #: src/rust-2024/match-ergonomics.md:35 src/rust-2024/match-ergonomics.md:41
 msgid "// &()\n"
-msgstr ""
+msgstr "// &()\n"
 
 #: src/rust-2024/match-ergonomics.md:38
 msgid "By contrast:"
-msgstr ""
+msgstr "대조적으로:"
 
 #: src/rust-2024/match-ergonomics.md:44
 msgid ""
@@ -4244,32 +4393,32 @@ msgid ""
 "This causes the default binding mode to switch from `move` to `ref`.  Since "
 "there is no explicit binding mode specified, the `ref` binding mode is used "
 "when binding `x`."
-msgstr ""
+msgstr "여기서 패턴에서 우리는 검사 대상의 바깥쪽 공유 참조를 통과시킵니다. 이로 인해 기본 바인딩 모드가 `move`에서 `ref`로 전환됩니다. 명시적인 바인딩 모드가 지정되지 않았으므로, `x`를 바인딩할 때 `ref` 바인딩 모드가 사용됩니다."
 
 #: src/rust-2024/match-ergonomics.md:48
 msgid "`mut` restriction"
-msgstr ""
+msgstr "`mut` 제약"
 
 #: src/rust-2024/match-ergonomics.md:50 src/rust-2024/match-ergonomics.md:86
 msgid "In Rust 2021 and earlier editions, we allow this oddity:"
-msgstr ""
+msgstr "Rust 2021 및 이전 에디션에서는 다음과 같은 특이한 허용이 있었습니다:"
 
 #: src/rust-2024/match-ergonomics.md:53 src/rust-2024/match-ergonomics.md:65
 msgid "// x: &(), mut y: ()\n"
-msgstr ""
+msgstr "// x: &(), mut y: ()\n"
 
 #: src/rust-2024/match-ergonomics.md:56
 msgid ""
 "Here, because we pass the shared reference in the pattern, the default "
 "binding mode switches to `ref`.  But then, in these editions, writing `mut` "
 "on the binding resets the default binding mode to `move`."
-msgstr ""
+msgstr "여기서 패턴에 공유 참조를 전달하기 때문에 기본 바인딩 모드가 `ref`로 전환됩니다. 하지만 이 에디션들에서는 바인딩에 `mut`을 쓰면 기본 바인딩 모드가 `move`로 재설정됩니다."
 
 #: src/rust-2024/match-ergonomics.md:58
 msgid ""
 "This can be surprising as it's not intuitive that mutability should affect "
 "the type."
-msgstr ""
+msgstr "가변성이 타입에 영향을 미친다는 것은 직관적이지 않기 때문에 놀라울 수 있습니다."
 
 #: src/rust-2024/match-ergonomics.md:60
 msgid ""
@@ -4277,41 +4426,41 @@ msgid ""
 "binding when the default binding mode is not `move`.  That is, `mut` can "
 "only be written on a binding when the pattern (leading up to that binding) "
 "is fully explicit."
-msgstr ""
+msgstr "이 문제를 해결할 여지를 남겨두기 위해, Rust 2024에서는 기본 바인딩 모드가 `move`가 아닐 때 바인딩에 `mut`을 쓰는 것이 오류가 됩니다. 즉, `mut`은 패턴(해당 바인딩까지 이어지는)이 완전히 명시적일 때만 바인딩에 쓸 수 있습니다."
 
 #: src/rust-2024/match-ergonomics.md:62 src/rust-2024/match-ergonomics.md:96
 msgid "In Rust 2024, we can write the above example as:"
-msgstr ""
+msgstr "Rust 2024에서는 위 예제를 다음과 같이 쓸 수 있습니다:"
 
 #: src/rust-2024/match-ergonomics.md:68
 msgid "`ref` / `ref mut` restriction"
-msgstr ""
+msgstr "`ref` / `ref mut` 제약"
 
 #: src/rust-2024/match-ergonomics.md:70
 msgid "In Rust 2021 and earlier editions, we allow:"
-msgstr ""
+msgstr "Rust 2021 및 이전 에디션에서는 다음을 허용합니다:"
 
 #: src/rust-2024/match-ergonomics.md:76
 msgid ""
 "Here, the `ref` explicit binding mode is redundant, as by passing the shared "
 "reference (i.e. not mentioning it in the pattern), the binding mode switches "
 "to `ref`."
-msgstr ""
+msgstr "여기서 `ref` 명시적 바인딩 모드는 불필요합니다. 공유 참조를 전달함으로써(즉, 패턴에서 언급하지 않음으로써) 바인딩 모드가 `ref`로 전환되기 때문입니다."
 
 #: src/rust-2024/match-ergonomics.md:78
 msgid ""
 "To leave space for other language possibilities, we are disallowing explicit "
 "binding modes where they are redundant in Rust 2024.  We can rewrite the "
 "above example as simply:"
-msgstr ""
+msgstr "다른 언어 가능성을 위한 공간을 남겨두기 위해, Rust 2024에서는 중복되는 명시적 바인딩 모드를 허용하지 않습니다. 위 예제는 다음과 같이 간단하게 다시 쓸 수 있습니다:"
 
 #: src/rust-2024/match-ergonomics.md:84
 msgid "Reference patterns restriction"
-msgstr ""
+msgstr "참조 패턴 제약"
 
 #: src/rust-2024/match-ergonomics.md:89
 msgid "// x: (), y: &&()\n"
-msgstr ""
+msgstr "// x: (), y: &&()\n"
 
 #: src/rust-2024/match-ergonomics.md:92
 msgid ""
@@ -4319,7 +4468,7 @@ msgid ""
 "resets the default binding mode to `move`.  This can be surprising because "
 "the single `&` in the pattern causes a larger than expected change in the "
 "type by removing both layers of references."
-msgstr ""
+msgstr "여기서 패턴의 `&`는 `&()`의 참조와 매칭되면서 동시에 기본 바인딩 모드를 `move`로 재설정합니다. 패턴의 단일 `&`가 참조의 두 레이어를 모두 제거함으로써 예상보다 큰 타입 변화를 일으키기 때문에 놀라울 수 있습니다."
 
 #: src/rust-2024/match-ergonomics.md:94
 msgid ""
@@ -4327,7 +4476,7 @@ msgid ""
 "`&mut` in the pattern when the default binding mode is not `move`.  That is, "
 "`&` or `&mut` can only be written when the pattern (leading up to that "
 "point) is fully explicit."
-msgstr ""
+msgstr "이 문제를 해결할 여지를 남겨두기 위해, Rust 2024에서는 기본 바인딩 모드가 `move`가 아닐 때 패턴에 `&`나 `&mut`을 쓰는 것이 오류가 됩니다. 즉, `&`나 `&mut`은 패턴(해당 지점까지 이어지는)이 완전히 명시적일 때만 쓸 수 있습니다."
 
 #: src/rust-2024/match-ergonomics.md:104
 msgid ""
@@ -4337,27 +4486,27 @@ msgid ""
 "lint group which is automatically applied when running `cargo fix --"
 "edition`.  This lint will automatically convert affected patterns to fully "
 "explicit patterns that work correctly in Rust 2024 and in all prior editions."
-msgstr ""
+msgstr "[`rust_2024_incompatible_pat`](../../rustc/lints/listing/allowed-by-default.html#rust-2024-incompatible-pat) 린트는 Rust 2024에서 허용되지 않는 패턴을 표시합니다. 이 린트는 `rust-2024-compatibility` 린트 그룹의 일부이며 `cargo fix --edition`을 실행할 때 자동으로 적용됩니다. 이 린트는 영향을 받는 패턴을 Rust 2024 및 모든 이전 에디션에서 올바르게 작동하는 완전히 명시적인 패턴으로 자동 변환합니다."
 
 #: src/rust-2024/match-ergonomics.md:112
 msgid "For example, this will convert this..."
-msgstr ""
+msgstr "예를 들어, 이것은 다음을..."
 
 #: src/rust-2024/match-ergonomics.md:120
 msgid "...into this:"
-msgstr ""
+msgstr "...다음과 같이 변환합니다:"
 
 #: src/rust-2024/match-ergonomics.md:128
 msgid ""
 "Alternatively, you can manually enable the lint to find patterns that will "
 "need to be migrated:"
-msgstr ""
+msgstr "대안으로, 마이그레이션이 필요한 패턴을 찾기 위해 수동으로 린트를 활성화할 수 있습니다:"
 
 #: src/rust-2024/unsafe-extern.md:5
 msgid ""
 "[`extern` blocks](../../reference/items/external-blocks.html) must now be "
 "marked with the `unsafe` keyword."
-msgstr ""
+msgstr "[`extern` 블록](../../reference/items/external-blocks.html)은 이제 `unsafe` 키워드로 표시되어야 합니다."
 
 #: src/rust-2024/unsafe-extern.md:11
 msgid ""
@@ -4367,49 +4516,49 @@ msgid ""
 "of the author of the `extern` block to ensure that the signatures are "
 "correct. If the signatures are not correct, then it may result in undefined "
 "behavior."
-msgstr ""
+msgstr "Rust 1.82는 모든 에디션에서 [`extern` 블록](../../reference/items/external-blocks.html)을 `unsafe` 키워드로 표시할 수 있는 기능을 추가했습니다.[^RFC3484] `unsafe` 키워드를 추가하는 것은 시그니처가 올바른지 확인하는 것이 `extern` 블록 작성자의 책임임을 강조하는 데 도움이 됩니다. 시그니처가 올바르지 않으면 정의되지 않은 동작이 발생할 수 있습니다."
 
 #: src/rust-2024/unsafe-extern.md:13
 msgid "The syntax for an unsafe `extern` block looks like this:"
-msgstr ""
+msgstr "unsafe `extern` 블록의 문법은 다음과 같습니다:"
 
 #: src/rust-2024/unsafe-extern.md:16 src/rust-2024/static-mut-references.md:270
 msgid "\"C\""
-msgstr ""
+msgstr "\"C\""
 
 #: src/rust-2024/unsafe-extern.md:17
 msgid "// sqrt (from libm) may be called with any `f64`\n"
-msgstr ""
+msgstr "// sqrt (libm에서 가져옴)는 어떤 `f64`로도 호출될 수 있음\n"
 
 #: src/rust-2024/unsafe-extern.md:20
 msgid ""
 "// strlen (from libc) requires a valid pointer,\n"
 "    // so we mark it as being an unsafe fn\n"
-msgstr ""
+msgstr "// strlen (libc에서 가져옴)은 유효한 포인터를 요구하므로,\n    // unsafe fn으로 표시함\n"
 
 #: src/rust-2024/unsafe-extern.md:24
 msgid "// this function doesn't say safe or unsafe, so it defaults to unsafe\n"
-msgstr ""
+msgstr "// 이 함수는 safe나 unsafe를 명시하지 않았으므로, 기본적으로 unsafe임\n"
 
 #: src/rust-2024/unsafe-extern.md:31
 msgid ""
 "In addition to being able to mark an `extern` block as `unsafe`, you can "
 "also specify if individual items in the `extern` block are `safe` or "
 "`unsafe`. Items marked as `safe` can be used without an `unsafe` block."
-msgstr ""
+msgstr "`extern` 블록을 `unsafe`로 표시하는 것 외에도, `extern` 블록 내의 개별 항목이 `safe`인지 `unsafe`인지 지정할 수도 있습니다. `safe`로 표시된 항목은 `unsafe` 블록 없이 사용할 수 있습니다."
 
 #: src/rust-2024/unsafe-extern.md:33
 msgid ""
 "Starting with the 2024 Edition, it is now required to include the `unsafe` "
 "keyword on an `extern` block. This is intended to make it very clear that "
 "there are safety requirements that must be upheld by the extern definitions."
-msgstr ""
+msgstr "2024 에디션부터는 `extern` 블록에 `unsafe` 키워드를 포함하는 것이 필수입니다. 이는 extern 정의가 준수해야 할 안전 요구 사항이 있음을 매우 명확하게 하기 위함입니다."
 
 #: src/rust-2024/unsafe-extern.md:35
 msgid ""
 "See [RFC 3484](https://github.com/rust-lang/rfcs/blob/master/text/3484-"
 "unsafe-extern-blocks.md) for the original proposal."
-msgstr ""
+msgstr "원래 제안은 [RFC 3484](https://github.com/rust-lang/rfcs/blob/master/text/3484-unsafe-extern-blocks.md)를 참조하세요."
 
 #: src/rust-2024/unsafe-extern.md:39
 msgid ""
@@ -4418,70 +4567,70 @@ msgid ""
 "add the `unsafe` keyword. The lint is part of the `rust-2024-compatibility` "
 "lint group which is included in the automatic edition migration. In order to "
 "migrate your code to be Rust 2024 Edition compatible, run:"
-msgstr ""
+msgstr "[`missing_unsafe_on_extern`](../../rustc/lints/listing/allowed-by-default.html#missing-unsafe-on-extern) 린트는 `extern` 블록을 업데이트하여 `unsafe` 키워드를 추가할 수 있습니다. 이 린트는 자동 에디션 마이그레이션에 포함된 `rust-2024-compatibility` 린트 그룹의 일부입니다. 코드를 Rust 2024 에디션과 호환되도록 마이그레이션하려면 다음을 실행하세요:"
 
 #: src/rust-2024/unsafe-extern.md:45
 msgid ""
 "Just beware that this automatic migration will not be able to verify that "
 "the signatures in the `extern` block are correct. It is still your "
 "responsibility to manually review their definition."
-msgstr ""
+msgstr "단, 이 자동 마이그레이션은 `extern` 블록 내의 시그니처가 올바른지 확인할 수 없으므로 주의하세요. 정의를 수동으로 검토하는 것은 여전히 여러분의 책임입니다."
 
 #: src/rust-2024/unsafe-extern.md:47
 msgid ""
 "Alternatively, you can manually enable the lint to find places where there "
 "are `unsafe` blocks that need to be updated."
-msgstr ""
+msgstr "대안으로, 업데이트가 필요한 `unsafe` 블록이 있는 곳을 찾기 위해 수동으로 린트를 활성화할 수 있습니다."
 
 #: src/rust-2024/unsafe-attributes.md:5
 msgid "The following attributes must now be marked as `unsafe`:"
-msgstr ""
+msgstr "다음 속성들은 이제 `unsafe`로 표시되어야 합니다:"
 
 #: src/rust-2024/unsafe-attributes.md:6
 msgid "[`export_name`](../../reference/abi.html#the-export_name-attribute)"
-msgstr ""
+msgstr "[`export_name`](../../reference/abi.html#the-export_name-attribute)"
 
 #: src/rust-2024/unsafe-attributes.md:7
 msgid "[`link_section`](../../reference/abi.html#the-link_section-attribute)"
-msgstr ""
+msgstr "[`link_section`](../../reference/abi.html#the-link_section-attribute)"
 
 #: src/rust-2024/unsafe-attributes.md:8
 msgid "[`no_mangle`](../../reference/abi.html#the-no_mangle-attribute)"
-msgstr ""
+msgstr "[`no_mangle`](../../reference/abi.html#the-no_mangle-attribute)"
 
 #: src/rust-2024/unsafe-attributes.md:16
 msgid ""
 "Rust 1.82 added the ability in all editions to mark certain attributes as "
 "`unsafe` to indicate that they have soundness requirements that must be "
 "upheld.[^RFC3325] The syntax for an unsafe attribute looks like this:"
-msgstr ""
+msgstr "Rust 1.82는 모든 에디션에서 특정 속성을 `unsafe`로 표시하여 준수해야 할 건전성 요구 사항이 있음을 나타내는 기능을 추가했습니다.[^RFC3325] unsafe 속성의 문법은 다음과 같습니다:"
 
 #: src/rust-2024/unsafe-attributes.md:19
 msgid "// SAFETY: there is no other global function of this name\n"
-msgstr ""
+msgstr "// SAFETY: 이 이름을 가진 다른 전역 함수는 없음\n"
 
 #: src/rust-2024/unsafe-attributes.md:24
 msgid ""
 "Marking the attribute with `unsafe` highlights that there are safety "
 "requirements that must be upheld that the compiler cannot verify on its own."
-msgstr ""
+msgstr "속성을 `unsafe`로 표시하면 컴파일러가 자체적으로 확인할 수 없는 안전 요구 사항을 준수해야 함을 강조하게 됩니다."
 
 #: src/rust-2024/unsafe-attributes.md:26
 msgid ""
 "Starting with the 2024 Edition, it is now required to mark these attributes "
 "as `unsafe`. The following section describes the safety requirements for "
 "these attributes."
-msgstr ""
+msgstr "2024 에디션부터는 이러한 속성을 `unsafe`로 표시해야 합니다. 다음 섹션에서는 이러한 속성에 대한 안전 요구 사항을 설명합니다."
 
 #: src/rust-2024/unsafe-attributes.md:28
 msgid ""
 "See [RFC 3325](https://rust-lang.github.io/rfcs/3325-unsafe-attributes.html) "
 "for the original proposal."
-msgstr ""
+msgstr "원래 제안은 [RFC 3325](https://rust-lang.github.io/rfcs/3325-unsafe-attributes.html)를 참조하세요."
 
 #: src/rust-2024/unsafe-attributes.md:30
 msgid "Safety requirements"
-msgstr ""
+msgstr "안전 요구 사항"
 
 #: src/rust-2024/unsafe-attributes.md:32
 msgid ""
@@ -4490,7 +4639,7 @@ msgid ""
 "[`link_section`](../../reference/abi.html#the-link_section-attribute) "
 "attributes influence the symbol names and linking behavior of items. Care "
 "must be taken to ensure that these attributes are used correctly."
-msgstr ""
+msgstr "[`no_mangle`](../../reference/abi.html#the-no_mangle-attribute), [`export_name`](../../reference/abi.html#the-export_name-attribute), [`link_section`](../../reference/abi.html#the-link_section-attribute) 속성은 항목의 심볼 이름과 링킹 동작에 영향을 줍니다. 이 속성들을 올바르게 사용하도록 주의해야 합니다."
 
 #: src/rust-2024/unsafe-attributes.md:34
 msgid ""
@@ -4500,43 +4649,43 @@ msgid ""
 "because [symbol mangling](../../rustc/symbol-mangling/index.html) helps "
 "ensure that the symbol name is unique. However, attributes like "
 "`export_name` can upset that assumption of uniqueness."
-msgstr ""
+msgstr "연결된 모든 라이브러리의 심볼 집합은 전역 네임스페이스이므로 라이브러리 간에 심볼 이름 충돌이 발생하면 문제가 생길 수 있습니다. 일반적으로 [심볼 맹글링](../../rustc/symbol-mangling/index.html)이 심볼 이름의 고유성을 보장하는 데 도움이 되기 때문에 일반적인 함수 정의에서는 문제가 되지 않습니다. 하지만 `export_name`과 같은 속성은 그러한 고유성 가정을 깨뜨릴 수 있습니다."
 
 #: src/rust-2024/unsafe-attributes.md:36
 msgid ""
 "For example, in previous editions the following crashes on most Unix-like "
 "platforms despite containing only safe code:"
-msgstr ""
+msgstr "예를 들어, 이전 에디션에서는 안전한 코드만 포함되어 있음에도 불구하고 다음 코드가 대부분의 유닉스 계열 플랫폼에서 충돌을 일으킵니다:"
 
 #: src/rust-2024/unsafe-attributes.md:40
 msgid "\"Hello, world!\""
-msgstr ""
+msgstr "\"Hello, world!\""
 
 #: src/rust-2024/unsafe-attributes.md:43
 msgid "\"malloc\""
-msgstr ""
+msgstr "\"malloc\""
 
 #: src/rust-2024/unsafe-attributes.md:47
 msgid ""
 "In the 2024 Edition, it is now required to mark these attributes as unsafe "
 "to emphasize that it is required to ensure that the symbol is defined "
 "correctly:"
-msgstr ""
+msgstr "2024 에디션에서는 심볼이 올바르게 정의되었는지 확인해야 함을 강조하기 위해 이러한 속성을 unsafe로 표시하는 것이 필수입니다:"
 
 #: src/rust-2024/unsafe-attributes.md:50
 msgid ""
 "// SAFETY: There should only be a single definition of the loop symbol.\n"
-msgstr ""
+msgstr "// SAFETY: loop 심볼의 정의는 하나만 있어야 함.\n"
 
 #: src/rust-2024/unsafe-attributes.md:51
 msgid "\"loop\""
-msgstr ""
+msgstr "\"loop\""
 
 #: src/rust-2024/unsafe-attributes.md:53
 #: src/rust-2024/static-mut-references.md:161
 #: src/rust-2024/static-mut-references.md:238
 msgid "// ...\n"
-msgstr ""
+msgstr "// ...\n"
 
 #: src/rust-2024/unsafe-attributes.md:62
 msgid ""
@@ -4546,24 +4695,24 @@ msgid ""
 "compatibility` lint group which is included in the automatic edition "
 "migration. In order to migrate your code to be Rust 2024 Edition compatible, "
 "run:"
-msgstr ""
+msgstr "[`unsafe_attr_outside_unsafe`](../../rustc/lints/listing/allowed-by-default.html#unsafe-attr-outside-unsafe) 린트는 이러한 속성이 `unsafe(...)` 형식을 사용하도록 업데이트할 수 있습니다. 이 린트는 자동 에디션 마이그레이션에 포함된 `rust-2024-compatibility` 린트 그룹의 일부입니다. 코드를 Rust 2024 에디션과 호환되도록 마이그레이션하려면 다음을 실행하세요:"
 
 #: src/rust-2024/unsafe-attributes.md:68
 msgid ""
 "Just beware that this automatic migration will not be able to verify that "
 "these attributes are being used correctly. It is still your responsibility "
 "to manually review their usage."
-msgstr ""
+msgstr "단, 이 자동 마이그레이션은 이 속성들이 올바르게 사용되고 있는지 확인할 수 없으므로 주의하세요. 사용법을 수동으로 검토하는 것은 여전히 여러분의 책임입니다."
 
 #: src/rust-2024/unsafe-attributes.md:70
 msgid ""
 "Alternatively, you can manually enable the lint to find places where these "
 "attributes need to be updated."
-msgstr ""
+msgstr "대안으로, 이 속성들의 업데이트가 필요한 곳을 찾기 위해 수동으로 린트를 활성화할 수 있습니다."
 
 #: src/rust-2024/unsafe-op-in-unsafe-fn.md:1
 msgid "unsafe_op_in_unsafe_fn warning"
-msgstr ""
+msgstr "unsafe_op_in_unsafe_fn 경고"
 
 #: src/rust-2024/unsafe-op-in-unsafe-fn.md:5
 msgid ""
@@ -4571,7 +4720,7 @@ msgid ""
 "default.html#unsafe-op-in-unsafe-fn) lint now warns by default. This warning "
 "detects calls to unsafe operations in unsafe functions without an explicit "
 "unsafe block."
-msgstr ""
+msgstr "[`unsafe_op_in_unsafe_fn`](../../rustc/lints/listing/allowed-by-default.html#unsafe-op-in-unsafe-fn) 린트가 이제 기본적으로 경고를 발생시킵니다. 이 경고는 unsafe 함수 내에서 명시적인 unsafe 블록 없이 수행되는 unsafe 연산 호출을 감지합니다."
 
 #: src/rust-2024/unsafe-op-in-unsafe-fn.md:12
 msgid ""
@@ -4580,15 +4729,15 @@ msgid ""
 "operations](../../reference/unsafety.html) in an unsafe function without an "
 "explicit [`unsafe {}` block](../../reference/expressions/block-"
 "expr.html#unsafe-blocks)."
-msgstr ""
+msgstr "[`unsafe_op_in_unsafe_fn`](../../rustc/lints/listing/allowed-by-default.html#unsafe-op-in-unsafe-fn) 린트는 unsafe 함수 내에 명시적인 [`unsafe {}` 블록](../../reference/expressions/block-expr.html#unsafe-blocks) 없이 [unsafe 연산](../../reference/unsafety.html)이 있을 경우 발생합니다."
 
 #: src/rust-2024/unsafe-op-in-unsafe-fn.md:17
 msgid "// WARNING: requires unsafe block\n"
-msgstr ""
+msgstr "// WARNING: unsafe 블록이 필요함\n"
 
 #: src/rust-2024/unsafe-op-in-unsafe-fn.md:21
 msgid "The solution is to wrap any unsafe operations in an `unsafe` block:"
-msgstr ""
+msgstr "해결 방법은 모든 unsafe 연산을 `unsafe` 블록으로 감싸는 것입니다:"
 
 #: src/rust-2024/unsafe-op-in-unsafe-fn.md:30
 msgid ""
@@ -4599,13 +4748,13 @@ msgid ""
 "safety requirements. The other role was to allow the use of unsafe "
 "operations inside of the function. This second role was determined to be too "
 "risky without explicit `unsafe` blocks."
-msgstr ""
+msgstr "이 변경 사항은 unsafe 함수 내에서 우발적으로 unsafe 연산을 사용하는 것을 방지하기 위한 것입니다. `unsafe` 함수 키워드는 두 가지 역할을 수행하고 있었습니다. 하나는 함수 _호출_ 에 unsafe가 필요하며 호출자가 추가적인 안전 요구 사항을 준수할 책임이 있음을 선언하는 것이었습니다. 다른 하나는 함수 내부에서 unsafe 연산 사용을 허용하는 것이었습니다. 이 두 번째 역할은 명시적인 `unsafe` 블록 없이는 너무 위험하다고 판단되었습니다."
 
 #: src/rust-2024/unsafe-op-in-unsafe-fn.md:36
 msgid ""
 "More information and motivation may be found in [RFC #2585](https://rust-"
 "lang.github.io/rfcs/2585-unsafe-block-in-unsafe-fn.html)."
-msgstr ""
+msgstr "더 자세한 정보와 동기는 [RFC #2585](https://rust-lang.github.io/rfcs/2585-unsafe-block-in-unsafe-fn.html)에서 확인할 수 있습니다."
 
 #: src/rust-2024/unsafe-op-in-unsafe-fn.md:44
 msgid ""
@@ -4613,25 +4762,25 @@ msgid ""
 "default.html#unsafe-op-in-unsafe-fn) lint is part of the `rust-2024-"
 "compatibility` lint group. In order to migrate your code to be Rust 2024 "
 "Edition compatible, run:"
-msgstr ""
+msgstr "[`unsafe_op_in_unsafe_fn`](../../rustc/lints/listing/allowed-by-default.html#unsafe-op-in-unsafe-fn) 린트는 `rust-2024-compatibility` 린트 그룹의 일부입니다. 코드를 Rust 2024 에디션과 호환되도록 마이그레이션하려면 다음을 실행하세요:"
 
 #: src/rust-2024/unsafe-op-in-unsafe-fn.md:51
 msgid ""
 "Alternatively, you can manually enable the lint to find places where unsafe "
 "blocks need to be added, or switch it to `allow` to silence the lint "
 "completely."
-msgstr ""
+msgstr "대안으로, unsafe 블록 추가가 필요한 곳을 찾기 위해 수동으로 린트를 활성화하거나, 린트를 완전히 끄기 위해 `allow`로 전환할 수 있습니다."
 
 #: src/rust-2024/static-mut-references.md:1
 msgid "Disallow references to static mut"
-msgstr ""
+msgstr "static mut에 대한 참조 비허용"
 
 #: src/rust-2024/static-mut-references.md:5
 msgid ""
 "The [`static_mut_refs`](../../rustc/lints/listing/warn-by-"
 "default.html#static-mut-refs) lint level is now `deny` by default. This "
 "checks for taking a shared or mutable reference to a `static mut`."
-msgstr ""
+msgstr "[`static_mut_refs`](../../rustc/lints/listing/warn-by-default.html#static-mut-refs) 린트 레벨이 이제 기본적으로 `deny`입니다. 이는 `static mut`에 대한 공유 또는 가변 참조를 가져오는 것을 검사합니다."
 
 #: src/rust-2024/static-mut-references.md:12
 msgid ""
@@ -4640,7 +4789,7 @@ msgid ""
 "mut`](../../reference/items/static-items.html#mutable-statics). In the 2024 "
 "Edition, this lint is now `deny` by default to emphasize that you should "
 "avoid making these references."
-msgstr ""
+msgstr "[`static_mut_refs`](../../rustc/lints/listing/warn-by-default.html#static-mut-refs) 린트는 [`static mut`](../../reference/items/static-items.html#mutable-statics)에 대한 참조를 가져오는 것을 감지합니다. 2024 에디션에서는 이러한 참조를 피해야 함을 강조하기 위해 이 린트가 기본적으로 `deny`로 설정됩니다."
 
 #: src/rust-2024/static-mut-references.md:20
 #: src/rust-2024/static-mut-references.md:21
@@ -4648,7 +4797,7 @@ msgstr ""
 #: src/rust-2024/static-mut-references.md:35
 #: src/rust-2024/static-mut-references.md:36
 msgid "// ERROR: shared reference to mutable static\n"
-msgstr ""
+msgstr "// ERROR: 가변 static에 대한 공유 참조\n"
 
 #: src/rust-2024/static-mut-references.md:26
 msgid ""
@@ -4659,22 +4808,22 @@ msgid ""
 "mutability XOR aliasing for a `static mut` requires _reasoning about your "
 "code globally_, which can be particularly difficult in the face of "
 "reentrancy and/or multithreading."
-msgstr ""
+msgstr "Rust의 가변성 XOR 앨리어싱 요구 사항을 위반하여 이러한 참조를 가져오는 것은 **해당 참조를 읽거나 쓰지 않더라도** 항상 _즉각적인_ [정의되지 않은 동작](../../reference/behavior-considered-undefined.html)이었습니다. 게다가 `static mut`에 대한 가변성 XOR 앨리어싱을 준수하려면 _코드를 전역적으로 추론_해야 하는데, 이는 재진입성이나 멀티스레딩 상황에서 특히 어려울 수 있습니다."
 
 #: src/rust-2024/static-mut-references.md:28
 msgid ""
 "Note that there are some cases where implicit references are automatically "
 "created without a visible `&` operator. For example, these situations will "
 "also trigger the lint:"
-msgstr ""
+msgstr "보이는 `&` 연산자 없이 암시적 참조가 자동으로 생성되는 경우가 있다는 점에 유의하세요. 예를 들어, 다음과 같은 상황에서도 린트가 발생합니다:"
 
 #: src/rust-2024/static-mut-references.md:35
 msgid "\"{NUMS:?}\""
-msgstr ""
+msgstr "\"{NUMS:?}\""
 
 #: src/rust-2024/static-mut-references.md:40
 msgid "Alternatives"
-msgstr ""
+msgstr "대안"
 
 #: src/rust-2024/static-mut-references.md:42
 msgid ""
@@ -4682,7 +4831,7 @@ msgid ""
 "_immutable_ `static` of a type that provides _interior mutability_ behind "
 "some _locally-reasoned abstraction_ (which greatly reduces the complexity of "
 "ensuring that Rust's mutability XOR aliasing requirement is upheld)."
-msgstr ""
+msgstr "가능하다면, Rust의 가변성 XOR 앨리어싱 요구 사항 준수를 보장하는 복잡성을 크게 줄여주는 _지역적으로 추론된 추상화_ 뒤에서 _내부 가변성_을 제공하는 타입의 _불변_ `static`을 대신 사용하는 것이 **강력히 권장됩니다**."
 
 #: src/rust-2024/static-mut-references.md:44
 msgid ""
@@ -4694,7 +4843,7 @@ msgid ""
 "than directly taking a reference, (the safety requirements of) accesses "
 "through that pointer will be more familiar to `unsafe` developers and can be "
 "deferred until/limited to smaller regions of code."
-msgstr ""
+msgstr "지역적으로 추론된 추상화가 불가능하여 어쩔 수 없이 `static` 변수에 대한 접근을 전역적으로 추론해야 하는 상황이라면, 이제 [`&raw const` 또는 `&raw mut` 연산자](../../reference/expressions/operator-expr.html#raw-borrow-operators)를 통해 얻을 수 있는 원시 포인터를 사용해야 합니다. 참조를 직접 가져오는 대신 먼저 원시 포인터를 얻음으로써, 해당 포인터를 통한 접근(의 안전 요구 사항)은 `unsafe` 개발자에게 더 친숙할 것이며 더 작은 코드 영역으로 제한하거나 미룰 수 있습니다."
 
 #: src/rust-2024/static-mut-references.md:51
 msgid ""
@@ -4702,7 +4851,7 @@ msgid ""
 "as full-fledged implementations. Do not copy these as-is. There are details "
 "for your specific situation that may require alterations to fit your needs. "
 "These are intended to help you see different ways to approach your problem."
-msgstr ""
+msgstr "다음 예제들은 단지 설명일 뿐이며 완전한 구현을 의도한 것이 아닙니다. 있는 그대로 복사하지 마세요. 여러분의 특정 상황에 맞춰 변경해야 할 세부 사항이 있을 수 있습니다. 이 예제들은 문제에 접근하는 다양한 방법을 보여주기 위한 것입니다."
 
 #: src/rust-2024/static-mut-references.md:53
 msgid ""
@@ -4711,11 +4860,11 @@ msgid ""
 "behavior-considered-undefined.html), the [Rustonomicon](../../nomicon/"
 "index.html), and if you are having questions to reach out on one of the Rust "
 "forums such as the [Users Forum](https://users.rust-lang.org/)."
-msgstr ""
+msgstr "표준 라이브러리의 특정 타입에 대한 문서, [정의되지 않은 동작](../../reference/behavior-considered-undefined.html)에 대한 참조, [Rustonomicon](../../nomicon/index.html)을 읽어보는 것을 권장하며, 질문이 있다면 [Users Forum](https://users.rust-lang.org/)과 같은 Rust 포럼에 문의하세요."
 
 #: src/rust-2024/static-mut-references.md:59
 msgid "Don't use globals"
-msgstr ""
+msgstr "전역 변수 사용하지 않기"
 
 #: src/rust-2024/static-mut-references.md:61
 msgid ""
@@ -4723,56 +4872,56 @@ msgid ""
 "avoid mutable global state. Of course this can be a little more awkward or "
 "difficult at times, particularly if you need to pass a mutable reference "
 "around between many functions."
-msgstr ""
+msgstr "이미 알고 계시겠지만, 가능하다면 가변 전역 상태는 피하는 것이 가장 좋습니다. 물론 때로는 조금 더 어색하거나 어려울 수 있으며, 특히 많은 함수 사이에서 가변 참조를 전달해야 할 때 그렇습니다."
 
 #: src/rust-2024/static-mut-references.md:63
 msgid "Atomics"
-msgstr ""
+msgstr "아토믹 (Atomics)"
 
 #: src/rust-2024/static-mut-references.md:65
 msgid ""
 "The [atomic types](../../std/sync/atomic/index.html) provide integers, "
 "pointers, and booleans that can be used in a `static` (without `mut`)."
-msgstr ""
+msgstr "[아토믹 타입](../../std/sync/atomic/index.html)은 `static`에서 (`mut` 없이) 사용할 수 있는 정수, 포인터, 불리언을 제공합니다."
 
 #: src/rust-2024/static-mut-references.md:70
 msgid ""
 "// Change from this:\n"
 "//   static mut COUNTER: u64 = 0;\n"
 "// to this:\n"
-msgstr ""
+msgstr "// 이렇게 변경:\n//   static mut COUNTER: u64 = 0;\n// 이것으로:\n"
 
 #: src/rust-2024/static-mut-references.md:77
 msgid ""
 "// Be sure to analyze your use case to determine the correct Ordering to "
 "use.\n"
-msgstr ""
+msgstr "// 사용 사례를 분석하여 올바른 Ordering을 사용하도록 하세요.\n"
 
 #: src/rust-2024/static-mut-references.md:84
 msgid "Mutex or RwLock"
-msgstr ""
+msgstr "Mutex 또는 RwLock"
 
 #: src/rust-2024/static-mut-references.md:86
 msgid ""
 "When your type is more complex than an atomic, consider using a [`Mutex`]"
 "(../../std/sync/struct.Mutex.html) or [`RwLock`](../../std/sync/"
 "struct.RwLock.html) to ensure proper access to the global value."
-msgstr ""
+msgstr "타입이 아토믹보다 더 복잡하다면, [`Mutex`](../../std/sync/struct.Mutex.html)나 [`RwLock`](../../std/sync/struct.RwLock.html)을 사용하여 전역 값에 대한 올바른 접근을 보장하는 것을 고려하세요."
 
 #: src/rust-2024/static-mut-references.md:91
 msgid ""
 "// Change from this:\n"
 "//     static mut QUEUE: VecDeque<String> = VecDeque::new();\n"
 "// to this:\n"
-msgstr ""
+msgstr "// 이렇게 변경:\n//     static mut QUEUE: VecDeque<String> = VecDeque::new();\n// 이것으로:\n"
 
 #: src/rust-2024/static-mut-references.md:98
 msgid "\"abc\""
-msgstr ""
+msgstr "\"abc\""
 
 #: src/rust-2024/static-mut-references.md:106
 msgid "OnceLock or LazyLock"
-msgstr ""
+msgstr "OnceLock 또는 LazyLock"
 
 #: src/rust-2024/static-mut-references.md:108
 msgid ""
@@ -4780,14 +4929,14 @@ msgid ""
 "initialization that can't be `const`, you can instead reach for [`OnceLock`]"
 "(../../std/sync/struct.OnceLock.html) or [`LazyLock`](../../std/sync/"
 "struct.LazyLock.html) instead."
-msgstr ""
+msgstr "`const`로 할 수 없는 일회성 초기화를 위해 `static mut`을 사용하고 있다면, 대신 [`OnceLock`](../../std/sync/struct.OnceLock.html)이나 [`LazyLock`](../../std/sync/struct.LazyLock.html)을 사용할 수 있습니다."
 
 #: src/rust-2024/static-mut-references.md:121
 msgid ""
 "// Instead of some temporary or uninitialized type like:\n"
 "//     static mut STATE: Option<GlobalState> = None;\n"
 "// use this instead:\n"
-msgstr ""
+msgstr "// 다음과 같은 임시 또는 초기화되지 않은 타입 대신:\n//     static mut STATE: Option<GlobalState> = None;\n// 대신 이것을 사용하세요:\n"
 
 #: src/rust-2024/static-mut-references.md:134
 msgid ""
@@ -4796,11 +4945,11 @@ msgid ""
 "information into the constructor, which can work well with single "
 "initialization points (like `main`), or if the inputs are available wherever "
 "you access the global."
-msgstr ""
+msgstr "[`OnceLock`](../../std/sync/struct.OnceLock.html)은 [`LazyLock`](../../std/sync/struct.LazyLock.html)과 비슷하지만, 생성자에 정보를 전달해야 하는 경우 사용할 수 있습니다. 이는 (`main`과 같은) 단일 초기화 지점과 잘 작동하거나, 전역 변수에 접근하는 곳 어디에서나 입력을 사용할 수 있는 경우에 유용합니다."
 
 #: src/rust-2024/static-mut-references.md:169
 msgid "`no_std` one-time initialization"
-msgstr ""
+msgstr "`no_std` 일회성 초기화"
 
 #: src/rust-2024/static-mut-references.md:171
 msgid ""
@@ -4809,26 +4958,26 @@ msgid ""
 "require `std` which is useful in a `no_std` context. Assuming your target "
 "supports atomics, then you can use an atomic to check for the initialization "
 "of the global. The pattern might look something like this:"
-msgstr ""
+msgstr "이 예제는 전역 변수의 일회성 초기화를 제공한다는 점에서 [`OnceLock`](../../std/sync/struct.OnceLock.html)과 유사하지만, `std`를 필요로 하지 않아 `no_std` 환경에서 유용합니다. 타겟이 아토믹을 지원한다고 가정하면, 아토믹을 사용하여 전역 변수의 초기화 여부를 확인할 수 있습니다. 패턴은 다음과 비슷할 것입니다:"
 
 #: src/rust-2024/static-mut-references.md:215
 msgid ""
 "// SAFETY: The reads and writes to STATE are guarded with the INITIALIZED "
 "guard.\n"
-msgstr ""
+msgstr "// SAFETY: STATE에 대한 읽기 및 쓰기는 INITIALIZED 가드로 보호됩니다.\n"
 
 #: src/rust-2024/static-mut-references.md:221
 msgid "\"already initialized, or concurrent initialization\""
-msgstr ""
+msgstr "\"이미 초기화되었거나 동시에 초기화 중\""
 
 #: src/rust-2024/static-mut-references.md:227
 msgid "\"not initialized\""
-msgstr ""
+msgstr "\"초기화되지 않음\""
 
 #: src/rust-2024/static-mut-references.md:229
 msgid ""
 "// SAFETY: Mutable access is not possible after state has been initialized.\n"
-msgstr ""
+msgstr "// SAFETY: 상태가 초기화된 후에는 가변 접근이 불가능합니다.\n"
 
 #: src/rust-2024/static-mut-references.md:244
 msgid ""
@@ -4837,7 +4986,7 @@ msgid ""
 "not possible, consider using either [`MaybeUninit`](../../core/mem/"
 "union.MaybeUninit.html), or dynamic trait dispatch (with a dummy type that "
 "implements a trait), or some other approach to have a default placeholder."
-msgstr ""
+msgstr "이 예제는 초기화 전에 static에 기본값을 넣을 수 있다고 가정합니다(이 예제에서는 const `default` 생성자). 불가능한 경우, [`MaybeUninit`](../../core/mem/union.MaybeUninit.html)을 사용하거나, 동적 트레이트 디스패치(트레이트를 구현하는 더미 타입 사용)를 사용하거나, 기본 자리 표시자를 갖는 다른 접근 방식을 고려해보세요."
 
 #: src/rust-2024/static-mut-references.md:246
 msgid ""
@@ -4845,11 +4994,11 @@ msgid ""
 "initialization, such as the [`static-cell`](https://crates.io/crates/"
 "static_cell) crate (which supports targets that do not have atomics by using "
 "[`portable-atomic`](https://crates.io/crates/portable-atomic))."
-msgstr ""
+msgstr "비슷한 일회성 초기화를 제공하는 커뮤니티 제공 크레이트들이 있습니다. 예를 들어 [`static-cell`](https://crates.io/crates/static_cell) 크레이트([`portable-atomic`](https://crates.io/crates/portable-atomic)을 사용하여 아토믹이 없는 타겟도 지원함)가 있습니다."
 
 #: src/rust-2024/static-mut-references.md:252
 msgid "Raw pointers"
-msgstr ""
+msgstr "원시 포인터"
 
 #: src/rust-2024/static-mut-references.md:254
 msgid ""
@@ -4859,14 +5008,14 @@ msgid ""
 "don't create an intermediate reference. Instead you can use [raw borrow "
 "operators](../../reference/expressions/operator-expr.html#raw-borrow-"
 "operators), like in the following example:"
-msgstr ""
+msgstr "일부 경우에는 `static mut`을 계속 사용할 수 있지만, 참조 생성은 피해야 합니다. 예를 들어, [원시 포인터](../../reference/types/pointer.html#raw-pointers-const-and-mut)를 C 라이브러리에 전달하기만 하면 되는 경우 중간 참조를 생성하지 마세요. 대신 다음 예제처럼 [원시 대여 연산자](../../reference/expressions/operator-expr.html#raw-borrow-operators)를 사용할 수 있습니다:"
 
 #: src/rust-2024/static-mut-references.md:276
 msgid ""
 "// Change from this:\n"
 "        //     example_ffi(&mut STATE as *mut GlobalState);\n"
 "        // to this:\n"
-msgstr ""
+msgstr "// 이렇게 변경:\n        //     example_ffi(&mut STATE as *mut GlobalState);\n        // 이것으로:\n"
 
 #: src/rust-2024/static-mut-references.md:284
 msgid ""
@@ -4874,11 +5023,11 @@ msgid ""
 "mutable pointers. This may require some internal or external synchronization "
 "or proofs about how it is used across threads, interrupt handlers, and "
 "reentrancy."
-msgstr ""
+msgstr "단, 가변 포인터에 대한 앨리어싱 제약 조건은 여전히 준수해야 합니다. 이를 위해서는 내부 또는 외부 동기화가 필요하거나, 스레드, 인터럽트 핸들러, 재진입성에 걸쳐 어떻게 사용되는지에 대한 증명이 필요할 수 있습니다."
 
 #: src/rust-2024/static-mut-references.md:289
 msgid "`UnsafeCell` with `Sync`"
-msgstr ""
+msgstr "`Sync`와 함께 `UnsafeCell` 사용"
 
 #: src/rust-2024/static-mut-references.md:291
 msgid ""
@@ -4888,7 +5037,7 @@ msgid ""
 "so that it can be used in a `static` to implement interior mutability. This "
 "approach can be useful if you have external locks or other guarantees that "
 "uphold the safety invariants required for mutable pointers."
-msgstr ""
+msgstr "[`UnsafeCell`](../../std/cell/struct.UnsafeCell.html)은 `Sync`를 구현하지 않으므로 `static`에서 사용할 수 없습니다. [`UnsafeCell`](../../std/cell/struct.UnsafeCell.html)을 감싸는 래퍼를 만들어 `Sync` 구현을 추가하면 `static`에서 사용하여 내부 가변성을 구현할 수 있습니다. 이 접근 방식은 외부 락이나 가변 포인터에 필요한 안전 불변성을 유지하는 다른 보장이 있는 경우 유용할 수 있습니다."
 
 #: src/rust-2024/static-mut-references.md:293
 msgid ""
@@ -4896,18 +5045,18 @@ msgid ""
 "example. The wrapper helps to emphasize how you are using the type, and "
 "focus on which safety requirements you should be careful of. But otherwise "
 "they are roughly the same."
-msgstr ""
+msgstr "이것은 [원시 포인터](#raw-pointers) 예제와 거의 동일하다는 점에 유의하세요. 래퍼는 타입을 어떻게 사용하는지 강조하고, 어떤 안전 요구 사항을 주의해야 하는지에 집중하는 데 도움을 줍니다. 하지만 그 외에는 거의 동일합니다."
 
 #: src/rust-2024/static-mut-references.md:299
 msgid "// A real example would disable interrupts.\n"
-msgstr ""
+msgstr "// 실제 예제에서는 인터럽트를 비활성화할 것입니다.\n"
 
 #: src/rust-2024/static-mut-references.md:325
 msgid ""
 "// SAFETY: This value is only ever read in our interrupt handler,\n"
 "            // and interrupts are disabled, and we only use this in one "
 "thread.\n"
-msgstr ""
+msgstr "// SAFETY: 이 값은 인터럽트 핸들러에서만 읽히며,\n            // 인터럽트는 비활성화되어 있고, 하나의 스레드에서만 사용합니다.\n"
 
 #: src/rust-2024/static-mut-references.md:333
 msgid ""
@@ -4917,7 +5066,7 @@ msgid ""
 "version of the standard library type, but would be used roughly the same "
 "way. It can provide even better isolation, so do check out its "
 "implementation for more details."
-msgstr ""
+msgstr "표준 라이브러리에는 [`UnsafeCell`](../../std/cell/struct.UnsafeCell.html)의 나이틀리 전용(불안정) 변형인 [`SyncUnsafeCell`](../../std/cell/struct.SyncUnsafeCell.html)이 있습니다. 위 예제는 표준 라이브러리 타입의 매우 단순화된 버전을 보여주지만, 대략 같은 방식으로 사용될 것입니다. 더 나은 격리를 제공할 수 있으므로 자세한 내용은 해당 구현을 확인해 보세요."
 
 #: src/rust-2024/static-mut-references.md:335
 msgid ""
@@ -4926,11 +5075,11 @@ msgid ""
 "the [`critical-section`](https://crates.io/crates/critical-section) crate "
 "provides a similar kind of functionality that could be used for an embedded "
 "environment."
-msgstr ""
+msgstr "이 예제에는 임베디드 환경에서 볼 수 있는 가상의 `with_interrupts_disabled` 함수가 포함되어 있습니다. 예를 들어, [`critical-section`](https://crates.io/crates/critical-section) 크레이트는 임베디드 환경에서 사용할 수 있는 유사한 기능을 제공합니다."
 
 #: src/rust-2024/static-mut-references.md:341
 msgid "Safe references"
-msgstr ""
+msgstr "안전한 참조"
 
 #: src/rust-2024/static-mut-references.md:343
 msgid ""
@@ -4943,7 +5092,7 @@ msgid ""
 "module or function), has some internal or external synchronization, accounts "
 "for interrupt handlers and reentrancy, panic safety, drop handlers, etc., "
 "then taking a reference may be fine."
-msgstr ""
+msgstr "어떤 경우에는 `static mut`의 참조를 생성하는 것이 안전할 수 있습니다. [`static_mut_refs`](../../rustc/lints/listing/warn-by-default.html#static-mut-refs) 린트의 핵심은 이것을 올바르게 수행하기가 매우 어렵다는 것입니다! 하지만 _불가능_하다는 말은 아닙니다. static이 좁은 범위(작은 모듈이나 함수 내에서만 사용됨)로 지정되어 있거나, 내부 또는 외부 동기화가 있거나, 인터럽트 핸들러와 재진입성, 패닉 안전성, 드롭 핸들러 등을 고려하는 등 앨리어싱 요구 사항이 준수됨을 보장할 수 있는 상황이라면 참조를 가져오는 것도 괜찮을 수 있습니다."
 
 #: src/rust-2024/static-mut-references.md:345
 msgid ""
@@ -4951,11 +5100,11 @@ msgid ""
 "[`static_mut_refs`](../../rustc/lints/listing/warn-by-default.html#static-"
 "mut-refs) lint (preferably as narrowly as you can), or convert raw pointers "
 "to a reference, as with `&mut *&raw mut MY_STATIC`."
-msgstr ""
+msgstr "이를 위해 두 가지 접근 방식을 취할 수 있습니다. [`static_mut_refs`](../../rustc/lints/listing/warn-by-default.html#static-mut-refs) 린트를 허용하거나(가급적 좁은 범위에서), `&mut *&raw mut MY_STATIC`과 같이 원시 포인터를 참조로 변환할 수 있습니다."
 
 #: src/rust-2024/static-mut-references.md:349
 msgid "Short-lived references"
-msgstr ""
+msgstr "수명이 짧은 참조"
 
 #: src/rust-2024/static-mut-references.md:351
 msgid ""
@@ -4966,75 +5115,75 @@ msgid ""
 "exclusive access is maintained for the duration. Using pointers should be "
 "your default unit, and only convert the pointer to a reference on demand "
 "when absolutely required."
-msgstr ""
+msgstr "`static mut`에 대한 참조를 생성해야 한다면, 그 참조가 존재하는 범위를 최소화하는 것이 좋습니다. 참조를 어딘가에 숨겨두거나 코드의 큰 섹션 동안 계속 살아있게 하지 마세요. 수명을 짧게 유지하면 감사가 쉬워지고 해당 기간 동안 배타적 접근이 유지되는지 확인하는 데 도움이 됩니다. 포인터를 기본 단위로 사용하고, 절대적으로 필요한 경우에만 요청 시 포인터를 참조로 변환하세요."
 
 #: src/rust-2024/static-mut-references.md:355
 msgid ""
 "There is no automatic migration to fix these references to `static mut`. To "
 "avoid undefined behavior you must rewrite your code to use a different "
 "approach as recommended in the [Alternatives](#alternatives) section."
-msgstr ""
+msgstr "`static mut`에 대한 이러한 참조를 수정하는 자동 마이그레이션은 없습니다. 정의되지 않은 동작을 피하려면 [대안](#alternatives) 섹션에서 권장하는 다른 접근 방식을 사용하도록 코드를 다시 작성해야 합니다."
 
 #: src/rust-2024/never-type-fallback.md:5
 msgid ""
 "Never type (`!`) to any type (\"never-to-any\") coercions fall back to never "
 "type (`!`) rather than to unit type (`()`)."
-msgstr ""
+msgstr "Never 타입(`!`)에서 임의의 타입으로의(\"never-to-any\") 강제 변환은 이제 유닛 타입(`()`)이 아닌 never 타입(`!`)으로 폴백됩니다."
 
 #: src/rust-2024/never-type-fallback.md:6
 msgid ""
 "The [`never_type_fallback_flowing_into_unsafe`](../../rustc/lints/listing/"
 "warn-by-default.html#never-type-fallback-flowing-into-unsafe) lint is now "
 "`deny` by default."
-msgstr ""
+msgstr "[`never_type_fallback_flowing_into_unsafe`](../../rustc/lints/listing/warn-by-default.html#never-type-fallback-flowing-into-unsafe) 린트가 이제 기본적으로 `deny`입니다."
 
 #: src/rust-2024/never-type-fallback.md:12
 msgid ""
 "When the compiler sees a value of type `!` (never) in a [coercion site]"
 "(../../reference/type-coercions.html#coercion-sites), it implicitly inserts "
 "a coercion to allow the type checker to infer any type:"
-msgstr ""
+msgstr "컴파일러가 [강제 변환 위치](../../reference/type-coercions.html#coercion-sites)에서 `!` (never) 타입의 값을 보면, 타입 검사기가 어떤 타입이든 추론할 수 있도록 암시적으로 강제 변환을 삽입합니다:"
 
 #: src/rust-2024/never-type-fallback.md:15
 #: src/rust-2024/never-type-fallback.md:31
 msgid "// This:\n"
-msgstr ""
+msgstr "// 이것은:\n"
 
 #: src/rust-2024/never-type-fallback.md:18
 msgid "// ...is (essentially) turned by the compiler into:\n"
-msgstr ""
+msgstr "// ...컴파일러에 의해 (본질적으로) 다음과 같이 변환됩니다:\n"
 
 #: src/rust-2024/never-type-fallback.md:21
 msgid ""
 "// ...where `absurd` is the following function\n"
 "// (it's sound because `!` always marks unreachable code):\n"
-msgstr ""
+msgstr "// ...여기서 `absurd`는 다음 함수입니다\n// (`!`는 항상 도달할 수 없는 코드를 표시하므로 안전합니다):\n"
 
 #: src/rust-2024/never-type-fallback.md:27
 msgid "This can lead to compilation errors if the type cannot be inferred:"
-msgstr ""
+msgstr "타입을 추론할 수 없는 경우 컴파일 오류가 발생할 수 있습니다:"
 
 #: src/rust-2024/never-type-fallback.md:34
 msgid "// ...gets turned into this:\n"
-msgstr ""
+msgstr "// ...다음과 같이 변환됩니다:\n"
 
 #: src/rust-2024/never-type-fallback.md:36
 msgid "//~ ERROR can't infer the type of `absurd`\n"
-msgstr ""
+msgstr "//~ ERROR `absurd`의 타입을 추론할 수 없음\n"
 
 #: src/rust-2024/never-type-fallback.md:39
 msgid ""
 "To prevent such errors, the compiler remembers where it inserted `absurd` "
 "calls, and if it can't infer the type, it uses the fallback type instead:"
-msgstr ""
+msgstr "이러한 오류를 방지하기 위해 컴파일러는 `absurd` 호출을 삽입한 위치를 기억하고, 타입을 추론할 수 없는 경우 대신 폴백 타입을 사용합니다:"
 
 #: src/rust-2024/never-type-fallback.md:44
 msgid "/* An arbitrarily selected type! */"
-msgstr ""
+msgstr "/* 임의로 선택된 타입! */"
 
 #: src/rust-2024/never-type-fallback.md:48
 msgid "This is what is known as \"never type fallback\"."
-msgstr ""
+msgstr "이것이 바로 \"never 타입 폴백\"이라고 알려진 것입니다."
 
 #: src/rust-2024/never-type-fallback.md:50
 msgid ""
@@ -5042,7 +5191,7 @@ msgid ""
 "spontaneously coerce to `()` even when the compiler would not infer `()` "
 "without the fallback.  That was confusing and has prevented the "
 "stabilization of the `!` type."
-msgstr ""
+msgstr "역사적으로 폴백 타입은 `()` (유닛)이었습니다. 이로 인해 컴파일러가 폴백 없이는 `()`를 추론하지 않을 때조차 `!`가 `()`로 저절로 강제 변환되는 일이 발생했습니다. 이는 혼란스러웠으며 `!` 타입의 안정화를 막아왔습니다."
 
 #: src/rust-2024/never-type-fallback.md:52
 msgid ""
@@ -5050,17 +5199,17 @@ msgid ""
 "change across all editions at a later date.)  This makes things work more "
 "intuitively.  Now when you pass `!` and there is no reason to coerce it to "
 "something else, it is kept as `!`."
-msgstr ""
+msgstr "2024 에디션에서는 폴백 타입이 이제 `!`입니다. (추후 모든 에디션에 걸쳐 이 변경을 적용할 계획입니다.) 이렇게 하면 더 직관적으로 작동합니다. 이제 `!`를 전달할 때 다른 것으로 강제 변환할 이유가 없다면 `!`로 유지됩니다."
 
 #: src/rust-2024/never-type-fallback.md:54
 msgid ""
 "In some cases your code might depend on the fallback type being `()`, so "
 "this can cause compilation errors or changes in behavior."
-msgstr ""
+msgstr "어떤 경우에는 코드가 폴백 타입이 `()`인 것에 의존할 수 있으므로, 이로 인해 컴파일 오류나 동작 변경이 발생할 수 있습니다."
 
 #: src/rust-2024/never-type-fallback.md:58
 msgid "`never_type_fallback_flowing_into_unsafe`"
-msgstr ""
+msgstr "`never_type_fallback_flowing_into_unsafe`"
 
 #: src/rust-2024/never-type-fallback.md:60
 msgid ""
@@ -5070,47 +5219,47 @@ msgid ""
 "lint helps detect a particular interaction with the fallback to `!` and "
 "`unsafe` code which may lead to undefined behavior. See the link for a "
 "complete description."
-msgstr ""
+msgstr "2024 에디션에서는 [`never_type_fallback_flowing_into_unsafe`](../../rustc/lints/listing/warn-by-default.html#never-type-fallback-flowing-into-unsafe) 린트의 기본 레벨이 `warn`에서 `deny`로 상향되었습니다. 이 린트는 정의되지 않은 동작을 유발할 수 있는 `!`로의 폴백과 `unsafe` 코드 간의 특정 상호 작용을 감지하는 데 도움이 됩니다. 자세한 설명은 링크를 참조하세요."
 
 #: src/rust-2024/never-type-fallback.md:64
 msgid ""
 "There is no automatic fix, but there is automatic detection of code that "
 "will be broken by the edition change.  While still on a previous edition you "
 "will see warnings if your code will be broken."
-msgstr ""
+msgstr "자동 수정 기능은 없지만, 에디션 변경으로 인해 깨질 코드를 자동으로 감지하는 기능은 있습니다. 이전 에디션을 사용하는 동안 코드가 깨질 경우 경고가 표시됩니다."
 
 #: src/rust-2024/never-type-fallback.md:66
 msgid ""
 "The fix is to specify the type explicitly so that the fallback type is not "
 "used.  Unfortunately, it might not be trivial to see which type needs to be "
 "specified."
-msgstr ""
+msgstr "해결 방법은 폴백 타입이 사용되지 않도록 타입을 명시적으로 지정하는 것입니다. 불행히도 어떤 타입을 지정해야 하는지 파악하는 것이 쉽지 않을 수 있습니다."
 
 #: src/rust-2024/never-type-fallback.md:68
 msgid ""
 "One of the most common patterns broken by this change is using `f()?;` where "
 "`f` is generic over the `Ok`\\-part of the return type:"
-msgstr ""
+msgstr "이 변경으로 인해 깨지는 가장 일반적인 패턴 중 하나는 `f()?;`를 사용하는 경우인데, 여기서 `f`는 반환 타입의 `Ok` 부분에 대해 제네릭입니다:"
 
 #: src/rust-2024/never-type-fallback.md:82
 msgid ""
 "You might think that, in this example, type `T` can't be inferred.  However, "
 "due to the current desugaring of the `?` operator, it was inferred as `()`, "
 "and it will now be inferred as `!`."
-msgstr ""
+msgstr "이 예제에서 타입 `T`를 추론할 수 없다고 생각할 수 있습니다. 하지만 현재 `?` 연산자의 탈탕(desugaring) 방식 때문에 이전에는 `()`로 추론되었으나, 이제는 `!`로 추론됩니다."
 
 #: src/rust-2024/never-type-fallback.md:84
 msgid "To fix the issue you need to specify the `T` type explicitly:"
-msgstr ""
+msgstr "이 문제를 해결하려면 `T` 타입을 명시적으로 지정해야 합니다:"
 
 #: src/rust-2024/never-type-fallback.md:92
 #: src/rust-2024/never-type-fallback.md:148
 msgid "// ...or:\n"
-msgstr ""
+msgstr "// ...또는:\n"
 
 #: src/rust-2024/never-type-fallback.md:99
 msgid "Another relatively common case is panicking in a closure:"
-msgstr ""
+msgstr "비교적 흔한 또 다른 케이스는 클로저 내에서의 패닉입니다:"
 
 #: src/rust-2024/never-type-fallback.md:113
 msgid ""
@@ -5118,14 +5267,14 @@ msgid ""
 "However now the `!` is kept as `!` so this code fails because `!` doesn't "
 "implement `Unit`.  To fix this you can specify the return type of the "
 "closure:"
-msgstr ""
+msgstr "이전에는 `panic!`의 `!`가 `Unit`을 구현하는 `()`로 강제 변환되었습니다. 하지만 이제는 `!`가 `!`로 유지되므로 `!`가 `Unit`을 구현하지 않아 이 코드는 실패합니다. 이 문제를 해결하려면 클로저의 반환 타입을 지정할 수 있습니다:"
 
 #: src/rust-2024/never-type-fallback.md:126
 msgid ""
 "A similar case to that of `f()?` can be seen when using a `!`\\-typed "
 "expression in one branch and a function with an unconstrained return type in "
 "the other:"
-msgstr ""
+msgstr "`f()?`와 유사한 사례로, 한 분기에서는 `!` 타입 표현식을 사용하고 다른 분기에서는 반환 타입이 제한되지 않은 함수를 사용할 때 볼 수 있습니다:"
 
 #: src/rust-2024/never-type-fallback.md:137
 msgid ""
@@ -5133,27 +5282,27 @@ msgid ""
 "because `!` from `return` was spuriously coerced to `()`.  Now, `!` will be "
 "inferred instead causing this code to not compile because `!` does not "
 "implement `Default`."
-msgstr ""
+msgstr "이전에는 `return`의 `!`가 `()`로 잘못 강제 변환되었기 때문에 `Default::default()`의 반환 타입으로 `()`가 추론되었습니다. 이제는 대신 `!`가 추론되어 `!`가 `Default`를 구현하지 않으므로 이 코드는 컴파일되지 않습니다."
 
 #: src/rust-2024/never-type-fallback.md:139
 msgid "Again, this can be fixed by specifying the type explicitly:"
-msgstr ""
+msgstr "마찬가지로, 타입을 명시적으로 지정하여 해결할 수 있습니다:"
 
 #: src/rust-2024/macro-fragment-specifiers.md:1
 msgid "Macro Fragment Specifiers"
-msgstr ""
+msgstr "매크로 조각 지정자"
 
 #: src/rust-2024/macro-fragment-specifiers.md:5
 msgid ""
 "The `expr` [fragment specifier](../../reference/macros-by-"
 "example.html#metavariables) now also supports `const` and `_` expressions."
-msgstr ""
+msgstr "`expr` [조각 지정자](../../reference/macros-by-example.html#metavariables)는 이제 `const` 및 `_` 표현식도 지원합니다."
 
 #: src/rust-2024/macro-fragment-specifiers.md:6
 msgid ""
 "The `expr_2021` fragment specifier has been added for backwards "
 "compatibility."
-msgstr ""
+msgstr "하위 호환성을 위해 `expr_2021` 조각 지정자가 추가되었습니다."
 
 #: src/rust-2024/macro-fragment-specifiers.md:12
 msgid ""
@@ -5162,7 +5311,7 @@ msgid ""
 "backwards compatibility. Supporting the new syntax in the old fragment "
 "specifiers is sometimes deferred until the next edition, which provides an "
 "opportunity to update them."
-msgstr ""
+msgstr "Rust에 새로운 문법이 추가됨에 따라, 기존 `macro_rules` 조각 지정자는 하위 호환성을 유지하기 위해 때로는 새 문법과 매칭되는 것이 허용되지 않습니다. 이전 조각 지정자에서 새 문법을 지원하는 것은 다음 에디션까지 미뤄지기도 하며, 이때가 이를 업데이트할 기회를 제공합니다."
 
 #: src/rust-2024/macro-fragment-specifiers.md:14
 msgid ""
@@ -5171,15 +5320,15 @@ msgid ""
 "reference/expressions/underscore-expr.html) added in 1.59. In the 2021 "
 "Edition and earlier, the `expr` fragment specifier does _not_ match those "
 "expressions. This is because you may have a scenario like:"
-msgstr ""
+msgstr "실제로 1.79에 추가된 [`const` 표현식](../../reference/expressions/block-expr.html#const-blocks)과 1.59에 추가된 [`_` 표현식](../../reference/expressions/underscore-expr.html)에서 이런 일이 발생했습니다. 2021 에디션 및 그 이전 버전에서 `expr` 조각 지정자는 이러한 표현식과 매칭되지 _않습니다_. 이는 다음과 같은 시나리오가 있을 수 있기 때문입니다:"
 
 #: src/rust-2024/macro-fragment-specifiers.md:18
 msgid "\"first rule\""
-msgstr ""
+msgstr "\"첫 번째 규칙\""
 
 #: src/rust-2024/macro-fragment-specifiers.md:19
 msgid "\"second rule\""
-msgstr ""
+msgstr "\"두 번째 규칙\""
 
 #: src/rust-2024/macro-fragment-specifiers.md:27
 msgid ""
@@ -5187,14 +5336,14 @@ msgid ""
 "earlier editions had changed `expr` to match the newly introduced `const` "
 "expressions, then it would match the _first_ rule, which would be a breaking "
 "change."
-msgstr ""
+msgstr "여기서, 2021 에디션에서는 매크로가 _두 번째_ 규칙과 매칭됩니다. 만약 이전 에디션에서 `expr`이 새로 도입된 `const` 표현식과 매칭되도록 변경되었다면, _첫 번째_ 규칙과 매칭되었을 것이며, 이는 파괴적인 변경이 되었을 것입니다."
 
 #: src/rust-2024/macro-fragment-specifiers.md:29
 msgid ""
 "In the 2024 Edition, `expr` specifiers now also match `const` and `_` "
 "expressions. To support the old behavior, the `expr_2021` fragment specifier "
 "has been added which does _not_ match the new expressions."
-msgstr ""
+msgstr "2024 에디션에서는 `expr` 지정자가 이제 `const` 및 `_` 표현식과도 매칭됩니다. 이전 동작을 지원하기 위해, 새로운 표현식과 매칭되지 _않는_ `expr_2021` 조각 지정자가 추가되었습니다."
 
 #: src/rust-2024/macro-fragment-specifiers.md:36
 msgid ""
@@ -5205,7 +5354,7 @@ msgid ""
 "`rust-2024-compatibility` lint group which is included in the automatic "
 "edition migration. In order to migrate your code to be Rust 2024 Edition "
 "compatible, run:"
-msgstr ""
+msgstr "[`edition_2024_expr_fragment_specifier`](../../rustc/lints/listing/allowed-by-default.html#edition-2024-expr-fragment-specifier) 린트는 기존 매크로의 동작이 변경되지 않도록 `expr` 지정자의 모든 사용을 `expr_2021`로 변경합니다. 이 린트는 자동 에디션 마이그레이션에 포함된 `rust-2024-compatibility` 린트 그룹의 일부입니다. 코드를 Rust 2024 에디션과 호환되도록 마이그레이션하려면 다음을 실행하세요:"
 
 #: src/rust-2024/macro-fragment-specifiers.md:42
 msgid ""
@@ -5214,19 +5363,19 @@ msgid ""
 "to determine if there are other rules that would otherwise match with "
 "`const` or `_` and determine if there is a conflict. If you want the new "
 "behavior, just revert any changes made by the lint."
-msgstr ""
+msgstr "_대부분의_ 경우, 새로운 표현식을 지원하기 위해 대신 `expr` 지정자를 유지하고 싶을 것입니다. 매크로를 검토하여 `const` 또는 `_`와 매칭될 수 있는 다른 규칙이 있는지 확인하고 충돌이 있는지 판단해야 합니다. 새로운 동작을 원한다면 린트에 의해 변경된 내용을 되돌리면 됩니다."
 
 #: src/rust-2024/macro-fragment-specifiers.md:44
 msgid ""
 "Alternatively, you can manually enable the lint to find macros where you may "
 "need to update the `expr` specifier."
-msgstr ""
+msgstr "대안으로, `expr` 지정자를 업데이트해야 할 수도 있는 매크로를 찾기 위해 수동으로 린트를 활성화할 수 있습니다."
 
 #: src/rust-2024/missing-macro-fragment-specifiers.md:5
 msgid ""
 "The [`missing_fragment_specifier`](../../rustc/lints/listing/deny-by-"
 "default.html#missing-fragment-specifier) lint is now a hard error."
-msgstr ""
+msgstr "[`missing_fragment_specifier`](../../rustc/lints/listing/deny-by-default.html#missing-fragment-specifier) 린트는 이제 하드 에러(hard error)입니다."
 
 #: src/rust-2024/missing-macro-fragment-specifiers.md:11
 msgid ""
@@ -5235,11 +5384,11 @@ msgid ""
 "**unused** pattern in a `macro_rules!` macro definition has a meta-variable "
 "(e.g. `$e`) that is not followed by a fragment specifier (e.g. `:expr`). "
 "This is now a hard error in the 2024 Edition."
-msgstr ""
+msgstr "[`missing_fragment_specifier`](../../rustc/lints/listing/deny-by-default.html#missing-fragment-specifier) 린트는 `macro_rules!` 매크로 정의의 **사용되지 않는** 패턴에 메타 변수(예: `$e`)가 있고 그 뒤에 조각 지정자(예: `:expr`)가 따르지 않는 상황을 감지합니다. 이는 2024 에디션에서 하드 에러입니다."
 
 #: src/rust-2024/missing-macro-fragment-specifiers.md:16
 msgid "// ERROR: missing fragment specifier\n"
-msgstr ""
+msgstr "// ERROR: 조각 지정자가 누락됨\n"
 
 #: src/rust-2024/missing-macro-fragment-specifiers.md:24
 msgid ""
@@ -5247,21 +5396,21 @@ msgid ""
 "specifier (e.g., `foo!($name)`) is a hard error in all editions. However, "
 "simply defining a macro with missing fragment specifiers is not, though we "
 "did add a lint in Rust 1.17."
-msgstr ""
+msgstr "누락된 지정자가 있는 규칙과 일치하는 인수로 매크로를 호출하는 것(예: `foo!($name)`)은 모든 에디션에서 하드 에러입니다. 하지만 Rust 1.17에 린트를 추가하긴 했으나, 단순히 누락된 조각 지정자가 있는 매크로를 정의하는 것 자체는 에러가 아니었습니다."
 
 #: src/rust-2024/missing-macro-fragment-specifiers.md:26
 msgid ""
 "We'd like to make this a hard error in all editions, but there would be too "
 "much breakage right now. So we're starting by making this a hard error in "
 "Rust 2024.[^future-incompat]"
-msgstr ""
+msgstr "모든 에디션에서 이를 하드 에러로 만들고 싶지만, 현재로서는 너무 많은 코드가 깨질 수 있습니다. 그래서 Rust 2024에서부터 이를 하드 에러로 만들기 시작합니다.[^future-incompat]"
 
 #: src/rust-2024/missing-macro-fragment-specifiers.md:28
 msgid ""
 "The lint is marked as a \"future-incompatible\" warning to indicate that it "
 "may become a hard error in all editions in a future release. See [\\#40107]"
 "(https://github.com/rust-lang/rust/issues/40107) for more information."
-msgstr ""
+msgstr "이 린트는 향후 릴리스에서 모든 에디션의 하드 에러가 될 수 있음을 나타내기 위해 \"future-incompatible\" 경고로 표시됩니다. 자세한 내용은 [\\#40107](https://github.com/rust-lang/rust/issues/40107)을 참조하세요."
 
 #: src/rust-2024/missing-macro-fragment-specifiers.md:34
 msgid ""
@@ -5269,7 +5418,7 @@ msgid ""
 "from the macro. The [`missing_fragment_specifier`](../../rustc/lints/listing/"
 "deny-by-default.html#missing-fragment-specifier) lint is on by default in "
 "all editions, and should alert you to macros with this issue."
-msgstr ""
+msgstr "코드를 2024 에디션으로 마이그레이션하려면 매크로에서 사용되지 않는 매처 규칙을 제거하세요. [`missing_fragment_specifier`](../../rustc/lints/listing/deny-by-default.html#missing-fragment-specifier) 린트는 모든 에디션에서 기본적으로 켜져 있으므로 이 문제가 있는 매크로를 알려줄 것입니다."
 
 #: src/rust-2024/missing-macro-fragment-specifiers.md:36
 msgid ""
@@ -5277,13 +5426,13 @@ msgid ""
 "of macro is extremely rare. The lint has been a future-incompatibility lint "
 "since Rust 1.17, a deny-by-default lint since Rust 1.20, and since Rust "
 "1.82, it has warned about dependencies that are using this pattern."
-msgstr ""
+msgstr "이 변경에 대한 자동 마이그레이션은 없습니다. 우리는 이러한 스타일의 매크로가 매우 드물 것이라고 예상합니다. 이 린트는 Rust 1.17부터 future-incompatibility 린트였고, Rust 1.20부터 deny-by-default 린트였으며, Rust 1.82부터는 이 패턴을 사용하는 의존성에 대해 경고해 왔습니다."
 
 #: src/rust-2024/gen-keyword.md:5
 msgid ""
 "`gen` is a [reserved keyword](../../reference/keywords.html#reserved-"
 "keywords)."
-msgstr ""
+msgstr "`gen`은 [예약어](../../reference/keywords.html#reserved-keywords)입니다."
 
 #: src/rust-2024/gen-keyword.md:11
 msgid ""
@@ -5292,7 +5441,7 @@ msgid ""
 "future release of Rust. `gen` blocks will provide a way to make it easier to "
 "write certain kinds of iterators. Reserving the keyword now will make it "
 "easier to stabilize `gen` blocks before the next edition."
-msgstr ""
+msgstr "`gen` 키워드는 Rust의 향후 릴리스에서 \"gen 블록\"을 도입하기 위해 [RFC #3513](https://rust-lang.github.io/rfcs/3513-gen-blocks.html)의 일부로 예약되었습니다. `gen` 블록은 특정 종류의 반복자를 더 쉽게 작성할 수 있는 방법을 제공할 것입니다. 지금 키워드를 예약하면 다음 에디션 전에 `gen` 블록을 안정화하기가 더 쉬워질 것입니다."
 
 #: src/rust-2024/gen-keyword.md:17
 msgid ""
@@ -5301,7 +5450,7 @@ msgid ""
 "`gen` would clash with the new keyword. To overcome this, Rust supports the "
 "`r#` prefix for a [raw identifier](../../reference/identifiers.html#raw-"
 "identifiers), which allows identifiers to overlap with keywords."
-msgstr ""
+msgstr "`gen` 키워드를 도입하면 이미 `gen`이라는 이름을 가진 식별자에 문제가 발생할 수 있습니다. 예를 들어, `gen`이라는 이름의 변수나 함수는 새로운 키워드와 충돌합니다. 이를 극복하기 위해 Rust는 식별자가 키워드와 중복되는 것을 허용하는 [원시 식별자(raw identifier)](../../reference/identifiers.html#raw-identifiers)를 위한 `r#` 접두사를 지원합니다."
 
 #: src/rust-2024/gen-keyword.md:19
 msgid ""
@@ -5311,32 +5460,32 @@ msgid ""
 "editions. This lint is part of the `rust-2024-compatibility` lint group, "
 "which will automatically be applied when running `cargo fix --edition`. To "
 "migrate your code to be Rust 2024 Edition compatible, run:"
-msgstr ""
+msgstr "[`keyword_idents_2024`](../../rustc/lints/listing/allowed-by-default.html#keyword-idents-2024) 린트는 코드가 두 에디션 모두에서 계속 작동하도록 `gen`이라는 이름의 식별자를 `r#gen`으로 자동 수정합니다. 이 린트는 `rust-2024-compatibility` 린트 그룹의 일부이며 `cargo fix --edition`을 실행할 때 자동으로 적용됩니다. 코드를 Rust 2024 에디션과 호환되도록 마이그레이션하려면 다음을 실행하세요:"
 
 #: src/rust-2024/gen-keyword.md:29 src/rust-2024/gen-keyword.md:41
 msgid "\"generating!\""
-msgstr ""
+msgstr "\"generating!\""
 
 #: src/rust-2024/gen-keyword.md:37 src/rust-2024/intoiterator-box-slice.md:67
 #: src/rust-2024/newly-unsafe-functions.md:58
 msgid "to be:"
-msgstr ""
+msgstr "변경 후:"
 
 #: src/rust-2024/gen-keyword.md:49
 msgid ""
 "Alternatively, you can manually enable the lint to find places where `gen` "
 "identifiers need to be modified to `r#gen`:"
-msgstr ""
+msgstr "대안으로, `gen` 식별자를 `r#gen`으로 수정해야 하는 곳을 찾기 위해 수동으로 린트를 활성화할 수 있습니다:"
 
 #: src/rust-2024/reserved-syntax.md:5
 msgid ""
 "Unprefixed guarded strings of the form `#\"foo\"#` are reserved for future "
 "use."
-msgstr ""
+msgstr "`#\"foo\"#` 형식의 접두사 없는 보호된 문자열(guarded strings)은 미래의 사용을 위해 예약되었습니다."
 
 #: src/rust-2024/reserved-syntax.md:6
 msgid "Two or more `#` characters are reserved for future use."
-msgstr ""
+msgstr "두 개 이상의 `#` 문자는 미래의 사용을 위해 예약되었습니다."
 
 #: src/rust-2024/reserved-syntax.md:10
 msgid ""
@@ -5346,49 +5495,55 @@ msgid ""
 "changes. The 2021 Edition [reserved syntax](../rust-2021/reserved-syntax.md) "
 "for guarded strings with a prefix, such as `ident##\"foo\"##`. The 2024 "
 "Edition extends that to also reserve strings without the `ident` prefix."
-msgstr ""
+msgstr "[RFC 3593](https://rust-lang.github.io/rfcs/3593-unprefixed-guarded-strings.html)은 향후 가능한 언어 변경을 위한 공간을 확보하기 위해 2024 에디션에서 접두사가 없는 보호된 문자열 리터럴에 대한 구문을 예약했습니다. 2021 에디션은 `ident##\"foo\"##`와 같이 접두사가 있는 보호된 문자열에 대한 [구문을 예약](../rust-2021/reserved-syntax.md)했습니다. 2024 에디션은 이를 확장하여 `ident` 접두사가 없는 문자열도 예약합니다."
 
 #: src/rust-2024/reserved-syntax.md:12
 msgid "There are two reserved syntaxes:"
-msgstr ""
+msgstr "두 가지 예약된 구문이 있습니다:"
 
 #: src/rust-2024/reserved-syntax.md:14
 msgid ""
 "One or more `#` characters immediately followed by a [string literal](../../"
 "reference/tokens.html#string-literals)."
 msgstr ""
+"하나 이상의 `#` 문자가 [문자열 리터럴](../../reference/tokens.html#string-"
+"literals) 바로 뒤에 오는 경우."
 
 #: src/rust-2024/reserved-syntax.md:15
 msgid "Two or more `#` characters in a row (not separated by whitespace)."
-msgstr ""
+msgstr "두 개 이상의 `#` 문자가 (공백 없이) 연속으로 오는 경우."
 
 #: src/rust-2024/reserved-syntax.md:17
 msgid ""
 "This reservation is done across an edition boundary because of interactions "
 "with tokenization and macros. For example, consider this macro:"
 msgstr ""
+"이 예약은 토큰화 및 매크로와의 상호작용으로 인해 에디션 경계를 넘어 수행됩니다. "
+"예를 들어, 다음 매크로를 고려해보세요:"
 
 #: src/rust-2024/reserved-syntax.md:21
 msgid "\"one token\""
-msgstr ""
+msgstr "\"하나의 토큰\""
 
 #: src/rust-2024/reserved-syntax.md:22
 msgid "\"three tokens\""
-msgstr ""
+msgstr "\"세 개의 토큰\""
 
 #: src/rust-2024/reserved-syntax.md:26
 msgid "r#\"foo\"#"
-msgstr ""
+msgstr "r#\"foo\"#"
 
 #: src/rust-2024/reserved-syntax.md:31
 msgid "Prior to the 2024 Edition, this produces:"
-msgstr ""
+msgstr "2024 에디션 이전에는, 이것은 다음을 생성합니다:"
 
 #: src/rust-2024/reserved-syntax.md:40
 msgid ""
 "Starting in the 2024 Edition, the `#\"foo\"#` line and the `###` line now "
 "generates a compile error because those forms are now reserved."
 msgstr ""
+"2024 에디션부터는, `#\"foo\"#` 라인과 `###` 라인은 해당 형식이 이제 예약되었기 "
+"때문에 컴파일 오류를 발생시킵니다."
 
 #: src/rust-2024/reserved-syntax.md:48
 msgid ""
@@ -5398,6 +5553,10 @@ msgid ""
 "will suggest a modification to insert spaces where necessary to ensure the "
 "tokens continue to be parsed separately."
 msgstr ""
+"[`rust_2024_guarded_string_incompatible_syntax`](../../rustc/lints/listing/"
+"allowed-by-default.html#rust-2024-guarded-string-incompatible-syntax) 린트"
+"(lint)는 예약된 구문과 일치하는 모든 토큰을 식별하고, 토큰이 분리되어 파싱되도"
+"록 필요한 곳에 공백을 삽입하는 수정 제안을 할 것입니다."
 
 #: src/rust-2024/reserved-syntax.md:50
 msgid ""
@@ -5405,24 +5564,34 @@ msgid ""
 "included in the automatic edition migration. In order to migrate your code "
 "to be Rust 2024 Edition compatible, run:"
 msgstr ""
+"이 린트는 자동 에디션 마이그레이션에 포함된 `rust-2024-compatibility` 린트 그룹"
+"의 일부입니다. 코드를 Rust 2024 에디션과 호환되도록 마이그레이션하려면 다음을 실"
+"행하세요:"
 
 #: src/rust-2024/reserved-syntax.md:56
 msgid ""
 "Alternatively, you can manually enable the lint to find macro calls where "
 "you may need to update the tokens:"
 msgstr ""
+"또는, 토큰을 업데이트해야 할 수도 있는 매크로 호출을 찾기 위해 수동으로 린트를 "
+"활성화할 수 있습니다:"
 
 #: src/rust-2024/standard-library.md:3
 msgid ""
 "The following chapters detail changes to the standard library in the 2024 "
 "Edition."
 msgstr ""
+"다음 장들에서는 2024 에디션에서의 표준 라이브러리 변경 사항을 자세히 설명합니"
+"다."
 
 #: src/rust-2024/prelude.md:5
 msgid ""
 "The [`Future`](../../std/future/trait.Future.html) and [`IntoFuture`](../../"
 "std/future/trait.IntoFuture.html) traits are now part of the prelude."
 msgstr ""
+"[`Future`](../../std/future/trait.Future.html)와 [`IntoFuture`](../../std/"
+"future/trait.IntoFuture.html) 트레이트가 이제 프렐류드(prelude)의 일부가 되었"
+"습니다."
 
 #: src/rust-2024/prelude.md:13
 msgid ""
@@ -5430,6 +5599,9 @@ msgid ""
 "module containing everything that is automatically imported in every module. "
 "It contains commonly used items such as `Option`, `Vec`, `drop`, and `Clone`."
 msgstr ""
+"[표준 라이브러리의 프렐류드](../../std/prelude/index.html)는 모든 모듈에 자동으"
+"로 임포트되는 모든 것을 포함하는 모듈입니다. 여기에는 `Option`, `Vec`, `drop`, "
+"`Clone`과 같이 자주 사용되는 항목들이 포함되어 있습니다."
 
 #: src/rust-2024/prelude.md:22
 msgid ""
@@ -5438,34 +5610,41 @@ msgid ""
 "might fail to compile if `std`'s `Future` is also imported, because the call "
 "to `poll` is now ambiguous and could come from either trait."
 msgstr ""
+"하지만 프렐류드에 _트레이트_ 를 추가하는 것은 기존 코드를 미묘한 방식으로 깨뜨릴 "
+"수 있습니다. 예를 들어, `MyPoller` 트레이트에서 온 `x.poll()` 호출은 `std`의 "
+"`Future` 또한 임포트된 경우 컴파일에 실패할 수 있는데, 이는 `poll` 호출이 이제 "
+"모호해져서 어느 트레이트에서 온 것인지 알 수 없게 되기 때문입니다."
 
 #: src/rust-2024/prelude.md:25
 msgid ""
 "As a solution, Rust 2024 will use a new prelude. It's identical to the "
 "current one, except for the following changes:"
 msgstr ""
+"해결책으로, Rust 2024는 새로운 프렐류드를 사용할 것입니다. 다음 변경 사항을 제"
+"외하고는 현재의 것과 동일합니다:"
 
 #: src/rust-2024/prelude.md:28
 msgid "Added:"
-msgstr ""
+msgstr "추가됨:"
 
 #: src/rust-2024/prelude.md:29
 msgid "[`std::future::Future`](../../std/future/trait.Future.html)"
-msgstr ""
+msgstr "[`std::future::Future`](../../std/future/trait.Future.html)"
 
 #: src/rust-2024/prelude.md:30
 msgid "[`std::future::IntoFuture`](../../std/future/trait.IntoFuture.html)"
-msgstr ""
+msgstr "[`std::future::IntoFuture`](../../std/future/trait.IntoFuture.html)"
 
 #: src/rust-2024/prelude.md:40
 msgid ""
 "// This name is the same as the `poll` method on the `Future` trait from "
 "`std`.\n"
 msgstr ""
+"// 이 이름은 `std`의 `Future` 트레이트에 있는 `poll` 메서드와 동일합니다.\n"
 
 #: src/rust-2024/prelude.md:42
 msgid "\"polling\""
-msgstr ""
+msgstr "\"폴링\""
 
 #: src/rust-2024/prelude.md:49
 msgid ""
@@ -5473,12 +5652,18 @@ msgid ""
 "    // If both traits are in scope (as would be the case in Rust 2024),\n"
 "    // then it becomes ambiguous which `poll` method to call\n"
 msgstr ""
+"// Pin<&mut async {}>는 `std::future::Future`와 `MyPoller`를 모두 구현합니"
+"다.\n"
+"    // 두 트레이트 모두 스코프에 있다면 (Rust 2024의 경우가 그렇듯이),\n"
+"    // 어떤 `poll` 메서드를 호출할지 모호해집니다\n"
 
 #: src/rust-2024/prelude.md:56
 msgid ""
 "We can fix this so that it works on all editions by using fully qualified "
 "syntax:"
 msgstr ""
+"완전한 경로 문법(fully qualified syntax)을 사용하여 모든 에디션에서 작동하도록 "
+"수정할 수 있습니다:"
 
 #: src/rust-2024/prelude.md:65
 msgid ""
@@ -5489,18 +5674,28 @@ msgid ""
 "applied when running `cargo fix --edition`. To migrate your code to be Rust "
 "2024 Edition compatible, run:"
 msgstr ""
+"[`rust_2024_prelude_collisions`](../../rustc/lints/listing/allowed-by-"
+"default.html#rust-2024-prelude-collisions) 린트는 모호한 메서드 호출을 완전"
+"한 경로 문법을 사용하도록 자동으로 수정합니다. 이 린트는 `rust-2024-"
+"compatibility` 린트 그룹의 일부이며, `cargo fix --edition`을 실행할 때 자동으"
+"로 적용됩니다. 코드를 Rust 2024 에디션과 호환되도록 마이그레이션하려면 다음을 실"
+"행하세요:"
 
 #: src/rust-2024/prelude.md:71
 msgid ""
 "Alternatively, you can manually enable the lint to find places where these "
 "qualifications need to be added:"
 msgstr ""
+"또는, 이러한 한정자(qualifications)를 추가해야 하는 곳을 찾기 위해 수동으로 린"
+"트를 활성화할 수 있습니다:"
 
 #: src/rust-2024/intoiterator-box-slice.md:5
 msgid ""
 "Boxed slices implement [`IntoIterator`](../../std/iter/"
 "trait.IntoIterator.html) in _all_ editions."
 msgstr ""
+"박싱된 슬라이스(Boxed slices)는 _모든_ 에디션에서 [`IntoIterator`](../../std/"
+"iter/trait.IntoIterator.html)를 구현합니다."
 
 #: src/rust-2024/intoiterator-box-slice.md:6
 msgid ""
@@ -5510,12 +5705,19 @@ msgid ""
 "`boxed_slice.into_iter()` still resolves to `(&(*boxed_slice)).into_iter()` "
 "as it has before."
 msgstr ""
+"메서드 호출 문법(예: `boxed_slice.into_iter()`)을 사용할 때, 2024년 이전 에디"
+"션에서는 [`IntoIterator::into_iter`](../../std/iter/trait.IntoIterator.html#"
+"tymethod.into_iter) 호출이 _가려집니다_. 따라서 `boxed_slice.into_iter()`는 "
+"이전과 같이 여전히 `(&(*boxed_slice)).into_iter()`로 해석됩니다."
 
 #: src/rust-2024/intoiterator-box-slice.md:7
 msgid ""
 "`boxed_slice.into_iter()` changes meaning to call [`IntoIterator::into_iter`]"
 "(../../std/iter/trait.IntoIterator.html#tymethod.into_iter) in Rust 2024."
 msgstr ""
+"Rust 2024에서 `boxed_slice.into_iter()`는 [`IntoIterator::into_iter`](../../"
+"std/iter/trait.IntoIterator.html#tymethod.into_iter)를 호출하는 것으로 의미가 "
+"변경됩니다."
 
 #: src/rust-2024/intoiterator-box-slice.md:14
 msgid ""
@@ -5525,18 +5727,22 @@ msgid ""
 "an iterator that yielded references of `&T`. For example, the following "
 "worked in prior versions:"
 msgstr ""
+"Rust 1.80 이전까지는, 박싱된 슬라이스에 대해 `IntoIterator`가 구현되지 않았습니"
+"다. 이전 버전에서는 박싱된 슬라이스에 대해 `.into_iter()`를 호출하면, 메서드 호"
+"출이 자동으로 `Box<[T]>`에서 `&[T]`로 역참조하고, `&T` 참조를 생성하는 반복자를 "
+"반환했습니다. 예를 들어, 다음 코드는 이전 버전에서 작동했습니다:"
 
 #: src/rust-2024/intoiterator-box-slice.md:17
 msgid "// Example of behavior in previous editions.\n"
-msgstr ""
+msgstr "// 이전 에디션에서의 동작 예시입니다.\n"
 
 #: src/rust-2024/intoiterator-box-slice.md:18
 msgid "// Note: .into_iter() was required in versions older than 1.80\n"
-msgstr ""
+msgstr "// 참고: .into_iter()는 1.80 이전 버전에서 필수였습니다\n"
 
 #: src/rust-2024/intoiterator-box-slice.md:21
 msgid "// x is of type &u32 in editions prior to 2024\n"
-msgstr ""
+msgstr "// 2024 이전 에디션에서 x의 타입은 &u32입니다\n"
 
 #: src/rust-2024/intoiterator-box-slice.md:25
 msgid ""
@@ -5544,16 +5750,20 @@ msgid ""
 "This allows iterating over elements of the slice by-value instead of by-"
 "reference:"
 msgstr ""
+"Rust 1.80에서는 박싱된 슬라이스에 대한 `IntoIterator` 구현이 추가되었습니다. 이"
+"를 통해 참조 대신 값으로 슬라이스의 요소를 반복할 수 있습니다:"
 
 #: src/rust-2024/intoiterator-box-slice.md:28
 msgid "// NEW as of 1.80, all editions\n"
-msgstr ""
+msgstr "// 1.80부터 새로 추가됨, 모든 에디션 적용\n"
 
 #: src/rust-2024/intoiterator-box-slice.md:30
 msgid ""
 "// notice no need for calling .into_iter()\n"
 "    // x is of type u32\n"
 msgstr ""
+"// .into_iter()를 호출할 필요가 없음을 주목하세요\n"
+"    // x의 타입은 u32입니다\n"
 
 #: src/rust-2024/intoiterator-box-slice.md:35
 msgid ""
@@ -5561,6 +5771,8 @@ msgid ""
 "since `for` loops do not automatically dereference like the `.into_iter()` "
 "method call does."
 msgstr ""
+"이 예제는 모든 에디션에서 허용되는데, 이전에는 `for` 루프가 `.into_iter()` 메서"
+"드 호출처럼 자동으로 역참조하지 않았기 때문에 오류였던 코드입니다."
 
 #: src/rust-2024/intoiterator-box-slice.md:37
 msgid ""
@@ -5572,18 +5784,24 @@ msgid ""
 "iterator over references, and starting in Edition 2024 it returns an "
 "iterator over values."
 msgstr ""
+"하지만 박싱된 슬라이스에 대해 수동으로 `.into_iter()`를 호출하던 기존 코드가 참"
+"조에 대한 반복자에서 값에 대한 반복자로 변경되므로, 이는 일반적으로 호환성을 깨"
+"는 변경(breaking change)이 될 것입니다. 이 문제를 해결하기 위해, 박싱된 슬라이스"
+"에서의 `.into_iter()` 메서드 호출은 에디션에 따라 다르게 동작합니다. 2024 이전 "
+"에디션에서는 계속해서 참조에 대한 반복자를 반환하고, 2024 에디션부터는 값에 대"
+"한 반복자를 반환합니다."
 
 #: src/rust-2024/intoiterator-box-slice.md:40
 msgid "// Example of changed behavior in Edition 2024\n"
-msgstr ""
+msgstr "// 2024 에디션에서 변경된 동작 예시\n"
 
 #: src/rust-2024/intoiterator-box-slice.md:41
 msgid "// Example of old code that still manually calls .into_iter()\n"
-msgstr ""
+msgstr "// 여전히 수동으로 .into_iter()를 호출하는 오래된 코드 예시\n"
 
 #: src/rust-2024/intoiterator-box-slice.md:44
 msgid "// x is now type u32 in Edition 2024\n"
-msgstr ""
+msgstr "// 2024 에디션에서 x는 이제 u32 타입입니다\n"
 
 #: src/rust-2024/intoiterator-box-slice.md:50
 msgid ""
@@ -5595,11 +5813,17 @@ msgid ""
 "`cargo fix --edition`. To migrate your code to be Rust 2024 Edition "
 "compatible, run:"
 msgstr ""
+"[`boxed_slice_into_iter`](../../rustc/lints/listing/warn-by-default.html#"
+"boxed-slice-into-iter) 린트는 참조를 반환하는 기존 동작을 유지하기 위해 박싱된 "
+"슬라이스에 대한 `.into_iter()` 호출을 `.iter()` 호출로 자동으로 수정합니다. 이 "
+"린트는 `rust-2024-compatibility` 린트 그룹의 일부이며, `cargo fix --edition`을 "
+"실행할 때 자동으로 적용됩니다. 코드를 Rust 2024 에디션과 호환되도록 마이그레이션"
+"하려면 다음을 실행하세요:"
 
 #: src/rust-2024/intoiterator-box-slice.md:62
 #: src/rust-2024/intoiterator-box-slice.md:73
 msgid "// x is of type &u32\n"
-msgstr ""
+msgstr "// x의 타입은 &u32입니다\n"
 
 #: src/rust-2024/intoiterator-box-slice.md:78
 msgid ""
@@ -5608,30 +5832,37 @@ msgid ""
 "editions, so unless you have manually silenced the lint, you should already "
 "see it before you migrate."
 msgstr ""
+"[`boxed_slice_into_iter`](../../rustc/lints/listing/warn-by-default.html#"
+"boxed-slice-into-iter) 린트는 모든 에디션에서 경고하도록 기본 설정되어 있으므"
+"로, 수동으로 린트를 끄지 않았다면 마이그레이션 전에 이미 확인했을 것입니다."
 
 #: src/rust-2024/newly-unsafe-functions.md:1
 msgid "Unsafe functions"
-msgstr ""
+msgstr "Unsafe 함수"
 
 #: src/rust-2024/newly-unsafe-functions.md:5
 msgid ""
 "The following functions are now marked [`unsafe`](../../reference/unsafe-"
 "keyword.html#unsafe-functions-unsafe-fn):"
 msgstr ""
+"다음 함수들은 이제 [`unsafe`](../../reference/unsafe-keyword.html#unsafe-"
+"functions-unsafe-fn)로 표시됩니다:"
 
 #: src/rust-2024/newly-unsafe-functions.md:6
 msgid "[`std::env::set_var`](../../std/env/fn.set_var.html)"
-msgstr ""
+msgstr "[`std::env::set_var`](../../std/env/fn.set_var.html)"
 
 #: src/rust-2024/newly-unsafe-functions.md:7
 msgid "[`std::env::remove_var`](../../std/env/fn.remove_var.html)"
-msgstr ""
+msgstr "[`std::env::remove_var`](../../std/env/fn.remove_var.html)"
 
 #: src/rust-2024/newly-unsafe-functions.md:8
 msgid ""
 "[`std::os::unix::process::CommandExt::before_exec`](../../std/os/unix/"
 "process/trait.CommandExt.html#method.before_exec)"
 msgstr ""
+"[`std::os::unix::process::CommandExt::before_exec`](../../std/os/unix/"
+"process/trait.CommandExt.html#method.before_exec)"
 
 #: src/rust-2024/newly-unsafe-functions.md:17
 msgid ""
@@ -5642,10 +5873,15 @@ msgid ""
 "are marked as `unsafe` starting in the 2024 Edition, while not requiring "
 "`unsafe` in previous editions."
 msgstr ""
+"시간이 지남에 따라 표준 라이브러리의 특정 함수들은 `unsafe`로 표시되었어야 함이 "
+"분명해졌습니다. 하지만 함수에 `unsafe`를 추가하는 것은 기존 코드를 `unsafe` 블록 "
+"안에 넣어야 하기 때문에 호환성을 깨는 변경이 될 수 있습니다. 이러한 호환성 문제"
+"를 피하기 위해, 이 함수들은 이전 에디션에서는 `unsafe`를 요구하지 않지만, 2024 "
+"에디션부터는 `unsafe`로 표시됩니다."
 
 #: src/rust-2024/newly-unsafe-functions.md:19
 msgid "`std::env::{set_var, remove_var}`"
-msgstr ""
+msgstr "`std::env::{set_var, remove_var}`"
 
 #: src/rust-2024/newly-unsafe-functions.md:21
 msgid ""
@@ -5656,6 +5892,11 @@ msgid ""
 "library originally defined these as safe functions, but it was later "
 "determined that was not correct."
 msgstr ""
+"멀티스레드 프로그램에서 [`std::env::set_var`](../../std/env/fn.set_var.html) "
+"또는 [`std::env::remove_var`](../../std/env/fn.remove_var.html)를 호출하는 것"
+"은 일부 플랫폼에서 프로세스 환경을 처리하는 방식의 안전성 제한으로 인해 안전하"
+"지 않을(unsound) 수 있습니다. 표준 라이브러리는 원래 이들을 안전한 함수로 정의했"
+"지만, 나중에 이것이 올바르지 않다고 판단되었습니다."
 
 #: src/rust-2024/newly-unsafe-functions.md:23
 msgid ""
@@ -5664,10 +5905,13 @@ msgid ""
 "fn.set_var.html#safety) section of the function documentation for more "
 "details."
 msgstr ""
+"다른 스레드가 실행 중일 때는 이 함수들이 호출되지 않도록 하는 것이 중요합니다. "
+"더 자세한 내용은 해당 함수 문서의 [Safety](../../std/env/fn.set_var.html#safety)"
+" 섹션을 참조하세요."
 
 #: src/rust-2024/newly-unsafe-functions.md:27
 msgid "`std::os::unix::process::CommandExt::before_exec`"
-msgstr ""
+msgstr "`std::os::unix::process::CommandExt::before_exec`"
 
 #: src/rust-2024/newly-unsafe-functions.md:29
 msgid ""
@@ -5679,6 +5923,12 @@ msgid ""
 "trait.CommandExt.html#tymethod.pre_exec) which does the same thing, but is "
 "marked as `unsafe`."
 msgstr ""
+"[`std::os::unix::process::CommandExt::before_exec`](../../std/os/unix/"
+"process/trait.CommandExt.html#method.before_exec) 함수는 `exec` 호출 전에 클로"
+"저를 실행하는 방법을 제공하는 유닉스 전용 함수입니다. 이 함수는 1.37 릴리스에"
+"서 사용 중단(deprecated)되었으며, 동일한 작업을 수행하지만 `unsafe`로 표시된 "
+"[`pre_exec`](../../std/os/unix/process/trait.CommandExt.html#tymethod."
+"pre_exec)로 대체되었습니다."
 
 #: src/rust-2024/newly-unsafe-functions.md:31
 msgid ""
@@ -5687,6 +5937,9 @@ msgid ""
 "legacy code which has not already migrated to `pre_exec` to require an "
 "`unsafe` block."
 msgstr ""
+"`before_exec`이 사용 중단되었음에도 불구하고, 2024 에디션부터는 `unsafe`로 올바"
+"르게 표시됩니다. 이는 아직 `pre_exec`으로 마이그레이션하지 않은 레거시 코드가 "
+"`unsafe` 블록을 필요로 하도록 보장하는 데 도움이 될 것입니다."
 
 #: src/rust-2024/newly-unsafe-functions.md:33
 msgid ""
@@ -5694,6 +5947,9 @@ msgid ""
 "satisfy. See the [Safety section](../../std/os/unix/process/"
 "trait.CommandExt.html#notes-and-safety) for more details."
 msgstr ""
+"`before_exec` 클로저가 충족해야 하는 매우 엄격한 안전 요구 사항이 있습니다. 자"
+"세한 내용은 [Safety 섹션](../../std/os/unix/process/trait.CommandExt.html#notes-"
+"and-safety)을 참조하세요."
 
 #: src/rust-2024/newly-unsafe-functions.md:40
 msgid ""
@@ -5701,6 +5957,8 @@ msgid ""
 "to make sure that these functions are called only from within `unsafe` "
 "blocks."
 msgstr ""
+"코드가 2021 에디션과 2024 에디션 모두에서 컴파일되게 하려면, 이 함수들이 "
+"`unsafe` 블록 내에서만 호출되도록 해야 합니다."
 
 #: src/rust-2024/newly-unsafe-functions.md:42
 msgid ""
@@ -5711,6 +5969,11 @@ msgid ""
 "use a different mechanism other than environment variables to manage your "
 "use case."
 msgstr ""
+"**⚠ 주의**: 이 함수들에 대한 호출을 수동으로 검사하고, 해당 함수의 전제 조건을 "
+"충족하도록 코드를 다시 작성하는 것이 중요합니다. 특히, 여러 스레드가 실행 중일 "
+"수 있는 경우 `set_var`와 `remove_var`를 호출해서는 안 됩니다. 사용 사례를 관리"
+"하기 위해 환경 변수 이외의 다른 메커니즘을 사용하도록 선택해야 할 수도 있습니"
+"다."
 
 #: src/rust-2024/newly-unsafe-functions.md:44
 msgid ""
@@ -5721,22 +5984,30 @@ msgid ""
 "group, which will automatically be applied when running `cargo fix --"
 "edition`. To migrate your code to be Rust 2024 Edition compatible, run:"
 msgstr ""
+"[`deprecated_safe_2024`](../../rustc/lints/listing/allowed-by-default.html#"
+"deprecated-safe-2024) 린트는 두 에디션 모두에서 컴파일될 수 있도록, 이러한 함"
+"수 사용을 `unsafe` 블록으로 자동으로 감싸서 수정합니다. 이 린트는 `rust-2024-"
+"compatibility` 린트 그룹의 일부이며, `cargo fix --edition`을 실행할 때 자동으"
+"로 적용됩니다. 코드를 Rust 2024 에디션과 호환되도록 마이그레이션하려면 다음을 실"
+"행하세요:"
 
 #: src/rust-2024/newly-unsafe-functions.md:54
 #: src/rust-2024/newly-unsafe-functions.md:63
 msgid "\"FOO\""
-msgstr ""
+msgstr "\"FOO\""
 
 #: src/rust-2024/newly-unsafe-functions.md:54
 #: src/rust-2024/newly-unsafe-functions.md:63
 msgid "\"123\""
-msgstr ""
+msgstr "\"123\""
 
 #: src/rust-2024/newly-unsafe-functions.md:62
 msgid ""
 "// TODO: Audit that the environment access only happens in single-threaded "
 "code.\n"
 msgstr ""
+"// TODO: 환경 변수 접근이 단일 스레드 코드에서만 발생하는지 감사(Audit)해야 합니"
+"다.\n"
 
 #: src/rust-2024/newly-unsafe-functions.md:67
 msgid ""
@@ -5744,22 +6015,29 @@ msgid ""
 "these functions are being used correctly. It is still your responsibility to "
 "manually review their usage."
 msgstr ""
+"단, 이 자동 마이그레이션은 이 함수들이 올바르게 사용되고 있는지 검증할 수 없다"
+"는 점에 유의하세요. 사용법을 수동으로 검토하는 것은 여전히 여러분의 책임입니"
+"다."
 
 #: src/rust-2024/newly-unsafe-functions.md:69
 msgid ""
 "Alternatively, you can manually enable the lint to find places these "
 "functions are called:"
 msgstr ""
+"또는, 이 함수들이 호출되는 곳을 찾기 위해 수동으로 린트를 활성화할 수 있습니"
+"다:"
 
 #: src/rust-2024/cargo.md:3
 msgid "The following chapters detail changes to Cargo in the 2024 Edition."
-msgstr ""
+msgstr "다음 장들에서는 2024 에디션에서의 Cargo 변경 사항을 자세히 설명합니다."
 
 #: src/rust-2024/cargo-resolver.md:5
 msgid ""
 "`edition = \"2024\"` implies `resolver = \"3\"` in `Cargo.toml` which "
 "enables a Rust-version aware dependency resolver."
 msgstr ""
+"`Cargo.toml`의 `edition = \"2024\"`는 `resolver = \"3\"`를 암시하며, 이는 "
+"Rust 버전을 인식하는 의존성 리졸버(resolver)를 활성화합니다."
 
 #: src/rust-2024/cargo-resolver.md:9
 msgid ""
@@ -5769,6 +6047,11 @@ msgid ""
 "[`resolver.incompatible-rust-version = \"fallback\"`](../../cargo/reference/"
 "config.html#resolverincompatible-rust-versions) in `.cargo/config.toml`."
 msgstr ""
+"Rust 1.84.0부터 Cargo는 의존성 버전을 선택할 때 [`package.rust-version`](../"
+"../cargo/reference/rust-version.html)과의 호환성을 고려하기 위한 선택적 지원"
+"(opt-in support)을 가지고 있으며, 이는 `.cargo/config.toml`에서 [`resolver."
+"incompatible-rust-version = \"fallback\"`](../../cargo/reference/config.html#"
+"resolverincompatible-rust-versions)으로 설정하여 활성화할 수 있습니다."
 
 #: src/rust-2024/cargo-resolver.md:13
 msgid ""
@@ -5777,17 +6060,24 @@ msgid ""
 "[`resolver.incompatible-rust-version = \"fallback\"`](../../cargo/reference/"
 "config.html#resolverincompatible-rust-versions)."
 msgstr ""
+"Rust 2024부터는 이것이 기본값이 됩니다. 즉, `Cargo.toml`에 `edition = "
+"\"2024\"`를 작성하면 `resolver = \"3\"`가 암시되고, 이는 다시 [`resolver."
+"incompatible-rust-version = \"fallback\"`](../../cargo/reference/config.html#"
+"resolverincompatible-rust-versions)을 암시하게 됩니다."
 
 #: src/rust-2024/cargo-resolver.md:22
 msgid ""
 "For more details on how Rust-version aware dependency resolution works, see "
 "[the Cargo book](../../cargo/reference/resolver.html#rust-version)."
 msgstr ""
+"Rust 버전을 인식하는 의존성 해결(resolution) 방식에 대한 자세한 내용은 [Cargo "
+"책](../../cargo/reference/resolver.html#rust-version)을 참조하세요."
 
 #: src/rust-2024/cargo-resolver.md:32
 msgid ""
 "There are no automated migration tools for updating for the new resolver."
 msgstr ""
+"새로운 리졸버(resolver)로 업데이트하기 위한 자동 마이그레이션 도구는 없습니다."
 
 #: src/rust-2024/cargo-resolver.md:34
 msgid ""
@@ -5795,36 +6085,41 @@ msgid ""
 "cargo/guide/continuous-integration.html#verifying-latest-dependencies) to "
 "catch bugs in dependencies as soon as possible."
 msgstr ""
+"의존성 버그를 가능한 한 빨리 발견하기 위해, 프로젝트에서 [CI에서 최신 의존성 검"
+"증](../../cargo/guide/continuous-integration.html#verifying-latest-"
+"dependencies)을 수행할 것을 권장합니다."
 
 #: src/rust-2024/cargo-table-key-names.md:5
 msgid ""
 "Several table and key names in `Cargo.toml` have been removed where there "
 "were previously two ways to specify the same thing."
 msgstr ""
+"이전에 같은 것을 지정하는 두 가지 방법이 있었던 `Cargo.toml`의 여러 테이블 및 "
+"키 이름이 제거되었습니다."
 
 #: src/rust-2024/cargo-table-key-names.md:6
 msgid "Removed `[project]`; use `[package]` instead."
-msgstr ""
+msgstr "`[project]` 제거됨; 대신 `[package]`를 사용하세요."
 
 #: src/rust-2024/cargo-table-key-names.md:7
 msgid "Removed `default_features`; use `default-features` instead."
-msgstr ""
+msgstr "`default_features` 제거됨; 대신 `default-features`를 사용하세요."
 
 #: src/rust-2024/cargo-table-key-names.md:8
 msgid "Removed `crate_type`; use `crate-type` instead."
-msgstr ""
+msgstr "`crate_type` 제거됨; 대신 `crate-type`을 사용하세요."
 
 #: src/rust-2024/cargo-table-key-names.md:9
 msgid "Removed `proc_macro`; use `proc-macro` instead."
-msgstr ""
+msgstr "`proc_macro` 제거됨; 대신 `proc-macro`를 사용하세요."
 
 #: src/rust-2024/cargo-table-key-names.md:10
 msgid "Removed `dev_dependencies`; use `dev-dependencies` instead."
-msgstr ""
+msgstr "`dev_dependencies` 제거됨; 대신 `dev-dependencies`를 사용하세요."
 
 #: src/rust-2024/cargo-table-key-names.md:11
 msgid "Removed `build_dependencies`; use `build-dependencies` instead."
-msgstr ""
+msgstr "`build_dependencies` 제거됨; 대신 `build-dependencies`를 사용하세요."
 
 #: src/rust-2024/cargo-table-key-names.md:15
 msgid ""
@@ -5832,6 +6127,9 @@ msgid ""
 "There were two ways to specify these tables or keys, and this helps ensure "
 "there is only one way to specify them."
 msgstr ""
+"2024 에디션에서는 여러 테이블 및 키 이름이 더 이상 허용되지 않습니다. 이전에는 "
+"이러한 테이블이나 키를 지정하는 두 가지 방법이 있었지만, 이제는 이를 지정하는 방"
+"법이 단 하나만 있도록 보장합니다."
 
 #: src/rust-2024/cargo-table-key-names.md:18
 msgid ""
@@ -5840,6 +6138,9 @@ msgid ""
 "single style for specifying these tables and keys, only one variant is now "
 "allowed."
 msgstr ""
+"일부는 시간이 지남에 따라 결정이 변경되었기 때문이고, 일부는 의도치 않은 구현 결"
+"과였습니다. 혼란을 피하고 이러한 테이블과 키를 지정하는 단일 스타일을 강제하기 "
+"위해, 이제는 하나의 변형(variant)만 허용됩니다."
 
 #: src/rust-2024/cargo-table-key-names.md:23
 msgid ""
@@ -5848,10 +6149,14 @@ msgid ""
 "rand = { version = \"0.8.5\", default_features = false }\n"
 "```"
 msgstr ""
+"```toml\n"
+"[dev_dependencies]\n"
+"rand = { version = \"0.8.5\", default_features = false }\n"
+"```"
 
 #: src/rust-2024/cargo-table-key-names.md:28
 msgid "Should be changed to:"
-msgstr ""
+msgstr "다음과 같이 변경되어야 합니다:"
 
 #: src/rust-2024/cargo-table-key-names.md:30
 msgid ""
@@ -5860,24 +6165,34 @@ msgid ""
 "rand = { version = \"0.8.5\", default-features = false }\n"
 "```"
 msgstr ""
+"```toml\n"
+"[dev-dependencies]\n"
+"rand = { version = \"0.8.5\", default-features = false }\n"
+"```"
 
 #: src/rust-2024/cargo-table-key-names.md:35
 msgid ""
 "Notice that the underscores were changed to dashes for `dev_dependencies` "
 "and `default_features`."
 msgstr ""
+"`dev_dependencies`와 `default_features`에서 밑줄(underscores)이 대시(dashes)로 "
+"변경된 것에 주목하세요."
 
 #: src/rust-2024/cargo-table-key-names.md:39
 msgid ""
 "When using `cargo fix --edition`, Cargo will automatically update your "
 "`Cargo.toml` file to use the preferred table and key names."
 msgstr ""
+"`cargo fix --edition`을 사용할 때, Cargo는 `Cargo.toml` 파일을 자동으로 업데"
+"이트하여 선호되는 테이블 및 키 이름을 사용하도록 합니다."
 
 #: src/rust-2024/cargo-table-key-names.md:41
 msgid ""
 "If you would prefer to update your `Cargo.toml` manually, be sure to go "
 "through the list above and make sure only the new forms are used."
 msgstr ""
+"`Cargo.toml`을 수동으로 업데이트하려면, 위의 목록을 검토하고 새로운 형태만 사용"
+"되었는지 확인하세요."
 
 #: src/rust-2024/cargo-inherited-default-features.md:5
 msgid ""
@@ -5885,6 +6200,9 @@ msgid ""
 "dependency if the workspace dependency specifies `default-features = true` "
 "(or does not specify `default-features`)."
 msgstr ""
+"워크스페이스 의존성이 `default-features = true`를 지정하거나 (`default-"
+"features`를 지정하지 않은 경우) 상속된 워크스페이스 의존성에서 `default-"
+"features = false`를 사용하는 것은 더 이상 허용되지 않습니다."
 
 #: src/rust-2024/cargo-inherited-default-features.md:9
 msgid ""
@@ -5895,6 +6213,11 @@ msgid ""
 "interaction with how `default-features` is specified that is no longer "
 "allowed in the 2024 Edition."
 msgstr ""
+"[워크스페이스 상속(Workspace inheritance)](../../cargo/reference/specifying-"
+"dependencies.html#inheriting-a-dependency-from-a-workspace)을 사용하면 의존성"
+"을 한 곳(워크스페이스)에 지정한 다음, 패키지 내에서 해당 워크스페이스 의존성"
+"을 참조할 수 있습니다. `default-features` 지정 방식에 의도치 않은 상호작용이 "
+"있었으며, 이는 2024 에디션에서 더 이상 허용되지 않습니다."
 
 #: src/rust-2024/cargo-inherited-default-features.md:12
 msgid ""
@@ -5902,6 +6225,9 @@ msgid ""
 "allowed to specify `default-features = false` in an inherited package "
 "dependency. For example, with a workspace that specifies:"
 msgstr ""
+"워크스페이스가 `default-features = false`를 지정하지 않는 한, 상속된 패키지 의"
+"존성에서 `default-features = false`를 지정하는 것은 더 이상 허용되지 않습니"
+"다. 예를 들어, 다음과 같이 지정된 워크스페이스가 있다고 가정해 보겠습니다:"
 
 #: src/rust-2024/cargo-inherited-default-features.md:15
 msgid ""
@@ -5910,10 +6236,14 @@ msgid ""
 "regex = \"1.10.4\"\n"
 "```"
 msgstr ""
+"```toml\n"
+"[workspace.dependencies]\n"
+"regex = \"1.10.4\"\n"
+"```"
 
 #: src/rust-2024/cargo-inherited-default-features.md:20
 msgid "The following is now an error:"
-msgstr ""
+msgstr "다음은 이제 오류입니다:"
 
 #: src/rust-2024/cargo-inherited-default-features.md:22
 msgid ""
@@ -5927,6 +6257,15 @@ msgid ""
 "regex = { workspace = true, default-features = false }  # ERROR\n"
 "```"
 msgstr ""
+"```toml\n"
+"[package]\n"
+"name = \"foo\"\n"
+"version = \"1.0.0\"\n"
+"edition = \"2024\"\n"
+"\n"
+"[dependencies]\n"
+"regex = { workspace = true, default-features = false }  # ERROR\n"
+"```"
 
 #: src/rust-2024/cargo-inherited-default-features.md:32
 msgid ""
@@ -5934,6 +6273,9 @@ msgid ""
 "features = false` when the default feature is already enabled, since it has "
 "no effect."
 msgstr ""
+"이 변경의 이유는 기본 기능(default features)이 이미 활성화된 상태에서 `default-"
+"features = false`를 지정할 때 발생하는 혼란을 피하기 위해서입니다. 왜냐하면 이"
+"는 아무런 효과가 없기 때문입니다."
 
 #: src/rust-2024/cargo-inherited-default-features.md:34
 msgid ""
@@ -5945,12 +6287,20 @@ msgid ""
 "explicitly set), the default-features will be enabled for all members using "
 "that dependency."
 msgstr ""
+"의존성이 해당 의존성의 기본 기능을 활성화할지 여부를 결정하는 유연성을 원한다"
+"면, 워크스페이스 정의에서 `default-features = false`로 설정해야 합니다. 단, 여"
+"러 워크스페이스 멤버를 동시에 빌드하는 경우 기능(feature)들이 통합되므로, 한 멤"
+"버가 `default-features = true`로 설정하면(명시적으로 설정하지 않은 경우 이것이 "
+"기본값임) 해당 의존성을 사용하는 모든 멤버에 대해 기본 기능이 활성화된다는 점에 "
+"유의하세요."
 
 #: src/rust-2024/cargo-inherited-default-features.md:39
 msgid ""
 "When using `cargo fix --edition`, Cargo will automatically update your "
 "`Cargo.toml` file to remove `default-features = false` in this situation."
 msgstr ""
+"`cargo fix --edition`을 사용할 때, Cargo는 `Cargo.toml` 파일에서 이러한 상황"
+"의 `default-features = false`를 자동으로 제거합니다."
 
 #: src/rust-2024/cargo-inherited-default-features.md:41
 msgid ""
@@ -5958,10 +6308,14 @@ msgid ""
 "warnings when running a build and remove the corresponding entries. Previous "
 "editions should display something like:"
 msgstr ""
+"`Cargo.toml`을 수동으로 업데이트하려면, 빌드를 실행할 때 경고가 있는지 확인하"
+"고 해당 항목을 제거하세요. 이전 에디션에서는 다음과 같은 내용이 표시될 것입니"
+"다:"
 
 #: src/rust-2024/rustdoc.md:3
 msgid "The following chapters detail changes to Rustdoc in the 2024 Edition."
 msgstr ""
+"다음 장들에서는 2024 에디션에서의 Rustdoc 변경 사항을 자세히 설명합니다."
 
 #: src/rust-2024/rustdoc-doctests.md:5
 msgid ""
@@ -5969,6 +6323,9 @@ msgid ""
 "now combined into a single binary which should result in a significant "
 "performance improvement."
 msgstr ""
+"[문서 테스트(Doctests)](../../rustdoc/write-documentation/documentation-"
+"tests.html)가 이제 단일 바이너리로 통합되어 상당한 성능 향상을 가져올 것입니"
+"다."
 
 #: src/rust-2024/rustdoc-doctests.md:9
 msgid ""
@@ -5979,6 +6336,11 @@ msgid ""
 "the 2024 Edition, rustdoc will attempt to combine documentation tests into a "
 "single binary, significantly reducing the overhead for compiling doctests."
 msgstr ""
+"2024 에디션 이전에는, rustdoc의 \"test\" 모드는 문서의 각 코드 블록을 별도의 "
+"실행 파일로 컴파일했습니다. 이는 구현하기 비교적 간단했지만, 문서 테스트가 많을 "
+"때 상당한 성능 부담을 초래했습니다. 2024 에디션부터 rustdoc은 문서 테스트를 단"
+"일 바이너리로 통합하려고 시도하며, 이는 doctest 컴파일 오버헤드를 크게 줄여줍니"
+"다."
 
 #: src/rust-2024/rustdoc-doctests.md:12
 msgid ""
@@ -5988,6 +6350,11 @@ msgid ""
 "/// assert_eq!(add(1, 1), 2);\n"
 "/// ```\n"
 msgstr ""
+"/// 두 숫자를 더합니다\n"
+"///\n"
+"/// ```\n"
+"/// assert_eq!(add(1, 1), 2);\n"
+"/// ```\n"
 
 #: src/rust-2024/rustdoc-doctests.md:20
 msgid ""
@@ -6021,6 +6388,9 @@ msgid ""
 "were they improved?\"](https://blog.guillaume-gomez.fr/articles/"
 "2024-08-17+Doctests+-+How+were+they+improved%3F)."
 msgstr ""
+"이 작업이 어떻게 수행되는지에 대한 자세한 내용은 [\"Doctests - How were they "
+"improved?\"](https://blog.guillaume-gomez.fr/articles/2024-08-17+Doctests+-"
+"+How+were+they+improved%3F)를 참조하세요."
 
 #: src/rust-2024/rustdoc-doctests.md:40
 msgid "`standalone_crate` tag"
@@ -6148,6 +6518,10 @@ msgid ""
 "the source, any paths included had to be specified relative to the source "
 "file."
 msgstr ""
+"2024 에디션 이전에는 `#[doc=include_str!(\"path/file.md\")]`로 문서를 추가할 "
+"때 해당 파일의 doctest로 스팬(span) 정보가 전달되지 않았습니다. 결과적으로 "
+"Markdown 파일이 소스와 다른 디렉터리에 있는 경우, 포함된 경로는 소스 파일을 기준"
+"으로 지정해야 했습니다."
 
 #: src/rust-2024/rustdoc-nested-includes.md:11
 msgid "For example, consider a library crate with these files:"
@@ -6219,6 +6593,20 @@ msgid ""
 "  |                        ~~~~~~~~~~~~~~~~~~~\n"
 "````````````````````"
 msgstr ""
+"````````````````````text\n"
+"error: couldn't read `../examples/data.bin`: No such file or directory (os "
+"error 2)\n"
+" --> src/../README.md:2:24\n"
+"  |\n"
+"2 | let _ = include_bytes!(\"../examples/data.bin\");\n"
+"  |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"
+"  = note: this error originates in the macro `include_bytes` (in Nightly "
+"builds, run with -Z macro-backtrace for more info)\n"
+"help: there is a file with the same name in a different directory\n"
+"  |\n"
+"2 | let _ = include_bytes!(\"examples/data.bin\");\n"
+"  |                        ~~~~~~~~~~~~~~~~~~~\n"
+"````````````````````"
 
 #: src/rust-2024/rustdoc-nested-includes.md:60
 msgid ""
@@ -6390,6 +6778,9 @@ msgid ""
 "                                                 // Multicast using "
 "broadcst. add.\n"
 msgstr ""
+"// 멀티캐스트 지원\n"
+"                                                 // 브로드캐스트 주소를 사용한 "
+"멀티캐스트.\n"
 
 #: src/rust-2024/rustfmt-formatting-fixes.md:25
 #: src/rust-2024/rustfmt-formatting-fixes.md:50
@@ -6411,6 +6802,13 @@ msgid ""
 "                                   //const SQ_REVOKE: u16 = 0x0013; // "
 "REVOKE\n"
 msgstr ""
+"// 인덱스 생성\n"
+"                                   //const SQ_DRPIDX: u16 = 0x0011; // 인덱스 "
+"삭제\n"
+"                                   //const SQ_GRANT: u16 = 0x0012;  // "
+"권한 부여\n"
+"                                   //const SQ_REVOKE: u16 = 0x0013; // "
+"권한 취소\n"
 
 #: src/rust-2024/rustfmt-formatting-fixes.md:33
 msgid ""
@@ -6430,6 +6828,11 @@ msgid ""
 "                                                                   // with "
 "css-fonts-4's range of [1, 1000].\n"
 msgstr ""
+"// [-1.0, 1.0]\n"
+"                                                                   // "
+"TODO(emilio): 이 범위를 [.01, 10.0]으로 설정하여\n"
+"                                                                   // "
+"css-fonts-4의 범위인 [1, 1000]에 맞추는 것이 합리적일 수 있습니다.\n"
 
 #: src/rust-2024/rustfmt-formatting-fixes.md:44
 #: src/rust-2024/rustfmt-formatting-fixes.md:107
@@ -6482,6 +6885,9 @@ msgid ""
 "align\n"
 "    // with css-fonts-4's range of [1, 1000].\n"
 msgstr ""
+"// [-1.0, 1.0]\n"
+"    // TODO(emilio): 이 범위를 [.01, 10.0]으로 설정하여\n"
+"    // css-fonts-4의 범위인 [1, 1000]에 맞추는 것이 합리적일 수 있습니다.\n"
 
 #: src/rust-2024/rustfmt-formatting-fixes.md:69
 msgid "Don't indent strings in comments"
@@ -6516,6 +6922,12 @@ msgid ""
 "    \",\n"
 "        ); */"
 msgstr ""
+"/*   let s = String::from(\n"
+"            \"\n"
+"    hello\n"
+"    world\n"
+"    \",\n"
+"        ); */"
 
 #: src/rust-2024/rustfmt-formatting-fixes.md:109
 msgid "No change from original."
@@ -6541,12 +6953,12 @@ msgstr "\"Excepteur sint occaecat cupidatat non proident, sunt in culpa qui offi
 #: src/rust-2024/rustfmt-formatting-fixes.md:127
 #: src/rust-2024/rustfmt-formatting-fixes.md:146
 msgid "\"long_long_long_long_long_long_long_lo_long_long_long_long_long_long__long_long_long_long_long_long_\""
-msgstr ""
+msgstr "\"long_long_long_long_long_long_long_lo_long_long_long_long_long_long__long_long_long_long_long_long_\""
 
 #: src/rust-2024/rustfmt-formatting-fixes.md:128
 #: src/rust-2024/rustfmt-formatting-fixes.md:147
 msgid "\"long_long_long_long_long_long_long_long_long_long_lo_long_long_lolong_long_long_lo_long_long_lolong_long_long_lo_long_long_lo\""
-msgstr ""
+msgstr "\"long_long_long_long_long_long_long_long_long_long_lo_long_long_lolong_long_long_lo_long_long_lolong_long_long_lo_long_long_lo\""
 
 #: src/rust-2024/rustfmt-formatting-fixes.md:152
 msgid "Fixed indentation of generics in impl blocks"
@@ -6554,120 +6966,129 @@ msgstr "impl 블록에서 제네릭의 들여쓰기 수정"
 
 #: src/rust-2024/rustfmt-formatting-fixes.md:158
 msgid "Generics in `impl` items had excessive indentation."
-msgstr ""
+msgstr "`impl` 항목의 제네릭이 과도하게 들여쓰기되었습니다."
 
 #: src/rust-2024/rustfmt-formatting-fixes.md:190
 msgid "Use correct indentation when formatting a complex `fn`"
-msgstr ""
+msgstr "복잡한 `fn` 형식을 지정할 때 올바른 들여쓰기 사용"
 
 #: src/rust-2024/rustfmt-formatting-fixes.md:196
 msgid ""
 "In some cases, a complex `fn` signature could end up with an unusual "
 "indentation that is now fixed."
 msgstr ""
+"일부 경우, 복잡한 `fn` 서명이 비정상적인 들여쓰기로 끝날 수 있었으나 이제 수정"
+"되었습니다."
 
 #: src/rust-2024/rustfmt-formatting-fixes.md:230
 msgid "Avoid extra space in nested tuple indexing expression"
-msgstr ""
+msgstr "중첩된 튜플 인덱싱 표현식에서 불필요한 공백 방지"
 
 #: src/rust-2024/rustfmt-formatting-fixes.md:236
 msgid ""
 "Nested tuple indexing expressions would incorrectly include an extra space."
-msgstr ""
+msgstr "중첩된 튜플 인덱싱 표현식에 불필요한 공백이 잘못 포함되곤 했습니다."
 
 #: src/rust-2024/rustfmt-formatting-fixes.md:254
 msgid "End return/break/continue inside a block in a match with a semicolon"
-msgstr ""
+msgstr "match 내 블록 안의 return/break/continue를 세미콜론으로 끝내기"
 
 #: src/rust-2024/rustfmt-formatting-fixes.md:261
 msgid ""
 "A `return`, `break`, or `continue` inside a block in a match arm was "
 "incorrectly missing a semicolon."
 msgstr ""
+"match 암(arm) 내 블록 안의 `return`, `break`, 또는 `continue`에 세미콜론이 잘"
+"못 누락되었습니다."
 
 #: src/rust-2024/rustfmt-formatting-fixes.md:271
 #: src/rust-2024/rustfmt-formatting-fixes.md:284
 msgid "\"\""
-msgstr ""
+msgstr "\"\""
 
 #: src/rust-2024/rustfmt-formatting-fixes.md:289
 msgid "Long array and slice patterns are now wrapped"
-msgstr ""
+msgstr "긴 배열 및 슬라이스 패턴이 이제 줄 바꿈(wrap)됩니다."
 
 #: src/rust-2024/rustfmt-formatting-fixes.md:295
 msgid "Long array and slice patterns were not getting wrapped properly."
-msgstr ""
+msgstr "긴 배열 및 슬라이스 패턴이 제대로 줄 바꿈되지 않았습니다."
 
 #: src/rust-2024/rustfmt-formatting-fixes.md:319
 msgid "Format the last expression-statement as an expression"
-msgstr ""
+msgstr "마지막 표현식 구문을 표현식으로 형식 지정"
 
 #: src/rust-2024/rustfmt-formatting-fixes.md:326
 msgid ""
 "The last statement in a block which is an expression is now formatted as an "
 "expression."
 msgstr ""
+"블록의 마지막 구문이 표현식인 경우 이제 표현식으로 형식 지정됩니다."
 
 #: src/rust-2024/rustfmt-formatting-fixes.md:358
 msgid "Same formatting between function and macro calls"
-msgstr ""
+msgstr "함수 호출과 매크로 호출 간에 동일한 형식 지정"
 
 #: src/rust-2024/rustfmt-formatting-fixes.md:364
 msgid ""
 "Some formatting is now the same in a macro invocation as it is in a function "
 "call."
 msgstr ""
+"매크로 호출에서의 일부 형식 지정이 이제 함수 호출과 동일해졌습니다."
 
 #: src/rust-2024/rustfmt-formatting-fixes.md:404
 msgid "Force block closures for closures with a single loop body"
-msgstr ""
+msgstr "단일 루프 본문을 가진 클로저에 대해 블록 클로저 강제"
 
 #: src/rust-2024/rustfmt-formatting-fixes.md:410
 msgid "Closures with a single loop are now formatted as a block expression."
-msgstr ""
+msgstr "단일 루프를 가진 클로저는 이제 블록 표현식으로 형식 지정됩니다."
 
 #: src/rust-2024/rustfmt-formatting-fixes.md:417
 #: src/rust-2024/rustfmt-formatting-fixes.md:428
 msgid "\"iteration\""
-msgstr ""
+msgstr "\"iteration\""
 
 #: src/rust-2024/rustfmt-formatting-fixes.md:434
 msgid "Empty lines in where clauses are now removed"
-msgstr ""
+msgstr "where 절의 빈 줄 제거됨"
 
 #: src/rust-2024/rustfmt-formatting-fixes.md:440
 msgid "Empty lines in a `where` clause are now removed."
-msgstr ""
+msgstr "`where` 절의 빈 줄이 이제 제거됩니다."
 
 #: src/rust-2024/rustfmt-formatting-fixes.md:465
 msgid "Fixed formatting of a let-else statement with an attribute"
-msgstr ""
+msgstr "속성이 있는 let-else 문의 형식 지정 수정"
 
 #: src/rust-2024/rustfmt-formatting-fixes.md:471
 msgid ""
 "If a let-else statement had an attribute, then it would cause the `else` "
 "clause to incorrectly wrap the `else` part separately."
 msgstr ""
+"let-else 문에 속성이 있으면 `else` 절이 `else` 부분을 잘못 줄 바꿈하는 문제가 "
+"있었습니다."
 
 #: src/rust-2024/rustfmt-formatting-fixes.md:477
 #: src/rust-2024/rustfmt-formatting-fixes.md:492
 msgid "\"linux\""
-msgstr ""
+msgstr "\"linux\""
 
 #: src/rust-2024/rustfmt-formatting-fixes.md:483
 #: src/rust-2024/rustfmt-formatting-fixes.md:495
 msgid "// This is the same without an attribute.\n"
-msgstr ""
+msgstr "// 이것은 속성이 없는 경우와 동일합니다.\n"
 
 #: src/rust-2024/rustfmt-formatting-fixes.md:500
 msgid "Off-by-one error for wrapping enum variant doc comments"
-msgstr ""
+msgstr "열거형 변형 문서 주석 줄 바꿈 시 1 차이(Off-by-one) 오류"
 
 #: src/rust-2024/rustfmt-formatting-fixes.md:506
 msgid ""
 "When using the `wrap_comments` feature, the comments were being wrapped at a "
 "column width off-by-one."
 msgstr ""
+"`wrap_comments` 기능을 사용할 때, 주석이 1칸 차이로 줄 바꿈되고 있었습니다."
 
 #: src/rust-2024/rustfmt-formatting-fixes.md:512
 #: src/rust-2024/rustfmt-formatting-fixes.md:535
@@ -6675,6 +7096,8 @@ msgid ""
 "/// But here, this comment is 120 columns wide and the formatter wants to "
 "split it up onto two separate lines still.\n"
 msgstr ""
+"/// 하지만 여기서, 이 주석은 120열 너비인데 포맷터가 여전히 두 줄로 나누려고 합"
+"니다.\n"
 
 #: src/rust-2024/rustfmt-formatting-fixes.md:514
 #: src/rust-2024/rustfmt-formatting-fixes.md:526
@@ -6683,6 +7106,8 @@ msgid ""
 "/// This comment is 119 columns wide and works perfectly. Lorem ipsum. lorem "
 "ipsum. lorem ipsum. lorem ipsum lorem.\n"
 msgstr ""
+"/// 이 주석은 119열 너비이며 완벽하게 작동합니다. Lorem ipsum. lorem ipsum. "
+"lorem ipsum. lorem ipsum lorem.\n"
 
 #: src/rust-2024/rustfmt-formatting-fixes.md:523
 msgid ""
@@ -6690,46 +7115,52 @@ msgid ""
 "split it up onto two separate lines\n"
 "    /// still.\n"
 msgstr ""
+"/// 하지만 여기서, 이 주석은 120열 너비인데 포맷터가 여전히\n"
+"    /// 두 줄로 나누려고 합니다.\n"
 
 #: src/rust-2024/rustfmt-formatting-fixes.md:542
 msgid "Off-by-one error for `format_macro_matchers`"
-msgstr ""
+msgstr "`format_macro_matchers`에 대한 1 차이(Off-by-one) 오류"
 
 #: src/rust-2024/rustfmt-formatting-fixes.md:548
 msgid ""
 "When using the `format_macro_matchers` feature, the matcher was being "
 "wrapped at a column width off-by-one."
 msgstr ""
+"`format_macro_matchers` 기능을 사용할 때, 매처(matcher)가 1칸 차이로 줄 바꿈"
+"되고 있었습니다."
 
 #: src/rust-2024/rustfmt-formatting-fixes.md:572
 msgid "Fixed failure with `=>` in comment after match `=>`"
-msgstr ""
+msgstr "매치(match) `=>` 뒤의 주석에 `=>`가 있을 때 발생하는 오류 수정"
 
 #: src/rust-2024/rustfmt-formatting-fixes.md:578
 msgid ""
 "In certain circumstances if a comment contained a `=>` after the `=>` in a "
 "match expression, this would cause a failure to format correctly."
 msgstr ""
+"특정 상황에서 매치 표현식의 `=>` 뒤에 있는 주석에 `=>`가 포함된 경우, 형식이 올"
+"바르게 지정되지 않는 오류가 발생했습니다."
 
 #: src/rust-2024/rustfmt-formatting-fixes.md:586
 #: src/rust-2024/rustfmt-formatting-fixes.md:600
 msgid "// comment with =>\n"
-msgstr ""
+msgstr "// => 가 포함된 주석\n"
 
 #: src/rust-2024/rustfmt-formatting-fixes.md:588
 #: src/rust-2024/rustfmt-formatting-fixes.md:602
 msgid "\"A\""
-msgstr ""
+msgstr "\"A\""
 
 #: src/rust-2024/rustfmt-formatting-fixes.md:608
 msgid "Multiple inner attributes in a match expression indented incorrectly"
-msgstr ""
+msgstr "매치 표현식의 여러 내부 속성이 잘못 들여쓰기됨"
 
 #: src/rust-2024/rustfmt-formatting-fixes.md:614
 msgid ""
 "Multiple inner attributes in a match expression were being indented "
 "incorrectly."
-msgstr ""
+msgstr "매치 표현식의 여러 내부 속성이 잘못 들여쓰기되고 있었습니다."
 
 #: src/rust-2024/rustfmt-formatting-fixes.md:642
 #: src/rust-2024/rustfmt-raw-identifier-sorting.md:34
@@ -6739,12 +7170,17 @@ msgid ""
 "with the 2024 Edition. See the [Style edition](rustfmt-style-edition.md) "
 "chapter for more information on migrating and how style editions work."
 msgstr ""
+"이 변경 사항은 2024 에디션으로 `cargo fmt` 또는 `rustfmt`를 실행하여 자동으로 "
+"적용할 수 있습니다. 마이그레이션 및 스타일 에디션 작동 방식에 대한 자세한 내용"
+"은 [스타일 에디션](rustfmt-style-edition.md) 장을 참조하십시오."
 
 #: src/rust-2024/rustfmt-raw-identifier-sorting.md:5
 msgid ""
 "`rustfmt` now properly sorts [raw identifiers](../../reference/"
 "identifiers.html#raw-identifiers)."
 msgstr ""
+"`rustfmt`가 이제 [원시 식별자(raw identifiers)](../../reference/"
+"identifiers.html#raw-identifiers)를 올바르게 정렬합니다."
 
 #: src/rust-2024/rustfmt-raw-identifier-sorting.md:11
 #: src/rust-2024/rustfmt-version-sorting.md:9
@@ -6753,21 +7189,26 @@ msgid ""
 "sorting](../../style-guide/index.html#sorting) that `rustfmt` applies in "
 "various contexts, such as on imports."
 msgstr ""
+"[Rust 스타일 가이드](../../style-guide/index.html)에는 `rustfmt`가 임포트"
+"(imports)와 같은 다양한 컨텍스트에서 적용하는 [정렬 규칙](../../style-guide/"
+"index.html#sorting)이 포함되어 있습니다."
 
 #: src/rust-2024/rustfmt-raw-identifier-sorting.md:13
 msgid ""
 "Prior to the 2024 Edition, when sorting rustfmt would use the leading `r#` "
 "token instead of the ident which led to unwanted results. For example:"
 msgstr ""
+"2024 에디션 이전에는 정렬할 때 rustfmt가 식별자 대신 선행 `r#` 토큰을 사용하여 "
+"원하지 않는 결과를 초래했습니다. 예를 들어:"
 
 #: src/rust-2024/rustfmt-raw-identifier-sorting.md:21
 #: src/rust-2024/rustfmt-version-sorting.md:27
 msgid "In the 2024 Edition, `rustfmt` now produces:"
-msgstr ""
+msgstr "2024 에디션에서 `rustfmt`는 이제 다음을 생성합니다:"
 
 #: src/rust-2024/rustfmt-version-sorting.md:5
 msgid "`rustfmt` utilizes a new sorting algorithm."
-msgstr ""
+msgstr "`rustfmt`가 새로운 정렬 알고리즘을 사용합니다."
 
 #: src/rust-2024/rustfmt-version-sorting.md:11
 msgid ""
@@ -6776,11 +7217,15 @@ msgid ""
 "a version-sort like algorithm that compares Unicode characters "
 "lexicographically and provides better results in ASCII digit comparisons."
 msgstr ""
+"이전 버전의 스타일 가이드와 Rustfmt는 일반적으로 \"ASCIIbetical\" 기반 접근 방"
+"식을 사용했습니다. 2024 에디션에서는 유니코드 문자를 사전순으로 비교하고 "
+"ASCII 숫자 비교에서 더 나은 결과를 제공하는 버전 정렬(version-sort) 유사 알고리"
+"즘을 사용하도록 변경되었습니다."
 
 #: src/rust-2024/rustfmt-version-sorting.md:13
 msgid "For example with a given (unsorted) input:"
-msgstr ""
+msgstr "예를 들어 주어진 (정렬되지 않은) 입력에 대해:"
 
 #: src/rust-2024/rustfmt-version-sorting.md:20
 msgid "In the prior Editions, `rustfmt` would have produced:"
-msgstr ""
+msgstr "이전 에디션에서는 `rustfmt`가 다음을 생성했을 것입니다:"
