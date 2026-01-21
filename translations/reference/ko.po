@@ -9132,7 +9132,6 @@ msgid ""
 "   | _TupleStruct_"
 
 msgstr ""
-
 "**<sup>구문</sup>**  \n"
 
 "_구조체_ :  \n"
@@ -9156,7 +9155,6 @@ msgid ""
 "sup> ( `{` _StructFields_<sup>?</sup> `}` | `;` )"
 
 msgstr ""
-
 "_일반구조체_ :  \n"
 
 "   `struct` [식별자](../identifiers.md) [_제네릭매개변수_](generics.md)<sup>?</sup> [_Where절_](generics.md#where-clauses)<sup>?</"
@@ -9178,7 +9176,6 @@ msgid ""
 "(generics.md#where-clauses)<sup>?</sup> `;`"
 
 msgstr ""
-
 "_튜플구조체_ :  \n"
 
 "   `struct` [식별자](../identifiers.md) [_제네릭매개변수_](generics.md)<sup>?</sup> `(` _튜플필드들_<sup>?</sup> `)` [_Where절_]"
@@ -9196,7 +9193,6 @@ msgid ""
 "   _StructField_ (`,` _StructField_)<sup>\\*</sup> `,`<sup>?</sup>"
 
 msgstr ""
-
 "_구조체필드들_ :  \n"
 
 "   _구조체필드_ (`,` _구조체필드_)<sup>\\*</sup> `,`<sup>?</sup>"
@@ -9216,7 +9212,6 @@ msgid ""
 "   [IDENTIFIER](../identifiers.md) `:` [_Type_](../types.md#type-expressions)"
 
 msgstr ""
-
 "_구조체필드_ :  \n"
 
 "   [_외부속성_](../attributes.md)<sup>\\*</sup>  \n"
@@ -34337,9 +34332,7 @@ msgid ""
 "The reason for this is that `rlib` files do not contain any of their "
 "upstream dependencies. It wouldn't be very efficient for all `rlib` files to "
 "contain a copy of `libstd.rlib`!"
-msgstr ""
-그 이유는 `rlib` 파일이 업스트림 의존성을 전혀 포함하지 않기 때문입니다. 모든 "
-"`rlib` 파일이 `libstd.rlib` 사본을 포함한다면 그다지 효율적이지 않을 것입니다!"
+msgstr "그 이유는 `rlib` 파일이 업스트림 의존성을 전혀 포함하지 않기 때문입니다. 모든 `rlib` 파일이 `libstd.rlib` 사본을 포함한다면 그다지 효율적이지 않을 것입니다!"
 
 #: src/linkage.md:154
 msgid ""
@@ -40322,7 +40315,7 @@ msgid ""
 "at least once. Note that this complex NT does not have a dedicated separator "
 "token."
 msgstr ""
-복합 NT의 또 다른 예는 `$(hi $e:expr ;)+`입니다. 이는 `hi <expr>; hi <expr>; ...`와 같은 "
+"복합 NT의 또 다른 예는 `$(hi $e:expr ;)+`입니다. 이는 `hi <expr>; hi <expr>; ...`와 같은 "
 "형태의 프래그먼트 중 `hi <expr>;`가 최소 한 번 이상 나타나는 것과 일치합니다. "
 "이 복합 NT는 전용 구분자 토큰을 가지고 있지 않음에 유의하십시오."
 
