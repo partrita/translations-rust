@@ -505,7 +505,7 @@ fn main() {
 </code></pre>
 </li>
 <li>
-<p><a href="#via-compiler-flag">CLI level flags</a> take precedence over attributes.</p>
+<p><a href="#via-compiler-flag">CLI level flags</a> override the default level of a lint. They essentially behave like crate-level attributes. Attributes within the source code take precedence over CLI flags, except for <code>-F</code>/<code>--forbid</code>, which cannot be overridden.</p>
 <p>The order of the flags matter; flags on the right take precedence over earlier flags.</p>
 <pre><code class="language-rust">fn main() {
     let x = 42;
