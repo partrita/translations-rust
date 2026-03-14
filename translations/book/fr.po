@@ -354,8 +354,7 @@ msgstr "Installer des binaires à partir de crates.io avec `cargo install`"
 
 #: src/SUMMARY.md:82 src/ch14-05-extending-cargo.md:1
 msgid "Extending Cargo with Custom Commands"
-msgstr ""
-"Étendre les fonctionnalités de cargo avec des commandes personnalisées"
+msgstr "Étendre les fonctionnalités de cargo avec des commandes personnalisées"
 
 #: src/SUMMARY.md:84 src/ch15-00-smart-pointers.md:1
 msgid "Smart Pointers"
@@ -1751,7 +1750,16 @@ msgstr ""
 
 #: src/ch01-02-hello-world.md:78
 msgid "On Windows, enter the command `.\\main` instead of `./main`:"
-msgstr ""
+msgstr "Sur Windows, écrivez la commande `.\\main.exe` à la place de `./main` :"
+
+# <!--
+# @# TODO there's a misteack in the upstream English version: make a PR to correct it
+# On Windows, enter the command `.\main` instead of `./main`:
+# => add missing .exe extension:
+# On Windows, enter the command `.\main.exe` instead of `./main`:
+#
+# @# TODO Also correct the powershell terminal copy below in the same PR
+# -->
 
 #: src/ch01-02-hello-world.md:86
 msgid ""
@@ -2229,7 +2237,10 @@ msgstr ""
 #: src/appendix-04-useful-development-tools.md:74
 # msgid "<span class=\"filename\">Filename: src/main.rs</span>"
 # msgid "Filename: src/main.rs"
-# msgstr "Fichier :src/main.rs"
+# msgstr "Fichier : src/main.rs"
+# msgid "<span class=\"filename\">Filename: src/main.rs</span>"
+# msgstr "<span class=\"filename\">Fichier : src/main.rs</span>"
+# FIXME
 
 #: src/ch01-03-hello-cargo.md:100
 msgid ""
@@ -2558,22 +2569,27 @@ msgstr ""
 #: src/ch01-03-hello-cargo.md:247
 msgid "Install the latest stable version of Rust using `rustup`."
 msgstr ""
+"Installer la dernière version stable de Rust en utilisant `rustup`"
 
 #: src/ch01-03-hello-cargo.md:248
 msgid "Update to a newer Rust version."
 msgstr ""
+"Mettre à jour Rust vers une nouvelle version"
 
 #: src/ch01-03-hello-cargo.md:249
 msgid "Open locally installed documentation."
 msgstr ""
+"Ouvrir la documentation installée en local"
 
 #: src/ch01-03-hello-cargo.md:250
 msgid "Write and run a “Hello, world!” program using `rustc` directly."
 msgstr ""
+"Écrire et exécuter un programme “Hello, world!” en utilisant directement `rustc`"
 
 #: src/ch01-03-hello-cargo.md:251
 msgid "Create and run a new project using the conventions of Cargo."
 msgstr ""
+"Créer et exécuter un nouveau projet en utilisant les conventions de Cargo"
 
 #: src/ch01-03-hello-cargo.md:253
 msgid ""
@@ -2594,7 +2610,6 @@ msgstr ""
 # Programmer le jeu du plus ou du moins:
 
 #: src/ch02-00-guessing-game-tutorial.md:3
-#, fuzzy
 msgid ""
 "Let’s jump into Rust by working through a hands-on project together! This "
 "chapter introduces you to a few common Rust concepts by showing you how to "
@@ -2611,8 +2626,8 @@ msgstr ""
 "chapitres suivants, nous approfondirons ces notions. Dans ce chapitre, vous "
 "n'allez exercer que les principes de base."
 
+# _____________JEANSUILÀ_____________________just_a_handy_bookmark__WIP_________
 #: src/ch02-00-guessing-game-tutorial.md:10
-#, fuzzy
 msgid ""
 "We’ll implement a classic beginner programming problem: a guessing game. "
 "Here’s how it works: The program will generate a random integer between 1 "
@@ -2630,7 +2645,6 @@ msgstr ""
 "message de félicitations et se fermera."
 
 #: src/ch02-00-guessing-game-tutorial.md:16
-#, fuzzy
 msgid "Setting Up a New Project"
 msgstr "Mise en place d'un nouveau projet"
 
@@ -2642,6 +2656,35 @@ msgstr ""
 "Pour créer un nouveau projet, rendez-vous dans le répertoire _projects_ que "
 "vous avez créé au chapitre 1 et utilisez Cargo pour créer votre projet, "
 "comme ceci :"
+
+# Terminal output: {{{
+msgid "$ cargo new guessing_game"
+msgstr "$ cargo new jeu_du_plus_ou_du_moins"
+
+msgid ""
+"```console\n"
+"$ cargo new guessing_game\n"
+"$ cd guessing_game\n"
+"```"
+msgstr ""
+"```console\n"
+"$ cargo jeu_du_plus_ou_du_moins\n"
+"$ cd jeu_du_plus_ou_du_moins\n"
+"```"
+
+# "```"
+# "```toml\n"
+# "[package]\n"
+# "name = \"jeu_du_plus_ou_du_moins\"\n"
+# "version = \"0.1.0\"\n"
+# "edition = \"2024\"\n"
+# "\n"
+# "[dependencies]\n"
+# "```"
+
+# FIXME: the terminal translations above do not seem to work as expected;
+#        therefore, terminal outputs and text do not match
+# }}}
 
 #: src/ch02-00-guessing-game-tutorial.md:26
 msgid ""
@@ -2655,7 +2698,7 @@ msgstr ""
 
 #: src/ch02-00-guessing-game-tutorial.md:30
 msgid "Look at the generated _Cargo.toml_ file:"
-msgstr ""
+msgstr "Regardons le fichier Cargo.toml qui a été généré :"
 
 #: src/ch02-00-guessing-game-tutorial.md:41
 #: src/ch02-00-guessing-game-tutorial.md:491 src/ch14-01-release-profiles.md:37
@@ -2665,7 +2708,9 @@ msgstr ""
 #: src/ch14-02-publishing-to-crates-io.md:474
 #: src/ch14-03-cargo-workspaces.md:33 src/ch14-03-cargo-workspaces.md:113
 msgid "<span class=\"filename\">Filename: Cargo.toml</span>"
-msgstr ""
+msgstr "<span class=\"filename\">Fichier : Cargo.toml</span>"
+# TODO: the previous legend is properly translated: apply the same method for
+#       previous cases which failed
 
 #: src/ch02-00-guessing-game-tutorial.md:43
 msgid ""
@@ -2678,6 +2723,14 @@ msgid ""
 "[dependencies]\n"
 "```"
 msgstr ""
+"```toml\n"
+"[package]\n"
+"name = \"jeu_du_plus_ou_du_moins\"\n"
+"version = \"0.1.0\"\n"
+"edition = \"2024\"\n"
+"\n"
+"[dependencies]\n"
+"```"
 
 #: src/ch02-00-guessing-game-tutorial.md:52
 msgid ""
@@ -2686,6 +2739,9 @@ msgid ""
 msgstr ""
 "Comme vous l'avez expérimenté dans le chapitre 1, `cargo new` génère un "
 "programme _“Hello, world!”_ pour vous. Ouvrez le fichier _src/main.rs_ :"
+
+msgid "<span class=\"filename\">Filename: src/main.rs</span>"
+msgstr "<span class=\"filename\">Fichier : src/main.rs</span>"
 
 #: src/ch02-00-guessing-game-tutorial.md:63
 msgid ""
@@ -2705,6 +2761,13 @@ msgid ""
 "Hello, world!\n"
 "```"
 msgstr ""
+"```console\n"
+"$ cargo run\n"
+"   Compiling jeu_du_plus_ou_du_moins v0.1.0 (file:///projects/jeu_du_plus_ou_du_moins)\n"
+"    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.08s\n"
+"     Running `target/debug/jeu_du_plus_ou_du_moins`\n"
+"Hello, world!\n"
+"```"
 
 #: src/ch02-00-guessing-game-tutorial.md:74
 msgid ""
@@ -2720,9 +2783,10 @@ msgstr ""
 msgid ""
 "Reopen the _src/main.rs_ file. You’ll be writing all the code in this file."
 msgstr ""
+"Ouvrez à nouveau le fichier src/main.rs. C'est dans ce fichier que nous "
+"écrirons la totalité de notre code."
 
 #: src/ch02-00-guessing-game-tutorial.md:80
-#, fuzzy
 msgid "Processing a Guess"
 msgstr "Traitement d'un nombre saisi"
 
@@ -2759,7 +2823,7 @@ msgstr ""
 #: src/ch09-03-to-panic-or-not-to-panic.md:166
 #: src/ch20-03-advanced-types.md:237
 msgid "\"Guess the number!\""
-msgstr ""
+msgstr "\"Devinez le nombre !\""
 
 #: src/ch02-00-guessing-game-tutorial.md:95
 #: src/ch02-00-guessing-game-tutorial.md:120
@@ -2782,7 +2846,7 @@ msgstr ""
 #: src/ch09-03-to-panic-or-not-to-panic.md:173
 #: src/ch20-03-advanced-types.md:244
 msgid "\"Please input your guess.\""
-msgstr ""
+msgstr "\"Veuillez entrer un nombre.\""
 
 #: src/ch02-00-guessing-game-tutorial.md:101
 #: src/ch02-00-guessing-game-tutorial.md:126
@@ -3774,15 +3838,15 @@ msgid ""
 "other functionality in the `rand` crate, for example, run `cargo doc --open` "
 "and click `rand` in the sidebar on the left."
 msgstr ""
-"> Remarque : vous ne pourrez pas deviner quels _traits_, méthodes et > "
+"Remarque : vous ne pourrez pas deviner quels _traits_, méthodes et "
 "fonctions utiliser avec une _crate_, donc chaque _crate_ a une documentation "
-"> qui donne des indications sur son utilisation. Une autre fonctionnalité > "
-"intéressante de Cargo est que vous pouvez utiliser la commande > `cargo doc "
-"--open`, qui va construire localement la documentation intégrée > par toutes "
-"vos dépendances et va l'ouvrir dans votre navigateur. Si vous vous > "
+"qui donne des indications sur son utilisation. Une autre fonctionnalité "
+"intéressante de Cargo est que vous pouvez utiliser la commande `cargo doc "
+"--open`, qui va construire localement la documentation intégrée par toutes "
+"vos dépendances et va l'ouvrir dans votre navigateur. Si vous vous "
 "intéressez à d'autres fonctionnalités de la _crate_ `rand`, par exemple, "
-"vous > pouvez lancer `cargo doc --open` et cliquer sur `rand` dans la barre "
-"latérale > sur la gauche."
+"vous pouvez lancer `cargo doc --open` et cliquer sur `rand` dans la barre "
+"latérale sur la gauche."
 
 #: src/ch02-00-guessing-game-tutorial.md:715
 msgid ""
@@ -4403,7 +4467,6 @@ msgstr ""
 "lorsque le bon nombre est deviné."
 
 #: src/ch02-00-guessing-game-tutorial.md:1101
-#, fuzzy
 msgid "Quitting After a Correct Guess"
 msgstr "Arrêter le programme après avoir gagné"
 
@@ -4425,7 +4488,6 @@ msgstr ""
 "est la dernière partie de `main`."
 
 #: src/ch02-00-guessing-game-tutorial.md:1151
-#, fuzzy
 msgid "Handling Invalid Input"
 msgstr "Gérer les saisies invalides"
 
@@ -4600,12 +4662,10 @@ msgstr ""
 "apprendre dès le début vous procurera de solides bases pour débuter."
 
 #: src/ch03-00-common-programming-concepts.md:13
-#, fuzzy
 msgid "Keywords"
-msgstr "Avant-propos"
+msgstr "Mots-clés"
 
 #: src/ch03-00-common-programming-concepts.md:15
-#, fuzzy
 msgid ""
 "The Rust language has a set of _keywords_ that are reserved for use by the "
 "language only, much as in other languages. Keep in mind that you cannot use "
@@ -4627,7 +4687,6 @@ msgstr ""
 "dans > [l'annexe A](appendix-01-keywords.md)<!-- ignore -->."
 
 #: src/ch03-01-variables-and-mutability.md:3
-#, fuzzy
 msgid ""
 "As mentioned in the [“Storing Values with Variables”](ch02-00-guessing-game-"
 "tutorial.html#storing-values-with-variables)<!-- ignore --> section, by "
@@ -4647,7 +4706,6 @@ msgstr ""
 "pourriez choisir d'y renoncer."
 
 #: src/ch03-01-variables-and-mutability.md:11
-#, fuzzy
 msgid ""
 "When a variable is immutable, once a value is bound to a name, you can’t "
 "change that value. To illustrate this, generate a new project called "
@@ -4659,7 +4717,6 @@ msgstr ""
 "répertoire _projects_ en utilisant `cargo new variables`."
 
 #: src/ch03-01-variables-and-mutability.md:15
-#, fuzzy
 msgid ""
 "Then, in your new _variables_ directory, open _src/main.rs_ and replace its "
 "code with the following code, which won’t compile just yet:"
@@ -4713,7 +4770,6 @@ msgid ""
 msgstr ""
 
 #: src/ch03-01-variables-and-mutability.md:53
-#, fuzzy
 msgid ""
 "This example shows how the compiler helps you find errors in your programs. "
 "Compiler errors can be frustrating, but really they only mean your program "
@@ -4741,7 +4797,6 @@ msgstr ""
 "variable immuable  `x`."
 
 #: src/ch03-01-variables-and-mutability.md:60
-#, fuzzy
 msgid ""
 "It’s important that we get compile-time errors when we attempt to change a "
 "value that’s designated as immutable, because this very situation can lead "
@@ -4767,7 +4822,6 @@ msgstr ""
 "soucier. Votre code est ainsi plus facile à maîtriser."
 
 #: src/ch03-01-variables-and-mutability.md:71
-#, fuzzy
 msgid ""
 "But mutability can be very useful and can make code more convenient to "
 "write. Although variables are immutable by default, you can make them "
@@ -4786,7 +4840,6 @@ msgstr ""
 "code que d'autres parties du code vont modifier la valeur de cette variable."
 
 #: src/ch03-01-variables-and-mutability.md:78
-#, fuzzy
 msgid "For example, let’s change _src/main.rs_ to the following:"
 msgstr "Par exemple, modifions _src/main.rs_ ainsi :"
 
@@ -39426,9 +39479,12 @@ msgstr ""
 # Chapitre 18: {{{
 
 #: src/ch18-00-oop.md:1
-#, fuzzy
 msgid "Object-Oriented Programming Features"
 msgstr "Les fonctionnalités orientées objet de Rust"
+
+# NOTE: the titles of this chapter differ slightly between summary and here:
+#       Object-Oriented
+#       Object Oriented
 
 #: src/ch18-00-oop.md:5
 #, fuzzy
