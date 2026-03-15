@@ -1214,7 +1214,6 @@ msgstr ""
 # TODO eventually, put this sentence back with the rust-lang-translations.org URL
 
 # }}}
-# _____________JEANSUILÀ_____________________just_a_handy_bookmark__WIP_________
 # Traduction des termes: {{{
 #
 # Page non existante dans la version anglaise
@@ -2569,27 +2568,27 @@ msgstr ""
 #: src/ch01-03-hello-cargo.md:247
 msgid "Install the latest stable version of Rust using `rustup`."
 msgstr ""
-"Installer la dernière version stable de Rust en utilisant `rustup`"
+"Installer la dernière version stable de Rust en utilisant `rustup`."
 
 #: src/ch01-03-hello-cargo.md:248
 msgid "Update to a newer Rust version."
 msgstr ""
-"Mettre à jour Rust vers une nouvelle version"
+"Mettre à jour Rust vers une nouvelle version."
 
 #: src/ch01-03-hello-cargo.md:249
 msgid "Open locally installed documentation."
 msgstr ""
-"Ouvrir la documentation installée en local"
+"Ouvrir la documentation installée en local."
 
 #: src/ch01-03-hello-cargo.md:250
 msgid "Write and run a “Hello, world!” program using `rustc` directly."
 msgstr ""
-"Écrire et exécuter un programme “Hello, world!” en utilisant directement `rustc`"
+"Écrire et exécuter un programme “Hello, world!” en utilisant directement `rustc`."
 
 #: src/ch01-03-hello-cargo.md:251
 msgid "Create and run a new project using the conventions of Cargo."
 msgstr ""
-"Créer et exécuter un nouveau projet en utilisant les conventions de Cargo"
+"Créer et exécuter un nouveau projet en utilisant les conventions de Cargo."
 
 #: src/ch01-03-hello-cargo.md:253
 msgid ""
@@ -2626,7 +2625,6 @@ msgstr ""
 "chapitres suivants, nous approfondirons ces notions. Dans ce chapitre, vous "
 "n'allez exercer que les principes de base."
 
-# _____________JEANSUILÀ_____________________just_a_handy_bookmark__WIP_________
 #: src/ch02-00-guessing-game-tutorial.md:10
 msgid ""
 "We’ll implement a classic beginner programming problem: a guessing game. "
@@ -2658,6 +2656,8 @@ msgstr ""
 "comme ceci :"
 
 # Terminal output: {{{
+
+# _____________JEANSUILÀ_____________________just_a_handy_bookmark__WIP_________
 msgid "$ cargo new guessing_game"
 msgstr "$ cargo new jeu_du_plus_ou_du_moins"
 
