@@ -74,7 +74,6 @@ msgstr ""
 "La version anglaise de ce livre est disponible [au format papier et e-book "
 "chez No Starch Press](https://nostarch.com/rust-programming-language-3rd-edition)."
 
-# BUG: ce paragraphe ne se traduit pas bien:
 #: src/title-page.md:28
 msgid ""
 "**🚨 Want a more interactive learning experience? Try out a different "
@@ -549,6 +548,7 @@ msgstr ""
 #: src/SUMMARY.md:135
 msgid "G - How Rust is Made and “Nightly Rust”"
 msgstr ""
+
 # }}}
 # Avant-propos: {{{
 
@@ -1246,6 +1246,20 @@ msgstr "L'installation de Rust sur Linux ou macOS"
 msgid "Writing a program that prints `Hello, world!`"
 msgstr "L'écriture d'un programme qui affiche `Hello, world!`"
 
+# Other tries to translate legend:{{{
+# HTML code output: <figcaption><a href="#listing-1-1">Listing 1-1</a>: A program that prints <code>Hello, world!</code></figcaption>
+msgid "<figcaption><a href=\"#listing-1-1\">Listing 1-1</a>: A program that prints <code>Hello, world!</code></figcaption>"
+msgstr "<figcaption><a href=\"#listing-1-1\">Listing 1-1</a> : un programme qui affiche `Hello, world!<code>Hello, world!</code></figcaption>"
+
+msgid ": A program that prints <code>Hello, world!"
+msgstr " : un programme qui affiche `Hello, world!<code>Hello, world!"
+
+msgid "A program that prints <code>Hello, world!"
+msgstr "un programme qui affiche `Hello, world!<code>Hello, world!"
+
+# }}}
+
+
 #: src/ch01-00-getting-started.md:8
 msgid "Using `cargo`, Rust’s package manager and build system"
 msgstr "L'utilisation de `cargo`, le gestionnaire de paquets et système de compilation"
@@ -1707,6 +1721,13 @@ msgid ""
 msgstr ""
 "Fichier : src/main.rs"
 
+msgid ""
+"<span class=\"filename\">Filename: main.rs</span>"
+msgstr ""
+"<span class=\"filename\">Fichier : main.rs</span>"
+
+# Légende:
+
 msgid  "<Listing number=\"1-1\" file-name=\"main.rs\" caption=\"A program that prints `Hello, world!`\">"
 msgstr ""
 "<Listing number=\"1-1\" file-name=\"main.rs\" caption=\"Un programme qui affiche `Hello, world!`\">"
@@ -1726,14 +1747,8 @@ msgid ""
 msgstr ""
 " : Un programme qui affiche `Hello, world!`"
 
-msgid ""
-"<span class=\"filename\">Filename: main.rs</span>"
-msgstr ""
-"<span class=\"filename\">Fichier : main.rs</span>"
 
-
-
-# @# FIXME find a way to translate this ^
+# @# FIXME find a way to translate these two items ^
 
 # }}}
 
@@ -2205,6 +2220,7 @@ msgstr ""
 #: src/ch01-03-hello-cargo.md:90
 msgid "Now open _src/main.rs_ and take a look:"
 msgstr ""
+"Maintenant, ouvrez _src/main.rs_ et jetez-y un coup d'œil :"
 
 #: src/ch01-03-hello-cargo.md:92 src/ch02-00-guessing-game-tutorial.md:55
 #: src/ch02-00-guessing-game-tutorial.md:882
@@ -2662,6 +2678,13 @@ msgid "$ cargo new guessing_game"
 msgstr "$ cargo new jeu_du_plus_ou_du_moins"
 
 msgid ""
+"$ cargo new guessing_game\n"
+"$ cd guessing_game\n"
+msgstr ""
+"$ cargo jeu_du_plus_ou_du_moins\n"
+"$ cd jeu_du_plus_ou_du_moins\n"
+
+msgid ""
 "```console\n"
 "$ cargo new guessing_game\n"
 "$ cd guessing_game\n"
@@ -2709,8 +2732,19 @@ msgstr "Regardons le fichier Cargo.toml qui a été généré :"
 #: src/ch14-03-cargo-workspaces.md:33 src/ch14-03-cargo-workspaces.md:113
 msgid "<span class=\"filename\">Filename: Cargo.toml</span>"
 msgstr "<span class=\"filename\">Fichier : Cargo.toml</span>"
+
 # TODO: the previous legend is properly translated: apply the same method for
 #       previous cases which failed
+# FIXME: for some reason, the previous legend is no longer translated...
+# Desperate tries:{{{
+
+msgid "<span class=\"file-name\">Filename: Cargo.toml</span>"
+msgstr "<span class=\"file-name\">Fichier : Cargo.toml</span>"
+
+msgid "<p><span class=\"filename\">Filename: Cargo.toml</span></p>"
+msgstr "<p><span class=\"file-name\">Fichier : Cargo.toml</span></p>"
+
+# }}}
 
 #: src/ch02-00-guessing-game-tutorial.md:43
 msgid ""
@@ -30920,7 +30954,12 @@ msgstr ""
 
 #: src/ch14-03-cargo-workspaces.md:151
 msgid "<span class=\"filename\">Filename: adder/Cargo.toml</span>"
-msgstr ""
+msgstr "<span class=\"filename\">Fichier : : ajouter_un/Cargo.toml</span>"
+
+msgid "Filename: adder/Cargo.toml"
+msgstr "Fichier : : ajouter_un/Cargo.toml"
+
+# FIXME: none of these attemps seem to be working properly
 
 #: src/ch14-03-cargo-workspaces.md:153
 msgid ""
