@@ -56,7 +56,7 @@ msgstr ""
 "book/) et en hors-ligne avec l'installation de Rust qui a été effectuée avec "
 "`rustup` ; vous pouvez lancer `rustup doc --book` pour l'ouvrir."
 
-# TODO add reference to https://rust-lang-translations.org/ in the appendix 6
+# @# TODO add reference to https://rust-lang-translations.org/ in the appendix 6
 #: src/title-page.md:18
 msgid ""
 "Several community [translations](appendix-06-translation.html) are also "
@@ -190,6 +190,7 @@ msgstr "Paquets, crates et modules"
 # Previous translation of paragraph above:
 # msgstr "Gérer des projets grandissants avec les paquets, crates et modules"
 # => it was a better title, but not matching the short English version
+
 
 #: src/SUMMARY.md:37 src/ch07-01-packages-and-crates.md:1
 msgid "Packages and Crates"
@@ -351,6 +352,7 @@ msgstr "Installer des binaires à partir de crates.io avec `cargo install`"
 
 # NOTE: translation above comes from legacy, it slightly differs from English
 
+
 #: src/SUMMARY.md:82 src/ch14-05-extending-cargo.md:1
 msgid "Extending Cargo with Custom Commands"
 msgstr "Étendre les fonctionnalités de cargo avec des commandes personnalisées"
@@ -370,6 +372,7 @@ msgstr ""
 "`Deref`"
 
 # NOTE: translation above comes from legacy, it slightly differs from English
+
 
 #: src/SUMMARY.md:87 src/ch15-03-drop.md:1
 msgid "Running Code on Cleanup with the `Drop` Trait"
@@ -415,7 +418,7 @@ msgid ""
 msgstr ""
 "Notions fondamentales de programmation asynchrone: Async, Await, Futures et Streams"
 
-# TODO: check, during book review, if "futures" should be translated or not
+# @# TODO: check, during book review, if "futures" should be translated or not
 #: src/SUMMARY.md:99 src/ch17-01-futures-and-syntax.md:1
 msgid "Futures and the Async Syntax"
 msgstr ""
@@ -1146,16 +1149,13 @@ msgstr "Signification"
 # msgstr ""
 # "<img src=\"img/ferris/does_not_compile.svg\" class=\"ferris-explain\" "
 # "alt=\"Ferris avec un point d'interrogation\"/>"
-#
 msgid "Ferris with a question mark"
 msgstr "Ferris avec un point d'interrogation"
-
 
 #: src/ch00-00-introduction.md:189
 msgid "This code does not compile!"
 msgstr "Ce code ne compile pas !"
 
-# TODO: capital F for ferris should be corrected in upstream English text
 #: src/ch00-00-introduction.md:190
 # msgid ""
 # "<img src=\"img/ferris/panics.svg\" class=\"ferris-explain\" alt=\"ferris "
@@ -1167,6 +1167,9 @@ msgid ""
 "ferris throwing up their hands"
 msgstr ""
 "Ferris qui lève ses bras"
+
+# @# TODO: capital F for ferris should be corrected in upstream English text
+
 
 #: src/ch00-00-introduction.md:190
 msgid "This code panics!"
@@ -1211,17 +1214,19 @@ msgstr ""
 
 # Old version of previous paragraph:
 # "La version française est aussi disponible sur [GitHub](https://github.com/Jimskapt/rust-book-fr)."
-# TODO eventually, put this sentence back with the rust-lang-translations.org URL
+# @# TODO eventually, put this sentence back with the rust-lang-translations.org URL
+
 
 # }}}
 # Traduction des termes: {{{
-#
+
 # Page non existante dans la version anglaise
 # This page does not exist in the English version
 #
-# TODO add a chapter "Glossary" in original English version, with minimal
-# contents, explicitly mentioning that it's just a placeholder for translations.
-#
+# @# TODO add a chapter "Glossary" in original English version, with minimal
+#         contents, explicitly mentioning that it's just a placeholder for translations.
+
+
 # }}}
 # Chapitre 1: {{{
 # Prise en main: {{{
@@ -1246,29 +1251,12 @@ msgstr "L'installation de Rust sur Linux ou macOS"
 msgid "Writing a program that prints `Hello, world!`"
 msgstr "L'écriture d'un programme qui affiche `Hello, world!`"
 
-# Other tries to translate legend:{{{
-# HTML code output: <figcaption><a href="#listing-1-1">Listing 1-1</a>: A program that prints <code>Hello, world!</code></figcaption>
-msgid "<figcaption><a href=\"#listing-1-1\">Listing 1-1</a>: A program that prints <code>Hello, world!</code></figcaption>"
-msgstr "<figcaption><a href=\"#listing-1-1\">Listing 1-1</a> : un programme qui affiche `Hello, world!<code>Hello, world!</code></figcaption>"
-
-msgid ": A program that prints <code>Hello, world!"
-msgstr " : un programme qui affiche `Hello, world!<code>Hello, world!"
-
-msgid "A program that prints <code>Hello, world!"
-msgstr "un programme qui affiche `Hello, world!<code>Hello, world!"
-
-# }}}
-
-
 #: src/ch01-00-getting-started.md:8
 msgid "Using `cargo`, Rust’s package manager and build system"
 msgstr "L'utilisation de `cargo`, le gestionnaire de paquets et système de compilation"
 
 # }}}
 # Installation: {{{
-
-# "<span class=\"caption\">Encart 1-1 : Un programme qui affiche `Hello, world!"
-# "` </span>"
 
 #: src/ch01-01-installation.md:3
 msgid ""
@@ -1470,7 +1458,7 @@ msgid "In PowerShell, use:"
 msgstr ""
 "Dans PowerShell, entrez :"
 
-# TODO: GNU should be added in upstream English text
+# @# TODO: GNU should be added in upstream English text
 #: src/ch01-01-installation.md:103
 msgid "In Linux and macOS, use:"
 msgstr ""
@@ -1516,8 +1504,6 @@ msgstr ""
 msgid "Reading the Local Documentation"
 msgstr "Lecture de la documentation en local"
 
-# @# FIXME: for some reason, the title above is not rendered as translated in the HTML output
-
 #: src/ch01-01-installation.md:134
 msgid ""
 "The installation of Rust also includes a local copy of the documentation so "
@@ -1537,7 +1523,7 @@ msgstr ""
 "À chaque fois que vous n'êtes pas sûr de ce que fait un type ou une fonction "
 "fournie par la bibliothèque standard ou que vous ne savez pas comment "
 "l'utiliser, utilisez cette documentation de l'interface de programmation "
-"applicative *(API)* pour le savoir !"
+"applicative (*API*) pour le savoir !"
 
 #: src/ch01-01-installation.md:143
 #: src/ch01-01-installation.md:145
@@ -1657,7 +1643,7 @@ msgstr ""
 "répertoire _projects_ et un répertoire pour le projet “Hello, world!” à "
 "l'intérieur de ce répertoire _projects_."
 
-# TODO: GNU should be added in upstream English text, and also capital MacOS
+# @# TODO: GNU should be added in upstream English text, and also capital MacOS
 #: src/ch01-02-hello-world.md:28
 msgid "For Linux, macOS, and PowerShell on Windows, enter this:"
 msgstr ""
@@ -1699,7 +1685,7 @@ msgstr ""
 "Maintenant, ouvrez le fichier _main.rs_ que vous venez de créer et entrez le "
 "code de l'encart 1-1."
 
-# Desperate attempts to translate filename and the title: {{{
+# Desperate attempts to translate filename and title: {{{
 # Tentatives désespérées de traduire le nom de fichier et le titre:
 
 #: src/ch20-01-unsafe-rust.md:515
@@ -1709,7 +1695,9 @@ msgstr ""
 msgid ""
 "\"Hello, world!\""
 msgstr ""
-"\"Hello, World!\""
+"\"Hello, world!\""
+
+# Legend and title of listing: several attempts to translate them:
 
 msgid ""
 "Filename: main.rs"
@@ -1721,12 +1709,19 @@ msgid ""
 msgstr ""
 "Fichier : src/main.rs"
 
-msgid ""
-"<span class=\"filename\">Filename: main.rs</span>"
-msgstr ""
-"<span class=\"filename\">Fichier : main.rs</span>"
+# msgid ""
+# "<span class=\"filename\">Filename: main.rs</span>"
+# msgstr ""
+# "<span class=\"filename\">Fichier : main.rs</span>"
+
+msgid "<span class=\"filename\">Filename: main.rs</span>"
+msgstr "<span class=\"filename\">Fichier : main.rs</span>"
+
 
 # Légende:
+
+# "<span class=\"caption\">Encart 1-1 : Un programme qui affiche `Hello, world!"
+# "` </span>"
 
 msgid  "<Listing number=\"1-1\" file-name=\"main.rs\" caption=\"A program that prints `Hello, world!`\">"
 msgstr ""
@@ -1748,6 +1743,20 @@ msgstr ""
 " : Un programme qui affiche `Hello, world!`"
 
 
+# Other tries to translate legend:{{{
+# HTML code output: <figcaption><a href="#listing-1-1">Listing 1-1</a>: A program that prints <code>Hello, world!</code></figcaption>
+msgid "<figcaption><a href=\"#listing-1-1\">Listing 1-1</a>: A program that prints <code>Hello, world!</code></figcaption>"
+msgstr "<figcaption><a href=\"#listing-1-1\">Listing 1-1</a> : un programme qui affiche `Hello, world!<code>Hello, world!</code></figcaption>"
+
+msgid ": A program that prints <code>Hello, world!"
+msgstr " : un programme qui affiche `Hello, world!<code>Hello, world!"
+
+msgid "A program that prints <code>Hello, world!"
+msgstr "un programme qui affiche `Hello, world!<code>Hello, world!"
+
+# }}}
+
+# => all failures
 # @# FIXME find a way to translate these two items ^
 
 # }}}
@@ -1772,8 +1781,9 @@ msgstr "Sur Windows, écrivez la commande `.\\main.exe` à la place de `./main`�
 # => add missing .exe extension:
 # On Windows, enter the command `.\main.exe` instead of `./main`:
 #
-# @# TODO Also correct the powershell terminal copy below in the same PR
+# @# TODO Also correct the powershell terminal in the same PR
 # -->
+
 
 #: src/ch01-02-hello-world.md:86
 msgid ""
@@ -1787,6 +1797,10 @@ msgstr ""
 "référez-vous à la partie [\"dépannage\"]"
 "(ch01-01-installation.html#troubleshooting)<!-- ignore --> du "
 "chapitre d'installation pour vous aider."
+
+# @# FIXME the URL above points to the "Installation" chapter, but does not 
+#          reach the #troubleshooting tag
+
 
 #: src/ch01-02-hello-world.md:91
 msgid ""
@@ -1802,6 +1816,7 @@ msgstr ""
 #: src/ch01-02-hello-world.md:98
 msgid "The Anatomy of a Rust Program"
 msgstr "Anatomie d'un programme Rust"
+
 # msgstr "Structure d'un programme Rust"
 
 #: src/ch01-02-hello-world.md:100
@@ -1931,6 +1946,7 @@ msgstr ""
 "compilateur Rust en entrant la commande `rustc` et en lui passant le nom de "
 "votre fichier source, comme ceci :"
 
+
 #: src/ch01-02-hello-world.md:164
 msgid ""
 "If you have a C or C++ background, you’ll notice that this is similar to "
@@ -1986,8 +2002,8 @@ msgstr ""
 msgid "on Windows"
 msgstr "sous Windows"
 
-# FIXME this does not work as expected, the translation is not rendered in the
-#       HTML output
+# @# FIXME this does not work as expected, the translation is not rendered in the
+#          HTML output
 # }}}
 
 #: src/ch01-02-hello-world.md:195
@@ -2034,12 +2050,13 @@ msgstr ""
 "allons découvrir l'outil Cargo, qui va vous aider à écrire des programmes "
 "Rust à l'épreuve de la réalité."
 
-# A string untranslated found in HTML output, not sure where it belongs to:
+# An untranslated string found in HTML output, not sure where it belongs to:
 msgid "Hello, World! - The Rust Programming Language"
 msgstr "Hello, World! - Le langage de programmation Rust"
 
 # }}}
 # Hello Cargo!: {{{
+# _____________JEANSUILÀ_____________________just_a_handy_bookmark__WIP_________
 
 #: src/ch01-03-hello-cargo.md:3
 msgid ""
@@ -2347,6 +2364,25 @@ msgstr ""
 "dans votre répertoire courant. Étant donné que la compilation par défaut est "
 "une compilation de débogage, Cargo place le binaire dans un répertoire nommé "
 "_debug_. Vous pouvez lancer l'exécutable avec cette commande :"
+
+# Attempt to translate a comment: {{{
+msgid ""
+"$ ./target/debug/hello_cargo # or .\\target\\debug\\hello_cargo.exe on Windows\n"
+"Hello, world!"
+msgstr ""
+"$ ./target/debug/hello_cargo # ou .\\target\\debug\\hello_cargo.exe sous Windows\n"
+"Hello, world!"
+
+msgid ""
+"# or .\\target\\debug\\hello_cargo.exe on Windows"
+msgstr ""
+"# ou .\\target\\debug\\hello_cargo.exe sous Windows"
+
+# => all failures
+# @# FIXME find a way to translate this
+
+
+# }}}
 
 #: src/ch01-03-hello-cargo.md:139
 msgid ""
@@ -2682,7 +2718,6 @@ msgstr ""
 "vous avez créé au chapitre 1 et utilisez Cargo pour créer votre projet, "
 "comme ceci :"
 
-# _____________JEANSUILÀ_____________________just_a_handy_bookmark__WIP_________
 # Terminal output: {{{
 
 msgid "$ cargo new guessing_game"
@@ -2716,7 +2751,7 @@ msgstr ""
 # "[dependencies]\n"
 # "```"
 
-# FIXME: the terminal translations above do not seem to work as expected;
+# @# FIXME: the terminal translations above do not seem to work as expected;
 #        therefore, terminal outputs and text do not match
 # }}}
 
@@ -2744,9 +2779,9 @@ msgstr "Regardons le fichier Cargo.toml qui a été généré :"
 msgid "<span class=\"filename\">Filename: Cargo.toml</span>"
 msgstr "<span class=\"filename\">Fichier : Cargo.toml</span>"
 
-# TODO: the previous legend is properly translated: apply the same method for
-#       previous cases which failed
-# FIXME: for some reason, the previous legend is no longer translated...
+# @# TODO: the previous legend is properly translated: apply the same method for
+#          previous cases which failed
+# @# FIXME: for some reason, the previous legend is no longer translated...
 # Desperate tries:{{{
 
 msgid "<span class=\"file-name\">Filename: Cargo.toml</span>"
@@ -2891,10 +2926,11 @@ msgstr "\"Devinez le nombre !\""
 msgid "\"Please input your guess.\""
 msgstr "\"Veuillez entrer un nombre.\""
 
+# Attempt to translate a variable name located inside the code:
 msgid "guess"
 msgstr "supposition"
 
-# FIXME how to translate variables in code, so as to match the text; the
+# @# FIXME how to translate variables in code, so as to match the text; the
 #       legacy French translation has variables, traits, structs, etc. names
 #       translated in French, which is very pedagogic.
 
@@ -2958,7 +2994,6 @@ msgstr ""
 "la bibliothèque standard, connue sous le nom de `std` :"
 
 #: src/ch02-00-guessing-game-tutorial.md:132
-#, fuzzy
 msgid ""
 "By default, Rust has a set of items defined in the standard library that it "
 "brings into the scope of every program. This set is called the _prelude_, "
@@ -2969,6 +3004,8 @@ msgstr ""
 "de fonctionnalités définies dans la bibliothèque standard. Cela s'appelle "
 "_l'étape préliminaire (the prelude)_, et vous pouvez en savoir plus dans sa "
 "[documentation de la bibliothèque standard](../std/prelude/index.html)."
+
+# @# FIXME: URL above (../std/prelude/index.html) points to a 404 page
 
 #: src/ch02-00-guessing-game-tutorial.md:136
 msgid ""
@@ -3017,13 +3054,21 @@ msgstr ""
 "demande au joueur d'entrer un nombre."
 
 #: src/ch02-00-guessing-game-tutorial.md:189
-#, fuzzy
 msgid "Storing Values with Variables"
 msgstr "Enregistrer des données dans des variables"
 
 #: src/ch02-00-guessing-game-tutorial.md:191
 msgid "Next, we’ll create a _variable_ to store the user input, like this:"
 msgstr ""
+"Ensuite, on crée une _variable_ pour stocker la saisie de l'utilisateur, comme "
+"ceci :"
+
+# @# FIXME translate variables' names in code:
+# Attempt to translate a variable name located inside the code:
+msgid  "    let mut guess = String::new();"
+msgstr "    let mut supposition = String::new();"
+
+
 
 #: src/ch02-00-guessing-game-tutorial.md:211
 msgid ""
@@ -3035,8 +3080,12 @@ msgstr ""
 "dans cette petite ligne. Nous utilisons l'instruction `let` pour créer la "
 "variable. Voici un autre exemple :"
 
+# @# FIXME translate variables' names in code:
+msgid "let apples = 5;\n"
+msgstr "let pommes = 5;\n"
+
+# _____________JEANSUILÀ_____________________just_a_handy_bookmark__WIP_________
 #: src/ch02-00-guessing-game-tutorial.md:218
-#, fuzzy
 msgid ""
 "This line creates a new variable named `apples` and binds it to the value "
 "`5`. In Rust, variables are immutable by default, meaning once we give the "
@@ -3050,20 +3099,19 @@ msgstr ""
 "qui implique qu'à partir du moment où l'on donne une valeur à une variable, "
 "cette valeur ne changera pas. Nous aborderons plus en détail cette notion "
 "dans la section [“Variables et Mutabilité”]"
-"ch03-01-variables-and-mutability.html#variables-and-mutability)"
+"(ch03-01-variables-and-mutability.html#variables-and-mutability)"
 " <!-- ignore -->  au chapitre 3. Pour rendre une variable mutable "
 "_(c'est-à-dire modifiable)_, nous ajoutons `mut` devant le nom de la variable :"
 
 #: src/ch02-00-guessing-game-tutorial.md:226
 msgid "// immutable\n"
-msgstr ""
+msgstr "// immuable\n"
 
 #: src/ch02-00-guessing-game-tutorial.md:227
 msgid "// mutable\n"
-msgstr ""
+msgstr "// mutable, modifiable"
 
 #: src/ch02-00-guessing-game-tutorial.md:230
-#, fuzzy
 msgid ""
 "Note: The `//` syntax starts a comment that continues until the end of the "
 "line. Rust ignores everything in comments. We’ll discuss comments in more "
@@ -30973,9 +31021,9 @@ msgid "<span class=\"filename\">Filename: adder/Cargo.toml</span>"
 msgstr "<span class=\"filename\">Fichier : : ajouter_un/Cargo.toml</span>"
 
 msgid "Filename: adder/Cargo.toml"
-msgstr "Fichier : : ajouter_un/Cargo.toml"
+msgstr "Fichier : ajouter_un/Cargo.toml"
 
-# FIXME: none of these attemps seem to be working properly
+# @# FIXME: none of these attemps seem to be working properly
 
 #: src/ch14-03-cargo-workspaces.md:153
 msgid ""
@@ -39370,9 +39418,10 @@ msgid ""
 "threads all fit together!"
 msgstr ""
 
+# @# FIXME see if it is necessary to translate these terms, or not:
 #: src/ch17-06-futures-tasks-threads.md:1
 msgid "Putting It All Together: Futures, Tasks, and Threads"
-msgstr ""
+msgstr "Futures, Tasks et Threads"
 
 #: src/ch17-06-futures-tasks-threads.md:3
 msgid ""
