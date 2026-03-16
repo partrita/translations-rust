@@ -1798,7 +1798,7 @@ msgstr ""
 "(ch01-01-installation.html#troubleshooting)<!-- ignore --> du "
 "chapitre d'installation pour vous aider."
 
-# @# FIXME the URL above points to the "Installation" chapter, but does not 
+# @# FIXME the URL above points to the "Installation" chapter, but does not
 #          reach the #troubleshooting tag
 
 
@@ -2718,41 +2718,45 @@ msgstr ""
 "vous avez créé au chapitre 1 et utilisez Cargo pour créer votre projet, "
 "comme ceci :"
 
-# Terminal output: {{{
+# # Terminal output: {{{
+#
+# # msgid "$ cargo new guessing_game"
+# # msgstr "$ cargo new jeu_du_plus_ou_du_moins"
+#
+# # msgid ""
+# # "$ cargo new guessing_game\n"
+# # "$ cd guessing_game\n"
+# # msgstr ""
+# # "$ cargo jeu_du_plus_ou_du_moins\n"
+# # "$ cd jeu_du_plus_ou_du_moins\n"
+#
+# # msgid ""
+# # "```console\n"
+# # "$ cargo new guessing_game\n"
+# # "$ cd guessing_game\n"
+# # "```"
+# # msgstr ""
+# # "```console\n"
+# # "$ cargo jeu_du_plus_ou_du_moins\n"
+# # "$ cd jeu_du_plus_ou_du_moins\n"
+# # "```"
+#
+# # "```"
+# # "```toml\n"
+# # "[package]\n"
+# # "name = \"jeu_du_plus_ou_du_moins\"\n"
+# # "version = \"0.1.0\"\n"
+# # "edition = \"2024\"\n"
+# # "\n"
+# # "[dependencies]\n"
+# # "```"
+#
+# # @# FIXME: the terminal translations above do not seem to work as expected;
+# #        therefore, terminal outputs and text do not match
 
-msgid "$ cargo new guessing_game"
-msgstr "$ cargo new jeu_du_plus_ou_du_moins"
-
-msgid ""
-"$ cargo new guessing_game\n"
-"$ cd guessing_game\n"
-msgstr ""
-"$ cargo jeu_du_plus_ou_du_moins\n"
-"$ cd jeu_du_plus_ou_du_moins\n"
-
-msgid ""
-"```console\n"
-"$ cargo new guessing_game\n"
-"$ cd guessing_game\n"
-"```"
-msgstr ""
-"```console\n"
-"$ cargo jeu_du_plus_ou_du_moins\n"
-"$ cd jeu_du_plus_ou_du_moins\n"
-"```"
-
-# "```"
-# "```toml\n"
-# "[package]\n"
-# "name = \"jeu_du_plus_ou_du_moins\"\n"
-# "version = \"0.1.0\"\n"
-# "edition = \"2024\"\n"
-# "\n"
-# "[dependencies]\n"
-# "```"
-
-# @# FIXME: the terminal translations above do not seem to work as expected;
-#        therefore, terminal outputs and text do not match
+# NOTE: For the time being, leave console and code untranslated, and revert
+#       translations in text body, until a solution to translate code can be
+#       found.
 # }}}
 
 #: src/ch02-00-guessing-game-tutorial.md:26
@@ -2762,8 +2766,14 @@ msgid ""
 "new project’s directory."
 msgstr ""
 "La première commande, `cargo new`, prend comme premier argument le nom de "
-"notre projet (`jeu_du_plus_ou_du_moins`). La seconde commande nous déplace "
+"notre projet (`"
+"guessing_game"
+"`). La seconde commande nous déplace "
 "dans le répertoire de notre nouveau projet créé par Cargo."
+
+# "jeu_du_plus_ou_du_moins
+# TODO revert to original French translation, when issue https://github.com/rust-lang-translations/translations/issues/32 is solved => un-untranslate msgstr above
+
 
 #: src/ch02-00-guessing-game-tutorial.md:30
 msgid "Look at the generated _Cargo.toml_ file:"
@@ -2803,14 +2813,17 @@ msgid ""
 "[dependencies]\n"
 "```"
 msgstr ""
-"```toml\n"
-"[package]\n"
-"name = \"jeu_du_plus_ou_du_moins\"\n"
-"version = \"0.1.0\"\n"
-"edition = \"2024\"\n"
-"\n"
-"[dependencies]\n"
-"```"
+
+# "```toml\n"
+# "[package]\n"
+# "name = \"jeu_du_plus_ou_du_moins\"\n"
+# "version = \"0.1.0\"\n"
+# "edition = \"2024\"\n"
+# "\n"
+# "[dependencies]\n"
+# "```"
+# TODO revert to original French translation, when issue https://github.com/rust-lang-translations/translations/issues/32 is solved => un-untranslate msgstr above
+
 
 #: src/ch02-00-guessing-game-tutorial.md:52
 msgid ""
@@ -2818,7 +2831,7 @@ msgid ""
 "you. Check out the _src/main.rs_ file:"
 msgstr ""
 "Comme vous l'avez expérimenté dans le chapitre 1, `cargo new` génère un "
-"programme _“Hello, world!”_ pour vous. Ouvrez le fichier _src/main.rs_ :"
+"programme “Hello, world!” pour vous. Ouvrez le fichier _src/main.rs_ :"
 
 
 #: src/ch02-00-guessing-game-tutorial.md:63
@@ -2839,13 +2852,16 @@ msgid ""
 "Hello, world!\n"
 "```"
 msgstr ""
-"```console\n"
-"$ cargo run\n"
-"   Compiling jeu_du_plus_ou_du_moins v0.1.0 (file:///projects/jeu_du_plus_ou_du_moins)\n"
-"    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.08s\n"
-"     Running `target/debug/jeu_du_plus_ou_du_moins`\n"
-"Hello, world!\n"
-"```"
+
+# "```console\n"
+# "$ cargo run\n"
+# "   Compiling jeu_du_plus_ou_du_moins v0.1.0 (file:///projects/jeu_du_plus_ou_du_moins)\n"
+# "    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.08s\n"
+# "     Running `target/debug/jeu_du_plus_ou_du_moins`\n"
+# "Hello, world!\n"
+# "```"
+# TODO revert to original French translation, when issue https://github.com/rust-lang-translations/translations/issues/32 is solved => un-untranslate msgstr above
+
 
 #: src/ch02-00-guessing-game-tutorial.md:74
 msgid ""
@@ -2978,7 +2994,11 @@ msgstr "\"Échec de la lecture de l'entrée utilisateur\""
 #: src/ch07-04-bringing-paths-into-scope-with-the-use-keyword.md:411
 #: src/ch20-03-advanced-types.md:259
 msgid "\"You guessed: {guess}\""
-msgstr "\"Votre nombre : {supposition}\""
+msgstr "\"Votre nombre : {guess}\""
+
+# msgstr "\"Votre nombre : {supposition}\""
+# TODO revert to original French translation, when issue https://github.com/rust-lang-translations/translations/issues/32 is solved => un-untranslate msgstr above
+
 
 #: src/ch02-00-guessing-game-tutorial.md:109
 msgid ""
@@ -3082,9 +3102,12 @@ msgstr ""
 
 # @# FIXME translate variables' names in code:
 msgid "let apples = 5;\n"
-msgstr "let pommes = 5;\n"
+msgstr ""
 
-# _____________JEANSUILÀ_____________________just_a_handy_bookmark__WIP_________
+# let pommes = 5;\n"
+# TODO revert to original French translation, when issue https://github.com/rust-lang-translations/translations/issues/32 is solved => un-untranslate msgstr above
+
+
 #: src/ch02-00-guessing-game-tutorial.md:218
 msgid ""
 "This line creates a new variable named `apples` and binds it to the value "
@@ -3094,7 +3117,9 @@ msgid ""
 "mutability.html#variables-and-mutability)<!-- ignore --> section in Chapter "
 "3. To make a variable mutable, we add `mut` before the variable name:"
 msgstr ""
-"Cette ligne permet de créer une nouvelle variable nommée `pommmes` et à lui "
+"Cette ligne permet de créer une nouvelle variable nommée `"
+"apples"
+"` et à lui "
 "assigner la valeur `5`. Par défaut en Rust, les variables sont immuables, ce "
 "qui implique qu'à partir du moment où l'on donne une valeur à une variable, "
 "cette valeur ne changera pas. Nous aborderons plus en détail cette notion "
@@ -3102,6 +3127,10 @@ msgstr ""
 "(ch03-01-variables-and-mutability.html#variables-and-mutability)"
 " <!-- ignore -->  au chapitre 3. Pour rendre une variable mutable "
 "_(c'est-à-dire modifiable)_, nous ajoutons `mut` devant le nom de la variable :"
+
+# "pommmes"
+# TODO revert to original French translation, when issue https://github.com/rust-lang-translations/translations/issues/32 is solved => un-untranslate msgstr above
+
 
 #: src/ch02-00-guessing-game-tutorial.md:226
 msgid "// immutable\n"
@@ -3123,7 +3152,6 @@ msgstr ""
 "[chapitre 3](ch03-04-comments.html)<!-- ignore -->."
 
 #: src/ch02-00-guessing-game-tutorial.md:234
-#, fuzzy
 msgid ""
 "Returning to the guessing game program, you now know that `let mut guess` "
 "will introduce a mutable variable named `guess`. The equal sign (`=`) tells "
@@ -3135,15 +3163,27 @@ msgid ""
 "text."
 msgstr ""
 "Lorsque vous revenez sur le jeu du plus ou du moins, vous comprenez donc "
-"maintenant que la ligne `let mut supposition` permet de créer une variable "
-"mutable nommée `supposition`. Le signe égal (`=`) indique à Rust que nous "
+"maintenant que la ligne `let mut "
+"guess"
+"` permet de créer une variable "
+"mutable nommée `"
+"guess"
+"`. Le signe égal (`=`) indique à Rust que nous "
 "voulons désormais lier quelquechose à la variable. À la droite du signe "
-"égal, nous avons la valeur liée à `supposition`, qui est ici le résultat de "
+"égal, nous avons la valeur liée à `"
+"guess"
+"`, qui est ici le résultat de "
 "l'utilisation de `String::new`, qui est une fonction qui retourne une "
 "nouvelle instance de `String`. [`String`](../std/string/struct.String.html)"
 "<!-- ignore --> est un type "
 "de chaîne de caractères fourni par la bibliothèque standard, qui est une "
 "portion de texte encodée en UTF-8 et dont la longueur peut augmenter."
+
+# "supposition"
+# "supposition"
+# "supposition"
+# TODO revert to original French translation, when issue https://github.com/rust-lang-translations/translations/issues/32 is solved => un-untranslate msgstr above
+
 
 #: src/ch02-00-guessing-game-tutorial.md:242
 msgid ""
@@ -3166,12 +3206,17 @@ msgid ""
 "variable that is currently bound to a new, empty instance of a `String`. "
 "Whew!"
 msgstr ""
-"En définitif, la ligne `let mut supposition = String::new();` crée une "
+"En définitif, la ligne `let mut "
+"guess"
+" = String::new();` crée une "
 "nouvelle variable mutable qui contient une nouvelle chaîne de caractères "
 "vide, une instance de `String`. Ouf !"
 
+# "supposition"
+# TODO revert to original French translation, when issue https://github.com/rust-lang-translations/translations/issues/32 is solved => un-untranslate msgstr above
+
+
 #: src/ch02-00-guessing-game-tutorial.md:251
-#, fuzzy
 msgid "Receiving User Input"
 msgstr "Recueillir la saisie utilisateur"
 
@@ -3188,7 +3233,6 @@ msgstr ""
 "`io`, qui va nous permettre de traiter la saisie utilisateur :"
 
 #: src/ch02-00-guessing-game-tutorial.md:276
-#, fuzzy
 msgid ""
 "If we hadn’t imported the `io` module with `use std::io;` at the beginning "
 "of the program, we could still use the function by writing this function "
@@ -3197,15 +3241,15 @@ msgid ""
 "type that represents a handle to the standard input for your terminal."
 msgstr ""
 "Si nous n'avions pas importé le module `io` avec `use std::io` au début du "
-"programme, on aurait toujours pu utiliser la fonction en écrivant l'appel à "
+"programme, nous aurions toujours pu utiliser la fonction en écrivant l'appel à "
 "la fonction de cette manière : `std::io::stdin`. La fonction `stdin` "
 "retourne une instance de [`std::io::Stdin`](../std/io/struct.Stdin.html)"
 "<!-- ignore -->, qui est "
 "un type qui représente une référence abstraite *(handle)* vers l'entrée "
 "standard du terminal dans lequel vous avez lancé le programme."
 
+# _____________JEANSUILÀ_____________________just_a_handy_bookmark__WIP_________
 #: src/ch02-00-guessing-game-tutorial.md:282
-#, fuzzy
 msgid ""
 "Next, the line `.read_line(&mut guess)` calls the [`read_line`](../std/io/"
 "struct.Stdin.html#method.read_line)<!--\n"
@@ -3217,16 +3261,24 @@ msgid ""
 "as an argument. The string argument needs to be mutable so that the method "
 "can change the string’s content."
 msgstr ""
-"Ensuite, la ligne `.read_line(&mut supposition)` appelle la méthode "
+"Ensuite, la ligne `.read_line(&mut "
+"guess"
+")` appelle la méthode "
 "[`read_line`](../std/io/struct.Stdin.html#method.read_line)"
 "<!-- ignore --> sur l'entrée standard afin d'obtenir "
-"la saisie utilisateur. Nous passons aussi `&mut supposition` en argument de "
+"la saisie utilisateur. Nous passons aussi `&mut "
+"guess"
+"` en argument de "
 "`read_line` pour lui indiquer dans quelle chaîne de caractère il faut "
 "stocker la saisie utilisateur. Le but final de `read_line` est de récupérer "
 "tout ce que l'utilisateur écrit dans l'entrée standard et de l'ajouter à la "
 "fin d'une chaîne de caractères (sans écraser son contenu) ; c'est pourquoi "
 "nous passons cette chaîne de caractères en argument. Cet argument doit être "
 "mutable pour que `read_line` puisse en modifier le contenu."
+
+# "supposition"
+# "supposition"
+# TODO revert to original French translation, when issue https://github.com/rust-lang-translations/translations/issues/32 is solved => un-untranslate msgstr above
 
 #: src/ch02-00-guessing-game-tutorial.md:291
 msgid ""
@@ -3248,16 +3300,24 @@ msgstr ""
 "nécessaire de trop s'apesantir sur les références pour terminer ce "
 "programme. Pour l'instant, tout ce que vous devez savoir est que, comme les "
 "variables, les références sont immuables par défaut. D'où la nécessité "
-"d'écrire `&mut supposition` au lieu de `&supposition` pour la rendre "
+"d'écrire `&mut "
+"guess"
+"` au lieu de `&"
+"guess"
+"` pour la rendre "
 "mutable. (Le chapitre 4 expliquera plus en détail les références.)"
 
-#: src/ch02-00-guessing-game-tutorial.md:303
-#, fuzzy
-msgid "<a id=\"handling-potential-failure-with-the-result-type\"></a>"
-msgstr "<a id=\"gérer-les-erreurs-potentielles-avec-result\"></a>"
+# "supposition"
+# "supposition"
+# TODO revert to original French translation, when issue https://github.com/rust-lang-translations/translations/issues/32 is solved => un-untranslate msgstr above
+
+
+# #: src/ch02-00-guessing-game-tutorial.md:303
+# #, fuzzy
+# msgid "<a id=\"handling-potential-failure-with-the-result-type\"></a>"
+# msgstr "<a id=\"gérer-les-erreurs-potentielles-avec-result\"></a>"
 
 #: src/ch02-00-guessing-game-tutorial.md:305
-#, fuzzy
 msgid "Handling Potential Failure with `Result`"
 msgstr "Gérer les erreurs potentielles avec `Result`"
 
@@ -3290,7 +3350,6 @@ msgstr ""
 "`.nom_de_la_methode()`. Maintenant, voyons à quoi sert cette ligne."
 
 #: src/ch02-00-guessing-game-tutorial.md:340
-#, fuzzy
 msgid ""
 "As mentioned earlier, `read_line` puts whatever the user enters into the "
 "string we pass to it, but it also returns a `Result` value. [`Result`](../"
@@ -3308,13 +3367,12 @@ msgstr ""
 "est appelé une _variante_."
 
 #: src/ch02-00-guessing-game-tutorial.md:346
-#, fuzzy
 msgid ""
 "[Chapter 6](ch06-00-enums.html)<!-- ignore --> will cover enums in more "
 "detail. The purpose of these `Result` types is to encode error-handling "
 "information."
 msgstr ""
-"Le [chapitre 6](ch06-00-enums.html)<!-- ignore -- > explorera les énumérations plus en "
+"Le [chapitre 6](ch06-00-enums.html) explorera les énumérations plus en "
 "détail. La raison d'être du type `Result` est de coder des informations pour "
 "la gestion des erreurs."
 
@@ -3331,7 +3389,6 @@ msgstr ""
 "informations décrivant comment ou pourquoi l'opération a échoué."
 
 #: src/ch02-00-guessing-game-tutorial.md:354
-#, fuzzy
 msgid ""
 "Values of the `Result` type, like values of any type, have methods defined "
 "on them. An instance of `Result` has an [`expect` method](../std/result/"
@@ -3357,6 +3414,7 @@ msgstr ""
 "afin que vous puissiez l'utiliser. Dans notre exemple, ce résultat est le "
 "nombre d'octets de la saisie utilisateur."
 
+# _____________JEANSUILÀ_____________________just_a_handy_bookmark__WIP_________
 #: src/ch02-00-guessing-game-tutorial.md:364
 msgid ""
 "If you don’t call `expect`, the program will compile, but you’ll get a "
@@ -30499,8 +30557,11 @@ msgid ""
 "name = \"guessing_game\"\n"
 "```"
 msgstr ""
-"```console $ cargo new jeu_du_plus_ou_du_moins $ cd jeu_du_plus_ou_du_moins "
-"```"
+
+# "```console $ cargo new jeu_du_plus_ou_du_moins $ cd jeu_du_plus_ou_du_moins "
+# "```"
+# TODO revert to original French translation, when issue https://github.com/rust-lang-translations/translations/issues/32 is solved => un-untranslate msgstr above
+
 
 #: src/ch14-02-publishing-to-crates-io.md:421
 msgid ""
@@ -30614,9 +30675,12 @@ msgid ""
 "[dependencies]\n"
 "```"
 msgstr ""
-"```toml [package] name = \"jeu_du_plus_ou_du_moins\" version = \"0.1.0\" "
-"edition = \"2021\" description = \"Un jeu où vous devez deviner quel nombre "
-"l'ordinateur a choisi.\" license = \"MIT OR Apache-2.0\""
+
+# "```toml [package] name = \"jeu_du_plus_ou_du_moins\" version = \"0.1.0\" "
+# "edition = \"2021\" description = \"Un jeu où vous devez deviner quel nombre "
+# "l'ordinateur a choisi.\" license = \"MIT OR Apache-2.0\""
+# TODO revert to original French translation, when issue https://github.com/rust-lang-translations/translations/issues/32 is solved => un-untranslate msgstr above
+
 
 #: src/ch14-02-publishing-to-crates-io.md:487
 #, fuzzy
