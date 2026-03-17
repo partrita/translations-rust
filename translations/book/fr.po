@@ -2056,7 +2056,6 @@ msgstr "Hello, World! - Le langage de programmation Rust"
 
 # }}}
 # Hello Cargo!: {{{
-# _____________JEANSUILÀ_____________________just_a_handy_bookmark__WIP_________
 
 #: src/ch01-03-hello-cargo.md:3
 msgid ""
@@ -2772,7 +2771,7 @@ msgstr ""
 "dans le répertoire de notre nouveau projet créé par Cargo."
 
 # "jeu_du_plus_ou_du_moins
-# TODO revert to original French translation, when issue https://github.com/rust-lang-translations/translations/issues/32 is solved => un-untranslate msgstr above
+# TODO revert to original French translation, when issue https://github.com/rust-lang-translations/translations/issues/32 is solved => un-untranslate msgstr above by uncommenting it and moving it up
 
 
 #: src/ch02-00-guessing-game-tutorial.md:30
@@ -2788,6 +2787,10 @@ msgstr "Regardons le fichier Cargo.toml qui a été généré :"
 #: src/ch14-03-cargo-workspaces.md:33 src/ch14-03-cargo-workspaces.md:113
 msgid "<span class=\"filename\">Filename: Cargo.toml</span>"
 msgstr "<span class=\"filename\">Fichier : Cargo.toml</span>"
+
+msgid "<span class=\"filename\">Filename: src/Cargo.toml</span>"
+msgstr "<span class=\"filename\">Fichier : src/Cargo.toml</span>"
+
 
 # @# TODO: the previous legend is properly translated: apply the same method for
 #          previous cases which failed
@@ -2822,7 +2825,7 @@ msgstr ""
 # "\n"
 # "[dependencies]\n"
 # "```"
-# TODO revert to original French translation, when issue https://github.com/rust-lang-translations/translations/issues/32 is solved => un-untranslate msgstr above
+# TODO revert to original French translation, when issue https://github.com/rust-lang-translations/translations/issues/32 is solved => un-untranslate msgstr above by uncommenting it and moving it up
 
 
 #: src/ch02-00-guessing-game-tutorial.md:52
@@ -2860,7 +2863,7 @@ msgstr ""
 # "     Running `target/debug/jeu_du_plus_ou_du_moins`\n"
 # "Hello, world!\n"
 # "```"
-# TODO revert to original French translation, when issue https://github.com/rust-lang-translations/translations/issues/32 is solved => un-untranslate msgstr above
+# TODO revert to original French translation, when issue https://github.com/rust-lang-translations/translations/issues/32 is solved => un-untranslate msgstr above by uncommenting it and moving it up
 
 
 #: src/ch02-00-guessing-game-tutorial.md:74
@@ -2997,7 +3000,7 @@ msgid "\"You guessed: {guess}\""
 msgstr "\"Votre nombre : {guess}\""
 
 # msgstr "\"Votre nombre : {supposition}\""
-# TODO revert to original French translation, when issue https://github.com/rust-lang-translations/translations/issues/32 is solved => un-untranslate msgstr above
+# TODO revert to original French translation, when issue https://github.com/rust-lang-translations/translations/issues/32 is solved => un-untranslate msgstr above by uncommenting it and moving it up
 
 
 #: src/ch02-00-guessing-game-tutorial.md:109
@@ -3105,7 +3108,7 @@ msgid "let apples = 5;\n"
 msgstr ""
 
 # let pommes = 5;\n"
-# TODO revert to original French translation, when issue https://github.com/rust-lang-translations/translations/issues/32 is solved => un-untranslate msgstr above
+# TODO revert to original French translation, when issue https://github.com/rust-lang-translations/translations/issues/32 is solved => un-untranslate msgstr above by uncommenting it and moving it up
 
 
 #: src/ch02-00-guessing-game-tutorial.md:218
@@ -3129,7 +3132,7 @@ msgstr ""
 "_(c'est-à-dire modifiable)_, nous ajoutons `mut` devant le nom de la variable :"
 
 # "pommmes"
-# TODO revert to original French translation, when issue https://github.com/rust-lang-translations/translations/issues/32 is solved => un-untranslate msgstr above
+# TODO revert to original French translation, when issue https://github.com/rust-lang-translations/translations/issues/32 is solved => un-untranslate msgstr above by uncommenting it and moving it up
 
 
 #: src/ch02-00-guessing-game-tutorial.md:226
@@ -3182,7 +3185,7 @@ msgstr ""
 # "supposition"
 # "supposition"
 # "supposition"
-# TODO revert to original French translation, when issue https://github.com/rust-lang-translations/translations/issues/32 is solved => un-untranslate msgstr above
+# TODO revert to original French translation, when issue https://github.com/rust-lang-translations/translations/issues/32 is solved => un-untranslate msgstr above by uncommenting it and moving it up
 
 
 #: src/ch02-00-guessing-game-tutorial.md:242
@@ -3213,7 +3216,7 @@ msgstr ""
 "vide, une instance de `String`. Ouf !"
 
 # "supposition"
-# TODO revert to original French translation, when issue https://github.com/rust-lang-translations/translations/issues/32 is solved => un-untranslate msgstr above
+# TODO revert to original French translation, when issue https://github.com/rust-lang-translations/translations/issues/32 is solved => un-untranslate msgstr above by uncommenting it and moving it up
 
 
 #: src/ch02-00-guessing-game-tutorial.md:251
@@ -3248,7 +3251,6 @@ msgstr ""
 "un type qui représente une référence abstraite *(handle)* vers l'entrée "
 "standard du terminal dans lequel vous avez lancé le programme."
 
-# _____________JEANSUILÀ_____________________just_a_handy_bookmark__WIP_________
 #: src/ch02-00-guessing-game-tutorial.md:282
 msgid ""
 "Next, the line `.read_line(&mut guess)` calls the [`read_line`](../std/io/"
@@ -3278,7 +3280,7 @@ msgstr ""
 
 # "supposition"
 # "supposition"
-# TODO revert to original French translation, when issue https://github.com/rust-lang-translations/translations/issues/32 is solved => un-untranslate msgstr above
+# TODO revert to original French translation, when issue https://github.com/rust-lang-translations/translations/issues/32 is solved => un-untranslate msgstr above by uncommenting it and moving it up
 
 #: src/ch02-00-guessing-game-tutorial.md:291
 msgid ""
@@ -3309,7 +3311,7 @@ msgstr ""
 
 # "supposition"
 # "supposition"
-# TODO revert to original French translation, when issue https://github.com/rust-lang-translations/translations/issues/32 is solved => un-untranslate msgstr above
+# TODO revert to original French translation, when issue https://github.com/rust-lang-translations/translations/issues/32 is solved => un-untranslate msgstr above by uncommenting it and moving it up
 
 
 # #: src/ch02-00-guessing-game-tutorial.md:303
@@ -3335,6 +3337,7 @@ msgstr ""
 #: src/ch02-00-guessing-game-tutorial.md:329
 msgid "We could have written this code as:"
 msgstr ""
+"Nous aurions pu écrire ce code de cette manière :"
 
 #: src/ch02-00-guessing-game-tutorial.md:335
 msgid ""
@@ -3414,12 +3417,12 @@ msgstr ""
 "afin que vous puissiez l'utiliser. Dans notre exemple, ce résultat est le "
 "nombre d'octets de la saisie utilisateur."
 
-# _____________JEANSUILÀ_____________________just_a_handy_bookmark__WIP_________
 #: src/ch02-00-guessing-game-tutorial.md:364
 msgid ""
 "If you don’t call `expect`, the program will compile, but you’ll get a "
 "warning:"
 msgstr ""
+"Si on n'appelle pas expect, le programme compilera, mais avec un avertissement :"
 
 #: src/ch02-00-guessing-game-tutorial.md:366
 msgid ""
@@ -3454,7 +3457,6 @@ msgstr ""
 "potentielle."
 
 #: src/ch02-00-guessing-game-tutorial.md:389
-#, fuzzy
 msgid ""
 "The right way to suppress the warning is to actually write error-handling "
 "code, but in our case we just want to crash this program when a problem "
@@ -3469,7 +3471,6 @@ msgstr ""
 "gérer correctement les erreurs."
 
 #: src/ch02-00-guessing-game-tutorial.md:394
-#, fuzzy
 msgid "Printing Values with `println!` Placeholders"
 msgstr "Afficher des valeurs grâce aux espaces réservés de `println!`"
 
@@ -3482,7 +3483,6 @@ msgstr ""
 "étudier dans le code que nous avons pour l'instant :"
 
 #: src/ch02-00-guessing-game-tutorial.md:417
-#, fuzzy
 msgid ""
 "This line prints the string that now contains the user’s input. The `{}` set "
 "of curly brackets is a placeholder: Think of `{}` as little crab pincers "
@@ -3498,24 +3498,31 @@ msgstr ""
 "l'utilisateur a saisi. La paire d'accolades `{}` représente un espace "
 "réservé : imaginez qu'il s'agit de pinces de crabes qui gardent la place "
 "d'une valeur. Lorsque vous affichez la valeur d'une variable, le nom de la "
-"variable peut être placé entre accolades. Pour afficher le résultat de "
-"l'évaluation d'une expression, placez des accolades vides dans la chaîne de "
-"format, puis faites suivre la chaîne de format d'une liste d'expressions "
-"séparées par des virgules, expressions dont le résultat sera affiché dans "
-"chaque espace réservé d'accolades vides, dans le même ordre. Pour afficher "
-"une variable et le résultat d'une expression en appelant `println!` une "
-"seule fois, on ferait comme ceci :"
+"variable peut être placé entre accolades. "
+"Pour afficher le résultat de l'évaluation d'une expression, placez des "
+"accolades vides dans la chaîne de format, puis faites suivre la chaîne de "
+"format d'une liste d'expressions séparées par des virgules, expressions dont le "
+"résultat sera affiché dans chaque espace réservé d'accolades vides, dans le "
+"même ordre. Pour afficher une variable et le résultat d'une expression en "
+"appelant `println!` une seule fois, on ferait comme ceci :"
 
 #: src/ch02-00-guessing-game-tutorial.md:430
 msgid "\"x = {x} and y + 2 = {}\""
 msgstr ""
 
+# msgstr "\"x = {x} et y + 2 = {}\""
+# TODO revert to original French translation, when issue https://github.com/rust-lang-translations/translations/issues/32 is solved => un-untranslate msgstr above by uncommenting it and moving it up
+
+
 #: src/ch02-00-guessing-game-tutorial.md:433
 msgid "This code would print `x = 5 and y + 2 = 12`."
-msgstr ""
+msgstr "Ce code afficherait `x = 5 and y + 2 = 12`."
+
+# msgstr "Ce code afficherait `x = 5 et y + 2 = 12`."
+# TODO revert to original French translation, when issue https://github.com/rust-lang-translations/translations/issues/32 is solved => un-untranslate msgstr above by uncommenting it and moving it up
+
 
 #: src/ch02-00-guessing-game-tutorial.md:435
-#, fuzzy
 msgid "Testing the First Part"
 msgstr "Test de la première partie"
 
@@ -3523,6 +3530,8 @@ msgstr "Test de la première partie"
 msgid ""
 "Let’s test the first part of the guessing game. Run it using `cargo run`:"
 msgstr ""
+"Pour tester notre début de programme, lançons-le à l'aide de la commande "
+"`cargo run` :"
 
 #: src/ch02-00-guessing-game-tutorial.md:445
 msgid ""
@@ -3537,6 +3546,16 @@ msgid ""
 "You guessed: 6\n"
 "```"
 msgstr ""
+"```console\n"
+"$ cargo run\n"
+"   Compiling guessing_game v0.1.0 (file:///projects/guessing_game)\n"
+"    Finished `dev` profile [unoptimized + debuginfo] target(s) in 6.44s\n"
+"     Running `target/debug/guessing_game`\n"
+"Devinez le nombre !\n"
+"Veuillez entrer un nombre.\n"
+"6\n"
+"Votre nombre : 6\n"
+"```"
 
 #: src/ch02-00-guessing-game-tutorial.md:456
 msgid ""
@@ -3547,12 +3566,10 @@ msgstr ""
 "récupéré la saisie du clavier et nous l'affichons à l'écran."
 
 #: src/ch02-00-guessing-game-tutorial.md:459
-#, fuzzy
 msgid "Generating a Secret Number"
 msgstr "Générer le nombre secret"
 
 #: src/ch02-00-guessing-game-tutorial.md:461
-#, fuzzy
 msgid ""
 "Next, we need to generate a secret number that the user will try to guess. "
 "The secret number should be different every time so that the game is fun to "
@@ -3571,17 +3588,12 @@ msgstr ""
 "possibilité de le faire."
 
 #: src/ch02-00-guessing-game-tutorial.md:469
-#, fuzzy
-msgid "<a id=\"using-a-crate-to-get-more-functionality\"></a>"
+# msgid "<a id=\"using-a-crate-to-get-more-functionality\"></a>"
+#: src/ch02-00-guessing-game-tutorial.md:471
+msgid "Increasing Functionality with a Crate"
 msgstr "Étendre les fonctionnalités de Rust avec une _crate_"
 
-#: src/ch02-00-guessing-game-tutorial.md:471
-#, fuzzy
-msgid "Increasing Functionality with a Crate"
-msgstr "Ajouter des fonctionnalités utiles avec les traits dérivés"
-
 #: src/ch02-00-guessing-game-tutorial.md:473
-#, fuzzy
 msgid ""
 "Remember that a crate is a collection of Rust source code files. The project "
 "we’ve been building is a binary crate, which is an executable. The `rand` "
@@ -3623,7 +3635,6 @@ msgid ""
 msgstr ""
 
 #: src/ch02-00-guessing-game-tutorial.md:498
-#, fuzzy
 msgid ""
 "In the _Cargo.toml_ file, everything that follows a header is part of that "
 "section that continues until another section starts. In `[dependencies]`, "
@@ -3641,15 +3652,11 @@ msgstr ""
 "projet dépend, et de quelle version de ces _crates_ vous avez besoin. Dans "
 "notre cas, on ajoute comme dépendance la crate `rand` avec la version "
 "sémantique `0.8.5`. Cargo arrive à interpréter le [versionnage sémantique]"
-"[semver]<!-- ignore --> (aussi appelé _SemVer_), qui est une convention "
+"(http://semver.org)"
+"<!-- ignore --> (aussi appelé _SemVer_), qui est une convention "
 "d'écriture de numéros de version. En réalité, `0.8.5` est une abréviation "
 "pour `^0.8.5`, ce qui signifie “toute version ultérieure ou égale à `0.8.5` "
-"mais strictement antérieure à `0.9.0`”. Cargo considère que ces versions ont "
-"des API publiques compatibles avec la version `0.8.5`, et cette indication "
-"garantit que vous obtiendrez la dernière version de correction qui compilera "
-"encore avec le code de ce chapitre. Il n'est pas garanti que les versions "
-"`0.9.0` et ultérieures aient la même API que celle utilisée dans les "
-"exemples suivants."
+"mais strictement antérieure à `0.9.0`”."
 
 #: src/ch02-00-guessing-game-tutorial.md:508
 msgid ""
@@ -3659,6 +3666,11 @@ msgid ""
 "0.9.0 or greater is not guaranteed to have the same API as what the "
 "following examples use."
 msgstr ""
+"Cargo considère que ces versions ont des API publiques compatibles avec la "
+"version `0.8.5`, et cette indication garantit que vous obtiendrez la dernière "
+"version de correction qui compilera encore avec le code de ce chapitre. Il "
+"n'est pas garanti que les versions `0.9.0` et ultérieures aient la même API que "
+"celle utilisée dans les exemples suivants."
 
 #: src/ch02-00-guessing-game-tutorial.md:514
 msgid ""
@@ -3694,6 +3706,10 @@ msgid ""
 "```"
 msgstr ""
 
+# " Compiling jeu_du_plus_ou_du_moins v0.1.0 (file:///projects/guessing_game)\n"
+# TODO revert to original French translation, when issue https://github.com/rust-lang-translations/translations/issues/32 is solved => un-untranslate msgstr above by uncommenting it and moving it up
+
+
 #: src/ch02-00-guessing-game-tutorial.md:550
 msgid ""
 "You may see different version numbers (but they will all be compatible with "
@@ -3707,7 +3723,6 @@ msgstr ""
 "même ordre."
 
 #: src/ch02-00-guessing-game-tutorial.md:554
-#, fuzzy
 msgid ""
 "When we include an external dependency, Cargo fetches the latest versions of "
 "everything that dependency needs from the _registry_, which is a copy of "
@@ -3782,13 +3797,10 @@ msgstr ""
 "téléchargé et compilé précédemment."
 
 #: src/ch02-00-guessing-game-tutorial.md:591
-#, fuzzy
-msgid "<a id=\"ensuring-reproducible-builds-with-the-cargo-lock-file\"></a>"
-msgstr "Assurer la reproductibilité des compilations"
-
+# msgid "<a id=\"ensuring-reproducible-builds-with-the-cargo-lock-file\"></a>"
 #: src/ch02-00-guessing-game-tutorial.md:593
 msgid "Ensuring Reproducible Builds"
-msgstr ""
+msgstr "Assurer la reproductibilité des compilations"
 
 #: src/ch02-00-guessing-game-tutorial.md:595
 msgid ""
@@ -3813,7 +3825,6 @@ msgstr ""
 "_jeu_du_plus_ou_du_moins_."
 
 #: src/ch02-00-guessing-game-tutorial.md:604
-#, fuzzy
 msgid ""
 "When you build a project for the first time, Cargo figures out all the "
 "versions of the dependencies that fit the criteria and then writes them to "
@@ -3840,12 +3851,10 @@ msgstr ""
 "de votre projet."
 
 #: src/ch02-00-guessing-game-tutorial.md:614
-#, fuzzy
 msgid "Updating a Crate to Get a New Version"
 msgstr "Mettre à jour une _crate_ vers sa nouvelle version"
 
 #: src/ch02-00-guessing-game-tutorial.md:616
-#, fuzzy
 msgid ""
 "When you _do_ want to update a crate, Cargo provides the command `update`, "
 "which will ignore the _Cargo.lock_ file and figure out all the latest "
@@ -3865,7 +3874,6 @@ msgstr ""
 "ceci si vous lancez `cargo update` :"
 
 #: src/ch02-00-guessing-game-tutorial.md:637
-#, fuzzy
 msgid ""
 "Cargo ignores the 0.999.0 release. At this point, you would also notice a "
 "change in your _Cargo.lock_ file noting that the version of the `rand` crate "
@@ -3901,7 +3909,6 @@ msgstr ""
 "`rand` selon la nouvelle version que vous avez spécifiée."
 
 #: src/ch02-00-guessing-game-tutorial.md:653
-#, fuzzy
 msgid ""
 "There’s a lot more to say about [Cargo](https://doc.rust-lang.org/"
 "cargo/)<!-- ignore --> and [its ecosystem](https://doc.rust-lang.org/cargo/"
@@ -3920,7 +3927,6 @@ msgstr ""
 "certain nombre de paquets."
 
 #: src/ch02-00-guessing-game-tutorial.md:659
-#, fuzzy
 msgid "Generating a Random Number"
 msgstr "Générer un nombre aléatoire"
 
@@ -3943,7 +3949,12 @@ msgstr ""
 #: src/ch07-04-bringing-paths-into-scope-with-the-use-keyword.md:399
 #: src/ch20-03-advanced-types.md:241
 msgid "\"The secret number is: {secret_number}\""
-msgstr ""
+msgstr "\"Le nombre secret est : {nombre_secret}\""
+
+msgid ": Adding code to generate a random number"
+msgstr " : Ajout du code pour générer un nombre aléatoire"
+
+# FIXME: the legends as the one above are not translated
 
 #: src/ch02-00-guessing-game-tutorial.md:692
 msgid ""
@@ -3984,7 +3995,6 @@ msgstr ""
 "100."
 
 #: src/ch02-00-guessing-game-tutorial.md:707
-#, fuzzy
 msgid ""
 "Note: You won’t just know which traits to use and which methods and "
 "functions to call from a crate, so each crate has documentation with "
@@ -4018,7 +4028,7 @@ msgstr ""
 
 #: src/ch02-00-guessing-game-tutorial.md:720
 msgid "Try running the program a few times:"
-msgstr ""
+msgstr "Essayez de lancer le programme plusieurs fois :"
 
 #: src/ch02-00-guessing-game-tutorial.md:730
 msgid ""
@@ -4043,6 +4053,26 @@ msgid ""
 "You guessed: 5\n"
 "```"
 msgstr ""
+"```console\n"
+"$ cargo run\n"
+"   Compiling guessing_game v0.1.0 (file:///projects/guessing_game)\n"
+"    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.02s\n"
+"     Running `target/debug/guessing_game`\n"
+"Devinez le nombre !\n"
+"Le nombre secret est :  7\n"
+"Veuillez entrer un nombre.\n"
+"4\n"
+"Votre nombre : 4\n"
+"\n"
+"$ cargo run\n"
+"    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.02s\n"
+"     Running `target/debug/guessing_game`\n"
+"Devinez le nombre !\n"
+"Le nombre secret est : 83\n"
+"Veuillez entrer un nombre.\n"
+"5\n"
+"Votre nombre : 5\n"
+"```"
 
 #: src/ch02-00-guessing-game-tutorial.md:751
 msgid ""
@@ -4053,7 +4083,6 @@ msgstr ""
 "être tous compris entre 1 et 100. Beau travail !"
 
 #: src/ch02-00-guessing-game-tutorial.md:754
-#, fuzzy
 msgid "Comparing the Guess to the Secret Number"
 msgstr "Comparer le nombre saisi au nombre secret"
 
@@ -4153,7 +4182,7 @@ msgstr ""
 #: src/ch21-03-graceful-shutdown-and-cleanup.md:284
 #: src/ch21-03-graceful-shutdown-and-cleanup.md:298
 msgid "// --snip--\n"
-msgstr ""
+msgstr "// -- partie masquée ici --\n"
 
 #: src/ch02-00-guessing-game-tutorial.md:787
 #: src/ch02-00-guessing-game-tutorial.md:912
@@ -4166,7 +4195,7 @@ msgstr ""
 #: src/ch09-03-to-panic-or-not-to-panic.md:193
 #: src/ch20-03-advanced-types.md:264
 msgid "\"Too small!\""
-msgstr ""
+msgstr "\"C'est plus !\""
 
 #: src/ch02-00-guessing-game-tutorial.md:788
 #: src/ch02-00-guessing-game-tutorial.md:913
@@ -4179,7 +4208,7 @@ msgstr ""
 #: src/ch09-03-to-panic-or-not-to-panic.md:194
 #: src/ch20-03-advanced-types.md:265
 msgid "\"Too big!\""
-msgstr ""
+msgstr "\"C'est moins !\""
 
 #: src/ch02-00-guessing-game-tutorial.md:789
 #: src/ch02-00-guessing-game-tutorial.md:914
@@ -4192,7 +4221,7 @@ msgstr ""
 #: src/ch09-03-to-panic-or-not-to-panic.md:196
 #: src/ch20-03-advanced-types.md:267
 msgid "\"You win!\""
-msgstr ""
+msgstr "\"Vous avez gagné !\""
 
 #: src/ch02-00-guessing-game-tutorial.md:796
 msgid ""
@@ -4208,7 +4237,6 @@ msgstr ""
 "trois issues possibles lorsqu'on compare deux valeurs."
 
 #: src/ch02-00-guessing-game-tutorial.md:801
-#, fuzzy
 msgid ""
 "Then, we add five new lines at the bottom that use the `Ordering` type. The "
 "`cmp` method compares two values and can be called on anything that can be "
@@ -4251,18 +4279,16 @@ msgstr ""
 "chapitre 6 et le chapitre 19."
 
 #: src/ch02-00-guessing-game-tutorial.md:818
-#, fuzzy
 msgid ""
 "Let’s walk through an example with the `match` expression we use here. Say "
 "that the user has guessed 50 and the randomly generated secret number this "
 "time is 38."
 msgstr ""
-"Voyons ce qui se passe lorsque l'expression `match` est utilisée. Le motif "
-"présent dans la première branche du `match` ne correspond pas à la valeur "
-"actuelle de `x`, donc le code passe à la branche suivante."
+"Voyons un exemple avec l'expression `match` que nous avons utilisée ici. "
+"Disons que l'utilisateur a saisi le nombre 50 et que le nombre secret généré "
+"aléatoirement a cette fois-ci comme valeur 38."
 
 #: src/ch02-00-guessing-game-tutorial.md:822
-#, fuzzy
 msgid ""
 "When the code compares 50 to 38, the `cmp` method will return "
 "`Ordering::Greater` because 50 is greater than 38. The `match` expression "
@@ -4275,13 +4301,23 @@ msgid ""
 "`match` expression ends after the first successful match, so it won’t look "
 "at the last arm in this scenario."
 msgstr ""
-"Voyons un exemple avec l'expression `match` que nous avons utilisée ici. "
-"Disons que l'utilisateur a saisi le nombre 50 et que le nombre secret généré "
-"aléatoirement a cette fois-ci comme valeur 38."
+"Quand le code compare 50 à 38, la méthode `cmp` va retourner `Ordering::Greater`, "
+"car 50 est plus grand que 38. L'expression `match` obtient la valeur "
+"`Ordering::Greater` et commence à vérifier le motif de chaque branche. Elle "
+"consulte le motif de la première branche, `Ordering::Less` et remarque que la "
+"valeur `Ordering::Greater` ne correspond pas au motif `Ordering::Less` ; elle "
+"ignore donc le code de cette branche et passe à la suivante. Le motif de la "
+"branche suivante est `Ordering::Greater`, qui correspond "
+"à `Ordering::Greater` ! Le code associé à cette branche va être exécuté et va "
+"afficher à l'écran `C'est moins !`. L'expression `match` se termine après la "
+"première correspondance, elle n'a donc pas besoin de consulter les autres "
+"branches de ce scénario."
 
 #: src/ch02-00-guessing-game-tutorial.md:833
 msgid "However, the code in Listing 2-4 won’t compile yet. Let’s try it:"
 msgstr ""
+"Cependant, notre code dans l'encart 2-4 ne compile pas encore. Essayons de "
+"le faire :"
 
 #: src/ch02-00-guessing-game-tutorial.md:840
 msgid ""
@@ -4363,13 +4399,13 @@ msgstr ""
 #: src/ch07-04-bringing-paths-into-scope-with-the-use-keyword.md:409
 msgid "\"Please type a number!\""
 msgstr ""
+"\"Veuillez entrer un nombre !\""
 
 #: src/ch02-00-guessing-game-tutorial.md:919
 msgid "The line is:"
-msgstr ""
+msgstr "La nouvelle ligne est :"
 
 #: src/ch02-00-guessing-game-tutorial.md:925
-#, fuzzy
 msgid ""
 "We create a variable named `guess`. But wait, doesn’t the program already "
 "have a variable named `guess`? It does, but helpfully Rust allows us to "
@@ -4381,19 +4417,39 @@ msgid ""
 "feature is often used when you want to convert a value from one type to "
 "another type."
 msgstr ""
-"Nous créons une variable qui s'appelle `supposition`. Mais attendez, le "
-"programme n'a-t-il pas déjà une variable qui s'appelle `supposition` ? C'est "
+"Nous créons une variable qui s'appelle `"
+"guess"
+"`. Mais attendez, le "
+"programme n'a-t-il pas déjà une variable qui s'appelle `"
+"guess"
+"` ? C'est "
 "le cas, mais heureusement Rust nous permet de _masquer_ la valeur précédente "
-"de `supposition` avec une nouvelle. Le masquage _(shadowing)_ nous permet de "
-"réutiliser le nom de variable `supposition`, plutôt que de nous forcer à "
-"créer deux variables distinctes, telles que `supposition_str` et "
-"`supposition` par exemple. Nous verrons cela plus en détails au [chapitre 3]"
-"[shadowing]<!-- ignore -->, mais pour le moment cette fonctionnalité est "
+"de `"
+"guess"
+"` avec une nouvelle. Le masquage _(shadowing)_ nous permet de "
+"réutiliser le nom de variable `"
+"guess"
+"`, plutôt que de nous forcer à "
+"créer deux variables distinctes, telles que `"
+"guess_str"
+"` et `"
+"guess"
+"` par exemple. Nous verrons cela plus en détails au [chapitre 3]"
+"(ch03-01-variables-and-mutability.html#shadowing)"
+"<!-- ignore -->, mais pour le moment cette fonctionnalité est "
 "souvent utilisée dans des situations où on veut convertir une valeur d'un "
 "type à un autre."
 
+# "supposition"
+# "supposition"
+# "supposition"
+# "supposition"
+# "supposition_str"
+# "supposition"
+# TODO revert to original French translation, when issue https://github.com/rust-lang-translations/translations/issues/32 is solved => un-untranslate msgstr above by uncommenting it and moving it up
+
+
 #: src/ch02-00-guessing-game-tutorial.md:933
-#, fuzzy
 msgid ""
 "We bind this new variable to the expression `guess.trim().parse()`. The "
 "`guess` in the expression refers to the original `guess` variable that "
@@ -4408,26 +4464,39 @@ msgid ""
 "newline, `\\r\\n`.) The `trim` method eliminates `\\n` or `\\r\\n`, "
 "resulting in just `5`."
 msgstr ""
-"Nous lions cette nouvelle variable à l'expression "
-"`supposition.trim().parse()`. Le `supposition` dans l'expression se réfère à "
-"la variable `supposition` initiale qui contenait la saisie utilisateur en "
+"Nous lions cette nouvelle variable à l'expression `"
+"guess"
+".trim().parse()`. Le `"
+"guess"
+"` dans l'expression se réfère à "
+"la variable `"
+"guess"
+"` initiale qui contenait la saisie utilisateur en "
 "tant que chaîne de caractères. La méthode `trim` sur une instance de "
 "`String` va enlever les espaces et autres _whitespaces_ au début et à la "
 "fin, ce que nous devons faire avant de pouvoir convertir la chaîne en un "
 "`u32`, qui ne peut être constitué que de chiffres. L'utilisateur doit "
-"appuyer sur <span class=\"keystroke\">entrée</span> pour mettre fin à "
+"appuyer sur <kbd>entrée</kbd> pour mettre fin à "
 "`read_line` et récupérer sa supposition, ce qui va rajouter un caractère de "
 "fin de ligne à la chaîne de caractères. Par exemple, si l'utilisateur écrit "
-"<span class=\"keystroke\">5</span> et appuie sur <span "
-"class=\"keystroke\">entrée </span>, `supposition` aura alors cette valeur : "
+"<kbd>5</kbd> et appuie sur "
+"<kbd>entrée</kbd>, `"
+"guess"
+"` aura alors cette valeur : "
 "`5\\\n"
 "`.  Le `\\n` représente une fin de ligne (à noter que sur Windows, appuyer "
-"sur <span class=\"keystroke\">entrée</span> résulte en un retour chariot "
+"sur <kbd>entrée</kbd> résulte en un retour chariot "
 "suivi d'un saut de ligne, `\\r\\n`). La méthode `trim` enlève `\\n` et "
 "`\\r\\n`, il ne reste donc plus que `5`."
 
+# "supposition"
+# "supposition"
+# "supposition"
+# "supposition"
+# TODO revert to original French translation, when issue https://github.com/rust-lang-translations/translations/issues/32 is solved => un-untranslate msgstr above by uncommenting it and moving it up
+
+
 #: src/ch02-00-guessing-game-tutorial.md:945
-#, fuzzy
 msgid ""
 "The [`parse` method on strings](../std/primitive.str.html#method.parse)<!-- "
 "ignore --> converts a string to another type. Here, we use it to convert "
@@ -4439,16 +4508,24 @@ msgid ""
 "[Chapter 3](ch03-02-data-types.html#integer-types)<!-- ignore -->."
 msgstr ""
 "La [méthode `parse` des chaînes de caractères]"
-"(../std/primitive.str.html#method.parse)[parse]<!-- ignore --> "
+"(../std/primitive.str.html#method.parse)<!-- ignore --> "
 "convertit une chaîne de caractères vers un autre type. Ici, elle est "
 "utilisée pour convertir d'une chaîne vers un nombre. Nous devons indiquer à "
-"Rust le type exact de nombre que nous voulons en utilisant `let supposition: "
-"u32`.  Le deux-points (`:`) après `supposition` indique à Rust que nous "
+"Rust le type exact de nombre que nous voulons en utilisant `let "
+"guess"
+": u32`.  Le deux-points (`:`) après `"
+"guess"
+"` indique à Rust que nous "
 "voulons préciser le type de la variable. Rust embarque quelques types de "
 "nombres ; le `u32` utilisé ici est un entier non signé sur 32 bits.  C'est "
 "un bon choix par défaut pour un petit nombre positif.  Vous découvrirez "
 "d'autres types de nombres dans le [chapitre 3]"
 "(ch03-02-data-types.html#integer-types)<!-- ignore -->."
+
+# "supposition"
+# "supposition"
+# TODO revert to original French translation, when issue https://github.com/rust-lang-translations/translations/issues/32 is solved => un-untranslate msgstr above by uncommenting it and moving it up
+# @# FIXME: URL above (../std/primitive.str.html#method.parse) points to a 404 page
 
 #: src/ch02-00-guessing-game-tutorial.md:953
 msgid ""
@@ -4457,9 +4534,18 @@ msgid ""
 "should be a `u32` as well. So, now the comparison will be between two values "
 "of the same type!"
 msgstr ""
+" De plus, l'annotation `u32` dans ce programme d'exemple et la comparaison avec `"
+"secret_number"
+"` permet à Rust d'en déduire que `"
+"secret_number"
+"` doit être lui aussi un `u32`. Donc maintenant, la comparaison se fera entre deux valeurs du même type !"
+
+# "nombre_secret"
+# "nombre_secret"
+# TODO revert to original French translation, when issue https://github.com/rust-lang-translations/translations/issues/32 is solved => un-untranslate msgstr above by uncommenting it and moving it up
+
 
 #: src/ch02-00-guessing-game-tutorial.md:958
-#, fuzzy
 msgid ""
 "The `parse` method will only work on characters that can logically be "
 "converted into numbers and so can easily cause errors. If, for example, the "
@@ -4480,7 +4566,7 @@ msgstr ""
 "le convertir en nombre. Comme elle peut échouer, la méthode `parse` retourne "
 "un type `Result`, comme celui que la méthode `read_line` retourne (comme "
 "nous l'avons vu plus tôt dans [“Gérer les erreurs potentielles avec "
-"`Result`”] (#gérer-les-erreurs-potentielles-avec-result)<!-- ignore-->).  "
+"`Result`”](#handling-potential-failure-with-result)<!-- ignore-->).  "
 "Nous allons gérer ce `Result` de la même manière, avec à nouveau la méthode "
 "`expect`. Si `parse` retourne une variante `Err` de `Result` car elle ne "
 "peut pas créer un nombre à partir de la chaîne de caractères, l'appel à "
@@ -4492,7 +4578,7 @@ msgstr ""
 
 #: src/ch02-00-guessing-game-tutorial.md:971
 msgid "Let’s run the program now:"
-msgstr ""
+msgstr "Exécutons ce programme, maintenant :"
 
 #: src/ch02-00-guessing-game-tutorial.md:980
 msgid ""
@@ -4509,9 +4595,20 @@ msgid ""
 "Too big!\n"
 "```"
 msgstr ""
+"```console\n"
+"$ cargo run\n"
+"   Compiling guessing_game v0.1.0 (file:///projects/guessing_game)\n"
+"    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.26s\n"
+"     Running `target/debug/guessing_game`\n"
+"Devinez le nombre !\n"
+"Le nombre secret est : 58\n"
+"Veuillez entrer un nombre.\n"
+"  76\n"
+"Votre nombre : 76\n"
+"C'est moins !\n"
+"```"
 
 #: src/ch02-00-guessing-game-tutorial.md:993
-#, fuzzy
 msgid ""
 "Nice! Even though spaces were added before the guess, the program still "
 "figured out that the user guessed 76. Run the program a few times to verify "
@@ -4534,7 +4631,6 @@ msgstr ""
 "faire qu'une seule supposition. Corrigeons cela en ajoutant une boucle !"
 
 #: src/ch02-00-guessing-game-tutorial.md:1001
-#, fuzzy
 msgid "Allowing Multiple Guesses with Looping"
 msgstr "Permettre plusieurs suppositions avec les boucles"
 
@@ -4562,7 +4658,6 @@ msgstr ""
 "l'utilisateur de l'arrêter !"
 
 #: src/ch02-00-guessing-game-tutorial.md:1053
-#, fuzzy
 msgid ""
 "The user could always interrupt the program by using the keyboard shortcut "
 "<kbd>ctrl</kbd>\\-<kbd>C</kbd>. But there’s another way to escape this "
@@ -4610,6 +4705,33 @@ msgid ""
 "backtrace\n"
 "```"
 msgstr ""
+"```console\n"
+"$ cargo run\n"
+"   Compiling guessing_game v0.1.0 (file:///projects/guessing_game)\n"
+"    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.23s\n"
+"     Running `target/debug/guessing_game`\n"
+"Devinez le nombre !\n"
+"Le nombre secret est : 59\n"
+"Veuillez entrer un nombre.\n"
+"45\n"
+"Votre nombre : 45\n"
+"C'est plus !\n"
+"Veuillez entrer un nombre.\n"
+"60\n"
+"Votre nombre : 60\n"
+"C'est moins !\n"
+"Veuillez entrer un nombre.\n"
+"59\n"
+"Votre nombre : 59\n"
+"You win!\n"
+"Veuillez entrer un nombre.\n"
+"quit\n"
+"\n"
+"thread 'main' panicked at src/main.rs:28:47:\n"
+"thread 'main' panicked at 'Veuillez entrer un nombre!: ParseIntError { kind: InvalidDigit }\n"
+"note: run with `RUST_BACKTRACE=1` environment variable to display a "
+"backtrace\n"
+"```"
 
 #: src/ch02-00-guessing-game-tutorial.md:1097
 msgid ""
@@ -4631,6 +4753,8 @@ msgid ""
 "Let’s program the game to quit when the user wins by adding a `break` "
 "statement:"
 msgstr ""
+"Faisons en sorte que le jeu s'arrête quand le joueur gagne en ajoutant"
+"l'instruction break :"
 
 #: src/ch02-00-guessing-game-tutorial.md:1147
 msgid ""
@@ -4721,6 +4845,7 @@ msgstr ""
 #: src/ch02-00-guessing-game-tutorial.md:1229
 msgid "Now everything in the program should work as expected. Let’s try it:"
 msgstr ""
+"Maintenant, le programme devrait fonctionner correctement. Essayons-le :"
 
 #: src/ch02-00-guessing-game-tutorial.md:1240
 msgid ""
@@ -4747,6 +4872,28 @@ msgid ""
 "You win!\n"
 "```"
 msgstr ""
+"```console\n"
+"$ cargo run\n"
+"   Compiling guessing_game v0.1.0 (file:///projects/guessing_game)\n"
+"    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.13s\n"
+"     Running `target/debug/guessing_game`\n"
+"Veuillez entrer un nombre.\n"
+"Le nombre secret est : 61\n"
+"Veuillez entrer un nombre.\n"
+"10\n"
+"Votre nombre : 10\n"
+"C'est plus !\n"
+"Veuillez entrer un nombre.\n"
+"99\n"
+"Votre nombre : 99\n"
+"C'est moins !\n"
+"Veuillez entrer un nombre.\n"
+"foo\n"
+"Veuillez entrer un nombre.\n"
+"61\n"
+"Votre nombre : 61\n"
+"Vous avez gagné !\n"
+"```"
 
 #: src/ch02-00-guessing-game-tutorial.md:1263
 msgid ""
@@ -4789,6 +4936,7 @@ msgstr ""
 "méthodes, et le chapitre 6 expliquera comment les énumérations fonctionnent."
 
 # }}}
+# _____________JEANSUILÀ_____________________just_a_handy_bookmark__WIP_________
 # Chapitre 3: {{{
 # Les concepts courants de programmation {{{
 
@@ -30560,7 +30708,7 @@ msgstr ""
 
 # "```console $ cargo new jeu_du_plus_ou_du_moins $ cd jeu_du_plus_ou_du_moins "
 # "```"
-# TODO revert to original French translation, when issue https://github.com/rust-lang-translations/translations/issues/32 is solved => un-untranslate msgstr above
+# TODO revert to original French translation, when issue https://github.com/rust-lang-translations/translations/issues/32 is solved => un-untranslate msgstr above by uncommenting it and moving it up
 
 
 #: src/ch14-02-publishing-to-crates-io.md:421
@@ -30679,7 +30827,7 @@ msgstr ""
 # "```toml [package] name = \"jeu_du_plus_ou_du_moins\" version = \"0.1.0\" "
 # "edition = \"2021\" description = \"Un jeu où vous devez deviner quel nombre "
 # "l'ordinateur a choisi.\" license = \"MIT OR Apache-2.0\""
-# TODO revert to original French translation, when issue https://github.com/rust-lang-translations/translations/issues/32 is solved => un-untranslate msgstr above
+# TODO revert to original French translation, when issue https://github.com/rust-lang-translations/translations/issues/32 is solved => un-untranslate msgstr above by uncommenting it and moving it up
 
 
 #: src/ch14-02-publishing-to-crates-io.md:487
@@ -42585,6 +42733,11 @@ msgstr ""
 "Voyons ce qui se passe lorsque l'expression `match` est utilisée. Le motif "
 "présent dans la première branche du `match` ne correspond pas à la valeur "
 "actuelle de `x`, donc le code passe à la branche suivante."
+
+# "Voyons ce qui se passe lorsque l'expression `match` est utilisée. Le motif "
+# "présent dans la première branche du `match` ne correspond pas à la valeur "
+# "actuelle de `x`, donc le code passe à la branche suivante."
+
 
 #: src/ch19-03-pattern-syntax.md:64
 #, fuzzy
@@ -66133,4 +66286,9 @@ msgstr ""
 #~ "previous, obsolete, English version."
 #~ msgstr "<!-- # Foreword -->"
 
+
+# msgstr "Ajouter des fonctionnalités utiles avec les traits dérivés"
+
 # }}}
+# Useful things to keep handy at bottom of file:
+# Espace espéciale, en deux exemplaires : !
