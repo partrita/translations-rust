@@ -96,10 +96,10 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-ae998599.js";
+            window.path_to_searchindex_js = "searchindex-5b6c4c3f.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="toc-d2d043f9.js"></script>
+        <script src="toc-44dad460.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -400,7 +400,7 @@ pub fn hello_macro_derive(input: TokenStream) -&gt; TokenStream {
 <p>The <code>hello_macro_derive</code> function first converts the <code>input</code> from a <code>TokenStream</code> to a data structure that we can then interpret and perform operations on. This is where <code>syn</code> comes into play. The <code>parse</code> function in <code>syn</code> takes a <code>TokenStream</code> and returns a <code>DeriveInput</code> struct representing the parsed Rust code. Listing 20-41 shows the relevant parts of the <code>DeriveInput</code> struct we get from parsing the <code>struct Pancakes;</code> string.</p>
 <figure class="listing" id="listing-20-41">
 <pre><code class="language-rust ignore">DeriveInput {
-    // --snip--
+    // -- partie masquée ici --
 
     ident: Ident {
         ident: "Pancakes",
@@ -478,7 +478,7 @@ pub fn route(attr: TokenStream, item: TokenStream) -&gt; TokenStream {</code></p
 <pre><code class="language-rust ignore">#[proc_macro]
 pub fn sql(input: TokenStream) -&gt; TokenStream {</code></pre>
 <p>This definition is similar to the custom <code>derive</code> macro’s signature: We receive the tokens that are inside the parentheses and return the code we wanted to generate.</p>
-<h2 id="summary"><a class="header" href="#summary">Summary</a></h2>
+<h2 id="résumé"><a class="header" href="#résumé">Résumé</a></h2>
 <p>Whew! Now you have some Rust features in your toolbox that you likely won’t use often, but you’ll know they’re available in very particular circumstances. We’ve introduced several complex topics so that when you encounter them in error message suggestions or in other people’s code, you’ll be able to recognize these concepts and syntax. Use this chapter as a reference to guide you to solutions.</p>
 <p>Au chapitre suivant, nous allons mettre en pratique tout ce que nous avons appris dans ce livre en l’appliquant à un nouveau projet !</p>
 

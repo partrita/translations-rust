@@ -96,10 +96,10 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-ae998599.js";
+            window.path_to_searchindex_js = "searchindex-5b6c4c3f.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="toc-d2d043f9.js"></script>
+        <script src="toc-44dad460.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -401,7 +401,7 @@ Can rect1 hold rect3? false
 <h3 id="associated-functions"><a class="header" href="#associated-functions">Associated Functions</a></h3>
 <p>All functions defined within an <code>impl</code> block are called <em>associated functions</em> because they’re associated with the type named after the <code>impl</code>. We can define associated functions that don’t have <code>self</code> as their first parameter (and thus are not methods) because they don’t need an instance of the type to work with. We’ve already used one function like this: the <code>String::from</code> function that’s defined on the <code>String</code> type.</p>
 <p>Associated functions that aren’t methods are often used for constructors that will return a new instance of the struct. These are often called <code>new</code>, but <code>new</code> isn’t a special name and isn’t built into the language. For example, we could choose to provide an associated function named <code>square</code> that would have one dimension parameter and use that as both width and height, thus making it easier to create a square <code>Rectangle</code> rather than having to specify the same value twice:</p>
-<p><span class="filename">Filename: src/main.rs</span></p>
+<p><span class="filename">Fichier : src/main.rs</span></p>
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">#[derive(Debug)]
 </span><span class="boring">struct Rectangle {
 </span><span class="boring">    width: u32,
@@ -463,7 +463,7 @@ impl Rectangle {
 <figcaption><a href="#listing-5-16">Listing 5-16</a>: Rewriting Listing 5-15 using multiple <code>impl</code> blocks</figcaption>
 </figure>
 <p>Il n’y a aucune raison de séparer ces méthodes dans plusieurs blocs <code>impl</code> dans notre exemple, mais c’est une syntaxe valide. Nous verrons un exemple de l’utilité d’avoir plusieurs blocs <code>impl</code> au chapitre 10, où nous aborderons les types génériques et les traits.</p>
-<h2 id="summary"><a class="header" href="#summary">Summary</a></h2>
+<h2 id="résumé"><a class="header" href="#résumé">Résumé</a></h2>
 <p>Les structures vous permettent de créer des types personnalisés significatifs pour votre domaine. En utilisant des structures, on peut relier entre elles des données associées et nommer chaque donnée pour rendre le code plus clair. Dans des blocs <code>impl</code>, vous pouvez définir des fonctions qui sont associées à votre type, et les méthodes sont un genre de fonction associée qui vous permet de renseigner le comportement que doivent suivre les instances de votre structure.</p>
 <p>But structs aren’t the only way you can create custom types: Let’s turn to Rust’s enum feature to add another tool to your toolbox.</p>
 
