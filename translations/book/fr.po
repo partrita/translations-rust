@@ -56,7 +56,7 @@ msgstr ""
 "book/) et en hors-ligne avec l'installation de Rust qui a été effectuée avec "
 "`rustup` ; vous pouvez lancer `rustup doc --book` pour l'ouvrir."
 
-# TODO add reference to https://rust-lang-translations.org/ in the appendix 6
+# @# TODO add reference to https://rust-lang-translations.org/ in the appendix 6
 #: src/title-page.md:18
 msgid ""
 "Several community [translations](appendix-06-translation.html) are also "
@@ -74,7 +74,6 @@ msgstr ""
 "La version anglaise de ce livre est disponible [au format papier et e-book "
 "chez No Starch Press](https://nostarch.com/rust-programming-language-3rd-edition)."
 
-# BUG: ce paragraphe ne se traduit pas bien:
 #: src/title-page.md:28
 msgid ""
 "**🚨 Want a more interactive learning experience? Try out a different "
@@ -152,7 +151,7 @@ msgstr "Le type slice"
 
 #: src/SUMMARY.md:26 src/ch05-00-structs.md:1
 msgid "Using Structs to Structure Related Data"
-msgstr ""
+msgstr "Utiliser les structures pour structurer des données apparentées"
 
 #: src/SUMMARY.md:27 src/ch05-01-defining-structs.md:1
 msgid "Defining and Instantiating Structs"
@@ -192,6 +191,7 @@ msgstr "Paquets, crates et modules"
 # msgstr "Gérer des projets grandissants avec les paquets, crates et modules"
 # => it was a better title, but not matching the short English version
 
+
 #: src/SUMMARY.md:37 src/ch07-01-packages-and-crates.md:1
 msgid "Packages and Crates"
 msgstr "Les paquets et les crates"
@@ -199,7 +199,7 @@ msgstr "Les paquets et les crates"
 #: src/SUMMARY.md:38
 #: src/ch07-02-defining-modules-to-control-scope-and-privacy.md:5
 msgid "Control Scope and Privacy with Modules"
-msgstr ""
+msgstr "Définir des modules pour gérer la portée et la visibilité"
 
 #: src/SUMMARY.md:39
 #: src/ch07-03-paths-for-referring-to-an-item-in-the-module-tree.md:1
@@ -207,134 +207,108 @@ msgid "Paths for Referring to an Item in the Module Tree"
 msgstr "Désigner un élément dans l'arborescence de modules"
 
 #: src/SUMMARY.md:40
-#, fuzzy
 msgid "Bringing Paths Into Scope with the `use` Keyword"
 msgstr "Importer des chemins dans la portée via le mot-clé `use`"
 
 #: src/SUMMARY.md:41 src/ch07-05-separating-modules-into-different-files.md:1
-#, fuzzy
 msgid "Separating Modules into Different Files"
 msgstr "Séparer les modules dans différents fichiers"
 
 #: src/SUMMARY.md:43 src/ch08-00-common-collections.md:1
-#, fuzzy
 msgid "Common Collections"
 msgstr "Les collections standard"
 
 #: src/SUMMARY.md:44 src/ch08-01-vectors.md:1
-#, fuzzy
 msgid "Storing Lists of Values with Vectors"
 msgstr "Stocker des listes de valeurs avec des vecteurs"
 
 #: src/SUMMARY.md:45 src/ch08-02-strings.md:1
-#, fuzzy
 msgid "Storing UTF-8 Encoded Text with Strings"
 msgstr "Stocker du texte encodé en UTF-8 avec les Strings"
 
 #: src/SUMMARY.md:46 src/ch08-03-hash-maps.md:1
-#, fuzzy
 msgid "Storing Keys with Associated Values in Hash Maps"
 msgstr "Stocker des clés associées à des valeurs dans des tables de hachage"
 
 #: src/SUMMARY.md:48 src/ch09-00-error-handling.md:1
-#, fuzzy
 msgid "Error Handling"
 msgstr "La gestion des erreurs"
 
 #: src/SUMMARY.md:49 src/ch09-01-unrecoverable-errors-with-panic.md:1
-#, fuzzy
 msgid "Unrecoverable Errors with `panic!`"
 msgstr "Les erreurs irrécupérables avec `panic!`"
 
 #: src/SUMMARY.md:50 src/ch09-02-recoverable-errors-with-result.md:1
-#, fuzzy
 msgid "Recoverable Errors with `Result`"
 msgstr "Des erreurs récupérables avec `Result`"
 
 #: src/SUMMARY.md:51 src/ch09-03-to-panic-or-not-to-panic.md:1
-#, fuzzy
 msgid "To `panic!` or Not to `panic!`"
 msgstr "Paniquer ou ne pas paniquer, telle est la question"
 
 #: src/SUMMARY.md:53 src/ch10-00-generics.md:1
-#, fuzzy
 msgid "Generic Types, Traits, and Lifetimes"
 msgstr "Les types génériques, les traits et les durées de vie"
 
 #: src/SUMMARY.md:54 src/ch10-01-syntax.md:1
-#, fuzzy
 msgid "Generic Data Types"
 msgstr "Les types de données"
 
 #: src/SUMMARY.md:55 src/ch10-02-traits.md:5
-#, fuzzy
 msgid "Defining Shared Behavior with Traits"
 msgstr "Définir des comportements partagés avec les traits"
 
 #: src/SUMMARY.md:56 src/ch10-03-lifetime-syntax.md:1
-#, fuzzy
 msgid "Validating References with Lifetimes"
 msgstr "La conformité des références avec les durées de vies"
 
 #: src/SUMMARY.md:58 src/ch11-00-testing.md:1
-#, fuzzy
 msgid "Writing Automated Tests"
 msgstr "Écrire des tests automatisés"
 
 #: src/SUMMARY.md:59 src/ch11-01-writing-tests.md:1
-#, fuzzy
 msgid "How to Write Tests"
 msgstr "Comment écrire des tests"
 
 #: src/SUMMARY.md:60 src/ch11-02-running-tests.md:1
-#, fuzzy
 msgid "Controlling How Tests Are Run"
 msgstr "Gérer l'exécution des tests"
 
 #: src/SUMMARY.md:61 src/ch11-03-test-organization.md:1
-#, fuzzy
 msgid "Test Organization"
 msgstr "L'organisation des tests"
 
 #: src/SUMMARY.md:63 src/ch12-00-an-io-project.md:1
-#, fuzzy
 msgid "An I/O Project: Building a Command Line Program"
 msgstr ""
 "Un projet d'entrée/sortie : construire un programme en ligne de commande"
 
 #: src/SUMMARY.md:64 src/ch12-01-accepting-command-line-arguments.md:1
-#, fuzzy
 msgid "Accepting Command Line Arguments"
 msgstr "Récupérer les arguments de la ligne de commande"
 
 #: src/SUMMARY.md:65 src/ch12-02-reading-a-file.md:1
-#, fuzzy
 msgid "Reading a File"
 msgstr "Lire un fichier"
 
 #: src/SUMMARY.md:66 src/ch12-03-improving-error-handling-and-modularity.md:1
-#, fuzzy
 msgid "Refactoring to Improve Modularity and Error Handling"
 msgstr ""
 "Remanier le code pour améliorer sa modularité et la gestion des erreurs"
 
 #: src/SUMMARY.md:67
-#, fuzzy
 msgid "Adding Functionality with Test Driven Development"
 msgstr "Développer les fonctionnalités de la bibliothèque avec le TDD"
 
 #: src/SUMMARY.md:68 src/ch12-05-working-with-environment-variables.md:1
-#, fuzzy
 msgid "Working with Environment Variables"
 msgstr "Travailler avec des variables d'environnement"
 
 #: src/SUMMARY.md:69 src/ch12-06-writing-to-stderr-instead-of-stdout.md:5
-#, fuzzy
 msgid "Redirecting Errors to Standard Error"
-msgstr "#Écrire les erreurs sur la sortie d'erreur standard"
+msgstr "Écrire les erreurs sur la sortie d'erreur standard"
 
 #: src/SUMMARY.md:71 src/ch13-00-functional-features.md:1
-#, fuzzy
 msgid "Functional Language Features: Iterators and Closures"
 msgstr ""
 "Les fonctionnalités des langages fonctionnels : les itérateurs et les "
@@ -342,113 +316,99 @@ msgstr ""
 
 #: src/SUMMARY.md:72 src/ch13-01-closures.md:6
 msgid "Closures"
-msgstr ""
+msgstr "Fermetures"
 
 #: src/SUMMARY.md:73 src/ch13-02-iterators.md:1
-#, fuzzy
 msgid "Processing a Series of Items with Iterators"
-msgstr "Traiter une série d'éléments avec un itérateur"
+msgstr "Traiter une série d'éléments avec des itérateurs"
 
 #: src/SUMMARY.md:74 src/ch13-03-improving-our-io-project.md:1
-#, fuzzy
 msgid "Improving Our I/O Project"
 msgstr "Amélioration de notre projet d'entrée/sortie"
 
 #: src/SUMMARY.md:75 src/ch13-04-performance.md:5
-#, fuzzy
 msgid "Performance in Loops vs. Iterators"
 msgstr "Comparaison des performances : les boucles et les itérateurs"
 
 #: src/SUMMARY.md:77
-#, fuzzy
 msgid "More about Cargo and Crates.io"
 msgstr "En savoir plus sur cargo et crates.io"
 
 #: src/SUMMARY.md:78 src/ch14-01-release-profiles.md:1
-#, fuzzy
 msgid "Customizing Builds with Release Profiles"
 msgstr "Personnaliser les compilations avec les profils de publication"
 
 #: src/SUMMARY.md:79 src/ch14-02-publishing-to-crates-io.md:1
-#, fuzzy
 msgid "Publishing a Crate to Crates.io"
 msgstr "Publier une crate sur crates.io"
 
 #: src/SUMMARY.md:80 src/ch14-03-cargo-workspaces.md:1
-#, fuzzy
 msgid "Cargo Workspaces"
 msgstr "Les espaces de travail de cargo"
 
 #: src/SUMMARY.md:81 src/ch14-04-installing-binaries.md:5
-#, fuzzy
 msgid "Installing Binaries with `cargo install`"
 msgstr "Installer des binaires à partir de crates.io avec `cargo install`"
 
+# NOTE: translation above comes from legacy, it slightly differs from English
+
+
 #: src/SUMMARY.md:82 src/ch14-05-extending-cargo.md:1
-#, fuzzy
 msgid "Extending Cargo with Custom Commands"
-msgstr ""
-"Étendre les fonctionnalités de cargo avec des commandes personnalisées"
+msgstr "Étendre les fonctionnalités de cargo avec des commandes personnalisées"
 
 #: src/SUMMARY.md:84 src/ch15-00-smart-pointers.md:1
-#, fuzzy
 msgid "Smart Pointers"
 msgstr "Les pointeurs intelligents"
 
 #: src/SUMMARY.md:85 src/ch15-01-box.md:1
-#, fuzzy
 msgid "Using `Box<T>` to Point to Data on the Heap"
 msgstr "Utiliser `Box<T>` pour pointer sur des données présentes sur le tas"
 
 #: src/SUMMARY.md:86 src/ch15-02-deref.md:6
-#, fuzzy
 msgid "Treating Smart Pointers Like Regular References"
 msgstr ""
 "Considérer les pointeurs intelligents comme des références grâce au trait "
 "`Deref`"
 
+# NOTE: translation above comes from legacy, it slightly differs from English
+
+
 #: src/SUMMARY.md:87 src/ch15-03-drop.md:1
-#, fuzzy
 msgid "Running Code on Cleanup with the `Drop` Trait"
 msgstr "Exécuter du code lors du nettoyage avec le trait `Drop`"
 
 #: src/SUMMARY.md:88
-#, fuzzy
 msgid "`Rc<T>`, the Reference Counted Smart Pointer"
 msgstr "`Rc<T>`, le pointeur intelligent qui compte les références"
 
 #: src/SUMMARY.md:89 src/ch15-05-interior-mutability.md:1
-#, fuzzy
 msgid "`RefCell<T>` and the Interior Mutability Pattern"
 msgstr "`RefCell<T>` et le motif de mutabilité interne"
 
 #: src/SUMMARY.md:90 src/ch15-06-reference-cycles.md:1
-#, fuzzy
 msgid "Reference Cycles Can Leak Memory"
 msgstr ""
-"Les boucles de références qui peuvent provoquer des fuites de mémoire"
+"Les boucles de références peuvent provoquer des fuites de mémoire"
 
 #: src/SUMMARY.md:92 src/ch16-00-concurrency.md:1
-#, fuzzy
 msgid "Fearless Concurrency"
 msgstr "La concurrence sans craintes"
 
 #: src/SUMMARY.md:93 src/ch16-01-threads.md:1
-#, fuzzy
 msgid "Using Threads to Run Code Simultaneously"
 msgstr "Utiliser les tâches pour exécuter simultanément du code"
 
 #: src/SUMMARY.md:94 src/ch16-02-message-passing.md:5
 msgid "Transfer Data Between Threads with Message Passing"
 msgstr ""
+"Utiliser l'envoi de messages pour transférer des données entre les tâches"
 
 #: src/SUMMARY.md:95 src/ch16-03-shared-state.md:1
-#, fuzzy
 msgid "Shared-State Concurrency"
 msgstr "Le partage d'état en concurrence"
 
 #: src/SUMMARY.md:96 src/ch16-04-extensible-concurrency-sync-and-send.md:6
-#, fuzzy
 msgid "Extensible Concurrency with `Send` and `Sync`"
 msgstr "Étendre la concurrence avec les traits `Sync` et `Send`"
 
@@ -456,127 +416,115 @@ msgstr "Étendre la concurrence avec les traits `Sync` et `Send`"
 msgid ""
 "Fundamentals of Asynchronous Programming: Async, Await, Futures, and Streams"
 msgstr ""
+"Notions fondamentales de programmation asynchrone: Async, Await, Futures et Streams"
 
+# @# TODO: check, during book review, if "futures" should be translated or not
 #: src/SUMMARY.md:99 src/ch17-01-futures-and-syntax.md:1
 msgid "Futures and the Async Syntax"
 msgstr ""
+"Futures et la syntaxe de Async"
 
 #: src/SUMMARY.md:100 src/ch17-02-concurrency-with-async.md:5
 msgid "Applying Concurrency with Async"
 msgstr ""
+"Mise en œuvre de la concurrence avec Async"
 
 #: src/SUMMARY.md:101
 msgid "Working With Any Number of Futures"
 msgstr ""
+"Travail avec un nombre quelconque de Futures"
 
 #: src/SUMMARY.md:102 src/ch17-04-streams.md:5
 msgid "Streams: Futures in Sequence"
 msgstr ""
+"Futures en séquence"
 
 #: src/SUMMARY.md:103 src/ch17-05-traits-for-async.md:5
 msgid "A Closer Look at the Traits for Async"
 msgstr ""
+"Examen plus approfondi des traits pour Async"
 
 #: src/SUMMARY.md:104
 msgid "Futures, Tasks, and Threads"
 msgstr ""
 
 #: src/SUMMARY.md:106
-#, fuzzy
 msgid "Object Oriented Programming Features"
 msgstr "Les fonctionnalités orientées objet de Rust"
 
 #: src/SUMMARY.md:107 src/ch18-01-what-is-oo.md:1
-#, fuzzy
 msgid "Characteristics of Object-Oriented Languages"
 msgstr "Les caractéristiques des langages orientés objet"
 
 #: src/SUMMARY.md:108 src/ch18-02-trait-objects.md:5
 msgid "Using Trait Objects to Abstract over Shared Behavior"
-msgstr ""
+msgstr "Utiliser les objets traits qui permettent des valeurs de types différents"
 
 #: src/SUMMARY.md:109 src/ch18-03-oo-design-patterns.md:1
-#, fuzzy
 msgid "Implementing an Object-Oriented Design Pattern"
 msgstr "Implémenter un patron de conception orienté-objet"
 
 #: src/SUMMARY.md:111 src/ch19-00-patterns.md:1
-#, fuzzy
 msgid "Patterns and Matching"
 msgstr "Les motifs et le filtrage par motif"
 
 #: src/SUMMARY.md:112 src/ch19-01-all-the-places-for-patterns.md:1
-#, fuzzy
 msgid "All the Places Patterns Can Be Used"
 msgstr "Tous les endroits où les motifs peuvent être utilisés"
 
 #: src/SUMMARY.md:113 src/ch19-02-refutability.md:1
-#, fuzzy
 msgid "Refutability: Whether a Pattern Might Fail to Match"
 msgstr "La réfutabilité : lorsqu'un motif peut échouer à correspondre"
 
 #: src/SUMMARY.md:114 src/ch19-03-pattern-syntax.md:1
-#, fuzzy
 msgid "Pattern Syntax"
 msgstr "La syntaxe des motifs"
 
 #: src/SUMMARY.md:116 src/ch20-00-advanced-features.md:1
-#, fuzzy
 msgid "Advanced Features"
 msgstr "Les fonctionnalités avancées"
 
 #: src/SUMMARY.md:117 src/ch20-01-unsafe-rust.md:1
-#, fuzzy
 msgid "Unsafe Rust"
 msgstr "Le Rust non sécurisé (`unsafe`)"
 
 #: src/SUMMARY.md:118 src/ch20-02-advanced-traits.md:1
-#, fuzzy
 msgid "Advanced Traits"
 msgstr "Les traits avancés"
 
 #: src/SUMMARY.md:119 src/ch20-03-advanced-types.md:1
-#, fuzzy
 msgid "Advanced Types"
 msgstr "Les types avancés"
 
 #: src/SUMMARY.md:120 src/ch20-04-advanced-functions-and-closures.md:1
-#, fuzzy
 msgid "Advanced Functions and Closures"
 msgstr "Les fonctions et fermetures avancées"
 
 #: src/SUMMARY.md:121 src/ch20-05-macros.md:1
-#, fuzzy
 msgid "Macros"
 msgstr "Les macros"
 
 #: src/SUMMARY.md:123 src/ch21-00-final-project-a-web-server.md:1
-#, fuzzy
 msgid "Final Project: Building a Multithreaded Web Server"
 msgstr "Projet final : construire un serveur web multitâches"
 
 #: src/SUMMARY.md:124 src/ch21-01-single-threaded.md:1
-#, fuzzy
 msgid "Building a Single-Threaded Web Server"
 msgstr "Développer un serveur web monotâche"
 
 #: src/SUMMARY.md:125
-#, fuzzy
 msgid "From Single-Threaded to Multithreaded Server"
 msgstr "Transformer notre serveur monotâche en serveur multitâches"
 
 #: src/SUMMARY.md:126 src/ch21-03-graceful-shutdown-and-cleanup.md:1
-#, fuzzy
 msgid "Graceful Shutdown and Cleanup"
 msgstr "Arrêt propre et nettoyage"
 
 #: src/SUMMARY.md:128 src/appendix-00.md:1
-#, fuzzy
 msgid "Appendix"
 msgstr "Annexes"
 
 #: src/SUMMARY.md:129
-#, fuzzy
 msgid "A - Keywords"
 msgstr "Annexe A : les mots-clés"
 
@@ -603,9 +551,9 @@ msgstr ""
 #: src/SUMMARY.md:135
 msgid "G - How Rust is Made and “Nightly Rust”"
 msgstr ""
+
 # }}}
 # Avant-propos: {{{
-
 
 #: src/foreword.md:1
 msgid "Foreword"
@@ -727,7 +675,7 @@ msgid "Bec Rumbul, Executive Director of the Rust Foundation"
 msgstr "Bec Rumbul, directeur exécutif de la Fondation Rust"
 
 # }}}
-# Introduction: {{{
+# Chapitre 0: Introduction{{{
 
 #: src/ch00-00-introduction.md:1
 msgid "Introduction"
@@ -1195,37 +1143,47 @@ msgid "Meaning"
 msgstr "Signification"
 
 #: src/ch00-00-introduction.md:189
-msgid ""
-"<img src=\"img/ferris/does_not_compile.svg\" class=\"ferris-explain\" "
-"alt=\"Ferris with a question mark\"/>"
-msgstr ""
-"<img src=\"img/ferris/does_not_compile.svg\" class=\"ferris-explain\" "
-"alt=\"Ferris avec un point d'interrogation\"/>"
+# msgid ""
+# "<img src=\"img/ferris/does_not_compile.svg\" class=\"ferris-explain\" "
+# "alt=\"Ferris with a question mark\"/>"
+# msgstr ""
+# "<img src=\"img/ferris/does_not_compile.svg\" class=\"ferris-explain\" "
+# "alt=\"Ferris avec un point d'interrogation\"/>"
+msgid "Ferris with a question mark"
+msgstr "Ferris avec un point d'interrogation"
 
 #: src/ch00-00-introduction.md:189
 msgid "This code does not compile!"
 msgstr "Ce code ne compile pas !"
 
 #: src/ch00-00-introduction.md:190
+# msgid ""
+# "<img src=\"img/ferris/panics.svg\" class=\"ferris-explain\" alt=\"ferris "
+# "throwing up their hands\"/>"
+# msgstr ""
+# "<img src=\"img/ferris/panics.svg\" class=\"ferris-explain\" alt=\"ferris "
+# "qui lève ses bras\"/>"
 msgid ""
-"<img src=\"img/ferris/panics.svg\" class=\"ferris-explain\" alt=\"ferris "
-"throwing up their hands\"/>"
+"ferris throwing up their hands"
 msgstr ""
-"<img src=\"img/ferris/panics.svg\" class=\"ferris-explain\" alt=\"ferris "
-"qui lève ses bras\"/>"
+"Ferris qui lève ses bras"
+
+# @# TODO: capital F for ferris should be corrected in upstream English text
+
 
 #: src/ch00-00-introduction.md:190
 msgid "This code panics!"
 msgstr "Ce code panique !"
 
 #: src/ch00-00-introduction.md:191
-msgid ""
-"<img src=\"img/ferris/not_desired_behavior.svg\" class=\"ferris-explain\" "
-"alt=\"Ferris with one claw up, shrugging\"/>"
-msgstr ""
-"<img src=\"img/ferris/not_desired_behavior.svg\" class=\"ferris-explain\" "
-"alt=\"Ferris avec une pince en l'air, haussant les épaules\"/>"
-
+# msgid ""
+# "<img src=\"img/ferris/not_desired_behavior.svg\" class=\"ferris-explain\" "
+# "alt=\"Ferris with one claw up, shrugging\"/>"
+# msgstr ""
+# "<img src=\"img/ferris/not_desired_behavior.svg\" class=\"ferris-explain\" "
+# "alt=\"Ferris avec une pince en l'air, haussant les épaules\"/>"
+msgid "Ferris with one claw up, shrugging"
+msgstr "Ferris avec une pince en l'air, haussant les épaules"
 
 #: src/ch00-00-introduction.md:191
 msgid "This code does not produce the desired behavior."
@@ -1252,24 +1210,27 @@ msgstr ""
 "disponibles sur [GitHub](https://github.com/rust-lang/book/tree/main/src).\n\n"
 "Des versions françaises sont aussi disponibles sur [GitHub]"
 "(https://github.com/Jimskapt/rust-book-fr) et à [rust-lang-translations.org]"
-"(https://rust-lang-translations.org)."
+"(https://rust-lang-translations.org/book/fr/)."
 
 # Old version of previous paragraph:
 # "La version française est aussi disponible sur [GitHub](https://github.com/Jimskapt/rust-book-fr)."
-# TODO eventually, put this sentence back with the rust-lang-translations.org URL
+# @# TODO eventually, put this sentence back with the rust-lang-translations.org URL
+
 
 # }}}
-# _____________JEANSUILÀ_____________________just_a_handy_bookmark__WIP_________
 # Traduction des termes: {{{
-#
-# Page non existante dans la version anglaise
-#
-# TODO add a chapter "Glossary" in original English version, with minimal
-# contents, explicitly mentioning that it's just a placeholder for translations.
-#
-# }}}
 
+# Page non existante dans la version anglaise
+# This page does not exist in the English version
+#
+# @# TODO add a chapter "Glossary" in original English version, with minimal
+#         contents, explicitly mentioning that it's just a placeholder for translations.
+
+
+# }}}
+# Chapitre 1: {{{
 # Prise en main: {{{
+
 # msgid ""
 # "Let’s start your Rust journey! There’s a lot to learn, but every journey "
 # "starts "
@@ -1284,7 +1245,7 @@ msgstr ""
 
 #: src/ch01-00-getting-started.md:6
 msgid "Installing Rust on Linux, macOS, and Windows"
-msgstr "Installer `rustup` sur Linux ou macOS"
+msgstr "L'installation de Rust sur Linux ou macOS"
 
 #: src/ch01-00-getting-started.md:7
 msgid "Writing a program that prints `Hello, world!`"
@@ -1295,12 +1256,8 @@ msgid "Using `cargo`, Rust’s package manager and build system"
 msgstr "L'utilisation de `cargo`, le gestionnaire de paquets et système de compilation"
 
 # }}}
-# _____________JEANSUILÀ_____________________just_a_handy_bookmark__WIP_________
-
-# "<span class=\"caption\">Encart 1-1 : Un programme qui affiche `Hello, world!"
-# "` </span>"
-
 # Installation: {{{
+
 #: src/ch01-01-installation.md:3
 msgid ""
 "The first step is to install Rust. We’ll download Rust through `rustup`, a "
@@ -1501,6 +1458,7 @@ msgid "In PowerShell, use:"
 msgstr ""
 "Dans PowerShell, entrez :"
 
+# @# TODO: GNU should be added in upstream English text
 #: src/ch01-01-installation.md:103
 msgid "In Linux and macOS, use:"
 msgstr ""
@@ -1540,13 +1498,11 @@ msgstr ""
 "suivant dans votre terminal :"
 
 #: src/ch01-01-installation.md:130
-#, fuzzy
-msgid "<a id=\"local-documentation\"></a>"
-msgstr "Lecture de la documentation en local"
-
+# msgid "<a id=\"local-documentation\"></a>"
+#
 #: src/ch01-01-installation.md:132
 msgid "Reading the Local Documentation"
-msgstr ""
+msgstr "Lecture de la documentation en local"
 
 #: src/ch01-01-installation.md:134
 msgid ""
@@ -1567,8 +1523,9 @@ msgstr ""
 "À chaque fois que vous n'êtes pas sûr de ce que fait un type ou une fonction "
 "fournie par la bibliothèque standard ou que vous ne savez pas comment "
 "l'utiliser, utilisez cette documentation de l'interface de programmation "
-"applicative *(API)* pour le savoir !"
+"applicative (*API*) pour le savoir !"
 
+#: src/ch01-01-installation.md:143
 #: src/ch01-01-installation.md:145
 msgid "Using Text Editors and IDEs"
 msgstr "Utilisation d'éditeurs de texte et d'IDEs"
@@ -1623,22 +1580,21 @@ msgstr ""
 "avec toutes les commandes `cargo` dans le reste du livre pour utiliser ces "
 "versions mises en cache, au lieu d'essayer d'utiliser le réseau."
 
-# }}} _____________JEANSUILÀ_____________________just_a_handy_bookmark__WIP_________
+# }}}
+# Hello World!: {{{
 
 #: src/ch01-02-hello-world.md:3
-#, fuzzy
 msgid ""
 "Now that you’ve installed Rust, it’s time to write your first Rust program. "
 "It’s traditional when learning a new language to write a little program that "
 "prints the text `Hello, world!` to the screen, so we’ll do the same here!"
 msgstr ""
-"Maintenant que vous avez installé Rust, écrivons notre premier programme "
+"Maintenant que vous avez installé Rust, il est temps d'écrire notre premier programme "
 "Rust. Lorsqu'on apprend un nouveau langage, il est de tradition d'écrire un "
 "petit programme qui écrit le texte \"Hello, world!\" à l'écran, donc c'est "
 "ce que nous allons faire !"
 
 #: src/ch01-02-hello-world.md:7
-#, fuzzy
 msgid ""
 "Note: This book assumes basic familiarity with the command line. Rust makes "
 "no specific demands about your editing or tooling or where your code lives, "
@@ -1648,27 +1604,23 @@ msgid ""
 "great IDE support via `rust-analyzer`. See [Appendix D](appendix-04-useful-"
 "development-tools.html)<!-- ignore --> for more details."
 msgstr ""
-"> Note : ce livre part du principe que vous êtes familier avec la ligne de > "
-"commande. Rust n'impose pas d'exigences sur votre éditeur, vos outils ou > "
-"l'endroit où vous mettez votre code, donc si vous préférez utiliser un > "
+"Note : ce livre part du principe que vous êtes familier avec la ligne de "
+"commande. Rust n'impose pas d'exigences sur votre éditeur, vos outils ou "
+"l'endroit où vous mettez votre code, donc si vous préférez utiliser un "
 "environnement de développement intégré (IDE) au lieu de la ligne de "
-"commande, > vous êtes libre d'utiliser votre IDE favori. De nombreux IDE "
-"prennent en > charge Rust à des degrés divers ; consultez la documentation "
-"de > l'IDE pour plus d'informations. L'équipe Rust s'est attelée à > "
-"améliorer l'intégration dans les IDE via `rust-analyzer`. Voir > l'[annexe D]"
-"[devtools] pour plus de détails."
+"commande, vous êtes libre d'utiliser votre IDE favori. De nombreux IDE "
+"prennent en charge Rust à des degrés divers ; consultez la documentation "
+"de l'IDE pour plus d'informations. L'équipe Rust s'est attelée à "
+"améliorer l'intégration dans les IDE via `rust-analyzer`. Voir l'[annexe D]"
+"(appendix-04-useful-development-tools.html) pour plus de détails."
 
 #: src/ch01-02-hello-world.md:16
-#, fuzzy
-msgid "<a id=\"creating-a-project-directory\"></a>"
-msgstr "Créer un répertoire projet"
-
+# msgid "<a id=\"creating-a-project-directory\"></a>"
 #: src/ch01-02-hello-world.md:18
 msgid "Project Directory Setup"
-msgstr ""
+msgstr "Créer un répertoire projet"
 
 #: src/ch01-02-hello-world.md:20
-#, fuzzy
 msgid ""
 "You’ll start by making a directory to store your Rust code. It doesn’t "
 "matter to Rust where your code lives, but for the exercises and projects in "
@@ -1682,7 +1634,6 @@ msgstr ""
 "là-dedans."
 
 #: src/ch01-02-hello-world.md:25
-#, fuzzy
 msgid ""
 "Open a terminal and enter the following commands to make a _projects_ "
 "directory and a directory for the “Hello, world!” project within the "
@@ -1692,29 +1643,28 @@ msgstr ""
 "répertoire _projects_ et un répertoire pour le projet “Hello, world!” à "
 "l'intérieur de ce répertoire _projects_."
 
+# @# TODO: GNU should be added in upstream English text, and also capital MacOS
 #: src/ch01-02-hello-world.md:28
 msgid "For Linux, macOS, and PowerShell on Windows, enter this:"
 msgstr ""
+"Sous GNU/Linux, MacOS et PowerShell sous Windows, écrivez ceci :"
 
 #: src/ch01-02-hello-world.md:37
 msgid "For Windows CMD, enter this:"
 msgstr ""
+"Avec CMD sous Windows, écrivez ceci :"
 
 #: src/ch01-02-hello-world.md:40 src/ch01-02-hello-world.md:41
 msgid "\"%USERPROFILE%\\projects\""
 msgstr ""
 
 #: src/ch01-02-hello-world.md:47
-#, fuzzy
-msgid "<a id=\"writing-and-running-a-rust-program\"></a>"
-msgstr "Les bases d'un programme Rust"
-
+# msgid "<a id=\"writing-and-running-a-rust-program\"></a>"
 #: src/ch01-02-hello-world.md:49
 msgid "Rust Program Basics"
-msgstr ""
+msgstr "Les bases d'un programme Rust"
 
 #: src/ch01-02-hello-world.md:51
-#, fuzzy
 msgid ""
 "Next, make a new source file and call it _main.rs_. Rust files always end "
 "with the _.rs_ extension. If you’re using more than one word in your "
@@ -1728,7 +1678,6 @@ msgstr ""
 "_hello_world.rs_ au lieu de _helloworld.rs_."
 
 #: src/ch01-02-hello-world.md:56
-#, fuzzy
 msgid ""
 "Now open the _main.rs_ file you just created and enter the code in Listing "
 "1-1."
@@ -1736,13 +1685,81 @@ msgstr ""
 "Maintenant, ouvrez le fichier _main.rs_ que vous venez de créer et entrez le "
 "code de l'encart 1-1."
 
+# Desperate attempts to translate filename and title: {{{
+# Tentatives désespérées de traduire le nom de fichier et le titre:
+
+#: src/ch20-01-unsafe-rust.md:515
 #: src/ch01-02-hello-world.md:62 src/ch01-02-hello-world.md:128
 #: src/ch01-03-hello-cargo.md:96 src/ch02-00-guessing-game-tutorial.md:59
-#: src/ch03-03-how-functions-work.md:16 src/ch04-03-slices.md:370
-#: src/ch20-01-unsafe-rust.md:515
-#, fuzzy
-msgid "\"Hello, world!\""
-msgstr "Hello, World!"
+# : src/ch03-03-how-functions-work.md:16 src/ch04-03-slices.md:370
+msgid ""
+"\"Hello, world!\""
+msgstr ""
+"\"Hello, world!\""
+
+# Legend and title of listing: several attempts to translate them:
+
+msgid ""
+"Filename: main.rs"
+msgstr ""
+"Fichier : main.rs"
+
+msgid ""
+"Filename: src/main.rs"
+msgstr ""
+"Fichier : src/main.rs"
+
+# msgid ""
+# "<span class=\"filename\">Filename: main.rs</span>"
+# msgstr ""
+# "<span class=\"filename\">Fichier : main.rs</span>"
+
+msgid "<span class=\"filename\">Filename: main.rs</span>"
+msgstr "<span class=\"filename\">Fichier : main.rs</span>"
+
+
+# Légende:
+
+# "<span class=\"caption\">Encart 1-1 : Un programme qui affiche `Hello, world!"
+# "` </span>"
+
+msgid  "<Listing number=\"1-1\" file-name=\"main.rs\" caption=\"A program that prints `Hello, world!`\">"
+msgstr ""
+"<Listing number=\"1-1\" file-name=\"main.rs\" caption=\"Un programme qui affiche `Hello, world!`\">"
+
+msgid ""
+"A program that prints Hello, world!"
+msgstr ""
+"Un programme qui affiche Hello, world!"
+
+msgid ""
+": A program that prints"
+msgstr ""
+" : Un programme qui affiche"
+
+msgid ""
+"A program that prints `Hello, world!`"
+msgstr ""
+" : Un programme qui affiche `Hello, world!`"
+
+
+# Other tries to translate legend:{{{
+# HTML code output: <figcaption><a href="#listing-1-1">Listing 1-1</a>: A program that prints <code>Hello, world!</code></figcaption>
+msgid "<figcaption><a href=\"#listing-1-1\">Listing 1-1</a>: A program that prints <code>Hello, world!</code></figcaption>"
+msgstr "<figcaption><a href=\"#listing-1-1\">Listing 1-1</a> : un programme qui affiche `Hello, world!<code>Hello, world!</code></figcaption>"
+
+msgid ": A program that prints <code>Hello, world!"
+msgstr " : un programme qui affiche `Hello, world!<code>Hello, world!"
+
+msgid "A program that prints <code>Hello, world!"
+msgstr "un programme qui affiche `Hello, world!<code>Hello, world!"
+
+# }}}
+
+# => all failures
+# @# FIXME find a way to translate these two items ^
+
+# }}}
 
 #: src/ch01-02-hello-world.md:68
 msgid ""
@@ -1756,10 +1773,19 @@ msgstr ""
 
 #: src/ch01-02-hello-world.md:78
 msgid "On Windows, enter the command `.\\main` instead of `./main`:"
-msgstr ""
+msgstr "Sur Windows, écrivez la commande `.\\main.exe` à la place de `./main` :"
+
+# <!--
+# @# TODO there's a misteack in the upstream English version: make a PR to correct it
+# On Windows, enter the command `.\main` instead of `./main`:
+# => add missing .exe extension:
+# On Windows, enter the command `.\main.exe` instead of `./main`:
+#
+# @# TODO Also correct the powershell terminal in the same PR
+# -->
+
 
 #: src/ch01-02-hello-world.md:86
-#, fuzzy
 msgid ""
 "Regardless of your operating system, the string `Hello, world!` should print "
 "to the terminal. If you don’t see this output, refer back to the "
@@ -1768,8 +1794,13 @@ msgid ""
 msgstr ""
 "Peu importe votre système d'exploitation, la chaîne de caractères `Hello, "
 "world!` devrait s'écrire dans votre terminal. Si cela ne s'affiche pas, "
-"référez-vous à la partie [\"dépannage\"][troubleshooting]<!-- ignore --> du "
+"référez-vous à la partie [\"dépannage\"]"
+"(ch01-01-installation.html#troubleshooting)<!-- ignore --> du "
 "chapitre d'installation pour vous aider."
+
+# @# FIXME the URL above points to the "Installation" chapter, but does not
+#          reach the #troubleshooting tag
+
 
 #: src/ch01-02-hello-world.md:91
 msgid ""
@@ -1780,14 +1811,13 @@ msgstr ""
 "un programme Rust. Cela fait de vous un développeur Rust — bienvenue !"
 
 #: src/ch01-02-hello-world.md:96
-#, fuzzy
-msgid "<a id=\"anatomy-of-a-rust-program\"></a>"
-msgstr "Structure d'un programme Rust"
+# msgid "<a id=\"anatomy-of-a-rust-program\"></a>"
 
 #: src/ch01-02-hello-world.md:98
-#, fuzzy
 msgid "The Anatomy of a Rust Program"
-msgstr "L'anatomie d'une fonction de test"
+msgstr "Anatomie d'un programme Rust"
+
+# msgstr "Structure d'un programme Rust"
 
 #: src/ch01-02-hello-world.md:100
 msgid ""
@@ -1824,7 +1854,6 @@ msgstr ""
 "de la fonction, en ajoutant une espace entre les deux."
 
 #: src/ch01-02-hello-world.md:118
-#, fuzzy
 msgid ""
 "Note: If you want to stick to a standard style across Rust projects, you can "
 "use an automatic formatter tool called `rustfmt` to format your code in a "
@@ -1833,17 +1862,19 @@ msgid ""
 "tool with the standard Rust distribution, as `rustc` is, so it should "
 "already be installed on your computer!"
 msgstr ""
-"> Note : si vous souhaitez formater le code de tous vos projets Rust de "
-"manière > standardisée, vous pouvez utiliser un outil de formatage "
-"automatique tel que > `rustfmt` (pour en savoir plus sur `rustfmt`, voir  > "
-"l'[annexe D][devtools]<!-- ignore -->). L'équipe de Rust a intégré cet outil "
-"> dans la distribution standard de Rust, comme pour `rustc` par exemple, "
-"donc  > il est probablement déjà installé sur votre ordinateur ! Consultez "
-"la > documentation en ligne pour en savoir plus."
+"Note : si vous souhaitez formater le code de tous vos projets Rust de "
+"manière standardisée, vous pouvez utiliser un outil de formatage "
+"automatique tel que `rustfmt` (pour en savoir plus sur `rustfmt`, voir "
+"l'[annexe D](appendix-04-useful-development-tools.html)<!-- ignore -->). "
+"L'équipe de Rust a intégré cet outil "
+"dans la distribution standard de Rust, comme pour `rustc` par exemple, "
+"donc  il est probablement déjà installé sur votre ordinateur ! Consultez "
+"la documentation en ligne pour en savoir plus."
 
 #: src/ch01-02-hello-world.md:125
 msgid "The body of the `main` function holds the following code:"
 msgstr ""
+"Le corps de la fonction `main` contient le code suivant :"
 
 #: src/ch01-02-hello-world.md:131
 msgid ""
@@ -1863,6 +1894,13 @@ msgid ""
 "instead of a normal function and that macros don’t always follow the same "
 "rules as functions."
 msgstr ""
+"Premièmement, `println!` fait appel à une macro Rust. S'il avait appelé "
+"une fonction à la place, cela aurait été écrit `println` (sans le `!`). Nous "
+"aborderons les macros Rust plus en détail dans le [chapitre 20]"
+"(ch20-05-macros.html)<!-- ignore -->. Pour l'instant, "
+"vous avez juste à savoir qu'utiliser un `!` signifie que vous utilisez une macro "
+"plutôt qu'une fonction classique. Les macros ne suivent pas toujours les mêmes "
+"règles que les fonctions.  "
 
 #: src/ch01-02-hello-world.md:141
 msgid ""
@@ -1884,13 +1922,11 @@ msgstr ""
 "commencer. La plupart des lignes de Rust se terminent avec un point-virgule."
 
 #: src/ch01-02-hello-world.md:149
-#, fuzzy
-msgid "<a id=\"compiling-and-running-are-separate-steps\"></a>"
-msgstr "Compilation et exécution"
+# msgid "<a id=\"compiling-and-running-are-separate-steps\"></a>"
 
 #: src/ch01-02-hello-world.md:151
 msgid "Compilation and Execution"
-msgstr ""
+msgstr "Compilation et exécution"
 
 #: src/ch01-02-hello-world.md:153
 msgid ""
@@ -1909,6 +1945,7 @@ msgstr ""
 "Avant de lancer un programme Rust, vous devez le compiler en utilisant le "
 "compilateur Rust en entrant la commande `rustc` et en lui passant le nom de "
 "votre fichier source, comme ceci :"
+
 
 #: src/ch01-02-hello-world.md:164
 msgid ""
@@ -1929,7 +1966,6 @@ msgstr ""
 "en utilisant la commande `ls` dans votre terminal :"
 
 #: src/ch01-02-hello-world.md:175
-#, fuzzy
 msgid ""
 "On Linux and macOS, you’ll see two files. With PowerShell on Windows, you’ll "
 "see the same three files that you would see using CMD. With CMD on Windows, "
@@ -1941,7 +1977,6 @@ msgstr ""
 "suivante :"
 
 #: src/ch01-02-hello-world.md:186
-#, fuzzy
 msgid ""
 "This shows the source code file with the _.rs_ extension, the executable "
 "file (_main.exe_ on Windows, but _main_ on all other platforms), and, when "
@@ -1953,6 +1988,23 @@ msgstr ""
 "plateformes) et, quand on utilise Windows, un fichier qui contient des "
 "informations de débogage avec l'extension _.pdb_. Dans ce répertoire, vous "
 "pouvez exécuter le fichier _main_ ou _main.exe_ comme ceci :"
+
+
+# Terminal output: {{{
+msgid "console $ ./main # or .\\main.exe on Windows"
+msgstr "console $ ./main # ou .\\main.exe sous Windows"
+
+msgid ""
+"$ ./main # or .\\main on Windows"
+msgstr ""
+"$ ./main # ou .\\main sous Windows"
+
+msgid "on Windows"
+msgstr "sous Windows"
+
+# @# FIXME this does not work as expected, the translation is not rendered in the
+#          HTML output
+# }}}
 
 #: src/ch01-02-hello-world.md:195
 msgid ""
@@ -1998,6 +2050,13 @@ msgstr ""
 "allons découvrir l'outil Cargo, qui va vous aider à écrire des programmes "
 "Rust à l'épreuve de la réalité."
 
+# An untranslated string found in HTML output, not sure where it belongs to:
+msgid "Hello, World! - The Rust Programming Language"
+msgstr "Hello, World! - Le langage de programmation Rust"
+
+# }}}
+# Hello Cargo!: {{{
+
 #: src/ch01-03-hello-cargo.md:3
 msgid ""
 "Cargo is Rust’s build system and package manager. Most Rustaceans use this "
@@ -2014,7 +2073,6 @@ msgstr ""
 "votre code.)"
 
 #: src/ch01-03-hello-cargo.md:9
-#, fuzzy
 msgid ""
 "The simplest Rust programs, like the one we’ve written so far, don’t have "
 "any dependencies. If we had built the “Hello, world!” project with Cargo, it "
@@ -2031,7 +2089,6 @@ msgstr ""
 "facile à faire."
 
 #: src/ch01-03-hello-cargo.md:15
-#, fuzzy
 msgid ""
 "Because the vast majority of Rust projects use Cargo, the rest of this book "
 "assumes that you’re using Cargo too. Cargo comes installed with Rust if you "
@@ -2043,9 +2100,9 @@ msgstr ""
 "Comme la large majorité des projets Rust utilisent Cargo, la suite de ce "
 "livre va supposer que vous utilisez aussi Cargo. Cargo s'installe avec Rust "
 "si vous avez utilisé l'installateur officiel présenté dans la section "
-"[“Installation”][installation]<!-- ignore -->. Si vous avez installé Rust "
-"autrement, vérifiez que Cargo est installé en utilisant la commande suivante "
-"dans votre terminal :"
+"[“Installation”](ch01-01-installation.html#installation)<!-- ignore -->. "
+"Si vous avez installé Rust autrement, vérifiez que Cargo est installé en "
+"utilisant la commande suivante dans votre terminal :"
 
 #: src/ch01-03-hello-cargo.md:26
 msgid ""
@@ -2059,7 +2116,6 @@ msgstr ""
 "comment installer séparément Cargo."
 
 #: src/ch01-03-hello-cargo.md:30
-#, fuzzy
 msgid "Creating a Project with Cargo"
 msgstr "Créer un projet avec Cargo"
 
@@ -2076,7 +2132,6 @@ msgstr ""
 "sur n'importe quel système d'exploitation, lancez les commandes suivantes :"
 
 #: src/ch01-03-hello-cargo.md:42
-#, fuzzy
 msgid ""
 "The first command creates a new directory and project called _hello_cargo_. "
 "We’ve named our project _hello_cargo_, and Cargo creates its files in a "
@@ -2109,15 +2164,14 @@ msgstr ""
 "utilisant `cargo new --vcs=git`."
 
 #: src/ch01-03-hello-cargo.md:54
-#, fuzzy
 msgid ""
 "Note: Git is a common version control system. You can change `cargo new` to "
 "use a different version control system or no version control system by using "
 "the `--vcs` flag. Run `cargo new --help` to see the available options."
 msgstr ""
-"> Note : Git est un système de gestion de versions très répandu. Vous pouvez "
-"> changer `cargo new` pour utiliser un autre système de gestion de versions "
-"> ou ne pas en utiliser du tout en écrivant le drapeau `--vcs`. > Lancez "
+"Note : Git est un système de gestion de versions très répandu. Vous pouvez "
+"changer `cargo new` pour utiliser un autre système de gestion de versions "
+"ou ne pas en utiliser du tout en écrivant le drapeau `--vcs`. Lancez "
 "`cargo new --help` pour en savoir plus sur les options disponibles."
 
 #: src/ch01-03-hello-cargo.md:58
@@ -2140,14 +2194,18 @@ msgid ""
 "```"
 msgstr ""
 
+# FIXEME: legend of listing is not translated:
+msgid "Listing 1-2: Contents of Cargo.toml generated by `cargo new`"
+msgstr "Encart 1-2 : Contenu de Cargo.toml généré par `cargo new`"
+
+
 #: src/ch01-03-hello-cargo.md:74
-#, fuzzy
 msgid ""
 "This file is in the [_TOML_](https://toml.io)<!-- ignore --> (_Tom’s "
 "Obvious, Minimal Language_) format, which is Cargo’s configuration format."
 msgstr ""
-"Ce fichier est au format [_TOML_][toml]<!-- ignore --> (_Tom’s Obvious, "
-"Minimal Language_), qui est le format de configuration de Cargo."
+"Ce fichier est au format [_TOML_](https://toml.io)<!-- ignore --> (_Tom’s "
+" Obvious, Minimal Language_), qui est le format de configuration de Cargo."
 
 #: src/ch01-03-hello-cargo.md:77
 msgid ""
@@ -2161,7 +2219,6 @@ msgstr ""
 "supplémentaires."
 
 #: src/ch01-03-hello-cargo.md:81
-#, fuzzy
 msgid ""
 "The next three lines set the configuration information Cargo needs to "
 "compile your program: the name, the version, and the edition of Rust to use. "
@@ -2171,7 +2228,7 @@ msgstr ""
 "Les trois lignes suivantes définissent les informations de configuration "
 "dont Cargo a besoin pour compiler votre programme : le nom, la version, et "
 "l'édition de Rust à utiliser. Nous aborderons la clé `edition` dans "
-"l'[annexe E][appendix-e]<!-- ignore -->."
+"l'[annexe E](appendix-05-editions.html)<!-- ignore -->."
 
 #: src/ch01-03-hello-cargo.md:85
 msgid ""
@@ -2190,6 +2247,7 @@ msgstr ""
 #: src/ch01-03-hello-cargo.md:90
 msgid "Now open _src/main.rs_ and take a look:"
 msgstr ""
+"Maintenant, ouvrez _src/main.rs_ et jetez-y un coup d'œil :"
 
 #: src/ch01-03-hello-cargo.md:92 src/ch02-00-guessing-game-tutorial.md:55
 #: src/ch02-00-guessing-game-tutorial.md:882
@@ -2219,11 +2277,14 @@ msgstr ""
 #: src/appendix-01-keywords.md:92 src/appendix-01-keywords.md:114
 #: src/appendix-04-useful-development-tools.md:34
 #: src/appendix-04-useful-development-tools.md:74
+# msgid "<span class=\"filename\">Filename: src/main.rs</span>"
+# msgid "Filename: src/main.rs"
+# msgstr "Fichier : src/main.rs"
+# FIXED:
 msgid "<span class=\"filename\">Filename: src/main.rs</span>"
-msgstr ""
+msgstr "<span class=\"filename\">Fichier : src/main.rs</span>"
 
 #: src/ch01-03-hello-cargo.md:100
-#, fuzzy
 msgid ""
 "Cargo has generated a “Hello, world!” program for you, just like the one we "
 "wrote in Listing 1-1! So far, the differences between our project and the "
@@ -2253,7 +2314,6 @@ msgstr ""
 "place."
 
 #: src/ch01-03-hello-cargo.md:111
-#, fuzzy
 msgid ""
 "If you started a project that doesn’t use Cargo, as we did with the “Hello, "
 "world!” project, you can convert it to a project that does use Cargo. Move "
@@ -2268,7 +2328,6 @@ msgstr ""
 "_Cargo.toml_, vous pouvez lancer `cargo init`, qui le créera automatiquement."
 
 #: src/ch01-03-hello-cargo.md:117
-#, fuzzy
 msgid "Building and Running a Cargo Project"
 msgstr "Compiler et exécuter un projet Cargo"
 
@@ -2305,6 +2364,25 @@ msgstr ""
 "une compilation de débogage, Cargo place le binaire dans un répertoire nommé "
 "_debug_. Vous pouvez lancer l'exécutable avec cette commande :"
 
+# Attempt to translate a comment: {{{
+msgid ""
+"$ ./target/debug/hello_cargo # or .\\target\\debug\\hello_cargo.exe on Windows\n"
+"Hello, world!"
+msgstr ""
+"$ ./target/debug/hello_cargo # ou .\\target\\debug\\hello_cargo.exe sous Windows\n"
+"Hello, world!"
+
+msgid ""
+"# or .\\target\\debug\\hello_cargo.exe on Windows"
+msgstr ""
+"# ou .\\target\\debug\\hello_cargo.exe sous Windows"
+
+# => all failures
+# @# FIXME find a way to translate this
+
+
+# }}}
+
 #: src/ch01-03-hello-cargo.md:139
 msgid ""
 "If all goes well, `Hello, world!` should print to the terminal. Running "
@@ -2323,7 +2401,6 @@ msgstr ""
 "manuellement ; Cargo va gérer son contenu pour vous."
 
 #: src/ch01-03-hello-cargo.md:146
-#, fuzzy
 msgid ""
 "We just built a project with `cargo build` and ran it with `./target/debug/"
 "hello_cargo`, but we can also use `cargo run` to compile the code and then "
@@ -2340,6 +2417,10 @@ msgid ""
 "build` and then use the whole path to the binary, so most developers use "
 "`cargo run`."
 msgstr ""
+"Il est plus pratique d'utiliser `cargo run` que d'avoir à se souvenir "
+"d'exécuter `cargo build` et d'ensuite utiliser le chemin complet vers "
+"l'exécutable ; c'est pourquoi la plupart des développeurs utilisent "
+"`cargo run`."
 
 #: src/ch01-03-hello-cargo.md:161
 msgid ""
@@ -2385,7 +2466,6 @@ msgid ""
 msgstr ""
 
 #: src/ch01-03-hello-cargo.md:184
-#, fuzzy
 msgid ""
 "Why would you not want an executable? Often, `cargo check` is much faster "
 "than `cargo build` because it skips the step of producing an executable. If "
@@ -2408,30 +2488,36 @@ msgstr ""
 #: src/ch01-03-hello-cargo.md:192
 msgid "Let’s recap what we’ve learned so far about Cargo:"
 msgstr ""
+"Récapitulons ce que nous avons appris sur Cargo :"
 
 #: src/ch01-03-hello-cargo.md:194
 msgid "We can create a project using `cargo new`."
 msgstr ""
+"Nous pouvons créer un projet en utilisant `cargo new`."
 
 #: src/ch01-03-hello-cargo.md:195
 msgid "We can build a project using `cargo build`."
 msgstr ""
+"Nous pouvons compiler un projet en utilisant `cargo build`."
 
 #: src/ch01-03-hello-cargo.md:196
 msgid "We can build and run a project in one step using `cargo run`."
 msgstr ""
+"Nous pouvons compiler puis exécuter un projet en une seule fois en utilisant   `cargo run`."
 
 #: src/ch01-03-hello-cargo.md:197
 msgid ""
 "We can build a project without producing a binary to check for errors using "
 "`cargo check`."
 msgstr ""
+"Nous pouvons compiler un projet sans produire de binaire afin de vérifier   l'existence d'erreurs en utilisant `cargo check`."
 
 #: src/ch01-03-hello-cargo.md:199
 msgid ""
 "Instead of saving the result of the build in the same directory as our code, "
 "Cargo stores it in the _target/debug_ directory."
 msgstr ""
+"Au lieu d'enregistrer le résultat de la compilation dans le même répertoire   que votre code, Cargo l'enregistre dans le répertoire _target/debug_."
 
 #: src/ch01-03-hello-cargo.md:202
 msgid ""
@@ -2445,7 +2531,6 @@ msgstr ""
 "macOS par rapport à Windows."
 
 #: src/ch01-03-hello-cargo.md:206
-#, fuzzy
 msgid "Building for Release"
 msgstr "Compiler pour diffuser"
 
@@ -2482,6 +2567,7 @@ msgstr ""
 #: src/ch01-03-hello-cargo.md:222
 msgid "Leveraging Cargo’s Conventions"
 msgstr ""
+"Tirer parti des conventions de Cargo"
 
 #: src/ch01-03-hello-cargo.md:224
 msgid ""
@@ -2510,13 +2596,12 @@ msgstr ""
 "Git, vous déplacer dans le répertoire projet et compiler :"
 
 #: src/ch01-03-hello-cargo.md:240
-#, fuzzy
 msgid ""
 "For more information about Cargo, check out [its documentation](https://"
 "doc.rust-lang.org/cargo/)."
 msgstr ""
 "Pour plus d'informations à propos de Cargo, vous pouvez consulter [sa "
-"documentation][cargo]."
+"documentation](https://doc.rust-lang.org/cargo/)."
 
 #: src/ch01-03-hello-cargo.md:242 src/ch02-00-guessing-game-tutorial.md:1313
 #: src/ch03-05-control-flow.md:554 src/ch04-03-slices.md:504
@@ -2531,12 +2616,10 @@ msgstr ""
 #: src/ch17-06-futures-tasks-threads.md:106
 #: src/ch18-03-oo-design-patterns.md:985 src/ch19-03-pattern-syntax.md:892
 #: src/ch20-05-macros.md:586 src/ch21-03-graceful-shutdown-and-cleanup.md:748
-#, fuzzy
 msgid "Summary"
 msgstr "Résumé"
 
 #: src/ch01-03-hello-cargo.md:244
-#, fuzzy
 msgid ""
 "You’re already off to a great start on your Rust journey! In this chapter, "
 "you learned how to:"
@@ -2547,22 +2630,27 @@ msgstr ""
 #: src/ch01-03-hello-cargo.md:247
 msgid "Install the latest stable version of Rust using `rustup`."
 msgstr ""
+"Installer la dernière version stable de Rust en utilisant `rustup`."
 
 #: src/ch01-03-hello-cargo.md:248
 msgid "Update to a newer Rust version."
 msgstr ""
+"Mettre à jour Rust vers une nouvelle version."
 
 #: src/ch01-03-hello-cargo.md:249
 msgid "Open locally installed documentation."
 msgstr ""
+"Ouvrir la documentation installée en local."
 
 #: src/ch01-03-hello-cargo.md:250
 msgid "Write and run a “Hello, world!” program using `rustc` directly."
 msgstr ""
+"Écrire et exécuter un programme “Hello, world!” en utilisant directement `rustc`."
 
 #: src/ch01-03-hello-cargo.md:251
 msgid "Create and run a new project using the conventions of Cargo."
 msgstr ""
+"Créer et exécuter un nouveau projet en utilisant les conventions de Cargo."
 
 #: src/ch01-03-hello-cargo.md:253
 msgid ""
@@ -2577,8 +2665,12 @@ msgstr ""
 "apprendre comment les principes de programmation de base fonctionnent avec "
 "Rust, rendez-vous au chapitre 3, puis revenez au chapitre 2."
 
+# }}}
+# }}}
+# Chapitre 2: {{{
+# Programmer le jeu du plus ou du moins:
+
 #: src/ch02-00-guessing-game-tutorial.md:3
-#, fuzzy
 msgid ""
 "Let’s jump into Rust by working through a hands-on project together! This "
 "chapter introduces you to a few common Rust concepts by showing you how to "
@@ -2596,7 +2688,6 @@ msgstr ""
 "n'allez exercer que les principes de base."
 
 #: src/ch02-00-guessing-game-tutorial.md:10
-#, fuzzy
 msgid ""
 "We’ll implement a classic beginner programming problem: a guessing game. "
 "Here’s how it works: The program will generate a random integer between 1 "
@@ -2614,7 +2705,6 @@ msgstr ""
 "message de félicitations et se fermera."
 
 #: src/ch02-00-guessing-game-tutorial.md:16
-#, fuzzy
 msgid "Setting Up a New Project"
 msgstr "Mise en place d'un nouveau projet"
 
@@ -2627,6 +2717,47 @@ msgstr ""
 "vous avez créé au chapitre 1 et utilisez Cargo pour créer votre projet, "
 "comme ceci :"
 
+# # Terminal output: {{{
+#
+# # msgid "$ cargo new guessing_game"
+# # msgstr "$ cargo new jeu_du_plus_ou_du_moins"
+#
+# # msgid ""
+# # "$ cargo new guessing_game\n"
+# # "$ cd guessing_game\n"
+# # msgstr ""
+# # "$ cargo jeu_du_plus_ou_du_moins\n"
+# # "$ cd jeu_du_plus_ou_du_moins\n"
+#
+# # msgid ""
+# # "```console\n"
+# # "$ cargo new guessing_game\n"
+# # "$ cd guessing_game\n"
+# # "```"
+# # msgstr ""
+# # "```console\n"
+# # "$ cargo jeu_du_plus_ou_du_moins\n"
+# # "$ cd jeu_du_plus_ou_du_moins\n"
+# # "```"
+#
+# # "```"
+# # "```toml\n"
+# # "[package]\n"
+# # "name = \"jeu_du_plus_ou_du_moins\"\n"
+# # "version = \"0.1.0\"\n"
+# # "edition = \"2024\"\n"
+# # "\n"
+# # "[dependencies]\n"
+# # "```"
+#
+# # @# FIXME: the terminal translations above do not seem to work as expected;
+# #        therefore, terminal outputs and text do not match
+
+# NOTE: For the time being, leave console and code untranslated, and revert
+#       translations in text body, until a solution to translate code can be
+#       found.
+# }}}
+
 #: src/ch02-00-guessing-game-tutorial.md:26
 msgid ""
 "The first command, `cargo new`, takes the name of the project "
@@ -2634,12 +2765,18 @@ msgid ""
 "new project’s directory."
 msgstr ""
 "La première commande, `cargo new`, prend comme premier argument le nom de "
-"notre projet (`jeu_du_plus_ou_du_moins`). La seconde commande nous déplace "
+"notre projet (`"
+"guessing_game"
+"`). La seconde commande nous déplace "
 "dans le répertoire de notre nouveau projet créé par Cargo."
+
+# "jeu_du_plus_ou_du_moins
+# TODO revert to original French translation, when issue https://github.com/rust-lang-translations/translations/issues/32 is solved => un-untranslate msgstr above by uncommenting it and moving it up
+
 
 #: src/ch02-00-guessing-game-tutorial.md:30
 msgid "Look at the generated _Cargo.toml_ file:"
-msgstr ""
+msgstr "Regardons le fichier Cargo.toml qui a été généré :"
 
 #: src/ch02-00-guessing-game-tutorial.md:41
 #: src/ch02-00-guessing-game-tutorial.md:491 src/ch14-01-release-profiles.md:37
@@ -2649,7 +2786,24 @@ msgstr ""
 #: src/ch14-02-publishing-to-crates-io.md:474
 #: src/ch14-03-cargo-workspaces.md:33 src/ch14-03-cargo-workspaces.md:113
 msgid "<span class=\"filename\">Filename: Cargo.toml</span>"
-msgstr ""
+msgstr "<span class=\"filename\">Fichier : Cargo.toml</span>"
+
+msgid "<span class=\"filename\">Filename: src/Cargo.toml</span>"
+msgstr "<span class=\"filename\">Fichier : src/Cargo.toml</span>"
+
+
+# @# TODO: the previous legend is properly translated: apply the same method for
+#          previous cases which failed
+# @# FIXME: for some reason, the previous legend is no longer translated...
+# Desperate tries:{{{
+
+msgid "<span class=\"file-name\">Filename: Cargo.toml</span>"
+msgstr "<span class=\"file-name\">Fichier : Cargo.toml</span>"
+
+msgid "<p><span class=\"filename\">Filename: Cargo.toml</span></p>"
+msgstr "<p><span class=\"file-name\">Fichier : Cargo.toml</span></p>"
+
+# }}}
 
 #: src/ch02-00-guessing-game-tutorial.md:43
 msgid ""
@@ -2663,13 +2817,25 @@ msgid ""
 "```"
 msgstr ""
 
+# "```toml\n"
+# "[package]\n"
+# "name = \"jeu_du_plus_ou_du_moins\"\n"
+# "version = \"0.1.0\"\n"
+# "edition = \"2024\"\n"
+# "\n"
+# "[dependencies]\n"
+# "```"
+# TODO revert to original French translation, when issue https://github.com/rust-lang-translations/translations/issues/32 is solved => un-untranslate msgstr above by uncommenting it and moving it up
+
+
 #: src/ch02-00-guessing-game-tutorial.md:52
 msgid ""
 "As you saw in Chapter 1, `cargo new` generates a “Hello, world!” program for "
 "you. Check out the _src/main.rs_ file:"
 msgstr ""
 "Comme vous l'avez expérimenté dans le chapitre 1, `cargo new` génère un "
-"programme _“Hello, world!”_ pour vous. Ouvrez le fichier _src/main.rs_ :"
+"programme “Hello, world!” pour vous. Ouvrez le fichier _src/main.rs_ :"
+
 
 #: src/ch02-00-guessing-game-tutorial.md:63
 msgid ""
@@ -2690,6 +2856,16 @@ msgid ""
 "```"
 msgstr ""
 
+# "```console\n"
+# "$ cargo run\n"
+# "   Compiling jeu_du_plus_ou_du_moins v0.1.0 (file:///projects/jeu_du_plus_ou_du_moins)\n"
+# "    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.08s\n"
+# "     Running `target/debug/jeu_du_plus_ou_du_moins`\n"
+# "Hello, world!\n"
+# "```"
+# TODO revert to original French translation, when issue https://github.com/rust-lang-translations/translations/issues/32 is solved => un-untranslate msgstr above by uncommenting it and moving it up
+
+
 #: src/ch02-00-guessing-game-tutorial.md:74
 msgid ""
 "The `run` command comes in handy when you need to rapidly iterate on a "
@@ -2704,9 +2880,10 @@ msgstr ""
 msgid ""
 "Reopen the _src/main.rs_ file. You’ll be writing all the code in this file."
 msgstr ""
+"Ouvrez à nouveau le fichier src/main.rs. C'est dans ce fichier que nous "
+"écrirons la totalité de notre code."
 
 #: src/ch02-00-guessing-game-tutorial.md:80
-#, fuzzy
 msgid "Processing a Guess"
 msgstr "Traitement d'un nombre saisi"
 
@@ -2743,7 +2920,7 @@ msgstr ""
 #: src/ch09-03-to-panic-or-not-to-panic.md:166
 #: src/ch20-03-advanced-types.md:237
 msgid "\"Guess the number!\""
-msgstr ""
+msgstr "\"Devinez le nombre !\""
 
 #: src/ch02-00-guessing-game-tutorial.md:95
 #: src/ch02-00-guessing-game-tutorial.md:120
@@ -2766,7 +2943,15 @@ msgstr ""
 #: src/ch09-03-to-panic-or-not-to-panic.md:173
 #: src/ch20-03-advanced-types.md:244
 msgid "\"Please input your guess.\""
-msgstr ""
+msgstr "\"Veuillez entrer un nombre.\""
+
+# Attempt to translate a variable name located inside the code:
+msgid "guess"
+msgstr "supposition"
+
+# @# FIXME how to translate variables in code, so as to match the text; the
+#       legacy French translation has variables, traits, structs, etc. names
+#       translated in French, which is very pedagogic.
 
 #: src/ch02-00-guessing-game-tutorial.md:101
 #: src/ch02-00-guessing-game-tutorial.md:126
@@ -2790,7 +2975,7 @@ msgstr ""
 #: src/ch09-03-to-panic-or-not-to-panic.md:179
 #: src/ch20-03-advanced-types.md:252
 msgid "\"Failed to read line\""
-msgstr ""
+msgstr "\"Échec de la lecture de l'entrée utilisateur\""
 
 #: src/ch02-00-guessing-game-tutorial.md:103
 #: src/ch02-00-guessing-game-tutorial.md:128
@@ -2812,7 +2997,11 @@ msgstr ""
 #: src/ch07-04-bringing-paths-into-scope-with-the-use-keyword.md:411
 #: src/ch20-03-advanced-types.md:259
 msgid "\"You guessed: {guess}\""
-msgstr ""
+msgstr "\"Votre nombre : {guess}\""
+
+# msgstr "\"Votre nombre : {supposition}\""
+# TODO revert to original French translation, when issue https://github.com/rust-lang-translations/translations/issues/32 is solved => un-untranslate msgstr above by uncommenting it and moving it up
+
 
 #: src/ch02-00-guessing-game-tutorial.md:109
 msgid ""
@@ -2828,7 +3017,6 @@ msgstr ""
 "la bibliothèque standard, connue sous le nom de `std` :"
 
 #: src/ch02-00-guessing-game-tutorial.md:132
-#, fuzzy
 msgid ""
 "By default, Rust has a set of items defined in the standard library that it "
 "brings into the scope of every program. This set is called the _prelude_, "
@@ -2838,7 +3026,9 @@ msgstr ""
 "Par défaut, Rust importe dans la portée de tous les programmes un ensemble "
 "de fonctionnalités définies dans la bibliothèque standard. Cela s'appelle "
 "_l'étape préliminaire (the prelude)_, et vous pouvez en savoir plus dans sa "
-"[documentation de la bibliothèque standard][prelude]<!-- ignore -->."
+"[documentation de la bibliothèque standard](../std/prelude/index.html)."
+
+# @# FIXME: URL above (../std/prelude/index.html) points to a 404 page
 
 #: src/ch02-00-guessing-game-tutorial.md:136
 msgid ""
@@ -2887,13 +3077,21 @@ msgstr ""
 "demande au joueur d'entrer un nombre."
 
 #: src/ch02-00-guessing-game-tutorial.md:189
-#, fuzzy
 msgid "Storing Values with Variables"
 msgstr "Enregistrer des données dans des variables"
 
 #: src/ch02-00-guessing-game-tutorial.md:191
 msgid "Next, we’ll create a _variable_ to store the user input, like this:"
 msgstr ""
+"Ensuite, on crée une _variable_ pour stocker la saisie de l'utilisateur, comme "
+"ceci :"
+
+# @# FIXME translate variables' names in code:
+# Attempt to translate a variable name located inside the code:
+msgid  "    let mut guess = String::new();"
+msgstr "    let mut supposition = String::new();"
+
+
 
 #: src/ch02-00-guessing-game-tutorial.md:211
 msgid ""
@@ -2905,8 +3103,15 @@ msgstr ""
 "dans cette petite ligne. Nous utilisons l'instruction `let` pour créer la "
 "variable. Voici un autre exemple :"
 
+# @# FIXME translate variables' names in code:
+msgid "let apples = 5;\n"
+msgstr ""
+
+# let pommes = 5;\n"
+# TODO revert to original French translation, when issue https://github.com/rust-lang-translations/translations/issues/32 is solved => un-untranslate msgstr above by uncommenting it and moving it up
+
+
 #: src/ch02-00-guessing-game-tutorial.md:218
-#, fuzzy
 msgid ""
 "This line creates a new variable named `apples` and binds it to the value "
 "`5`. In Rust, variables are immutable by default, meaning once we give the "
@@ -2915,36 +3120,41 @@ msgid ""
 "mutability.html#variables-and-mutability)<!-- ignore --> section in Chapter "
 "3. To make a variable mutable, we add `mut` before the variable name:"
 msgstr ""
-"Cette ligne permet de créer une nouvelle variable nommée `pommmes` et à lui "
+"Cette ligne permet de créer une nouvelle variable nommée `"
+"apples"
+"` et à lui "
 "assigner la valeur `5`. Par défaut en Rust, les variables sont immuables, ce "
 "qui implique qu'à partir du moment où l'on donne une valeur à une variable, "
 "cette valeur ne changera pas. Nous aborderons plus en détail cette notion "
-"dans la section [“Variables et Mutabilité”][variables-and-mutability]<!-- "
-"ignore -->  au chapitre 3. Pour rendre une variable mutable _(c'est-à-dire "
-"modifiable)_, nous ajoutons `mut` devant le nom de la variable :"
+"dans la section [“Variables et Mutabilité”]"
+"(ch03-01-variables-and-mutability.html#variables-and-mutability)"
+" <!-- ignore -->  au chapitre 3. Pour rendre une variable mutable "
+"_(c'est-à-dire modifiable)_, nous ajoutons `mut` devant le nom de la variable :"
+
+# "pommmes"
+# TODO revert to original French translation, when issue https://github.com/rust-lang-translations/translations/issues/32 is solved => un-untranslate msgstr above by uncommenting it and moving it up
+
 
 #: src/ch02-00-guessing-game-tutorial.md:226
 msgid "// immutable\n"
-msgstr ""
+msgstr "// immuable\n"
 
 #: src/ch02-00-guessing-game-tutorial.md:227
 msgid "// mutable\n"
-msgstr ""
+msgstr "// mutable, modifiable"
 
 #: src/ch02-00-guessing-game-tutorial.md:230
-#, fuzzy
 msgid ""
 "Note: The `//` syntax starts a comment that continues until the end of the "
 "line. Rust ignores everything in comments. We’ll discuss comments in more "
 "detail in [Chapter 3](ch03-04-comments.html)<!-- ignore -->."
 msgstr ""
-"> Remarque : La syntaxe `//` permet de commencer un commentaire qui s'étend "
-"> jusqu'à la fin de la ligne. Rust ignore tout ce qu'il y a dans un > "
-"commentaire. Nous verrons plus en détail les commentaires dans le > "
-"[chapitre 3][comments]<!-- ignore -->."
+"Remarque : La syntaxe `//` permet de commencer un commentaire qui s'étend "
+"jusqu'à la fin de la ligne. Rust ignore tout ce qu'il y a dans un "
+"commentaire. Nous verrons plus en détail les commentaires dans le "
+"[chapitre 3](ch03-04-comments.html)<!-- ignore -->."
 
 #: src/ch02-00-guessing-game-tutorial.md:234
-#, fuzzy
 msgid ""
 "Returning to the guessing game program, you now know that `let mut guess` "
 "will introduce a mutable variable named `guess`. The equal sign (`=`) tells "
@@ -2956,14 +3166,27 @@ msgid ""
 "text."
 msgstr ""
 "Lorsque vous revenez sur le jeu du plus ou du moins, vous comprenez donc "
-"maintenant que la ligne `let mut supposition` permet de créer une variable "
-"mutable nommée `supposition`. Le signe égal (`=`) indique à Rust que nous "
+"maintenant que la ligne `let mut "
+"guess"
+"` permet de créer une variable "
+"mutable nommée `"
+"guess"
+"`. Le signe égal (`=`) indique à Rust que nous "
 "voulons désormais lier quelquechose à la variable. À la droite du signe "
-"égal, nous avons la valeur liée à `supposition`, qui est ici le résultat de "
+"égal, nous avons la valeur liée à `"
+"guess"
+"`, qui est ici le résultat de "
 "l'utilisation de `String::new`, qui est une fonction qui retourne une "
-"nouvelle instance de `String`. [`String`][string]<!-- ignore --> est un type "
+"nouvelle instance de `String`. [`String`](../std/string/struct.String.html)"
+"<!-- ignore --> est un type "
 "de chaîne de caractères fourni par la bibliothèque standard, qui est une "
 "portion de texte encodée en UTF-8 et dont la longueur peut augmenter."
+
+# "supposition"
+# "supposition"
+# "supposition"
+# TODO revert to original French translation, when issue https://github.com/rust-lang-translations/translations/issues/32 is solved => un-untranslate msgstr above by uncommenting it and moving it up
+
 
 #: src/ch02-00-guessing-game-tutorial.md:242
 msgid ""
@@ -2986,12 +3209,17 @@ msgid ""
 "variable that is currently bound to a new, empty instance of a `String`. "
 "Whew!"
 msgstr ""
-"En définitif, la ligne `let mut supposition = String::new();` crée une "
+"En définitif, la ligne `let mut "
+"guess"
+" = String::new();` crée une "
 "nouvelle variable mutable qui contient une nouvelle chaîne de caractères "
 "vide, une instance de `String`. Ouf !"
 
+# "supposition"
+# TODO revert to original French translation, when issue https://github.com/rust-lang-translations/translations/issues/32 is solved => un-untranslate msgstr above by uncommenting it and moving it up
+
+
 #: src/ch02-00-guessing-game-tutorial.md:251
-#, fuzzy
 msgid "Receiving User Input"
 msgstr "Recueillir la saisie utilisateur"
 
@@ -3008,7 +3236,6 @@ msgstr ""
 "`io`, qui va nous permettre de traiter la saisie utilisateur :"
 
 #: src/ch02-00-guessing-game-tutorial.md:276
-#, fuzzy
 msgid ""
 "If we hadn’t imported the `io` module with `use std::io;` at the beginning "
 "of the program, we could still use the function by writing this function "
@@ -3017,14 +3244,14 @@ msgid ""
 "type that represents a handle to the standard input for your terminal."
 msgstr ""
 "Si nous n'avions pas importé le module `io` avec `use std::io` au début du "
-"programme, on aurait toujours pu utiliser la fonction en écrivant l'appel à "
+"programme, nous aurions toujours pu utiliser la fonction en écrivant l'appel à "
 "la fonction de cette manière : `std::io::stdin`. La fonction `stdin` "
-"retourne une instance de [`std::io::Stdin`][iostdin]<!-- ignore -->, qui est "
+"retourne une instance de [`std::io::Stdin`](../std/io/struct.Stdin.html)"
+"<!-- ignore -->, qui est "
 "un type qui représente une référence abstraite *(handle)* vers l'entrée "
 "standard du terminal dans lequel vous avez lancé le programme."
 
 #: src/ch02-00-guessing-game-tutorial.md:282
-#, fuzzy
 msgid ""
 "Next, the line `.read_line(&mut guess)` calls the [`read_line`](../std/io/"
 "struct.Stdin.html#method.read_line)<!--\n"
@@ -3036,15 +3263,24 @@ msgid ""
 "as an argument. The string argument needs to be mutable so that the method "
 "can change the string’s content."
 msgstr ""
-"Ensuite, la ligne `.read_line(&mut supposition)` appelle la méthode "
-"[`read_line`][read_line]<!-- ignore --> sur l'entrée standard afin d'obtenir "
-"la saisie utilisateur. Nous passons aussi `&mut supposition` en argument de "
+"Ensuite, la ligne `.read_line(&mut "
+"guess"
+")` appelle la méthode "
+"[`read_line`](../std/io/struct.Stdin.html#method.read_line)"
+"<!-- ignore --> sur l'entrée standard afin d'obtenir "
+"la saisie utilisateur. Nous passons aussi `&mut "
+"guess"
+"` en argument de "
 "`read_line` pour lui indiquer dans quelle chaîne de caractère il faut "
 "stocker la saisie utilisateur. Le but final de `read_line` est de récupérer "
 "tout ce que l'utilisateur écrit dans l'entrée standard et de l'ajouter à la "
 "fin d'une chaîne de caractères (sans écraser son contenu) ; c'est pourquoi "
 "nous passons cette chaîne de caractères en argument. Cet argument doit être "
 "mutable pour que `read_line` puisse en modifier le contenu."
+
+# "supposition"
+# "supposition"
+# TODO revert to original French translation, when issue https://github.com/rust-lang-translations/translations/issues/32 is solved => un-untranslate msgstr above by uncommenting it and moving it up
 
 #: src/ch02-00-guessing-game-tutorial.md:291
 msgid ""
@@ -3066,16 +3302,24 @@ msgstr ""
 "nécessaire de trop s'apesantir sur les références pour terminer ce "
 "programme. Pour l'instant, tout ce que vous devez savoir est que, comme les "
 "variables, les références sont immuables par défaut. D'où la nécessité "
-"d'écrire `&mut supposition` au lieu de `&supposition` pour la rendre "
+"d'écrire `&mut "
+"guess"
+"` au lieu de `&"
+"guess"
+"` pour la rendre "
 "mutable. (Le chapitre 4 expliquera plus en détail les références.)"
 
-#: src/ch02-00-guessing-game-tutorial.md:303
-#, fuzzy
-msgid "<a id=\"handling-potential-failure-with-the-result-type\"></a>"
-msgstr "<a id=\"gérer-les-erreurs-potentielles-avec-result\"></a>"
+# "supposition"
+# "supposition"
+# TODO revert to original French translation, when issue https://github.com/rust-lang-translations/translations/issues/32 is solved => un-untranslate msgstr above by uncommenting it and moving it up
+
+
+# #: src/ch02-00-guessing-game-tutorial.md:303
+# #, fuzzy
+# msgid "<a id=\"handling-potential-failure-with-the-result-type\"></a>"
+# msgstr "<a id=\"gérer-les-erreurs-potentielles-avec-result\"></a>"
 
 #: src/ch02-00-guessing-game-tutorial.md:305
-#, fuzzy
 msgid "Handling Potential Failure with `Result`"
 msgstr "Gérer les erreurs potentielles avec `Result`"
 
@@ -3093,6 +3337,7 @@ msgstr ""
 #: src/ch02-00-guessing-game-tutorial.md:329
 msgid "We could have written this code as:"
 msgstr ""
+"Nous aurions pu écrire ce code de cette manière :"
 
 #: src/ch02-00-guessing-game-tutorial.md:335
 msgid ""
@@ -3108,7 +3353,6 @@ msgstr ""
 "`.nom_de_la_methode()`. Maintenant, voyons à quoi sert cette ligne."
 
 #: src/ch02-00-guessing-game-tutorial.md:340
-#, fuzzy
 msgid ""
 "As mentioned earlier, `read_line` puts whatever the user enters into the "
 "string we pass to it, but it also returns a `Result` value. [`Result`](../"
@@ -3119,19 +3363,19 @@ msgid ""
 msgstr ""
 "Comme expliqué précédemment, `read_line` stocke tout ce que l'utilisateur a "
 "saisi dans la variable chaîne qu'on lui passe en argument , mais cette "
-"fonction retourne aussi une valeur `Result`. [`Result`][result]<!-- ignore --"
-"> est une [_énumération_][enum]<!-- ignore -->, souvent appelée _enum_, qui "
-"est un type pouvant prendre plusieurs états possibles. Chaque état est "
-"appelé une _variante_."
+"fonction retourne aussi une valeur `Result`. [`Result`]"
+"(../std/result/enum.Result.html) <!-- ignore --"
+"> est une [_énumération_](ch06-00-enums.html)<!-- ignore -->, souvent appelée "
+"_enum_, qui est un type pouvant prendre plusieurs états possibles. Chaque état "
+"est appelé une _variante_."
 
 #: src/ch02-00-guessing-game-tutorial.md:346
-#, fuzzy
 msgid ""
 "[Chapter 6](ch06-00-enums.html)<!-- ignore --> will cover enums in more "
 "detail. The purpose of these `Result` types is to encode error-handling "
 "information."
 msgstr ""
-"Le [chapitre 6][enums]<!-- ignore -- > explorera les énumérations plus en "
+"Le [chapitre 6](ch06-00-enums.html) explorera les énumérations plus en "
 "détail. La raison d'être du type `Result` est de coder des informations pour "
 "la gestion des erreurs."
 
@@ -3148,7 +3392,6 @@ msgstr ""
 "informations décrivant comment ou pourquoi l'opération a échoué."
 
 #: src/ch02-00-guessing-game-tutorial.md:354
-#, fuzzy
 msgid ""
 "Values of the `Result` type, like values of any type, have methods defined "
 "on them. An instance of `Result` has an [`expect` method](../std/result/"
@@ -3163,7 +3406,8 @@ msgid ""
 msgstr ""
 "Les valeurs du type `Result`, comme pour tous les types, ont des méthodes "
 "qui leur sont associées. Par exemple, une instance de `Result` a une "
-"[méthode `expect`][expect]<!-- ignore --> que vous pouvez utiliser. Si cette "
+"[méthode `expect`](../std/result/enum.Result.html#method.expect)"
+"<!-- ignore --> que vous pouvez utiliser. Si cette "
 "instance de `Result` a pour valeur la variante `Err`, l'appel à `expect` "
 "fera planter le programme et affichera le message que vous avez passé en "
 "argument de `expect`. Si l'appel à `read_line` retourne une variante `Err`, "
@@ -3178,6 +3422,7 @@ msgid ""
 "If you don’t call `expect`, the program will compile, but you’ll get a "
 "warning:"
 msgstr ""
+"Si on n'appelle pas expect, le programme compilera, mais avec un avertissement :"
 
 #: src/ch02-00-guessing-game-tutorial.md:366
 msgid ""
@@ -3212,7 +3457,6 @@ msgstr ""
 "potentielle."
 
 #: src/ch02-00-guessing-game-tutorial.md:389
-#, fuzzy
 msgid ""
 "The right way to suppress the warning is to actually write error-handling "
 "code, but in our case we just want to crash this program when a problem "
@@ -3222,11 +3466,11 @@ msgstr ""
 "La meilleure façon de masquer cet avertissement est de réellement écrire le "
 "code permettant de gérer l'erreur, mais dans notre cas on a seulement besoin "
 "de faire planter le programme si un problème survient, on utilise donc "
-"`expect`. Nous verrons dans le [chapitre 9][recover]<!-- ignore --> comment "
+"`expect`. Nous verrons dans le [chapitre 9](../std/result/"
+"enum.Result.html#method.expect)<!-- ignore --> comment "
 "gérer correctement les erreurs."
 
 #: src/ch02-00-guessing-game-tutorial.md:394
-#, fuzzy
 msgid "Printing Values with `println!` Placeholders"
 msgstr "Afficher des valeurs grâce aux espaces réservés de `println!`"
 
@@ -3239,7 +3483,6 @@ msgstr ""
 "étudier dans le code que nous avons pour l'instant :"
 
 #: src/ch02-00-guessing-game-tutorial.md:417
-#, fuzzy
 msgid ""
 "This line prints the string that now contains the user’s input. The `{}` set "
 "of curly brackets is a placeholder: Think of `{}` as little crab pincers "
@@ -3255,24 +3498,31 @@ msgstr ""
 "l'utilisateur a saisi. La paire d'accolades `{}` représente un espace "
 "réservé : imaginez qu'il s'agit de pinces de crabes qui gardent la place "
 "d'une valeur. Lorsque vous affichez la valeur d'une variable, le nom de la "
-"variable peut être placé entre accolades. Pour afficher le résultat de "
-"l'évaluation d'une expression, placez des accolades vides dans la chaîne de "
-"format, puis faites suivre la chaîne de format d'une liste d'expressions "
-"séparées par des virgules, expressions dont le résultat sera affiché dans "
-"chaque espace réservé d'accolades vides, dans le même ordre. Pour afficher "
-"une variable et le résultat d'une expression en appelant `println!` une "
-"seule fois, on ferait comme ceci :"
+"variable peut être placé entre accolades. "
+"Pour afficher le résultat de l'évaluation d'une expression, placez des "
+"accolades vides dans la chaîne de format, puis faites suivre la chaîne de "
+"format d'une liste d'expressions séparées par des virgules, expressions dont le "
+"résultat sera affiché dans chaque espace réservé d'accolades vides, dans le "
+"même ordre. Pour afficher une variable et le résultat d'une expression en "
+"appelant `println!` une seule fois, on ferait comme ceci :"
 
 #: src/ch02-00-guessing-game-tutorial.md:430
 msgid "\"x = {x} and y + 2 = {}\""
 msgstr ""
 
+# msgstr "\"x = {x} et y + 2 = {}\""
+# TODO revert to original French translation, when issue https://github.com/rust-lang-translations/translations/issues/32 is solved => un-untranslate msgstr above by uncommenting it and moving it up
+
+
 #: src/ch02-00-guessing-game-tutorial.md:433
 msgid "This code would print `x = 5 and y + 2 = 12`."
-msgstr ""
+msgstr "Ce code afficherait `x = 5 and y + 2 = 12`."
+
+# msgstr "Ce code afficherait `x = 5 et y + 2 = 12`."
+# TODO revert to original French translation, when issue https://github.com/rust-lang-translations/translations/issues/32 is solved => un-untranslate msgstr above by uncommenting it and moving it up
+
 
 #: src/ch02-00-guessing-game-tutorial.md:435
-#, fuzzy
 msgid "Testing the First Part"
 msgstr "Test de la première partie"
 
@@ -3280,6 +3530,8 @@ msgstr "Test de la première partie"
 msgid ""
 "Let’s test the first part of the guessing game. Run it using `cargo run`:"
 msgstr ""
+"Pour tester notre début de programme, lançons-le à l'aide de la commande "
+"`cargo run` :"
 
 #: src/ch02-00-guessing-game-tutorial.md:445
 msgid ""
@@ -3294,6 +3546,16 @@ msgid ""
 "You guessed: 6\n"
 "```"
 msgstr ""
+"```console\n"
+"$ cargo run\n"
+"   Compiling guessing_game v0.1.0 (file:///projects/guessing_game)\n"
+"    Finished `dev` profile [unoptimized + debuginfo] target(s) in 6.44s\n"
+"     Running `target/debug/guessing_game`\n"
+"Devinez le nombre !\n"
+"Veuillez entrer un nombre.\n"
+"6\n"
+"Votre nombre : 6\n"
+"```"
 
 #: src/ch02-00-guessing-game-tutorial.md:456
 msgid ""
@@ -3304,12 +3566,10 @@ msgstr ""
 "récupéré la saisie du clavier et nous l'affichons à l'écran."
 
 #: src/ch02-00-guessing-game-tutorial.md:459
-#, fuzzy
 msgid "Generating a Secret Number"
 msgstr "Générer le nombre secret"
 
 #: src/ch02-00-guessing-game-tutorial.md:461
-#, fuzzy
 msgid ""
 "Next, we need to generate a secret number that the user will try to guess. "
 "The secret number should be different every time so that the game is fun to "
@@ -3324,20 +3584,16 @@ msgstr ""
 "compris entre 1 et 100 pour que le jeu ne soit pas trop difficile. Rust "
 "n'embarque pas pour l'instant de fonctionnalité de génération de nombres "
 "aléatoires dans sa bibliothèque standard. Cependant, l'équipe de Rust "
-"propose une [crate `rand`][randcrate] qui offre la possibilité de le faire."
+"propose une [crate `rand`](https://crates.io/crates/rand) qui offre la "
+"possibilité de le faire."
 
 #: src/ch02-00-guessing-game-tutorial.md:469
-#, fuzzy
-msgid "<a id=\"using-a-crate-to-get-more-functionality\"></a>"
+# msgid "<a id=\"using-a-crate-to-get-more-functionality\"></a>"
+#: src/ch02-00-guessing-game-tutorial.md:471
+msgid "Increasing Functionality with a Crate"
 msgstr "Étendre les fonctionnalités de Rust avec une _crate_"
 
-#: src/ch02-00-guessing-game-tutorial.md:471
-#, fuzzy
-msgid "Increasing Functionality with a Crate"
-msgstr "Ajouter des fonctionnalités utiles avec les traits dérivés"
-
 #: src/ch02-00-guessing-game-tutorial.md:473
-#, fuzzy
 msgid ""
 "Remember that a crate is a collection of Rust source code files. The project "
 "we’ve been building is a binary crate, which is an executable. The `rand` "
@@ -3379,7 +3635,6 @@ msgid ""
 msgstr ""
 
 #: src/ch02-00-guessing-game-tutorial.md:498
-#, fuzzy
 msgid ""
 "In the _Cargo.toml_ file, everything that follows a header is part of that "
 "section that continues until another section starts. In `[dependencies]`, "
@@ -3397,15 +3652,11 @@ msgstr ""
 "projet dépend, et de quelle version de ces _crates_ vous avez besoin. Dans "
 "notre cas, on ajoute comme dépendance la crate `rand` avec la version "
 "sémantique `0.8.5`. Cargo arrive à interpréter le [versionnage sémantique]"
-"[semver]<!-- ignore --> (aussi appelé _SemVer_), qui est une convention "
+"(http://semver.org)"
+"<!-- ignore --> (aussi appelé _SemVer_), qui est une convention "
 "d'écriture de numéros de version. En réalité, `0.8.5` est une abréviation "
 "pour `^0.8.5`, ce qui signifie “toute version ultérieure ou égale à `0.8.5` "
-"mais strictement antérieure à `0.9.0`”. Cargo considère que ces versions ont "
-"des API publiques compatibles avec la version `0.8.5`, et cette indication "
-"garantit que vous obtiendrez la dernière version de correction qui compilera "
-"encore avec le code de ce chapitre. Il n'est pas garanti que les versions "
-"`0.9.0` et ultérieures aient la même API que celle utilisée dans les "
-"exemples suivants."
+"mais strictement antérieure à `0.9.0`”."
 
 #: src/ch02-00-guessing-game-tutorial.md:508
 msgid ""
@@ -3415,6 +3666,11 @@ msgid ""
 "0.9.0 or greater is not guaranteed to have the same API as what the "
 "following examples use."
 msgstr ""
+"Cargo considère que ces versions ont des API publiques compatibles avec la "
+"version `0.8.5`, et cette indication garantit que vous obtiendrez la dernière "
+"version de correction qui compilera encore avec le code de ce chapitre. Il "
+"n'est pas garanti que les versions `0.9.0` et ultérieures aient la même API que "
+"celle utilisée dans les exemples suivants."
 
 #: src/ch02-00-guessing-game-tutorial.md:514
 msgid ""
@@ -3450,6 +3706,10 @@ msgid ""
 "```"
 msgstr ""
 
+# " Compiling jeu_du_plus_ou_du_moins v0.1.0 (file:///projects/guessing_game)\n"
+# TODO revert to original French translation, when issue https://github.com/rust-lang-translations/translations/issues/32 is solved => un-untranslate msgstr above by uncommenting it and moving it up
+
+
 #: src/ch02-00-guessing-game-tutorial.md:550
 msgid ""
 "You may see different version numbers (but they will all be compatible with "
@@ -3463,7 +3723,6 @@ msgstr ""
 "même ordre."
 
 #: src/ch02-00-guessing-game-tutorial.md:554
-#, fuzzy
 msgid ""
 "When we include an external dependency, Cargo fetches the latest versions of "
 "everything that dependency needs from the _registry_, which is a copy of "
@@ -3472,9 +3731,9 @@ msgid ""
 msgstr ""
 "Lorsque nous ajoutons une dépendance externe, Cargo récupère les dernières "
 "versions de tout ce dont cette dépendance a besoin depuis le _registre_, qui "
-"est une copie des données de [Crates.io][cratesio]. Crates.io est là où les "
-"développeurs de l'écosystème Rust publient leurs projets open source afin de "
-"les rendre disponibles aux autres."
+"est une copie des données de [Crates.io](https://crates.io/). Crates.io est "
+"là où les développeurs de l'écosystème Rust publient leurs projets open "
+"source afin de les rendre disponibles aux autres."
 
 #: src/ch02-00-guessing-game-tutorial.md:559
 msgid ""
@@ -3538,13 +3797,10 @@ msgstr ""
 "téléchargé et compilé précédemment."
 
 #: src/ch02-00-guessing-game-tutorial.md:591
-#, fuzzy
-msgid "<a id=\"ensuring-reproducible-builds-with-the-cargo-lock-file\"></a>"
-msgstr "Assurer la reproductibilité des compilations"
-
+# msgid "<a id=\"ensuring-reproducible-builds-with-the-cargo-lock-file\"></a>"
 #: src/ch02-00-guessing-game-tutorial.md:593
 msgid "Ensuring Reproducible Builds"
-msgstr ""
+msgstr "Assurer la reproductibilité des compilations"
 
 #: src/ch02-00-guessing-game-tutorial.md:595
 msgid ""
@@ -3569,7 +3825,6 @@ msgstr ""
 "_jeu_du_plus_ou_du_moins_."
 
 #: src/ch02-00-guessing-game-tutorial.md:604
-#, fuzzy
 msgid ""
 "When you build a project for the first time, Cargo figures out all the "
 "versions of the dependencies that fit the criteria and then writes them to "
@@ -3596,12 +3851,10 @@ msgstr ""
 "de votre projet."
 
 #: src/ch02-00-guessing-game-tutorial.md:614
-#, fuzzy
 msgid "Updating a Crate to Get a New Version"
 msgstr "Mettre à jour une _crate_ vers sa nouvelle version"
 
 #: src/ch02-00-guessing-game-tutorial.md:616
-#, fuzzy
 msgid ""
 "When you _do_ want to update a crate, Cargo provides the command `update`, "
 "which will ignore the _Cargo.lock_ file and figure out all the latest "
@@ -3621,7 +3874,6 @@ msgstr ""
 "ceci si vous lancez `cargo update` :"
 
 #: src/ch02-00-guessing-game-tutorial.md:637
-#, fuzzy
 msgid ""
 "Cargo ignores the 0.999.0 release. At this point, you would also notice a "
 "change in your _Cargo.lock_ file noting that the version of the `rand` crate "
@@ -3657,7 +3909,6 @@ msgstr ""
 "`rand` selon la nouvelle version que vous avez spécifiée."
 
 #: src/ch02-00-guessing-game-tutorial.md:653
-#, fuzzy
 msgid ""
 "There’s a lot more to say about [Cargo](https://doc.rust-lang.org/"
 "cargo/)<!-- ignore --> and [its ecosystem](https://doc.rust-lang.org/cargo/"
@@ -3666,15 +3917,16 @@ msgid ""
 "reuse libraries, so Rustaceans are able to write smaller projects that are "
 "assembled from a number of packages."
 msgstr ""
-"Il y a encore plus à dire à propos de [Cargo][doccargo]<!-- ignore --> et de "
-"[son écosystème][doccratesio]<!-- ignore -->, que nous aborderons au "
+"Il y a encore plus à dire à propos de [Cargo](https://doc.rust-lang.org/cargo/"
+"reference/publishing.html)<!-- ignore --> et de "
+"[son écosystème](https://doc.rust-lang.org/cargo/reference/publishing.html)"
+"<!-- ignore -->, que nous aborderons au "
 "chapitre 14, mais pour l'instant, c'est tout ce qu'il vous faut savoir. "
 "Cargo facilite la réutilisation des bibliothèques, pour que les Rustacés "
 "soient capables d'écrire des petits projets issus d'un assemblage d'un "
 "certain nombre de paquets."
 
 #: src/ch02-00-guessing-game-tutorial.md:659
-#, fuzzy
 msgid "Generating a Random Number"
 msgstr "Générer un nombre aléatoire"
 
@@ -3697,7 +3949,12 @@ msgstr ""
 #: src/ch07-04-bringing-paths-into-scope-with-the-use-keyword.md:399
 #: src/ch20-03-advanced-types.md:241
 msgid "\"The secret number is: {secret_number}\""
-msgstr ""
+msgstr "\"Le nombre secret est : {nombre_secret}\""
+
+msgid ": Adding code to generate a random number"
+msgstr " : Ajout du code pour générer un nombre aléatoire"
+
+# FIXME: the legends as the one above are not translated
 
 #: src/ch02-00-guessing-game-tutorial.md:692
 msgid ""
@@ -3738,7 +3995,6 @@ msgstr ""
 "100."
 
 #: src/ch02-00-guessing-game-tutorial.md:707
-#, fuzzy
 msgid ""
 "Note: You won’t just know which traits to use and which methods and "
 "functions to call from a crate, so each crate has documentation with "
@@ -3748,15 +4004,15 @@ msgid ""
 "other functionality in the `rand` crate, for example, run `cargo doc --open` "
 "and click `rand` in the sidebar on the left."
 msgstr ""
-"> Remarque : vous ne pourrez pas deviner quels _traits_, méthodes et > "
+"Remarque : vous ne pourrez pas deviner quels _traits_, méthodes et "
 "fonctions utiliser avec une _crate_, donc chaque _crate_ a une documentation "
-"> qui donne des indications sur son utilisation. Une autre fonctionnalité > "
-"intéressante de Cargo est que vous pouvez utiliser la commande > `cargo doc "
-"--open`, qui va construire localement la documentation intégrée > par toutes "
-"vos dépendances et va l'ouvrir dans votre navigateur. Si vous vous > "
+"qui donne des indications sur son utilisation. Une autre fonctionnalité "
+"intéressante de Cargo est que vous pouvez utiliser la commande `cargo doc "
+"--open`, qui va construire localement la documentation intégrée par toutes "
+"vos dépendances et va l'ouvrir dans votre navigateur. Si vous vous "
 "intéressez à d'autres fonctionnalités de la _crate_ `rand`, par exemple, "
-"vous > pouvez lancer `cargo doc --open` et cliquer sur `rand` dans la barre "
-"latérale > sur la gauche."
+"vous pouvez lancer `cargo doc --open` et cliquer sur `rand` dans la barre "
+"latérale sur la gauche."
 
 #: src/ch02-00-guessing-game-tutorial.md:715
 msgid ""
@@ -3772,7 +4028,7 @@ msgstr ""
 
 #: src/ch02-00-guessing-game-tutorial.md:720
 msgid "Try running the program a few times:"
-msgstr ""
+msgstr "Essayez de lancer le programme plusieurs fois :"
 
 #: src/ch02-00-guessing-game-tutorial.md:730
 msgid ""
@@ -3797,6 +4053,26 @@ msgid ""
 "You guessed: 5\n"
 "```"
 msgstr ""
+"```console\n"
+"$ cargo run\n"
+"   Compiling guessing_game v0.1.0 (file:///projects/guessing_game)\n"
+"    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.02s\n"
+"     Running `target/debug/guessing_game`\n"
+"Devinez le nombre !\n"
+"Le nombre secret est :  7\n"
+"Veuillez entrer un nombre.\n"
+"4\n"
+"Votre nombre : 4\n"
+"\n"
+"$ cargo run\n"
+"    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.02s\n"
+"     Running `target/debug/guessing_game`\n"
+"Devinez le nombre !\n"
+"Le nombre secret est : 83\n"
+"Veuillez entrer un nombre.\n"
+"5\n"
+"Votre nombre : 5\n"
+"```"
 
 #: src/ch02-00-guessing-game-tutorial.md:751
 msgid ""
@@ -3807,7 +4083,6 @@ msgstr ""
 "être tous compris entre 1 et 100. Beau travail !"
 
 #: src/ch02-00-guessing-game-tutorial.md:754
-#, fuzzy
 msgid "Comparing the Guess to the Secret Number"
 msgstr "Comparer le nombre saisi au nombre secret"
 
@@ -3907,7 +4182,7 @@ msgstr ""
 #: src/ch21-03-graceful-shutdown-and-cleanup.md:284
 #: src/ch21-03-graceful-shutdown-and-cleanup.md:298
 msgid "// --snip--\n"
-msgstr ""
+msgstr "// -- partie masquée ici --\n"
 
 #: src/ch02-00-guessing-game-tutorial.md:787
 #: src/ch02-00-guessing-game-tutorial.md:912
@@ -3920,7 +4195,7 @@ msgstr ""
 #: src/ch09-03-to-panic-or-not-to-panic.md:193
 #: src/ch20-03-advanced-types.md:264
 msgid "\"Too small!\""
-msgstr ""
+msgstr "\"C'est plus !\""
 
 #: src/ch02-00-guessing-game-tutorial.md:788
 #: src/ch02-00-guessing-game-tutorial.md:913
@@ -3933,7 +4208,7 @@ msgstr ""
 #: src/ch09-03-to-panic-or-not-to-panic.md:194
 #: src/ch20-03-advanced-types.md:265
 msgid "\"Too big!\""
-msgstr ""
+msgstr "\"C'est moins !\""
 
 #: src/ch02-00-guessing-game-tutorial.md:789
 #: src/ch02-00-guessing-game-tutorial.md:914
@@ -3946,7 +4221,7 @@ msgstr ""
 #: src/ch09-03-to-panic-or-not-to-panic.md:196
 #: src/ch20-03-advanced-types.md:267
 msgid "\"You win!\""
-msgstr ""
+msgstr "\"Vous avez gagné !\""
 
 #: src/ch02-00-guessing-game-tutorial.md:796
 msgid ""
@@ -3962,7 +4237,6 @@ msgstr ""
 "trois issues possibles lorsqu'on compare deux valeurs."
 
 #: src/ch02-00-guessing-game-tutorial.md:801
-#, fuzzy
 msgid ""
 "Then, we add five new lines at the bottom that use the `Ordering` type. The "
 "`cmp` method compares two values and can be called on anything that can be "
@@ -3979,8 +4253,8 @@ msgstr ""
 "qu'on veut comparer : ici, nous voulons comparer `supposition` et "
 "`nombre_secret`. Ensuite, cela retourne une variante de l'énumération "
 "`Ordering` que nous avons importée avec l'instruction `use`. Nous utilisons "
-"une expression [`match`][match]<!-- ignore --> pour décider quoi faire "
-"ensuite en fonction de quelle variante de `Ordering` a été retournée à "
+"une expression [`match`](ch06-02-match.html)<!-- ignore --> pour décider quoi "
+" faire ensuite en fonction de quelle variante de `Ordering` a été retournée à "
 "l'appel de `cmp` avec `supposition` et `nombre_secret`."
 
 #: src/ch02-00-guessing-game-tutorial.md:810
@@ -4005,18 +4279,16 @@ msgstr ""
 "chapitre 6 et le chapitre 19."
 
 #: src/ch02-00-guessing-game-tutorial.md:818
-#, fuzzy
 msgid ""
 "Let’s walk through an example with the `match` expression we use here. Say "
 "that the user has guessed 50 and the randomly generated secret number this "
 "time is 38."
 msgstr ""
-"Voyons ce qui se passe lorsque l'expression `match` est utilisée. Le motif "
-"présent dans la première branche du `match` ne correspond pas à la valeur "
-"actuelle de `x`, donc le code passe à la branche suivante."
+"Voyons un exemple avec l'expression `match` que nous avons utilisée ici. "
+"Disons que l'utilisateur a saisi le nombre 50 et que le nombre secret généré "
+"aléatoirement a cette fois-ci comme valeur 38."
 
 #: src/ch02-00-guessing-game-tutorial.md:822
-#, fuzzy
 msgid ""
 "When the code compares 50 to 38, the `cmp` method will return "
 "`Ordering::Greater` because 50 is greater than 38. The `match` expression "
@@ -4029,13 +4301,23 @@ msgid ""
 "`match` expression ends after the first successful match, so it won’t look "
 "at the last arm in this scenario."
 msgstr ""
-"Voyons un exemple avec l'expression `match` que nous avons utilisée ici. "
-"Disons que l'utilisateur a saisi le nombre 50 et que le nombre secret généré "
-"aléatoirement a cette fois-ci comme valeur 38."
+"Quand le code compare 50 à 38, la méthode `cmp` va retourner `Ordering::Greater`, "
+"car 50 est plus grand que 38. L'expression `match` obtient la valeur "
+"`Ordering::Greater` et commence à vérifier le motif de chaque branche. Elle "
+"consulte le motif de la première branche, `Ordering::Less` et remarque que la "
+"valeur `Ordering::Greater` ne correspond pas au motif `Ordering::Less` ; elle "
+"ignore donc le code de cette branche et passe à la suivante. Le motif de la "
+"branche suivante est `Ordering::Greater`, qui correspond "
+"à `Ordering::Greater` ! Le code associé à cette branche va être exécuté et va "
+"afficher à l'écran `C'est moins !`. L'expression `match` se termine après la "
+"première correspondance, elle n'a donc pas besoin de consulter les autres "
+"branches de ce scénario."
 
 #: src/ch02-00-guessing-game-tutorial.md:833
 msgid "However, the code in Listing 2-4 won’t compile yet. Let’s try it:"
 msgstr ""
+"Cependant, notre code dans l'encart 2-4 ne compile pas encore. Essayons de "
+"le faire :"
 
 #: src/ch02-00-guessing-game-tutorial.md:840
 msgid ""
@@ -4117,13 +4399,13 @@ msgstr ""
 #: src/ch07-04-bringing-paths-into-scope-with-the-use-keyword.md:409
 msgid "\"Please type a number!\""
 msgstr ""
+"\"Veuillez entrer un nombre !\""
 
 #: src/ch02-00-guessing-game-tutorial.md:919
 msgid "The line is:"
-msgstr ""
+msgstr "La nouvelle ligne est :"
 
 #: src/ch02-00-guessing-game-tutorial.md:925
-#, fuzzy
 msgid ""
 "We create a variable named `guess`. But wait, doesn’t the program already "
 "have a variable named `guess`? It does, but helpfully Rust allows us to "
@@ -4135,19 +4417,39 @@ msgid ""
 "feature is often used when you want to convert a value from one type to "
 "another type."
 msgstr ""
-"Nous créons une variable qui s'appelle `supposition`. Mais attendez, le "
-"programme n'a-t-il pas déjà une variable qui s'appelle `supposition` ? C'est "
+"Nous créons une variable qui s'appelle `"
+"guess"
+"`. Mais attendez, le "
+"programme n'a-t-il pas déjà une variable qui s'appelle `"
+"guess"
+"` ? C'est "
 "le cas, mais heureusement Rust nous permet de _masquer_ la valeur précédente "
-"de `supposition` avec une nouvelle. Le masquage _(shadowing)_ nous permet de "
-"réutiliser le nom de variable `supposition`, plutôt que de nous forcer à "
-"créer deux variables distinctes, telles que `supposition_str` et "
-"`supposition` par exemple. Nous verrons cela plus en détails au [chapitre 3]"
-"[shadowing]<!-- ignore -->, mais pour le moment cette fonctionnalité est "
+"de `"
+"guess"
+"` avec une nouvelle. Le masquage _(shadowing)_ nous permet de "
+"réutiliser le nom de variable `"
+"guess"
+"`, plutôt que de nous forcer à "
+"créer deux variables distinctes, telles que `"
+"guess_str"
+"` et `"
+"guess"
+"` par exemple. Nous verrons cela plus en détails au [chapitre 3]"
+"(ch03-01-variables-and-mutability.html#shadowing)"
+"<!-- ignore -->, mais pour le moment cette fonctionnalité est "
 "souvent utilisée dans des situations où on veut convertir une valeur d'un "
 "type à un autre."
 
+# "supposition"
+# "supposition"
+# "supposition"
+# "supposition"
+# "supposition_str"
+# "supposition"
+# TODO revert to original French translation, when issue https://github.com/rust-lang-translations/translations/issues/32 is solved => un-untranslate msgstr above by uncommenting it and moving it up
+
+
 #: src/ch02-00-guessing-game-tutorial.md:933
-#, fuzzy
 msgid ""
 "We bind this new variable to the expression `guess.trim().parse()`. The "
 "`guess` in the expression refers to the original `guess` variable that "
@@ -4162,26 +4464,39 @@ msgid ""
 "newline, `\\r\\n`.) The `trim` method eliminates `\\n` or `\\r\\n`, "
 "resulting in just `5`."
 msgstr ""
-"Nous lions cette nouvelle variable à l'expression "
-"`supposition.trim().parse()`. Le `supposition` dans l'expression se réfère à "
-"la variable `supposition` initiale qui contenait la saisie utilisateur en "
+"Nous lions cette nouvelle variable à l'expression `"
+"guess"
+".trim().parse()`. Le `"
+"guess"
+"` dans l'expression se réfère à "
+"la variable `"
+"guess"
+"` initiale qui contenait la saisie utilisateur en "
 "tant que chaîne de caractères. La méthode `trim` sur une instance de "
 "`String` va enlever les espaces et autres _whitespaces_ au début et à la "
 "fin, ce que nous devons faire avant de pouvoir convertir la chaîne en un "
 "`u32`, qui ne peut être constitué que de chiffres. L'utilisateur doit "
-"appuyer sur <span class=\"keystroke\">entrée</span> pour mettre fin à "
+"appuyer sur <kbd>entrée</kbd> pour mettre fin à "
 "`read_line` et récupérer sa supposition, ce qui va rajouter un caractère de "
 "fin de ligne à la chaîne de caractères. Par exemple, si l'utilisateur écrit "
-"<span class=\"keystroke\">5</span> et appuie sur <span "
-"class=\"keystroke\">entrée </span>, `supposition` aura alors cette valeur : "
+"<kbd>5</kbd> et appuie sur "
+"<kbd>entrée</kbd>, `"
+"guess"
+"` aura alors cette valeur : "
 "`5\\\n"
 "`.  Le `\\n` représente une fin de ligne (à noter que sur Windows, appuyer "
-"sur <span class=\"keystroke\">entrée</span> résulte en un retour chariot "
+"sur <kbd>entrée</kbd> résulte en un retour chariot "
 "suivi d'un saut de ligne, `\\r\\n`). La méthode `trim` enlève `\\n` et "
 "`\\r\\n`, il ne reste donc plus que `5`."
 
+# "supposition"
+# "supposition"
+# "supposition"
+# "supposition"
+# TODO revert to original French translation, when issue https://github.com/rust-lang-translations/translations/issues/32 is solved => un-untranslate msgstr above by uncommenting it and moving it up
+
+
 #: src/ch02-00-guessing-game-tutorial.md:945
-#, fuzzy
 msgid ""
 "The [`parse` method on strings](../std/primitive.str.html#method.parse)<!-- "
 "ignore --> converts a string to another type. Here, we use it to convert "
@@ -4192,15 +4507,25 @@ msgid ""
 "choice for a small positive number. You’ll learn about other number types in "
 "[Chapter 3](ch03-02-data-types.html#integer-types)<!-- ignore -->."
 msgstr ""
-"La [méthode `parse` des chaînes de caractères][parse]<!-- ignore --> "
+"La [méthode `parse` des chaînes de caractères]"
+"(../std/primitive.str.html#method.parse)<!-- ignore --> "
 "convertit une chaîne de caractères vers un autre type. Ici, elle est "
 "utilisée pour convertir d'une chaîne vers un nombre. Nous devons indiquer à "
-"Rust le type exact de nombre que nous voulons en utilisant `let supposition: "
-"u32`.  Le deux-points (`:`) après `supposition` indique à Rust que nous "
+"Rust le type exact de nombre que nous voulons en utilisant `let "
+"guess"
+": u32`.  Le deux-points (`:`) après `"
+"guess"
+"` indique à Rust que nous "
 "voulons préciser le type de la variable. Rust embarque quelques types de "
 "nombres ; le `u32` utilisé ici est un entier non signé sur 32 bits.  C'est "
 "un bon choix par défaut pour un petit nombre positif.  Vous découvrirez "
-"d'autres types de nombres dans le [chapitre 3][integers]<!-- ignore -->."
+"d'autres types de nombres dans le [chapitre 3]"
+"(ch03-02-data-types.html#integer-types)<!-- ignore -->."
+
+# "supposition"
+# "supposition"
+# TODO revert to original French translation, when issue https://github.com/rust-lang-translations/translations/issues/32 is solved => un-untranslate msgstr above by uncommenting it and moving it up
+# @# FIXME: URL above (../std/primitive.str.html#method.parse) points to a 404 page
 
 #: src/ch02-00-guessing-game-tutorial.md:953
 msgid ""
@@ -4209,9 +4534,18 @@ msgid ""
 "should be a `u32` as well. So, now the comparison will be between two values "
 "of the same type!"
 msgstr ""
+" De plus, l'annotation `u32` dans ce programme d'exemple et la comparaison avec `"
+"secret_number"
+"` permet à Rust d'en déduire que `"
+"secret_number"
+"` doit être lui aussi un `u32`. Donc maintenant, la comparaison se fera entre deux valeurs du même type !"
+
+# "nombre_secret"
+# "nombre_secret"
+# TODO revert to original French translation, when issue https://github.com/rust-lang-translations/translations/issues/32 is solved => un-untranslate msgstr above by uncommenting it and moving it up
+
 
 #: src/ch02-00-guessing-game-tutorial.md:958
-#, fuzzy
 msgid ""
 "The `parse` method will only work on characters that can logically be "
 "converted into numbers and so can easily cause errors. If, for example, the "
@@ -4232,7 +4566,7 @@ msgstr ""
 "le convertir en nombre. Comme elle peut échouer, la méthode `parse` retourne "
 "un type `Result`, comme celui que la méthode `read_line` retourne (comme "
 "nous l'avons vu plus tôt dans [“Gérer les erreurs potentielles avec "
-"`Result`”] (#gérer-les-erreurs-potentielles-avec-result)<!-- ignore-->).  "
+"`Result`”](#handling-potential-failure-with-result)<!-- ignore-->).  "
 "Nous allons gérer ce `Result` de la même manière, avec à nouveau la méthode "
 "`expect`. Si `parse` retourne une variante `Err` de `Result` car elle ne "
 "peut pas créer un nombre à partir de la chaîne de caractères, l'appel à "
@@ -4244,7 +4578,7 @@ msgstr ""
 
 #: src/ch02-00-guessing-game-tutorial.md:971
 msgid "Let’s run the program now:"
-msgstr ""
+msgstr "Exécutons ce programme, maintenant :"
 
 #: src/ch02-00-guessing-game-tutorial.md:980
 msgid ""
@@ -4261,9 +4595,20 @@ msgid ""
 "Too big!\n"
 "```"
 msgstr ""
+"```console\n"
+"$ cargo run\n"
+"   Compiling guessing_game v0.1.0 (file:///projects/guessing_game)\n"
+"    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.26s\n"
+"     Running `target/debug/guessing_game`\n"
+"Devinez le nombre !\n"
+"Le nombre secret est : 58\n"
+"Veuillez entrer un nombre.\n"
+"  76\n"
+"Votre nombre : 76\n"
+"C'est moins !\n"
+"```"
 
 #: src/ch02-00-guessing-game-tutorial.md:993
-#, fuzzy
 msgid ""
 "Nice! Even though spaces were added before the guess, the program still "
 "figured out that the user guessed 76. Run the program a few times to verify "
@@ -4286,7 +4631,6 @@ msgstr ""
 "faire qu'une seule supposition. Corrigeons cela en ajoutant une boucle !"
 
 #: src/ch02-00-guessing-game-tutorial.md:1001
-#, fuzzy
 msgid "Allowing Multiple Guesses with Looping"
 msgstr "Permettre plusieurs suppositions avec les boucles"
 
@@ -4314,7 +4658,6 @@ msgstr ""
 "l'utilisateur de l'arrêter !"
 
 #: src/ch02-00-guessing-game-tutorial.md:1053
-#, fuzzy
 msgid ""
 "The user could always interrupt the program by using the keyboard shortcut "
 "<kbd>ctrl</kbd>\\-<kbd>C</kbd>. But there’s another way to escape this "
@@ -4362,6 +4705,33 @@ msgid ""
 "backtrace\n"
 "```"
 msgstr ""
+"```console\n"
+"$ cargo run\n"
+"   Compiling guessing_game v0.1.0 (file:///projects/guessing_game)\n"
+"    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.23s\n"
+"     Running `target/debug/guessing_game`\n"
+"Devinez le nombre !\n"
+"Le nombre secret est : 59\n"
+"Veuillez entrer un nombre.\n"
+"45\n"
+"Votre nombre : 45\n"
+"C'est plus !\n"
+"Veuillez entrer un nombre.\n"
+"60\n"
+"Votre nombre : 60\n"
+"C'est moins !\n"
+"Veuillez entrer un nombre.\n"
+"59\n"
+"Votre nombre : 59\n"
+"You win!\n"
+"Veuillez entrer un nombre.\n"
+"quit\n"
+"\n"
+"thread 'main' panicked at src/main.rs:28:47:\n"
+"thread 'main' panicked at 'Veuillez entrer un nombre!: ParseIntError { kind: InvalidDigit }\n"
+"note: run with `RUST_BACKTRACE=1` environment variable to display a "
+"backtrace\n"
+"```"
 
 #: src/ch02-00-guessing-game-tutorial.md:1097
 msgid ""
@@ -4375,7 +4745,6 @@ msgstr ""
 "lorsque le bon nombre est deviné."
 
 #: src/ch02-00-guessing-game-tutorial.md:1101
-#, fuzzy
 msgid "Quitting After a Correct Guess"
 msgstr "Arrêter le programme après avoir gagné"
 
@@ -4384,6 +4753,8 @@ msgid ""
 "Let’s program the game to quit when the user wins by adding a `break` "
 "statement:"
 msgstr ""
+"Faisons en sorte que le jeu s'arrête quand le joueur gagne en ajoutant"
+"l'instruction break :"
 
 #: src/ch02-00-guessing-game-tutorial.md:1147
 msgid ""
@@ -4397,7 +4768,6 @@ msgstr ""
 "est la dernière partie de `main`."
 
 #: src/ch02-00-guessing-game-tutorial.md:1151
-#, fuzzy
 msgid "Handling Invalid Input"
 msgstr "Gérer les saisies invalides"
 
@@ -4475,6 +4845,7 @@ msgstr ""
 #: src/ch02-00-guessing-game-tutorial.md:1229
 msgid "Now everything in the program should work as expected. Let’s try it:"
 msgstr ""
+"Maintenant, le programme devrait fonctionner correctement. Essayons-le :"
 
 #: src/ch02-00-guessing-game-tutorial.md:1240
 msgid ""
@@ -4501,6 +4872,28 @@ msgid ""
 "You win!\n"
 "```"
 msgstr ""
+"```console\n"
+"$ cargo run\n"
+"   Compiling guessing_game v0.1.0 (file:///projects/guessing_game)\n"
+"    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.13s\n"
+"     Running `target/debug/guessing_game`\n"
+"Veuillez entrer un nombre.\n"
+"Le nombre secret est : 61\n"
+"Veuillez entrer un nombre.\n"
+"10\n"
+"Votre nombre : 10\n"
+"C'est plus !\n"
+"Veuillez entrer un nombre.\n"
+"99\n"
+"Votre nombre : 99\n"
+"C'est moins !\n"
+"Veuillez entrer un nombre.\n"
+"foo\n"
+"Veuillez entrer un nombre.\n"
+"61\n"
+"Votre nombre : 61\n"
+"Vous avez gagné !\n"
+"```"
 
 #: src/ch02-00-guessing-game-tutorial.md:1263
 msgid ""
@@ -4542,6 +4935,11 @@ msgstr ""
 "autres langages. Le chapitre 5 abordera les structures et les syntaxes des "
 "méthodes, et le chapitre 6 expliquera comment les énumérations fonctionnent."
 
+# }}}
+# _____________JEANSUILÀ_____________________just_a_handy_bookmark__WIP_________
+# Chapitre 3: {{{
+# Les concepts courants de programmation {{{
+
 #: src/ch03-00-common-programming-concepts.md:3
 msgid ""
 "This chapter covers concepts that appear in almost every programming "
@@ -4567,14 +4965,11 @@ msgstr ""
 "notions fondamentales seront présentes dans tous les programmes Rust, et les "
 "apprendre dès le début vous procurera de solides bases pour débuter."
 
-# _____________JEANSUILÀ______
 #: src/ch03-00-common-programming-concepts.md:13
-#, fuzzy
 msgid "Keywords"
-msgstr "Avant-propos"
+msgstr "Mots-clés"
 
 #: src/ch03-00-common-programming-concepts.md:15
-#, fuzzy
 msgid ""
 "The Rust language has a set of _keywords_ that are reserved for use by the "
 "language only, much as in other languages. Keep in mind that you cannot use "
@@ -4585,18 +4980,17 @@ msgid ""
 "You can find the list of the keywords in [Appendix A](appendix-01-"
 "keywords.md)<!-- ignore -->."
 msgstr ""
-"> #Mots-clés > > Le langage Rust possède un ensemble de _mots-clés_ qui "
-"ont été réservés pour > l'usage exclusif du langage, tout comme le font "
-"d'autres langages. Gardez à > l'esprit que vous ne pouvez pas utiliser ces "
-"mots pour des noms de variables > ou de fonctions. La plupart des mots-clés "
-"ont une signification spéciale, et > vous les utiliserez pour réaliser de "
-"différentes tâches dans vos programmes > Rust ; quelques-uns n'ont aucune "
-"fonctionnalité active pour le moment, mais > ont été réservés pour être "
-"ajoutés plus tard à Rust. > Vous pouvez trouver la liste de ces mots-clés "
-"dans > [l'annexe A][appendix_a]<!-- ignore -->."
+"Le langage Rust possède un ensemble de _mots-clés_ qui "
+"ont été réservés pour l'usage exclusif du langage, tout comme le font "
+"d'autres langages. Gardez à l'esprit que vous ne pouvez pas utiliser ces "
+"mots pour des noms de variables ou de fonctions. La plupart des mots-clés "
+"ont une signification spéciale, et vous les utiliserez pour réaliser de "
+"différentes tâches dans vos programmes Rust ; quelques-uns n'ont aucune "
+"fonctionnalité active pour le moment, mais ont été réservés pour être "
+"ajoutés plus tard à Rust. Vous pouvez trouver la liste de ces mots-clés "
+"dans > [l'annexe A](appendix-01-keywords.md)<!-- ignore -->."
 
 #: src/ch03-01-variables-and-mutability.md:3
-#, fuzzy
 msgid ""
 "As mentioned in the [“Storing Values with Variables”](ch02-00-guessing-game-"
 "tutorial.html#storing-values-with-variables)<!-- ignore --> section, by "
@@ -4606,7 +5000,8 @@ msgid ""
 "your variables mutable. Let’s explore how and why Rust encourages you to "
 "favor immutability and why sometimes you might want to opt out."
 msgstr ""
-"Tel qu'abordé au [chapitre 2][storing-values-with-variables]<!-- ignore -->, "
+"Tel qu'abordé au [chapitre 2](ch02-00-guessing-game-"
+"tutorial.html#storing-values-with-variables)<!-- ignore -->, "
 "par défaut, les variables sont _immuables_. C'est un des nombreux coups de "
 "pouce de Rust pour écrire votre code de façon à garantir la sécurité et la "
 "concurrence sans problème. Cependant, vous avez quand même la possibilité de "
@@ -4615,7 +5010,6 @@ msgstr ""
 "pourriez choisir d'y renoncer."
 
 #: src/ch03-01-variables-and-mutability.md:11
-#, fuzzy
 msgid ""
 "When a variable is immutable, once a value is bound to a name, you can’t "
 "change that value. To illustrate this, generate a new project called "
@@ -4627,7 +5021,6 @@ msgstr ""
 "répertoire _projects_ en utilisant `cargo new variables`."
 
 #: src/ch03-01-variables-and-mutability.md:15
-#, fuzzy
 msgid ""
 "Then, in your new _variables_ directory, open _src/main.rs_ and replace its "
 "code with the following code, which won’t compile just yet:"
@@ -4681,7 +5074,6 @@ msgid ""
 msgstr ""
 
 #: src/ch03-01-variables-and-mutability.md:53
-#, fuzzy
 msgid ""
 "This example shows how the compiler helps you find errors in your programs. "
 "Compiler errors can be frustrating, but really they only mean your program "
@@ -4709,7 +5101,6 @@ msgstr ""
 "variable immuable  `x`."
 
 #: src/ch03-01-variables-and-mutability.md:60
-#, fuzzy
 msgid ""
 "It’s important that we get compile-time errors when we attempt to change a "
 "value that’s designated as immutable, because this very situation can lead "
@@ -4735,7 +5126,6 @@ msgstr ""
 "soucier. Votre code est ainsi plus facile à maîtriser."
 
 #: src/ch03-01-variables-and-mutability.md:71
-#, fuzzy
 msgid ""
 "But mutability can be very useful and can make code more convenient to "
 "write. Although variables are immutable by default, you can make them "
@@ -4748,12 +5138,12 @@ msgstr ""
 "Mais la mutabilité peut s'avérer très utile et peut faciliter la rédaction "
 "du code. Bien que les variables sont immuables par défaut, vous pouvez les "
 "rendre mutables en ajoutant `mut` devant le nom de la variable , comme vous "
-"l'avez fait au [chapitre 2][storing-values-with-variables]<!-- ignore -->.  "
+"l'avez fait au [chapitre 2](ch02-00-guessing-game-tutorial.html#"
+"storing-values-with-variables)<!-- ignore -->.  "
 "L'ajout de `mut` va aussi signaler l'intention aux futurs lecteurs de ce "
 "code que d'autres parties du code vont modifier la valeur de cette variable."
 
 #: src/ch03-01-variables-and-mutability.md:78
-#, fuzzy
 msgid "For example, let’s change _src/main.rs_ to the following:"
 msgstr "Par exemple, modifions _src/main.rs_ ainsi :"
 
@@ -4819,7 +5209,8 @@ msgstr ""
 "immuables. On déclare les constantes en utilisant le mot-clé `const` à la "
 "place du mot-clé `let`, et le type de la valeur _doit_ être indiqué. Nous "
 "allons aborder les types et les annotations de types dans la prochaine "
-"section, [“Les types de données”][data-types]<!-- ignore -->, donc ne vous "
+"section, [“Les types de données”](ch03-02-data-types.html#data-types)"
+"<!-- ignore -->, donc ne vous "
 "souciez pas des détails pour le moment. Sachez seulement que vous devez "
 "toujours indiquer le type."
 
@@ -4868,7 +5259,8 @@ msgstr ""
 "nombre d'opérations à la compilation, ce qui nous permet d'écrire cette "
 "valeur de façon à la comprendre plus facilement et à la vérifier, plutôt que "
 "de définir cette valeur à 10 800. Vous pouvez consulter la [section de la "
-"référence Rust à propos des évaluations des constantes][const-eval] pour en "
+"référence Rust à propos des évaluations des constantes]"
+"(../reference/const_eval.html) pour en "
 "savoir plus sur les opérations qui peuvent être utilisées pour déclarer des "
 "constantes."
 
@@ -4918,8 +5310,9 @@ msgid ""
 "is shadowed or the scope ends. We can shadow a variable by using the same "
 "variable’s name and repeating the use of the `let` keyword as follows:"
 msgstr ""
-"Comme nous l'avons vu dans le [Chapitre 2][comparing-the-guess-to-the-secret-"
-"number]<!-- ignore -->, on peut déclarer une nouvelle variable avec le même "
+"Comme nous l'avons vu dans le [Chapitre 2]"
+"(ch02-00-guessing-game-tutorial.html#comparing-the-guess-to-the-secret-number)"
+"<!-- ignore -->, on peut déclarer une nouvelle variable avec le même "
 "nom qu'une variable précédente. Les Rustacés disent que la première variable "
 "est _masquée_ par la seconde, ce qui signifie que la seconde variable sera "
 "ce que le compilateur verra lorsque vous utilisez le nom de cette variable.  "
@@ -5048,6 +5441,9 @@ msgstr ""
 "Maintenant que nous avons découvert comment fonctionnent les variables, "
 "étudions les types de données qu'elles peuvent prendre."
 
+# }}}
+# Les types de données {{{
+
 #: src/ch03-02-data-types.md:3
 #, fuzzy
 msgid ""
@@ -5078,8 +5474,9 @@ msgstr ""
 "basant sur la valeur et sur la façon dont elle est utilisée. Dans les cas où "
 "plusieurs types sont envisageables, comme lorsque nous avons converti une "
 "chaîne de caractères en un type numérique en utilisant `parse` dans la "
-"section [“Comparer le nombre saisi au nombre secret”][comparing-the-guess-to-"
-"the-secret-number]<!-- ignore --> du chapitre 2, nous devons ajouter une "
+"section [“Comparer le nombre saisi au nombre secret”]"
+"(ch02-00-guessing-game-tutorial.html#comparing-the-guess-to-the-"
+"secret-number) <!-- ignore --> du chapitre 2, nous devons ajouter une "
 "annotation de type, comme ceci :"
 
 #: src/ch03-02-data-types.md:16
@@ -5279,7 +5676,8 @@ msgstr ""
 "nombres sur du papier : quand le signe est important, le nombre est écrit "
 "avec un signe plus ou un signe moins ; en revanche, quand le nombre est "
 "forcément positif, on peut l'écrire sans son signe. Les nombres signés sont "
-"stockés en utilisant le [complément à deux][twos-complement]<!-- ignore -->."
+"stockés en utilisant le [complément à deux]"
+"(https://en.wikipedia.org/wiki/Two%27s_complement)<!-- ignore -->."
 
 #: src/ch03-02-data-types.md:80
 msgid ""
@@ -5538,7 +5936,8 @@ msgid ""
 msgstr ""
 "Chaque expression de ces instructions utilise un opérateur mathématique et "
 "calcule une valeur unique, qui est ensuite attribuée à une variable. "
-"[L'annexe B][appendix_b]<!-- ignore --> présente une liste de tous les "
+"[L'annexe B](appendix-02-operators.md)"
+"<!-- ignore --> présente une liste de tous les "
 "opérateurs que Rust fournit."
 
 #: src/ch03-02-data-types.md:198
@@ -5626,8 +6025,9 @@ msgstr ""
 "concept de “caractère” n'est pas clairement défini par Unicode, donc votre "
 "notion de “caractère” peut ne pas correspondre à ce qu'est un `char` en "
 "Rust. Nous aborderons ce sujet plus en détail dans la partie [“Stocker du "
-"texte encodé en UTF-8 avec les Strings”][strings]<!-- ignore --> dans le "
-"chapitre 8."
+"texte encodé en UTF-8 avec les Strings”]"
+"(ch08-02-strings.html#storing-utf-8-encoded-text-with-strings)<!-- ignore -->"
+"dans le chapitre 8."
 
 #: src/ch03-02-data-types.md:244
 #, fuzzy
@@ -5779,8 +6179,8 @@ msgstr ""
 "qui, lui, peut grandir ou rétrécir en taille, dans la mesure où ses données "
 "sont situées sur le tas (_heap_). Si vous ne savez pas si vous devez "
 "utiliser un tableau ou un vecteur, il y a de fortes chances que vous devriez "
-"utiliser un vecteur. Le [chapitre 8][vectors] <!-- ignore --> expliquera les "
-"vecteurs."
+"utiliser un vecteur. Le [chapitre 8](ch08-01-vectors.html) <!-- ignore --> "
+"expliquera les vecteurs."
 
 #: src/ch03-02-data-types.md:343
 msgid ""
@@ -5990,6 +6390,9 @@ msgstr ""
 "mémoire et continuer son déroulement. Le chapitre 9 expliquera la gestion "
 "d'erreurs de Rust et comment vous pouvez écrire du code lisible et sûr qui "
 "ne panique pas ni n'autorise d'accès invalide à la mémoire."
+
+# }}}
+# Les fonctions {{{
 
 #: src/ch03-03-how-functions-work.md:3
 msgid ""
@@ -6504,6 +6907,9 @@ msgstr ""
 "problème : il suggère d'enlever le point-virgule, ce qui va résoudre notre "
 "problème."
 
+# }}}
+# Commentaires{{{
+
 #: src/ch03-04-comments.md:3
 #, fuzzy
 msgid ""
@@ -6573,8 +6979,12 @@ msgid ""
 "crates-io.html)<!-- ignore --> section of Chapter 14."
 msgstr ""
 "Rust a aussi un autre type de commentaire, les commentaires de "
-"documentation, que nous aborderons au chapitre 14."
+"documentation, que nous aborderons dans la partie "
+"[\"Publier une crate sur crates.io\"](ch14-02-publishing-to-crates-io.html) "
+"du chapitre 14."
 
+# }}}
+# Les structures de contrôle {{{
 #: src/ch03-05-control-flow.md:3
 #, fuzzy
 msgid ""
@@ -6644,8 +7054,9 @@ msgstr ""
 "Les blocs de code associés à une condition dans une expression `if` sont "
 "parfois appelés des *branches*, exactement comme les branches dans les "
 "expressions `match` que nous avons vu dans la section [“Comparer le nombre "
-"saisi au nombre secret”][comparing-the-guess-to-the-secret-number]<!-- "
-"ignore --> du chapitre 2."
+"saisi au nombre secret”]"
+"(ch02-00-guessing-game-tutorial.html#comparing-the-guess-to-the-secret-number)"
+"<!-- ignore --> du chapitre 2."
 
 #: src/ch03-05-control-flow.md:41
 #, fuzzy
@@ -7453,6 +7864,11 @@ msgstr ""
 "Quand vous serez prêt à aller plus loin, nous aborderons une notion de Rust "
 "qui n'existe *pas* dans les autres langages de programmation : la possession "
 "*(ownership)*."
+
+# }}}
+# }}}
+# Chapitre 4: {{{
+# Comprendre la possession {{{
 
 #: src/ch04-00-understanding-ownership.md:3
 msgid ""
@@ -8767,6 +9183,7 @@ msgstr ""
 "utiliser une valeur sans avoir à transférer la possession, avec ce qu'on "
 "appelle les *références*."
 
+# }}}
 #: src/ch04-02-references-and-borrowing.md:3
 #, fuzzy
 msgid ""
@@ -9555,11 +9972,11 @@ msgstr ""
 #: src/ch04-03-slices.md:415 src/ch04-03-slices.md:455
 #: src/ch04-03-slices.md:464 src/ch10-03-lifetime-syntax.md:596
 #: src/ch10-03-lifetime-syntax.md:601
-#, fuzzy
 msgid "\"hello world\""
-msgstr "Hello, World!"
+msgstr "\"hello world\""
 
 #: src/ch04-03-slices.md:148
+#, fuzzy
 msgid "// word will get the value 5\n"
 msgstr ""
 
@@ -10048,6 +10465,9 @@ msgstr ""
 "pourquoi nous allons encore parler de ces concepts plus loin dans le livre. "
 "Passons maintenant au chapitre 5 et découvrons comment regrouper des données "
 "ensemble dans une `struct`."
+
+# }}}
+# Chapitre 5: {{{
 
 #: src/ch05-00-structs.md:3
 #, fuzzy
@@ -11480,6 +11900,9 @@ msgstr ""
 "Mais les structures ne sont pas le seul moyen de créer des types "
 "personnalisés : nous allons maintenant voir les énumérations de Rust, une "
 "fonctionnalité que vous pourrez bientôt ajouter à votre boîte à outils."
+
+# }}}
+# Chapitre 6: {{{
 
 #: src/ch06-00-enums.md:3
 #, fuzzy
@@ -12987,6 +13410,9 @@ msgstr ""
 "Afin de fournir une API bien organisée, simple à utiliser et qui n'expose "
 "que ce dont vos utilisateurs auront besoin, découvrons maintenant les "
 "modules de Rust."
+
+# }}}
+# Chapitre 7: {{{
 
 #: src/ch07-00-managing-growing-projects-with-packages-crates-and-modules.md:3
 #, fuzzy
@@ -14910,6 +15336,9 @@ msgstr ""
 "Au prochain chapitre, nous allons nous intéresser à quelques collections de "
 "structures de données de la bibliothèque standard que vous pourrez utiliser "
 "dans votre code soigneusement organisé."
+
+# }}}
+# Chapitre 8: {{{
 
 #: src/ch08-00-common-collections.md:3
 #, fuzzy
@@ -16912,6 +17341,9 @@ msgstr ""
 "voir comment bien gérer les erreurs. C'est ce que nous allons faire au "
 "prochain chapitre !"
 
+# }}}
+# Chapitre 9: {{{
+
 #: src/ch09-00-error-handling.md:3
 #, fuzzy
 msgid ""
@@ -18846,6 +19278,9 @@ msgstr ""
 "parti de la généricité avec les énumérations `Option` et `Result`, nous "
 "allons voir comment la généricité fonctionne et comment vous pouvez "
 "l'utiliser dans votre code."
+
+# }}}
+# Chapitre 10: {{{
 
 #: src/ch10-00-generics.md:3
 #, fuzzy
@@ -22028,6 +22463,9 @@ msgstr ""
 "Rust afin que vous puissiez vous assurer que votre code fonctionne comme il "
 "devrait le faire."
 
+# }}}
+# Chapitre 11: {{{
+
 #: src/ch11-00-testing.md:3
 #, fuzzy
 msgid ""
@@ -24653,6 +25091,9 @@ msgid ""
 msgstr ""
 "Et maintenant, combinons le savoir que vous avez accumulé dans ce chapitre "
 "et dans les chapitres précédents en travaillant sur un nouveau projet !"
+
+# }}}
+# Chapitre 12: {{{
 
 #: src/ch12-00-an-io-project.md:3
 msgid ""
@@ -27664,6 +28105,8 @@ msgstr ""
 "été influencées par les langages fonctionnels : les fermetures et les "
 "itérateurs."
 
+# }}}
+# Chapitre 13: {{{
 #: src/ch13-00-functional-features.md:3
 #, fuzzy
 msgid ""
@@ -29375,6 +29818,9 @@ msgstr ""
 "sortie, regardons d'autres fonctionnalités fournies par `cargo` qui nous "
 "aideront à partager notre projet avec le monde entier."
 
+# }}}
+# Chapitre 14: {{{
+
 #: src/ch14-00-more-about-cargo.md:1
 #, fuzzy
 msgid "More About Cargo and Crates.io"
@@ -30259,8 +30705,11 @@ msgid ""
 "name = \"guessing_game\"\n"
 "```"
 msgstr ""
-"```console $ cargo new jeu_du_plus_ou_du_moins $ cd jeu_du_plus_ou_du_moins "
-"```"
+
+# "```console $ cargo new jeu_du_plus_ou_du_moins $ cd jeu_du_plus_ou_du_moins "
+# "```"
+# TODO revert to original French translation, when issue https://github.com/rust-lang-translations/translations/issues/32 is solved => un-untranslate msgstr above by uncommenting it and moving it up
+
 
 #: src/ch14-02-publishing-to-crates-io.md:421
 msgid ""
@@ -30374,9 +30823,12 @@ msgid ""
 "[dependencies]\n"
 "```"
 msgstr ""
-"```toml [package] name = \"jeu_du_plus_ou_du_moins\" version = \"0.1.0\" "
-"edition = \"2021\" description = \"Un jeu où vous devez deviner quel nombre "
-"l'ordinateur a choisi.\" license = \"MIT OR Apache-2.0\""
+
+# "```toml [package] name = \"jeu_du_plus_ou_du_moins\" version = \"0.1.0\" "
+# "edition = \"2021\" description = \"Un jeu où vous devez deviner quel nombre "
+# "l'ordinateur a choisi.\" license = \"MIT OR Apache-2.0\""
+# TODO revert to original French translation, when issue https://github.com/rust-lang-translations/translations/issues/32 is solved => un-untranslate msgstr above by uncommenting it and moving it up
+
 
 #: src/ch14-02-publishing-to-crates-io.md:487
 #, fuzzy
@@ -30778,7 +31230,12 @@ msgstr ""
 
 #: src/ch14-03-cargo-workspaces.md:151
 msgid "<span class=\"filename\">Filename: adder/Cargo.toml</span>"
-msgstr ""
+msgstr "<span class=\"filename\">Fichier : : ajouter_un/Cargo.toml</span>"
+
+msgid "Filename: adder/Cargo.toml"
+msgstr "Fichier : ajouter_un/Cargo.toml"
+
+# @# FIXME: none of these attemps seem to be working properly
 
 #: src/ch14-03-cargo-workspaces.md:153
 msgid ""
@@ -31234,6 +31691,9 @@ msgstr ""
 "différent de celui du langage. N'hésitez pas à partager du code qui vous est "
 "utile sur [crates.io](https://crates.io/)<!-- ignore --> ; il est fort "
 "probable qu'il sera aussi utile à quelqu'un d'autre !"
+
+# }}}
+# Chapitre 15: {{{
 
 #: src/ch15-00-smart-pointers.md:3
 #, fuzzy
@@ -34952,6 +35412,9 @@ msgstr ""
 "Au chapitre suivant, nous allons parler de concurrence en Rust. Vous "
 "découvrirez peut-être même quelques nouveaux pointeurs intelligents ..."
 
+# }}}
+# Chapitre 16: {{{
+
 #: src/ch16-00-concurrency.md:3
 #, fuzzy
 msgid ""
@@ -36954,6 +37417,9 @@ msgstr ""
 "monnaie courante dans les autres langages. Le développement en concurrence "
 "est un domaine qui ne devrait plus faire peur : lancez-vous et utilisez la "
 "concurrence dans vos programmes sans crainte !"
+
+# }}}
+# Chapitre 17: {{{
 
 #: src/ch17-00-async-await.md:3
 msgid ""
@@ -39164,9 +39630,10 @@ msgid ""
 "threads all fit together!"
 msgstr ""
 
+# @# FIXME see if it is necessary to translate these terms, or not:
 #: src/ch17-06-futures-tasks-threads.md:1
 msgid "Putting It All Together: Futures, Tasks, and Threads"
-msgstr ""
+msgstr "Futures, Tasks et Threads"
 
 #: src/ch17-06-futures-tasks-threads.md:3
 msgid ""
@@ -39324,10 +39791,16 @@ msgstr ""
 "peuvent exister entre les idées de Rust et celles avec lesquelles vous êtes "
 "peut-être familier en programmation orientée objet."
 
+# }}}
+# Chapitre 18: {{{
+
 #: src/ch18-00-oop.md:1
-#, fuzzy
 msgid "Object-Oriented Programming Features"
 msgstr "Les fonctionnalités orientées objet de Rust"
+
+# NOTE: the titles of this chapter differ slightly between summary and here:
+#       Object-Oriented
+#       Object Oriented
 
 #: src/ch18-00-oop.md:5
 #, fuzzy
@@ -39852,7 +40325,9 @@ msgstr ""
 "une sorte de pointeur, tel qu'une référence `&` ou un pointeur intelligent "
 "`Box<T>`, puis le mot-clé `dyn` et enfin le trait en question. (Nous "
 "expliquerons pourquoi les objets traits doivent utiliser un pointeur dans "
-"[une section][dynamically-sized]<!-- ignore --> du chapitre 19.) Nous "
+"[une section]"
+"(ch20-03-advanced-types.html#dynamically-sized-types-and-the-sized-trait)"
+"<!-- ignore --> du chapitre 19.) Nous "
 "pouvons utiliser des objets traits à la place d'un type générique ou "
 "concret. Partout où nous utilisons un objet trait, le système de types de "
 "Rust s'assurera à la compilation que n'importe quelle valeur utilisée dans "
@@ -42259,6 +42734,11 @@ msgstr ""
 "présent dans la première branche du `match` ne correspond pas à la valeur "
 "actuelle de `x`, donc le code passe à la branche suivante."
 
+# "Voyons ce qui se passe lorsque l'expression `match` est utilisée. Le motif "
+# "présent dans la première branche du `match` ne correspond pas à la valeur "
+# "actuelle de `x`, donc le code passe à la branche suivante."
+
+
 #: src/ch19-03-pattern-syntax.md:64
 #, fuzzy
 msgid ""
@@ -43480,6 +43960,9 @@ msgid ""
 msgstr ""
 "Dans le chapitre suivant, qui sera l'avant-dernier du livre, nous allons "
 "découvrir quelques aspects avancés de l'éventail de fonctionnalités de Rust."
+
+# }}}
+# Chapitre 20: {{{
 
 #: src/ch20-00-advanced-features.md:3
 #, fuzzy
@@ -47712,6 +48195,9 @@ msgstr ""
 "Au chapitre suivant, nous allons mettre en pratique tout ce que nous avons "
 "appris dans ce livre en l'appliquant à un nouveau projet !"
 
+# }}}
+# Chapitre 21: {{{
+
 #: src/ch21-00-final-project-a-web-server.md:3
 msgid ""
 "It’s been a long journey, but we’ve reached the end of the book. In this "
@@ -50743,6 +51229,8 @@ msgstr ""
 "communauté accueillante de Rustacés qui adorerait vous aider à relever tous "
 "les défis que vous rencontrerez dans votre aventure avec Rust."
 
+# }}}
+# Annexes: {{{
 #: src/appendix-00.md:3
 msgid ""
 "The following sections contain reference material you may find useful in "
@@ -53011,7 +53499,7 @@ msgstr ""
 #: src/appendix-05-editions.md:1
 #, fuzzy
 msgid "Appendix E: Editions"
-msgstr "Annexe A : les mots-clés"
+msgstr ""
 
 #: src/appendix-05-editions.md:3
 msgid ""
@@ -53517,6 +54005,8 @@ msgid ""
 "release of Rust."
 msgstr ""
 
+# }}}
+# Old stuff, kept just in case: {{{
 #~ msgid ""
 #~ "#  --- EN (historical, now outdated) ---------------------------- # NOTE: "
 #~ "The English text below corresponds to an older upstream version. "
@@ -53714,8 +54204,8 @@ msgstr ""
 #~ "paragraphs changed upstream"
 #~ msgstr "<!-- ### Troubleshooting -->"
 
-#~ msgid "<span class=\"filename\">Filename: main.rs</span>"
-#~ msgstr "<span class=\"filename\">Fichier : main.rs</span>"
+# #~ msgid "<span class=\"filename\">Filename: main.rs</span>"
+# #~ msgstr "<span class=\"filename\">Fichier : main.rs</span>"
 
 #~ msgid "```rust fn main() {     println!(\"Hello, world!\"); } ```"
 #~ msgstr "```rust fn main() {     println!(\"Hello, world!\"); } ```"
@@ -53743,8 +54233,6 @@ msgstr ""
 #~ "```cmd > dir /B %= l'option /B demande à n'afficher que les noms de "
 #~ "fichiers =% main.exe main.pdb main.rs ```"
 
-#~ msgid "```console $ ./main # or .\\main.exe on Windows ```"
-#~ msgstr "```console $ ./main # ou .\\main.exe sous Windows ```"
 
 #~ msgid "[troubleshooting]: ch01-01-installation.html#troubleshooting"
 #~ msgstr ""
@@ -65797,3 +66285,10 @@ msgstr ""
 #~ "translation follows the current English version, which replaces the "
 #~ "previous, obsolete, English version."
 #~ msgstr "<!-- # Foreword -->"
+
+
+# msgstr "Ajouter des fonctionnalités utiles avec les traits dérivés"
+
+# }}}
+# Useful things to keep handy at bottom of file:
+# Espace espéciale, en deux exemplaires : !
