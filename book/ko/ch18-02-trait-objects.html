@@ -96,7 +96,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-ba1bddcc.js";
+            window.path_to_searchindex_js = "searchindex-18122752.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-a05ef4ad.js"></script>
@@ -262,7 +262,7 @@
 <pre><code class="language-rust noplayground"><span class="boring">pub trait Draw {
 </span><span class="boring">    fn draw(&amp;self);
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span>pub struct Screen {
     pub components: Vec&lt;Box&lt;dyn Draw&gt;&gt;,
 }</code></pre>
@@ -274,11 +274,11 @@
 <pre><code class="language-rust noplayground"><span class="boring">pub trait Draw {
 </span><span class="boring">    fn draw(&amp;self);
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">pub struct Screen {
 </span><span class="boring">    pub components: Vec&lt;Box&lt;dyn Draw&gt;&gt;,
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span>impl Screen {
     pub fn run(&amp;self) {
         for component in self.components.iter() {
@@ -294,11 +294,11 @@
 <pre><code class="language-rust noplayground"><span class="boring">pub trait Draw {
 </span><span class="boring">    fn draw(&amp;self);
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span>pub struct Screen&lt;T: Draw&gt; {
     pub components: Vec&lt;T&gt;,
 }
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 impl&lt;T&gt; Screen&lt;T&gt;
 where
     T: Draw,
@@ -320,11 +320,11 @@ where
 <pre><code class="language-rust noplayground"><span class="boring">pub trait Draw {
 </span><span class="boring">    fn draw(&amp;self);
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">pub struct Screen {
 </span><span class="boring">    pub components: Vec&lt;Box&lt;dyn Draw&gt;&gt;,
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">impl Screen {
 </span><span class="boring">    pub fn run(&amp;self) {
 </span><span class="boring">        for component in self.components.iter() {
@@ -332,13 +332,13 @@ where
 </span><span class="boring">        }
 </span><span class="boring">    }
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span>pub struct Button {
     pub width: u32,
     pub height: u32,
     pub label: String,
 }
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 impl Draw for Button {
     fn draw(&amp;self) {
         // 버튼을 실제로 그리는 코드
@@ -351,19 +351,19 @@ impl Draw for Button {
 <figure class="listing" id="listing-18-8">
 <span class="file-name">Filename: src/main.rs</span>
 <pre><code class="language-rust ignore">use gui::Draw;
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 struct SelectBox {
     width: u32,
     height: u32,
     options: Vec&lt;String&gt;,
 }
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 impl Draw for SelectBox {
     fn draw(&amp;self) {
         // 셀렉트 박스를 실제로 그리는 코드
     }
 }
-<span class="boring">
+<span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">fn main() {}</span></code></pre>
 <figcaption><a href="#listing-18-8">Listing 18-8</a>: Another crate using <code>gui</code> and implementing the <code>Draw</code> trait on a <code>SelectBox</code> struct</figcaption>
 </figure>
@@ -371,21 +371,21 @@ impl Draw for SelectBox {
 <figure class="listing" id="listing-18-9">
 <span class="file-name">Filename: src/main.rs</span>
 <pre><code class="language-rust ignore"><span class="boring">use gui::Draw;
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">struct SelectBox {
 </span><span class="boring">    width: u32,
 </span><span class="boring">    height: u32,
 </span><span class="boring">    options: Vec&lt;String&gt;,
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">impl Draw for SelectBox {
 </span><span class="boring">    fn draw(&amp;self) {
 </span><span class="boring">        // 셀렉트 박스를 실제로 그리는 코드
 </span><span class="boring">    }
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span>use gui::{Button, Screen};
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 fn main() {
     let screen = Screen {
         components: vec![
@@ -405,7 +405,7 @@ fn main() {
             }),
         ],
     };
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
     screen.run();
 }</code></pre>
 <figcaption><a href="#listing-18-9">Listing 18-9</a>: Using trait objects to store values of different types that implement the same trait</figcaption>
@@ -417,12 +417,12 @@ fn main() {
 <figure class="listing" id="listing-18-10">
 <span class="file-name">Filename: src/main.rs</span>
 <pre><code class="language-rust ignore does_not_compile">use gui::Screen;
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 fn main() {
     let screen = Screen {
         components: vec![Box::new(String::from("안녕"))],
     };
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
     screen.run();
 }</code></pre>
 <figcaption><a href="#listing-18-10">Listing 18-10</a>: Attempting to use a type that doesn’t implement the trait object’s trait</figcaption>
@@ -438,7 +438,7 @@ error[E0277]: the trait bound `String: Draw` is not satisfied
   |
   = help: `Button` 에 대해 `Draw` 트레이트가 구현되어 있습니다
   = note: `Box&lt;String&gt;` 에서 `Box&lt;dyn Draw&gt;` 로의 캐스트를 위해 요구됩니다
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 이 에러에 대한 더 자세한 정보를 원하시면 `rustc --explain E0277` 을 시도해 보세요.
 에러: 1개의 이전 에러로 인해 `gui` (바이너리 "gui")를 컴파일할 수 없습니다
 </code></pre>

@@ -96,7 +96,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-01ba4889.js";
+            window.path_to_searchindex_js = "searchindex-0481507b.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-f10b093a.js"></script>
@@ -250,9 +250,9 @@
 <figure class="listing" id="listing-17-6">
 <span class="file-name">Filename: src/main.rs</span>
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">extern crate trpl; // required for mdbook test
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span>use std::time::Duration;
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 fn main() {
     trpl::block_on(async {
         trpl::spawn_task(async {
@@ -261,7 +261,7 @@ fn main() {
                 trpl::sleep(Duration::from_millis(500)).await;
             }
         });
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
         for i in 1..5 {
             println!("hi number {i} from the second task!");
             trpl::sleep(Duration::from_millis(500)).await;
@@ -293,9 +293,9 @@ hi number 5 from the first task!
 <figure class="listing" id="listing-17-7">
 <span class="file-name">Filename: src/main.rs</span>
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">extern crate trpl; // required for mdbook test
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">use std::time::Duration;
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">fn main() {
 </span><span class="boring">    trpl::block_on(async {
 </span>        let handle = trpl::spawn_task(async {
@@ -304,12 +304,12 @@ hi number 5 from the first task!
                 trpl::sleep(Duration::from_millis(500)).await;
             }
         });
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
         for i in 1..5 {
             println!("hi number {i} from the second task!");
             trpl::sleep(Duration::from_millis(500)).await;
         }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
         handle.await.unwrap();
 <span class="boring">    });
 </span><span class="boring">}</span></code></pre>
@@ -339,9 +339,9 @@ hi number 9 from the first task!
 <figure class="listing" id="listing-17-8">
 <span class="file-name">Filename: src/main.rs</span>
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">extern crate trpl; // required for mdbook test
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">use std::time::Duration;
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">fn main() {
 </span><span class="boring">    trpl::block_on(async {
 </span>        let fut1 = async {
@@ -350,14 +350,14 @@ hi number 9 from the first task!
                 trpl::sleep(Duration::from_millis(500)).await;
             }
         };
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
         let fut2 = async {
             for i in 1..5 {
                 println!("hi number {i} from the second task!");
                 trpl::sleep(Duration::from_millis(500)).await;
             }
         };
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
         trpl::join(fut1, fut2).await;
 <span class="boring">    });
 </span><span class="boring">}</span></code></pre>
@@ -396,14 +396,14 @@ hi number 9 from the first task!
 <figure class="listing" id="listing-17-9">
 <span class="file-name">Filename: src/main.rs</span>
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">extern crate trpl; // required for mdbook test
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">fn main() {
 </span><span class="boring">    trpl::block_on(async {
 </span>        let (tx, mut rx) = trpl::channel();
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
         let val = String::from("hi");
         tx.send(val).unwrap();
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
         let received = rx.recv().await.unwrap();
         println!("received '{received}'");
 <span class="boring">    });
@@ -421,25 +421,25 @@ hi number 9 from the first task!
 <figure class="listing" id="listing-17-10">
 <span class="file-name">Filename: src/main.rs</span>
 <pre><code class="language-rust ignore"><span class="boring">extern crate trpl; // required for mdbook test
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">use std::time::Duration;
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">fn main() {
 </span><span class="boring">    trpl::block_on(async {
 </span>        let (tx, mut rx) = trpl::channel();
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
         let vals = vec![
             String::from("hi"),
             String::from("from"),
             String::from("the"),
             String::from("future"),
         ];
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
         for val in vals {
             tx.send(val).unwrap();
             trpl::sleep(Duration::from_millis(500)).await;
         }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
         while let Some(value) = rx.recv().await {
             println!("received '{value}'");
         }
@@ -460,13 +460,13 @@ hi number 9 from the first task!
 <figure class="listing" id="listing-17-11">
 <span class="file-name">Filename: src/main.rs</span>
 <pre><code class="language-rust ignore"><span class="boring">extern crate trpl; // required for mdbook test
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">use std::time::Duration;
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">fn main() {
 </span><span class="boring">    trpl::block_on(async {
 </span><span class="boring">        let (tx, mut rx) = trpl::channel();
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span>        let tx_fut = async {
             let vals = vec![
                 String::from("hi"),
@@ -474,19 +474,19 @@ hi number 9 from the first task!
                 String::from("the"),
                 String::from("future"),
             ];
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
             for val in vals {
                 tx.send(val).unwrap();
                 trpl::sleep(Duration::from_millis(500)).await;
             }
         };
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
         let rx_fut = async {
             while let Some(value) = rx.recv().await {
                 println!("received '{value}'");
             }
         };
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
         trpl::join(tx_fut, rx_fut).await;
 <span class="boring">    });
 </span><span class="boring">}</span></code></pre>
@@ -510,13 +510,13 @@ hi number 9 from the first task!
 <figure class="listing" id="listing-17-12">
 <span class="file-name">Filename: src/main.rs</span>
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">extern crate trpl; // required for mdbook test
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">use std::time::Duration;
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">fn main() {
 </span><span class="boring">    trpl::block_on(async {
 </span>        let (tx, mut rx) = trpl::channel();
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
         let tx_fut = async move {
             // --код сокращён--
 <span class="boring">            let vals = vec![
@@ -525,19 +525,19 @@ hi number 9 from the first task!
 </span><span class="boring">                String::from("the"),
 </span><span class="boring">                String::from("future"),
 </span><span class="boring">            ];
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">            for val in vals {
 </span><span class="boring">                tx.send(val).unwrap();
 </span><span class="boring">                trpl::sleep(Duration::from_millis(500)).await;
 </span><span class="boring">            }
 </span><span class="boring">        };
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">        let rx_fut = async {
 </span><span class="boring">            while let Some(value) = rx.recv().await {
 </span><span class="boring">                println!("received '{value}'");
 </span><span class="boring">            }
 </span><span class="boring">        };
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">        trpl::join(tx_fut, rx_fut).await;
 </span><span class="boring">    });
 </span><span class="boring">}</span></code></pre>
@@ -549,13 +549,13 @@ hi number 9 from the first task!
 <figure class="listing" id="listing-17-13">
 <span class="file-name">Filename: src/main.rs</span>
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">extern crate trpl; // required for mdbook test
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">use std::time::Duration;
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">fn main() {
 </span><span class="boring">    trpl::block_on(async {
 </span>        let (tx, mut rx) = trpl::channel();
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
         let tx1 = tx.clone();
         let tx1_fut = async move {
             let vals = vec![
@@ -564,19 +564,19 @@ hi number 9 from the first task!
                 String::from("the"),
                 String::from("future"),
             ];
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
             for val in vals {
                 tx1.send(val).unwrap();
                 trpl::sleep(Duration::from_millis(500)).await;
             }
         };
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
         let rx_fut = async {
             while let Some(value) = rx.recv().await {
                 println!("received '{value}'");
             }
         };
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
         let tx_fut = async move {
             let vals = vec![
                 String::from("more"),
@@ -584,13 +584,13 @@ hi number 9 from the first task!
                 String::from("for"),
                 String::from("you"),
             ];
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
             for val in vals {
                 tx.send(val).unwrap();
                 trpl::sleep(Duration::from_millis(1500)).await;
             }
         };
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
         trpl::join!(tx1_fut, tx_fut, rx_fut);
 <span class="boring">    });
 </span><span class="boring">}</span></code></pre>

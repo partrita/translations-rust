@@ -96,10 +96,10 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-5b6c4c3f.js";
+            window.path_to_searchindex_js = "searchindex-380cec70.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="toc-44dad460.js"></script>
+        <script src="toc-09667002.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -358,35 +358,35 @@ pub trait Write {
 </span><span class="boring">fn main() {
 </span><span class="boring">    println!("Devinez le nombre !");
 </span><span class="boring">
-</span><span class="boring">    let secret_number = rand::thread_rng().gen_range(1..=100);
+</span><span class="boring">    let nombre_secret = rand::thread_rng().gen_range(1..=100);
 </span><span class="boring">
-</span><span class="boring">    println!("Le nombre secret est : {nombre_secret}");
+</span><span class="boring">    println!("Le nombre secret est : {nombre_secret}");
 </span><span class="boring">
 </span><span class="boring">    loop {
 </span><span class="boring">        println!("Veuillez entrer un nombre.");
 </span><span class="boring">
-</span><span class="boring">        let mut guess = String::new();
+</span><span class="boring">        let mut supposition = String::new();
 </span><span class="boring">
 </span><span class="boring">        // -- partie masquée ici --
 </span><span class="boring">
 </span><span class="boring">        io::stdin()
-</span><span class="boring">            .read_line(&amp;mut guess)
+</span><span class="boring">            .read_line(&amp;mut supposition)
 </span><span class="boring">            .expect("Échec de la lecture de l'entrée utilisateur");
 </span><span class="boring">
-</span>        let guess: u32 = match guess.trim().parse() {
-            Ok(num) =&gt; num,
+</span>        let supposition: u32 = match supposition.trim().parse() {
+            Ok(nombre) =&gt; nombre,
             Err(_) =&gt; continue,
         };
 <span class="boring">
-</span><span class="boring">        println!("Votre nombre : {guess}");
+</span><span class="boring">        println!("Votre nombre : {supposition}");
 </span><span class="boring">
 </span><span class="boring">        // -- partie masquée ici --
 </span><span class="boring">
-</span><span class="boring">        match guess.cmp(&amp;secret_number) {
-</span><span class="boring">            Ordering::Less =&gt; println!("C'est plus !"),
-</span><span class="boring">            Ordering::Greater =&gt; println!("C'est moins !"),
+</span><span class="boring">        match supposition.cmp(&amp;nombre_secret) {
+</span><span class="boring">            Ordering::Less =&gt; println!("C'est plus !"),
+</span><span class="boring">            Ordering::Greater =&gt; println!("C'est moins !"),
 </span><span class="boring">            Ordering::Equal =&gt; {
-</span><span class="boring">                println!("Vous avez gagné !");
+</span><span class="boring">                println!("Vous avez gagné !");
 </span><span class="boring">                break;
 </span><span class="boring">            }
 </span><span class="boring">        }

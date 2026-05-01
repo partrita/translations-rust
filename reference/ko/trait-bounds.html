@@ -93,7 +93,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-55effe88.js";
+            window.path_to_searchindex_js = "searchindex-e23b9ebb.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-20da6b24.js"></script>
@@ -746,19 +746,19 @@ Self</text>
     fn draw(&amp;self, surface: Surface);
     fn name() -&gt; &amp;'static str;
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 fn draw_twice&lt;T: Shape&gt;(surface: Surface, sh: T) {
     sh.draw(surface);           // T: Shape이므로 메서드 호출 가능
     sh.draw(surface);
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 fn copy_and_draw_twice&lt;T: Copy&gt;(surface: Surface, sh: T) where T: Shape {
     let shape_copy = sh;        // T: Copy이므로 sh를 이동시키지 않음
     draw_twice(surface, sh);    // T: Shape이므로 제네릭 함수 사용 가능
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 struct Figure&lt;S: Shape&gt;(S, S);
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 fn name_figure&lt;U: Shape&gt;(
     figure: Figure&lt;U&gt;,          // U: Shape이므로 타입 Figure&lt;U&gt;는 잘 형성됨(well-formed)
 ) {
@@ -920,7 +920,7 @@ GenericParams</text>
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span>fn requires_t_outlives_a_not_implied&lt;'a, T: 'a&gt;() {}
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 fn requires_t_outlives_a&lt;'a, T&gt;(x: &amp;'a T) {
     // 이 코드는 컴파일됩니다. 참조 타입 `&amp;'a T` 에 의해
     // `T: 'a` 가 함축되기 때문입니다.
@@ -958,7 +958,7 @@ fn doesnt_specify_t_debug&lt;T&gt;(x: IsDebug&lt;T&gt;) {}
     // 이는 컴파일러에 의해 추론됩니다.
     field: &amp;'a T,
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 enum Enum&lt;'a, T&gt; {
     // 이것이 잘 형성되기 위해서는 `T: 'a` 가 필요하며,
     // 이는 컴파일러에 의해 추론됩니다.
@@ -968,13 +968,13 @@ enum Enum&lt;'a, T&gt; {
     SomeVariant(&amp;'a T),
     OtherVariant,
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 trait Trait&lt;'a, T: 'a&gt; {}
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // 이 코드는 오류가 발생합니다. impl 헤더의 어떤 타입에 의해서도
 // `T: 'a` 가 함축되지 않기 때문입니다.
 //     impl&lt;'a, T&gt; Trait&lt;'a, T&gt; for () {}
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // 이 코드는 컴파일됩니다. 셀프 타입 `&amp;'a T` 에 의해 `T: 'a` 가 함축되기 때문입니다.
 impl&lt;'a, T&gt; Trait&lt;'a, T&gt; for &amp;'a T {}
 <span class="boring">}</span></code></pre>

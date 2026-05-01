@@ -96,7 +96,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-ba1bddcc.js";
+            window.path_to_searchindex_js = "searchindex-18122752.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-a05ef4ad.js"></script>
@@ -266,27 +266,27 @@
 <pre><code class="language-rust noplayground"><span class="boring">pub trait Summary {
 </span><span class="boring">    fn summarize(&amp;self) -&gt; String;
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span>pub struct NewsArticle {
     pub headline: String,
     pub location: String,
     pub author: String,
     pub content: String,
 }
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 impl Summary for NewsArticle {
     fn summarize(&amp;self) -&gt; String {
         format!("{}, {} 작성 ({})", self.headline, self.author, self.location)
     }
 }
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 pub struct SocialPost {
     pub username: String,
     pub content: String,
     pub reply: bool,
     pub repost: bool,
 }
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 impl Summary for SocialPost {
     fn summarize(&amp;self) -&gt; String {
         format!("{}: {}", self.username, self.content)
@@ -297,7 +297,7 @@ impl Summary for SocialPost {
 <p>타입에 트레이트를 구현하는 것은 일반 메서드를 구현하는 것과 유사합니다. 차이점은 <code>impl</code> 다음에 구현하려는 트레이트 이름을 넣고, 그 다음 <code>for</code> 키워드를 사용한 다음, 트레이트를 구현하려는 타입의 이름을 지정한다는 것입니다. <code>impl</code> 블록 내에는 트레이트 정의가 정의한 메서드 시그니처를 넣습니다. 각 시그니처 뒤에 세미콜론을 추가하는 대신 중괄호를 사용하고 해당 타입에 대해 트레이트의 메서드가 가져야 할 특정 동작으로 메서드 본문을 채웁니다.</p>
 <p>Now that the library has implemented the <code>Summary</code> trait on <code>NewsArticle</code> and <code>SocialPost</code>, users of the crate can call the trait methods on instances of <code>NewsArticle</code> and <code>SocialPost</code> in the same way we call regular methods. The only difference is that the user must bring the trait into scope as well as the types. Here’s an example of how a binary crate could use our <code>aggregator</code> library crate:</p>
 <pre><code class="language-rust ignore">use aggregator::{SocialPost, Summary};
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 fn main() {
     let post = SocialPost {
         username: String::from("horse_ebooks"),
@@ -307,7 +307,7 @@ fn main() {
         reply: false,
         repost: false,
     };
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
     println!("1 new post: {}", post.summarize());
 }</code></pre>
 <p>This code prints <code>1 new post: horse_ebooks: of course, as you probably already know, people</code>.</p>
@@ -325,23 +325,23 @@ fn main() {
         String::from("(더 읽어보기...)")
     }
 }
-<span class="boring">
+<span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">pub struct NewsArticle {
 </span><span class="boring">    pub headline: String,
 </span><span class="boring">    pub location: String,
 </span><span class="boring">    pub author: String,
 </span><span class="boring">    pub content: String,
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">impl Summary for NewsArticle {}
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">pub struct SocialPost {
 </span><span class="boring">    pub username: String,
 </span><span class="boring">    pub content: String,
 </span><span class="boring">    pub reply: bool,
 </span><span class="boring">    pub repost: bool,
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">impl Summary for SocialPost {
 </span><span class="boring">    fn summarize(&amp;self) -&gt; String {
 </span><span class="boring">        format!("{}: {}", self.username, self.content)
@@ -352,7 +352,7 @@ fn main() {
 <p><code>NewsArticle</code> 인스턴스를 요약하기 위해 기본 구현을 사용하려면, <code>impl Summary for NewsArticle {}</code> 과 같이 빈 <code>impl</code> 블록을 지정합니다.</p>
 <p><code>NewsArticle</code> 에 <code>summarize</code> 메서드를 직접 정의하지는 않았지만, 기본 구현을 제공하고 <code>NewsArticle</code> 이 <code>Summary</code> 트레이트를 구현한다고 지정했습니다. 결과적으로 다음과 같이 <code>NewsArticle</code> 의 인스턴스에서 <code>summarize</code> 메서드를 호출할 수 있습니다:</p>
 <pre><code class="language-rust ignore"><span class="boring">use aggregator::{self, NewsArticle, Summary};
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">fn main() {
 </span>    let article = NewsArticle {
         headline: String::from("펭귄스, 스탠리 컵 챔피언십 우승!"),
@@ -363,7 +363,7 @@ fn main() {
              하키 팀이 되었습니다.",
         ),
     };
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
     println!("새로운 기사를 볼 수 있습니다! {}", article.summarize());
 <span class="boring">}</span></code></pre>
 <p>이 코드는 <code>새로운 기사를 볼 수 있습니다! (더 읽어보기...)</code> 를 출력합니다.</p>
@@ -371,19 +371,19 @@ fn main() {
 <p>기본 구현은 동일한 트레이트 내의 다른 메서드를 호출할 수 있습니다. 그 다른 메서드에 기본 구현이 없더라도 상관없습니다. 이런 방식으로 트레이트는 많은 유용한 기능을 제공하면서 구현자가 그 중 일부만 지정하도록 요구할 수 있습니다. 예를 들어, <code>Summary</code> 트레이트에 구현이 필요한 <code>summarize_author</code> 메서드를 정의하고, <code>summarize</code> 메서드는 <code>summarize_author</code> 메서드를 호출하는 기본 구현을 갖도록 정의할 수 있습니다:</p>
 <pre><code class="language-rust noplayground">pub trait Summary {
     fn summarize_author(&amp;self) -&gt; String;
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
     fn summarize(&amp;self) -&gt; String {
         format!("(...{}에서 더 읽어보기)", self.summarize_author())
     }
 }
-<span class="boring">
+<span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">pub struct SocialPost {
 </span><span class="boring">    pub username: String,
 </span><span class="boring">    pub content: String,
 </span><span class="boring">    pub reply: bool,
 </span><span class="boring">    pub repost: bool,
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">impl Summary for SocialPost {
 </span><span class="boring">    fn summarize_author(&amp;self) -&gt; String {
 </span><span class="boring">        format!("@{}", self.username)
@@ -392,19 +392,19 @@ fn main() {
 <p>이 <code>Summary</code> 버전을 사용하려면, 타입에 트레이트를 구현할 때 <code>summarize_author</code> 만 정의하면 됩니다:</p>
 <pre><code class="language-rust ignore"><span class="boring">pub trait Summary {
 </span><span class="boring">    fn summarize_author(&amp;self) -&gt; String;
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">    fn summarize(&amp;self) -&gt; String {
 </span><span class="boring">        format!("(...{}에서 더 읽어보기)", self.summarize_author())
 </span><span class="boring">    }
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">pub struct SocialPost {
 </span><span class="boring">    pub username: String,
 </span><span class="boring">    pub content: String,
 </span><span class="boring">    pub reply: bool,
 </span><span class="boring">    pub repost: bool,
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span>impl Summary for SocialPost {
     fn summarize_author(&amp;self) -&gt; String {
         format!("@{}", self.username)
@@ -412,7 +412,7 @@ fn main() {
 }</code></pre>
 <p>After we define <code>summarize_author</code>, we can call <code>summarize</code> on instances of the <code>SocialPost</code> struct, and the default implementation of <code>summarize</code> will call the definition of <code>summarize_author</code> that we’ve provided. Because we’ve implemented <code>summarize_author</code>, the <code>Summary</code> trait has given us the behavior of the <code>summarize</code> method without requiring us to write any more code. Here’s what that looks like:</p>
 <pre><code class="language-rust ignore"><span class="boring">use aggregator::{self, SocialPost, Summary};
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">fn main() {
 </span>    let post = SocialPost {
         username: String::from("horse_ebooks"),
@@ -422,7 +422,7 @@ fn main() {
         reply: false,
         repost: false,
     };
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
     println!("1 new post: {}", post.summarize());
 <span class="boring">}</span></code></pre>
 <p>This code prints <code>1 new post: (Read more from @horse_ebooks...)</code>.</p>
@@ -434,33 +434,33 @@ fn main() {
 <pre><code class="language-rust ignore"><span class="boring">pub trait Summary {
 </span><span class="boring">    fn summarize(&amp;self) -&gt; String;
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">pub struct NewsArticle {
 </span><span class="boring">    pub headline: String,
 </span><span class="boring">    pub location: String,
 </span><span class="boring">    pub author: String,
 </span><span class="boring">    pub content: String,
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">impl Summary for NewsArticle {
 </span><span class="boring">    fn summarize(&amp;self) -&gt; String {
 </span><span class="boring">        format!("{}, {} 작성 ({})", self.headline, self.author, self.location)
 </span><span class="boring">    }
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">pub struct SocialPost {
 </span><span class="boring">    pub username: String,
 </span><span class="boring">    pub content: String,
 </span><span class="boring">    pub reply: bool,
 </span><span class="boring">    pub repost: bool,
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">impl Summary for SocialPost {
 </span><span class="boring">    fn summarize(&amp;self) -&gt; String {
 </span><span class="boring">        format!("{}: {}", self.username, self.content)
 </span><span class="boring">    }
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span>pub fn notify(item: &amp;impl Summary) {
     println!("속보! {}", item.summarize());
 }</code></pre>
@@ -503,33 +503,33 @@ where
 <pre><code class="language-rust ignore"><span class="boring">pub trait Summary {
 </span><span class="boring">    fn summarize(&amp;self) -&gt; String;
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">pub struct NewsArticle {
 </span><span class="boring">    pub headline: String,
 </span><span class="boring">    pub location: String,
 </span><span class="boring">    pub author: String,
 </span><span class="boring">    pub content: String,
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">impl Summary for NewsArticle {
 </span><span class="boring">    fn summarize(&amp;self) -&gt; String {
 </span><span class="boring">        format!("{}, {} 작성 ({})", self.headline, self.author, self.location)
 </span><span class="boring">    }
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">pub struct SocialPost {
 </span><span class="boring">    pub username: String,
 </span><span class="boring">    pub content: String,
 </span><span class="boring">    pub reply: bool,
 </span><span class="boring">    pub repost: bool,
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">impl Summary for SocialPost {
 </span><span class="boring">    fn summarize(&amp;self) -&gt; String {
 </span><span class="boring">        format!("{}: {}", self.username, self.content)
 </span><span class="boring">    }
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span>fn returns_summarizable() -&gt; impl Summary {
     SocialPost {
         username: String::from("horse_ebooks"),
@@ -546,33 +546,33 @@ where
 <pre><code class="language-rust ignore does_not_compile"><span class="boring">pub trait Summary {
 </span><span class="boring">    fn summarize(&amp;self) -&gt; String;
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">pub struct NewsArticle {
 </span><span class="boring">    pub headline: String,
 </span><span class="boring">    pub location: String,
 </span><span class="boring">    pub author: String,
 </span><span class="boring">    pub content: String,
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">impl Summary for NewsArticle {
 </span><span class="boring">    fn summarize(&amp;self) -&gt; String {
 </span><span class="boring">        format!("{}, {} 작성 ({})", self.headline, self.author, self.location)
 </span><span class="boring">    }
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">pub struct SocialPost {
 </span><span class="boring">    pub username: String,
 </span><span class="boring">    pub content: String,
 </span><span class="boring">    pub reply: bool,
 </span><span class="boring">    pub repost: bool,
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">impl Summary for SocialPost {
 </span><span class="boring">    fn summarize(&amp;self) -&gt; String {
 </span><span class="boring">        format!("{}: {}", self.username, self.content)
 </span><span class="boring">    }
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span>fn returns_summarizable(switch: bool) -&gt; impl Summary {
     if switch {
         NewsArticle {
@@ -603,18 +603,18 @@ where
 <figure class="listing" id="listing-10-15">
 <span class="file-name">Filename: src/lib.rs</span>
 <pre><code class="language-rust noplayground">use std::fmt::Display;
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 struct Pair&lt;T&gt; {
     x: T,
     y: T,
 }
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 impl&lt;T&gt; Pair&lt;T&gt; {
     fn new(x: T, y: T) -&gt; Self {
         Self { x, y }
     }
 }
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 impl&lt;T: Display + PartialOrd&gt; Pair&lt;T&gt; {
     fn cmp_display(&amp;self) {
         if self.x &gt;= self.y {

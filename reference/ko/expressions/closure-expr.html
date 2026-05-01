@@ -93,7 +93,7 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-55effe88.js";
+            window.path_to_searchindex_js = "../searchindex-e23b9ebb.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../toc-20da6b24.js"></script>
@@ -549,7 +549,7 @@ Type</text>
     f(0).await;
     f(1).await;
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 async fn example() {
     takes_async_callback(async |i| {
         core::future::ready(i).await;
@@ -577,11 +577,11 @@ async fn example() {
         f(index);
     }
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 ten_times(|j| println!("안녕하세요, {}", j));
 // 타입 주석 포함
 ten_times(|j: i32| -&gt; () { println!("안녕하세요, {}", j) });
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 let word = "곤니찌와".to_owned();
 ten_times(move |j| println!("{}, {}", word, j));
 <span class="boring">}</span></code></pre>

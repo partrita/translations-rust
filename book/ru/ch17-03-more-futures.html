@@ -96,7 +96,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-01ba4889.js";
+            window.path_to_searchindex_js = "searchindex-0481507b.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-f10b093a.js"></script>
@@ -247,15 +247,15 @@
 <figure class="listing" id="listing-17-14">
 <span class="file-name">Filename: src/main.rs</span>
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">extern crate trpl; // required for mdbook test
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">use std::{thread, time::Duration};
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">fn main() {
 </span><span class="boring">    trpl::block_on(async {
 </span><span class="boring">        // We will call `slow` here later
 </span><span class="boring">    });
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span>fn slow(name: &amp;str, ms: u64) {
     thread::sleep(Duration::from_millis(ms));
     println!("'{name}' ran for {ms}ms");
@@ -267,9 +267,9 @@
 <figure class="listing" id="listing-17-15">
 <span class="file-name">Filename: src/main.rs</span>
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">extern crate trpl; // required for mdbook test
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">use std::{thread, time::Duration};
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">fn main() {
 </span><span class="boring">    trpl::block_on(async {
 </span>        let a = async {
@@ -280,7 +280,7 @@
             trpl::sleep(Duration::from_millis(50)).await;
             println!("'a' finished.");
         };
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
         let b = async {
             println!("'b' started.");
             slow("b", 75);
@@ -290,11 +290,11 @@
             trpl::sleep(Duration::from_millis(50)).await;
             println!("'b' finished.");
         };
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
         trpl::select(a, b).await;
 <span class="boring">    });
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">fn slow(name: &amp;str, ms: u64) {
 </span><span class="boring">    thread::sleep(Duration::from_millis(ms));
 </span><span class="boring">    println!("'{name}' ran for {ms}ms");
@@ -323,13 +323,13 @@ copy just the output
 <figure class="listing" id="listing-17-16">
 <span class="file-name">Filename: src/main.rs</span>
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">extern crate trpl; // required for mdbook test
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">use std::{thread, time::Duration};
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">fn main() {
 </span><span class="boring">    trpl::block_on(async {
 </span>        let one_ms = Duration::from_millis(1);
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
         let a = async {
             println!("'a' started.");
             slow("a", 30);
@@ -340,7 +340,7 @@ copy just the output
             trpl::sleep(one_ms).await;
             println!("'a' finished.");
         };
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
         let b = async {
             println!("'b' started.");
             slow("b", 75);
@@ -353,11 +353,11 @@ copy just the output
             trpl::sleep(one_ms).await;
             println!("'b' finished.");
         };
-<span class="boring">
+<span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">        trpl::select(a, b).await;
 </span><span class="boring">    });
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">fn slow(name: &amp;str, ms: u64) {
 </span><span class="boring">    thread::sleep(Duration::from_millis(ms));
 </span><span class="boring">    println!("'{name}' ran for {ms}ms");
@@ -385,9 +385,9 @@ copy just the output
 <figure class="listing" id="listing-17-17">
 <span class="file-name">Filename: src/main.rs</span>
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">extern crate trpl; // required for mdbook test
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">use std::{thread, time::Duration};
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">fn main() {
 </span><span class="boring">    trpl::block_on(async {
 </span>        let a = async {
@@ -400,7 +400,7 @@ copy just the output
             trpl::yield_now().await;
             println!("'a' finished.");
         };
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
         let b = async {
             println!("'b' started.");
             slow("b", 75);
@@ -413,11 +413,11 @@ copy just the output
             trpl::yield_now().await;
             println!("'b' finished.");
         };
-<span class="boring">
+<span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">        trpl::select(a, b).await;
 </span><span class="boring">    });
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">fn slow(name: &amp;str, ms: u64) {
 </span><span class="boring">    thread::sleep(Duration::from_millis(ms));
 </span><span class="boring">    println!("'{name}' ran for {ms}ms");
@@ -433,16 +433,16 @@ copy just the output
 <figure class="listing" id="listing-17-18">
 <span class="file-name">Filename: src/main.rs</span>
 <pre><code class="language-rust ignore does_not_compile"><span class="boring">extern crate trpl; // required for mdbook test
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">use std::time::Duration;
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">fn main() {
 </span><span class="boring">    trpl::block_on(async {
 </span>        let slow = async {
             trpl::sleep(Duration::from_secs(5)).await;
             "Finally finished"
         };
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
         match timeout(slow, Duration::from_secs(2)).await {
             Ok(message) =&gt; println!("Succeeded with '{message}'"),
             Err(duration) =&gt; {
@@ -465,16 +465,16 @@ copy just the output
 <figure class="listing" id="listing-17-19">
 <span class="file-name">Filename: src/main.rs</span>
 <pre><code class="language-rust ignore does_not_compile"><span class="boring">extern crate trpl; // required for mdbook test
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">use std::time::Duration;
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">fn main() {
 </span><span class="boring">    trpl::block_on(async {
 </span><span class="boring">        let slow = async {
 </span><span class="boring">            trpl::sleep(Duration::from_secs(5)).await;
 </span><span class="boring">            "Finally finished"
 </span><span class="boring">        };
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">        match timeout(slow, Duration::from_secs(2)).await {
 </span><span class="boring">            Ok(message) =&gt; println!("Succeeded with '{message}'"),
 </span><span class="boring">            Err(duration) =&gt; {
@@ -483,7 +483,7 @@ copy just the output
 </span><span class="boring">        }
 </span><span class="boring">    });
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span>async fn timeout&lt;F: Future&gt;(
     future_to_try: F,
     max_time: Duration,
@@ -497,20 +497,20 @@ copy just the output
 <figure class="listing" id="listing-17-20">
 <span class="file-name">Filename: src/main.rs</span>
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">extern crate trpl; // required for mdbook test
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">use std::time::Duration;
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span>use trpl::Either;
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 // --код сокращён--
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 <span class="boring">fn main() {
 </span><span class="boring">    trpl::block_on(async {
 </span><span class="boring">        let slow = async {
 </span><span class="boring">            trpl::sleep(Duration::from_secs(5)).await;
 </span><span class="boring">            "Finally finished"
 </span><span class="boring">        };
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">        match timeout(slow, Duration::from_secs(2)).await {
 </span><span class="boring">            Ok(message) =&gt; println!("Succeeded with '{message}'"),
 </span><span class="boring">            Err(duration) =&gt; {
@@ -519,7 +519,7 @@ copy just the output
 </span><span class="boring">        }
 </span><span class="boring">    });
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span>async fn timeout&lt;F: Future&gt;(
     future_to_try: F,
     max_time: Duration,

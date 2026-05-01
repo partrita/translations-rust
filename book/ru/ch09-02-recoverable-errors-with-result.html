@@ -96,7 +96,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-01ba4889.js";
+            window.path_to_searchindex_js = "searchindex-0481507b.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-f10b093a.js"></script>
@@ -253,7 +253,7 @@
 <figure class="listing" id="listing-9-3">
 <span class="file-name">Filename: src/main.rs</span>
 <pre class="playground"><code class="language-rust edition2024">use std::fs::File;
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 fn main() {
     let greeting_file_result = File::open("hello.txt");
 }</code></pre>
@@ -265,10 +265,10 @@ fn main() {
 <figure class="listing" id="listing-9-4">
 <span class="file-name">Filename: src/main.rs</span>
 <pre class="playground"><code class="language-rust should_panic edition2024">use std::fs::File;
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 fn main() {
     let greeting_file_result = File::open("hello.txt");
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     let greeting_file = match greeting_file_result {
         Ok(file) =&gt; file,
         Err(error) =&gt; panic!("При открытии файла произошла ошибка: {error:?}"),
@@ -283,7 +283,7 @@ fn main() {
    Compiling error-handling v0.1.0 (file:///projects/error-handling)
     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.73s
      Running `target/debug/error-handling`
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 thread 'main' panicked at src/main.rs:8:23:
 Problem opening the file: Os { code: 2, kind: NotFound, message: "No such file or directory" }
 note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
@@ -297,10 +297,10 @@ note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
 tests to fail lol -->
 <pre><code class="language-rust ignore">use std::fs::File;
 use std::io::ErrorKind;
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 fn main() {
     let greeting_file_result = File::open("hello.txt");
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     let greeting_file = match greeting_file_result {
         Ok(file) =&gt; file,
         Err(error) =&gt; match error.kind() {
@@ -325,7 +325,7 @@ fn main() {
 <!-- CAN'T EXTRACT SEE https://github.com/rust-lang/mdBook/issues/1127 -->
 <pre><code class="language-rust ignore">use std::fs::File;
 use std::io::ErrorKind;
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 fn main() {
     let greeting_file = File::open("hello.txt").unwrap_or_else(|error| {
         if error.kind() == ErrorKind::NotFound {
@@ -346,7 +346,7 @@ fn main() {
 <figure class="listing">
 <span class="file-name">Filename: src/main.rs</span>
 <pre class="playground"><code class="language-rust should_panic edition2024">use std::fs::File;
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 fn main() {
     let greeting_file = File::open("hello.txt").unwrap();
 }</code></pre>
@@ -364,7 +364,7 @@ called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, messa
 <figure class="listing">
 <span class="file-name">Filename: src/main.rs</span>
 <pre class="playground"><code class="language-rust should_panic edition2024">use std::fs::File;
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 fn main() {
     let greeting_file = File::open("hello.txt")
         .expect("hello.txt должен быть доступен этому проекту");
@@ -392,17 +392,17 @@ don't want to include it for rustdoc testing purposes. -->
 </span><span class="boring">fn main() {
 </span>use std::fs::File;
 use std::io::{self, Read};
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 fn read_username_from_file() -&gt; Result&lt;String, io::Error&gt; {
     let username_file_result = File::open("hello.txt");
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     let mut username_file = match username_file_result {
         Ok(file) =&gt; file,
         Err(e) =&gt; return Err(e),
     };
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     let mut username = String::new();
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     match username_file.read_to_string(&amp;mut username) {
         Ok(_) =&gt; Ok(username),
         Err(e) =&gt; Err(e),
@@ -430,7 +430,7 @@ don't want to include it for rustdoc testing purposes. -->
 </span><span class="boring">fn main() {
 </span>use std::fs::File;
 use std::io::{self, Read};
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 fn read_username_from_file() -&gt; Result&lt;String, io::Error&gt; {
     let mut username_file = File::open("hello.txt")?;
     let mut username = String::new();
@@ -454,12 +454,12 @@ don't want to include it for rustdoc testing purposes. -->
 </span><span class="boring">fn main() {
 </span>use std::fs::File;
 use std::io::{self, Read};
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 fn read_username_from_file() -&gt; Result&lt;String, io::Error&gt; {
     let mut username = String::new();
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     File::open("hello.txt")?.read_to_string(&amp;mut username)?;
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     Ok(username)
 }
 <span class="boring">}</span></code></pre>
@@ -476,7 +476,7 @@ don't want to include it for rustdoc testing purposes. -->
 </span><span class="boring">fn main() {
 </span>use std::fs;
 use std::io;
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 fn read_username_from_file() -&gt; Result&lt;String, io::Error&gt; {
     fs::read_to_string("hello.txt")
 }
@@ -492,7 +492,7 @@ fn read_username_from_file() -&gt; Result&lt;String, io::Error&gt; {
 <figure class="listing" id="listing-9-10">
 <span class="file-name">Filename: src/main.rs</span>
 <pre><code class="language-rust ignore does_not_compile">use std::fs::File;
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 fn main() {
     let greeting_file = File::open("hello.txt")?;
 }</code></pre>
@@ -515,7 +515,7 @@ help: consider adding return type
 4 |     let greeting_file = File::open("hello.txt")?;
 5 +     Ok(())
   |
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 For more information about this error, try `rustc --explain E0277`.
 error: could not compile `error-handling` (bin "error-handling") due to 1 previous error
 </code></pre>
@@ -526,13 +526,13 @@ error: could not compile `error-handling` (bin "error-handling") due to 1 previo
 <pre class="playground"><code class="language-rust edition2024">fn last_char_of_first_line(text: &amp;str) -&gt; Option&lt;char&gt; {
     text.lines().next()?.chars().last()
 }
-<span class="boring">
+<span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">fn main() {
 </span><span class="boring">    assert_eq!(
 </span><span class="boring">        last_char_of_first_line("Привет!\nКак ты?"),
 </span><span class="boring">        Some('!')
 </span><span class="boring">    );
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    assert_eq!(last_char_of_first_line(""), None);
 </span><span class="boring">    assert_eq!(last_char_of_first_line("\nсойдёт"), None);
 </span><span class="boring">}</span></code></pre>
@@ -547,10 +547,10 @@ error: could not compile `error-handling` (bin "error-handling") due to 1 previo
 <span class="file-name">Filename: src/main.rs</span>
 <pre><code class="language-rust ignore">use std::error::Error;
 use std::fs::File;
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 fn main() -&gt; Result&lt;(), Box&lt;dyn Error&gt;&gt; {
     let greeting_file = File::open("hello.txt")?;
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     Ok(())
 }</code></pre>
 <figcaption><a href="#listing-9-12">Listing 9-12</a>: Changing <code>main</code> to return <code>Result&lt;(), E&gt;</code> allows the use of the <code>?</code> operator on <code>Result</code> values.</figcaption>

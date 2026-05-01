@@ -96,7 +96,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-01ba4889.js";
+            window.path_to_searchindex_js = "searchindex-0481507b.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-f10b093a.js"></script>
@@ -251,7 +251,7 @@
 <p>It would also be appropriate to call <code>expect</code> when you have some other logic that ensures that the <code>Result</code> will have an <code>Ok</code> value, but the logic isn’t something the compiler understands. You’ll still have a <code>Result</code> value that you need to handle: Whatever operation you’re calling still has the possibility of failing in general, even though it’s logically impossible in your particular situation. If you can ensure by manually inspecting the code that you’ll never have an <code>Err</code> variant, it’s perfectly acceptable to call <code>expect</code> and document the reason you think you’ll never have an <code>Err</code> variant in the argument text. Here’s an example:</p>
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">fn main() {
 </span>    use std::net::IpAddr;
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     let home: IpAddr = "127.0.0.1"
         .parse()
         .expect("Hardcoded IP address should be valid");
@@ -278,33 +278,33 @@
 <pre><code class="language-rust ignore"><span class="boring">use rand::Rng;
 </span><span class="boring">use std::cmp::Ordering;
 </span><span class="boring">use std::io;
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">fn main() {
 </span><span class="boring">    println!("Угадайте число!");
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    let secret_number = rand::thread_rng().gen_range(1..=100);
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span>    loop {
         // --код сокращён--
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 <span class="boring">        println!("Введите свою догадку.");
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">        let mut guess = String::new();
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">        io::stdin()
 </span><span class="boring">            .read_line(&amp;mut guess)
 </span><span class="boring">            .expect("Не удалось прочесть ввод.");
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span>        let guess: i32 = match guess.trim().parse() {
             Ok(num) =&gt; num,
             Err(_) =&gt; continue,
         };
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
         if guess &lt; 1 || guess &gt; 100 {
             println!("Загаданное число находится в пределах от 1 до 100.");
             continue;
         }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
         match guess.cmp(&amp;secret_number) {
             // --код сокращён--
 <span class="boring">            Ordering::Less =&gt; println!("Слишком маленькое!"),
@@ -327,16 +327,16 @@
 </span>pub struct Guess {
     value: i32,
 }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 impl Guess {
     pub fn new(value: i32) -&gt; Guess {
         if value &lt; 1 || value &gt; 100 {
             panic!("Догадка {value} не принадлежит пределу от 1 до 100.");
         }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
         Guess { value }
     }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     pub fn value(&amp;self) -&gt; i32 {
         self.value
     }

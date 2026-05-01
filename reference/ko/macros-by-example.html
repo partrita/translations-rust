@@ -93,7 +93,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-55effe88.js";
+            window.path_to_searchindex_js = "searchindex-e23b9ebb.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-20da6b24.js"></script>
@@ -1002,7 +1002,7 @@ DelimTokenTree</text>
 </span>macro_rules! ambiguity {
     ($($i:ident)* $j:ident) =&gt; { };
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 ambiguity!(error); // 오류: 지역적 모호성
 <span class="boring">}</span></code></pre>
 <div class="rule" id="r-macro.decl.transcription.syntax"><a class="rule-link" href="#r-macro.decl.transcription.syntax" title="macro.decl.transcription.syntax"><span>[macro<wbr>.decl<wbr>.transcription<wbr>.syntax]</span></a>
@@ -1020,11 +1020,11 @@ ambiguity!(error); // 오류: 지역적 모호성
     ($l:expr) =&gt; { bar!($l); }
 // 오류:               ^^ 매크로 호출에서 이 토큰을 예상한 규칙이 없습니다
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 macro_rules! bar {
     (3) =&gt; {}
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 foo!(3);
 <span class="boring">}</span></code></pre>
 <p>다음은 ‘tt’ 조각을 일치시킨 후 토큰을 직접 일치시키는 방법을 보여줍니다.</p>
@@ -1034,11 +1034,11 @@ foo!(3);
 macro_rules! foo {
     ($l:tt) =&gt; { bar!($l); }
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 macro_rules! bar {
     (3) =&gt; {}
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 foo!(3);
 <span class="boring">}</span></code></pre>
 <div class="rule" id="r-macro.decl.meta"><a class="rule-link" href="#r-macro.decl.meta" title="macro.decl.meta"><span>[macro<wbr>.decl<wbr>.meta]</span></a>
@@ -1151,11 +1151,11 @@ foo!(3);
 <p>매크로가 정규화되지 않은 식별자(다중 부분 경로의 일부가 아님)에 의해 호출되면 먼저 텍스트 범위에서 조회됩니다. 결과가 없으면 경로 기반 범위에서 조회됩니다. 매크로 이름이 경로로 정규화되면 경로 기반 범위에서만 조회됩니다.</p>
 <!-- ignore: requires external crates -->
 <pre><code class="language-rust ignore">use lazy_static::lazy_static; // 경로 기반 가져오기.
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 macro_rules! lazy_static { // 텍스트 정의.
     (lazy) =&gt; {};
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 lazy_static!{lazy} // 텍스트 조회는 먼저 우리 매크로를 찾습니다.
 self::lazy_static!{} // 경로 기반 조회는 우리 매크로를 무시하고 가져온 매크로를 찾습니다.</code></pre>
 <div class="rule" id="r-macro.decl.scope.textual"><a class="rule-link" href="#r-macro.decl.scope.textual" title="macro.decl.scope.textual"><span>[macro<wbr>.decl<wbr>.scope<wbr>.textual]</span></a>
@@ -1170,19 +1170,19 @@ self::lazy_static!{} // 경로 기반 조회는 우리 매크로를 무시하고
 <pre><code class="language-rust ignore">//// src/lib.rs
 mod has_macro {
     // m!{} // 오류: m이 범위에 없습니다.
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
     macro_rules! m {
         () =&gt; {};
     }
     m!{} // OK: m 선언 후에 나타납니다.
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
     mod uses_macro;
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // m!{} // 오류: m이 범위에 없습니다.
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 //// src/has_macro/uses_macro.rs
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 m!{} // OK: src/lib.rs에서 m 선언 후에 나타납니다</code></pre>
 <div class="rule" id="r-macro.decl.scope.textual.shadow"><a class="rule-link" href="#r-macro.decl.scope.textual.shadow" title="macro.decl.scope.textual.shadow"><span>[macro<wbr>.decl<wbr>.scope<wbr>.textual<wbr>.shadow]</span></a>
 </div>
@@ -1193,24 +1193,24 @@ m!{} // OK: src/lib.rs에서 m 선언 후에 나타납니다</code></pre>
 </span>macro_rules! m {
     (1) =&gt; {};
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 m!(1);
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 mod inner {
     m!(1);
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
     macro_rules! m {
         (2) =&gt; {};
     }
     // m!(1); // 오류: '1'과 일치하는 규칙이 없습니다
     m!(2);
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
     macro_rules! m {
         (3) =&gt; {};
     }
     m!(3);
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 m!(1);
 <span class="boring">}</span></code></pre>
 <p>매크로는 함수 내부에서도 로컬로 선언하고 사용할 수 있으며 유사하게 작동합니다.</p>
@@ -1223,7 +1223,7 @@ m!(1);
     }
     m!();
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // m!(); // 오류: m이 범위에 없습니다.
 <span class="boring">}</span></code></pre>
 <div class="rule" id="r-macro.decl.scope.textual.shadow.path-based"><a class="rule-link" href="#r-macro.decl.scope.textual.shadow.path-based" title="macro.decl.scope.textual.shadow.path-based"><span>[macro<wbr>.decl<wbr>.scope<wbr>.textual<wbr>.shadow<wbr>.path-based]</span></a>
@@ -1237,10 +1237,10 @@ m!(1);
         println!("m2");
     };
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // Resolves to path-based candidate from use declaration below.
 m!(); // prints "m2\n"
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // Introduce second candidate for `m` with textual scope.
 //
 // This shadows path-based candidate from below for the rest of this
@@ -1250,13 +1250,13 @@ macro_rules! m {
         println!("m");
     };
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // Introduce `m2` macro as path-based candidate.
 //
 // This item is in scope for this entire example, not just below the
 // use declaration.
 use m2 as m;
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // Resolves to the textual macro candidate from above the use
 // declaration.
 m!(); // prints "m\n"
@@ -1288,13 +1288,13 @@ m!(); // prints "m\n"
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span>mac::m!(); // OK: Path-based lookup finds `m` in the mac module.
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 mod mac {
     // Introduce macro `m` with textual scope.
     macro_rules! m {
         () =&gt; {};
     }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
     // Reexport with path-based scope from within `m`'s textual scope.
     pub(crate) use m;
 }
@@ -1309,13 +1309,13 @@ mod mac {
 macro_rules! private_m {
     () =&gt; {};
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // Implicit visibility is `pub`.
 #[macro_export]
 macro_rules! pub_m {
     () =&gt; {};
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 pub(crate) use private_m as private_macro; // OK.
 pub use pub_m as pub_macro; // OK.
 <span class="boring">}</span></code></pre>
@@ -1641,14 +1641,14 @@ macro_rules! helper {
 fn func() {
     unreachable!("이것은 절대 호출되지 않습니다")
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 macro_rules! check {
     () =&gt; {
         assert_eq!(x, 1); // 정의 사이트의 `x` 를 사용합니다.
         func();           // 호출 사이트의 `func` 를 사용합니다.
     };
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 {
     let x = 2;
     fn func() { /* 패닉하지 않습니다 */ }
@@ -1666,7 +1666,7 @@ macro_rules! check {
         dbg!(x);
     };
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 m!(define);
 m!(refer);
 <span class="boring">}</span></code></pre>
@@ -1682,18 +1682,18 @@ macro_rules! helped {
 // () =&gt; { helper!() } // 'helper'가 범위에 없기 때문에 오류가 발생할 수 있습니다.
     () =&gt; { $crate::helper!() }
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 #[macro_export]
 macro_rules! helper {
     () =&gt; { () }
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 //// 다른 크레이트에서 사용.
 // `helper_macro::helper` 는 가져오지 않았습니다!
 //// 다른 크레이트에서 사용.
 // `helper_macro::helper`는 임포트되지 않았습니다!
 use helper_macro::helped;
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 fn unit() {
     helped!();
 }</code></pre>
@@ -1705,7 +1705,7 @@ fn unit() {
     macro_rules! call_foo {
         () =&gt; { $crate::inner::foo() };
     }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
     pub fn foo() {}
 }
 <span class="boring">}</span></code></pre>
@@ -1719,7 +1719,7 @@ fn unit() {
 macro_rules! call_foo {
     () =&gt; { $crate::foo() };
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 fn foo() {}
 <span class="boring">}</span></code></pre>
 <div class="alert alert-note">

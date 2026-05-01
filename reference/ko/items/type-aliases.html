@@ -93,7 +93,7 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-55effe88.js";
+            window.path_to_searchindex_js = "../searchindex-e23b9ebb.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../toc-20da6b24.js"></script>
@@ -387,10 +387,10 @@ let p: Point = (41, 68);
 <pre class="playground"><code class="language-rust compile_fail edition2024"><span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span>struct MyStruct(u32);
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 use MyStruct as UseAlias;
 type TypeAlias = MyStruct;
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 let _ = UseAlias(5); // OK
 let _ = TypeAlias(5); // 작동하지 않음
 <span class="boring">}</span></code></pre>

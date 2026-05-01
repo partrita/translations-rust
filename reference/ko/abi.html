@@ -93,7 +93,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-55effe88.js";
+            window.path_to_searchindex_js = "searchindex-e23b9ebb.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-20da6b24.js"></script>
@@ -259,35 +259,35 @@
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span>// foo.rs
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // 이는 `#[used]` 때문에 유지됩니다:
 #[used]
 static FOO: u32 = 0;
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // 이는 사용되지 않으므로 제거 가능합니다:
 #[allow(dead_code)]
 static BAR: u32 = 0;
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // 이는 공개적으로 도달 가능하므로 유지됩니다:
 pub static BAZ: u32 = 0;
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // 이는 공개적으로 도달 가능한 함수에 의해 참조되므로 유지됩니다:
 static QUUX: u32 = 0;
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 pub fn quux() -&gt; &amp;'static u32 {
     &amp;QUUX
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // 이는 비공개이며 사용되지 않는(dead) 함수에 의해 참조되므로 제거 가능합니다:
 static CORGE: u32 = 0;
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 #[allow(dead_code)]
 fn corge() -&gt; &amp;'static u32 {
     &amp;CORGE
 }
 <span class="boring">}</span></code></pre>
 <pre><code class="language-console">$ rustc -O --emit=obj --crate-type=rlib foo.rs
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 $ nm -C foo.o
 0000000000000000 R foo::BAZ
 0000000000000000 r foo::FOO

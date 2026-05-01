@@ -93,7 +93,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-55effe88.js";
+            window.path_to_searchindex_js = "searchindex-e23b9ebb.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-20da6b24.js"></script>
@@ -293,10 +293,10 @@
 <p>아래는 패닉 메시지를 기록한 다음 스레드를 중단시키는 <code>panic_handler</code> 함수의 예시입니다.</p>
 <!-- ignore: test infrastructure can't handle no_std -->
 <pre><code class="language-rust ignore">#![no_std]
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 use core::fmt::{self, Write};
 use core::panic::PanicInfo;
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 struct Sink {
     // ..
 <span class="boring">   _0: (),
@@ -309,14 +309,14 @@ struct Sink {
 </span><span class="boring">impl fmt::Write for Sink {
 </span><span class="boring">    fn write_str(&amp;mut self, _: &amp;str) -&gt; fmt::Result { Ok(()) }
 </span><span class="boring">}
-</span>
+</span>   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 #[panic_handler]
 fn panic(info: &amp;PanicInfo) -&gt; ! {
     let mut sink = Sink::new();
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
     // "panicked at '$reason', src/main.rs:27:4"를 어떤 `sink` 에 기록함
     let _ = writeln!(sink, "{}", info);
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
     loop {}
 }</code></pre>
 <div class="rule" id="r-panic.panic_handler.std"><a class="rule-link" href="#r-panic.panic_handler.std" title="panic.panic_handler.std"><span>[panic<wbr>.panic_handler<wbr>.std]</span></a>

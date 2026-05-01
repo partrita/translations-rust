@@ -96,7 +96,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-ba1bddcc.js";
+            window.path_to_searchindex_js = "searchindex-18122752.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-a05ef4ad.js"></script>
@@ -244,10 +244,10 @@
 <p><span class="filename">파일명: src/main.rs</span></p>
 <pre class="playground"><code class="language-rust edition2024">fn main() {
     println!("헬로, 월드!");
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
     another_function();
 }
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 fn another_function() {
     println!("또 다른 함수.");
 }</code></pre>
@@ -269,7 +269,7 @@ Another function.
 <pre class="playground"><code class="language-rust edition2024">fn main() {
     another_function(5);
 }
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 fn another_function(x: i32) {
     println!("x의 값은: {x}");
 }</code></pre>
@@ -287,7 +287,7 @@ The value of x is: 5
 <pre class="playground"><code class="language-rust edition2024">fn main() {
     print_labeled_measurement(5, 'h');
 }
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 fn print_labeled_measurement(value: i32, unit_label: char) {
     println!("측정값은: {value}{unit_label}");
 }</code></pre>
@@ -331,7 +331,7 @@ error: expected expression, found `let` statement
   |              ^^^
   |
   = note: only supported directly in conditions of `if` and `while` expressions
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 warning: unnecessary parentheses around assigned value
  --&gt; src/main.rs:2:13
   |
@@ -344,7 +344,7 @@ help: remove these parentheses
 2 -     let x = (let y = 6);
 2 +     let x = let y = 6;
   |
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 warning: `functions` (bin "functions") generated 1 warning
 error: could not compile `functions` (bin "functions") due to 1 previous error; 1 warning emitted
 </code></pre>
@@ -356,7 +356,7 @@ error: could not compile `functions` (bin "functions") due to 1 previous error; 
         let x = 3;
         x + 1
     };
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
     println!("y의 값은: {y}");
 }</code></pre>
 <p>이 표현식은:</p>
@@ -371,10 +371,10 @@ error: could not compile `functions` (bin "functions") due to 1 previous error; 
 <pre class="playground"><code class="language-rust edition2024">fn five() -&gt; i32 {
     5
 }
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 fn main() {
     let x = five();
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
     println!("x의 값은: {x}");
 }</code></pre>
 <p><code>five</code> 함수에는 함수 호출, 매크로 또는 <code>let</code> 문조차 없습니다. 단지 숫자 <code>5</code> 만 있습니다. 이것은 러스트에서 완벽하게 유효한 함수입니다. 함수의 반환 타입도 <code>-&gt; i32</code> 로 지정되어 있습니다. 이 코드를 실행해 보세요. 출력은 다음과 같아야 합니다.</p>
@@ -394,10 +394,10 @@ The value of x is: 5
 <p><span class="filename">파일명: src/main.rs</span></p>
 <pre class="playground"><code class="language-rust edition2024">fn main() {
     let x = plus_one(5);
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
     println!("x의 값은: {x}");
 }
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 fn plus_one(x: i32) -&gt; i32 {
     x + 1
 }</code></pre>
@@ -405,10 +405,10 @@ fn plus_one(x: i32) -&gt; i32 {
 <p><span class="filename">파일명: src/main.rs</span></p>
 <pre><code class="language-rust ignore does_not_compile">fn main() {
     let x = plus_one(5);
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
     println!("x의 값은: {x}");
 }
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 fn plus_one(x: i32) -&gt; i32 {
     x + 1;
 }</code></pre>
@@ -424,7 +424,7 @@ error[E0308]: mismatched types
   |    implicitly returns `()` as its body has no tail or `return` expression
 8 |     x + 1;
   |          - help: remove this semicolon to return this value
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 For more information about this error, try `rustc --explain E0308`.
 error: could not compile `functions` (bin "functions") due to 1 previous error
 </code></pre>

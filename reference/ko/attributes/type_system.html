@@ -93,7 +93,7 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-55effe88.js";
+            window.path_to_searchindex_js = "../searchindex-e23b9ebb.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../toc-20da6b24.js"></script>
@@ -270,44 +270,44 @@ pub struct Config {
     pub window_width: u16,
     pub window_height: u16,
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 #[non_exhaustive]
 pub struct Token;
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 #[non_exhaustive]
 pub struct Id(pub u64);
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 #[non_exhaustive]
 pub enum Error {
     Message(String),
     Other,
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 pub enum Message {
     #[non_exhaustive] Send { from: u32, to: u32, contents: String },
     #[non_exhaustive] Reaction(u32),
     #[non_exhaustive] Quit,
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // 비완전(non-exhaustive) 구조체는 정의하는 크레이트 내에서 평소와 같이 생성될 수 있습니다.
 let config = Config { window_width: 640, window_height: 480 };
 let token = Token;
 let id = Id(4);
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // 비완전 구조체는 정의하는 크레이트 내에서 완전하게(exhaustively) 매칭될 수 있습니다.
 let Config { window_width, window_height } = config;
 let Token = token;
 let Id(id_number) = id;
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 let error = Error::Other;
 let message = Message::Reaction(3);
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // 비완전 열거형은 정의하는 크레이트 내에서 완전하게 매칭될 수 있습니다.
 match error {
     Error::Message(ref s) =&gt; { },
     Error::Other =&gt; { },
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 match message {
     // 비완전 변형은 정의하는 크레이트 내에서 완전하게 매칭될 수 있습니다.
     Message::Send { from, to, contents } =&gt; { },
@@ -332,32 +332,32 @@ match message {
 <!-- ignore: requires external crates -->
 <pre><code class="language-rust ignore">// 이들은 업스트림 크레이트에서 `#[non_exhaustive]` 가 주석 처리된 상태로 정의된 타입들입니다.
 use upstream::{Config, Token, Id, Error, Message};
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // `Config` 인스턴스를 생성할 수 없습니다. 만약 업스트림의 새로운 버전에서
 // 새로운 필드가 추가된다면 컴파일에 실패할 것이므로, 이를 불허합니다.
 let config = Config { window_width: 640, window_height: 480 };
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // `Token` 인스턴스를 생성할 수 없습니다. 만약 새로운 필드가 추가된다면
 // 더 이상 유닛 유사 구조체가 아닐 것이므로, 유닛 유사 구조체로서 생성된
 // 동일 이름의 상수는 크레이트 외부에서 공개되지 않습니다.
 // 이 코드는 컴파일에 실패합니다.
 let token = Token;
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // `Id` 인스턴스를 생성할 수 없습니다. 만약 새로운 필드가 추가된다면
 // 생성자 함수의 시그니처가 변경될 것이므로, 생성자 함수가 크레이트 외부에서
 // 공개되지 않습니다. 이 코드는 컴파일에 실패합니다.
 let id = Id(5);
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // `Error` 인스턴스는 생성할 수 있습니다. 새로운 변형이 도입되더라도
 // 이 코드가 컴파일에 실패하는 결과로 이어지지는 않기 때문입니다.
 let error = Error::Message("foo".to_string());
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // `Message::Send` 또는 `Message::Reaction` 인스턴스를 생성할 수 없습니다.
 // 만약 업스트림의 새로운 버전에서 새로운 필드가 추가된다면
 // 컴파일에 실패할 것이므로, 이를 불허합니다.
 let message = Message::Send { from: 0, to: 1, contents: "foo".to_string(), };
 let message = Message::Reaction(0);
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // Cannot construct an instance of `Message::Quit`; if this were converted to
 // a tuple enum variant `upstream`, this would fail to compile.
 let message = Message::Quit;</code></pre>
@@ -372,25 +372,25 @@ let message = Message::Quit;</code></pre>
 <!-- ignore: requires external crates -->
 <pre><code class="language-rust ignore">// 이들은 업스트림 크레이트에서 `#[non_exhaustive]` 가 주석 처리된 상태로 정의된 타입들입니다.
 use upstream::{Config, Token, Id, Error, Message};
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // 와일드카드 암(arm)을 포함하지 않고는 비완전 열거형을 매칭할 수 없습니다.
 match error {
   Error::Message(ref s) =&gt; { },
   Error::Other =&gt; { },
   // `_ =&gt; {},` 를 추가하면 컴파일됩니다.
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // 와일드카드 없이 비완전 구조체를 매칭할 수 없습니다.
 if let Ok(Config { window_width, window_height }) = config {
     // `..` 을 추가하면 컴파일됩니다.
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // 중괄호 구조체 구문과 와일드카드를 사용하지 않고는 비완전 유닛 유사 또는 튜플 구조체를 매칭할 수 없습니다.
 // 이는 `let Token { .. } = token;` 으로 작성해야 컴파일됩니다.
 let Token = token;
 // 이는 `let Id { 0: id_number, .. } = id;` 로 작성해야 컴파일됩니다.
 let Id(id_number) = id;
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 match message {
   // 와일드카드를 포함하지 않고는 비완전 구조체형 열거형 변형을 매칭할 수 없습니다.
   Message::Send { from, to, contents } =&gt; { },
@@ -420,7 +420,7 @@ pub enum EnumWithNonExhaustiveVariants {
 <span class="boring">}</span></code></pre>
 <!-- ignore: needs multiple crates -->
 <pre><code class="language-rust ignore">use othercrate::EnumWithNonExhaustiveVariants;
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // 에러: 다른 크레이트에 정의된 비완전 변형을 가진 열거형은 캐스팅할 수 없습니다.
 let _ = EnumWithNonExhaustiveVariants::First as u8;</code></pre>
 <p>비완전 타입은 다운스트림 크레이트에서 항상 거주하는(inhabited) 타입으로 간주됩니다.</p>

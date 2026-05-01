@@ -96,7 +96,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-ba1bddcc.js";
+            window.path_to_searchindex_js = "searchindex-18122752.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-a05ef4ad.js"></script>
@@ -248,20 +248,20 @@
 <span class="file-name">Filename: src/lib.rs</span>
 <pre><code class="language-rust ignore does_not_compile"><span class="boring">pub fn search&lt;'a&gt;(query: &amp;str, contents: &amp;'a str) -&gt; Vec&lt;&amp;'a str&gt; {
 </span><span class="boring">    let mut results = Vec::new();
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">    for line in contents.lines() {
 </span><span class="boring">        if line.contains(query) {
 </span><span class="boring">            results.push(line);
 </span><span class="boring">        }
 </span><span class="boring">    }
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">    results
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span>#[cfg(test)]
 mod tests {
     use super::*;
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
     #[test]
     fn case_sensitive() {
         let query = "duct";
@@ -270,10 +270,10 @@ Rust:
 safe, fast, productive.
 Pick three.
 Duct tape.";
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
         assert_eq!(vec!["safe, fast, productive."], search(query, contents));
     }
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
     #[test]
     fn case_insensitive() {
         let query = "rUsT";
@@ -282,7 +282,7 @@ Rust:
 safe, fast, productive.
 Pick three.
 Trust me.";
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
         assert_eq!(
             vec!["Rust:", "Trust me."],
             search_case_insensitive(query, contents)
@@ -299,36 +299,36 @@ Trust me.";
 <span class="file-name">Filename: src/lib.rs</span>
 <pre><code class="language-rust noplayground"><span class="boring">pub fn search&lt;'a&gt;(query: &amp;str, contents: &amp;'a str) -&gt; Vec&lt;&amp;'a str&gt; {
 </span><span class="boring">    let mut results = Vec::new();
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">    for line in contents.lines() {
 </span><span class="boring">        if line.contains(query) {
 </span><span class="boring">            results.push(line);
 </span><span class="boring">        }
 </span><span class="boring">    }
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">    results
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span>pub fn search_case_insensitive&lt;'a&gt;(
     query: &amp;str,
     contents: &amp;'a str,
 ) -&gt; Vec&lt;&amp;'a str&gt; {
     let query = query.to_lowercase();
     let mut results = Vec::new();
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
     for line in contents.lines() {
         if line.to_lowercase().contains(&amp;query) {
             results.push(line);
         }
     }
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
     results
 }
-<span class="boring">
+<span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">#[cfg(test)]
 </span><span class="boring">mod tests {
 </span><span class="boring">    use super::*;
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">    #[test]
 </span><span class="boring">    fn case_sensitive() {
 </span><span class="boring">        let query = "duct";
@@ -337,10 +337,10 @@ Trust me.";
 </span><span class="boring">safe, fast, productive.
 </span><span class="boring">Pick three.
 </span><span class="boring">Duct tape.";
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">        assert_eq!(vec!["safe, fast, productive."], search(query, contents));
 </span><span class="boring">    }
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">    #[test]
 </span><span class="boring">    fn case_insensitive() {
 </span><span class="boring">        let query = "rUsT";
@@ -349,7 +349,7 @@ Trust me.";
 </span><span class="boring">safe, fast, productive.
 </span><span class="boring">Pick three.
 </span><span class="boring">Trust me.";
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">        assert_eq!(
 </span><span class="boring">            vec!["Rust:", "Trust me."],
 </span><span class="boring">            search_case_insensitive(query, contents)
@@ -366,25 +366,25 @@ Trust me.";
    Compiling minigrep v0.1.0 (file:///projects/minigrep)
     Finished `test` profile [unoptimized + debuginfo] target(s) in 1.33s
      Running unittests src/lib.rs (target/debug/deps/minigrep-9cd200e5fac0fc94)
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 running 2 tests
 test tests::case_insensitive ... ok
 test tests::case_sensitive ... ok
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
      Running unittests src/main.rs (target/debug/deps/minigrep-9cd200e5fac0fc94)
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 running 0 tests
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
    Doc-tests minigrep
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 running 0 tests
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </code></pre>
 <p>Great! They passed. Now let’s call the new <code>search_case_insensitive</code> function from the <code>run</code> function. First, we’ll add a configuration option to the <code>Config</code> struct to switch between case-sensitive and case-insensitive search. Adding this field will cause compiler errors because we aren’t initializing this field anywhere yet:</p>
 <p><span class="filename">파일명: src/main.rs</span></p>
@@ -392,58 +392,58 @@ test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; fini
 </span><span class="boring">use std::error::Error;
 </span><span class="boring">use std::fs;
 </span><span class="boring">use std::process;
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">use minigrep::{search, search_case_insensitive};
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">// --생략--
-</span><span class="boring">
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">fn main() {
 </span><span class="boring">    let args: Vec&lt;String&gt; = env::args().collect();
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">    let config = Config::build(&amp;args).unwrap_or_else(|err| {
 </span><span class="boring">        println!("인수 파싱 중 문제 발생: {err}");
 </span><span class="boring">        process::exit(1);
 </span><span class="boring">    });
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">    if let Err(e) = run(config) {
 </span><span class="boring">        println!("애플리케이션 에러: {e}");
 </span><span class="boring">        process::exit(1);
 </span><span class="boring">    }
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span>pub struct Config {
     pub query: String,
     pub file_path: String,
     pub ignore_case: bool,
 }
-<span class="boring">
+<span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">impl Config {
 </span><span class="boring">    fn build(args: &amp;[String]) -&gt; Result&lt;Config, &amp;'static str&gt; {
 </span><span class="boring">        if args.len() &lt; 3 {
 </span><span class="boring">            return Err("인수가 부족합니다");
 </span><span class="boring">        }
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">        let query = args[1].clone();
 </span><span class="boring">        let file_path = args[2].clone();
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">        Ok(Config { query, file_path })
 </span><span class="boring">    }
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">fn run(config: Config) -&gt; Result&lt;(), Box&lt;dyn Error&gt;&gt; {
 </span><span class="boring">    let contents = fs::read_to_string(config.file_path)?;
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">    let results = if config.ignore_case {
 </span><span class="boring">        search_case_insensitive(&amp;config.query, &amp;contents)
 </span><span class="boring">    } else {
 </span><span class="boring">        search(&amp;config.query, &amp;contents)
 </span><span class="boring">    };
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">    for line in results {
 </span><span class="boring">        println!("{line}");
 </span><span class="boring">    }
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">    Ok(())
 </span><span class="boring">}</span></code></pre>
 <p>불리언 값을 저장하는 <code>ignore_case</code> 필드를 추가했습니다. 다음으로, 목록 12-22에 나온 것처럼 <code>run</code> 함수가 <code>ignore_case</code> 필드 값을 확인하여 <code>search</code> 함수를 호출할지 <code>search_case_insensitive</code> 함수를 호출할지 결정하도록 해야 합니다. 이 코드는 아직 컴파일되지 않습니다.</p>
@@ -453,58 +453,58 @@ test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; fini
 </span><span class="boring">use std::error::Error;
 </span><span class="boring">use std::fs;
 </span><span class="boring">use std::process;
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span>use minigrep::{search, search_case_insensitive};
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 // --생략--
-
-<span class="boring">
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
+<span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">fn main() {
 </span><span class="boring">    let args: Vec&lt;String&gt; = env::args().collect();
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">    let config = Config::build(&amp;args).unwrap_or_else(|err| {
 </span><span class="boring">        println!("인수 파싱 중 문제 발생: {err}");
 </span><span class="boring">        process::exit(1);
 </span><span class="boring">    });
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">    if let Err(e) = run(config) {
 </span><span class="boring">        println!("애플리케이션 에러: {e}");
 </span><span class="boring">        process::exit(1);
 </span><span class="boring">    }
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">pub struct Config {
 </span><span class="boring">    pub query: String,
 </span><span class="boring">    pub file_path: String,
 </span><span class="boring">    pub ignore_case: bool,
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">impl Config {
 </span><span class="boring">    fn build(args: &amp;[String]) -&gt; Result&lt;Config, &amp;'static str&gt; {
 </span><span class="boring">        if args.len() &lt; 3 {
 </span><span class="boring">            return Err("인수가 부족합니다");
 </span><span class="boring">        }
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">        let query = args[1].clone();
 </span><span class="boring">        let file_path = args[2].clone();
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">        Ok(Config { query, file_path })
 </span><span class="boring">    }
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span>fn run(config: Config) -&gt; Result&lt;(), Box&lt;dyn Error&gt;&gt; {
     let contents = fs::read_to_string(config.file_path)?;
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
     let results = if config.ignore_case {
         search_case_insensitive(&amp;config.query, &amp;contents)
     } else {
         search(&amp;config.query, &amp;contents)
     };
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
     for line in results {
         println!("{line}");
     }
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
     Ok(())
 }</code></pre>
 <figcaption><a href="#listing-12-22">Listing 12-22</a>: Calling either <code>search</code> or <code>search_case_insensitive</code> based on the value in <code>config.ignore_case</code></figcaption>
@@ -516,40 +516,40 @@ test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; fini
 </span><span class="boring">use std::error::Error;
 </span><span class="boring">use std::fs;
 </span><span class="boring">use std::process;
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">use minigrep::{search, search_case_insensitive};
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">fn main() {
 </span><span class="boring">    let args: Vec&lt;String&gt; = env::args().collect();
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">    let config = Config::build(&amp;args).unwrap_or_else(|err| {
 </span><span class="boring">        println!("인수 파싱 중 문제 발생: {err}");
 </span><span class="boring">        process::exit(1);
 </span><span class="boring">    });
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">    if let Err(e) = run(config) {
 </span><span class="boring">        println!("애플리케이션 에러: {e}");
 </span><span class="boring">        process::exit(1);
 </span><span class="boring">    }
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">pub struct Config {
 </span><span class="boring">    pub query: String,
 </span><span class="boring">    pub file_path: String,
 </span><span class="boring">    pub ignore_case: bool,
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span>impl Config {
     fn build(args: &amp;[String]) -&gt; Result&lt;Config, &amp;'static str&gt; {
         if args.len() &lt; 3 {
             return Err("인수가 부족합니다");
         }
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
         let query = args[1].clone();
         let file_path = args[2].clone();
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
         let ignore_case = env::var("IGNORE_CASE").is_ok();
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
         Ok(Config {
             query,
             file_path,
@@ -557,20 +557,20 @@ test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; fini
         })
     }
 }
-<span class="boring">
+<span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">fn run(config: Config) -&gt; Result&lt;(), Box&lt;dyn Error&gt;&gt; {
 </span><span class="boring">    let contents = fs::read_to_string(config.file_path)?;
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">    let results = if config.ignore_case {
 </span><span class="boring">        search_case_insensitive(&amp;config.query, &amp;contents)
 </span><span class="boring">    } else {
 </span><span class="boring">        search(&amp;config.query, &amp;contents)
 </span><span class="boring">    };
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">    for line in results {
 </span><span class="boring">        println!("{line}");
 </span><span class="boring">    }
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">    Ok(())
 </span><span class="boring">}</span></code></pre>
 <figcaption><a href="#listing-12-23">Listing 12-23</a>: Checking for any value in an environment variable named <code>IGNORE_CASE</code></figcaption>

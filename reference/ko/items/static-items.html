@@ -93,7 +93,7 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-55effe88.js";
+            window.path_to_searchindex_js = "../searchindex-e23b9ebb.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../toc-20da6b24.js"></script>
@@ -393,26 +393,26 @@ Expression</text>
 <p>제네릭 스코프(예: blanket 또는 기본 구현)에 정의된 정적 아이템은 정적 정의가 현재 스코프 밖으로 나와 모듈로 이동한 것처럼 정확히 하나의 정적 아이템만 정의되는 결과를 낳습니다. 모노모르포화(monomorphization)마다 하나의 아이템이 생성되는 것은 <em>아닙니다</em>.</p>
 <p>이 코드는:</p>
 <pre class="playground"><code class="language-rust edition2024">use std::sync::atomic::{AtomicUsize, Ordering};
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 trait Tr {
     fn default_impl() {
         static COUNTER: AtomicUsize = AtomicUsize::new(0);
         println!("default_impl: 카운터는 {}였습니다", COUNTER.fetch_add(1, Ordering::Relaxed));
     }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
     fn blanket_impl();
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 struct Ty1 {}
 struct Ty2 {}
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 impl&lt;T&gt; Tr for T {
     fn blanket_impl() {
         static COUNTER: AtomicUsize = AtomicUsize::new(0);
         println!("blanket_impl: 카운터는 {}였습니다", COUNTER.fetch_add(1, Ordering::Relaxed));
     }
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 fn main() {
     &lt;Ty1 as Tr&gt;::default_impl();
     &lt;Ty2 as Tr&gt;::default_impl();
@@ -444,9 +444,9 @@ blanket_impl: counter was 1
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span><span class="boring">fn atomic_add(_: *mut u32, _: u32) -&gt; u32 { 2 }
-</span>
+</span>   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 static mut LEVELS: u32 = 0;
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // 이것은 공유 상태가 없다는 아이디어를 위반하며, 내부적으로 경쟁 상태로부터
 // 보호하지 않으므로, 이 함수는 `unsafe` 입니다
 unsafe fn bump_levels_unsafe() -&gt; u32 {
@@ -456,7 +456,7 @@ unsafe fn bump_levels_unsafe() -&gt; u32 {
         return ret;
     }
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // `bump_levels_unsafe` 의 대안으로, 이전 값을 반환하는 atomic_add 함수가
 // 있다고 가정할 때 이 함수는 안전합니다. 이 함수는 다른 코드가 비원자적(non-atomic)
 // 방식으로 정적 변수에 접근하지 않는 경우에만 안전합니다. 만약 그러한 접근이 가능하다면

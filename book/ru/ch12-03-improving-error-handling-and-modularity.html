@@ -96,7 +96,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-01ba4889.js";
+            window.path_to_searchindex_js = "searchindex-0481507b.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-f10b093a.js"></script>
@@ -267,27 +267,27 @@
 <span class="file-name">Filename: src/main.rs</span>
 <pre><code class="language-rust ignore"><span class="boring">use std::env;
 </span><span class="boring">use std::fs;
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span>fn main() {
     let args: Vec&lt;String&gt; = env::args().collect();
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     let (query, file_path) = parse_config(&amp;args);
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     // --код сокращён--
-<span class="boring">
+<span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    println!("Searching for {query}");
 </span><span class="boring">    println!("In file {file_path}");
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    let contents = fs::read_to_string(file_path)
 </span><span class="boring">        .expect("Should have been able to read the file");
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    println!("With text:\n{contents}");
 </span>}
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 fn parse_config(args: &amp;[String]) -&gt; (&amp;str, &amp;str) {
     let query = &amp;args[1];
     let file_path = &amp;args[2];
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     (query, file_path)
 }</code></pre>
 <figcaption><a href="#listing-12-5">Listing 12-5</a>: Extracting a <code>parse_config</code> function from <code>main</code></figcaption>
@@ -302,32 +302,32 @@ fn parse_config(args: &amp;[String]) -&gt; (&amp;str, &amp;str) {
 <span class="file-name">Filename: src/main.rs</span>
 <pre><code class="language-rust should_panic noplayground"><span class="boring">use std::env;
 </span><span class="boring">use std::fs;
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span>fn main() {
     let args: Vec&lt;String&gt; = env::args().collect();
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     let config = parse_config(&amp;args);
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     println!("Searching for {}", config.query);
     println!("In file {}", config.file_path);
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     let contents = fs::read_to_string(config.file_path)
         .expect("Should have been able to read the file");
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     // --код сокращён--
-<span class="boring">
+<span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    println!("With text:\n{contents}");
 </span>}
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 struct Config {
     query: String,
     file_path: String,
 }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 fn parse_config(args: &amp;[String]) -&gt; Config {
     let query = args[1].clone();
     let file_path = args[2].clone();
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     Config { query, file_path }
 }</code></pre>
 <figcaption><a href="#listing-12-6">Listing 12-6</a>: Refactoring <code>parse_config</code> to return an instance of a <code>Config</code> struct</figcaption>
@@ -347,35 +347,35 @@ fn parse_config(args: &amp;[String]) -&gt; Config {
 <span class="file-name">Filename: src/main.rs</span>
 <pre><code class="language-rust should_panic noplayground"><span class="boring">use std::env;
 </span><span class="boring">use std::fs;
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span>fn main() {
     let args: Vec&lt;String&gt; = env::args().collect();
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     let config = Config::new(&amp;args);
-<span class="boring">
+<span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    println!("Searching for {}", config.query);
 </span><span class="boring">    println!("In file {}", config.file_path);
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    let contents = fs::read_to_string(config.file_path)
 </span><span class="boring">        .expect("Should have been able to read the file");
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    println!("With text:\n{contents}");
-</span>
+</span>Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     // --код сокращён--
 }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 // --код сокращён--
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 <span class="boring">struct Config {
 </span><span class="boring">    query: String,
 </span><span class="boring">    file_path: String,
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span>impl Config {
     fn new(args: &amp;[String]) -&gt; Config {
         let query = args[1].clone();
         let file_path = args[2].clone();
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
         Config { query, file_path }
     }
 }</code></pre>
@@ -388,7 +388,7 @@ fn parse_config(args: &amp;[String]) -&gt; Config {
    Compiling minigrep v0.1.0 (file:///projects/minigrep)
     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.0s
      Running `target/debug/minigrep`
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 thread 'main' panicked at src/main.rs:27:21:
 index out of bounds: the len is 1 but the index is 1
 note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
@@ -400,26 +400,26 @@ note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
 <span class="file-name">Filename: src/main.rs</span>
 <pre><code class="language-rust ignore"><span class="boring">use std::env;
 </span><span class="boring">use std::fs;
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">fn main() {
 </span><span class="boring">    let args: Vec&lt;String&gt; = env::args().collect();
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    let config = Config::new(&amp;args);
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    println!("Searching for {}", config.query);
 </span><span class="boring">    println!("In file {}", config.file_path);
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    let contents = fs::read_to_string(config.file_path)
 </span><span class="boring">        .expect("Should have been able to read the file");
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    println!("With text:\n{contents}");
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">struct Config {
 </span><span class="boring">    query: String,
 </span><span class="boring">    file_path: String,
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">impl Config {
 </span>    // --код сокращён--
     fn new(args: &amp;[String]) -&gt; Config {
@@ -427,10 +427,10 @@ note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
             panic!("not enough arguments");
         }
         // --код сокращён--
-<span class="boring">
+<span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">        let query = args[1].clone();
 </span><span class="boring">        let file_path = args[2].clone();
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">        Config { query, file_path }
 </span><span class="boring">    }
 </span><span class="boring">}</span></code></pre>
@@ -442,7 +442,7 @@ note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
    Compiling minigrep v0.1.0 (file:///projects/minigrep)
     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.0s
      Running `target/debug/minigrep`
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 thread 'main' panicked at src/main.rs:26:13:
 not enough arguments
 note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
@@ -457,35 +457,35 @@ note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
 <span class="file-name">Filename: src/main.rs</span>
 <pre><code class="language-rust ignore does_not_compile"><span class="boring">use std::env;
 </span><span class="boring">use std::fs;
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">fn main() {
 </span><span class="boring">    let args: Vec&lt;String&gt; = env::args().collect();
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    let config = Config::new(&amp;args);
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    println!("Searching for {}", config.query);
 </span><span class="boring">    println!("In file {}", config.file_path);
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    let contents = fs::read_to_string(config.file_path)
 </span><span class="boring">        .expect("Should have been able to read the file");
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    println!("With text:\n{contents}");
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">struct Config {
 </span><span class="boring">    query: String,
 </span><span class="boring">    file_path: String,
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span>impl Config {
     fn build(args: &amp;[String]) -&gt; Result&lt;Config, &amp;'static str&gt; {
         if args.len() &lt; 3 {
             return Err("not enough arguments");
         }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
         let query = args[1].clone();
         let file_path = args[2].clone();
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
         Ok(Config { query, file_path })
     }
 }</code></pre>
@@ -503,40 +503,40 @@ note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
 <pre><code class="language-rust ignore"><span class="boring">use std::env;
 </span><span class="boring">use std::fs;
 </span>use std::process;
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 fn main() {
     let args: Vec&lt;String&gt; = env::args().collect();
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     let config = Config::build(&amp;args).unwrap_or_else(|err| {
         println!("Problem parsing arguments: {err}");
         process::exit(1);
     });
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     // --код сокращён--
-<span class="boring">
+<span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    println!("Searching for {}", config.query);
 </span><span class="boring">    println!("In file {}", config.file_path);
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    let contents = fs::read_to_string(config.file_path)
 </span><span class="boring">        .expect("Should have been able to read the file");
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    println!("With text:\n{contents}");
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">struct Config {
 </span><span class="boring">    query: String,
 </span><span class="boring">    file_path: String,
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">impl Config {
 </span><span class="boring">    fn build(args: &amp;[String]) -&gt; Result&lt;Config, &amp;'static str&gt; {
 </span><span class="boring">        if args.len() &lt; 3 {
 </span><span class="boring">            return Err("not enough arguments");
 </span><span class="boring">        }
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">        let query = args[1].clone();
 </span><span class="boring">        let file_path = args[2].clone();
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">        Ok(Config { query, file_path })
 </span><span class="boring">    }
 </span><span class="boring">}</span></code></pre>
@@ -561,46 +561,46 @@ Problem parsing arguments: not enough arguments
 <pre><code class="language-rust ignore"><span class="boring">use std::env;
 </span><span class="boring">use std::fs;
 </span><span class="boring">use std::process;
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span>fn main() {
     // --код сокращён--
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 <span class="boring">    let args: Vec&lt;String&gt; = env::args().collect();
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    let config = Config::build(&amp;args).unwrap_or_else(|err| {
 </span><span class="boring">        println!("Problem parsing arguments: {err}");
 </span><span class="boring">        process::exit(1);
 </span><span class="boring">    });
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span>    println!("Searching for {}", config.query);
     println!("In file {}", config.file_path);
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     run(config);
 }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 fn run(config: Config) {
     let contents = fs::read_to_string(config.file_path)
         .expect("Should have been able to read the file");
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     println!("With text:\n{contents}");
 }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 // --код сокращён--
-<span class="boring">
+<span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">struct Config {
 </span><span class="boring">    query: String,
 </span><span class="boring">    file_path: String,
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">impl Config {
 </span><span class="boring">    fn build(args: &amp;[String]) -&gt; Result&lt;Config, &amp;'static str&gt; {
 </span><span class="boring">        if args.len() &lt; 3 {
 </span><span class="boring">            return Err("not enough arguments");
 </span><span class="boring">        }
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">        let query = args[1].clone();
 </span><span class="boring">        let file_path = args[2].clone();
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">        Ok(Config { query, file_path })
 </span><span class="boring">    }
 </span><span class="boring">}</span></code></pre>
@@ -617,46 +617,46 @@ fn run(config: Config) {
 </span><span class="boring">use std::fs;
 </span><span class="boring">use std::process;
 </span>use std::error::Error;
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 // --код сокращён--
-
-<span class="boring">
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
+<span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">fn main() {
 </span><span class="boring">    let args: Vec&lt;String&gt; = env::args().collect();
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    let config = Config::build(&amp;args).unwrap_or_else(|err| {
 </span><span class="boring">        println!("Problem parsing arguments: {err}");
 </span><span class="boring">        process::exit(1);
 </span><span class="boring">    });
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    println!("Searching for {}", config.query);
 </span><span class="boring">    println!("In file {}", config.file_path);
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    run(config);
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span>fn run(config: Config) -&gt; Result&lt;(), Box&lt;dyn Error&gt;&gt; {
     let contents = fs::read_to_string(config.file_path)?;
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     println!("With text:\n{contents}");
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     Ok(())
 }
-<span class="boring">
+<span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">struct Config {
 </span><span class="boring">    query: String,
 </span><span class="boring">    file_path: String,
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">impl Config {
 </span><span class="boring">    fn build(args: &amp;[String]) -&gt; Result&lt;Config, &amp;'static str&gt; {
 </span><span class="boring">        if args.len() &lt; 3 {
 </span><span class="boring">            return Err("not enough arguments");
 </span><span class="boring">        }
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">        let query = args[1].clone();
 </span><span class="boring">        let file_path = args[2].clone();
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">        Ok(Config { query, file_path })
 </span><span class="boring">    }
 </span><span class="boring">}</span></code></pre>
@@ -681,7 +681,7 @@ help: use `let _ = ...` to ignore the resulting value
    |
 19 |     let _ = run(config);
    |     +++++++
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 warning: `minigrep` (bin "minigrep") generated 1 warning
     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.71s
      Running `target/debug/minigrep the poem.txt`
@@ -692,12 +692,12 @@ I'm nobody! Who are you?
 Are you nobody, too?
 Then there's a pair of us - don't tell!
 They'd banish us, you know.
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 How dreary to be somebody!
 How public, like a frog
 To tell your name the livelong day
 To an admiring bog!
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </code></pre>
 <p>Rust tells us that our code ignored the <code>Result</code> value and the <code>Result</code> value might indicate that an error occurred. But we’re not checking to see whether or not there was an error, and the compiler reminds us that we probably meant to have some error-handling code here! Let’s rectify that problem now.</p>
 <h4 id="handling-errors-returned-from-run-in-main"><a class="header" href="#handling-errors-returned-from-run-in-main">Handling Errors Returned from <code>run</code> in <code>main</code></a></h4>
@@ -707,48 +707,48 @@ To an admiring bog!
 </span><span class="boring">use std::error::Error;
 </span><span class="boring">use std::fs;
 </span><span class="boring">use std::process;
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span>fn main() {
     // --код сокращён--
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 <span class="boring">    let args: Vec&lt;String&gt; = env::args().collect();
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    let config = Config::build(&amp;args).unwrap_or_else(|err| {
 </span><span class="boring">        println!("Problem parsing arguments: {err}");
 </span><span class="boring">        process::exit(1);
 </span><span class="boring">    });
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span>    println!("Searching for {}", config.query);
     println!("In file {}", config.file_path);
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     if let Err(e) = run(config) {
         println!("Application error: {e}");
         process::exit(1);
     }
 }
-<span class="boring">
+<span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">fn run(config: Config) -&gt; Result&lt;(), Box&lt;dyn Error&gt;&gt; {
 </span><span class="boring">    let contents = fs::read_to_string(config.file_path)?;
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    println!("With text:\n{contents}");
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    Ok(())
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">struct Config {
 </span><span class="boring">    query: String,
 </span><span class="boring">    file_path: String,
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">impl Config {
 </span><span class="boring">    fn build(args: &amp;[String]) -&gt; Result&lt;Config, &amp;'static str&gt; {
 </span><span class="boring">        if args.len() &lt; 3 {
 </span><span class="boring">            return Err("not enough arguments");
 </span><span class="boring">        }
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">        let query = args[1].clone();
 </span><span class="boring">        let file_path = args[2].clone();
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">        Ok(Config { query, file_path })
 </span><span class="boring">    }
 </span><span class="boring">}</span></code></pre>
@@ -773,53 +773,53 @@ To an admiring bog!
 </span><span class="boring">use std::error::Error;
 </span><span class="boring">use std::fs;
 </span><span class="boring">use std::process;
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span>// --код сокращён--
 use minigrep::search;
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 fn main() {
     // --код сокращён--
 <span class="boring">    let args: Vec&lt;String&gt; = env::args().collect();
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    let config = Config::build(&amp;args).unwrap_or_else(|err| {
 </span><span class="boring">        println!("Problem parsing arguments: {err}");
 </span><span class="boring">        process::exit(1);
 </span><span class="boring">    });
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    if let Err(e) = run(config) {
 </span><span class="boring">        println!("Application error: {e}");
 </span><span class="boring">        process::exit(1);
 </span><span class="boring">    }
 </span>}
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 // --код сокращён--
-
-<span class="boring">
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
+<span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">struct Config {
 </span><span class="boring">    query: String,
 </span><span class="boring">    file_path: String,
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">impl Config {
 </span><span class="boring">    fn build(args: &amp;[String]) -&gt; Result&lt;Config, &amp;'static str&gt; {
 </span><span class="boring">        if args.len() &lt; 3 {
 </span><span class="boring">            return Err("not enough arguments");
 </span><span class="boring">        }
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">        let query = args[1].clone();
 </span><span class="boring">        let file_path = args[2].clone();
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">        Ok(Config { query, file_path })
 </span><span class="boring">    }
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span>fn run(config: Config) -&gt; Result&lt;(), Box&lt;dyn Error&gt;&gt; {
     let contents = fs::read_to_string(config.file_path)?;
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     for line in search(&amp;config.query, &amp;contents) {
         println!("{line}");
     }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     Ok(())
 }</code></pre>
 <figcaption><a href="#listing-12-14">Listing 12-14</a>: Using the <code>minigrep</code> library crate’s <code>search</code> function in <em>src/main.rs</em></figcaption>

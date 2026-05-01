@@ -97,7 +97,7 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-56895a7e.js";
+            window.path_to_searchindex_js = "../searchindex-40d30f76.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../toc-6b0c3669.js"></script>
@@ -345,21 +345,21 @@ regex = { git = "https://github.com/rust-lang/regex.git", branch = "next" }
 <pre><code class="language-toml"># 호스트가 해당 URL을 허용한다면 .git 접미사는 생략할 수 있습니다 - 두 예시는 동일하게 작동합니다
 regex = { git = "https://github.com/rust-lang/regex" }
 regex = { git = "https://github.com/rust-lang/regex.git" }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 # 특정 태그가 있는 커밋
 regex = { git = "https://github.com/rust-lang/regex.git", tag = "1.10.3" }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 # SHA1 해시를 통한 커밋
 regex = { git = "https://github.com/rust-lang/regex.git", rev = "0c0990399270277832fbb5b91a1fa118e6f63dba" }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 # PR 493의 HEAD 커밋
 regex = { git = "https://github.com/rust-lang/regex.git", rev = "refs/pull/493/head" }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 # 잘못된 예시
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 # # 뒤에 커밋을 지정하면 커밋 ID를 무시하고 경고를 발생시킵니다
 regex = { git = "https://github.com/rust-lang/regex.git#4c59b70" }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 # git과 path는 동시에 사용할 수 없습니다
 regex = { git = "https://github.com/rust-lang/regex.git#4c59b70", path = "../regex" }
 </code></pre>
@@ -397,7 +397,7 @@ hello_utils = { path = "hello_utils" }
 [dependencies]
 regex-lite   = { git = "https://github.com/rust-lang/regex.git" }
 regex-syntax = { git = "https://github.com/rust-lang/regex.git" }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 # path 키는 로컬 경로에 구성원 이름이 포함되어야 합니다
 [dependencies]
 regex-lite   = { path = "../regex/regex-lite" }
@@ -419,11 +419,11 @@ hello_utils = { path = "hello_utils", version = "0.1.0" }
 # 로컬에서 사용될 때는 `my-bitflags` 를 사용하고,
 # 게시될 때는 crates.io의 1.0 버전을 사용합니다.
 bitflags = { path = "my-bitflags", version = "1.0" }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 # 로컬에서 사용될 때는 지정된 git 저장소를 사용하고,
 # 게시될 때는 crates.io의 1.0 버전을 사용합니다.
 smallvec = { git = "https://github.com/servo/rust-smallvec.git", version = "1.0" }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 # 참고: 버전이 일치하지 않으면 Cargo 빌드에 실패합니다!
 </code></pre>
 <p>이것이 유용할 수 있는 한 가지 예는 라이브러리를 동일한 워크스페이스 내의 여러 패키지로 분할한 경우입니다. 개발 중에는 <code>path</code> 의존성을 사용하여 워크스페이스 내의 로컬 패키지를 가리켜 로컬 버전을 사용하고, 게시된 후에는 <a href="https://crates.io/">crates.io</a> 버전을 사용할 수 있습니다. 이는 <a href="overriding-dependencies.html">재정의(override)</a> 를 지정하는 것과 유사하지만, 이 하나의 의존성 선언에만 적용됩니다.</p>
@@ -431,13 +431,13 @@ smallvec = { git = "https://github.com/servo/rust-smallvec.git", version = "1.0"
 <p>플랫폼별 의존성은 동일한 형식을 사용하지만 <code>target</code> 섹션 아래에 나열됩니다. 보통 이러한 섹션을 정의하기 위해 Rust와 유사한 <a href="../../reference/conditional-compilation.html"><code>#[cfg]</code> 구문</a>이 사용됩니다.</p>
 <pre><code class="language-toml">[target.'cfg(windows)'.dependencies]
 winhttp = "0.4.0"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [target.'cfg(unix)'.dependencies]
 openssl = "1.0.1"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [target.'cfg(target_arch = "x86")'.dependencies]
 native-i686 = { path = "native/i686" }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [target.'cfg(target_arch = "x86_64")'.dependencies]
 native-x86_64 = { path = "native/x86_64" }
 </code></pre>
@@ -447,7 +447,7 @@ native-x86_64 = { path = "native/x86_64" }
 <pre><code class="language-toml">[dependencies]
 foo = { version = "1.0", optional = true }
 bar = { version = "1.0", optional = true }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [features]
 fancy-feature = ["foo", "bar"]
 </code></pre>
@@ -455,7 +455,7 @@ fancy-feature = ["foo", "bar"]
 <p><code>#[cfg]</code> 구문 외에도, Cargo는 의존성이 적용될 전체 타겟을 나열하는 것도 지원합니다.</p>
 <pre><code class="language-toml">[target.x86_64-pc-windows-gnu.dependencies]
 winhttp = "0.4.0"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [target.i686-unknown-linux-gnu.dependencies]
 openssl = "1.0.1"
 </code></pre>
@@ -463,7 +463,7 @@ openssl = "1.0.1"
 <p>사용자 정의 타겟 사양(예: <code>--target foo/bar.json</code>)을 사용하는 경우, <code>.json</code> 확장자를 제외한 기본 파일 이름을 사용하세요.</p>
 <pre><code class="language-toml">[target.bar.dependencies]
 winhttp = "0.4.0"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [target.my-special-i686-platform.dependencies]
 openssl = "1.0.1"
 native = { path = "native/i686" }
@@ -516,7 +516,7 @@ features = ["secure-password", "civet"]
 <pre><code class="language-toml">[package]
 name = "mypackage"
 version = "0.0.1"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [dependencies]
 foo = "0.1"
 bar = { git = "https://github.com/example/project.git", package = "foo" }
@@ -548,13 +548,13 @@ log-debug = ['bar/log-debug'] # using 'foo/log-debug' would be an error!
 <pre><code class="language-toml">[package]
 name = "bar"
 version = "0.2.0"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [dependencies]
 regex = { workspace = true, features = ["unicode"] }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [build-dependencies]
 cc.workspace = true
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [dev-dependencies]
 rand = { workspace = true, optional = true }
 </code></pre>

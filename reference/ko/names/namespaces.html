@@ -93,7 +93,7 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-55effe88.js";
+            window.path_to_searchindex_js = "../searchindex-e23b9ebb.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../toc-20da6b24.js"></script>
@@ -311,12 +311,12 @@
 </span>// Foo는 타입 네임스페이스에 타입을 도입하고 값 네임스페이스에
 // 생성자를 도입합니다.
 struct Foo(u32);
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // `Foo` 매크로는 매크로 네임스페이스에 선언됩니다.
 macro_rules! Foo {
     () =&gt; {};
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // `f` 매개변수 타입의 `Foo` 는 타입 네임스페이스의 `Foo` 를 참조합니다.
 // `'Foo` 는 라이프타임 네임스페이스에 새로운 라이프타임을 도입합니다.
 fn example&lt;'Foo&gt;(f: Foo) {

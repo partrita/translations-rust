@@ -96,7 +96,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-01ba4889.js";
+            window.path_to_searchindex_js = "searchindex-0481507b.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-f10b093a.js"></script>
@@ -246,13 +246,13 @@
 <pre class="playground"><code class="language-rust edition2024">fn main() {
     let width1 = 30;
     let height1 = 50;
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     println!(
         "Площадь прямоугольника равна {} квадратных пикселей.",
         area(width1, height1)
     );
 }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 fn area(width: u32, height: u32) -&gt; u32 {
     width * height
 }</code></pre>
@@ -270,13 +270,13 @@ fn area(width: u32, height: u32) -&gt; u32 {
 <pre><code class="language-rust ignore"><span class="boring">fn main() {
 </span><span class="boring">    let width1 = 30;
 </span><span class="boring">    let height1 = 50;
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    println!(
 </span><span class="boring">        "Площадь прямоугольника равна {} квадратных пикселей.",
 </span><span class="boring">        area(width1, height1)
 </span><span class="boring">    );
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span>fn area(width: u32, height: u32) -&gt; u32 {
 <span class="boring">    width * height
 </span><span class="boring">}</span></code></pre>
@@ -287,13 +287,13 @@ fn area(width: u32, height: u32) -&gt; u32 {
 <span class="file-name">Filename: src/main.rs</span>
 <pre class="playground"><code class="language-rust edition2024">fn main() {
     let rect1 = (30, 50);
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     println!(
         "Площадь прямоугольника равна {} квадратных пикселей.",
         area(rect1)
     );
 }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 fn area(dimensions: (u32, u32)) -&gt; u32 {
     dimensions.0 * dimensions.1
 }</code></pre>
@@ -311,19 +311,19 @@ fn area(dimensions: (u32, u32)) -&gt; u32 {
     width: u32,
     height: u32,
 }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 fn main() {
     let rect1 = Rectangle {
         width: 30,
         height: 50,
     };
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     println!(
         "Площадь прямоугольника равна {} квадратных пикселей.",
         area(&amp;rect1)
     );
 }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 fn area(rectangle: &amp;Rectangle) -&gt; u32 {
     rectangle.width * rectangle.height
 }</code></pre>
@@ -342,13 +342,13 @@ fn area(rectangle: &amp;Rectangle) -&gt; u32 {
     width: u32,
     height: u32,
 }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 fn main() {
     let rect1 = Rectangle {
         width: 30,
         height: 50,
     };
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     println!("rect1 is {rect1}");
 }</code></pre>
 <figcaption><a href="#listing-5-11">Listing 5-11</a>: Attempting to print a <code>Rectangle</code> instance</figcaption>
@@ -377,13 +377,13 @@ struct Rectangle {
     width: u32,
     height: u32,
 }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 fn main() {
     let rect1 = Rectangle {
         width: 30,
         height: 50,
     };
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     println!("rect1: {rect1:?}");
 }</code></pre>
 <figcaption><a href="#listing-5-12">Listing 5-12</a>: Adding the attribute to derive the <code>Debug</code> trait and printing the <code>Rectangle</code> instance using debug formatting</figcaption>
@@ -415,14 +415,14 @@ struct Rectangle {
     width: u32,
     height: u32,
 }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 fn main() {
     let scale = 2;
     let rect1 = Rectangle {
         width: dbg!(30 * scale),
         height: 50,
     };
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     dbg!(&amp;rect1);
 }</code></pre>
 <p>Мы можем обернуть выражение <code>30 * scale</code> макросом <code>dbg!</code>, потому что <code>dbg!</code> возвращает владение значением выражения. Поле <code>width</code> получит то же значение, как если бы у нас не было вызова <code>dbg!</code>. Далее, мы не хотим, чтобы макрос <code>dbg!</code> становился владельцем <code>rect1</code>, поэтому используем ссылку на <code>rect1</code> в следующем вызове. Вот как выглядит вывод этого примера:</p>

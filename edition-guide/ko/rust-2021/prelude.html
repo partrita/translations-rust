@@ -92,7 +92,7 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-63cf9974.js";
+            window.path_to_searchindex_js = "../searchindex-ddd16eb2.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../toc-8ce05715.js"></script>
@@ -268,11 +268,11 @@
   // 이 이름은 `std` 의 `FromIterator` 트레이트에 있는 `from_iter` 메서드와 같습니다. 
   fn from_iter(x: Option&lt;A&gt;);
 }
-
+심지어 `panic!(123)` 과 같이 문자열이 아닌 것도 허용하는데, 이는 드물고 거의 유용하지 않습니다. 왜냐하면 놀라울 정도로 도움이 되지 않는 메시지인 `panicked at 'Box&lt;Any&gt;'` 를 생성하기 때문입니다.
 impl&lt;T&gt; MyTrait&lt;()&gt; for Vec&lt;T&gt; {
   fn from_iter(_: Option&lt;()&gt;) {}
 }
-
+심지어 `panic!(123)` 과 같이 문자열이 아닌 것도 허용하는데, 이는 드물고 거의 유용하지 않습니다. 왜냐하면 놀라울 정도로 도움이 되지 않는 메시지인 `panicked at 'Box&lt;Any&gt;'` 를 생성하기 때문입니다.
 fn main() {
   // Vec&lt;T&gt;는 `std::iter::FromIterator` 와 `MyTrait` 를 모두 구현합니다
   // 두 트레이트가 모두 범위에 있는 경우(Rust 2021의 경우와 같음),
@@ -294,7 +294,7 @@ fn main() {
     fn try_into(&amp;self) -&gt; Result&lt;u32, ()&gt;;
   }
 }
-
+심지어 `panic!(123)` 과 같이 문자열이 아닌 것도 허용하는데, 이는 드물고 거의 유용하지 않습니다. 왜냐하면 놀라울 정도로 도움이 되지 않는 메시지인 `panicked at 'Box&lt;Any&gt;'` 를 생성하기 때문입니다.
 // `MyTrait` 는 여기 범위에 포함되지 않으며 경로 `submodule::MyTrait`
 "을 통해서만 참조될 수 있습니다fn bar(f: Box&lt;dyn submodule::MyTrait&gt;) {
   // `std::convert::TryInto` 가 범위 내에 있는 경우(Rust의 경우처럼)
@@ -311,11 +311,11 @@ fn main() {
 <pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span>use std::iter::IntoIterator;
-
+심지어 `panic!(123)` 과 같이 문자열이 아닌 것도 허용하는데, 이는 드물고 거의 유용하지 않습니다. 왜냐하면 놀라울 정도로 도움이 되지 않는 메시지인 `panicked at 'Box&lt;Any&gt;'` 를 생성하기 때문입니다.
 struct MyStruct {
   data: Vec&lt;u32&gt;
 }
-
+심지어 `panic!(123)` 과 같이 문자열이 아닌 것도 허용하는데, 이는 드물고 거의 유용하지 않습니다. 왜냐하면 놀라울 정도로 도움이 되지 않는 메시지인 `panicked at 'Box&lt;Any&gt;'` 를 생성하기 때문입니다.
 impl MyStruct {
   // 이것은 `std::iter::FromIterator::from_iter` 와 이름이 같습니다
   fn from_iter(iter: impl IntoIterator&lt;Item = u32&gt;) -&gt; Self {
@@ -324,7 +324,7 @@ impl MyStruct {
     }
   }
 }
-
+심지어 `panic!(123)` 과 같이 문자열이 아닌 것도 허용하는데, 이는 드물고 거의 유용하지 않습니다. 왜냐하면 놀라울 정도로 도움이 되지 않는 메시지인 `panicked at 'Box&lt;Any&gt;'` 를 생성하기 때문입니다.
 impl std::iter::FromIterator&lt;u32&gt; for MyStruct {
     fn from_iter&lt;I: IntoIterator&lt;Item = u32&gt;&gt;(iter: I) -&gt; Self {
       Self {

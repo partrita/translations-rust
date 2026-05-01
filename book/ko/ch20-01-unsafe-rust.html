@@ -96,7 +96,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-ba1bddcc.js";
+            window.path_to_searchindex_js = "searchindex-18122752.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-a05ef4ad.js"></script>
@@ -273,7 +273,7 @@
 <figure class="listing" id="listing-20-1">
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">fn main() {
 </span>    let mut num = 5;
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
     let r1 = &amp;raw const num;
     let r2 = &amp;raw mut num;
 <span class="boring">}</span></code></pre>
@@ -293,10 +293,10 @@
 <figure class="listing" id="listing-20-3">
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">fn main() {
 </span>    let mut num = 5;
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
     let r1 = &amp;raw const num;
     let r2 = &amp;raw mut num;
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
     unsafe {
         println!("r1은: {}"입니다, *r1);
         println!("r2는: {}"입니다, *r2);
@@ -312,7 +312,7 @@
 <p>다음은 본문에서 아무것도 하지 않는 <code>dangerous</code> 라는 이름의 unsafe 함수입니다.</p>
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">fn main() {
 </span>    unsafe fn dangerous() {}
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
     unsafe {
         dangerous();
     }
@@ -327,7 +327,7 @@ error[E0133]: call to unsafe function `dangerous` is unsafe and requires unsafe 
   |     ^^^^^^^^^^^ call to unsafe function
   |
   = note: consult the function's documentation for information on how to avoid undefined behavior
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 For more information about this error, try `rustc --explain E0133`.
 error: could not compile `unsafe-example` (bin "unsafe-example") due to 1 previous error
 </code></pre>
@@ -338,11 +338,11 @@ error: could not compile `unsafe-example` (bin "unsafe-example") due to 1 previo
 <figure class="listing" id="listing-20-4">
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">fn main() {
 </span>    let mut v = vec![1, 2, 3, 4, 5, 6];
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
     let r = &amp;mut v[..];
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
     let (a, b) = r.split_at_mut(3);
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
     assert_eq!(a, &amp;mut [1, 2, 3]);
     assert_eq!(b, &amp;mut [4, 5, 6]);
 <span class="boring">}</span></code></pre>
@@ -352,12 +352,12 @@ error: could not compile `unsafe-example` (bin "unsafe-example") due to 1 previo
 <figure class="listing" id="listing-20-5">
 <pre><code class="language-rust ignore does_not_compile">fn split_at_mut(values: &amp;mut [i32], mid: usize) -&gt; (&amp;mut [i32], &amp;mut [i32]) {
     let len = values.len();
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
     assert!(mid &lt;= len);
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
     (&amp;mut values[..mid], &amp;mut values[mid..])
 }
-<span class="boring">
+<span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">fn main() {
 </span><span class="boring">    let mut vector = vec![1, 2, 3, 4, 5, 6];
 </span><span class="boring">    let (left, right) = split_at_mut(&amp;mut vector, 3);
@@ -371,13 +371,13 @@ error: could not compile `unsafe-example` (bin "unsafe-example") due to 1 previo
 <p>예제 20-6은 <code>split_at_mut</code> 구현이 작동하도록 <code>unsafe</code> 블록, 원시 포인터, 그리고 몇 가지 안전하지 않은 함수 호출을 사용하는 방법을 보여줍니다.</p>
 <figure class="listing" id="listing-20-6">
 <pre class="playground"><code class="language-rust edition2024">use std::slice;
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 fn split_at_mut(values: &amp;mut [i32], mid: usize) -&gt; (&amp;mut [i32], &amp;mut [i32]) {
     let len = values.len();
     let ptr = values.as_mut_ptr();
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
     assert!(mid &lt;= len);
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
     unsafe {
         (
             slice::from_raw_parts_mut(ptr, mid),
@@ -385,7 +385,7 @@ fn split_at_mut(values: &amp;mut [i32], mid: usize) -&gt; (&amp;mut [i32], &amp;
         )
     }
 }
-<span class="boring">
+<span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">fn main() {
 </span><span class="boring">    let mut vector = vec![1, 2, 3, 4, 5, 6];
 </span><span class="boring">    let (left, right) = split_at_mut(&amp;mut vector, 3);
@@ -400,10 +400,10 @@ fn split_at_mut(values: &amp;mut [i32], mid: usize) -&gt; (&amp;mut [i32], &amp;
 <figure class="listing" id="listing-20-7">
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">fn main() {
 </span>    use std::slice;
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
     let address = 0x01234usize;
     let r = address as *mut i32;
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
     let values: &amp;[i32] = unsafe { slice::from_raw_parts_mut(r, 10000) };
 <span class="boring">}</span></code></pre>
 <figcaption><a href="#listing-20-7">Listing 20-7</a>: Creating a slice from an arbitrary memory location</figcaption>
@@ -417,7 +417,7 @@ fn split_at_mut(values: &amp;mut [i32], mid: usize) -&gt; (&amp;mut [i32], &amp;
 <pre class="playground"><code class="language-rust edition2024">unsafe extern "C" {
     fn abs(input: i32) -&gt; i32;
 }
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 fn main() {
     unsafe {
         println!("C에 따른 -3의 절대값: {}", abs(-3));
@@ -432,7 +432,7 @@ fn main() {
 <pre class="playground"><code class="language-rust edition2024">unsafe extern "C" {
     safe fn abs(input: i32) -&gt; i32;
 }
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 fn main() {
     println!("C에 따른 -3의 절대값: {}", abs(-3));
 }</code></pre>
@@ -454,7 +454,7 @@ pub extern "C" fn call_from_c() {
 <figure class="listing" id="listing-20-10">
 <span class="file-name">Filename: src/main.rs</span>
 <pre class="playground"><code class="language-rust edition2024">static HELLO_WORLD: &amp;str = "헬로, 월드!";
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 fn main() {
     println!("value is: {HELLO_WORLD}");
 }</code></pre>
@@ -465,7 +465,7 @@ fn main() {
 <figure class="listing" id="listing-20-11">
 <span class="file-name">Filename: src/main.rs</span>
 <pre class="playground"><code class="language-rust edition2024">static mut COUNTER: u32 = 0;
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 /// SAFETY: 한 번에 둘 이상의 스레드에서 이를 호출하는 것은 정의되지 않은 동작이므로,
 /// 한 번에 오직 하나의 스레드에서만 이를 호출하도록 보장해야 합니다.
 unsafe fn add_to_count(inc: u32) {
@@ -473,7 +473,7 @@ unsafe fn add_to_count(inc: u32) {
         COUNTER += inc;
     }
 }
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 fn main() {
     unsafe {
         // SAFETY: 이는 `main` 의 단일 스레드에서만 호출됩니다.
@@ -493,11 +493,11 @@ fn main() {
 <pre class="playground"><code class="language-rust edition2024">unsafe trait Foo {
     // 메서드가 여기에 옵니다
 }
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 unsafe impl Foo for i32 {
     // 메서드 구현이 여기에 옵니다
 }
-<span class="boring">
+<span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">fn main() {}</span></code></pre>
 <figcaption><a href="#listing-20-12">Listing 20-12</a>: Defining and implementing an unsafe trait</figcaption>
 </figure>
@@ -526,7 +526,7 @@ warning: integer-to-pointer cast
   = help: alternatively, `MIRIFLAGS=-Zmiri-permissive-provenance` disables this warning
   = note: BACKTRACE:
   = note: inside `main` at src/main.rs:5:13: 5:32
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 error: Undefined Behavior: pointer not dereferenceable: pointer must be dereferenceable for 40000 bytes, but got 0x1234[noalloc] which is a dangling pointer (it has no provenance)
  --&gt; src/main.rs:7:35
   |
@@ -537,11 +537,11 @@ error: Undefined Behavior: pointer not dereferenceable: pointer must be derefere
   = help: see https://doc.rust-lang.org/nightly/reference/behavior-considered-undefined.html for further information
   = note: BACKTRACE:
   = note: inside `main` at src/main.rs:7:35: 7:70
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 note: some details are omitted, run with `MIRIFLAGS=-Zmiri-backtrace=full` for a verbose backtrace
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 error: aborting due to 1 previous error; 1 warning emitted
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </code></pre>
 <p>Miri correctly warns us that we’re casting an integer to a pointer, which might be a problem, but Miri can’t determine whether a problem exists because it doesn’t know how the pointer originated. Then, Miri returns an error where Listing 20-7 has undefined behavior because we have a dangling pointer. Thanks to Miri, we now know there is a risk of undefined behavior, and we can think about how to make the code safe. In some cases, Miri can even make recommendations about how to fix errors.</p>
 <p>Miri doesn’t catch everything you might get wrong when writing unsafe code. Miri is a dynamic analysis tool, so it only catches problems with code that actually gets run. That means you will need to use it in conjunction with good testing techniques to increase your confidence about the unsafe code you have written. Miri also does not cover every possible way your code can be unsound.</p>

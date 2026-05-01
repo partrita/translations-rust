@@ -96,7 +96,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-ba1bddcc.js";
+            window.path_to_searchindex_js = "searchindex-18122752.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-a05ef4ad.js"></script>
@@ -258,9 +258,9 @@
 <figure class="listing" id="listing-8-12">
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">fn main() {
 </span>    let data = "초기 내용";
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
     let s = data.to_string();
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
     // 이 메서드는 리터럴에서도 직접 작동합니다:
     let s = "초기 내용".to_string();
 <span class="boring">}</span></code></pre>
@@ -349,7 +349,7 @@
 </span>    let s1 = String::from("tic");
     let s2 = String::from("tac");
     let s3 = String::from("toe");
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
     let s = s1 + "-" + &amp;s2 + "-" + &amp;s3;
 <span class="boring">}</span></code></pre>
 <p>이 지점에서 <code>s</code> 는 <code>tic-tac-toe</code> 가 됩니다. 수많은 <code>+</code> 와 <code>"</code> 문자로 인해 코드가 무엇을 하는지 한눈에 파악하기 어렵습니다. 문자열을 더 복잡한 방식으로 결합하려면 대신 <code>format!</code> 매크로를 사용할 수 있습니다.</p>
@@ -357,7 +357,7 @@
 </span>    let s1 = String::from("tic");
     let s2 = String::from("tac");
     let s3 = String::from("toe");
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
     let s = format!("{s1}-{s2}-{s3}");
 <span class="boring">}</span></code></pre>
 <p>이 코드 역시 <code>s</code> 를 <code>tic-tac-toe</code> 로 설정합니다. <code>format!</code> 매크로는 <code>println!</code> 과 비슷하게 작동하지만, 출력을 화면에 인쇄하는 대신 그 내용을 담은 <code>String</code> 을 반환합니다. <code>format!</code> 을 사용한 버전이 훨씬 읽기 쉬우며, <code>format!</code> 매크로가 생성하는 코드는 참조를 사용하므로 이 호출은 매개변수의 소유권을 가져가지 않습니다.</p>
@@ -386,7 +386,7 @@ error[E0277]: the type `str` cannot be indexed by `{integer}`
             `usize` implements `SliceIndex&lt;ByteStr&gt;`
             `usize` implements `SliceIndex&lt;[T]&gt;`
   = note: required for `String` to implement `Index&lt;{integer}&gt;`
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 For more information about this error, try `rustc --explain E0277`.
 error: could not compile `collections` (bin "collections") due to 1 previous error
 </code></pre>
@@ -447,7 +447,7 @@ let answer = &amp;hello[0];</code></pre>
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span>let hello = "Здравствуйте";
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 let s = &amp;hello[0..4];
 <span class="boring">}</span></code></pre>
 <p>Here, <code>s</code> will be a <code>&amp;str</code> that contains the first 4 bytes of the string. Earlier, we mentioned that each of these characters was 2 bytes, which means <code>s</code> will be <code>Зд</code>.</p>
@@ -456,7 +456,7 @@ let s = &amp;hello[0..4];
    Compiling collections v0.1.0 (file:///projects/collections)
     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.43s
      Running `target/debug/collections`
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 thread 'main' panicked at src/main.rs:4:19:
 byte index 1 is not a char boundary; it is inside 'З' (bytes 0..2) of `Здравствуйте`
 note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace

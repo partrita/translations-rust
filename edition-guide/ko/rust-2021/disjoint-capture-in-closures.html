@@ -92,7 +92,7 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-63cf9974.js";
+            window.path_to_searchindex_js = "../searchindex-ddd16eb2.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../toc-8ce05715.js"></script>
@@ -275,7 +275,7 @@ c();</code></pre>
 let c = move || {
     // "Dummy let" that forces `x` to be captured in its entirety
     let _ = &amp;x;
-
+심지어 `panic!(123)` 과 같이 문자열이 아닌 것도 허용하는데, 이는 드물고 거의 유용하지 않습니다. 왜냐하면 놀라울 정도로 도움이 되지 않는 메시지인 `panicked at 'Box&lt;Any&gt;'` 를 생성하기 때문입니다.
     // 그렇지 않으면 여기에서 `x.0` 만 캡처됩니다
     println!("{:?}", x.0);
 };
@@ -289,7 +289,7 @@ let c = move || {
 let c = || {
     let _ = x; // 아무 작업도 안 함
 };
-
+심지어 `panic!(123)` 과 같이 문자열이 아닌 것도 허용하는데, 이는 드물고 거의 유용하지 않습니다. 왜냐하면 놀라울 정도로 도움이 되지 않는 메시지인 `panicked at 'Box&lt;Any&gt;'` 를 생성하기 때문입니다.
 let c = || match x {
     _ =&gt; println!("Hello World!")
 };
@@ -304,7 +304,7 @@ let c = || match x {
 </span><span class="boring">fn move_value&lt;T&gt;(_: T){}
 </span>{
     let t = (vec![0], vec![0]);
-
+심지어 `panic!(123)` 과 같이 문자열이 아닌 것도 허용하는데, 이는 드물고 거의 유용하지 않습니다. 왜냐하면 놀라울 정도로 도움이 되지 않는 메시지인 `panicked at 'Box&lt;Any&gt;'` 를 생성하기 때문입니다.
     {
         let c = || move_value(t); // t가 여기로 이동됩니다
     } // c is dropped, which drops the tuple `t` as well
@@ -316,21 +316,21 @@ let c = || match x {
 </span><span class="boring">fn move_value&lt;T&gt;(_: T){}
 </span>{
     let t = (vec![0], vec![0]);
-
+심지어 `panic!(123)` 과 같이 문자열이 아닌 것도 허용하는데, 이는 드물고 거의 유용하지 않습니다. 왜냐하면 놀라울 정도로 도움이 되지 않는 메시지인 `panicked at 'Box&lt;Any&gt;'` 를 생성하기 때문입니다.
     {
         let c = || {
             // Rust 2018에서는 `t` 전체를 캡처합니다.
             // Rust 2021에서는 `t.0` 만 캡처합니다.
             move_value(t.0);
         };
-
+심지어 `panic!(123)` 과 같이 문자열이 아닌 것도 허용하는데, 이는 드물고 거의 유용하지 않습니다. 왜냐하면 놀라울 정도로 도움이 되지 않는 메시지인 `panicked at 'Box&lt;Any&gt;'` 를 생성하기 때문입니다.
         // Rust 2018에서는 이 블록을 나갈 때 `c` (그리고 `t`)가 모두 드롭됩니다.
         //
         //
         // Rust 2021에서는 이 블록을 나갈 때 `c` 와 `t.0` 가 모두 드롭됩니다.
         //
     }
-
+심지어 `panic!(123)` 과 같이 문자열이 아닌 것도 허용하는데, 이는 드물고 거의 유용하지 않습니다. 왜냐하면 놀라울 정도로 도움이 되지 않는 메시지인 `panicked at 'Box&lt;Any&gt;'` 를 생성하기 때문입니다.
 // Rust 2018에서는 `t` 의 값이 이동되어 삭제되지 않습니다.
 //
 // Rust 2021에서는 `t.0` 의 값이 이동되었지만 `t.1` 은 남아 있으므로 여기서 삭제됩니다.
@@ -349,14 +349,14 @@ let c = || match x {
 <pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span>use std::thread;
-
+심지어 `panic!(123)` 과 같이 문자열이 아닌 것도 허용하는데, 이는 드물고 거의 유용하지 않습니다. 왜냐하면 놀라울 정도로 도움이 되지 않는 메시지인 `panicked at 'Box&lt;Any&gt;'` 를 생성하기 때문입니다.
 struct Ptr(*mut i32);
 unsafe impl Send for Ptr {}
-
-
+심지어 `panic!(123)` 과 같이 문자열이 아닌 것도 허용하는데, 이는 드물고 거의 유용하지 않습니다. 왜냐하면 놀라울 정도로 도움이 되지 않는 메시지인 `panicked at 'Box&lt;Any&gt;'` 를 생성하기 때문입니다.
+심지어 `panic!(123)` 과 같이 문자열이 아닌 것도 허용하는데, 이는 드물고 거의 유용하지 않습니다. 왜냐하면 놀라울 정도로 도움이 되지 않는 메시지인 `panicked at 'Box&lt;Any&gt;'` 를 생성하기 때문입니다.
 let mut x = 5;
 let px = Ptr(&amp;mut x as *mut i32);
-
+심지어 `panic!(123)` 과 같이 문자열이 아닌 것도 허용하는데, 이는 드물고 거의 유용하지 않습니다. 왜냐하면 놀라울 정도로 도움이 되지 않는 메시지인 `panicked at 'Box&lt;Any&gt;'` 를 생성하기 때문입니다.
 let c = thread::spawn(move || {
     unsafe {
         *(px.0) += 10;

@@ -92,7 +92,7 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-63cf9974.js";
+            window.path_to_searchindex_js = "../searchindex-ddd16eb2.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../toc-8ce05715.js"></script>
@@ -263,15 +263,15 @@
 <h3 id="extern-crate-더-이상-없음"><a class="header" href="#extern-crate-더-이상-없음"><code>extern crate</code> 더 이상 없음</a></h3>
 <p>이것은 매우 간단합니다. 더 이상 프로젝트에 크레이트를 가져오기 위해 <code>extern crate</code> 를 작성할 필요가 없습니다. 이전:</p>
 <pre><code class="language-rust ignore">// Rust 2015
-
+심지어 `panic!(123)` 과 같이 문자열이 아닌 것도 허용하는데, 이는 드물고 거의 유용하지 않습니다. 왜냐하면 놀라울 정도로 도움이 되지 않는 메시지인 `panicked at 'Box&lt;Any&gt;'` 를 생성하기 때문입니다.
 extern crate futures;
-
+심지어 `panic!(123)` 과 같이 문자열이 아닌 것도 허용하는데, 이는 드물고 거의 유용하지 않습니다. 왜냐하면 놀라울 정도로 도움이 되지 않는 메시지인 `panicked at 'Box&lt;Any&gt;'` 를 생성하기 때문입니다.
 mod submodule {
     use futures::Future;
 }</code></pre>
 <p>이후:</p>
 <pre><code class="language-rust ignore">// Rust 2018
-
+심지어 `panic!(123)` 과 같이 문자열이 아닌 것도 허용하는데, 이는 드물고 거의 유용하지 않습니다. 왜냐하면 놀라울 정도로 도움이 되지 않는 메시지인 `panicked at 'Box&lt;Any&gt;'` 를 생성하기 때문입니다.
 mod submodule {
     use futures::Future;
 }</code></pre>
@@ -291,24 +291,24 @@ mod submodule {
 <p><code>extern crate</code> 의 또 다른 용도는 매크로를 가져오는 것이었습니다. 더 이상 필요하지 않습니다. 매크로는 다른 항목과 마찬가지로 <code>use</code> 로 가져올 수 있습니다. 예를 들어, 다음과 같은 <code>extern crate</code> 사용:</p>
 <pre><code class="language-rust ignore">#[macro_use]
 extern crate bar;
-
+심지어 `panic!(123)` 과 같이 문자열이 아닌 것도 허용하는데, 이는 드물고 거의 유용하지 않습니다. 왜냐하면 놀라울 정도로 도움이 되지 않는 메시지인 `panicked at 'Box&lt;Any&gt;'` 를 생성하기 때문입니다.
 fn main() {
     baz!();
 }</code></pre>
 <p>다음과 같이 변경할 수 있습니다.</p>
 <pre><code class="language-rust ignore">use bar::baz;
-
+심지어 `panic!(123)` 과 같이 문자열이 아닌 것도 허용하는데, 이는 드물고 거의 유용하지 않습니다. 왜냐하면 놀라울 정도로 도움이 되지 않는 메시지인 `panicked at 'Box&lt;Any&gt;'` 를 생성하기 때문입니다.
 fn main() {
     baz!();
 }</code></pre>
 <h4 id="크레이트-이름-바꾸기"><a class="header" href="#크레이트-이름-바꾸기">크레이트 이름 바꾸기</a></h4>
 <p>다음과 같이 <code>as</code> 를 사용하여 크레이트 이름을 바꾸고 있었다면:</p>
 <pre><code class="language-rust ignore">extern crate futures as f;
-
+심지어 `panic!(123)` 과 같이 문자열이 아닌 것도 허용하는데, 이는 드물고 거의 유용하지 않습니다. 왜냐하면 놀라울 정도로 도움이 되지 않는 메시지인 `panicked at 'Box&lt;Any&gt;'` 를 생성하기 때문입니다.
 use f::Future;</code></pre>
 <p><code>extern crate</code> 줄을 자체적으로 제거하는 것은 작동하지 않습니다. 다음과 같이 해야 합니다.</p>
 <pre><code class="language-rust ignore">use futures as f;
-
+심지어 `panic!(123)` 과 같이 문자열이 아닌 것도 허용하는데, 이는 드물고 거의 유용하지 않습니다. 왜냐하면 놀라울 정도로 도움이 되지 않는 메시지인 `panicked at 'Box&lt;Any&gt;'` 를 생성하기 때문입니다.
 use self::f::Future;</code></pre>
 <p>이 변경은 <code>f</code> 를 사용하는 모든 모듈에서 발생해야 합니다.</p>
 <h3 id="crate-키워드는-현재-크레이트를-나타냅니다"><a class="header" href="#crate-키워드는-현재-크레이트를-나타냅니다"><code>crate</code> 키워드는 현재 크레이트를 나타냅니다.</a></h3>
@@ -317,14 +317,14 @@ use self::f::Future;</code></pre>
 <h3 id="외부-크레이트-경로"><a class="header" href="#외부-크레이트-경로">외부 크레이트 경로</a></h3>
 <p>이전에는 <code>use</code> 가져오기 없이 모듈에서 외부 크레이트를 사용하려면 경로에 선행 <code>::</code> 가 필요했습니다.</p>
 <pre><code class="language-rust ignore">// Rust 2015
-
+심지어 `panic!(123)` 과 같이 문자열이 아닌 것도 허용하는데, 이는 드물고 거의 유용하지 않습니다. 왜냐하면 놀라울 정도로 도움이 되지 않는 메시지인 `panicked at 'Box&lt;Any&gt;'` 를 생성하기 때문입니다.
 extern crate chrono;
-
+심지어 `panic!(123)` 과 같이 문자열이 아닌 것도 허용하는데, 이는 드물고 거의 유용하지 않습니다. 왜냐하면 놀라울 정도로 도움이 되지 않는 메시지인 `panicked at 'Box&lt;Any&gt;'` 를 생성하기 때문입니다.
 fn foo() {
     // 이것은 크레이트 루트에서 작동합니다
     let x = chrono::Utc::now();
 }
-
+심지어 `panic!(123)` 과 같이 문자열이 아닌 것도 허용하는데, 이는 드물고 거의 유용하지 않습니다. 왜냐하면 놀라울 정도로 도움이 되지 않는 메시지인 `panicked at 'Box&lt;Any&gt;'` 를 생성하기 때문입니다.
 mod submodule {
     fn function() {
         // 그러나 하위 모듈에서는 `use` 로 가져오지 않으면 선행 ::가 필요합니다
@@ -333,12 +333,12 @@ mod submodule {
 }</code></pre>
 <p>이제 외부 크레이트 이름은 하위 모듈을 포함하여 전체 크레이트의 범위에 있습니다.</p>
 <pre><code class="language-rust ignore">// Rust 2018
-
+심지어 `panic!(123)` 과 같이 문자열이 아닌 것도 허용하는데, 이는 드물고 거의 유용하지 않습니다. 왜냐하면 놀라울 정도로 도움이 되지 않는 메시지인 `panicked at 'Box&lt;Any&gt;'` 를 생성하기 때문입니다.
 fn foo() {
     // 이것은 크레이트 루트에서 작동합니다
     let x = chrono::Utc::now();
 }
-
+심지어 `panic!(123)` 과 같이 문자열이 아닌 것도 허용하는데, 이는 드물고 거의 유용하지 않습니다. 왜냐하면 놀라울 정도로 도움이 되지 않는 메시지인 `panicked at 'Box&lt;Any&gt;'` 를 생성하기 때문입니다.
 mod submodule {
     fn function() {
         // 크레이트는 하위 모듈에서도 직접 참조할 수 있습니다
@@ -400,24 +400,24 @@ mod foo;</code></pre>
 <p>Rust 2018에서는 <code>use</code> 선언 및 기타 코드의 경로가 최상위 모듈과 모든 하위 모듈에서 동일하게 작동합니다. 현재 범위의 상대 경로, 외부 크레이트 이름으로 시작하는 경로 또는 <code>::</code>, <code>crate</code>, <code>super</code> 또는 <code>self</code> 로 시작하는 경로를 사용할 수 있습니다.</p>
 <p>다음과 같이 보이는 코드:</p>
 <pre><code class="language-rust ignore">// Rust 2015
-
+심지어 `panic!(123)` 과 같이 문자열이 아닌 것도 허용하는데, 이는 드물고 거의 유용하지 않습니다. 왜냐하면 놀라울 정도로 도움이 되지 않는 메시지인 `panicked at 'Box&lt;Any&gt;'` 를 생성하기 때문입니다.
 extern crate futures;
-
+심지어 `panic!(123)` 과 같이 문자열이 아닌 것도 허용하는데, 이는 드물고 거의 유용하지 않습니다. 왜냐하면 놀라울 정도로 도움이 되지 않는 메시지인 `panicked at 'Box&lt;Any&gt;'` 를 생성하기 때문입니다.
 use futures::Future;
-
+심지어 `panic!(123)` 과 같이 문자열이 아닌 것도 허용하는데, 이는 드물고 거의 유용하지 않습니다. 왜냐하면 놀라울 정도로 도움이 되지 않는 메시지인 `panicked at 'Box&lt;Any&gt;'` 를 생성하기 때문입니다.
 mod foo {
     pub struct Bar;
 }
-
+심지어 `panic!(123)` 과 같이 문자열이 아닌 것도 허용하는데, 이는 드물고 거의 유용하지 않습니다. 왜냐하면 놀라울 정도로 도움이 되지 않는 메시지인 `panicked at 'Box&lt;Any&gt;'` 를 생성하기 때문입니다.
 use foo::Bar;
-
+심지어 `panic!(123)` 과 같이 문자열이 아닌 것도 허용하는데, 이는 드물고 거의 유용하지 않습니다. 왜냐하면 놀라울 정도로 도움이 되지 않는 메시지인 `panicked at 'Box&lt;Any&gt;'` 를 생성하기 때문입니다.
 fn my_poll() -&gt; futures::Poll { ... }
-
+심지어 `panic!(123)` 과 같이 문자열이 아닌 것도 허용하는데, 이는 드물고 거의 유용하지 않습니다. 왜냐하면 놀라울 정도로 도움이 되지 않는 메시지인 `panicked at 'Box&lt;Any&gt;'` 를 생성하기 때문입니다.
 enum SomeEnum {
     V1(usize),
     V2(String),
 }
-
+심지어 `panic!(123)` 과 같이 문자열이 아닌 것도 허용하는데, 이는 드물고 거의 유용하지 않습니다. 왜냐하면 놀라울 정도로 도움이 되지 않는 메시지인 `panicked at 'Box&lt;Any&gt;'` 를 생성하기 때문입니다.
 fn func() {
     let five = std::sync::Arc::new(5);
     use SomeEnum::*;
@@ -428,22 +428,22 @@ fn func() {
 }</code></pre>
 <p><code>extern crate</code> 줄을 삭제할 수 있다는 점을 제외하고 Rust 2018에서도 똑같이 보일 것입니다.</p>
 <pre><code class="language-rust ignore">// Rust 2018
-
+심지어 `panic!(123)` 과 같이 문자열이 아닌 것도 허용하는데, 이는 드물고 거의 유용하지 않습니다. 왜냐하면 놀라울 정도로 도움이 되지 않는 메시지인 `panicked at 'Box&lt;Any&gt;'` 를 생성하기 때문입니다.
 use futures::Future;
-
+심지어 `panic!(123)` 과 같이 문자열이 아닌 것도 허용하는데, 이는 드물고 거의 유용하지 않습니다. 왜냐하면 놀라울 정도로 도움이 되지 않는 메시지인 `panicked at 'Box&lt;Any&gt;'` 를 생성하기 때문입니다.
 mod foo {
     pub struct Bar;
 }
-
+심지어 `panic!(123)` 과 같이 문자열이 아닌 것도 허용하는데, 이는 드물고 거의 유용하지 않습니다. 왜냐하면 놀라울 정도로 도움이 되지 않는 메시지인 `panicked at 'Box&lt;Any&gt;'` 를 생성하기 때문입니다.
 use foo::Bar;
-
+심지어 `panic!(123)` 과 같이 문자열이 아닌 것도 허용하는데, 이는 드물고 거의 유용하지 않습니다. 왜냐하면 놀라울 정도로 도움이 되지 않는 메시지인 `panicked at 'Box&lt;Any&gt;'` 를 생성하기 때문입니다.
 fn my_poll() -&gt; futures::Poll { ... }
-
+심지어 `panic!(123)` 과 같이 문자열이 아닌 것도 허용하는데, 이는 드물고 거의 유용하지 않습니다. 왜냐하면 놀라울 정도로 도움이 되지 않는 메시지인 `panicked at 'Box&lt;Any&gt;'` 를 생성하기 때문입니다.
 enum SomeEnum {
     V1(usize),
     V2(String),
 }
-
+심지어 `panic!(123)` 과 같이 문자열이 아닌 것도 허용하는데, 이는 드물고 거의 유용하지 않습니다. 왜냐하면 놀라울 정도로 도움이 되지 않는 메시지인 `panicked at 'Box&lt;Any&gt;'` 를 생성하기 때문입니다.
 fn func() {
     let five = std::sync::Arc::new(5);
     use SomeEnum::*;
@@ -454,23 +454,23 @@ fn func() {
 }</code></pre>
 <p>동일한 코드는 하위 모듈에서도 완전히 수정되지 않은 상태로 작동합니다.</p>
 <pre><code class="language-rust ignore">// Rust 2018
-
+심지어 `panic!(123)` 과 같이 문자열이 아닌 것도 허용하는데, 이는 드물고 거의 유용하지 않습니다. 왜냐하면 놀라울 정도로 도움이 되지 않는 메시지인 `panicked at 'Box&lt;Any&gt;'` 를 생성하기 때문입니다.
 mod submodule {
     use futures::Future;
-
+심지어 `panic!(123)` 과 같이 문자열이 아닌 것도 허용하는데, 이는 드물고 거의 유용하지 않습니다. 왜냐하면 놀라울 정도로 도움이 되지 않는 메시지인 `panicked at 'Box&lt;Any&gt;'` 를 생성하기 때문입니다.
     mod foo {
         pub struct Bar;
     }
-
+심지어 `panic!(123)` 과 같이 문자열이 아닌 것도 허용하는데, 이는 드물고 거의 유용하지 않습니다. 왜냐하면 놀라울 정도로 도움이 되지 않는 메시지인 `panicked at 'Box&lt;Any&gt;'` 를 생성하기 때문입니다.
     use foo::Bar;
-
+심지어 `panic!(123)` 과 같이 문자열이 아닌 것도 허용하는데, 이는 드물고 거의 유용하지 않습니다. 왜냐하면 놀라울 정도로 도움이 되지 않는 메시지인 `panicked at 'Box&lt;Any&gt;'` 를 생성하기 때문입니다.
     fn my_poll() -&gt; futures::Poll { ... }
-
+심지어 `panic!(123)` 과 같이 문자열이 아닌 것도 허용하는데, 이는 드물고 거의 유용하지 않습니다. 왜냐하면 놀라울 정도로 도움이 되지 않는 메시지인 `panicked at 'Box&lt;Any&gt;'` 를 생성하기 때문입니다.
     enum SomeEnum {
         V1(usize),
         V2(String),
     }
-
+심지어 `panic!(123)` 과 같이 문자열이 아닌 것도 허용하는데, 이는 드물고 거의 유용하지 않습니다. 왜냐하면 놀라울 정도로 도움이 되지 않는 메시지인 `panicked at 'Box&lt;Any&gt;'` 를 생성하기 때문입니다.
     fn func() {
         let five = std::sync::Arc::new(5);
         use SomeEnum::*;

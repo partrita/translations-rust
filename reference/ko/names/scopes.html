@@ -93,7 +93,7 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-55effe88.js";
+            window.path_to_searchindex_js = "../searchindex-e23b9ebb.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../toc-20da6b24.js"></script>
@@ -373,7 +373,7 @@
 </span><span class="boring">fn main() {
 </span>// 'b 바운드는 선언되기 전에 참조됩니다.
 fn params_scope&lt;'a: 'b, 'b&gt;() {}
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 <span class="boring">trait SomeTrait&lt;const Z: usize&gt; {}
 </span>// 상수 N은 선언되기 전에 트레잇 바운드에서 참조됩니다.
 fn f&lt;T: SomeTrait&lt;N&gt;, const N: usize&gt;() {}
@@ -387,7 +387,7 @@ fn f&lt;T: SomeTrait&lt;N&gt;, const N: usize&gt;() {}
 </span><span class="boring">trait SomeTrait&lt;'a, T&gt; {}
 </span>// `SomeTrait` 의 &lt;'a, U&gt;는 `bounds_scope` 의 'a와 U 매개변수를 참조합니다.
 fn bounds_scope&lt;'a, T: SomeTrait&lt;'a, U&gt;, U&gt;() {}
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 fn where_scope&lt;'a, T, U&gt;()
     where T: SomeTrait&lt;'a, U&gt;
 {}
@@ -452,21 +452,21 @@ fn where_scope&lt;'a, T, U&gt;()
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span><span class="boring">trait Trait&lt;'a&gt;{}
-</span>
+</span>   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 fn where_clause&lt;T&gt;()
     // 'a는 타입과 타입 바운드 모두에서 스코프에 있습니다.
     where for &lt;'a&gt; &amp;'a T: Trait&lt;'a&gt;
 {}
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 fn bound&lt;T&gt;()
     // 'a는 바운드 내에서 스코프에 있습니다.
     where T: for &lt;'a&gt; Trait&lt;'a&gt;
 {}
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 <span class="boring">struct Example&lt;'a&gt; {
 </span><span class="boring">    field: &amp;'a u32
 </span><span class="boring">}
-</span>
+</span>   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // 'a는 매개변수와 반환 타입 모두에서 스코프에 있습니다.
 type FnExample = for&lt;'a&gt; fn(x: Example&lt;'a&gt;) -&gt; Example&lt;'a&gt;;
 <span class="boring">}</span></code></pre>
@@ -520,11 +520,11 @@ fn foo&lt;'a&gt;() -&gt; impl for&lt;'b&gt; Trait1&lt;Item = impl Trait2&lt;'a&g
         // break 'a;
     }
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // 레이블은 `while` 루프의 표현식에 대한 스코프에 있습니다.
 'a: while break 'a {}         // 루프가 실행되지 않습니다.
 'a: while let _ = break 'a {} // 루프가 실행되지 않습니다.
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // 레이블은 정의하는 `for` 루프에서 스코프에 있지 않습니다:
 'a: for outer in 0..5 {
     // 이것은 외부 루프를 중단하여 내부 루프를 건너뛰고
@@ -534,7 +534,7 @@ fn foo&lt;'a&gt;() -&gt; impl for&lt;'b&gt; Trait1&lt;Item = impl Trait2&lt;'a&g
     }
     println!("{}", outer); // 이것도 실행되지 않습니다.
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 <span class="boring">}</span></code></pre>
 <div class="rule" id="r-names.scopes.loop-label.shadow"><a class="rule-link" href="#r-names.scopes.loop-label.shadow" title="names.scopes.loop-label.shadow"><span>[names<wbr>.scopes<wbr>.loop-label<wbr>.shadow]</span></a>
 </div>
@@ -612,10 +612,10 @@ fn foo&lt;'a&gt;() -&gt; impl for&lt;'b&gt; Trait1&lt;Item = impl Trait2&lt;'a&g
 struct Recursive {
     f1: Option&lt;Box&lt;Self&gt;&gt;
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // 제네릭 매개변수 내의 Self 타입.
 struct SelfGeneric&lt;T: Into&lt;Self&gt;&gt;(T);
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // 구현 내의 Self 값 생성자.
 struct ImplExample();
 impl ImplExample {

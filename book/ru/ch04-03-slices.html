@@ -96,7 +96,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-01ba4889.js";
+            window.path_to_searchindex_js = "searchindex-0481507b.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-f10b093a.js"></script>
@@ -251,85 +251,85 @@
 <span class="file-name">Filename: src/main.rs</span>
 <pre class="playground"><code class="language-rust edition2024">fn first_word(s: &amp;String) -&gt; usize {
     let bytes = s.as_bytes();
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     for (i, &amp;item) in bytes.iter().enumerate() {
         if item == b' ' {
             return i;
         }
     }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     s.len()
 }
-<span class="boring">
+<span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">fn main() {}</span></code></pre>
 <figcaption><a href="#listing-4-7">Listing 4-7</a>: The <code>first_word</code> function that returns a byte index value into the <code>String</code> parameter</figcaption>
 </figure>
 <p>Because we need to go through the <code>String</code> element by element and check whether a value is a space, we’ll convert our <code>String</code> to an array of bytes using the <code>as_bytes</code> method.</p>
 <pre><code class="language-rust ignore"><span class="boring">fn first_word(s: &amp;String) -&gt; usize {
 </span>    let bytes = s.as_bytes();
-<span class="boring">
+<span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    for (i, &amp;item) in bytes.iter().enumerate() {
 </span><span class="boring">        if item == b' ' {
 </span><span class="boring">            return i;
 </span><span class="boring">        }
 </span><span class="boring">    }
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    s.len()
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">fn main() {}</span></code></pre>
 <p>Далее, мы создаём итератор по массиву байтов используя метод <code>iter</code>:</p>
 <pre><code class="language-rust ignore"><span class="boring">fn first_word(s: &amp;String) -&gt; usize {
 </span><span class="boring">    let bytes = s.as_bytes();
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span>    for (i, &amp;item) in bytes.iter().enumerate() {
 <span class="boring">        if item == b' ' {
 </span><span class="boring">            return i;
 </span><span class="boring">        }
 </span><span class="boring">    }
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    s.len()
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">fn main() {}</span></code></pre>
 <p>Мы обсудим итераторы более подробно в <a href="ch13-02-iterators.html">Главе 13</a><!-- ignore -->. На данный момент знайте, что <code>iter</code> — это метод, который возвращает каждый элемент в коллекции, а <code>enumerate</code> оборачивает результат <code>iter</code> и вместо этого возвращает каждое значение как элемент кортежа. Первый элемент кортежа, возвращаемый из <code>enumerate</code>, является индексом, а второй элемент — ссылкой на само значение. Это немного удобнее, чем вычислять индекс самостоятельно.</p>
 <p>Поскольку метод <code>enumerate</code> возвращает кортеж, мы можем использовать шаблоны для деконструирования этого кортежа. Мы подробнее обсудим шаблоны в <a href="ch06-02-match.html#Связывание-со-значениями-с-помощью-шаблонов">Главе 6</a><!-- ignore -->.В цикле <code>for</code> мы указываем шаблон, состоящий из <code>i</code> для индекса в кортеже и <code>&amp;item</code> для отдельного байта в кортеже. Поскольку мы из <code>.iter().enumerate()</code> получаем лишь ссылку на элемент, мы в шаблоне используем <code>&amp;</code>.</p>
 <p>Внутри цикла <code>for</code> мы ищем байт, являющийся пробелос, используя синтаксис байтового литерала. Если мы находим пробел, мы возвращаем его позицию. В противном случае, мы возвращаем длину строки с помощью <code>s.len()</code>.</p>
 <pre><code class="language-rust ignore"><span class="boring">fn first_word(s: &amp;String) -&gt; usize {
 </span><span class="boring">    let bytes = s.as_bytes();
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    for (i, &amp;item) in bytes.iter().enumerate() {
 </span>        if item == b' ' {
             return i;
         }
     }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     s.len()
 <span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">fn main() {}</span></code></pre>
 <p>Теперь у нас есть способ узнать индекс байта, указывающего на конец первого слова в строке; но есть проблема. Мы возвращаем лишь <code>usize</code>, но это число имеет смысл только в свя́зи со <code>&amp;String</code>. Другими словами, поскольку это значение отделено от <code>String</code>, то нет гарантии, что оно будет действительным в будущем. Рассмотрим программу из Листинга 4-8, которая использует функцию <code>first_word</code> из Листинга 4-7.</p>
 <figure class="listing" id="listing-4-8">
 <span class="file-name">Filename: src/main.rs</span>
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">fn first_word(s: &amp;String) -&gt; usize {
 </span><span class="boring">    let bytes = s.as_bytes();
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    for (i, &amp;item) in bytes.iter().enumerate() {
 </span><span class="boring">        if item == b' ' {
 </span><span class="boring">            return i;
 </span><span class="boring">        }
 </span><span class="boring">    }
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    s.len()
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span>fn main() {
     let mut s = String::from("hello world");
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     let word = first_word(&amp;s); // word будет связано со значением 5
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     s.clear(); // здесь String очищается и становится равным ""
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     // word still has the value 5 here, but s no longer has any content that we
     // could meaningfully use with the value 5, so word is now totally invalid!
 }</code></pre>
@@ -344,7 +344,7 @@
 <p>A <em>string slice</em> is a reference to a contiguous sequence of the elements of a <code>String</code>, and it looks like this:</p>
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">fn main() {
 </span>    let s = String::from("hello world");
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     let hello = &amp;s[0..5];
     let world = &amp;s[6..11];
 <span class="boring">}</span></code></pre>
@@ -359,7 +359,7 @@ has a length value of 5 and points to byte 6 of the heap data table." src="img/t
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span>let s = String::from("hello");
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 let slice = &amp;s[0..2];
 let slice = &amp;s[..2];
 <span class="boring">}</span></code></pre>
@@ -367,9 +367,9 @@ let slice = &amp;s[..2];
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span>let s = String::from("hello");
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 let len = s.len();
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 let slice = &amp;s[3..len];
 let slice = &amp;s[3..];
 <span class="boring">}</span></code></pre>
@@ -377,9 +377,9 @@ let slice = &amp;s[3..];
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span>let s = String::from("hello");
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 let len = s.len();
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 let slice = &amp;s[0..len];
 let slice = &amp;s[..];
 <span class="boring">}</span></code></pre>
@@ -391,16 +391,16 @@ let slice = &amp;s[..];
 <span class="file-name">Filename: src/main.rs</span>
 <pre class="playground"><code class="language-rust edition2024">fn first_word(s: &amp;String) -&gt; &amp;str {
     let bytes = s.as_bytes();
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     for (i, &amp;item) in bytes.iter().enumerate() {
         if item == b' ' {
             return &amp;s[0..i];
         }
     }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     &amp;s[..]
 }
-<span class="boring">
+<span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">fn main() {}</span></code></pre>
 </figure>
 <p>Мы получаем индекс конца слова так же, как в Листинге 4-7, ища первое вхождение пробела. Когда мы находим пробел, мы возвращаем срез строки, используя <code>0</code> и индекс пробела в качестве начального и конечного индексов.</p>
@@ -412,23 +412,23 @@ let slice = &amp;s[..];
 <span class="file-name">Filename: src/main.rs</span>
 <pre><code class="language-rust ignore does_not_compile"><span class="boring">fn first_word(s: &amp;String) -&gt; &amp;str {
 </span><span class="boring">    let bytes = s.as_bytes();
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    for (i, &amp;item) in bytes.iter().enumerate() {
 </span><span class="boring">        if item == b' ' {
 </span><span class="boring">            return &amp;s[0..i];
 </span><span class="boring">        }
 </span><span class="boring">    }
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    &amp;s[..]
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span>fn main() {
     let mut s = String::from("hello world");
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     let word = first_word(&amp;s);
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     s.clear(); // ошибка!
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     println!("первое слово: {word}");
 }</code></pre>
 </figure>
@@ -446,7 +446,7 @@ error[E0502]: cannot borrow `s` as mutable because it is also borrowed as immuta
 19 |
 20 |     println!("the first word is: {word}");
    |                                   ---- immutable borrow later used here
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 For more information about this error, try `rustc --explain E0502`.
 error: could not compile `ownership` (bin "ownership") due to 1 previous error
 </code></pre>
@@ -467,33 +467,33 @@ error: could not compile `ownership` (bin "ownership") due to 1 previous error
 <figure class="listing" id="listing-4-9">
 <pre><code class="language-rust ignore">fn first_word(s: &amp;str) -&gt; &amp;str {
 <span class="boring">    let bytes = s.as_bytes();
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    for (i, &amp;item) in bytes.iter().enumerate() {
 </span><span class="boring">        if item == b' ' {
 </span><span class="boring">            return &amp;s[0..i];
 </span><span class="boring">        }
 </span><span class="boring">    }
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    &amp;s[..]
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">fn main() {
 </span><span class="boring">    let my_string = String::from("hello world");
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    // `first_word` работает на любых срезах значений типа `String`: полных или частичных
 </span><span class="boring">    let word = first_word(&amp;my_string[0..6]);
 </span><span class="boring">    let word = first_word(&amp;my_string[..]);
 </span><span class="boring">    // `first_word` также работает на ссылках на значения типа `String`:
 </span><span class="boring">    // такие ссылки равны срезам из всей `String` целиком.
 </span><span class="boring">    let word = first_word(&amp;my_string);
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    let my_string_literal = "hello world";
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    // `first_word` работает на любых срезах литералов строк: полных или
 </span><span class="boring">    // частичных.
 </span><span class="boring">    let word = first_word(&amp;my_string_literal[0..6]);
 </span><span class="boring">    let word = first_word(&amp;my_string_literal[..]);
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    // Поскольку строковые литералы *эквивалентны* срезам строк,
 </span><span class="boring">    // это тоже сработает, без необходимости брать срез!
 </span><span class="boring">    let word = first_word(my_string_literal);
@@ -507,33 +507,33 @@ ignore --> section of Chapter 15.</p>
 <span class="file-name">Filename: src/main.rs</span>
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">fn first_word(s: &amp;str) -&gt; &amp;str {
 </span><span class="boring">    let bytes = s.as_bytes();
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    for (i, &amp;item) in bytes.iter().enumerate() {
 </span><span class="boring">        if item == b' ' {
 </span><span class="boring">            return &amp;s[0..i];
 </span><span class="boring">        }
 </span><span class="boring">    }
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    &amp;s[..]
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span>fn main() {
     let my_string = String::from("hello world");
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     // `first_word` работает на любых срезах значений типа `String`: полных или частичных
     let word = first_word(&amp;my_string[0..6]);
     let word = first_word(&amp;my_string[..]);
     // `first_word` также работает на ссылках на значения типа `String`:
     // такие ссылки равны срезам из всей `String` целиком.
     let word = first_word(&amp;my_string);
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     let my_string_literal = "hello world";
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     // `first_word` работает на любых срезах литералов строк: полных или
     // частичных.
     let word = first_word(&amp;my_string_literal[0..6]);
     let word = first_word(&amp;my_string_literal[..]);
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     // Поскольку литералы строк *эквивалентны* срезам строк,
     // это тоже сработает, без необходимости брать срез!
     let word = first_word(my_string_literal);
@@ -549,9 +549,9 @@ ignore --> section of Chapter 15.</p>
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span>let a = [1, 2, 3, 4, 5];
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 let slice = &amp;a[1..3];
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 assert_eq!(slice, &amp;[2, 3]);
 <span class="boring">}</span></code></pre>
 <p>Этот срез имеет тип <code>&amp;[i32]</code>. Он работает так же, как и срезы строк: сохраняет ссылку на первый элемент и его длину. Вам понадобится этот вид среза для всех видов других коллекций. Мы подробно обсудим различные коллекции, когда будем говорить о векторах в Главе 8.</p>

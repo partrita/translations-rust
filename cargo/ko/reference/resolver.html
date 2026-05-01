@@ -97,7 +97,7 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-56895a7e.js";
+            window.path_to_searchindex_js = "../searchindex-40d30f76.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../toc-6b0c3669.js"></script>
@@ -254,24 +254,24 @@
     let resolved = ResolveGraph::new();
     resolve_next(dep_queue, resolved, policy)
 }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 fn resolve_next(dep_queue: Queue, resolved: ResolveGraph, policy: Policy) -&gt; Option&lt;ResolveGraph&gt; {
     let Some(dep_spec) = policy.pick_next_dep(&amp;mut dep_queue) else {
         // 완료
         return Some(resolved);
     };
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
     if let Some(resolved) = policy.try_unify_version(dep_spec, resolved.clone()) {
         return Some(resolved);
     }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
     let dep_versions = dep_spec.lookup_versions()?;
     let mut dep_versions = policy.filter_versions(dep_spec, dep_versions);
     while let Some(dep_version) = policy.pick_next_version(&amp;mut dep_versions) {
         if policy.needs_version_unification(&amp;dep_version, &amp;resolved) {
             continue;
         }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
         let mut dep_queue = dep_queue.clone();
         dep_queue.enqueue(&amp;dep_version.dependencies);
         let mut resolved = resolved.clone();
@@ -280,7 +280,7 @@ fn resolve_next(dep_queue: Queue, resolved: ResolveGraph, policy: Policy) -&gt; 
             return Some(resolved);
         }
     }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
     // 유효한 해결책을 찾지 못함, 백트래킹(backtrack) 후 `pick_next_version` 수행
     None
 }
@@ -314,7 +314,7 @@ bitflags = "1.0"  # `&gt;=1.0.0,&lt;2.0.0` 을 의미함
 <pre><code class="language-toml"># 패키지 A
 [dependencies]
 bitflags = "1.0"  # `&gt;=1.0.0,&lt;2.0.0` 을 의미함
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 # 패키지 B
 [dependencies]
 bitflags = "1.1"  # `&gt;=1.1.0,&lt;2.0.0` 을 의미함
@@ -323,7 +323,7 @@ bitflags = "1.1"  # `&gt;=1.1.0,&lt;2.0.0` 을 의미함
 <pre><code class="language-toml"># 패키지 A
 [dependencies]
 log = "=0.4.11"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 # 패키지 B
 [dependencies]
 log = "=0.4.8"
@@ -332,7 +332,7 @@ log = "=0.4.8"
 <pre><code class="language-toml"># 패키지 A
 [dependencies]
 rand = "0.7"  # `&gt;=0.7.0,&lt;0.8.0` 을 의미함
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 # 패키지 B
 [dependencies]
 rand = "0.6"  # `&gt;=0.6.0,&lt;0.7.0` 을 의미함
@@ -341,7 +341,7 @@ rand = "0.6"  # `&gt;=0.6.0,&lt;0.7.0` 을 의미함
 <pre><code class="language-toml"># 패키지 A
 [dependencies]
 rand = "&gt;=0.6,&lt;0.8.0"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 # 패키지 B
 [dependencies]
 rand = "0.6"  # `&gt;=0.6.0,&lt;0.7.0` 을 의미함
@@ -370,7 +370,7 @@ bitflags = "1.3.0"
 <pre><code class="language-toml">[package]
 name = "my-cli"
 rust-version = "1.62"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [dependencies]
 clap = "4.0"  # 4.0.32로 해결됨
 </code></pre>
@@ -383,7 +383,7 @@ clap = "4.0"  # 4.0.32로 해결됨
 <pre><code class="language-toml">[package]
 name = "my-cli"
 rust-version = "1.62"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [dependencies]
 clap = "4.2"  # 4.5.20으로 해결됨
 </code></pre>
@@ -393,10 +393,10 @@ clap = "4.2"  # 4.5.20으로 해결됨
 <pre><code class="language-toml">[package]
 name = "a"
 rust-version = "1.62"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [package]
 name = "b"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [dependencies]
 clap = "4.2"  # 4.0.32로 해결됨 (패키지 a 때문)
 </code></pre>
@@ -405,13 +405,13 @@ clap = "4.2"  # 4.0.32로 해결됨 (패키지 a 때문)
 <pre><code class="language-toml">[package]
 name = "a"
 rust-version = "1.62"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [dependencies]
 clap = "4.2"  # 4.5.20으로 해결됨
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [package]
 name = "b"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [dependencies]
 clap = "4.5"  # 4.5.20으로 해결됨
 </code></pre>
@@ -530,7 +530,7 @@ resolver = "2"
 <pre><code class="language-console">$ cargo tree --workspace --target all --all-features --invert rand
 rand v0.8.5
 └── ...
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 rand v0.8.5
 └── ...
 </code></pre>
@@ -539,7 +539,7 @@ rand v0.8.5
 <pre><code class="language-console">$ cargo tree --workspace --target all --all-features --edges features --invert rand
 rand v0.8.5
 └── ...
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 rand v0.8.5
 └── ...
 </code></pre>
@@ -548,7 +548,7 @@ rand v0.8.5
 <pre><code class="language-console">$ cargo tree --workspace --target all --all-features --duplicates
 rand v0.7.3
 └── ...
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 rand v0.8.5
 └── ...
 </code></pre>
@@ -556,7 +556,7 @@ rand v0.8.5
 <pre><code class="language-toml"># 패키지 A
 [dependencies]
 rand = "0.7"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 # 패키지 B
 [dependencies]
 rand = "&gt;=0.6"  # 참고: 이와 같이 열린 요구 사항은 권장되지 않습니다

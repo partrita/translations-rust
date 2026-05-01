@@ -96,7 +96,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-01ba4889.js";
+            window.path_to_searchindex_js = "searchindex-0481507b.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-f10b093a.js"></script>
@@ -251,19 +251,19 @@ struct Rectangle {
     width: u32,
     height: u32,
 }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 impl Rectangle {
     fn area(&amp;self) -&gt; u32 {
         self.width * self.height
     }
 }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 fn main() {
     let rect1 = Rectangle {
         width: 30,
         height: 50,
     };
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     println!(
         "Площадь прямоугольника равна {} квадратных пикселей.",
         rect1.area()
@@ -283,19 +283,19 @@ fn main() {
 </span><span class="boring">    width: u32,
 </span><span class="boring">    height: u32,
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span>impl Rectangle {
     fn width(&amp;self) -&gt; bool {
         self.width &gt; 0
     }
 }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 fn main() {
     let rect1 = Rectangle {
         width: 30,
         height: 50,
     };
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     if rect1.width() {
         println!("Длина прямоугольника ненулевая и равна {}", rect1.width);
     }
@@ -349,7 +349,7 @@ fn main() {
         width: 60,
         height: 45,
     };
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     println!("Вместится ли rect2 в rect1? {}", rect1.can_hold(&amp;rect2));
     println!("Вместится ли rect3 в rect1? {}", rect1.can_hold(&amp;rect3));
 }</code></pre>
@@ -367,17 +367,17 @@ Can rect1 hold rect3? false
 </span><span class="boring">    width: u32,
 </span><span class="boring">    height: u32,
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span>impl Rectangle {
     fn area(&amp;self) -&gt; u32 {
         self.width * self.height
     }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     fn can_hold(&amp;self, other: &amp;Rectangle) -&gt; bool {
         self.width &gt; other.width &amp;&amp; self.height &gt; other.height
     }
 }
-<span class="boring">
+<span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">fn main() {
 </span><span class="boring">    let rect1 = Rectangle {
 </span><span class="boring">        width: 30,
@@ -391,7 +391,7 @@ Can rect1 hold rect3? false
 </span><span class="boring">        width: 60,
 </span><span class="boring">        height: 45,
 </span><span class="boring">    };
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    println!("Вместится ли rect2 в rect1? {}", rect1.can_hold(&amp;rect2));
 </span><span class="boring">    println!("Вместится ли rect3 в rect1? {}", rect1.can_hold(&amp;rect3));
 </span><span class="boring">}</span></code></pre>
@@ -407,7 +407,7 @@ Can rect1 hold rect3? false
 </span><span class="boring">    width: u32,
 </span><span class="boring">    height: u32,
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span>impl Rectangle {
     fn square(size: u32) -&gt; Self {
         Self {
@@ -416,7 +416,7 @@ Can rect1 hold rect3? false
         }
     }
 }
-<span class="boring">
+<span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">fn main() {
 </span><span class="boring">    let sq = Rectangle::square(3);
 </span><span class="boring">}</span></code></pre>
@@ -430,19 +430,19 @@ Can rect1 hold rect3? false
 </span><span class="boring">    width: u32,
 </span><span class="boring">    height: u32,
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span>impl Rectangle {
     fn area(&amp;self) -&gt; u32 {
         self.width * self.height
     }
 }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 impl Rectangle {
     fn can_hold(&amp;self, other: &amp;Rectangle) -&gt; bool {
         self.width &gt; other.width &amp;&amp; self.height &gt; other.height
     }
 }
-<span class="boring">
+<span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">fn main() {
 </span><span class="boring">    let rect1 = Rectangle {
 </span><span class="boring">        width: 30,
@@ -456,7 +456,7 @@ impl Rectangle {
 </span><span class="boring">        width: 60,
 </span><span class="boring">        height: 45,
 </span><span class="boring">    };
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    println!("Вместится ли rect2 в rect1? {}", rect1.can_hold(&amp;rect2));
 </span><span class="boring">    println!("Вместится ли rect3 в rect1? {}", rect1.can_hold(&amp;rect3));
 </span><span class="boring">}</span></code></pre>

@@ -96,7 +96,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-01ba4889.js";
+            window.path_to_searchindex_js = "searchindex-0481507b.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-f10b093a.js"></script>
@@ -245,12 +245,12 @@
 <span class="file-name">Filename: src/main.rs</span>
 <pre class="playground"><code class="language-rust edition2024">fn main() {
     let s1 = String::from("hello");
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     let len = calculate_length(&amp;s1);
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     println!("Длина '{s1}' равна {len}.");
 }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 fn calculate_length(s: &amp;String) -&gt; usize {
     s.len()
 }</code></pre>
@@ -266,12 +266,12 @@ s1. Таблица s1 содержит данные на стеке строки
 <p>Давайте подробнее рассмотрим, как нам вызвать нашу функцию:</p>
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">fn main() {
 </span>    let s1 = String::from("hello");
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     let len = calculate_length(&amp;s1);
-<span class="boring">
+<span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    println!("Длина '{s1}' равна {len}.");
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">fn calculate_length(s: &amp;String) -&gt; usize {
 </span><span class="boring">    s.len()
 </span><span class="boring">}</span></code></pre>
@@ -279,12 +279,12 @@ s1. Таблица s1 содержит данные на стеке строки
 <p>Аналогично, в сигнатуре функции используется <code>&amp;</code> для указания на то, что тип параметра <code>s</code> является ссылкой.</p>
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">fn main() {
 </span><span class="boring">    let s1 = String::from("hello");
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    let len = calculate_length(&amp;s1);
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    println!("Длина '{s1}' равна {len}.");
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span>fn calculate_length(s: &amp;String) -&gt; usize { // s — ссылка на String
     s.len()
 } // Here, s goes out of scope. But because s does not have ownership of what
@@ -296,10 +296,10 @@ s1. Таблица s1 содержит данные на стеке строки
 <span class="file-name">Filename: src/main.rs</span>
 <pre><code class="language-rust ignore does_not_compile">fn main() {
     let s = String::from("hello");
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     change(&amp;s);
 }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 fn change(some_string: &amp;String) {
     some_string.push_str(", world");
 }</code></pre>
@@ -318,7 +318,7 @@ help: consider changing this to be a mutable reference
   |
 7 | fn change(some_string: &amp;mut String) {
   |                         +++
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 For more information about this error, try `rustc --explain E0596`.
 error: could not compile `ownership` (bin "ownership") due to 1 previous error
 </code></pre>
@@ -329,10 +329,10 @@ error: could not compile `ownership` (bin "ownership") due to 1 previous error
 <span class="file-name">Filename: src/main.rs</span>
 <pre class="playground"><code class="language-rust edition2024">fn main() {
     let mut s = String::from("hello");
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     change(&amp;mut s);
 }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 fn change(some_string: &amp;mut String) {
     some_string.push_str(", world");
 }</code></pre>
@@ -343,10 +343,10 @@ fn change(some_string: &amp;mut String) {
 <span class="file-name">Filename: src/main.rs</span>
 <pre><code class="language-rust ignore does_not_compile"><span class="boring">fn main() {
 </span>    let mut s = String::from("hello");
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     let r1 = &amp;mut s;
     let r2 = &amp;mut s;
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     println!("{r1}, {r2}");
 <span class="boring">}</span></code></pre>
 </figure>
@@ -363,7 +363,7 @@ error[E0499]: cannot borrow `s` as mutable more than once at a time
 6 |
 7 |     println!("{r1}, {r2}");
   |                -- first borrow later used here
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 For more information about this error, try `rustc --explain E0499`.
 error: could not compile `ownership` (bin "ownership") due to 1 previous error
 </code></pre>
@@ -378,21 +378,21 @@ error: could not compile `ownership` (bin "ownership") due to 1 previous error
 <p>Как и всегда, мы можем использовать фигурные скобки для создания новой области видимости, позволяющей использовать несколько изменяемых ссылок, но не <em>одновременно</em>:</p>
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">fn main() {
 </span>    let mut s = String::from("hello");
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     {
         let r1 = &amp;mut s;
     } // здесь r1 покидает область видимости, так что мы можем без проблем создать новую ссылку.
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     let r2 = &amp;mut s;
 <span class="boring">}</span></code></pre>
 <p>В Rust действует аналогичное правило для случаев использования нескольких изменяемых и неизменяемых ссылок. Этот код не скомпилируется:</p>
 <pre><code class="language-rust ignore does_not_compile"><span class="boring">fn main() {
 </span>    let mut s = String::from("hello");
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     let r1 = &amp;s; // всё хорошо
     let r2 = &amp;s; // всё хорошо
     let r3 = &amp;mut s; // ВСЁ ПЛОХО
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     println!("{r1}, {r2}, and {r3}");
 <span class="boring">}</span></code></pre>
 <p>Вот ошибка:</p>
@@ -409,7 +409,7 @@ error[E0502]: cannot borrow `s` as mutable because it is also borrowed as immuta
 7 |
 8 |     println!("{r1}, {r2}, and {r3}");
   |                -- immutable borrow later used here
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 For more information about this error, try `rustc --explain E0502`.
 error: could not compile `ownership` (bin "ownership") due to 1 previous error
 </code></pre>
@@ -418,12 +418,12 @@ error: could not compile `ownership` (bin "ownership") due to 1 previous error
 <p>Обратите внимание, что область видимости ссылки начинается с того места, где она создаётся, и продолжается до последнего использования этой ссылки. Например, этот код будет компилироваться, потому что после макроса <code>println!</code> неизменяемые ссылки больше не будут использоваться, и у нас не будет одновременно используемых изменяемых и неизменяемых ссылок:</p>
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">fn main() {
 </span>    let mut s = String::from("hello");
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     let r1 = &amp;s; // всё хорошо
     let r2 = &amp;s; // всё хорошо
     println!("{r1} и {r2}");
     // Переменные r1 и r2 далее не используются.
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     let r3 = &amp;mut s; // всё хорошо
     println!("{r3}");
 <span class="boring">}</span></code></pre>
@@ -437,10 +437,10 @@ error: could not compile `ownership` (bin "ownership") due to 1 previous error
 <pre><code class="language-rust ignore does_not_compile">fn main() {
     let reference_to_nothing = dangle();
 }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 fn dangle() -&gt; &amp;String {
     let s = String::from("hello");
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     &amp;s
 }</code></pre>
 </figure>
@@ -463,7 +463,7 @@ help: instead, you are more likely to want to return an owned value
 5 - fn dangle() -&gt; &amp;String {
 5 + fn dangle() -&gt; String {
   |
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 For more information about this error, try `rustc --explain E0106`.
 error: could not compile `ownership` (bin "ownership") due to 1 previous error
 </code></pre>
@@ -477,11 +477,11 @@ for it to be borrowed from
 <pre><code class="language-rust ignore does_not_compile"><span class="boring">fn main() {
 </span><span class="boring">    let reference_to_nothing = dangle();
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span>fn dangle() -&gt; &amp;String { // dangle возвращает ссылку на String
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     let s = String::from("hello"); // в s записывается новое значение типа String
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     &amp;s // мы возвращаем ссылку s на значение типа String
 } // Here, s goes out of scope and is dropped, so its memory goes away.
   // Danger!</code></pre>
@@ -491,10 +491,10 @@ for it to be borrowed from
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">fn main() {
 </span><span class="boring">    let string = no_dangle();
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span>fn no_dangle() -&gt; String {
     let s = String::from("hello");
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     s
 }</code></pre>
 <p>Это работает без изъянов. Владение перемещается, и ничего не высвобождается.</p>

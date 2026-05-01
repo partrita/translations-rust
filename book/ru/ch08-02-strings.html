@@ -96,7 +96,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-01ba4889.js";
+            window.path_to_searchindex_js = "searchindex-0481507b.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-f10b093a.js"></script>
@@ -258,9 +258,9 @@
 <figure class="listing" id="listing-8-12">
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">fn main() {
 </span>    let data = "исходный текст";
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     let s = data.to_string();
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     // Этот метод также можно вызвать напрямую на литерале:
     let s = "исходный текст".to_string();
 <span class="boring">}</span></code></pre>
@@ -350,7 +350,7 @@
 </span>    let s1 = String::from("tic");
     let s2 = String::from("tac");
     let s3 = String::from("toe");
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     let s = s1 + "-" + &amp;s2 + "-" + &amp;s3;
 <span class="boring">}</span></code></pre>
 <p>Здесь переменная <code>s</code> будет содержать <code>tic-tac-toe</code>. С множеством символов <code>+</code> и <code>"</code> становится трудно понять, что происходит. Для более сложного комбинирования строк можно использовать макрос <code>format!</code>:</p>
@@ -358,7 +358,7 @@
 </span>    let s1 = String::from("tic");
     let s2 = String::from("tac");
     let s3 = String::from("toe");
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     let s = format!("{s1}-{s2}-{s3}");
 <span class="boring">}</span></code></pre>
 <p>Этот код так же связывает переменную <code>s</code> со значением <code>tic-tac-toe</code>. Макрос <code>format!</code> работает тем же образом, что и макрос <code>println!</code>, но вместо вывода на экран возвращает результирующую <code>String</code>. Версия кода с использованием <code>format!</code> значительно легче читается: кроме того, код, сгенерированный макросом <code>format!</code>, использует ссылки, а значит не забирает во владение ни одну из переданных строк.</p>
@@ -387,7 +387,7 @@ error[E0277]: the type `str` cannot be indexed by `{integer}`
             `usize` implements `SliceIndex&lt;ByteStr&gt;`
             `usize` implements `SliceIndex&lt;[T]&gt;`
   = note: required for `String` to implement `Index&lt;{integer}&gt;`
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 For more information about this error, try `rustc --explain E0277`.
 error: could not compile `collections` (bin "collections") due to 1 previous error
 </code></pre>
@@ -448,7 +448,7 @@ let answer = &amp;hello[0];</code></pre>
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span>let hello = "Здравствуйте";
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 let s = &amp;hello[0..4];
 <span class="boring">}</span></code></pre>
 <p>Here, <code>s</code> will be a <code>&amp;str</code> that contains the first 4 bytes of the string. Earlier, we mentioned that each of these characters was 2 bytes, which means <code>s</code> will be <code>Зд</code>.</p>
@@ -457,7 +457,7 @@ let s = &amp;hello[0..4];
    Compiling collections v0.1.0 (file:///projects/collections)
     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.43s
      Running `target/debug/collections`
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 thread 'main' panicked at src/main.rs:4:19:
 byte index 1 is not a char boundary; it is inside 'З' (bytes 0..2) of `Здравствуйте`
 note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace

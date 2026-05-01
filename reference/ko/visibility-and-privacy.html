@@ -93,7 +93,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-55effe88.js";
+            window.path_to_searchindex_js = "searchindex-e23b9ebb.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-20da6b24.js"></script>
@@ -415,12 +415,12 @@ SimplePath</text>
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">fn main() {}
 </span>// 비공개(private) 구조체를 선언합니다.
 struct Foo;
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // 비공개 필드를 가진 공개(public) 구조체를 선언합니다.
 pub struct Bar {
     field: i32,
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // 두 개의 공개 변형(variants)을 가진 공개 열거형을 선언합니다.
 pub enum State {
     PubliclyAccessibleState,
@@ -456,37 +456,37 @@ pub enum State {
 // 하지만 이 현재 크레이트의 루트에서는 비공개이므로,
 // 크레이트 내의 모든 모듈은 이 모듈 내의 공개적으로 표시되는 아이템에 접근할 수 있습니다.
 mod crate_helper_module {
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
     // 이 함수는 현재 크레이트 내의 무엇이든 사용할 수 있습니다.
     pub fn crate_helper() {}
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
     // 이 함수는 크레이트 내의 다른 어떤 곳에서도 사용할 수 *없습니다*.
 // `crate_helper_module` 외부에서는 공개적으로 보이지 않으므로,
 // 오직 이 현재 모듈과 그 하위 모듈들만 접근할 수 있습니다.
     fn implementation_detail() {}
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // 이 함수는 "루트에 공개"되어 있으므로 이 라이브러리에 링크하는
 // 외부 크레이트가 사용할 수 있습니다.
 pub fn public_api() {}
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // 'public_api'와 마찬가지로 이 모듈은 공개되어 있어 외부 크레이트가
 // 내부를 들여다볼 수 있습니다.
 pub mod submodule {
     use crate::crate_helper_module;
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
     pub fn my_method() {
         // 로컬 크레이트의 모든 아이템은 위의 두 규칙의 조합을 통해
         // 도우미 모듈의 공개 인터페이스를 호출할 수 있습니다.
         crate_helper_module::crate_helper();
     }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
     // 이 함수는 `submodule` 의 하위 모듈이 아닌 모듈에는 숨겨집니다.
     fn my_implementation() {}
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
     #[cfg(test)]
     mod test {
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
         #[test]
         fn test_my_implementation() {
             // 이 모듈은 `submodule` 의 하위 모듈이므로 프라이버시 위반 없이
@@ -495,7 +495,7 @@ pub mod submodule {
         }
     }
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 <span class="boring">fn main() {}</span></code></pre>
 <p>러스트 프로그램이 프라이버시 검사 단계를 통과하려면 모든 경로가 위에서 언급한 두 규칙에 따라 유효한 접근이어야 합니다. 여기에는 모든 use 문, 표현식, 타입 등이 포함됩니다.</p>
 <div class="rule" id="r-vis.scoped"><a class="rule-link" href="#r-vis.scoped" title="vis.scoped"><span>[vis<wbr>.scoped]</span></a>
@@ -548,16 +548,16 @@ pub mod submodule {
         pub(in crate::outer_mod) fn outer_mod_visible_fn() {}
         // 위와 동일하며, 2015 에디션에서만 유효합니다.
         pub(in outer_mod) fn outer_mod_visible_fn_2015() {}
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
         // 이 함수는 크레이트 전체에서 볼 수 있습니다.
         pub(crate) fn crate_visible_fn() {}
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
         // 이 함수는 `outer_mod` 내에서 볼 수 있습니다.
         pub(super) fn super_mod_visible_fn() {
             // 동일한 `mod` 에 있으므로 이 함수를 볼 수 있습니다.
             inner_mod_visible_fn();
         }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
         // 이 함수는 오직 `inner_mod` 내에서만 볼 수 있으며,
         // 이는 비공개로 두는 것과 같습니다.
         pub(self) fn inner_mod_visible_fn() {}
@@ -566,28 +566,28 @@ pub mod submodule {
         inner_mod::outer_mod_visible_fn();
         inner_mod::crate_visible_fn();
         inner_mod::super_mod_visible_fn();
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
         // `inner_mod` 외부에 있으므로 이 함수는 더 이상 보이지 않습니다.
         // 오류! `inner_mod_visible_fn` 은 비공개입니다.
         //inner_mod::inner_mod_visible_fn();
     }
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 fn bar() {
     // 동일한 크레이트에 있으므로 이 함수는 여전히 보입니다.
     outer_mod::inner_mod::crate_visible_fn();
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
     // `outer_mod` 외부에 있으므로 이 함수는 더 이상 보이지 않습니다.
     // 오류! `super_mod_visible_fn` 은 비공개입니다.
     //outer_mod::inner_mod::super_mod_visible_fn();
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
     // `outer_mod` 외부에 있으므로 이 함수는 더 이상 보이지 않습니다.
     // 오류! `outer_mod_visible_fn` 은 비공개입니다.
     //outer_mod::inner_mod::outer_mod_visible_fn();
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
     outer_mod::foo();
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 fn main() { bar() }</code></pre>
 <div class="alert alert-note">
 <blockquote>
@@ -606,13 +606,13 @@ fn main() { bar() }</code></pre>
 
 <p>러스트는 <code>pub use</code> 지시어를 통해 아이템을 공개적으로 재내보낼 수 있게 해줍니다. 이것은 공개 지시어이므로, 위의 규칙에 따라 현재 모듈에서 해당 아이템을 사용할 수 있게 됩니다. 본질적으로 재내보낸 아이템에 대한 공개 접근을 허용하는 것입니다. 예를 들어, 다음 프로그램은 유효합니다:</p>
 <pre class="playground"><code class="language-rust edition2024">pub use self::implementation::api;
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 mod implementation {
     pub mod api {
         pub fn f() {}
     }
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 <span class="boring">fn main() {}</span></code></pre>
 <p>즉, <code>implementation::api::f</code> 를 참조하는 외부 크레이트는 프라이버시 위반 오류를 받게 되지만, <code>api::f</code> 경로는 허용됩니다.</p>
 <div class="rule" id="r-vis.reexports.private-item"><a class="rule-link" href="#r-vis.reexports.private-item" title="vis.reexports.private-item"><span>[vis<wbr>.reexports<wbr>.private-item]</span></a>

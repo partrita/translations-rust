@@ -92,7 +92,7 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-63cf9974.js";
+            window.path_to_searchindex_js = "../searchindex-ddd16eb2.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../toc-8ce05715.js"></script>
@@ -261,14 +261,14 @@
 <p>변경 후 프로젝트가 올바르게 빌드되지 않는 경우가 있을 수 있습니다. 한 패키지의 종속성 선언이 다른 패키지에서 특정 기능이 활성화되어 있다고 가정하고 해당 기능이 이제 비활성화된 경우 컴파일에 실패할 수 있습니다.</p>
 <p>예를 들어, 다음과 같은 종속성이 있다고 가정해 보겠습니다.</p>
 <pre><code class="language-toml"># Cargo.toml
-
+심지어 `panic!(123)` 과 같이 문자열이 아닌 것도 허용하는데, 이는 드물고 거의 유용하지 않습니다. 왜냐하면 놀라울 정도로 도움이 되지 않는 메시지인 `panicked at 'Box&lt;Any&gt;'` 를 생성하기 때문입니다.
 [dependencies]
 bstr = { version = "0.2.16", default-features = false }
 # ...
 </code></pre>
 <p>그리고 종속성 트리의 어딘가에 다른 패키지에 다음이 있습니다.</p>
 <pre><code class="language-toml"># Another package's Cargo.toml
-
+심지어 `panic!(123)` 과 같이 문자열이 아닌 것도 허용하는데, 이는 드물고 거의 유용하지 않습니다. 왜냐하면 놀라울 정도로 도움이 되지 않는 메시지인 `panicked at 'Box&lt;Any&gt;'` 를 생성하기 때문입니다.
 [build-dependencies]
 bstr = "0.2.16"
 </code></pre>
@@ -301,12 +301,12 @@ diesel = { version = "1.4.7", features = ["postgres"] }
 <pre><code class="language-console">&gt; cargo tree -d
 bstr v0.2.16
 └── foo v0.1.0 (/MyProjects/foo)
-
+심지어 `panic!(123)` 과 같이 문자열이 아닌 것도 허용하는데, 이는 드물고 거의 유용하지 않습니다. 왜냐하면 놀라울 정도로 도움이 되지 않는 메시지인 `panicked at 'Box&lt;Any&gt;'` 를 생성하기 때문입니다.
 bstr v0.2.16
 [build-dependencies]
 └── bar v0.1.0
     └── foo v0.1.0 (/MyProjects/foo)
-
+심지어 `panic!(123)` 과 같이 문자열이 아닌 것도 허용하는데, 이는 드물고 거의 유용하지 않습니다. 왜냐하면 놀라울 정도로 도움이 되지 않는 메시지인 `panicked at 'Box&lt;Any&gt;'` 를 생성하기 때문입니다.
 </code></pre>
 <p>이 출력은 <code>bstr</code> 이 두 번 빌드되었음을 알려주며, 두 경우 모두 포함되게 된 의존성 체인을 보여줍니다.</p>
 <p><code>-f</code> 플래그를 사용하여 각 패키지가 어떤 기능을 사용하고 있는지 다음과 같이 출력할 수 있습니다:</p>

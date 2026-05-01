@@ -93,7 +93,7 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-55effe88.js";
+            window.path_to_searchindex_js = "../searchindex-e23b9ebb.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../toc-20da6b24.js"></script>
@@ -326,11 +326,11 @@ TraitBound</text>
 </span><span class="boring">fn main() {
 </span>trait Trait {}
 <span class="boring">impl Trait for () {}
-</span>
+</span>   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // 인자 위치: 익명 타입 매개변수
 fn foo(arg: impl Trait) {
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // 반환 위치: 추상 반환 타입
 fn bar() -&gt; impl Trait {
 }
@@ -355,11 +355,11 @@ fn bar() -&gt; impl Trait {
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span>trait Trait {}
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // 제네릭 타입 매개변수
 fn with_generic_type&lt;T: Trait&gt;(arg: T) {
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // 인자 위치의 impl Trait
 fn with_impl_trait(arg: impl Trait) {
 }

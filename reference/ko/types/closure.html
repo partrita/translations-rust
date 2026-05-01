@@ -93,7 +93,7 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-55effe88.js";
+            window.path_to_searchindex_js = "../searchindex-e23b9ebb.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../toc-20da6b24.js"></script>
@@ -251,16 +251,16 @@
 </span>#[derive(Debug)]
 struct Point { x: i32, y: i32 }
 struct Rectangle { left_top: Point, right_bottom: Point }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 fn f&lt;F : FnOnce() -&gt; String&gt; (g: F) {
     println!("{}", g());
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 let mut rect = Rectangle {
     left_top: Point { x: 1, y: 1 },
     right_bottom: Point { x: 0, y: 0 }
 };
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 let c = || {
     rect.left_top.x += 1;
     rect.right_bottom.x += 1;
@@ -271,12 +271,12 @@ f(c); // "Point { x: 2, y: 1 }"을 출력합니다.
 <p>대략 다음과 같은 클로저 타입을 생성합니다:</p>
 <!-- ignore: simplified -->
 <pre><code class="language-rust ignore">// 참고: 이것은 실제 번역되는 방식과 정확히 일치하지 않으며, 단지 설명을 위한 것입니다.
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 struct Closure&lt;'a&gt; {
     left_top : &amp;'a mut Point,
     right_bottom_x : &amp;'a mut i32,
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 impl&lt;'a&gt; FnOnce&lt;()&gt; for Closure&lt;'a&gt; {
     type Output = String;
     extern "rust-call" fn call_once(self, args: ()) -&gt; String {
@@ -351,7 +351,7 @@ let c = || {
     f1: (i32, i32),
 }
 let s = SomeStruct { f1: (1, 2) };
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 let c = || {
     let x = s.f1.1; // s.f1.1은 ImmBorrow로 캡처됨
 };
@@ -372,7 +372,7 @@ c();
 </span>let s = String::from("S");
 let t = (s, String::from("T"));
 let mut u = (t, String::from("U"));
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 let c = || {
     println!("{:?}", u); // u는 ImmBorrow로 캡처됨
     u.1.truncate(0); // u.1 captured by MutBorrow
@@ -392,12 +392,12 @@ c();
 </span><span class="boring">fn main() {
 </span>struct Int(i32);
 struct B&lt;'a&gt;(&amp;'a i32);
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 struct MyStruct&lt;'a&gt; {
    a: &amp;'static Int,
    b: B&lt;'a&gt;,
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 fn foo&lt;'a, 'b&gt;(m: &amp;'a MyStruct&lt;'b&gt;) -&gt; impl FnMut() + 'static {
     let c = || drop(&amp;m.a.0);
     c
@@ -440,7 +440,7 @@ c();
 <pre class="playground"><code class="language-rust no_run edition2024"><span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span>struct S; // A non-`Copy` type.
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // Destructuring tuples does not cause a read or capture.
 let x = (S,);
 let c = || {
@@ -448,7 +448,7 @@ let c = || {
 };
 x; // OK: `x` can be moved here.
 c();
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // Destructuring unit structs does not cause a read or capture.
 let x = S;
 let c = || {
@@ -456,7 +456,7 @@ let c = || {
 };
 x; // OK: `x` can be moved here.
 c();
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // Destructuring structs does not cause a read or capture.
 struct W&lt;T&gt;(T);
 let x = W(S);
@@ -465,7 +465,7 @@ let c = || {
 };
 x; // OK: `x` can be moved here.
 c();
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // Destructuring single-variant enums does not cause a read
 // or capture.
 enum E&lt;T&gt; { V(T) }
@@ -690,7 +690,7 @@ c();
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span>struct T(String, String);
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 let mut t = T(String::from("foo"), String::from("bar"));
 let t_mut_ref = &amp;mut t;
 let mut c = move || {
@@ -706,10 +706,10 @@ c();
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span>struct T(String, String);
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 let t = T(String::from("foo"), String::from("bar"));
 let t_ptr = &amp;t as *const T;
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 let c = || unsafe {
     println!("{}", (*t_ptr).0); // `t_ptr` 을 ImmBorrow로 캡처함
 };
@@ -727,15 +727,15 @@ c();
     b: bool,
 }
 let u = U { a: (123, 456) };
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 let c = || {
     let x = unsafe { u.a.0 }; // `u` 를 ByValue로 캡처함
 };
 c();
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // 이는 필드에 쓰는 경우도 포함합니다.
 let mut u = U { a: (123, 456) };
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 let mut c = || {
     u.b = true; // `u` 를 MutBorrow로 캡처함
 };
@@ -750,7 +750,7 @@ c();
 </span><span class="boring">fn main() {
 </span>#[repr(packed)]
 struct T(i32, i32);
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 let t = T(2, 5);
 let c = || {
     let a = t.0; // `t` 를 ImmBorrow로 캡처함
@@ -764,7 +764,7 @@ c();
 </span><span class="boring">fn main() {
 </span>#[repr(packed)]
 struct T(String, String);
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 let mut t = T(String::new(), String::new());
 let c = || {
     let a = std::ptr::addr_of!(t.1); // `t` 를 ImmBorrow로 캡처함
@@ -776,7 +776,7 @@ c();
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span>struct T(String, String);
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 let mut t = T(String::new(), String::new());
 let c = || {
     let a = std::ptr::addr_of!(t.1); // `t.1` 을 ImmBorrow로 캡처함
@@ -799,13 +799,13 @@ c();
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span>struct S(String);
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 let b = Box::new(S(String::new()));
 let c_box = || {
     let x = &amp;(*b).0; // `(*b).0` 을 ImmBorrow로 캡처함
 };
 c_box();
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // `Box` 를 Deref를 구현하는 다른 타입과 비교해 보십시오:
 let r = std::rc::Rc::new(S(String::new()));
 let c_rc = || {
@@ -820,9 +820,9 @@ c_rc();
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span>// 클로저가 참조를 취하는 대신 값을 이동시킨다는 점을 제외하면 위 예시와 동일합니다.
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 struct S(String);
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 let b = Box::new(S(String::new()));
 let c_box = || {
     let x = (*b).0; // `b` 를 ByValue로 캡처함
@@ -837,7 +837,7 @@ c_box();
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span>struct S(i32);
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 let b = Box::new(S(10));
 let c_box = move || {
     let x = (*b).0; // `b` 를 ByValue로 캡처함
@@ -900,9 +900,9 @@ let z = &amp;x;
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span>let add = |x, y| x + y;
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 let mut x = add(5,7);
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 type Binop = fn(i32, i32) -&gt; i32;
 let bo: Binop = add;
 x = bo(5,7);
@@ -1018,7 +1018,7 @@ fn f() {
 <pre><code class="language-rust ignore">struct Closure&lt;'a&gt; {
     rect : &amp;'a mut Rectangle,
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 impl&lt;'a&gt; FnOnce&lt;()&gt; for Closure&lt;'a&gt; {
     type Output = String;
     extern "rust-call" fn call_once(self, args: ()) -&gt; String {
@@ -1043,7 +1043,7 @@ impl&lt;'a&gt; FnOnce&lt;()&gt; for Closure&lt;'a&gt; {
     set: HashSet&lt;u32&gt;,
     vec: Vec&lt;u32&gt;
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 impl SetVec {
     fn populate(&amp;mut self) {
         let vec = &amp;mut self.vec;

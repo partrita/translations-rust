@@ -93,7 +93,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-55effe88.js";
+            window.path_to_searchindex_js = "searchindex-e23b9ebb.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-20da6b24.js"></script>
@@ -642,7 +642,7 @@ XID_Continue</text>
 </span><span class="boring">fn main() {
 </span>macro_rules! blackhole { ($tt:tt) =&gt; () }
 macro_rules! blackhole_lit { ($l:literal) =&gt; () }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 blackhole!("string"suffix); // OK
 blackhole_lit!(1suffix); // OK
 <span class="boring">}</span></code></pre>
@@ -1528,10 +1528,10 @@ CHAR</text>
 </span><span class="boring">fn main() {
 </span>"foo"; r"foo";                     // foo
 "\"foo\""; r#""foo""#;             // "foo"
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 "foo #\"# bar";
 r##"foo #"# bar"##;                // foo #"# bar
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 "\x52"; "R"; r"R";                 // R
 "\\x52"; r"\x52";                  // \x52
 <span class="boring">}</span></code></pre>
@@ -2309,10 +2309,10 @@ ASCII</text>
 </span><span class="boring">fn main() {
 </span>b"foo"; br"foo";                     // foo
 b"\"foo\""; br#""foo""#;             // "foo"
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 b"foo #\"# bar";
 br##"foo #"# bar"##;                 // foo #"# bar
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 b"\x52"; b"R"; br"R";                // R
 b"\\x52"; br"\x52";                  // \x52
 <span class="boring">}</span></code></pre>
@@ -2895,10 +2895,10 @@ CHAR</text>
 </span><span class="boring">fn main() {
 </span>c"foo"; cr"foo";                     // foo
 c"\"foo\""; cr#""foo""#;             // "foo"
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 c"foo #\"# bar";
 cr##"foo #"# bar"##;                 // foo #"# bar
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 c"\x52"; c"R"; cr"R";                // R
 c"\\x52"; cr"\x52";                  // \x52
 <span class="boring">}</span></code></pre>
@@ -3572,25 +3572,25 @@ XID_Start</text>
 123i32;
 123u32;
 123_u32;
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 0xff;
 0xff_u8;
 0x01_f32; // 정수 7986, 부동 소수점 1.0 아님
 0x01_e3;  // 정수 483, 부동 소수점 1000.0 아님
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 0o70;
 0o70_i16;
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 0b1111_1111_1001_0000;
 0b1111_1111_1001_0000i64;
 0b________1;
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 0usize;
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // 이것들은 타입에 비해 너무 크지만, 리터럴 표현식으로 허용됩니다.
 128_i8;
 256_u8;
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // 이것은 정수 리터럴이며, 부동 소수점 리터럴 표현식으로 허용됩니다.
 5f32;
 <span class="boring">}</span></code></pre>

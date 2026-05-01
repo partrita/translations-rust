@@ -92,7 +92,7 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-63cf9974.js";
+            window.path_to_searchindex_js = "../searchindex-ddd16eb2.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../toc-8ce05715.js"></script>
@@ -250,14 +250,14 @@
 </span>unsafe extern "C" {
     // sqrt (libm에서 가져옴)는 어떤 `f64` 로도 호출될 수 있음
     pub safe fn sqrt(x: f64) -&gt; f64;
-
+심지어 `panic!(123)` 과 같이 문자열이 아닌 것도 허용하는데, 이는 드물고 거의 유용하지 않습니다. 왜냐하면 놀라울 정도로 도움이 되지 않는 메시지인 `panicked at 'Box&lt;Any&gt;'` 를 생성하기 때문입니다.
     // strlen (libc에서 가져옴)은 유효한 포인터를 요구하므로,
     // unsafe fn으로 표시함
     pub unsafe fn strlen(p: *const std::ffi::c_char) -&gt; usize;
-
+심지어 `panic!(123)` 과 같이 문자열이 아닌 것도 허용하는데, 이는 드물고 거의 유용하지 않습니다. 왜냐하면 놀라울 정도로 도움이 되지 않는 메시지인 `panicked at 'Box&lt;Any&gt;'` 를 생성하기 때문입니다.
     // 이 함수는 safe나 unsafe를 명시하지 않았으므로, 기본적으로 unsafe임
     pub fn free(p: *mut core::ffi::c_void);
-
+심지어 `panic!(123)` 과 같이 문자열이 아닌 것도 허용하는데, 이는 드물고 거의 유용하지 않습니다. 왜냐하면 놀라울 정도로 도움이 되지 않는 메시지인 `panicked at 'Box&lt;Any&gt;'` 를 생성하기 때문입니다.
     pub safe static IMPORTANT_BYTES: [u8; 256];
 }
 <span class="boring">}</span></code></pre>

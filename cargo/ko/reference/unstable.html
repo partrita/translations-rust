@@ -97,7 +97,7 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-56895a7e.js";
+            window.path_to_searchindex_js = "../searchindex-40d30f76.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../toc-6b0c3669.js"></script>
@@ -455,11 +455,11 @@ artifact-dir = "out"
 name = "my-package"
 version = "0.1.0"
 metabuild = ["foo", "bar"]
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [build-dependencies]
 foo = "1.0"
 bar = "1.0"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [package.metadata.foo]
 extra-info = "qwerty"
 </code></pre>
@@ -472,7 +472,7 @@ extra-info = "qwerty"
 <p>Multiple Build Scripts feature allows you to have multiple build scripts in your package.</p>
 <p>Include <code>cargo-features</code> at the top of <code>Cargo.toml</code> and add <code>multiple-build-scripts</code> to enable feature. Add the paths of the build scripts as an array in <code>package.build</code>. For example:</p>
 <pre><code class="language-toml">cargo-features = ["multiple-build-scripts"]
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [package]
 name = "mypackage"
 version = "0.0.1"
@@ -501,7 +501,7 @@ public-dependency = true
 </code></pre>
 <p><code>public-dependency</code> 는 <code>cargo-features</code> 에서도 활성화할 수 있었으나, <strong>현재는 권장되지 않으며(deprecated) 곧 제거될 예정</strong> 입니다.</p>
 <pre><code class="language-toml">cargo-features = ["public-dependency"]
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [dependencies]
 my_dep = { version = "1.2.3", public = true }
 private_dep = "2.0.0" # 기본적으로 '비공개(private)'가 됩니다
@@ -549,7 +549,7 @@ my-dependency = "0.1.1"
 <p>이 기능을 활성화하려면 <code>.cargo/config.toml</code> 에서 <code>sbom</code> 필드를 설정하거나</p>
 <pre><code class="language-toml">[unstable]
 sbom = true
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [build]
 sbom = true
 </code></pre>
@@ -803,7 +803,7 @@ linker = "/path/to/target/linker"
       */
       "platform": null,
       /* 이 유닛의 "모드(mode)"입니다. 유효한 값:
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
          * "test" --- 테스트용으로 `rustc` 를 사용하여 빌드합니다.
          * "build" --- `rustc` 를 사용하여 빌드합니다.
          * "check" --- "check" 모드에서 `rustc` 를 사용하여 빌드합니다.
@@ -853,10 +853,10 @@ linker = "/path/to/target/linker"
 </ul>
 <p>이 기능은 <code>[profile]</code> 섹션에서 rustc에 직접 전달할 플래그를 지정할 수 있는 새로운 옵션을 제공합니다. 다음과 같이 활성화할 수 있습니다:</p>
 <pre><code class="language-toml">cargo-features = ["profile-rustflags"]
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [package]
 # ...
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [profile.release]
 rustflags = [ "-C", "..." ]
 </code></pre>
@@ -864,7 +864,7 @@ rustflags = [ "-C", "..." ]
 <pre><code class="language-toml"># .cargo/config.toml
 [unstable]
 profile-rustflags = true
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [profile.release]
 rustflags = [ "-C", "..." ]
 </code></pre>
@@ -1089,11 +1089,11 @@ timeout = 300  # in seconds
 <p><code>filename</code> 매개변수는 바이너리 확장자를 포함해서는 <strong>안 됩니다</strong>. <code>cargo</code> 가 적절한 확장자를 파악하여 바이너리에 직접 사용합니다.</p>
 <p><code>filename</code> 매개변수는 매니페스트의 <code>[[bin]]</code> 섹션에서만 사용할 수 있습니다.</p>
 <pre><code class="language-toml">cargo-features = ["different-binary-name"]
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [package]
 name =  "foo"
 version = "0.0.1"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [[bin]]
 name = "foo"
 filename = "007bar"
@@ -1111,7 +1111,7 @@ path = "src/main.rs"
 <pre><code class="language-toml"># 라이브러리에서 예제 수집 활성화
 [lib]
 doc-scrape-examples = true
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 # 예제 타겟에서 예제 수집 비활성화
 [[example]]
 name = "my-example"
@@ -1138,10 +1138,10 @@ doc-scrape-examples = false
 <p>예시:</p>
 <pre><code class="language-toml">[package]
 name = "foo"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [dependencies]
 serde = "1.0.117"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [profile.dev.package.foo]
 codegen-backend = "cranelift"
 </code></pre>
@@ -1149,7 +1149,7 @@ codegen-backend = "cranelift"
 <pre><code class="language-toml"># .cargo/config.toml
 [unstable]
 codegen-backend = true
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [profile.dev.package.foo]
 codegen-backend = "cranelift"
 </code></pre>
@@ -1203,16 +1203,16 @@ codegen-backend = "cranelift"
 [dependencies]
 clap = { version = "4.2", features = ["derive"] }
 ---
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 use clap::Parser;
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 #[derive(Parser, Debug)]
 #[clap(version)]
 struct Args {
     #[clap(short, long, help = "Path to config")]
     config: Option&lt;std::path::PathBuf&gt;,
 }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 fn main() {
     let args = Args::parse();
     println!("{:?}", args);
@@ -1270,10 +1270,10 @@ fn main() {
 </ul>
 <p>이는 생성된 바이너리에서 경로가 정제(sanitize)되는 방식을 제어하는 새로운 프로파일 설정을 추가합니다. 다음과 같이 활성화할 수 있습니다:</p>
 <pre><code class="language-toml">cargo-features = ["trim-paths"]
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [package]
 # ...
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [profile.release]
 trim-paths = ["diagnostics", "object"]
 </code></pre>
@@ -1281,7 +1281,7 @@ trim-paths = ["diagnostics", "object"]
 <pre><code class="language-toml"># .cargo/config.toml
 [unstable]
 trim-paths = true
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [profile.release]
 trim-paths = ["diagnostics", "object"]
 </code></pre>
@@ -1300,7 +1300,7 @@ trim-paths = ["diagnostics", "object"]
 <p><code>dev</code> 프로파일의 경우 기본값은 <code>none</code> 이며, <code>release</code> 프로파일의 경우 <code>object</code> 입니다. <code>Cargo.toml</code> 에 이 옵션을 지정하여 수동으로 재정의할 수 있습니다:</p>
 <pre><code class="language-toml">[profile.dev]
 trim-paths = "all"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [profile.release]
 trim-paths = ["object", "diagnostics"]
 </code></pre>
@@ -1326,7 +1326,7 @@ trim-paths = ["object", "diagnostics"]
 <h4 id="자동-gc-설정"><a class="header" href="#자동-gc-설정">자동 GC 설정</a></h4>
 <p>The <code>-Zgc</code> flag will enable Cargo to read extra configuration options related to garbage collection. The settings available are:</p>
 <pre><code class="language-toml"># Example config.toml file.
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 # Sub-table for defining specific settings for cleaning the global cache.
 [cache.global-clean]
 # Anything older than this duration will be deleted in the source cache.
@@ -1368,7 +1368,7 @@ cargo clean gc -Zgc --max-git-size=0 --max-download-size=100MB
 <p>여러 패키지가 동일한 API 네임스페이스에 참여할 수 있게 합니다.</p>
 <p>다음과 같이 활성화할 수 있습니다:</p>
 <pre><code class="language-toml">cargo-features = ["open-namespaces"]
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [package]
 # ...
 </code></pre>
@@ -1380,10 +1380,10 @@ cargo clean gc -Zgc --max-git-size=0 --max-download-size=100MB
 <p>Extends the <code>panic</code> profile setting to support the <a href="../../rustc/codegen-options/index.html#panic"><code>immediate-abort</code></a> panic strategy. This can be enabled like so:</p>
 <pre><code class="language-toml"># Cargo.toml
 cargo-features = ["panic-immediate-abort"]
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [package]
 # ...
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [profile.release]
 panic = "immediate-abort"
 </code></pre>
@@ -1391,7 +1391,7 @@ panic = "immediate-abort"
 <pre><code class="language-toml"># .cargo/config.toml
 [unstable]
 panic-immediate-abort = true
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [profile.release]
 panic = "immediate-abort"
 </code></pre>
@@ -1412,7 +1412,7 @@ implicit-features = "warn"
 <p>이는 <a href="https://rust-lang.github.io/rfcs/2906-cargo-workspace-deduplicate.html">RFC 2906 <code>workspace-deduplicate</code></a>와 함께 작동합니다:</p>
 <pre><code class="language-toml">[workspace.lints.cargo]
 implicit-features = "warn"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [lints]
 workspace = true
 </code></pre>
@@ -1423,7 +1423,7 @@ workspace = true
 <p><code>path</code> 의존성은 <a href="config.html">설정</a> 이나 <a href="#built-in-path-bases">내장 경로 베이스</a> 중 하나에 있는 <code>[path-bases]</code> 테이블의 경로 베이스 이름을 <code>base</code> 키로 설정하여 베이스를 지정할 수 있습니다. 해당 경로 베이스의 값은 <code>path</code> 값 앞에 추가되어(필요한 경우 경로 구분자와 함께), Cargo가 의존성을 찾을 실제 위치를 생성합니다.</p>
 <p>예를 들어, <code>Cargo.toml</code> 에 다음이 포함되어 있다면:</p>
 <pre><code class="language-toml">cargo-features = ["path-bases"]
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [dependencies]
 foo = { base = "dev", path = "foo" }
 </code></pre>
@@ -1537,7 +1537,7 @@ dev = "/home/user/dev/rust/libraries/"
 <h2 id="unstable-editions"><a class="header" href="#unstable-editions"><code>unstable-editions</code></a></h2>
 <p>The <code>unstable-editions</code> value in the <code>cargo-features</code> list allows a <code>Cargo.toml</code> manifest to specify an edition that is not yet stable.</p>
 <pre><code class="language-toml">cargo-features = ["unstable-editions"]
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [package]
 name = "my-package"
 edition = "future"
@@ -1570,10 +1570,10 @@ edition = "future"
 <p>When enabled, Cargo writes build logs in JSONL format to the <code>$CARGO_HOME/log/</code> directory Each cargo invocation produces a log file named with a unique session ID. These logs contain timing information, rebuild reasons, and other build metadata that can be analyzed with the <code>cargo report</code> subcommands.</p>
 <p>To enable build analysis, add the following <a href="config.html">Cargo configuration</a>:</p>
 <pre><code class="language-toml"># Example config.toml file.
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [unstable]
 build-analysis = true
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 # Enable the build metric collection
 [build.analysis]
 enabled = true

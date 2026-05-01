@@ -96,7 +96,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-ba1bddcc.js";
+            window.path_to_searchindex_js = "searchindex-18122752.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-a05ef4ad.js"></script>
@@ -261,7 +261,7 @@ cd ../../..
 name = "guessing_game"
 version = "0.1.0"
 edition = "2024"
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 [dependencies]
 </code></pre>
 <p>1장에서 보았듯이 <code>cargo new</code> 는 “Hello, world!” 프로그램을 생성합니다. <em>src/main.rs</em> 파일을 확인하세요:</p>
@@ -283,89 +283,89 @@ Hello, world!
 <figure class="listing" id="listing-2-1">
 <span class="file-name">Filename: src/main.rs</span>
 <pre><code class="language-rust ignore">use std::io;
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 fn main() {
     println!("숫자를 맞춰보세요!");
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
     println!(추측을 입력하세요.);
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
     let mut guess = String::new();
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
     io::stdin()
         .read_line(&amp;mut guess)
         .expect("줄 읽기 실패");
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
     println!("당신의 추측: {guess}");
 }</code></pre>
 <figcaption><a href="#listing-2-1">Listing 2-1</a>: Code that gets a guess from the user and prints it</figcaption>
 </figure>
 <p>이 코드는 많은 정보를 담고 있으므로, 한 줄씩 살펴보겠습니다. 사용자 입력을 받고 그 결과를 출력으로 인쇄하려면, <code>io</code> 입출력 라이브러리를 스코프로 가져와야 합니다. <code>io</code> 라이브러리는 <code>std</code> 로 알려진 표준 라이브러리에서 제공됩니다:</p>
 <pre><code class="language-rust ignore">use std::io;
-<span class="boring">
+<span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">fn main() {
 </span><span class="boring">    println!("숫자를 맞춰보세요!");
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">    println!(추측을 입력하세요.);
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">    let mut guess = String::new();
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">    io::stdin()
 </span><span class="boring">        .read_line(&amp;mut guess)
 </span><span class="boring">        .expect("줄 읽기 실패");
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">    println!("당신의 추측: {guess}");
 </span><span class="boring">}</span></code></pre>
 <p>기본적으로, 러스트는 모든 프로그램의 스코프로 가져오는 표준 라이브러리에 정의된 아이템 세트를 가지고 있습니다. 이 세트를 <em>프렐류드</em> 라고 하며, <a href="../std/prelude/index.html">표준 라이브러리 문서</a> 에서 모든 것을 볼 수 있습니다.</p>
 <p>사용하려는 타입이 프렐류드에 없으면, <code>use</code> 문을 사용하여 해당 타입을 명시적으로 스코프로 가져와야 합니다. <code>std::io</code> 라이브러리를 사용하면 사용자 입력을 받는 기능을 포함하여 여러 유용한 기능을 사용할 수 있습니다.</p>
 <p>1장에서 보았듯이, <code>main</code> 함수는 프로그램의 진입점입니다:</p>
 <pre><code class="language-rust ignore"><span class="boring">use std::io;
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span>fn main() {
 <span class="boring">    println!("숫자를 맞춰보세요!");
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">    println!(추측을 입력하세요.);
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">    let mut guess = String::new();
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">    io::stdin()
 </span><span class="boring">        .read_line(&amp;mut guess)
 </span><span class="boring">        .expect("줄 읽기 실패");
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">    println!("당신의 추측: {guess}");
 </span><span class="boring">}</span></code></pre>
 <p><code>fn</code> 구문은 새 함수를 선언하고, 괄호 <code>()</code> 는 매개변수가 없음을 나타내며, 중괄호 <code>{</code> 는 함수 본문의 시작을 나타냅니다.</p>
 <p>1장에서 배운 것처럼, <code>println!</code> 은 화면에 문자열을 출력하는 매크로입니다:</p>
 <pre><code class="language-rust ignore"><span class="boring">use std::io;
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">fn main() {
 </span>    println!("숫자를 맞춰보세요!");
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
     println!(추측을 입력하세요.);
-<span class="boring">
+<span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">    let mut guess = String::new();
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">    io::stdin()
 </span><span class="boring">        .read_line(&amp;mut guess)
 </span><span class="boring">        .expect("줄 읽기 실패");
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">    println!("당신의 추측: {guess}");
 </span><span class="boring">}</span></code></pre>
 <p>이 코드는 게임이 무엇인지 알리고 사용자로부터 입력을 요청하는 프롬프트를 출력합니다.</p>
 <h3 id="변수로-값-저장하기"><a class="header" href="#변수로-값-저장하기">변수로 값 저장하기</a></h3>
 <p>다음으로, 사용자 입력을 저장할 <em>변수</em> 를 다음과 같이 생성합니다:</p>
 <pre><code class="language-rust ignore"><span class="boring">use std::io;
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">fn main() {
 </span><span class="boring">    println!("숫자를 맞춰보세요!");
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">    println!(추측을 입력하세요.);
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span>    let mut guess = String::new();
-<span class="boring">
+<span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">    io::stdin()
 </span><span class="boring">        .read_line(&amp;mut guess)
 </span><span class="boring">        .expect("줄 읽기 실패");
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">    println!("당신의 추측: {guess}");
 </span><span class="boring">}</span></code></pre>
 <p>이제 프로그램이 흥미로워졌습니다! 이 작은 한 줄에 많은 일이 일어나고 있습니다. <code>let</code> 문을 사용하여 변수를 생성합니다. 다음은 또 다른 예입니다:</p>
@@ -382,18 +382,18 @@ let mut bananas = 5; // 가변</code></pre>
 <h3 id="사용자-입력-받기"><a class="header" href="#사용자-입력-받기">사용자 입력 받기</a></h3>
 <p>프로그램의 첫 줄에 <code>use std::io;</code> 로 표준 라이브러리에서 입출력 기능을 포함시켰던 것을 기억하세요. 이제 <code>io</code> 모듈에서 <code>stdin</code> 함수를 호출하여 사용자 입력을 처리할 수 있도록 할 것입니다:</p>
 <pre><code class="language-rust ignore"><span class="boring">use std::io;
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">fn main() {
 </span><span class="boring">    println!("숫자를 맞춰보세요!");
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">    println!(추측을 입력하세요.);
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">    let mut guess = String::new();
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span>    io::stdin()
         .read_line(&amp;mut guess)
 <span class="boring">        .expect("줄 읽기 실패");
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">    println!("당신의 추측: {guess}");
 </span><span class="boring">}</span></code></pre>
 <p>If we hadn’t imported the <code>io</code> module with <code>use std::io;</code> at the beginning of the program, we could still use the function by writing this function call as <code>std::io::stdin</code>. The <code>stdin</code> function returns an instance of <a href="../std/io/struct.Stdin.html"><code>std::io::Stdin</code></a><!-- ignore -->, which is a type that represents a handle to the standard input for your terminal.</p>
@@ -405,18 +405,18 @@ ignore --> method on the standard input handle to get input from the user. We’
 <h3 id="result-로-잠재적-실패-처리하기"><a class="header" href="#result-로-잠재적-실패-처리하기"><code>Result</code> 로 잠재적 실패 처리하기</a></h3>
 <p>우리는 아직 이 코드 라인에서 작업 중입니다. 이제 세 번째 텍스트 라인을 논의하고 있지만, 이것이 여전히 단일 논리적 코드 라인의 일부라는 점에 유의하세요. 다음 부분은 이 메서드입니다:</p>
 <pre><code class="language-rust ignore"><span class="boring">use std::io;
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">fn main() {
 </span><span class="boring">    println!("숫자를 맞춰보세요!");
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">    println!(추측을 입력하세요.);
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">    let mut guess = String::new();
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">    io::stdin()
 </span><span class="boring">        .read_line(&amp;mut guess)
 </span>        .expect("줄 읽기 실패");
-<span class="boring">
+<span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">    println!("당신의 추측: {guess}");
 </span><span class="boring">}</span></code></pre>
 <p>이 코드를 다음과 같이 작성할 수도 있었습니다:</p>
@@ -442,7 +442,7 @@ help: use `let _ = ...` to ignore the resulting value
    |
 10 |     let _ = io::stdin().read_line(&amp;mut guess);
    |     +++++++
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 warning: `guessing_game` (bin "guessing_game") generated 1 warning
     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.59s
 </code></pre>
@@ -451,18 +451,18 @@ warning: `guessing_game` (bin "guessing_game") generated 1 warning
 <h3 id="println-플레이스홀더로-값-출력하기"><a class="header" href="#println-플레이스홀더로-값-출력하기"><code>println!</code> 플레이스홀더로 값 출력하기</a></h3>
 <p>닫는 중괄호를 제외하고, 지금까지 코드에서 논의할 줄은 한 줄 더 있습니다:</p>
 <pre><code class="language-rust ignore"><span class="boring">use std::io;
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">fn main() {
 </span><span class="boring">    println!("숫자를 맞춰보세요!");
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">    println!(추측을 입력하세요.);
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">    let mut guess = String::new();
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">    io::stdin()
 </span><span class="boring">        .read_line(&amp;mut guess)
 </span><span class="boring">        .expect("줄 읽기 실패");
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span>    println!("당신의 추측: {guess}");
 <span class="boring">}</span></code></pre>
 <p>This line prints the string that now contains the user’s input. The <code>{}</code> set of curly brackets is a placeholder: Think of <code>{}</code> as little crab pincers that hold a value in place. When printing the value of a variable, the variable name can go inside the curly brackets. When printing the result of evaluating an expression, place empty curly brackets in the format string, then follow the format string with a comma-separated list of expressions to print in each empty curly bracket placeholder in the same order. Printing a variable and the result of an expression in one call to <code>println!</code> would look like this:</p>
@@ -470,7 +470,7 @@ warning: `guessing_game` (bin "guessing_game") generated 1 warning
 </span><span class="boring">fn main() {
 </span>let x = 5;
 let y = 10;
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 println!("x = {x} and y + 2 = {}", y + 2);
 <span class="boring">}</span></code></pre>
 <p>이 코드는 <code>x = 5 and y + 2 = 12</code> 를 출력할 것입니다.</p>
@@ -499,33 +499,51 @@ Please input your guess.
 6
 You guessed: 6
 </code></pre>
-<p>At this point, the first part of the game is done: We’re getting input from the keyboard and then printing it.</p>
+<p>제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 <code>&lt;PlaceholderType=ConcreteType&gt;</code> 문법을 사용하여 기본 타입을 지정합니다.
+At this point, the first part of the game is done: We’re getting input from the keyboard and then printing it.
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 <code>&lt;PlaceholderType=ConcreteType&gt;</code> 문법을 사용하여 기본 타입을 지정합니다.</p>
 <h2 id="비밀-번호-생성하기"><a class="header" href="#비밀-번호-생성하기">비밀 번호 생성하기</a></h2>
-<p>Next, we need to generate a secret number that the user will try to guess. The secret number should be different every time so that the game is fun to play more than once. We’ll use a random number between 1 and 100 so that the game isn’t too difficult. Rust doesn’t yet include random number functionality in its standard library. However, the Rust team does provide a <a href="https://crates.io/crates/rand"><code>rand</code> crate</a> with said functionality.</p>
+<p>제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 <code>&lt;PlaceholderType=ConcreteType&gt;</code> 문법을 사용하여 기본 타입을 지정합니다.
+Next, we need to generate a secret number that the user will try to guess. The secret number should be different every time so that the game is fun to play more than once. We’ll use a random number between 1 and 100 so that the game isn’t too difficult. Rust doesn’t yet include random number functionality in its standard library. However, the Rust team does provide a <a href="https://crates.io/crates/rand"><code>rand</code> crate</a> with said functionality.
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 <code>&lt;PlaceholderType=ConcreteType&gt;</code> 문법을 사용하여 기본 타입을 지정합니다.</p>
 <!-- Old headings. Do not remove or links may break. -->
-<p><a id="using-a-crate-to-get-more-functionality"></a></p>
+<p>제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 <code>&lt;PlaceholderType=ConcreteType&gt;</code> 문법을 사용하여 기본 타입을 지정합니다.
+<a id="using-a-crate-to-get-more-functionality"></a>
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 <code>&lt;PlaceholderType=ConcreteType&gt;</code> 문법을 사용하여 기본 타입을 지정합니다.</p>
 <h3 id="increasing-functionality-with-a-crate"><a class="header" href="#increasing-functionality-with-a-crate">Increasing Functionality with a Crate</a></h3>
-<p>Remember that a crate is a collection of Rust source code files. The project we’ve been building is a binary crate, which is an executable. The <code>rand</code> crate is a library crate, which contains code that is intended to be used in other programs and can’t be executed on its own.</p>
-<p>Cargo의 외부 크레이트 조정은 Cargo가 정말 빛을 발하는 부분입니다. <code>rand</code> 를 사용하는 코드를 작성하기 전에, <code>rand</code> 크레이트를 의존성으로 포함하도록 <em>Cargo.toml</em> 파일을 수정해야 합니다. 지금 그 파일을 열고 Cargo가 생성한 <code>[dependencies]</code> 섹션 헤더 아래 맨 아래에 다음 줄을 추가하세요. 여기에 있는 버전 번호와 정확히 동일하게 <code>rand</code> 를 지정해야 합니다. 그렇지 않으면 이 튜토리얼의 코드 예제가 작동하지 않을 수 있습니다:</p>
+<p>제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 <code>&lt;PlaceholderType=ConcreteType&gt;</code> 문법을 사용하여 기본 타입을 지정합니다.
+Remember that a crate is a collection of Rust source code files. The project we’ve been building is a binary crate, which is an executable. The <code>rand</code> crate is a library crate, which contains code that is intended to be used in other programs and can’t be executed on its own.
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 <code>&lt;PlaceholderType=ConcreteType&gt;</code> 문법을 사용하여 기본 타입을 지정합니다.
+Cargo의 외부 크레이트 조정은 Cargo가 정말 빛을 발하는 부분입니다. <code>rand</code> 를 사용하는 코드를 작성하기 전에, <code>rand</code> 크레이트를 의존성으로 포함하도록 <em>Cargo.toml</em> 파일을 수정해야 합니다. 지금 그 파일을 열고 Cargo가 생성한 <code>[dependencies]</code> 섹션 헤더 아래 맨 아래에 다음 줄을 추가하세요. 여기에 있는 버전 번호와 정확히 동일하게 <code>rand</code> 를 지정해야 합니다. 그렇지 않으면 이 튜토리얼의 코드 예제가 작동하지 않을 수 있습니다:
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 <code>&lt;PlaceholderType=ConcreteType&gt;</code> 문법을 사용하여 기본 타입을 지정합니다.</p>
 <!-- When updating the version of `rand` used, also update the version of
 `rand` used in these files so they all match:
 * ch07-04-bringing-paths-into-scope-with-the-use-keyword.md
 * ch14-03-cargo-workspaces.md
 -->
-<p><span class="filename">파일명: Cargo.toml</span></p>
+<p>제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 <code>&lt;PlaceholderType=ConcreteType&gt;</code> 문법을 사용하여 기본 타입을 지정합니다.
+<span class="filename">파일명: Cargo.toml</span>
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 <code>&lt;PlaceholderType=ConcreteType&gt;</code> 문법을 사용하여 기본 타입을 지정합니다.</p>
 <pre><code class="language-toml">[dependencies]
 rand = "0.8.5"
 </code></pre>
-<p>In the <em>Cargo.toml</em> file, everything that follows a header is part of that section that continues until another section starts. In <code>[dependencies]</code>, you tell Cargo which external crates your project depends on and which versions of those crates you require. In this case, we specify the <code>rand</code> crate with the semantic version specifier <code>0.8.5</code>. Cargo understands <a href="http://semver.org">Semantic Versioning</a><!-- ignore --> (sometimes called <em>SemVer</em>), which is a standard for writing version numbers. The specifier <code>0.8.5</code> is actually shorthand for <code>^0.8.5</code>, which means any version that is at least 0.8.5 but below 0.9.0.</p>
-<p>Cargo considers these versions to have public APIs compatible with version 0.8.5, and this specification ensures that you’ll get the latest patch release that will still compile with the code in this chapter. Any version 0.9.0 or greater is not guaranteed to have the same API as what the following examples use.</p>
-<p>이제 코드를 변경하지 않고, 목록 2-2와 같이 프로젝트를 빌드해 보겠습니다.</p>
+<p>제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 <code>&lt;PlaceholderType=ConcreteType&gt;</code> 문법을 사용하여 기본 타입을 지정합니다.
+In the <em>Cargo.toml</em> file, everything that follows a header is part of that section that continues until another section starts. In <code>[dependencies]</code>, you tell Cargo which external crates your project depends on and which versions of those crates you require. In this case, we specify the <code>rand</code> crate with the semantic version specifier <code>0.8.5</code>. Cargo understands <a href="http://semver.org">Semantic Versioning</a><!-- ignore --> (sometimes called <em>SemVer</em>), which is a standard for writing version numbers. The specifier <code>0.8.5</code> is actually shorthand for <code>^0.8.5</code>, which means any version that is at least 0.8.5 but below 0.9.0.
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 <code>&lt;PlaceholderType=ConcreteType&gt;</code> 문법을 사용하여 기본 타입을 지정합니다.
+Cargo considers these versions to have public APIs compatible with version 0.8.5, and this specification ensures that you’ll get the latest patch release that will still compile with the code in this chapter. Any version 0.9.0 or greater is not guaranteed to have the same API as what the following examples use.
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 <code>&lt;PlaceholderType=ConcreteType&gt;</code> 문법을 사용하여 기본 타입을 지정합니다.
+이제 코드를 변경하지 않고, 목록 2-2와 같이 프로젝트를 빌드해 보겠습니다.
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 <code>&lt;PlaceholderType=ConcreteType&gt;</code> 문법을 사용하여 기본 타입을 지정합니다.</p>
 <!-- manual-regeneration
 cd listings/ch02-guessing-game-tutorial/listing-02-02/
 rm Cargo.lock
 cargo clean
 cargo build -->
+<p>제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 <code>&lt;PlaceholderType=ConcreteType&gt;</code> 문법을 사용하여 기본 타입을 지정합니다.</p>
 <figure class="listing" id="listing-2-2">
-<pre><code class="language-console">$ cargo build
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `<placeholdertype=concretetype>` 문법을 사용하여 기본 타입을 지정합니다.
+```````console
+$ cargo build
   Updating crates.io index
    Locking 15 packages to latest Rust 1.85.0 compatible versions
     Adding rand v0.8.5 (available: v0.9.0)
@@ -545,88 +563,127 @@ cargo build -->
  Compiling rand v0.8.5
  Compiling guessing_game v0.1.0 (file:///projects/guessing_game)
   Finished `dev` profile [unoptimized + debuginfo] target(s) in 2.48s
-</code></pre>
+```````
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `<placeholdertype=concretetype>` 문법을 사용하여 기본 타입을 지정합니다.
 <figcaption><a href="#listing-2-2">Listing 2-2</a>: The output from running <code>cargo build</code> after adding the <code>rand</code> crate as a dependency</figcaption>
-</figure>
-<p>다른 버전 번호(하지만 SemVer 덕분에 모두 코드와 호환됩니다!)와 다른 줄(운영 체제에 따라 다름)이 표시될 수 있으며, 줄 순서가 다를 수 있습니다.</p>
-<p>외부 의존성을 포함하면, Cargo는 해당 의존성이 필요로 하는 모든 것의 최신 버전을 <em>레지스트리</em> 에서 가져옵니다. 레지스트리는 <a href="https://crates.io/">Crates.io</a> 의 데이터 사본입니다. Crates.io는 러스트 생태계의 사람들이 다른 사람들이 사용할 수 있도록 오픈 소스 러스트 프로젝트를 게시하는 곳입니다.</p>
-<p>레지스트리를 업데이트한 후, Cargo는 <code>[dependencies]</code> 섹션을 확인하고 아직 다운로드되지 않은 모든 크레이트를 다운로드합니다. 이 경우, 우리는 <code>rand</code> 만 의존성으로 나열했지만, Cargo는 <code>rand</code> 가 작동하는 데 의존하는 다른 크레이트도 가져왔습니다. 크레이트를 다운로드한 후, 러스트는 그것들을 컴파일한 다음 사용 가능한 의존성으로 프로젝트를 컴파일합니다.</p>
-<p>변경 사항 없이 즉시 <code>cargo build</code> 를 다시 실행하면, <code>Finished</code> 줄 외에는 아무런 출력도 얻지 못할 것입니다. Cargo는 이미 의존성을 다운로드하고 컴파일했으며, <em>Cargo.toml</em> 파일에서 의존성에 대해 아무것도 변경하지 않았다는 것을 알고 있습니다. Cargo는 또한 코드에 대해 아무것도 변경하지 않았다는 것을 알고 있으므로, 그것도 다시 컴파일하지 않습니다. 할 일이 없으면, 그냥 종료됩니다.</p>
-<p><em>src/main.rs</em> 파일을 열고, 사소한 변경을 한 다음, 저장하고 다시 빌드하면, 두 줄의 출력만 보게 될 것입니다:</p>
+
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `<placeholdertype=concretetype>` 문법을 사용하여 기본 타입을 지정합니다.
+다른 버전 번호(하지만 SemVer 덕분에 모두 코드와 호환됩니다!)와 다른 줄(운영 체제에 따라 다름)이 표시될 수 있으며, 줄 순서가 다를 수 있습니다.
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `<placeholdertype=concretetype>` 문법을 사용하여 기본 타입을 지정합니다.
+외부 의존성을 포함하면, Cargo는 해당 의존성이 필요로 하는 모든 것의 최신 버전을 _레지스트리_ 에서 가져옵니다. 레지스트리는 [Crates.io](https://crates.io/) 의 데이터 사본입니다. Crates.io는 러스트 생태계의 사람들이 다른 사람들이 사용할 수 있도록 오픈 소스 러스트 프로젝트를 게시하는 곳입니다.
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `<placeholdertype=concretetype>` 문법을 사용하여 기본 타입을 지정합니다.
+레지스트리를 업데이트한 후, Cargo는 `[dependencies]` 섹션을 확인하고 아직 다운로드되지 않은 모든 크레이트를 다운로드합니다. 이 경우, 우리는 `rand` 만 의존성으로 나열했지만, Cargo는 `rand` 가 작동하는 데 의존하는 다른 크레이트도 가져왔습니다. 크레이트를 다운로드한 후, 러스트는 그것들을 컴파일한 다음 사용 가능한 의존성으로 프로젝트를 컴파일합니다.
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `<placeholdertype=concretetype>` 문법을 사용하여 기본 타입을 지정합니다.
+변경 사항 없이 즉시 `cargo build` 를 다시 실행하면, `Finished` 줄 외에는 아무런 출력도 얻지 못할 것입니다. Cargo는 이미 의존성을 다운로드하고 컴파일했으며, _Cargo.toml_ 파일에서 의존성에 대해 아무것도 변경하지 않았다는 것을 알고 있습니다. Cargo는 또한 코드에 대해 아무것도 변경하지 않았다는 것을 알고 있으므로, 그것도 다시 컴파일하지 않습니다. 할 일이 없으면, 그냥 종료됩니다.
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `<placeholdertype=concretetype>` 문법을 사용하여 기본 타입을 지정합니다.
+_src/main.rs_ 파일을 열고, 사소한 변경을 한 다음, 저장하고 다시 빌드하면, 두 줄의 출력만 보게 될 것입니다:
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `<placeholdertype=concretetype>` 문법을 사용하여 기본 타입을 지정합니다.
 <!-- manual-regeneration
 cd listings/ch02-guessing-game-tutorial/listing-02-02/
 touch src/main.rs
 cargo build -->
-<pre><code class="language-console">$ cargo build
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `<placeholdertype=concretetype>` 문법을 사용하여 기본 타입을 지정합니다.
+```````console
+$ cargo build
    Compiling guessing_game v0.1.0 (file:///projects/guessing_game)
     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.13s
-</code></pre>
-<p>이 줄들은 Cargo가 <em>src/main.rs</em> 파일에 대한 작은 변경 사항으로만 빌드를 업데이트한다는 것을 보여줍니다. 의존성은 변경되지 않았으므로, Cargo는 이미 다운로드하고 컴파일한 것을 재사용할 수 있다는 것을 알고 있습니다.</p>
+```````
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `<placeholdertype=concretetype>` 문법을 사용하여 기본 타입을 지정합니다.
+이 줄들은 Cargo가 _src/main.rs_ 파일에 대한 작은 변경 사항으로만 빌드를 업데이트한다는 것을 보여줍니다. 의존성은 변경되지 않았으므로, Cargo는 이미 다운로드하고 컴파일한 것을 재사용할 수 있다는 것을 알고 있습니다.
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `<placeholdertype=concretetype>` 문법을 사용하여 기본 타입을 지정합니다.
 <!-- Old headings. Do not remove or links may break. -->
-<p><a id="ensuring-reproducible-builds-with-the-cargo-lock-file"></a></p>
-<h4 id="ensuring-reproducible-builds"><a class="header" href="#ensuring-reproducible-builds">Ensuring Reproducible Builds</a></h4>
-<p>Cargo has a mechanism that ensures that you can rebuild the same artifact every time you or anyone else builds your code: Cargo will use only the versions of the dependencies you specified until you indicate otherwise. For example, say that next week version 0.8.6 of the <code>rand</code> crate comes out, and that version contains an important bug fix, but it also contains a regression that will break your code. To handle this, Rust creates the <em>Cargo.lock</em> file the first time you run <code>cargo build</code>, so we now have this in the <em>guessing_game</em> directory.</p>
-<p>프로젝트를 처음 빌드할 때, Cargo는 기준에 맞는 모든 의존성 버전을 파악한 다음 <em>Cargo.lock</em> 파일에 씁니다. 나중에 프로젝트를 빌드할 때, Cargo는 <em>Cargo.lock</em> 파일이 존재하는 것을 보고 버전 파악 작업을 다시 수행하는 대신 거기에 지정된 버전을 사용합니다. 이를 통해 자동으로 재현 가능한 빌드를 가질 수 있습니다. 즉, <em>Cargo.lock</em> 파일 덕분에 명시적으로 업그레이드할 때까지 프로젝트는 0.8.5 버전에 머물러 있을 것입니다. <em>Cargo.lock</em> 파일은 재현 가능한 빌드에 중요하기 때문에, 종종 프로젝트의 나머지 코드와 함께 소스 제어에 체크인됩니다.</p>
-<h4 id="새-버전을-얻기-위해-크레이트-업데이트하기"><a class="header" href="#새-버전을-얻기-위해-크레이트-업데이트하기">새 버전을 얻기 위해 크레이트 업데이트하기</a></h4>
-<p>When you <em>do</em> want to update a crate, Cargo provides the command <code>update</code>, which will ignore the <em>Cargo.lock</em> file and figure out all the latest versions that fit your specifications in <em>Cargo.toml</em>. Cargo will then write those versions to the <em>Cargo.lock</em> file. Otherwise, by default, Cargo will only look for versions greater than 0.8.5 and less than 0.9.0. If the <code>rand</code> crate has released the two new versions 0.8.6 and 0.999.0, you would see the following if you ran <code>cargo update</code>:</p>
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `<placeholdertype=concretetype>` 문법을 사용하여 기본 타입을 지정합니다.
+<a id="ensuring-reproducible-builds-with-the-cargo-lock-file"></a>
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `<placeholdertype=concretetype>` 문법을 사용하여 기본 타입을 지정합니다.
+#### Ensuring Reproducible Builds
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `<placeholdertype=concretetype>` 문법을 사용하여 기본 타입을 지정합니다.
+Cargo has a mechanism that ensures that you can rebuild the same artifact every time you or anyone else builds your code: Cargo will use only the versions of the dependencies you specified until you indicate otherwise. For example, say that next week version 0.8.6 of the `rand` crate comes out, and that version contains an important bug fix, but it also contains a regression that will break your code. To handle this, Rust creates the _Cargo.lock_ file the first time you run `cargo build`, so we now have this in the _guessing_game_ directory.
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `<placeholdertype=concretetype>` 문법을 사용하여 기본 타입을 지정합니다.
+프로젝트를 처음 빌드할 때, Cargo는 기준에 맞는 모든 의존성 버전을 파악한 다음 _Cargo.lock_ 파일에 씁니다. 나중에 프로젝트를 빌드할 때, Cargo는 _Cargo.lock_ 파일이 존재하는 것을 보고 버전 파악 작업을 다시 수행하는 대신 거기에 지정된 버전을 사용합니다. 이를 통해 자동으로 재현 가능한 빌드를 가질 수 있습니다. 즉, _Cargo.lock_ 파일 덕분에 명시적으로 업그레이드할 때까지 프로젝트는 0.8.5 버전에 머물러 있을 것입니다. _Cargo.lock_ 파일은 재현 가능한 빌드에 중요하기 때문에, 종종 프로젝트의 나머지 코드와 함께 소스 제어에 체크인됩니다.
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `<placeholdertype=concretetype>` 문법을 사용하여 기본 타입을 지정합니다.
+#### 새 버전을 얻기 위해 크레이트 업데이트하기
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `<placeholdertype=concretetype>` 문법을 사용하여 기본 타입을 지정합니다.
+When you _do_ want to update a crate, Cargo provides the command `update`, which will ignore the _Cargo.lock_ file and figure out all the latest versions that fit your specifications in _Cargo.toml_. Cargo will then write those versions to the _Cargo.lock_ file. Otherwise, by default, Cargo will only look for versions greater than 0.8.5 and less than 0.9.0. If the `rand` crate has released the two new versions 0.8.6 and 0.999.0, you would see the following if you ran `cargo update`:
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `<placeholdertype=concretetype>` 문법을 사용하여 기본 타입을 지정합니다.
 <!-- manual-regeneration
 cd listings/ch02-guessing-game-tutorial/listing-02-02/
 cargo update
 assuming there is a new 0.8.x version of rand; otherwise use another update
 as a guide to creating the hypothetical output shown here -->
-<pre><code class="language-console">$ cargo update
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `<placeholdertype=concretetype>` 문법을 사용하여 기본 타입을 지정합니다.
+```````console
+$ cargo update
     Updating crates.io index
      Locking 1 package to latest Rust 1.85.0 compatible version
     Updating rand v0.8.5 -&gt; v0.8.6 (available: v0.999.0)
-</code></pre>
-<p>Cargo ignores the 0.999.0 release. At this point, you would also notice a change in your <em>Cargo.lock</em> file noting that the version of the <code>rand</code> crate you are now using is 0.8.6. To use <code>rand</code> version 0.999.0 or any version in the 0.999.<em>x</em> series, you’d have to update the <em>Cargo.toml</em> file to look like this instead (don’t actually make this change because the following examples assume you’re using <code>rand</code> 0.8):</p>
-<pre><code class="language-toml">[dependencies]
+```````
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `<placeholdertype=concretetype>` 문법을 사용하여 기본 타입을 지정합니다.
+Cargo ignores the 0.999.0 release. At this point, you would also notice a change in your _Cargo.lock_ file noting that the version of the `rand` crate you are now using is 0.8.6. To use `rand` version 0.999.0 or any version in the 0.999._x_ series, you’d have to update the _Cargo.toml_ file to look like this instead (don’t actually make this change because the following examples assume you’re using `rand` 0.8):
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `<placeholdertype=concretetype>` 문법을 사용하여 기본 타입을 지정합니다.
+```````toml
+[dependencies]
 rand = "0.999.0"
-</code></pre>
-<p>다음에 <code>cargo build</code> 를 실행하면, Cargo는 사용 가능한 크레이트의 레지스트리를 업데이트하고 지정한 새 버전에 따라 <code>rand</code> 요구 사항을 다시 평가합니다.</p>
-<p><a href="https://doc.rust-lang.org/cargo/">Cargo</a><!-- ignore -->와 <a href="https://doc.rust-lang.org/cargo/reference/publishing.html">그 생태계</a><!-- ignore -->에 대해 할 말이 더 많지만, 14장에서 논의할 것이고, 지금은 이것만 알면 됩니다. Cargo는 라이브러리를 매우 쉽게 재사용할 수 있게 해주므로, 러스트 개발자들은 여러 패키지로 조립된 더 작은 프로젝트를 작성할 수 있습니다.</p>
-<h3 id="난수-생성하기"><a class="header" href="#난수-생성하기">난수 생성하기</a></h3>
-<p><code>rand</code> 를 사용하여 추측할 숫자를 생성해 보겠습니다. 다음 단계는 목록 2-3과 같이 <em>src/main.rs</em> 를 업데이트하는 것입니다.</p>
+```````
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `<placeholdertype=concretetype>` 문법을 사용하여 기본 타입을 지정합니다.
+다음에 `cargo build` 를 실행하면, Cargo는 사용 가능한 크레이트의 레지스트리를 업데이트하고 지정한 새 버전에 따라 `rand` 요구 사항을 다시 평가합니다.
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `<placeholdertype=concretetype>` 문법을 사용하여 기본 타입을 지정합니다.
+[Cargo](https://doc.rust-lang.org/cargo/)<!-- ignore -->와 [그 생태계](https://doc.rust-lang.org/cargo/reference/publishing.html)<!-- ignore -->에 대해 할 말이 더 많지만, 14장에서 논의할 것이고, 지금은 이것만 알면 됩니다. Cargo는 라이브러리를 매우 쉽게 재사용할 수 있게 해주므로, 러스트 개발자들은 여러 패키지로 조립된 더 작은 프로젝트를 작성할 수 있습니다.
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `<placeholdertype=concretetype>` 문법을 사용하여 기본 타입을 지정합니다.
+### 난수 생성하기
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `<placeholdertype=concretetype>` 문법을 사용하여 기본 타입을 지정합니다.
+`rand` 를 사용하여 추측할 숫자를 생성해 보겠습니다. 다음 단계는 목록 2-3과 같이 _src/main.rs_ 를 업데이트하는 것입니다.
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `<placeholdertype=concretetype>` 문법을 사용하여 기본 타입을 지정합니다.
 <figure class="listing" id="listing-2-3">
 <span class="file-name">Filename: src/main.rs</span>
-<pre><code class="language-rust ignore">use std::io;
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `<placeholdertype=concretetype>` 문법을 사용하여 기본 타입을 지정합니다.
+```````rust,ignore
+use std::io;
+<p>use rand::Rng;</p>
+<p>fn main() {
+println!(“숫자를 맞춰보세요!”);</p>
+<pre><code>let secret_number = rand::thread_rng().gen_range(1..=100);
 
-use rand::Rng;
+println!("비밀 번호는: {secret_number}");
 
-fn main() {
-    println!("숫자를 맞춰보세요!");
+println!(추측을 입력하세요.);
 
-    let secret_number = rand::thread_rng().gen_range(1..=100);
+let mut guess = String::new();
 
-    println!("비밀 번호는: {secret_number}");
+io::stdin()
+    .read_line(&amp;mut guess)
+    .expect("줄 읽기 실패");
 
-    println!(추측을 입력하세요.);
-
-    let mut guess = String::new();
-
-    io::stdin()
-        .read_line(&amp;mut guess)
-        .expect("줄 읽기 실패");
-
-    println!("당신의 추측: {guess}");
-}</code></pre>
-<figcaption><a href="#listing-2-3">Listing 2-3</a>: Adding code to generate a random number</figcaption>
-</figure>
-<p>First, we add the line <code>use rand::Rng;</code>. The <code>Rng</code> trait defines methods that random number generators implement, and this trait must be in scope for us to use those methods. Chapter 10 will cover traits in detail.</p>
-<p>Next, we’re adding two lines in the middle. In the first line, we call the <code>rand::thread_rng</code> function that gives us the particular random number generator we’re going to use: one that is local to the current thread of execution and is seeded by the operating system. Then, we call the <code>gen_range</code> method on the random number generator. This method is defined by the <code>Rng</code> trait that we brought into scope with the <code>use rand::Rng;</code> statement. The <code>gen_range</code> method takes a range expression as an argument and generates a random number in the range. The kind of range expression we’re using here takes the form <code>start..=end</code> and is inclusive on the lower and upper bounds, so we need to specify <code>1..=100</code> to request a number between 1 and 100.</p>
-<section class="note" aria-role="note">
-<p>참고: 어떤 트레이트를 사용해야 하고, 어떤 메서드와 함수를 크레이트에서 호출해야 하는지 그냥 알 수는 없으므로, 각 크레이트에는 사용 지침이 포함된 문서가 있습니다. Cargo의 또 다른 멋진 기능은 <code>cargo doc --open</code> 명령을 실행하면 모든 의존성에서 제공하는 문서를 로컬에서 빌드하고 브라우저에서 열어준다는 것입니다. 예를 들어, <code>rand</code> 크레이트의 다른 기능에 관심이 있다면, <code>cargo doc --open</code> 을 실행하고 왼쪽 사이드바에서 <code>rand</code> 를 클릭하세요.</p>
-</section>
-<p>두 번째 새 줄은 비밀 번호를 출력합니다. 이것은 프로그램을 개발하는 동안 테스트할 수 있도록 유용하지만, 최종 버전에서는 삭제할 것입니다. 프로그램이 시작하자마자 답을 출력하면 게임이 별로 재미없으니까요!</p>
-<p>프로그램을 몇 번 실행해보세요:</p>
-<!-- manual-regeneration
+println!("당신의 추측: {guess}");
+</code></pre>
+<p>}</p>
+<pre><code>제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
+&lt;figcaption&gt;&lt;a href="#listing-2-3"&gt;Listing 2-3&lt;/a&gt;: Adding code to generate a random number&lt;/figcaption&gt;
+&lt;/figure&gt;
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
+First, we add the line `use rand::Rng;`. The `Rng` trait defines methods that random number generators implement, and this trait must be in scope for us to use those methods. Chapter 10 will cover traits in detail.
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
+Next, we’re adding two lines in the middle. In the first line, we call the `rand::thread_rng` function that gives us the particular random number generator we’re going to use: one that is local to the current thread of execution and is seeded by the operating system. Then, we call the `gen_range` method on the random number generator. This method is defined by the `Rng` trait that we brought into scope with the `use rand::Rng;` statement. The `gen_range` method takes a range expression as an argument and generates a random number in the range. The kind of range expression we’re using here takes the form `start..=end` and is inclusive on the lower and upper bounds, so we need to specify `1..=100` to request a number between 1 and 100.
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
+&lt;section class="note" aria-role="note"&gt;
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
+참고: 어떤 트레이트를 사용해야 하고, 어떤 메서드와 함수를 크레이트에서 호출해야 하는지 그냥 알 수는 없으므로, 각 크레이트에는 사용 지침이 포함된 문서가 있습니다. Cargo의 또 다른 멋진 기능은 `cargo doc --open` 명령을 실행하면 모든 의존성에서 제공하는 문서를 로컬에서 빌드하고 브라우저에서 열어준다는 것입니다. 예를 들어, `rand` 크레이트의 다른 기능에 관심이 있다면, `cargo doc --open` 을 실행하고 왼쪽 사이드바에서 `rand` 를 클릭하세요.
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
+&lt;/section&gt;
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
+두 번째 새 줄은 비밀 번호를 출력합니다. 이것은 프로그램을 개발하는 동안 테스트할 수 있도록 유용하지만, 최종 버전에서는 삭제할 것입니다. 프로그램이 시작하자마자 답을 출력하면 게임이 별로 재미없으니까요!
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
+프로그램을 몇 번 실행해보세요:
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
+&lt;!-- manual-regeneration
 cd listings/ch02-guessing-game-tutorial/listing-02-03/
 cargo run
 4
 cargo run
 5
--->
-<pre><code class="language-console">$ cargo run
+--&gt;
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
+```````console
+$ cargo run
    Compiling guessing_game v0.1.0 (file:///projects/guessing_game)
     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.02s
      Running `target/debug/guessing_game`
@@ -645,53 +702,67 @@ Please input your guess.
 5
 You guessed: 5
 </code></pre>
-<p>다른 난수를 얻어야 하며, 모두 1에서 100 사이의 숫자여야 합니다. 잘했습니다!</p>
+<p>제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 <code>&lt;PlaceholderType=ConcreteType&gt;</code> 문법을 사용하여 기본 타입을 지정합니다.
+다른 난수를 얻어야 하며, 모두 1에서 100 사이의 숫자여야 합니다. 잘했습니다!
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 <code>&lt;PlaceholderType=ConcreteType&gt;</code> 문법을 사용하여 기본 타입을 지정합니다.</p>
 <h2 id="추측을-비밀-번호와-비교하기"><a class="header" href="#추측을-비밀-번호와-비교하기">추측을 비밀 번호와 비교하기</a></h2>
-<p>이제 사용자 입력과 난수가 있으므로 비교할 수 있습니다. 그 단계는 목록 2-4에 나와 있습니다. 설명하겠지만, 이 코드는 아직 컴파일되지 않습니다.</p>
+<p>제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 <code>&lt;PlaceholderType=ConcreteType&gt;</code> 문법을 사용하여 기본 타입을 지정합니다.
+이제 사용자 입력과 난수가 있으므로 비교할 수 있습니다. 그 단계는 목록 2-4에 나와 있습니다. 설명하겠지만, 이 코드는 아직 컴파일되지 않습니다.
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 <code>&lt;PlaceholderType=ConcreteType&gt;</code> 문법을 사용하여 기본 타입을 지정합니다.</p>
 <figure class="listing" id="listing-2-4">
 <span class="file-name">Filename: src/main.rs</span>
-<pre><code class="language-rust ignore does_not_compile">use std::cmp::Ordering;
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `<placeholdertype=concretetype>` 문법을 사용하여 기본 타입을 지정합니다.
+```````rust,ignore,does_not_compile
+use std::cmp::Ordering;
 use std::io;
+<p>use rand::Rng;</p>
+<p>fn main() {
+// –생략–</p>
+<h1 id="println숫자를-맞춰보세요"><a class="header" href="#println숫자를-맞춰보세요">println!(“숫자를 맞춰보세요!”);</a></h1>
+<h1 id=""><a class="header" href="#"></a></h1>
+<h1 id="let-secret_number--randthread_rnggen_range1100"><a class="header" href="#let-secret_number--randthread_rnggen_range1100">let secret_number = rand::thread_rng().gen_range(1..=100);</a></h1>
+<h1 id="-1"><a class="header" href="#-1"></a></h1>
+<h1 id="println비밀-번호는-secret_number"><a class="header" href="#println비밀-번호는-secret_number">println!(“비밀 번호는: {secret_number}”);</a></h1>
+<h1 id="-2"><a class="header" href="#-2"></a></h1>
+<h1 id="println추측을-입력하세요"><a class="header" href="#println추측을-입력하세요">println!(추측을 입력하세요.);</a></h1>
+<h1 id="-3"><a class="header" href="#-3"></a></h1>
+<h1 id="let-mut-guess--stringnew"><a class="header" href="#let-mut-guess--stringnew">let mut guess = String::new();</a></h1>
+<h1 id="-4"><a class="header" href="#-4"></a></h1>
+<h1 id="iostdin"><a class="header" href="#iostdin">io::stdin()</a></h1>
+<h1 id="read_linemut-guess"><a class="header" href="#read_linemut-guess">.read_line(&amp;mut guess)</a></h1>
+<h1 id="expect줄-읽기-실패"><a class="header" href="#expect줄-읽기-실패">.expect(“줄 읽기 실패”);</a></h1>
+<pre><code>println!("당신의 추측: {guess}");
 
-use rand::Rng;
-
-fn main() {
-    // --생략--
-<span class="boring">    println!("숫자를 맞춰보세요!");
-</span><span class="boring">
-</span><span class="boring">    let secret_number = rand::thread_rng().gen_range(1..=100);
-</span><span class="boring">
-</span><span class="boring">    println!("비밀 번호는: {secret_number}");
-</span><span class="boring">
-</span><span class="boring">    println!(추측을 입력하세요.);
-</span><span class="boring">
-</span><span class="boring">    let mut guess = String::new();
-</span><span class="boring">
-</span><span class="boring">    io::stdin()
-</span><span class="boring">        .read_line(&amp;mut guess)
-</span><span class="boring">        .expect("줄 읽기 실패");
-</span>
-    println!("당신의 추측: {guess}");
-
-    match guess.cmp(&amp;secret_number) {
-        Ordering::Less =&gt; println!("너무 작아요!"),
-        Ordering::Greater =&gt; println!("너무 커요!"),
-        Ordering::Equal =&gt; println!("당신이 이겼습니다!"),
-    }
-}</code></pre>
-<figcaption><a href="#listing-2-4">Listing 2-4</a>: Handling the possible return values of comparing two numbers</figcaption>
-</figure>
-<p>First, we add another <code>use</code> statement, bringing a type called <code>std::cmp::Ordering</code> into scope from the standard library. The <code>Ordering</code> type is another enum and has the variants <code>Less</code>, <code>Greater</code>, and <code>Equal</code>. These are the three outcomes that are possible when you compare two values.</p>
-<p>Then, we add five new lines at the bottom that use the <code>Ordering</code> type. The <code>cmp</code> method compares two values and can be called on anything that can be compared. It takes a reference to whatever you want to compare with: Here, it’s comparing <code>guess</code> to <code>secret_number</code>. Then, it returns a variant of the <code>Ordering</code> enum we brought into scope with the <code>use</code> statement. We use a <a href="ch06-02-match.html"><code>match</code></a><!-- ignore --> expression to decide what to do next based on which variant of <code>Ordering</code> was returned from the call to <code>cmp</code> with the values in <code>guess</code> and <code>secret_number</code>.</p>
-<p>A <code>match</code> expression is made up of <em>arms</em>. An arm consists of a <em>pattern</em> to match against, and the code that should be run if the value given to <code>match</code> fits that arm’s pattern. Rust takes the value given to <code>match</code> and looks through each arm’s pattern in turn. Patterns and the <code>match</code> construct are powerful Rust features: They let you express a variety of situations your code might encounter, and they make sure you handle them all. These features will be covered in detail in Chapter 6 and Chapter 19, respectively.</p>
-<p>여기서 사용하는 <code>match</code> 표현식의 예를 살펴보겠습니다. 사용자가 50을 추측했고 이번에 무작위로 생성된 비밀 번호가 38이라고 가정해 보겠습니다.</p>
-<p>코드가 50을 38과 비교할 때, <code>cmp</code> 메서드는 50이 38보다 크기 때문에 <code>Ordering::Greater</code> 를 반환합니다. <code>match</code> 표현식은 <code>Ordering::Greater</code> 값을 얻고 각 arm의 패턴을 확인하기 시작합니다. 첫 번째 arm의 패턴인 <code>Ordering::Less</code> 를 보고, <code>Ordering::Greater</code> 값이 <code>Ordering::Less</code> 와 일치하지 않음을 확인하고, 해당 arm의 코드를 무시하고 다음 arm으로 이동합니다. 다음 arm의 패턴은 <code>Ordering::Greater</code> 이며, 이는 <code>Ordering::Greater</code> 와 <em>일치합니다</em>! 해당 arm의 연관 코드가 실행되고 화면에 <code>Too big!</code> 을 출력합니다. <code>match</code> 표현식은 첫 번째 성공적인 매치 후에 종료되므로, 이 시나리오에서는 마지막 arm을 보지 않습니다.</p>
-<p>그러나 목록 2-4의 코드는 아직 컴파일되지 않습니다. 시도해 보겠습니다:</p>
-<!--
+match guess.cmp(&amp;secret_number) {
+    Ordering::Less =&gt; println!("너무 작아요!"),
+    Ordering::Greater =&gt; println!("너무 커요!"),
+    Ordering::Equal =&gt; println!("당신이 이겼습니다!"),
+}
+</code></pre>
+<p>}</p>
+<pre><code>제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
+&lt;figcaption&gt;&lt;a href="#listing-2-4"&gt;Listing 2-4&lt;/a&gt;: Handling the possible return values of comparing two numbers&lt;/figcaption&gt;
+&lt;/figure&gt;
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
+First, we add another `use` statement, bringing a type called `std::cmp::Ordering` into scope from the standard library. The `Ordering` type is another enum and has the variants `Less`, `Greater`, and `Equal`. These are the three outcomes that are possible when you compare two values.
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
+Then, we add five new lines at the bottom that use the `Ordering` type. The `cmp` method compares two values and can be called on anything that can be compared. It takes a reference to whatever you want to compare with: Here, it’s comparing `guess` to `secret_number`. Then, it returns a variant of the `Ordering` enum we brought into scope with the `use` statement. We use a [`match`](ch06-02-match.html)&lt;!-- ignore --&gt; expression to decide what to do next based on which variant of `Ordering` was returned from the call to `cmp` with the values in `guess` and `secret_number`.
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
+A `match` expression is made up of _arms_. An arm consists of a _pattern_ to match against, and the code that should be run if the value given to `match` fits that arm’s pattern. Rust takes the value given to `match` and looks through each arm’s pattern in turn. Patterns and the `match` construct are powerful Rust features: They let you express a variety of situations your code might encounter, and they make sure you handle them all. These features will be covered in detail in Chapter 6 and Chapter 19, respectively.
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
+여기서 사용하는 `match` 표현식의 예를 살펴보겠습니다. 사용자가 50을 추측했고 이번에 무작위로 생성된 비밀 번호가 38이라고 가정해 보겠습니다.
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
+코드가 50을 38과 비교할 때, `cmp` 메서드는 50이 38보다 크기 때문에 `Ordering::Greater` 를 반환합니다. `match` 표현식은 `Ordering::Greater` 값을 얻고 각 arm의 패턴을 확인하기 시작합니다. 첫 번째 arm의 패턴인 `Ordering::Less` 를 보고, `Ordering::Greater` 값이 `Ordering::Less` 와 일치하지 않음을 확인하고, 해당 arm의 코드를 무시하고 다음 arm으로 이동합니다. 다음 arm의 패턴은 `Ordering::Greater` 이며, 이는 `Ordering::Greater` 와 _일치합니다_! 해당 arm의 연관 코드가 실행되고 화면에 `Too big!` 을 출력합니다. `match` 표현식은 첫 번째 성공적인 매치 후에 종료되므로, 이 시나리오에서는 마지막 arm을 보지 않습니다.
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
+그러나 목록 2-4의 코드는 아직 컴파일되지 않습니다. 시도해 보겠습니다:
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
+&lt;!--
 The error numbers in this output should be that of the code **WITHOUT** the
 anchor or snip comments
--->
-<pre><code class="language-console">$ cargo build
+--&gt;
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
+```````console
+$ cargo build
    Compiling libc v0.2.86
    Compiling getrandom v0.2.2
    Compiling cfg-if v1.0.0
@@ -716,9 +787,13 @@ note: method defined here
 For more information about this error, try `rustc --explain E0308`.
 error: could not compile `guessing_game` (bin "guessing_game") due to 1 previous error
 </code></pre>
-<p>오류의 핵심은 _일치하지 않는 타입 _이 있다는 것입니다. 러스트는 강력한 정적 타입 시스템을 가지고 있습니다. 그러나 타입 추론도 가지고 있습니다. <code>let mut guess = String::new()</code> 를 작성했을 때, 러스트는 <code>guess</code> 가 <code>String</code> 이어야 한다고 추론할 수 있었고, 우리가 타입을 작성하도록 강요하지 않았습니다. 반면에 <code>secret_number</code> 는 숫자 타입입니다. 러스트의 몇 가지 숫자 타입은 1에서 100 사이의 값을 가질 수 있습니다: <code>i32</code>, 32비트 숫자; <code>u32</code>, 부호 없는 32비트 숫자; <code>i64</code>, 64비트 숫자; 등등. 달리 명시하지 않는 한, 러스트는 <code>i32</code> 를 기본값으로 사용하며, 다른 곳에서 러스트가 다른 숫자 타입을 추론하도록 하는 타입 정보를 추가하지 않는 한 <code>secret_number</code> 의 타입입니다. 오류의 이유는 러스트가 문자열과 숫자 타입을 비교할 수 없기 때문입니다.</p>
-<p>Ultimately, we want to convert the <code>String</code> the program reads as input into a number type so that we can compare it numerically to the secret number. We do so by adding this line to the <code>main</code> function body:</p>
-<p><span class="filename">파일명: src/main.rs</span></p>
+<p>제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 <code>&lt;PlaceholderType=ConcreteType&gt;</code> 문법을 사용하여 기본 타입을 지정합니다.
+오류의 핵심은 _일치하지 않는 타입 _이 있다는 것입니다. 러스트는 강력한 정적 타입 시스템을 가지고 있습니다. 그러나 타입 추론도 가지고 있습니다. <code>let mut guess = String::new()</code> 를 작성했을 때, 러스트는 <code>guess</code> 가 <code>String</code> 이어야 한다고 추론할 수 있었고, 우리가 타입을 작성하도록 강요하지 않았습니다. 반면에 <code>secret_number</code> 는 숫자 타입입니다. 러스트의 몇 가지 숫자 타입은 1에서 100 사이의 값을 가질 수 있습니다: <code>i32</code>, 32비트 숫자; <code>u32</code>, 부호 없는 32비트 숫자; <code>i64</code>, 64비트 숫자; 등등. 달리 명시하지 않는 한, 러스트는 <code>i32</code> 를 기본값으로 사용하며, 다른 곳에서 러스트가 다른 숫자 타입을 추론하도록 하는 타입 정보를 추가하지 않는 한 <code>secret_number</code> 의 타입입니다. 오류의 이유는 러스트가 문자열과 숫자 타입을 비교할 수 없기 때문입니다.
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 <code>&lt;PlaceholderType=ConcreteType&gt;</code> 문법을 사용하여 기본 타입을 지정합니다.
+Ultimately, we want to convert the <code>String</code> the program reads as input into a number type so that we can compare it numerically to the secret number. We do so by adding this line to the <code>main</code> function body:
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 <code>&lt;PlaceholderType=ConcreteType&gt;</code> 문법을 사용하여 기본 타입을 지정합니다.
+<span class="filename">파일명: src/main.rs</span>
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 <code>&lt;PlaceholderType=ConcreteType&gt;</code> 문법을 사용하여 기본 타입을 지정합니다.</p>
 <pre><code class="language-rust ignore"><span class="boring">use std::cmp::Ordering;
 </span><span class="boring">use std::io;
 </span><span class="boring">
@@ -751,20 +826,30 @@ error: could not compile `guessing_game` (bin "guessing_game") due to 1 previous
         Ordering::Equal =&gt; println!("당신이 이겼습니다!"),
     }
 <span class="boring">}</span></code></pre>
-<p>해당 줄은 다음과 같습니다:</p>
+<p>제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 <code>&lt;PlaceholderType=ConcreteType&gt;</code> 문법을 사용하여 기본 타입을 지정합니다.
+해당 줄은 다음과 같습니다:
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 <code>&lt;PlaceholderType=ConcreteType&gt;</code> 문법을 사용하여 기본 타입을 지정합니다.</p>
 <pre><code class="language-rust ignore">let guess: u32 = guess.trim().parse().expect("숫자를 입력해주세요!");</code></pre>
-<p><code>guess</code> 라는 이름의 변수를 만듭니다. 하지만 잠깐, 프로그램에 이미 <code>guess</code> 라는 이름의 변수가 있지 않나요? 그렇습니다. 하지만 고맙게도 러스트는 이전 <code>guess</code> 값을 새 값으로 섀도잉할 수 있도록 허용합니다. _섀도잉 _을 사용하면 예를 들어 <code>guess_str</code> 과 <code>guess</code> 와 같이 두 개의 고유한 변수를 만들도록 강요하는 대신 <code>guess</code> 변수 이름을 재사용할 수 있습니다. 이에 대해서는 <a href="ch03-01-variables-and-mutability.html#shadowing">3장</a><!-- ignore -->에서 더 자세히 다룰 것이지만, 지금은 이 기능이 한 타입의 값을 다른 타입으로 변환하고 싶을 때 자주 사용된다는 점만 알아두세요.</p>
-<p>우리는 이 새로운 변수를 <code>guess.trim().parse()</code> 표현식에 바인딩합니다. 표현식의 <code>guess</code> 는 입력값을 문자열로 담고 있던 원래 <code>guess</code> 변수를 가리킵니다. <code>String</code> 인스턴스의 <code>trim</code> 메서드는 시작과 끝의 모든 공백을 제거합니다. 이는 문자열을 숫자 데이터만 담을 수 있는 <code>u32</code> 로 변환하기 전에 반드시 해야 하는 작업입니다. 사용자가 <code>read_line</code> 을 만족시키고 추측값을 입력하려면 <kbd>enter</kbd>를 눌러야 하는데, 이때 문자열에 줄바꿈 문자가 추가됩니다. 예를 들어, 사용자가 <kbd>5</kbd>를 입력하고 <kbd>enter</kbd>를 누르면 <code>guess</code> 는 <code>5\n</code> 과 같이 보입니다. <code>\n</code> 은 ’줄바꿈’을 나타냅니다. (윈도우에서 <kbd>enter</kbd>를 누르면 캐리지 리턴과 줄바꿈인 <code>\r\n</code> 이 발생합니다.) <code>trim</code> 메서드는 <code>\n</code> 또는 <code>\r\n</code> 을 제거하여 딱 <code>5</code> 만 남게 합니다.</p>
-<p>문자열의 <a href="../std/primitive.str.html#method.parse"><code>parse</code> 메서드</a><!-- ignore -->는 문자열을 다른 타입으로 변환합니다. 여기서는 문자열을 숫자로 변환하는 데 사용합니다. <code>let guess: u32</code> 를 사용하여 러스트에게 우리가 원하는 정확한 숫자 타입을 알려줄 필요가 있습니다. <code>guess</code> 뒤의 콜론(<code>:</code>)은 변수의 타입을 어노테이션할 것임을 러스트에게 알려줍니다. 러스트에는 몇 가지 내장된 숫자 타입이 있습니다. 여기서 보는 <code>u32</code> 는 부호 없는 32비트 정수입니다. 이는 작은 양수에 대한 좋은 기본 선택입니다. <a href="ch03-02-data-types.html#integer-types">3장</a><!-- ignore -->에서 다른 숫자 타입에 대해 배우게 될 것입니다.</p>
-<p>Additionally, the <code>u32</code> annotation in this example program and the comparison with <code>secret_number</code> means Rust will infer that <code>secret_number</code> should be a <code>u32</code> as well. So, now the comparison will be between two values of the same type!</p>
-<p>The <code>parse</code> method will only work on characters that can logically be converted into numbers and so can easily cause errors. If, for example, the string contained <code>A👍%</code>, there would be no way to convert that to a number. Because it might fail, the <code>parse</code> method returns a <code>Result</code> type, much as the <code>read_line</code> method does (discussed earlier in <a href="#handling-potential-failure-with-result">“Handling Potential Failure with <code>Result</code>”</a><!-- ignore -->). We’ll treat this <code>Result</code> the same way by using the <code>expect</code> method again. If <code>parse</code> returns an <code>Err</code> <code>Result</code> variant because it couldn’t create a number from the string, the <code>expect</code> call will crash the game and print the message we give it. If <code>parse</code> can successfully convert the string to a number, it will return the <code>Ok</code> variant of <code>Result</code>, and <code>expect</code> will return the number that we want from the <code>Ok</code> value.</p>
-<p>이제 프로그램을 실행해 봅시다:</p>
+<p>제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 <code>&lt;PlaceholderType=ConcreteType&gt;</code> 문법을 사용하여 기본 타입을 지정합니다.
+<code>guess</code> 라는 이름의 변수를 만듭니다. 하지만 잠깐, 프로그램에 이미 <code>guess</code> 라는 이름의 변수가 있지 않나요? 그렇습니다. 하지만 고맙게도 러스트는 이전 <code>guess</code> 값을 새 값으로 섀도잉할 수 있도록 허용합니다. _섀도잉 _을 사용하면 예를 들어 <code>guess_str</code> 과 <code>guess</code> 와 같이 두 개의 고유한 변수를 만들도록 강요하는 대신 <code>guess</code> 변수 이름을 재사용할 수 있습니다. 이에 대해서는 <a href="ch03-01-variables-and-mutability.html#shadowing">3장</a><!-- ignore -->에서 더 자세히 다룰 것이지만, 지금은 이 기능이 한 타입의 값을 다른 타입으로 변환하고 싶을 때 자주 사용된다는 점만 알아두세요.
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 <code>&lt;PlaceholderType=ConcreteType&gt;</code> 문법을 사용하여 기본 타입을 지정합니다.
+우리는 이 새로운 변수를 <code>guess.trim().parse()</code> 표현식에 바인딩합니다. 표현식의 <code>guess</code> 는 입력값을 문자열로 담고 있던 원래 <code>guess</code> 변수를 가리킵니다. <code>String</code> 인스턴스의 <code>trim</code> 메서드는 시작과 끝의 모든 공백을 제거합니다. 이는 문자열을 숫자 데이터만 담을 수 있는 <code>u32</code> 로 변환하기 전에 반드시 해야 하는 작업입니다. 사용자가 <code>read_line</code> 을 만족시키고 추측값을 입력하려면 <kbd>enter</kbd>를 눌러야 하는데, 이때 문자열에 줄바꿈 문자가 추가됩니다. 예를 들어, 사용자가 <kbd>5</kbd>를 입력하고 <kbd>enter</kbd>를 누르면 <code>guess</code> 는 <code>5\n</code> 과 같이 보입니다. <code>\n</code> 은 ’줄바꿈’을 나타냅니다. (윈도우에서 <kbd>enter</kbd>를 누르면 캐리지 리턴과 줄바꿈인 <code>\r\n</code> 이 발생합니다.) <code>trim</code> 메서드는 <code>\n</code> 또는 <code>\r\n</code> 을 제거하여 딱 <code>5</code> 만 남게 합니다.
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 <code>&lt;PlaceholderType=ConcreteType&gt;</code> 문법을 사용하여 기본 타입을 지정합니다.
+문자열의 <a href="../std/primitive.str.html#method.parse"><code>parse</code> 메서드</a><!-- ignore -->는 문자열을 다른 타입으로 변환합니다. 여기서는 문자열을 숫자로 변환하는 데 사용합니다. <code>let guess: u32</code> 를 사용하여 러스트에게 우리가 원하는 정확한 숫자 타입을 알려줄 필요가 있습니다. <code>guess</code> 뒤의 콜론(<code>:</code>)은 변수의 타입을 어노테이션할 것임을 러스트에게 알려줍니다. 러스트에는 몇 가지 내장된 숫자 타입이 있습니다. 여기서 보는 <code>u32</code> 는 부호 없는 32비트 정수입니다. 이는 작은 양수에 대한 좋은 기본 선택입니다. <a href="ch03-02-data-types.html#integer-types">3장</a><!-- ignore -->에서 다른 숫자 타입에 대해 배우게 될 것입니다.
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 <code>&lt;PlaceholderType=ConcreteType&gt;</code> 문법을 사용하여 기본 타입을 지정합니다.
+Additionally, the <code>u32</code> annotation in this example program and the comparison with <code>secret_number</code> means Rust will infer that <code>secret_number</code> should be a <code>u32</code> as well. So, now the comparison will be between two values of the same type!
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 <code>&lt;PlaceholderType=ConcreteType&gt;</code> 문법을 사용하여 기본 타입을 지정합니다.
+The <code>parse</code> method will only work on characters that can logically be converted into numbers and so can easily cause errors. If, for example, the string contained <code>A👍%</code>, there would be no way to convert that to a number. Because it might fail, the <code>parse</code> method returns a <code>Result</code> type, much as the <code>read_line</code> method does (discussed earlier in <a href="#handling-potential-failure-with-result">“Handling Potential Failure with <code>Result</code>”</a><!-- ignore -->). We’ll treat this <code>Result</code> the same way by using the <code>expect</code> method again. If <code>parse</code> returns an <code>Err</code> <code>Result</code> variant because it couldn’t create a number from the string, the <code>expect</code> call will crash the game and print the message we give it. If <code>parse</code> can successfully convert the string to a number, it will return the <code>Ok</code> variant of <code>Result</code>, and <code>expect</code> will return the number that we want from the <code>Ok</code> value.
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 <code>&lt;PlaceholderType=ConcreteType&gt;</code> 문법을 사용하여 기본 타입을 지정합니다.
+이제 프로그램을 실행해 봅시다:
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 <code>&lt;PlaceholderType=ConcreteType&gt;</code> 문법을 사용하여 기본 타입을 지정합니다.</p>
 <!-- manual-regeneration
 cd listings/ch02-guessing-game-tutorial/no-listing-03-convert-string-to-number/
 touch src/main.rs
 cargo run
   76
 -->
+<p>제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 <code>&lt;PlaceholderType=ConcreteType&gt;</code> 문법을 사용하여 기본 타입을 지정합니다.</p>
 <pre><code class="language-console">$ cargo run
    Compiling guessing_game v0.1.0 (file:///projects/guessing_game)
     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.26s
@@ -776,11 +861,17 @@ Please input your guess.
 You guessed: 76
 Too big!
 </code></pre>
-<p>Nice! Even though spaces were added before the guess, the program still figured out that the user guessed 76. Run the program a few times to verify the different behavior with different kinds of input: Guess the number correctly, guess a number that is too high, and guess a number that is too low.</p>
-<p>이제 대부분의 게임이 작동하지만, 사용자는 한 번만 추측할 수 있습니다. 반복문을 추가하여 그것을 변경해 봅시다!</p>
+<p>제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 <code>&lt;PlaceholderType=ConcreteType&gt;</code> 문법을 사용하여 기본 타입을 지정합니다.
+Nice! Even though spaces were added before the guess, the program still figured out that the user guessed 76. Run the program a few times to verify the different behavior with different kinds of input: Guess the number correctly, guess a number that is too high, and guess a number that is too low.
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 <code>&lt;PlaceholderType=ConcreteType&gt;</code> 문법을 사용하여 기본 타입을 지정합니다.
+이제 대부분의 게임이 작동하지만, 사용자는 한 번만 추측할 수 있습니다. 반복문을 추가하여 그것을 변경해 봅시다!
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 <code>&lt;PlaceholderType=ConcreteType&gt;</code> 문법을 사용하여 기본 타입을 지정합니다.</p>
 <h2 id="반복문으로-여러-번-추측-허용하기"><a class="header" href="#반복문으로-여러-번-추측-허용하기">반복문으로 여러 번 추측 허용하기</a></h2>
-<p><code>loop</code> 키워드는 무한 루프를 만듭니다. 사용자가 숫자를 추측할 기회를 더 많이 주기 위해 루프를 추가할 것입니다:</p>
-<p><span class="filename">파일명: src/main.rs</span></p>
+<p>제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 <code>&lt;PlaceholderType=ConcreteType&gt;</code> 문법을 사용하여 기본 타입을 지정합니다.
+<code>loop</code> 키워드는 무한 루프를 만듭니다. 사용자가 숫자를 추측할 기회를 더 많이 주기 위해 루프를 추가할 것입니다:
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 <code>&lt;PlaceholderType=ConcreteType&gt;</code> 문법을 사용하여 기본 타입을 지정합니다.
+<span class="filename">파일명: src/main.rs</span>
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 <code>&lt;PlaceholderType=ConcreteType&gt;</code> 문법을 사용하여 기본 타입을 지정합니다.</p>
 <pre><code class="language-rust ignore"><span class="boring">use std::cmp::Ordering;
 </span><span class="boring">use std::io;
 </span><span class="boring">
@@ -818,8 +909,11 @@ Too big!
         }
     }
 }</code></pre>
-<p>보시다시피, 추측 입력 프롬프트부터 모든 것을 루프 안으로 옮겼습니다. 루프 안의 줄들을 각각 네 칸씩 더 들여쓰고 프로그램을 다시 실행하세요. 이제 프로그램은 영원히 다른 추측을 요구할 것이며, 이는 실제로 새로운 문제를 야기합니다. 사용자가 종료할 수 없는 것 같습니다!</p>
-<p>The user could always interrupt the program by using the keyboard shortcut <kbd>ctrl</kbd>-<kbd>C</kbd>. But there’s another way to escape this insatiable monster, as mentioned in the <code>parse</code> discussion in <a href="#comparing-the-guess-to-the-secret-number">“Comparing the Guess to the Secret Number”</a><!-- ignore -->: If the user enters a non-number answer, the program will crash. We can take advantage of that to allow the user to quit, as shown here:</p>
+<p>제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 <code>&lt;PlaceholderType=ConcreteType&gt;</code> 문법을 사용하여 기본 타입을 지정합니다.
+보시다시피, 추측 입력 프롬프트부터 모든 것을 루프 안으로 옮겼습니다. 루프 안의 줄들을 각각 네 칸씩 더 들여쓰고 프로그램을 다시 실행하세요. 이제 프로그램은 영원히 다른 추측을 요구할 것이며, 이는 실제로 새로운 문제를 야기합니다. 사용자가 종료할 수 없는 것 같습니다!
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 <code>&lt;PlaceholderType=ConcreteType&gt;</code> 문법을 사용하여 기본 타입을 지정합니다.
+The user could always interrupt the program by using the keyboard shortcut <kbd>ctrl</kbd>-<kbd>C</kbd>. But there’s another way to escape this insatiable monster, as mentioned in the <code>parse</code> discussion in <a href="#comparing-the-guess-to-the-secret-number">“Comparing the Guess to the Secret Number”</a><!-- ignore -->: If the user enters a non-number answer, the program will crash. We can take advantage of that to allow the user to quit, as shown here:
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 <code>&lt;PlaceholderType=ConcreteType&gt;</code> 문법을 사용하여 기본 타입을 지정합니다.</p>
 <!-- manual-regeneration
 cd listings/ch02-guessing-game-tutorial/no-listing-04-looping/
 touch src/main.rs
@@ -829,6 +923,7 @@ cargo run
 (correct guess)
 quit
 -->
+<p>제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 <code>&lt;PlaceholderType=ConcreteType&gt;</code> 문법을 사용하여 기본 타입을 지정합니다.</p>
 <pre><code class="language-console">$ cargo run
    Compiling guessing_game v0.1.0 (file:///projects/guessing_game)
     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.23s
@@ -854,10 +949,15 @@ thread 'main' panicked at src/main.rs:28:47:
 Please type a number!: ParseIntError { kind: InvalidDigit }
 note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
 </code></pre>
-<p><code>quit</code> 을 입력하면 게임이 종료되지만, 눈치채셨겠지만, 다른 숫자가 아닌 입력을 입력해도 마찬가지입니다. 이것은 좋지 않은 방법입니다. 우리는 정답을 맞췄을 때도 게임이 멈추기를 원합니다.</p>
+<p>제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 <code>&lt;PlaceholderType=ConcreteType&gt;</code> 문법을 사용하여 기본 타입을 지정합니다.
+<code>quit</code> 을 입력하면 게임이 종료되지만, 눈치채셨겠지만, 다른 숫자가 아닌 입력을 입력해도 마찬가지입니다. 이것은 좋지 않은 방법입니다. 우리는 정답을 맞췄을 때도 게임이 멈추기를 원합니다.
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 <code>&lt;PlaceholderType=ConcreteType&gt;</code> 문법을 사용하여 기본 타입을 지정합니다.</p>
 <h3 id="정답-맞춘-후-종료하기"><a class="header" href="#정답-맞춘-후-종료하기">정답 맞춘 후 종료하기</a></h3>
-<p><code>break</code> 문을 추가하여 사용자가 이겼을 때 게임이 종료되도록 프로그래밍해 봅시다:</p>
-<p><span class="filename">파일명: src/main.rs</span></p>
+<p>제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 <code>&lt;PlaceholderType=ConcreteType&gt;</code> 문법을 사용하여 기본 타입을 지정합니다.
+<code>break</code> 문을 추가하여 사용자가 이겼을 때 게임이 종료되도록 프로그래밍해 봅시다:
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 <code>&lt;PlaceholderType=ConcreteType&gt;</code> 문법을 사용하여 기본 타입을 지정합니다.
+<span class="filename">파일명: src/main.rs</span>
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 <code>&lt;PlaceholderType=ConcreteType&gt;</code> 문법을 사용하여 기본 타입을 지정합니다.</p>
 <pre><code class="language-rust ignore"><span class="boring">use std::cmp::Ordering;
 </span><span class="boring">use std::io;
 </span><span class="boring">
@@ -895,68 +995,82 @@ note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
         }
     }
 }</code></pre>
-<p><code>You win!</code> 뒤에 <code>break</code> 줄을 추가하면 사용자가 비밀 번호를 정확하게 추측했을 때 프로그램이 루프를 종료합니다. 루프를 종료하는 것은 또한 프로그램을 종료하는 것을 의미합니다. 왜냐하면 루프는 <code>main</code> 의 마지막 부분이기 때문입니다.</p>
+<p>제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 <code>&lt;PlaceholderType=ConcreteType&gt;</code> 문법을 사용하여 기본 타입을 지정합니다.
+<code>You win!</code> 뒤에 <code>break</code> 줄을 추가하면 사용자가 비밀 번호를 정확하게 추측했을 때 프로그램이 루프를 종료합니다. 루프를 종료하는 것은 또한 프로그램을 종료하는 것을 의미합니다. 왜냐하면 루프는 <code>main</code> 의 마지막 부분이기 때문입니다.
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 <code>&lt;PlaceholderType=ConcreteType&gt;</code> 문법을 사용하여 기본 타입을 지정합니다.</p>
 <h3 id="잘못된-입력-처리하기"><a class="header" href="#잘못된-입력-처리하기">잘못된 입력 처리하기</a></h3>
-<p>To further refine the game’s behavior, rather than crashing the program when the user inputs a non-number, let’s make the game ignore a non-number so that the user can continue guessing. We can do that by altering the line where <code>guess</code> is converted from a <code>String</code> to a <code>u32</code>, as shown in Listing 2-5.</p>
+<p>제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 <code>&lt;PlaceholderType=ConcreteType&gt;</code> 문법을 사용하여 기본 타입을 지정합니다.
+To further refine the game’s behavior, rather than crashing the program when the user inputs a non-number, let’s make the game ignore a non-number so that the user can continue guessing. We can do that by altering the line where <code>guess</code> is converted from a <code>String</code> to a <code>u32</code>, as shown in Listing 2-5.
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 <code>&lt;PlaceholderType=ConcreteType&gt;</code> 문법을 사용하여 기본 타입을 지정합니다.</p>
 <figure class="listing" id="listing-2-5">
 <span class="file-name">Filename: src/main.rs</span>
-<pre><code class="language-rust ignore"><span class="boring">use std::cmp::Ordering;
-</span><span class="boring">use std::io;
-</span><span class="boring">
-</span><span class="boring">use rand::Rng;
-</span><span class="boring">
-</span><span class="boring">fn main() {
-</span><span class="boring">    println!("숫자를 맞춰보세요!");
-</span><span class="boring">
-</span><span class="boring">    let secret_number = rand::thread_rng().gen_range(1..=100);
-</span><span class="boring">
-</span><span class="boring">    println!("비밀 번호는: {secret_number}");
-</span><span class="boring">
-</span><span class="boring">    loop {
-</span><span class="boring">        println!(추측을 입력하세요.);
-</span><span class="boring">
-</span><span class="boring">        let mut guess = String::new();
-</span><span class="boring">
-</span>        // --생략--
-
-        io::stdin()
-            .read_line(&amp;mut guess)
-            .expect("줄 읽기 실패");
-
-        let guess: u32 = match guess.trim().parse() {
-            Ok(num) =&gt; num,
-            Err(_) =&gt; continue,
-        };
-
-        println!("당신의 추측: {guess}");
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `<placeholdertype=concretetype>` 문법을 사용하여 기본 타입을 지정합니다.
+```````rust,ignore
+# use std::cmp::Ordering;
+# use std::io;
+# 
+# use rand::Rng;
+# 
+# fn main() {
+#     println!("숫자를 맞춰보세요!");
+# 
+#     let secret_number = rand::thread_rng().gen_range(1..=100);
+# 
+#     println!("비밀 번호는: {secret_number}");
+# 
+#     loop {
+#         println!(추측을 입력하세요.);
+# 
+#         let mut guess = String::new();
+# 
         // --생략--
-<span class="boring">
-</span><span class="boring">        match guess.cmp(&amp;secret_number) {
-</span><span class="boring">            Ordering::Less =&gt; println!("너무 작아요!"),
-</span><span class="boring">            Ordering::Greater =&gt; println!("너무 커요!"),
-</span><span class="boring">            Ordering::Equal =&gt; {
-</span><span class="boring">                println!("당신이 이겼습니다!");
-</span><span class="boring">                break;
-</span><span class="boring">            }
-</span><span class="boring">        }
-</span><span class="boring">    }
-</span><span class="boring">}</span></code></pre>
-<figcaption><a href="#listing-2-5">Listing 2-5</a>: Ignoring a non-number guess and asking for another guess instead of crashing the program</figcaption>
-</figure>
-<p>오류 발생 시 충돌하는 것에서 오류를 처리하는 것으로 이동하기 위해 <code>expect</code> 호출에서 <code>match</code> 표현식으로 전환합니다. <code>parse</code> 가 <code>Result</code> 타입을 반환하고 <code>Result</code> 가 <code>Ok</code> 와 <code>Err</code> variant를 갖는 열거형임을 기억하세요. <code>cmp</code> 메서드의 <code>Ordering</code> 결과와 마찬가지로 여기서도 <code>match</code> 표현식을 사용하고 있습니다.</p>
-<p><code>parse</code> 가 문자열을 숫자로 성공적으로 변환할 수 있으면, 결과 숫자를 포함하는 <code>Ok</code> 값을 반환합니다. 해당 <code>Ok</code> 값은 첫 번째 arm의 패턴과 일치하며, <code>match</code> 표현식은 <code>parse</code> 가 생성하여 <code>Ok</code> 값 안에 넣은 <code>num</code> 값을 반환합니다. 그 숫자는 우리가 생성하는 새 <code>guess</code> 변수에서 원하는 바로 그 위치에 있게 됩니다.</p>
-<p>If <code>parse</code> is <em>not</em> able to turn the string into a number, it will return an <code>Err</code> value that contains more information about the error. The <code>Err</code> value does not match the <code>Ok(num)</code> pattern in the first <code>match</code> arm, but it does match the <code>Err(_)</code> pattern in the second arm. The underscore, <code>_</code>, is a catch-all value; in this example, we’re saying we want to match all <code>Err</code> values, no matter what information they have inside them. So, the program will execute the second arm’s code, <code>continue</code>, which tells the program to go to the next iteration of the <code>loop</code> and ask for another guess. So, effectively, the program ignores all errors that <code>parse</code> might encounter!</p>
-<p>이제 프로그램의 모든 것이 예상대로 작동해야 합니다. 시도해 보겠습니다:</p>
-<!-- manual-regeneration
+<pre><code>    io::stdin()
+        .read_line(&amp;mut guess)
+        .expect("줄 읽기 실패");
+
+    let guess: u32 = match guess.trim().parse() {
+        Ok(num) =&gt; num,
+        Err(_) =&gt; continue,
+    };
+
+    println!("당신의 추측: {guess}");
+
+    // --생략--
+</code></pre>
+<h1 id="-5"><a class="header" href="#-5"></a></h1>
+<h1 id="match-guesscmpsecret_number-"><a class="header" href="#match-guesscmpsecret_number-">match guess.cmp(&amp;secret_number) {</a></h1>
+<h1 id="orderingless--println너무-작아요"><a class="header" href="#orderingless--println너무-작아요">Ordering::Less =&gt; println!(“너무 작아요!”),</a></h1>
+<h1 id="orderinggreater--println너무-커요"><a class="header" href="#orderinggreater--println너무-커요">Ordering::Greater =&gt; println!(“너무 커요!”),</a></h1>
+<h1 id="orderingequal--"><a class="header" href="#orderingequal--">Ordering::Equal =&gt; {</a></h1>
+<h1 id="println당신이-이겼습니다"><a class="header" href="#println당신이-이겼습니다">println!(“당신이 이겼습니다!”);</a></h1>
+<h1 id="break"><a class="header" href="#break">break;</a></h1>
+<h1 id="-6"><a class="header" href="#-6">}</a></h1>
+<h1 id="-7"><a class="header" href="#-7">}</a></h1>
+<h1 id="-8"><a class="header" href="#-8">}</a></h1>
+<h1 id="-9"><a class="header" href="#-9">}</a></h1>
+<pre><code>제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
+&lt;figcaption&gt;&lt;a href="#listing-2-5"&gt;Listing 2-5&lt;/a&gt;: Ignoring a non-number guess and asking for another guess instead of crashing the program&lt;/figcaption&gt;
+&lt;/figure&gt;
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
+오류 발생 시 충돌하는 것에서 오류를 처리하는 것으로 이동하기 위해 `expect` 호출에서 `match` 표현식으로 전환합니다. `parse` 가 `Result` 타입을 반환하고 `Result` 가 `Ok` 와 `Err` variant를 갖는 열거형임을 기억하세요. `cmp` 메서드의 `Ordering` 결과와 마찬가지로 여기서도 `match` 표현식을 사용하고 있습니다.
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
+`parse` 가 문자열을 숫자로 성공적으로 변환할 수 있으면, 결과 숫자를 포함하는 `Ok` 값을 반환합니다. 해당 `Ok` 값은 첫 번째 arm의 패턴과 일치하며, `match` 표현식은 `parse` 가 생성하여 `Ok` 값 안에 넣은 `num` 값을 반환합니다. 그 숫자는 우리가 생성하는 새 `guess` 변수에서 원하는 바로 그 위치에 있게 됩니다.
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
+If `parse` is _not_ able to turn the string into a number, it will return an `Err` value that contains more information about the error. The `Err` value does not match the `Ok(num)` pattern in the first `match` arm, but it does match the `Err(_)` pattern in the second arm. The underscore, `_`, is a catch-all value; in this example, we’re saying we want to match all `Err` values, no matter what information they have inside them. So, the program will execute the second arm’s code, `continue`, which tells the program to go to the next iteration of the `loop` and ask for another guess. So, effectively, the program ignores all errors that `parse` might encounter!
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
+이제 프로그램의 모든 것이 예상대로 작동해야 합니다. 시도해 보겠습니다:
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
+&lt;!-- manual-regeneration
 cd listings/ch02-guessing-game-tutorial/listing-02-05/
 cargo run
 (too small guess)
 (too big guess)
 foo
 (correct guess)
--->
-<pre><code class="language-console">$ cargo run
+--&gt;
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
+```````console
+$ cargo run
    Compiling guessing_game v0.1.0 (file:///projects/guessing_game)
     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.13s
      Running `target/debug/guessing_game`
@@ -977,51 +1091,58 @@ Please input your guess.
 You guessed: 61
 You win!
 </code></pre>
-<p>멋지네요! 마지막으로 작은 수정 하나만 더 하면 추측 게임을 완성할 수 있습니다. 프로그램이 여전히 비밀 번호를 출력하고 있다는 것을 기억하세요. 테스트에는 효과적이었지만, 게임의 재미를 망칩니다. 비밀 번호를 출력하는 <code>println!</code> 을 삭제합시다. 목록 2-6은 최종 코드를 보여줍니다.</p>
+<p>제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 <code>&lt;PlaceholderType=ConcreteType&gt;</code> 문법을 사용하여 기본 타입을 지정합니다.
+멋지네요! 마지막으로 작은 수정 하나만 더 하면 추측 게임을 완성할 수 있습니다. 프로그램이 여전히 비밀 번호를 출력하고 있다는 것을 기억하세요. 테스트에는 효과적이었지만, 게임의 재미를 망칩니다. 비밀 번호를 출력하는 <code>println!</code> 을 삭제합시다. 목록 2-6은 최종 코드를 보여줍니다.
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 <code>&lt;PlaceholderType=ConcreteType&gt;</code> 문법을 사용하여 기본 타입을 지정합니다.</p>
 <figure class="listing" id="listing-2-6">
 <span class="file-name">Filename: src/main.rs</span>
-<pre><code class="language-rust ignore">use std::cmp::Ordering;
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `<placeholdertype=concretetype>` 문법을 사용하여 기본 타입을 지정합니다.
+```````rust,ignore
+use std::cmp::Ordering;
 use std::io;
+<p>use rand::Rng;</p>
+<p>fn main() {
+println!(“숫자를 맞춰보세요!”);</p>
+<pre><code>let secret_number = rand::thread_rng().gen_range(1..=100);
 
-use rand::Rng;
+loop {
+    println!(추측을 입력하세요.);
 
-fn main() {
-    println!("숫자를 맞춰보세요!");
+    let mut guess = String::new();
 
-    let secret_number = rand::thread_rng().gen_range(1..=100);
+    io::stdin()
+        .read_line(&amp;mut guess)
+        .expect("줄 읽기 실패");
 
-    loop {
-        println!(추측을 입력하세요.);
+    let guess: u32 = match guess.trim().parse() {
+        Ok(num) =&gt; num,
+        Err(_) =&gt; continue,
+    };
 
-        let mut guess = String::new();
+    println!("당신의 추측: {guess}");
 
-        io::stdin()
-            .read_line(&amp;mut guess)
-            .expect("줄 읽기 실패");
-
-        let guess: u32 = match guess.trim().parse() {
-            Ok(num) =&gt; num,
-            Err(_) =&gt; continue,
-        };
-
-        println!("당신의 추측: {guess}");
-
-        match guess.cmp(&amp;secret_number) {
-            Ordering::Less =&gt; println!("너무 작아요!"),
-            Ordering::Greater =&gt; println!("너무 커요!"),
-            Ordering::Equal =&gt; {
-                println!("당신이 이겼습니다!");
-                break;
-            }
+    match guess.cmp(&amp;secret_number) {
+        Ordering::Less =&gt; println!("너무 작아요!"),
+        Ordering::Greater =&gt; println!("너무 커요!"),
+        Ordering::Equal =&gt; {
+            println!("당신이 이겼습니다!");
+            break;
         }
     }
-}</code></pre>
-<figcaption><a href="#listing-2-6">Listing 2-6</a>: Complete guessing game code</figcaption>
-</figure>
-<p>이 시점에서, 당신은 성공적으로 추측 게임을 만들었습니다. 축하합니다!</p>
-<h2 id="요약"><a class="header" href="#요약">요약</a></h2>
-<p>이 프로젝트는 <code>let</code>, <code>match</code>, 함수, 외부 크레이트 사용 등 많은 새로운 러스트 개념을 소개하는 실습 방법이었습니다. 다음 몇 장에서는 이러한 개념에 대해 더 자세히 배울 것입니다. 3장에서는 변수, 데이터 타입, 함수와 같이 대부분의 프로그래밍 언어가 가지고 있는 개념을 다루고, 러스트에서 사용하는 방법을 보여줍니다. 4장에서는 러스트를 다른 언어와 다르게 만드는 기능인 소유권을 탐구합니다. 5장에서는 구조체와 메서드 구문을 논의하고, 6장에서는 열거형이 어떻게 작동하는지 설명합니다.</p>
-
+}
+</code></pre>
+<p>}</p>
+<pre><code>제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
+&lt;figcaption&gt;&lt;a href="#listing-2-6"&gt;Listing 2-6&lt;/a&gt;: Complete guessing game code&lt;/figcaption&gt;
+&lt;/figure&gt;
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
+이 시점에서, 당신은 성공적으로 추측 게임을 만들었습니다. 축하합니다!
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
+## 요약
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
+이 프로젝트는 `let`, `match`, 함수, 외부 크레이트 사용 등 많은 새로운 러스트 개념을 소개하는 실습 방법이었습니다. 다음 몇 장에서는 이러한 개념에 대해 더 자세히 배울 것입니다. 3장에서는 변수, 데이터 타입, 함수와 같이 대부분의 프로그래밍 언어가 가지고 있는 개념을 다루고, 러스트에서 사용하는 방법을 보여줍니다. 4장에서는 러스트를 다른 언어와 다르게 만드는 기능인 소유권을 탐구합니다. 5장에서는 구조체와 메서드 구문을 논의하고, 6장에서는 열거형이 어떻게 작동하는지 설명합니다.
+</code></pre>
+</placeholdertype=concretetype></figure></placeholdertype=concretetype></figure></placeholdertype=concretetype></figure></placeholdertype=concretetype></figure></placeholdertype=concretetype></placeholdertype=concretetype></placeholdertype=concretetype></placeholdertype=concretetype></placeholdertype=concretetype></placeholdertype=concretetype></placeholdertype=concretetype></placeholdertype=concretetype></placeholdertype=concretetype></placeholdertype=concretetype></placeholdertype=concretetype></placeholdertype=concretetype></placeholdertype=concretetype></placeholdertype=concretetype></placeholdertype=concretetype></placeholdertype=concretetype></placeholdertype=concretetype></placeholdertype=concretetype></placeholdertype=concretetype></placeholdertype=concretetype></placeholdertype=concretetype></placeholdertype=concretetype></placeholdertype=concretetype></placeholdertype=concretetype></placeholdertype=concretetype></placeholdertype=concretetype></figure>
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">

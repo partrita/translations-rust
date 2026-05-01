@@ -96,7 +96,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-01ba4889.js";
+            window.path_to_searchindex_js = "searchindex-0481507b.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-f10b093a.js"></script>
@@ -259,13 +259,13 @@ $ cargo add trpl
 <figure class="listing" id="listing-17-1">
 <span class="file-name">Filename: src/main.rs</span>
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">extern crate trpl; // required for mdbook test
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">fn main() {
 </span><span class="boring">    // TODO: we'll add this next!
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span>use trpl::Html;
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 async fn page_title(url: &amp;str) -&gt; Option&lt;String&gt; {
     let response = trpl::get(url).await;
     let response_text = response.text().await;
@@ -285,13 +285,13 @@ async fn page_title(url: &amp;str) -&gt; Option&lt;String&gt; {
 <figure class="listing" id="listing-17-2">
 <span class="file-name">Filename: src/main.rs</span>
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">extern crate trpl; // required for mdbook test
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">use trpl::Html;
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">fn main() {
 </span><span class="boring">    // TODO: we'll add this next!
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">async fn page_title(url: &amp;str) -&gt; Option&lt;String&gt; {
 </span>    let response_text = trpl::get(url).await.text().await;
 <span class="boring">    Html::parse(&amp;response_text)
@@ -308,7 +308,7 @@ async fn page_title(url: &amp;str) -&gt; Option&lt;String&gt; {
 </span><span class="boring">extern crate trpl; // required for mdbook test
 </span>use std::future::Future;
 use trpl::Html;
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 fn page_title(url: &amp;str) -&gt; impl Future&lt;Output = Option&lt;String&gt;&gt; {
     async move {
         let text = trpl::get(url).await.text().await;
@@ -334,9 +334,9 @@ fn page_title(url: &amp;str) -&gt; impl Future&lt;Output = Option&lt;String&gt;&
 <figure class="listing" id="listing-17-3">
 <span class="file-name">Filename: src/main.rs</span>
 <pre><code class="language-rust ignore does_not_compile"><span class="boring">extern crate trpl; // required for mdbook test
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">use trpl::Html;
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span>async fn main() {
     let args: Vec&lt;String&gt; = std::env::args().collect();
     let url = &amp;args[1];
@@ -345,7 +345,7 @@ fn page_title(url: &amp;str) -&gt; impl Future&lt;Output = Option&lt;String&gt;&
         None =&gt; println!("{url} had no title"),
     }
 }
-<span class="boring">
+<span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">async fn page_title(url: &amp;str) -&gt; Option&lt;String&gt; {
 </span><span class="boring">    let response_text = trpl::get(url).await.text().await;
 </span><span class="boring">    Html::parse(&amp;response_text)
@@ -375,12 +375,12 @@ copy just the compiler error
 <span class="file-name">Filename: src/main.rs</span>
 <!-- should_panic,noplayground because mdbook test does not pass args -->
 <pre><code class="language-rust should_panic noplayground"><span class="boring">extern crate trpl; // required for mdbook test
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">use trpl::Html;
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span>fn main() {
     let args: Vec&lt;String&gt; = std::env::args().collect();
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     trpl::block_on(async {
         let url = &amp;args[1];
         match page_title(url).await {
@@ -389,7 +389,7 @@ copy just the compiler error
         }
     })
 }
-<span class="boring">
+<span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">async fn page_title(url: &amp;str) -&gt; Option&lt;String&gt; {
 </span><span class="boring">    let response_text = trpl::get(url).await.text().await;
 </span><span class="boring">    Html::parse(&amp;response_text)
@@ -416,7 +416,7 @@ The title for https://www.rust-lang.org was
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span><span class="boring">extern crate trpl; // required for mdbook test
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span>enum PageTitleFuture&lt;'a&gt; {
     Initial { url: &amp;'a str },
     GetAwaitPoint { url: &amp;'a str },
@@ -438,22 +438,22 @@ The title for https://www.rust-lang.org was
 <span class="file-name">Filename: src/main.rs</span>
 <!-- should_panic,noplayground because mdbook does not pass args -->
 <pre><code class="language-rust should_panic noplayground"><span class="boring">extern crate trpl; // required for mdbook test
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span>use trpl::{Either, Html};
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 fn main() {
     let args: Vec&lt;String&gt; = std::env::args().collect();
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     trpl::block_on(async {
         let title_fut_1 = page_title(&amp;args[1]);
         let title_fut_2 = page_title(&amp;args[2]);
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
         let (url, maybe_title) =
             match trpl::select(title_fut_1, title_fut_2).await {
                 Either::Left(left) =&gt; left,
                 Either::Right(right) =&gt; right,
             };
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
         println!("{url} returned first");
         match maybe_title {
             Some(title) =&gt; println!("Its page title was: '{title}'"),
@@ -461,7 +461,7 @@ fn main() {
         }
     })
 }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 async fn page_title(url: &amp;str) -&gt; (&amp;str, Option&lt;String&gt;) {
     let response_text = trpl::get(url).await.text().await;
     let title = Html::parse(&amp;response_text)

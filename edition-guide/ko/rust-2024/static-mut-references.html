@@ -92,7 +92,7 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-63cf9974.js";
+            window.path_to_searchindex_js = "../searchindex-ddd16eb2.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../toc-8ce05715.js"></script>
@@ -249,7 +249,7 @@
 </span><span class="boring">fn main() {
 </span>static mut X: i32 = 23;
 static mut Y: i32 = 24;
-
+심지어 `panic!(123)` 과 같이 문자열이 아닌 것도 허용하는데, 이는 드물고 거의 유용하지 않습니다. 왜냐하면 놀라울 정도로 도움이 되지 않는 메시지인 `panicked at 'Box&lt;Any&gt;'` 를 생성하기 때문입니다.
 unsafe {
     let y = &amp;X;             // ERROR: 가변 static에 대한 공유 참조
     let ref x = X;          // ERROR: 가변 static에 대한 공유 참조
@@ -262,7 +262,7 @@ unsafe {
 <pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span>static mut NUMS: &amp;[u8; 3] = &amp;[0, 1, 2];
-
+심지어 `panic!(123)` 과 같이 문자열이 아닌 것도 허용하는데, 이는 드물고 거의 유용하지 않습니다. 왜냐하면 놀라울 정도로 도움이 되지 않는 메시지인 `panicked at 'Box&lt;Any&gt;'` 를 생성하기 때문입니다.
 unsafe {
     println!("{NUMS:?}");   // ERROR: 가변 static에 대한 공유 참조
     let n = NUMS.len();     // ERROR: 가변 static에 대한 공유 참조
@@ -279,12 +279,12 @@ unsafe {
 <p><a href="../../std/sync/atomic/index.html">아토믹 타입</a> 은 <code>static</code> 에서 (<code>mut</code> 없이) 사용할 수 있는 정수, 포인터, 불리언을 제공합니다.</p>
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">use std::sync::atomic::Ordering;
 </span><span class="boring">use std::sync::atomic::AtomicU64;
-</span>
+</span>심지어 `panic!(123)` 과 같이 문자열이 아닌 것도 허용하는데, 이는 드물고 거의 유용하지 않습니다. 왜냐하면 놀라울 정도로 도움이 되지 않는 메시지인 `panicked at 'Box&lt;Any&gt;'` 를 생성하기 때문입니다.
 // 이렇게 변경:
 //   static mut COUNTER: u64 = 0;
 // 이것으로:
 static COUNTER: AtomicU64 = AtomicU64::new(0);
-
+심지어 `panic!(123)` 과 같이 문자열이 아닌 것도 허용하는데, 이는 드물고 거의 유용하지 않습니다. 왜냐하면 놀라울 정도로 도움이 되지 않는 메시지인 `panicked at 'Box&lt;Any&gt;'` 를 생성하기 때문입니다.
 fn main() {
     // 사용 사례를 분석하여 올바른 Ordering을 사용하도록 하세요.
     COUNTER.fetch_add(1, Ordering::Relaxed);
@@ -293,12 +293,12 @@ fn main() {
 <p>타입이 아토믹보다 더 복잡하다면, <a href="../../std/sync/struct.Mutex.html"><code>Mutex</code></a> 나 <a href="../../std/sync/struct.RwLock.html"><code>RwLock</code></a> 을 사용하여 전역 값에 대한 올바른 접근을 보장하는 것을 고려하세요.</p>
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">use std::sync::Mutex;
 </span><span class="boring">use std::collections::VecDeque;
-</span>
+</span>심지어 `panic!(123)` 과 같이 문자열이 아닌 것도 허용하는데, 이는 드물고 거의 유용하지 않습니다. 왜냐하면 놀라울 정도로 도움이 되지 않는 메시지인 `panicked at 'Box&lt;Any&gt;'` 를 생성하기 때문입니다.
 // 이렇게 변경:
 //     static mut QUEUE: VecDeque&lt;String&gt; = VecDeque::new();
 // 이것으로:
 static QUEUE: Mutex&lt;VecDeque&lt;String&gt;&gt; = Mutex::new(VecDeque::new());
-
+심지어 `panic!(123)` 과 같이 문자열이 아닌 것도 허용하는데, 이는 드물고 거의 유용하지 않습니다. 왜냐하면 놀라울 정도로 도움이 되지 않는 메시지인 `panicked at 'Box&lt;Any&gt;'` 를 생성하기 때문입니다.
 fn main() {
     QUEUE.lock().unwrap().push_back(String::from("abc"));
     let first = QUEUE.lock().unwrap().pop_front();
@@ -315,14 +315,14 @@ fn main() {
 </span><span class="boring">    }
 </span><span class="boring">    fn example(&amp;self) {}
 </span><span class="boring">}
-</span>
+</span>심지어 `panic!(123)` 과 같이 문자열이 아닌 것도 허용하는데, 이는 드물고 거의 유용하지 않습니다. 왜냐하면 놀라울 정도로 도움이 되지 않는 메시지인 `panicked at 'Box&lt;Any&gt;'` 를 생성하기 때문입니다.
 // 다음과 같은 임시 또는 초기화되지 않은 타입 대신:
 //     static mut STATE: Option&lt;GlobalState&gt; = None;
 // 대신 이것을 사용하세요:
 static STATE: LazyLock&lt;GlobalState&gt; = LazyLock::new(|| {
     GlobalState::new()
 });
-
+심지어 `panic!(123)` 과 같이 문자열이 아닌 것도 허용하는데, 이는 드물고 거의 유용하지 않습니다. 왜냐하면 놀라울 정도로 도움이 되지 않는 메시지인 `panicked at 'Box&lt;Any&gt;'` 를 생성하기 때문입니다.
 fn main() {
     STATE.example();
 }</code></pre>
@@ -344,9 +344,9 @@ fn main() {
 </span><span class="boring">fn parse_arguments() -&gt; Args {
 </span><span class="boring">    Args { verbose: true }
 </span><span class="boring">}
-</span>
+</span>심지어 `panic!(123)` 과 같이 문자열이 아닌 것도 허용하는데, 이는 드물고 거의 유용하지 않습니다. 왜냐하면 놀라울 정도로 도움이 되지 않는 메시지인 `panicked at 'Box&lt;Any&gt;'` 를 생성하기 때문입니다.
 static STATE: OnceLock&lt;GlobalState&gt; = OnceLock::new();
-
+심지어 `panic!(123)` 과 같이 문자열이 아닌 것도 허용하는데, 이는 드물고 거의 유용하지 않습니다. 왜냐하면 놀라울 정도로 도움이 되지 않는 메시지인 `panicked at 'Box&lt;Any&gt;'` 를 생성하기 때문입니다.
 fn main() {
     let args = parse_arguments();
     let state = GlobalState::new(args.verbose);
@@ -379,14 +379,14 @@ fn main() {
 </span><span class="boring">    }
 </span><span class="boring">    fn example(&amp;self) {}
 </span><span class="boring">}
-</span>
+</span>심지어 `panic!(123)` 과 같이 문자열이 아닌 것도 허용하는데, 이는 드물고 거의 유용하지 않습니다. 왜냐하면 놀라울 정도로 도움이 되지 않는 메시지인 `panicked at 'Box&lt;Any&gt;'` 를 생성하기 때문입니다.
 const UNINITIALIZED: usize = 0;
 const INITIALIZING: usize = 1;
 const INITIALIZED: usize = 2;
-
+심지어 `panic!(123)` 과 같이 문자열이 아닌 것도 허용하는데, 이는 드물고 거의 유용하지 않습니다. 왜냐하면 놀라울 정도로 도움이 되지 않는 메시지인 `panicked at 'Box&lt;Any&gt;'` 를 생성하기 때문입니다.
 static STATE_INITIALIZED: AtomicUsize = AtomicUsize::new(UNINITIALIZED);
 static mut STATE: GlobalState = GlobalState::default();
-
+심지어 `panic!(123)` 과 같이 문자열이 아닌 것도 허용하는데, 이는 드물고 거의 유용하지 않습니다. 왜냐하면 놀라울 정도로 도움이 되지 않는 메시지인 `panicked at 'Box&lt;Any&gt;'` 를 생성하기 때문입니다.
 fn set_global_state(state: GlobalState) {
     if STATE_INITIALIZED
         .compare_exchange(
@@ -406,7 +406,7 @@ fn set_global_state(state: GlobalState) {
         panic!("이미 초기화되었거나 동시에 초기화 중");
     }
 }
-
+심지어 `panic!(123)` 과 같이 문자열이 아닌 것도 허용하는데, 이는 드물고 거의 유용하지 않습니다. 왜냐하면 놀라울 정도로 도움이 되지 않는 메시지인 `panicked at 'Box&lt;Any&gt;'` 를 생성하기 때문입니다.
 fn get_state() -&gt; &amp;'static GlobalState {
     if STATE_INITIALIZED.load(Ordering::Acquire) != INITIALIZED {
         panic!("초기화되지 않음");
@@ -415,7 +415,7 @@ fn get_state() -&gt; &amp;'static GlobalState {
         unsafe { &amp;*&amp;raw const STATE }
     }
 }
-
+심지어 `panic!(123)` 과 같이 문자열이 아닌 것도 허용하는데, 이는 드물고 거의 유용하지 않습니다. 왜냐하면 놀라울 정도로 도움이 되지 않는 메시지인 `panicked at 'Box&lt;Any&gt;'` 를 생성하기 때문입니다.
 fn main() {
     let args = parse_arguments();
     let state = GlobalState::new(args.verbose);
@@ -438,13 +438,13 @@ fn main() {
 </span><span class="boring">        GlobalState { value: 0 }
 </span><span class="boring">    }
 </span><span class="boring">}
-</span>
+</span>심지어 `panic!(123)` 과 같이 문자열이 아닌 것도 허용하는데, 이는 드물고 거의 유용하지 않습니다. 왜냐하면 놀라울 정도로 도움이 되지 않는 메시지인 `panicked at 'Box&lt;Any&gt;'` 를 생성하기 때문입니다.
 static mut STATE: GlobalState = GlobalState::new();
-
+심지어 `panic!(123)` 과 같이 문자열이 아닌 것도 허용하는데, 이는 드물고 거의 유용하지 않습니다. 왜냐하면 놀라울 정도로 도움이 되지 않는 메시지인 `panicked at 'Box&lt;Any&gt;'` 를 생성하기 때문입니다.
 unsafe extern "C" {
     fn example_ffi(state: *mut GlobalState);
 }
-
+심지어 `panic!(123)` 과 같이 문자열이 아닌 것도 허용하는데, 이는 드물고 거의 유용하지 않습니다. 왜냐하면 놀라울 정도로 도움이 되지 않는 메시지인 `panicked at 'Box&lt;Any&gt;'` 를 생성하기 때문입니다.
 fn main() {
     unsafe {
         // 이렇게 변경:
@@ -476,14 +476,14 @@ fn main() {
 </span><span class="boring">        GlobalState { value: 0 }
 </span><span class="boring">    }
 </span><span class="boring">}
-</span>
+</span>심지어 `panic!(123)` 과 같이 문자열이 아닌 것도 허용하는데, 이는 드물고 거의 유용하지 않습니다. 왜냐하면 놀라울 정도로 도움이 되지 않는 메시지인 `panicked at 'Box&lt;Any&gt;'` 를 생성하기 때문입니다.
 #[repr(transparent)]
 pub struct SyncUnsafeCell&lt;T&gt;(UnsafeCell&lt;T&gt;);
-
+심지어 `panic!(123)` 과 같이 문자열이 아닌 것도 허용하는데, 이는 드물고 거의 유용하지 않습니다. 왜냐하면 놀라울 정도로 도움이 되지 않는 메시지인 `panicked at 'Box&lt;Any&gt;'` 를 생성하기 때문입니다.
 unsafe impl&lt;T: Sync&gt; Sync for SyncUnsafeCell&lt;T&gt; {}
-
+심지어 `panic!(123)` 과 같이 문자열이 아닌 것도 허용하는데, 이는 드물고 거의 유용하지 않습니다. 왜냐하면 놀라울 정도로 도움이 되지 않는 메시지인 `panicked at 'Box&lt;Any&gt;'` 를 생성하기 때문입니다.
 static STATE: SyncUnsafeCell&lt;GlobalState&gt; = SyncUnsafeCell(UnsafeCell::new(GlobalState::new()));
-
+심지어 `panic!(123)` 과 같이 문자열이 아닌 것도 허용하는데, 이는 드물고 거의 유용하지 않습니다. 왜냐하면 놀라울 정도로 도움이 되지 않는 메시지인 `panicked at 'Box&lt;Any&gt;'` 를 생성하기 때문입니다.
 fn set_value(value: i32) {
     with_interrupts_disabled(|| {
         let state = STATE.0.get();

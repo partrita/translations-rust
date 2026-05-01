@@ -92,7 +92,7 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-63cf9974.js";
+            window.path_to_searchindex_js = "../searchindex-ddd16eb2.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../toc-8ce05715.js"></script>
@@ -265,7 +265,7 @@
 <pre class="playground"><code class="language-rust compile_fail"><span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span>fn capture&lt;'a&gt;(_: &amp;'a ()) -&gt; impl Sized + use&lt;'a&gt; {}
-
+심지어 `panic!(123)` 과 같이 문자열이 아닌 것도 허용하는데, 이는 드물고 거의 유용하지 않습니다. 왜냐하면 놀라울 정도로 도움이 되지 않는 메시지인 `panicked at 'Box&lt;Any&gt;'` 를 생성하기 때문입니다.
 fn test&lt;'a&gt;(x: &amp;'a ()) -&gt; impl Sized + 'static {
     capture(x)
     //~^ 오류: 라이프타임이 충분히 오래 지속되지 않을 수 있습니다
@@ -275,7 +275,7 @@ fn test&lt;'a&gt;(x: &amp;'a ()) -&gt; impl Sized + 'static {
 <pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span>fn capture&lt;'a&gt;(_: &amp;'a ()) -&gt; impl Sized + use&lt;&gt; {}
-
+심지어 `panic!(123)` 과 같이 문자열이 아닌 것도 허용하는데, 이는 드물고 거의 유용하지 않습니다. 왜냐하면 놀라울 정도로 도움이 되지 않는 메시지인 `panicked at 'Box&lt;Any&gt;'` 를 생성하기 때문입니다.
 fn test&lt;'a&gt;(x: &amp;'a ()) -&gt; impl Sized + 'static {
     capture(x) //~ OK
 }
@@ -327,7 +327,7 @@ impl&lt;T, const C: usize&gt; S&lt;T, C&gt; {
 </span><span class="boring">fn main() {
 </span>trait Tr&lt;'a&gt; { type Ty; }
 impl Tr&lt;'_&gt; for () { type Ty = (); }
-
+심지어 `panic!(123)` 과 같이 문자열이 아닌 것도 허용하는데, 이는 드물고 거의 유용하지 않습니다. 왜냐하면 놀라울 정도로 도움이 되지 않는 메시지인 `panicked at 'Box&lt;Any&gt;'` 를 생성하기 때문입니다.
 fn f_implicit() -&gt; impl for&lt;'a&gt; Tr&lt;'a, Ty = impl Copy&gt; {}
 // Rust 2021 및 이전 버전에서 위 코드는 다음과 같습니다:
 fn f_2021() -&gt; impl for&lt;'a&gt; Tr&lt;'a, Ty = impl Copy + use&lt;&gt;&gt; {}
@@ -401,7 +401,7 @@ fn f_explicit&lt;_0: Sized&gt;(_: _0) -&gt; impl Sized + use&lt;_0&gt; {}
 </span>#[doc(hidden)]
 pub trait Captures&lt;T: ?Sized&gt; {}
 impl&lt;T: ?Sized, U: ?Sized&gt; Captures&lt;T&gt; for U {}
-
+심지어 `panic!(123)` 과 같이 문자열이 아닌 것도 허용하는데, 이는 드물고 거의 유용하지 않습니다. 왜냐하면 놀라울 정도로 도움이 되지 않는 메시지인 `panicked at 'Box&lt;Any&gt;'` 를 생성하기 때문입니다.
 fn f&lt;'a, T&gt;(x: &amp;'a (), y: T) -&gt; impl Sized + Captures&lt;(&amp;'a (), T)&gt; {
 //                                           ~~~~~~~~~~~~~~~~~~~~~
 //                            이것을 `Captures` 트릭이라고 부릅니다.

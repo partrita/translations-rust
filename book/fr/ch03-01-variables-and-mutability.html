@@ -96,10 +96,10 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-5b6c4c3f.js";
+            window.path_to_searchindex_js = "searchindex-380cec70.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="toc-44dad460.js"></script>
+        <script src="toc-09667002.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -239,15 +239,15 @@
                 <div id="mdbook-content" class="content">
                     <main>
                         <h2 id="les-variables-et-la-mutabilité"><a class="header" href="#les-variables-et-la-mutabilité">Les variables et la mutabilité</a></h2>
-<p>Tel qu’abordé au <a href="ch02-00-guessing-game-tutorial.html#storing-values-with-variables">chapitre 2</a><!-- ignore -->, par défaut, les variables sont <em>immuables</em>. C’est un des nombreux coups de pouce de Rust pour écrire votre code de façon à garantir la sécurité et la concurrence sans problème. Cependant, vous avez quand même la possibilité de rendre vos variables mutables <em>(modifiables)</em>. Explorons comment et pourquoi Rust vous encourage à favoriser l’immuabilité, et pourquoi parfois vous pourriez choisir d’y renoncer.</p>
+<p>Tel qu’abordé au <a href="ch02-00-guessing-game-tutorial.html#storing-values-with-variables">chapitre 2</a><!-- ignore -->, par défaut, les variables sont <em>immuables</em>. C’est un des nombreux coups de pouce de Rust pour écrire votre code de façon à garantir la sécurité et la concurrence sans problème. Cependant, vous avez quand même la possibilité de rendre vos variables mutables (<em>modifiables</em>). Explorons comment et pourquoi Rust vous encourage à favoriser l’immuabilité, et pourquoi parfois vous pourriez choisir d’y renoncer.</p>
 <p>Lorsqu’une variable est immuable, cela signifie qu’une fois qu’une valeur est liée à un nom, vous ne pouvez pas changer cette valeur. À titre d’illustration, générez un nouveau projet appelé <em>variables</em> dans votre répertoire <em>projects</em> en utilisant <code>cargo new variables</code>.</p>
 <p>Ensuite, dans votre nouveau répertoire <em>variables</em>, ouvrez <em>src/main.rs</em> et remplacez son code par le code suivant, qui ne se compile pas pour le moment :</p>
 <p><span class="filename">Fichier : src/main.rs</span></p>
 <pre><code class="language-rust ignore does_not_compile">fn main() {
     let x = 5;
-    println!("The value of x is: {x}");
+    println!("La valeur de x est : {x}");
     x = 6;
-    println!("The value of x is: {x}");
+    println!("La valeur de x est : {x}");
 }</code></pre>
 <p>Sauvegardez et lancez le programme en utilisant <code>cargo run</code>. Vous devriez avoir un message d’erreur à propos d’une erreur d’immutabilité, comme celui-ci :</p>
 <pre><code class="language-console">$ cargo run
@@ -257,7 +257,7 @@ error[E0384]: cannot assign twice to immutable variable `x`
   |
 2 |     let x = 5;
   |         - first assignment to `x`
-3 |     println!("The value of x is: {x}");
+3 |     println!("La valeur de x est : {x}");
 4 |     x = 6;
   |     ^^^^^ cannot assign twice to immutable variable
   |
@@ -270,43 +270,43 @@ For more information about this error, try `rustc --explain E0384`.
 error: could not compile `variables` (bin "variables") due to 1 previous error
 </code></pre>
 <p>Cet exemple montre comment le compilateur vous aide à trouver les erreurs dans vos programmes. Les erreurs de compilation peuvent s’avérer frustrantes, mais elles signifient en réalité que, pour le moment, votre programme n’est pas en train de faire ce que vous voulez qu’il fasse en toute sécurité ; elles ne signifient <em>pas</em> que vous êtes un mauvais développeur ! Même les Rustacés expérimentés continuent d’avoir des erreurs de compilation.</p>
-<p>Vous avez reçu le message d’erreur <code>impossible d'assigner à deux reprises la variable immuable `x`</code> (<code>cannot assign twice to immutable variable `x`</code>) parce que vous avez tenté d’assigner une seconde valeur à la variable immuable  <code>x</code>.</p>
+<p>Vous avez reçu le message d’erreur <code>impossible d'assigner à deux reprises la variable immuable `x`</code> (<code>cannot assign twice to immutable variable `x`</code>) parce que vous avez tenté d’assigner une seconde valeur à la variable immuable <code>x</code>.</p>
 <p>Il est important que nous obtenions des erreurs au moment de la compilation lorsque nous essayons de changer une valeur qui a été déclarée comme immuable, car cette situation particulière peut donner lieu à des bogues. Si une partie de notre code part du principe qu’une valeur ne changera jamais et qu’une autre partie de notre code modifie cette valeur, il est possible que la première partie du code ne fasse pas ce pour quoi elle a été conçue. La cause de ce genre de bogue peut être difficile à localiser après coup, en particulier lorsque la seconde partie du code ne modifie que <em>parfois</em> cette valeur. Le compilateur Rust garantit que lorsque vous déclarez qu’une valeur ne change pas, elle ne va jamais changer, donc vous n’avez pas à vous en soucier. Votre code est ainsi plus facile à maîtriser.</p>
-<p>Mais la mutabilité peut s’avérer très utile et peut faciliter la rédaction du code. Bien que les variables sont immuables par défaut, vous pouvez les rendre mutables en ajoutant <code>mut</code> devant le nom de la variable , comme vous l’avez fait au <a href="ch02-00-guessing-game-tutorial.html#storing-values-with-variables">chapitre 2</a><!-- ignore -->.  L’ajout de <code>mut</code> va aussi signaler l’intention aux futurs lecteurs de ce code que d’autres parties du code vont modifier la valeur de cette variable.</p>
+<p>Mais la mutabilité peut s’avérer très utile et peut faciliter la rédaction du code. Bien que les variables sont immuables par défaut, vous pouvez les rendre mutables en ajoutant <code>mut</code> devant le nom de la variable , comme vous l’avez fait au <a href="ch02-00-guessing-game-tutorial.html#storing-values-with-variables">chapitre 2</a><!-- ignore -->. L’ajout de <code>mut</code> va aussi signaler l’intention aux futurs lecteurs de ce code que d’autres parties du code vont modifier la valeur de cette variable.</p>
 <p>Par exemple, modifions <em>src/main.rs</em> ainsi :</p>
 <p><span class="filename">Fichier : src/main.rs</span></p>
 <pre class="playground"><code class="language-rust edition2024">fn main() {
     let mut x = 5;
-    println!("The value of x is: {x}");
+    println!("La valeur de x est : {x}");
     x = 6;
-    println!("The value of x is: {x}");
+    println!("La valeur de x est : {x}");
 }</code></pre>
-<p>When we run the program now, we get this:</p>
+<p>Lorsque nous exécutons le programme, nous obtenons :</p>
 <pre><code class="language-console">$ cargo run
    Compiling variables v0.1.0 (file:///projects/variables)
     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.30s
      Running `target/debug/variables`
-The value of x is: 5
-The value of x is: 6
+La valeur de x est : 5
+La valeur de x est : 6
 </code></pre>
-<p>En utilisant <code>mut</code>, nous avons permis à la valeur liée à <code>x</code> de passer de <code>5</code> à <code>6</code>.  En fin de compte, c’est à vous de décider si vous souhaitez utiliser la mutabilité ou non, en fonction de ce qui vous semble le plus clair dans chaque situation particulière.</p>
+<p>En utilisant <code>mut</code>, nous avons permis à la valeur liée à <code>x</code> de passer de <code>5</code> à <code>6</code>. En fin de compte, c’est à vous de décider si vous souhaitez utiliser la mutabilité ou non, en fonction de ce qui vous semble le plus clair dans chaque situation particulière.</p>
 <!-- Old headings. Do not remove or links may break. -->
 <p><a id="constants"></a></p>
-<h3 id="declaring-constants"><a class="header" href="#declaring-constants">Declaring Constants</a></h3>
-<p>Like immutable variables, <em>constants</em> are values that are bound to a name and are not allowed to change, but there are a few differences between constants and variables.</p>
-<p>First, you aren’t allowed to use <code>mut</code> with constants. Constants aren’t just immutable by default—they’re always immutable. You declare constants using the <code>const</code> keyword instead of the <code>let</code> keyword, and the type of the value <em>must</em> be annotated. We’ll cover types and type annotations in the next section, <a href="ch03-02-data-types.html#data-types">“Data Types”</a><!-- ignore -->, so don’t worry about the details right now. Just know that you must always annotate the type.</p>
+<h3 id="déclaration-des-constantes"><a class="header" href="#déclaration-des-constantes">Déclaration des constantes</a></h3>
+<p>Comme les variables immuables, les <em>constantes</em> sont des valeurs qui sont liées à un nom et qui ne peuvent être modifiées, mais il y a quelques différences entre les constantes et les variables.</p>
+<p>D’abord, vous ne pouvez pas utiliser <code>mut</code> avec les constantes. Les constantes ne sont pas seulement immuables par défaut − elles sont toujours immuables. On déclare les constantes en utilisant le mot-clé <code>const</code> à la place du mot-clé <code>let</code>, et le type de la valeur <em>doit</em> être indiqué. Nous allons aborder les types et les annotations de types dans la prochaine section, <a href="ch03-02-data-types.html#data-types">“Les types de données”</a><!-- ignore -->, donc ne vous souciez pas des détails pour le moment. Sachez seulement que vous devez toujours indiquer le type.</p>
 <p>Les constantes peuvent être déclarées à n’importe quel endroit du code, y compris la portée globale, ce qui les rend très utiles pour des valeurs que de nombreuses parties de votre code ont besoin de connaître.</p>
 <p>La dernière différence est que les constantes ne peuvent être définies que par une expression constante, et non pas le résultat d’une valeur qui ne pourrait être calculée qu’à l’exécution.</p>
-<p>Here’s an example of a constant declaration:</p>
+<p>Voici un exemple d’une déclaration de constante :</p>
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
-</span>const THREE_HOURS_IN_SECONDS: u32 = 60 * 60 * 3;
+</span>const TROIS_HEURES_EN_SECONDES: u32 = 60 * 60 * 3;
 <span class="boring">}</span></code></pre>
-<p>The constant’s name is <code>THREE_HOURS_IN_SECONDS</code>, and its value is set to the result of multiplying 60 (the number of seconds in a minute) by 60 (the number of minutes in an hour) by 3 (the number of hours we want to count in this program). Rust’s naming convention for constants is to use all uppercase with underscores between words. The compiler is able to evaluate a limited set of operations at compile time, which lets us choose to write out this value in a way that’s easier to understand and verify, rather than setting this constant to the value 10,800. See the <a href="../reference/const_eval.html">Rust Reference’s section on constant evaluation</a> for more information on what operations can be used when declaring constants.</p>
+<p>Le nom de la constante est <code>TROIS_HEURES_EN_SECONDES</code> et sa valeur est définie comme étant le résultat de la multiplication de 60 (le nombre de secondes dans une minute) par 60 (le nombre de minutes dans une heure) par 3 (le nombre d’heures que nous voulons calculer dans ce programme). En Rust, la convention de nommage des constantes est de les écrire tout en majuscule avec des tirets bas entre les mots. Le compilateur peut calculer un certain nombre d’opérations à la compilation, ce qui nous permet d’écrire cette valeur de façon à la comprendre plus facilement et à la vérifier, plutôt que de définir cette valeur à 10 800. Vous pouvez consulter la <a href="../reference/const_eval.html">section de la référence Rust à propos des évaluations des constantes</a> pour en savoir plus sur les opérations qui peuvent être utilisées pour déclarer des constantes.</p>
 <p>Les constantes sont valables pendant toute la durée d’exécution du programme au sein de la portée dans laquelle elles sont déclarées. Cette caractéristique rend les constantes très utiles lorsque plusieurs parties du programme doivent connaître certaines valeurs, comme par exemple le nombre maximum de points qu’un joueur est autorisé à gagner ou encore la vitesse de la lumière.</p>
 <p>Déclarer des valeurs codées en dur et utilisées tout le long de votre programme en tant que constantes est utile pour faire comprendre la signification de ces valeurs dans votre code aux futurs développeurs. Cela permet également de n’avoir qu’un seul endroit de votre code à modifier si cette valeur codée en dur doit être mise à jour à l’avenir.</p>
-<h3 id="shadowing"><a class="header" href="#shadowing">Shadowing</a></h3>
-<p>As you saw in the guessing game tutorial in <a href="ch02-00-guessing-game-tutorial.html#comparing-the-guess-to-the-secret-number">Chapter 2</a><!-- ignore -->, you can declare a new variable with the same name as a previous variable. Rustaceans say that the first variable is <em>shadowed</em> by the second, which means that the second variable is what the compiler will see when you use the name of the variable. In effect, the second variable overshadows the first, taking any uses of the variable name to itself until either it itself is shadowed or the scope ends. We can shadow a variable by using the same variable’s name and repeating the use of the <code>let</code> keyword as follows:</p>
+<h3 id="le-masquage"><a class="header" href="#le-masquage">Le masquage</a></h3>
+<p>Comme nous l’avons vu dans le <a href="ch02-00-guessing-game-tutorial.html#comparing-the-guess-to-the-secret-number">Chapitre 2</a><!-- ignore -->, on peut déclarer une nouvelle variable avec le même nom qu’une variable précédente. Les Rustacés disent que la première variable est <em>masquée</em> par la seconde, ce qui signifie que la seconde variable sera ce que le compilateur verra lorsque vous utilisez le nom de cette variable. En effet, la deuxième variable masque la première, s’appropriant toutes les utilisations du nom de variable jusqu’à ce qu’elle soit elle-même masquée ou que la portée prenne fin. Nous pouvons masquer une variable en utilisant le même nom de variable et en réutilisant le mot-clé <code>let</code> comme ci-dessous :</p>
 <p><span class="filename">Fichier : src/main.rs</span></p>
 <pre class="playground"><code class="language-rust edition2024">fn main() {
     let x = 5;
@@ -315,40 +315,40 @@ The value of x is: 6
 
     {
         let x = x * 2;
-        println!("The value of x in the inner scope is: {x}");
+        println!("La valeur de x dans la portée interne est : {x}");
     }
 
-    println!("The value of x is: {x}");
+    println!("La valeur de x est : {x}");
 }</code></pre>
-<p>This program first binds <code>x</code> to a value of <code>5</code>. Then, it creates a new variable <code>x</code> by repeating <code>let x =</code>, taking the original value and adding <code>1</code> so that the value of <code>x</code> is <code>6</code>. Then, within an inner scope created with the curly brackets, the third <code>let</code> statement also shadows <code>x</code> and creates a new variable, multiplying the previous value by <code>2</code> to give <code>x</code> a value of <code>12</code>. When that scope is over, the inner shadowing ends and <code>x</code> returns to being <code>6</code>. When we run this program, it will output the following:</p>
+<p>Au début, ce programme lie <code>x</code> à la valeur <code>5</code>. Puis il crée une nouvelle variable <code>x</code> en répétant <code>let x =</code>, en récupérant la valeur d’origine et lui ajoutant <code>1</code>, de sorte que la valeur de <code>x</code> est désormais <code>6</code>. Ensuite, à l’intérieur de la portée interne créée par les parenthèses, la troisième instruction <code>let</code> masque aussi <code>x</code> et crée une nouvelle variable, en récupérant la précédente valeur et en la multipliant par <code>2</code> pour donner à <code>x</code> la valeur finale de <code>12</code>. Dès que nous sortons de cette portée, le masque prend fin, et <code>x</code> revient à la valeur <code>6</code>. Lorsque nous exécutons ce programme, nous obtenons ceci :</p>
 <pre><code class="language-console">$ cargo run
    Compiling variables v0.1.0 (file:///projects/variables)
     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.31s
      Running `target/debug/variables`
-The value of x in the inner scope is: 12
-The value of x is: 6
+La valeur de x dans la portée interne est : 12
+La valeur de x est : 6
 </code></pre>
-<p>Créer un masque est différent que de marquer une variable comme étant <code>mut</code>, car à moins d’utiliser une nouvelle fois le mot-clé <code>let</code>, nous obtiendrons une erreur de compilation si nous essayons de réassigner cette variable par accident. En utilisant <code>let</code>, on peut faire quelques modifications à une  valeur tout en gardant le caractère immuable de la variable, une fois ces  modifications effectuées.</p>
+<p>Créer un masque est différent que de marquer une variable comme étant <code>mut</code>, car à moins d’utiliser une nouvelle fois le mot-clé <code>let</code>, nous obtiendrons une erreur de compilation si nous essayons de réassigner cette variable par accident. En utilisant <code>let</code>, on peut faire quelques modifications à une valeur tout en gardant le caractère immuable de la variable, une fois ces modifications effectuées.</p>
 <p>Comme nous créons une nouvelle variable lorsque nous utilisons le mot-clé <code>let</code> une nouvelle fois, l’autre différence entre le <code>mut</code> et la création d’un masque est que cela nous permet de changer le type de la valeur, mais en réutilisant le même nom. Par exemple, imaginons un programme qui demande à l’utilisateur le nombre d’espaces qu’il souhaite entre deux portions de texte en saisissant des espaces, et ensuite nous voulons stocker cette saisie sous forme de nombre :</p>
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">fn main() {
-</span>    let spaces = "   ";
-    let spaces = spaces.len();
+</span>    let espaces = "   ";
+    let espaces = espaces.len();
 <span class="boring">}</span></code></pre>
 <p>La première variable <code>espaces</code> est du type chaîne de caractères <em>(string)</em> et la seconde variable <code>espaces</code> est du type nombre. L’utilisation du masquage nous évite ainsi d’avoir à trouver des noms différents, comme <code>espaces_str</code> et <code>espaces_num</code> ; nous pouvons plutôt simplement réutiliser le nom <code>espaces</code>. Cependant, si nous essayons d’utiliser <code>mut</code> pour faire ceci, comme ci-dessous, nous avons une erreur de compilation :</p>
 <pre><code class="language-rust ignore does_not_compile"><span class="boring">fn main() {
-</span>    let mut spaces = "   ";
-    spaces = spaces.len();
+</span>    let mut espaces = "   ";
+    espaces = espaces.len();
 <span class="boring">}</span></code></pre>
-<p>The error says we’re not allowed to mutate a variable’s type:</p>
+<p>L’erreur indique que nous ne pouvons pas muter le type d’une variable :</p>
 <pre><code class="language-console">$ cargo run
    Compiling variables v0.1.0 (file:///projects/variables)
 error[E0308]: mismatched types
  --&gt; src/main.rs:3:14
   |
-2 |     let mut spaces = "   ";
-  |                      ----- expected due to this value
-3 |     spaces = spaces.len();
-  |              ^^^^^^^^^^^^ expected `&amp;str`, found `usize`
+2 |     let mut espaces = "   ";
+  |                       ----- expected due to this value
+3 |     espaces = espaces.len();
+  |               ^^^^^^^^^^^^^ expected `&amp;str`, found `usize`
 
 For more information about this error, try `rustc --explain E0308`.
 error: could not compile `variables` (bin "variables") due to 1 previous error

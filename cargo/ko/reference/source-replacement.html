@@ -97,7 +97,7 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-56895a7e.js";
+            window.path_to_searchindex_js = "../searchindex-40d30f76.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../toc-6b0c3669.js"></script>
@@ -261,31 +261,31 @@
 <p>대체 소스 구성은 <a href="config.html"><code>.cargo/config.toml</code></a> 을 통해 이루어지며 사용 가능한 키의 전체 세트는 다음과 같습니다.</p>
 <pre><code class="language-toml"># `source` 테이블은 소스 대체와 관련된 모든 키가 저장되는 곳입니다.
 [source]
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 # `source` 테이블 아래에는 해당 소스의 이름이 키가 되는 여러 테이블이 있습니다.
 # 예를 들어, 이 섹션은 이 `.cargo/config.toml` 파일을 포함하는 디렉토리를 기준으로
 # `vendor` 에 위치한 디렉토리에서 가져오는 `my-vendor-source` 라는 새 소스를 정의합니다.
 [source.my-vendor-source]
 directory = "vendor"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 # crates.io 기본 크레이트 소스는 "crates-io"라는 이름으로 사용할 수 있으며,
 # 여기서는 `replace-with` 키를 사용하여 위에서 정의한 소스로 대체됨을 나타냅니다.
 #
 # `replace-with` 키는 `[registries]` 테이블에 정의된 대체 레지스트리 이름을 참조할 수도 있습니다.
 [source.crates-io]
 replace-with = "my-vendor-source"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 # 각 소스는 소스 이름이 키가 되는 자체 테이블을 가집니다.
 [source.소스-이름]
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 # `소스-이름 ` 이 다른 곳에 정의된 `another-source` 로 대체됨을 나타냅니다.
 replace-with = "another-source"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 # 여러 종류의 소스를 지정할 수 있습니다 (아래에서 더 자세히 설명함):
 registry = "https://example.com/path/to/index"
 local-registry = "path/to/registry"
 directory = "path/to/vendor"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 # Git 소스는 선택적으로 브랜치/태그/리비전도 지정할 수 있습니다.
 git = "https://example.com/path/to/repo"
 # branch = "master"
@@ -297,10 +297,10 @@ git = "https://example.com/path/to/repo"
 <p>Registry sources can use <a href="registries.html#registry-protocols">either git or sparse HTTP protocol</a>:</p>
 <pre><code class="language-toml"># Git protocol
 registry = "ssh://git@example.com/path/to/index.git"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 # Sparse HTTP protocol  
 registry = "sparse+https://example.com/path/to/index"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 # HTTPS git protocol
 registry = "https://example.com/path/to/index"
 </code></pre>

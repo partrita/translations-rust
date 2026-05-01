@@ -96,7 +96,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-01ba4889.js";
+            window.path_to_searchindex_js = "searchindex-0481507b.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-f10b093a.js"></script>
@@ -252,13 +252,13 @@ $ cd hello
 <figure class="listing" id="listing-21-1">
 <span class="file-name">Filename: src/main.rs</span>
 <pre class="playground"><code class="language-rust no_run edition2024">use std::net::TcpListener;
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 fn main() {
     let listener = TcpListener::bind("127.0.0.1:7878").unwrap();
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     for stream in listener.incoming() {
         let stream = stream.unwrap();
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
         println!("Connection established!");
     }
 }</code></pre>
@@ -288,17 +288,17 @@ Connection established!
     io::{BufReader, prelude::*},
     net::{TcpListener, TcpStream},
 };
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 fn main() {
     let listener = TcpListener::bind("127.0.0.1:7878").unwrap();
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     for stream in listener.incoming() {
         let stream = stream.unwrap();
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
         handle_connection(stream);
     }
 }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 fn handle_connection(mut stream: TcpStream) {
     let buf_reader = BufReader::new(&amp;stream);
     let http_request: Vec&lt;_&gt; = buf_reader
@@ -306,7 +306,7 @@ fn handle_connection(mut stream: TcpStream) {
         .map(|result| result.unwrap())
         .take_while(|line| !line.is_empty())
         .collect();
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     println!("Request: {http_request:#?}");
 }</code></pre>
 <figcaption><a href="#listing-21-2">Listing 21-2</a>: Reading from the <code>TcpStream</code> and printing the data</figcaption>
@@ -378,17 +378,17 @@ message-body
 </span><span class="boring">    io::{BufReader, prelude::*},
 </span><span class="boring">    net::{TcpListener, TcpStream},
 </span><span class="boring">};
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">fn main() {
 </span><span class="boring">    let listener = TcpListener::bind("127.0.0.1:7878").unwrap();
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    for stream in listener.incoming() {
 </span><span class="boring">        let stream = stream.unwrap();
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">        handle_connection(stream);
 </span><span class="boring">    }
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span>fn handle_connection(mut stream: TcpStream) {
     let buf_reader = BufReader::new(&amp;stream);
     let http_request: Vec&lt;_&gt; = buf_reader
@@ -396,9 +396,9 @@ message-body
         .map(|result| result.unwrap())
         .take_while(|line| !line.is_empty())
         .collect();
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     let response = "HTTP/1.1 200 OK\r\n\r\n";
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     stream.write_all(response.as_bytes()).unwrap();
 }</code></pre>
 <figcaption><a href="#listing-21-3">Listing 21-3</a>: Writing a tiny successful HTTP response to the stream</figcaption>
@@ -432,17 +432,17 @@ message-body
     net::{TcpListener, TcpStream},
 };
 // --код сокращён--
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 <span class="boring">fn main() {
 </span><span class="boring">    let listener = TcpListener::bind("127.0.0.1:7878").unwrap();
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    for stream in listener.incoming() {
 </span><span class="boring">        let stream = stream.unwrap();
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">        handle_connection(stream);
 </span><span class="boring">    }
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span>fn handle_connection(mut stream: TcpStream) {
     let buf_reader = BufReader::new(&amp;stream);
     let http_request: Vec&lt;_&gt; = buf_reader
@@ -450,14 +450,14 @@ message-body
         .map(|result| result.unwrap())
         .take_while(|line| !line.is_empty())
         .collect();
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     let status_line = "HTTP/1.1 200 OK";
     let contents = fs::read_to_string("hello.html").unwrap();
     let length = contents.len();
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     let response =
         format!("{status_line}\r\nContent-Length: {length}\r\n\r\n{contents}");
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     stream.write_all(response.as_bytes()).unwrap();
 }</code></pre>
 <figcaption><a href="#listing-21-5">Listing 21-5</a>: Sending the contents of <em>hello.html</em> as the body of the response</figcaption>
@@ -475,31 +475,31 @@ message-body
 </span><span class="boring">    io::{BufReader, prelude::*},
 </span><span class="boring">    net::{TcpListener, TcpStream},
 </span><span class="boring">};
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">fn main() {
 </span><span class="boring">    let listener = TcpListener::bind("127.0.0.1:7878").unwrap();
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    for stream in listener.incoming() {
 </span><span class="boring">        let stream = stream.unwrap();
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">        handle_connection(stream);
 </span><span class="boring">    }
 </span><span class="boring">}
 </span>// --код сокращён--
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 fn handle_connection(mut stream: TcpStream) {
     let buf_reader = BufReader::new(&amp;stream);
     let request_line = buf_reader.lines().next().unwrap().unwrap();
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     if request_line == "GET / HTTP/1.1" {
         let status_line = "HTTP/1.1 200 OK";
         let contents = fs::read_to_string("hello.html").unwrap();
         let length = contents.len();
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
         let response = format!(
             "{status_line}\r\nContent-Length: {length}\r\n\r\n{contents}"
         );
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
         stream.write_all(response.as_bytes()).unwrap();
     } else {
         // some other request
@@ -519,41 +519,41 @@ fn handle_connection(mut stream: TcpStream) {
 </span><span class="boring">    io::{BufReader, prelude::*},
 </span><span class="boring">    net::{TcpListener, TcpStream},
 </span><span class="boring">};
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">fn main() {
 </span><span class="boring">    let listener = TcpListener::bind("127.0.0.1:7878").unwrap();
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    for stream in listener.incoming() {
 </span><span class="boring">        let stream = stream.unwrap();
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">        handle_connection(stream);
 </span><span class="boring">    }
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">fn handle_connection(mut stream: TcpStream) {
 </span><span class="boring">    let buf_reader = BufReader::new(&amp;stream);
 </span><span class="boring">    let request_line = buf_reader.lines().next().unwrap().unwrap();
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    if request_line == "GET / HTTP/1.1" {
 </span><span class="boring">        let status_line = "HTTP/1.1 200 OK";
 </span><span class="boring">        let contents = fs::read_to_string("hello.html").unwrap();
 </span><span class="boring">        let length = contents.len();
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">        let response = format!(
 </span><span class="boring">            "{status_line}\r\nContent-Length: {length}\r\n\r\n{contents}"
 </span><span class="boring">        );
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">        stream.write_all(response.as_bytes()).unwrap();
 </span>    // --код сокращён--
     } else {
         let status_line = "HTTP/1.1 404 NOT FOUND";
         let contents = fs::read_to_string("404.html").unwrap();
         let length = contents.len();
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
         let response = format!(
             "{status_line}\r\nContent-Length: {length}\r\n\r\n{contents}"
         );
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
         stream.write_all(response.as_bytes()).unwrap();
     }
 <span class="boring">}</span></code></pre>
@@ -588,35 +588,35 @@ fn handle_connection(mut stream: TcpStream) {
 </span><span class="boring">    io::{BufReader, prelude::*},
 </span><span class="boring">    net::{TcpListener, TcpStream},
 </span><span class="boring">};
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">fn main() {
 </span><span class="boring">    let listener = TcpListener::bind("127.0.0.1:7878").unwrap();
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    for stream in listener.incoming() {
 </span><span class="boring">        let stream = stream.unwrap();
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">        handle_connection(stream);
 </span><span class="boring">    }
 </span><span class="boring">}
 </span>// --код сокращён--
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 fn handle_connection(mut stream: TcpStream) {
     // --код сокращён--
 <span class="boring">    let buf_reader = BufReader::new(&amp;stream);
 </span><span class="boring">    let request_line = buf_reader.lines().next().unwrap().unwrap();
-</span>
+</span>Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     let (status_line, filename) = if request_line == "GET / HTTP/1.1" {
         ("HTTP/1.1 200 OK", "hello.html")
     } else {
         ("HTTP/1.1 404 NOT FOUND", "404.html")
     };
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     let contents = fs::read_to_string(filename).unwrap();
     let length = contents.len();
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     let response =
         format!("{status_line}\r\nContent-Length: {length}\r\n\r\n{contents}");
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     stream.write_all(response.as_bytes()).unwrap();
 }</code></pre>
 <figcaption><a href="#listing-21-9">Listing 21-9</a>: Refactoring the <code>if</code> and <code>else</code> blocks to contain only the code that differs between the two cases</figcaption>

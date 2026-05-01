@@ -97,7 +97,7 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-56895a7e.js";
+            window.path_to_searchindex_js = "../searchindex-40d30f76.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../toc-6b0c3669.js"></script>
@@ -283,9 +283,9 @@
             "description": "Package description.",
             /* 패키지를 어디서 가져왔는지를 나타내는 "불투명" 식별자인 패키지의 소스 ID입니다.
                안정성 보장에 대해서는 위의 "호환성"을 참조하세요.
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
                경로 의존성 및 워크스페이스 멤버의 경우 null입니다.
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
                다른 의존성의 경우 다음 형식의 문자열입니다:
                - 레지스트리 기반 의존성의 경우 "registry+URL".
                  예: "registry+https://github.com/rust-lang/crates.io-index"
@@ -293,7 +293,7 @@
                  예: "git+https://github.com/rust-lang/cargo?rev=5e85ba14aaa20f8133863373404cb0af69eeef2c#5e85ba14aaa20f8133863373404cb0af69eeef2c"
                - 스파스 레지스트리 의존성의 경우 "sparse+URL"
                  예: "sparse+https://my-sparse-registry.org"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
                `+` 뒤의 값은 명시적으로 정의되지 않았으며 Cargo 버전 간에 변경될 수 있으며,
                설정 파일의 레지스트리 정의와 같은 다른 것과 직접적인 관련이 없을 수 있습니다.
                향후 다른 `+` 접두사 식별자를 갖는 새로운 소스 종류가 추가될 수 있습니다.

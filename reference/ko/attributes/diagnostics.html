@@ -93,7 +93,7 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-55effe88.js";
+            window.path_to_searchindex_js = "../searchindex-e23b9ebb.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../toc-20da6b24.js"></script>
@@ -297,11 +297,11 @@
     // 여기서 누락된 문서는 무시됩니다.
     #[allow(missing_docs)]
     pub fn undocumented_one() -&gt; i32 { 1 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
     // 여기서 누락된 문서는 경고를 발생시킵니다.
     #[warn(missing_docs)]
     pub fn undocumented_too() -&gt; i32 { 2 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
     // 여기서 누락된 문서는 에러를 발생시킵니다.
     #[deny(missing_docs)]
     pub fn undocumented_end() -&gt; i32 { 3 }
@@ -320,13 +320,13 @@ pub mod m2 {
     pub mod nested {
         // 여기서 누락된 문서는 무시됩니다.
         pub fn undocumented_one() -&gt; i32 { 1 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
         // 위의 allow에도 불구하고,
         // 여기서 누락된 문서는 경고를 발생시킵니다.
         #[warn(missing_docs)]
         pub fn undocumented_two() -&gt; i32 { 2 }
     }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
     // 여기서 누락된 문서는 경고를 발생시킵니다.
     pub fn undocumented_too() -&gt; i32 { 3 }
 }
@@ -363,7 +363,7 @@ pub mod m3 {
     keyword_idents,
     reason = "미래 호환성을 위해 이러한 식별자들을 피하고 싶습니다"
 )]
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // 이 이름은 Rust 2015 에디션에서 허용되었습니다. 우리는 여전히 피하고자 합니다
 // 미래 호환성을 확보하고 최종 사용자에게 혼란을 주지 않기 위함입니다.
 fn dyn() {}
@@ -372,15 +372,15 @@ fn dyn() {}
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span>use std::path::PathBuf;
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 pub fn get_path() -&gt; PathBuf {
     // `allow` 속성의 `reason` 매개변수는 독자를 위한 문서 역할을 합니다.
     #[allow(unused_mut, reason = "이것은 일부 플랫폼에서만 수정됩니다")]
     let mut file_name = PathBuf::from("git");
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
     #[cfg(target_os = "windows")]
     file_name.set_extension("exe");
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
     file_name
 }
 <span class="boring">}</span></code></pre>
@@ -400,7 +400,7 @@ pub fn get_path() -&gt; PathBuf {
     #[expect(unused_variables)]
     let question = "누가 바다 저 깊은 곳 파인애플에 살까요?";
     println!("{question}");
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
     // 이 `#[expect]` 속성은 `answer` 변수가 전혀 사용되지 않으므로 충족될
     // 린트 기대를 생성합니다. 평소라면 발생했을 `unused_variables` 린트는
     // 억제됩니다. 해당 문장이나 속성에 대해 어떤 경고도 발생하지 않습니다.
@@ -419,13 +419,13 @@ fn select_song() {
     // 내보낼 것입니다. 이는 함수 위에 있는 기대를 충족시키지 못합니다.
     #[warn(unused_variables)]
     let song_name = "Crab Rave";
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
     // `allow` 속성은 린트 발생을 억제합니다. 이는 `expect` 속성이 아닌
     // `allow` 속성에 의해 억제되었으므로 함수 위의 기대를
     // 충족시키지 못합니다.
     #[allow(unused_variables)]
     let song_creator = "Noisestorm";
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
     // 이 `expect` 속성은 변수 위치에서 `unused_variables` 린트 발생을
     // 억제할 것입니다. 이 린트 발생은 지역적인 expect 속성에 의해
     // 억제되었으므로 함수 위의 `expect` 속성은 여전히 충족되지 않습니다.
@@ -445,7 +445,7 @@ fn select_song() {
 pub fn thoughts() {
     let unused = "예시가 떨어져 가고 있어요";
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 pub fn another_example() {
     // 이 속성은 두 개의 린트 기대를 생성합니다. `unused_mut` 린트는
     // 억제되며 첫 번째 기대를 충족시킬 것입니다. `unused_variables` 린트는
@@ -453,7 +453,7 @@ pub fn another_example() {
     // 않은 상태로 남게 되며, 경고가 발생할 것입니다.
     #[expect(unused_mut, unused_variables)]
     let mut link = "https://www.rust-lang.org/";
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
     println!("우리 커뮤니티에 오신 것을 환영합니다: {link}");
 }
 <span class="boring">}</span></code></pre>
@@ -519,11 +519,11 @@ fn example_err() {
 #![warn(clippy::pedantic)]
 // clippy의 `filter_map` 린트 경고를 억제합니다.
 #![allow(clippy::filter_map)]
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 fn main() {
     // ...
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // 이 함수에서만 clippy의 `cmp_nan` 린트를 억제합니다.
 #[allow(clippy::cmp_nan)]
 fn foo() {
@@ -572,7 +572,7 @@ Tuple struct fields are ignored.
 </span><span class="boring">fn main() {
 </span>#[deprecated(since = "5.2.0", note = "foo는 거의 사용되지 않았습니다. 사용자들은 대신 bar를 사용해야 합니다")]
 pub fn foo() {}
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 pub fn bar() {}
 <span class="boring">}</span></code></pre>
 <p><a href="https://github.com/rust-lang/rfcs/blob/master/text/1270-deprecation.md">RFC</a> 에 동기와 자세한 내용이 포함되어 있습니다.</p>
@@ -699,11 +699,11 @@ f(); // ERROR: Unused implementor that must be used.
     #[must_use]
     fn use_me(&amp;self);
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 impl Tr for () {
     fn use_me(&amp;self) {}
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 ().use_me(); // ERROR: Unused return value that must be used.
 <span class="boring">}</span></code></pre>
 <pre class="playground"><code class="language-rust compile_fail edition2024"><span class="boring">#![allow(unused)]
@@ -730,7 +730,7 @@ impl Tr for () {
 <span class="boring">fn main() {
 </span>#[must_use]
 fn f() {}
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 { f() };        // ERROR: The lint looks through block expressions.
 unsafe { f() }; // ERROR: The lint looks through `unsafe` blocks.
 { { f() } };    // ERROR: The lint looks through nested blocks.
@@ -745,12 +745,12 @@ unsafe { f() }; // ERROR: The lint looks through `unsafe` blocks.
 </span>trait Tr {
     fn f(&amp;self);
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 impl Tr for () {
     #[must_use] // This has no effect.
     fn f(&amp;self) {}
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 ().f(); // OK.
 <span class="boring">}</span></code></pre>
 <div class="alert alert-note">
@@ -896,9 +896,9 @@ _ = f(); // OK.
     note = "노트 2"
 )]
 trait ImportantTrait&lt;A&gt; {}
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 fn use_my_trait(_: impl ImportantTrait&lt;i32&gt;) {}
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 fn main() {
     use_my_trait(String::new());
 }</code></pre>
@@ -972,7 +972,7 @@ fn main() {
 </span><span class="boring">}
 </span><span class="boring">
 </span><span class="boring">impl&lt;T&gt; Foo for T where T: Expression {}
-</span>
+</span>   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // 권장 사항을 변경하려면 이 라인의 주석을 해제하세요.
 // #[diagnostic::do_not_recommend]
 impl&lt;T, ST&gt; AsExpression&lt;ST&gt; for T
@@ -981,7 +981,7 @@ where
 {
     type Expression = T;
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 trait Foo: Expression + Sized {
     fn check&lt;T&gt;(&amp;self, _: T) -&gt; &lt;T as AsExpression&lt;&lt;Self as Expression&gt;::SqlType&gt;&gt;::Expression
     where
@@ -990,7 +990,7 @@ trait Foo: Expression + Sized {
         todo!()
     }
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 fn main() {
     SelectInt.check("bar");
 }</code></pre>

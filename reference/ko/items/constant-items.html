@@ -93,7 +93,7 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-55effe88.js";
+            window.path_to_searchindex_js = "../searchindex-e23b9ebb.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../toc-20da6b24.js"></script>
@@ -358,15 +358,15 @@ Expression</text>
 </span><span class="boring">fn main() {
 </span>const BIT1: u32 = 1 &lt;&lt; 0;
 const BIT2: u32 = 1 &lt;&lt; 1;
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 const BITS: [u32; 2] = [BIT1, BIT2];
 const STRING: &amp;'static str = "bitstring";
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 struct BitsNStrings&lt;'a&gt; {
     mybits: [u32; 2],
     mystring: &amp;'a str,
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 const BITS_N_STRINGS: BitsNStrings&lt;'static&gt; = BitsNStrings {
     mybits: BITS,
     mystring: STRING,
@@ -384,15 +384,15 @@ const BITS_N_STRINGS: BitsNStrings&lt;'static&gt; = BitsNStrings {
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span>struct TypeWithDestructor(i32);
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 impl Drop for TypeWithDestructor {
     fn drop(&amp;mut self) {
         println!("Dropped. Held {}.", self.0);
     }
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 const ZERO_WITH_DESTRUCTOR: TypeWithDestructor = TypeWithDestructor(0);
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 fn create_and_drop_zero_with_destructor() {
     let x = ZERO_WITH_DESTRUCTOR;
     // x는 함수가 끝날 때 드롭되어 drop을 호출합니다.
@@ -410,7 +410,7 @@ fn create_and_drop_zero_with_destructor() {
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span>const _: () =  { struct _SameNameTwice; };
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // 위와 같은 이름이지만 괜찮습니다:
 const _: () =  { struct _SameNameTwice; };
 <span class="boring">}</span></code></pre>
@@ -423,7 +423,7 @@ const _: () =  { struct _SameNameTwice; };
 </span>macro_rules! m {
     ($item: item) =&gt; { $item $item }
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 m!(const _: () = (););
 // 다음과 같이 확장됩니다:
 // const _: () = ();
@@ -438,7 +438,7 @@ m!(const _: () = (););
 </span><span class="boring">fn main() {
 </span>// 컴파일 타임 패닉
 const PANIC: () = std::unimplemented!();
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 fn unused_generic_function&lt;T&gt;() {
     // 실패하는 컴파일 타임 어설션
     const _: () = assert!(usize::BITS == 0);

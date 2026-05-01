@@ -96,7 +96,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-ba1bddcc.js";
+            window.path_to_searchindex_js = "searchindex-18122752.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-a05ef4ad.js"></script>
@@ -246,7 +246,7 @@
 <p><span class="filename">파일명: src/main.rs</span></p>
 <pre class="playground"><code class="language-rust edition2024">fn main() {
     let number = 3;
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
     if number &lt; 5 {
         println!("조건이 참이었습니다");
     } else {
@@ -266,7 +266,7 @@ condition was true
 <p><code>number</code> 의 값을 조건을 <code>false</code> 로 만드는 값으로 변경하여 어떤 일이 발생하는지 살펴보겠습니다.</p>
 <pre><code class="language-rust ignore"><span class="boring">fn main() {
 </span>    let number = 7;
-<span class="boring">
+<span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">    if number &lt; 5 {
 </span><span class="boring">        println!("조건이 참이었습니다");
 </span><span class="boring">    } else {
@@ -284,7 +284,7 @@ condition was false
 <p><span class="filename">파일명: src/main.rs</span></p>
 <pre><code class="language-rust ignore does_not_compile">fn main() {
     let number = 3;
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
     if number {
         println!("숫자는 3이었습니다");
     }
@@ -297,7 +297,7 @@ error[E0308]: mismatched types
   |
 4 |     if number {
   |        ^^^^^^ expected `bool`, found integer
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 For more information about this error, try `rustc --explain E0308`.
 error: could not compile `branches` (bin "branches") due to 1 previous error
 </code></pre>
@@ -305,7 +305,7 @@ error: could not compile `branches` (bin "branches") due to 1 previous error
 <p><span class="filename">파일명: src/main.rs</span></p>
 <pre class="playground"><code class="language-rust edition2024">fn main() {
     let number = 3;
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
     if number != 0 {
         println!("숫자는 0이 아니었습니다");
     }
@@ -316,7 +316,7 @@ error: could not compile `branches` (bin "branches") due to 1 previous error
 <p><span class="filename">파일명: src/main.rs</span></p>
 <pre class="playground"><code class="language-rust edition2024">fn main() {
     let number = 6;
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
     if number % 4 == 0 {
         println!("숫자는 4로 나누어집니다");
     } else if number % 3 == 0 {
@@ -343,7 +343,7 @@ number is divisible by 3
 <pre class="playground"><code class="language-rust edition2024">fn main() {
     let condition = true;
     let number = if condition { 5 } else { 6 };
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
     println!("숫자의 값은: {number}");
 }</code></pre>
 <figcaption><a href="#listing-3-2">Listing 3-2</a>: Assigning the result of an <code>if</code> expression to a variable</figcaption>
@@ -359,9 +359,9 @@ The value of number is: 5
 <p><span class="filename">파일명: src/main.rs</span></p>
 <pre><code class="language-rust ignore does_not_compile">fn main() {
     let condition = true;
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
     let number = if condition { 5 } else { "여섯" };
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
     println!("숫자의 값은: {number}");
 }</code></pre>
 <p>이 코드를 컴파일하려고 하면 오류가 발생합니다. <code>if</code> 와 <code>else</code> 암(arm)은 호환되지 않는 값 타입을 가지며, 러스트는 프로그램에서 문제가 있는 정확한 위치를 알려줍니다.</p>
@@ -374,7 +374,7 @@ error[E0308]: `if` and `else` have incompatible types
   |                                 -          ^^^^^ expected integer, found `&amp;str`
   |                                 |
   |                                 expected because of this
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 For more information about this error, try `rustc --explain E0308`.
 error: could not compile `branches` (bin "branches") due to 1 previous error
 </code></pre>
@@ -416,15 +416,15 @@ again!
 <p>One of the uses of a <code>loop</code> is to retry an operation you know might fail, such as checking whether a thread has completed its job. You might also need to pass the result of that operation out of the loop to the rest of your code. To do this, you can add the value you want returned after the <code>break</code> expression you use to stop the loop; that value will be returned out of the loop so that you can use it, as shown here:</p>
 <pre class="playground"><code class="language-rust edition2024">fn main() {
     let mut counter = 0;
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
     let result = loop {
         counter += 1;
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
         if counter == 10 {
             break counter * 2;
         }
     };
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
     println!("결과는 {result}입니다");
 }</code></pre>
 <p>Before the loop, we declare a variable named <code>counter</code> and initialize it to <code>0</code>. Then, we declare a variable named <code>result</code> to hold the value returned from the loop. On every iteration of the loop, we add <code>1</code> to the <code>counter</code> variable, and then check whether the <code>counter</code> is equal to <code>10</code>. When it is, we use the <code>break</code> keyword with the value <code>counter * 2</code>. After the loop, we use a semicolon to end the statement that assigns the value to <code>result</code>. Finally, we print the value in <code>result</code>, which in this case is <code>20</code>.</p>
@@ -438,7 +438,7 @@ again!
     'counting_up: loop {
         println!("count = {count}");
         let mut remaining = 10;
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
         loop {
             println!("remaining = {remaining}");
             if remaining == 9 {
@@ -449,7 +449,7 @@ again!
             }
             remaining -= 1;
         }
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
         count += 1;
     }
     println!("최종 count = {count}");
@@ -477,13 +477,13 @@ End count = 2
 <span class="file-name">Filename: src/main.rs</span>
 <pre class="playground"><code class="language-rust edition2024">fn main() {
     let mut number = 3;
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
     while number != 0 {
         println!("{number}!");
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
         number -= 1;
     }
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
     println!("발사!!!");
 }</code></pre>
 <figcaption><a href="#listing-3-3">Listing 3-3</a>: Using a <code>while</code> loop to run code while a condition evaluates to <code>true</code></figcaption>
@@ -496,10 +496,10 @@ End count = 2
 <pre class="playground"><code class="language-rust edition2024">fn main() {
     let a = [10, 20, 30, 40, 50];
     let mut index = 0;
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
     while index &lt; 5 {
         println!("the value is: {}", a[index]);
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
         index += 1;
     }
 }</code></pre>
@@ -523,7 +523,7 @@ the value is: 50
 <span class="file-name">Filename: src/main.rs</span>
 <pre class="playground"><code class="language-rust edition2024">fn main() {
     let a = [10, 20, 30, 40, 50];
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
     for element in a {
         println!("값은: {element}입니다");
     }

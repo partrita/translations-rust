@@ -93,7 +93,7 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-55effe88.js";
+            window.path_to_searchindex_js = "../searchindex-e23b9ebb.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../toc-20da6b24.js"></script>
@@ -350,13 +350,13 @@ const _: () = {
         pub const C: () = ();
     }
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // Valid imports resolved at expansion-time:
 use m::C; // OK.
 use m::E; // OK.
 use m::A; // OK.
 use m::E::V; // OK.
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // Valid expressions resolved during type-relative resolution:
 let _ = m::A::V; // OK.
 let _ = m::E::C; // OK.
@@ -386,13 +386,13 @@ use m::E::C; // ERROR: Unresolved import `m::E::C`.
         pub const C: u8 = 1;
     }
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 pub mod m2 {
     pub mod ambig {
         pub const C: u8 = 2;
     }
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // This introduces the name `ambig` in the outer scope.
 use m1::ambig;
 const _: () = {
@@ -429,16 +429,16 @@ const _: () = {
 </span>mod m1 {
     pub struct Ambig;
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 mod m2 {
     pub struct Ambig;
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // OK: This brings conficting names in the same namespace into scope
 // but they have not been used yet.
 use m1::*;
 use m2::*;
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 const _: () = {
     // The error happens when the name with the conflicting candidates
     // is used.
@@ -468,12 +468,12 @@ const _: () = {
 <pre class="playground"><code class="language-rust no_run edition2024">mod m1 {
     pub struct Ambig;
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 mod m2 {
     // This reexports the same `Ambig` item from a second module.
     pub use super::m1::Ambig;
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 mod m3 {
     // These both import the same `Ambig`.
     //
@@ -482,13 +482,13 @@ mod m3 {
     pub use super::m1::*;
     use super::m2::*;
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 mod m4 {
     // `Ambig` can be used through the `m3` globs and still has
     // `pub` visibility.
     pub use crate::m3::Ambig;
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 const _: () = {
     // Therefore, we can use it here.
     let _ = m4::Ambig; // OK.
@@ -533,12 +533,12 @@ fn main() {
         pub struct Name;
     }
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // Outer `ambig` candidate.
 pub mod ambig {
     pub struct Name;
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 const _: () = {
     // Cannot resolve `ambig` through this glob
     // because of the outer `ambig` candidate above.
@@ -561,9 +561,9 @@ pub mod glob {
     }
     pub(crate) use f as ambig;
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 use m::f as ambig;
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 const _: () = {
     use glob::*;
     ambig!(); // ERROR: `ambig` is ambiguous.
@@ -605,12 +605,12 @@ const C: () = {
 macro_rules! ambig {
     () =&gt; {}
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // Path-based macro candidate.
 macro_rules! path_based {
     () =&gt; {}
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 pub fn f() {
     // This reexport of the `path_based` macro definition
     // as `ambig` may not shadow the `ambig` macro definition
@@ -693,16 +693,16 @@ pub fn f() {
         }
     }
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // Introduce outer candidate definition for `ambig` macro invocation.
 macro_rules! ambig {
     () =&gt; {}
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // Introduce a second candidate definition for `ambig` inside of a
 // macro expansion.
 define_ambig!();
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // The definition of `ambig` from the second invocation
 // of `define_ambig` is the innermost canadidate.
 //
@@ -740,20 +740,20 @@ ambig!();
 </span>macro_rules! ambig {
     () =&gt; {}
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 macro_rules! define_and_invoke_ambig {
     () =&gt; {
         // Define innermost candidate.
         macro_rules! ambig {
             () =&gt; {}
         }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
         // Invocation of `ambig` is in the same expansion as the
         // innermost candidate.
         ambig!(); // OK
     }
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 define_and_invoke_ambig!();
 <span class="boring">}</span></code></pre>
 <p>It doesn’t matter if both definitions come from invocations of the same macro; the outermost candidate is still considered “less expanded” because it is not within the expansion containing the innermost candidate’s definition.</p>
@@ -780,11 +780,11 @@ ambig!(); // ERROR: `ambig` is ambiguous.
         }
     }
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 mod ambig {
     pub struct Name;
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 const _: () = {
     // Introduce innermost candidate for
     // `ambig` mod in this macro expansion.

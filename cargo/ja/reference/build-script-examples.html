@@ -97,10 +97,10 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-e7154e31.js";
+            window.path_to_searchindex_js = "../searchindex-6652732b.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../toc-91b7193b.js"></script>
+        <script src="../toc-eaea3cac.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -264,7 +264,7 @@
 1 directory, 3 files
 </code></pre>
 <p>Here we can see that we have a <code>build.rs</code> build script and our binary in <code>main.rs</code>. This package has a basic manifest:</p>
-<pre><code class="language-toml"># Cargo.toml
+<pre><code class="language-toml"># 
 
 [package]
 name = "hello-from-generated-code"
@@ -324,7 +324,7 @@ fn main() {
 1 directory, 4 files
 </code></pre>
 <p>Pretty similar to before! Next, the manifest:</p>
-<pre><code class="language-toml"># Cargo.toml
+<pre><code class="language-toml"># 
 
 [package]
 name = "hello-world-from-c"
@@ -407,7 +407,7 @@ fn main() {
 <p>Quite frequently a Rust crate wants to link to a native library provided on the system to bind its functionality or just use it as part of an implementation detail. This is quite a nuanced problem when it comes to performing this in a platform-agnostic fashion. It is best, if possible, to farm out as much of this as possible to make this as easy as possible for consumers.</p>
 <p>For this example, we will be creating a binding to the system’s zlib library. This is a library that is commonly found on most Unix-like systems that provides data compression. This is already wrapped up in the <a href="https://crates.io/crates/libz-sys"><code>libz-sys</code> crate</a>, but for this example, we’ll do an extremely simplified version. Check out <a href="https://github.com/rust-lang/libz-sys">the source code</a> for the full example.</p>
 <p>To make it easy to find the location of the library, we will use the <a href="https://crates.io/crates/pkg-config"><code>pkg-config</code> crate</a>. This crate uses the system’s <code>pkg-config</code> utility to discover information about a library. It will automatically tell Cargo what is needed to link the library. This will likely only work on Unix-like systems with <code>pkg-config</code> installed. Let’s start by setting up the manifest:</p>
-<pre><code class="language-toml"># Cargo.toml
+<pre><code class="language-toml"># 
 
 [package]
 name = "libz-sys"
@@ -452,7 +452,7 @@ fn test_crc32() {
 <h2 id="using-another-sys-crate"><a class="header" href="#using-another-sys-crate">Using another <code>sys</code> crate</a></h2>
 <p>When using the <code>links</code> key, crates may set metadata that can be read by other crates that depend on it. This provides a mechanism to communicate information between crates. In this example, we’ll be creating a C library that makes use of zlib from the real <a href="https://crates.io/crates/libz-sys"><code>libz-sys</code> crate</a>.</p>
 <p>If you have a C library that depends on zlib, you can leverage the <a href="https://crates.io/crates/libz-sys"><code>libz-sys</code> crate</a> to automatically find it or build it. This is great for cross-platform support, such as Windows where zlib is not usually installed. <code>libz-sys</code> <a href="https://github.com/rust-lang/libz-sys/blob/3c594e677c79584500da673f918c4d2101ac97a1/build.rs#L156">sets the <code>include</code> metadata</a> to tell other packages where to find the header files for zlib. Our build script can read that metadata with the <code>DEP_Z_INCLUDE</code> environment variable. Here’s an example:</p>
-<pre><code class="language-toml"># Cargo.toml
+<pre><code class="language-toml"># 
 
 [package]
 name = "z_user"

@@ -96,7 +96,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-ba1bddcc.js";
+            window.path_to_searchindex_js = "searchindex-18122752.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-a05ef4ad.js"></script>
@@ -304,7 +304,7 @@ error[E0308]: mismatched types
   |
   = note: 튜플 `({integer}, {integer}, {integer})` 를 예상했으나
              튜플 `(_, _)` 를 발견했습니다
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 이 에러에 대한 더 자세한 정보를 원하시면 `rustc --explain E0308` 을 시도해 보세요.
 에러: 1개의 이전 에러로 인해 `patterns` (바이너리 "patterns")를 컴파일할 수 없습니다
 </code></pre>
@@ -319,7 +319,7 @@ error[E0308]: mismatched types
     let favorite_color: Option&lt;&amp;str&gt; = None;
     let is_tuesday = false;
     let age: Result&lt;u8, _&gt; = "34".parse();
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
     if let Some(color) = favorite_color {
         println!("좋아하는 색상 {color}을 배경색으로 사용합니다");
     } else if is_tuesday {
@@ -350,7 +350,7 @@ error[E0308]: mismatched types
             tx.send(val).unwrap();
         }
     });
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
     while let Ok(value) = rx.recv() {
         println!("{value}");
     }
@@ -363,7 +363,7 @@ error[E0308]: mismatched types
 <figure class="listing" id="listing-19-5">
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">fn main() {
 </span>    let v = vec!['a', 'b', 'c'];
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
     for (index, value) in v.iter().enumerate() {
         println!("{value}는 인덱스 {index}에 있습니다");
     }
@@ -386,7 +386,7 @@ c는 인덱스 2에 있습니다
 <pre class="playground"><code class="language-rust edition2024">fn foo(x: i32) {
     // 코드가 여기에 들어갑니다
 }
-<span class="boring">
+<span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">fn main() {}</span></code></pre>
 <figcaption><a href="#listing-19-6">Listing 19-6</a>: A function signature using patterns in the parameters</figcaption>
 </figure>
@@ -396,7 +396,7 @@ c는 인덱스 2에 있습니다
 <pre class="playground"><code class="language-rust edition2024">fn print_coordinates(&amp;(x, y): &amp;(i32, i32)) {
     println!("현재 위치: ({x}, {y})");
 }
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 fn main() {
     let point = (3, 5);
     print_coordinates(&amp;point);

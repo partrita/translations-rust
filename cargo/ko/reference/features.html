@@ -97,7 +97,7 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-56895a7e.js";
+            window.path_to_searchindex_js = "../searchindex-40d30f76.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../toc-6b0c3669.js"></script>
@@ -309,7 +309,7 @@ gif = ["dep:gif"]
 <pre><code class="language-toml">[dependencies]
 ravif = { version = "0.6.3", optional = true }
 rgb = { version = "0.8.25", optional = true }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [features]
 avif = ["dep:ravif", "dep:rgb"]
 </code></pre>
@@ -333,7 +333,7 @@ flate2 = { version = "1.0.3", default-features = false, features = ["zlib-rs"] }
 <p>의존성의 기능은 <code>[features]</code> 테이블에서도 활성화할 수 있습니다. 구문은 <code>"패키지-이름/기능-이름"</code> 입니다. 예를 들어 다음과 같습니다.</p>
 <pre><code class="language-toml">[dependencies]
 jpeg-decoder = { version = "0.1.20", default-features = false }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [features]
 # jpeg-decoder의 "rayon" 기능을 활성화하여 병렬 처리 지원을 활성화합니다.
 parallel = ["jpeg-decoder/rayon"]
@@ -346,7 +346,7 @@ parallel = ["jpeg-decoder/rayon"]
 <pre><code class="language-toml">[dependencies]
 serde = { version = "1.0.133", optional = true }
 rgb = { version = "0.8.25", optional = true }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [features]
 serde = ["dep:serde", "rgb?/serde"]
 </code></pre>
@@ -368,11 +368,11 @@ serde = ["dep:serde", "rgb?/serde"]
 <p>예를 들어, <a href="../../reference/names/preludes.html#the-no_std-attribute"><code>no_std</code></a> 환경을 선택적으로 지원하고 싶다면 <code>no_std</code> 기능을 <strong>사용하지 마세요</strong>. 대신 <code>std</code> 를 <em>활성화하는</em> <code>std</code> 기능을 사용하세요. 예시:</p>
 <pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
 </span>#![no_std]
-
 <span class="boring">fn main() {
-</span>#[cfg(feature = "std")]
+</span>`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
+#[cfg(feature = "std")]
 extern crate std;
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 #[cfg(feature = "std")]
 pub fn function_that_requires_std() {
     // ...
@@ -418,7 +418,7 @@ resolver = "2"
 <pre><code class="language-sh"># This command is allowed with resolver = "2", regardless of which directory
 # you are in.
 cargo build -p foo -p bar --features foo-feat,bar-feat
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 # 이 명시적인 동등한 명령은 모든 리졸버 버전에서 작동합니다.
 cargo build -p foo -p bar --features foo/foo-feat,bar/bar-feat
 </code></pre>

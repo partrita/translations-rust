@@ -98,7 +98,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-56895a7e.js";
+            window.path_to_searchindex_js = "searchindex-40d30f76.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-6b0c3669.js"></script>
@@ -299,7 +299,7 @@ $ tree .
 ├── Cargo.toml
 └── src
     └── main.rs
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 1 directory, 2 files
 </code></pre>
 <p>시작하는 데 필요한 모든 것입니다. 먼저 <code>Cargo.toml</code> 을 확인해 봅시다:</p>
@@ -307,7 +307,7 @@ $ tree .
 name = "hello_world"
 version = "0.1.0"
 edition = "2024"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [dependencies]
 </code></pre>
 <p>이것을 <a href="#manifest" title="&quot;manifest&quot; (glossary entry)"><em><strong>매니페스트</strong></em></a>라고 하며, Cargo가 패키지를 컴파일하는 데 필요한 모든 메타데이터를 포함합니다.</p>
@@ -382,7 +382,7 @@ $ tree .
 ├── Cargo.toml
 └── src
     └── main.rs
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 1 directory, 2 files
 </code></pre>
 <p><code>Cargo.toml</code> 을 자세히 살펴봅시다:</p>
@@ -390,9 +390,9 @@ $ tree .
 name = "hello_world"
 version = "0.1.0"
 edition = "2024"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [dependencies]
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 </code></pre>
 <p>이것을 <a href="#manifest" title="&quot;매니페스트&quot; (용어집 항목)"><em><strong>매니페스트</strong></em></a>라고 하며, Cargo가 패키지를 컴파일하는 데 필요한 모든 메타데이터를 포함합니다. 이 파일은 <a href="https://toml.io/">TOML</a> 형식(/tɑməl/로 발음)으로 작성되었습니다.</p>
 <p><code>src/main.rs</code> 의 내용은 다음과 같습니다:</p>
@@ -447,7 +447,7 @@ time = "0.1.12"
 name = "hello_world"
 version = "0.1.0"
 edition = "2024"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [dependencies]
 time = "0.1.12"
 regex = "0.1.41"
@@ -473,7 +473,7 @@ regex = "0.1.41"
 <p>이제 <code>regex</code> 가 업데이트되더라도 <code>cargo update</code> 를 실행하기로 선택할 때까지 동일한 리비전으로 빌드됩니다.</p>
 <p>이제 <code>main.rs</code> 에서 <code>regex</code> 라이브러리를 사용할 수 있습니다.</p>
 <pre><code class="language-rust ignore">use regex::Regex;
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 fn main() {
     let re = Regex::new(r"^\d{4}-\d{2}-\d{2}$").unwrap();
     println!("Did our date match? {}", re.is_match("2014-01-01"));
@@ -546,7 +546,7 @@ Did our date match? true
 <pre><code class="language-toml">[package]
 name = "hello_world"
 version = "0.1.0"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [dependencies]
 regex = { git = "https://github.com/rust-lang/regex.git" }
 </code></pre>
@@ -561,7 +561,7 @@ regex = { git = "https://github.com/rust-lang/regex.git", rev = "9f9f693" }
 <pre><code class="language-toml">[package]
 name = "hello_world"
 version = "0.1.0"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [dependencies]
 regex = { git = "https://github.com/rust-lang/regex.git" }
 </code></pre>
@@ -572,7 +572,7 @@ version = "0.1.0"
 dependencies = [
  "regex 1.5.0 (git+https://github.com/rust-lang/regex.git#9f9f693768c584971a4d53bc3c586c33ed3a6831)",
 ]
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [[package]]
 name = "regex"
 version = "1.5.0"
@@ -592,9 +592,9 @@ $ cargo update regex   # updates just “regex”
    Compiling regex v1.5.0 (https://github.com/rust-lang/regex.git#9f9f693)
    Compiling hello_world v0.1.0 (file:///path/to/package/hello_world)
      Running target/test/hello_world-9c2b65bbb79eabce
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 running 0 tests
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
 </code></pre>
 <p>패키지에 테스트가 있었다면 올바른 수의 테스트와 함께 더 많은 출력이 표시되었을 것입니다.</p>
@@ -610,14 +610,14 @@ test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
 <h3 id="github-actions"><a class="header" href="#github-actions">GitHub Actions</a></h3>
 <p>GitHub Actions에서 패키지를 테스트하려면 다음은 샘플 <code>.github/workflows/ci.yml</code> 파일입니다:</p>
 <pre><code class="language-yaml">name: Cargo 빌드 및 테스트
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 on:
   push:
   pull_request:
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 env: 
   CARGO_TERM_COLOR: always
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 jobs:
   build_and_test:
     name: Rust 프로젝트 - 최신
@@ -640,14 +640,14 @@ jobs:
 <p>GitLab CI에서 패키지를 테스트하려면 다음은 샘플 <code>.gitlab-ci.yml</code> 파일입니다:</p>
 <pre><code class="language-yaml">stages:
   - build
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 rust-latest:
   stage: build
   image: rust:latest
   script:
     - cargo build --verbose
     - cargo test --verbose
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 rust-nightly:
   stage: build
   image: rustlang/rust:nightly
@@ -1022,10 +1022,10 @@ $ cargo owner --remove github:rust-lang:owners
 <p>Recommendation: Add to your <code>Cargo.toml</code> or <code>.cargo/config.toml</code>:</p>
 <pre><code class="language-toml">[profile.dev]
 debug = "line-tables-only"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [profile.dev.package."*"]
 debug = false
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [profile.debugging]
 inherits = "dev"
 debug = true
@@ -1100,7 +1100,7 @@ rustflags = "-Zthreads=8"
 <pre><code class="language-toml">[target.'cfg(target_os = "linux")']
 # mold, if you have GCC 12+
 rustflags = ["-C", "link-arg=-fuse-ld=mold"]
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 # mold, otherwise
 linker = "clang"
 rustflags = ["-C", "link-arg=-fuse-ld=/path/to/mold"]
@@ -1472,7 +1472,7 @@ publish = false
 <pre><code class="language-toml">[package]
 name = "..."
 # ...
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 # 예를 들어 안드로이드 APK 생성 시 사용되는 메타데이터
 [package.metadata.android]
 package-name = "my-awesome-android-app"
@@ -1512,7 +1512,7 @@ unsafe_code = { level = "forbid", priority = 0 }
 <p>예를 들어 다음과 같습니다.</p>
 <pre><code class="language-toml">[lints.rust]
 unsafe_code = "forbid"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [lints.clippy]
 enum_glob_use = "deny"
 </code></pre>
@@ -1585,7 +1585,7 @@ bench = false
 name = "cool-tool"
 test = false
 bench = false
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [[bin]]
 name = "frobnicator"
 required-features = ["frobnicate"]
@@ -1692,7 +1692,7 @@ required-features = [] # Features required to build this target (N/A for lib).
 postgres = []
 sqlite = []
 tools = []
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [[bin]]
 name = "my-pg-tool"
 required-features = ["postgres", "tools"]
@@ -1869,7 +1869,7 @@ rust-version = "1.56"
 <h3 id="루트-패키지"><a class="header" href="#루트-패키지">루트 패키지</a></h3>
 <p><a href="#the-workspace-section"><code>[workspace]</code> 섹션</a>이 이미 <code>[package]</code> 를 정의한 <code>Cargo.toml</code> 에 추가된 경우, 해당 패키지는 워크스페이스의 <em>루트 패키지</em> 입니다. <em>워크스페이스 루트</em> 는 워크스페이스의 <code>Cargo.toml</code> 이 위치한 디렉토리입니다.</p>
 <pre><code class="language-toml">[workspace]
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [package]
 name = "hello_world" # 패키지 이름
 version = "0.1.0"    # 현재 버전 (semver 준수)
@@ -1942,7 +1942,7 @@ default-members = ["path/to/member2", "path/to/member3/foo"]
 <pre><code class="language-toml"># [프로젝트_디렉토리]/Cargo.toml
 [workspace]
 members = ["bar"]
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [workspace.package]
 version = "1.2.3"
 authors = ["Nice Folks"]
@@ -1972,7 +1972,7 @@ documentation.workspace = true
 <pre><code class="language-toml"># [프로젝트_디렉토리]/Cargo.toml
 [workspace]
 members = ["bar"]
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [workspace.dependencies]
 cc = "1.0.73"
 rand = "0.8.5"
@@ -1982,13 +1982,13 @@ regex = { version = "1.6.0", default-features = false, features = ["std"] }
 [package]
 name = "bar"
 version = "0.2.0"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [dependencies]
 regex = { workspace = true, features = ["unicode"] }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [build-dependencies]
 cc.workspace = true
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [dev-dependencies]
 rand.workspace = true
 </code></pre>
@@ -2002,7 +2002,7 @@ rand.workspace = true
 <pre><code class="language-toml"># [프로젝트_디렉토리]/Cargo.toml
 [workspace]
 members = ["crates/*"]
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [workspace.lints.rust]
 unsafe_code = "forbid"
 </code></pre>
@@ -2010,7 +2010,7 @@ unsafe_code = "forbid"
 [package]
 name = "bar"
 version = "0.1.0"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [lints]
 workspace = true
 </code></pre>
@@ -2021,7 +2021,7 @@ workspace = true
 <p><code>workspace.metadata</code> 테이블은 Cargo에 의해 무시되며 경고가 발생하지 않습니다. 이 섹션은 <code>Cargo.toml</code> 에 워크스페이스 구성을 저장하려는 도구에 사용할 수 있습니다. 예를 들어 다음과 같습니다.</p>
 <pre><code class="language-toml">[workspace]
 members = ["member1", "member2"]
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [workspace.metadata.webcontents]
 root = "웹프로젝트/경로"
 tool = ["npm", "run", "build"]
@@ -2132,21 +2132,21 @@ regex = { git = "https://github.com/rust-lang/regex.git", branch = "next" }
 <pre><code class="language-toml"># 호스트가 해당 URL을 허용한다면 .git 접미사는 생략할 수 있습니다 - 두 예시는 동일하게 작동합니다
 regex = { git = "https://github.com/rust-lang/regex" }
 regex = { git = "https://github.com/rust-lang/regex.git" }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 # 특정 태그가 있는 커밋
 regex = { git = "https://github.com/rust-lang/regex.git", tag = "1.10.3" }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 # SHA1 해시를 통한 커밋
 regex = { git = "https://github.com/rust-lang/regex.git", rev = "0c0990399270277832fbb5b91a1fa118e6f63dba" }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 # PR 493의 HEAD 커밋
 regex = { git = "https://github.com/rust-lang/regex.git", rev = "refs/pull/493/head" }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 # 잘못된 예시
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 # # 뒤에 커밋을 지정하면 커밋 ID를 무시하고 경고를 발생시킵니다
 regex = { git = "https://github.com/rust-lang/regex.git#4c59b70" }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 # git과 path는 동시에 사용할 수 없습니다
 regex = { git = "https://github.com/rust-lang/regex.git#4c59b70", path = "../regex" }
 </code></pre>
@@ -2184,7 +2184,7 @@ hello_utils = { path = "hello_utils" }
 [dependencies]
 regex-lite   = { git = "https://github.com/rust-lang/regex.git" }
 regex-syntax = { git = "https://github.com/rust-lang/regex.git" }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 # path 키는 로컬 경로에 구성원 이름이 포함되어야 합니다
 [dependencies]
 regex-lite   = { path = "../regex/regex-lite" }
@@ -2206,11 +2206,11 @@ hello_utils = { path = "hello_utils", version = "0.1.0" }
 # 로컬에서 사용될 때는 `my-bitflags` 를 사용하고,
 # 게시될 때는 crates.io의 1.0 버전을 사용합니다.
 bitflags = { path = "my-bitflags", version = "1.0" }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 # 로컬에서 사용될 때는 지정된 git 저장소를 사용하고,
 # 게시될 때는 crates.io의 1.0 버전을 사용합니다.
 smallvec = { git = "https://github.com/servo/rust-smallvec.git", version = "1.0" }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 # 참고: 버전이 일치하지 않으면 Cargo 빌드에 실패합니다!
 </code></pre>
 <p>이것이 유용할 수 있는 한 가지 예는 라이브러리를 동일한 워크스페이스 내의 여러 패키지로 분할한 경우입니다. 개발 중에는 <code>path</code> 의존성을 사용하여 워크스페이스 내의 로컬 패키지를 가리켜 로컬 버전을 사용하고, 게시된 후에는 <a href="https://crates.io/">crates.io</a> 버전을 사용할 수 있습니다. 이는 <a href="#의존성-재정의하기">재정의(override)</a> 를 지정하는 것과 유사하지만, 이 하나의 의존성 선언에만 적용됩니다.</p>
@@ -2218,13 +2218,13 @@ smallvec = { git = "https://github.com/servo/rust-smallvec.git", version = "1.0"
 <p>플랫폼별 의존성은 동일한 형식을 사용하지만 <code>target</code> 섹션 아래에 나열됩니다. 보통 이러한 섹션을 정의하기 위해 Rust와 유사한 <a href="../reference/conditional-compilation.html"><code>#[cfg]</code> 구문</a>이 사용됩니다.</p>
 <pre><code class="language-toml">[target.'cfg(windows)'.dependencies]
 winhttp = "0.4.0"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [target.'cfg(unix)'.dependencies]
 openssl = "1.0.1"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [target.'cfg(target_arch = "x86")'.dependencies]
 native-i686 = { path = "native/i686" }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [target.'cfg(target_arch = "x86_64")'.dependencies]
 native-x86_64 = { path = "native/x86_64" }
 </code></pre>
@@ -2234,7 +2234,7 @@ native-x86_64 = { path = "native/x86_64" }
 <pre><code class="language-toml">[dependencies]
 foo = { version = "1.0", optional = true }
 bar = { version = "1.0", optional = true }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [features]
 fancy-feature = ["foo", "bar"]
 </code></pre>
@@ -2242,7 +2242,7 @@ fancy-feature = ["foo", "bar"]
 <p><code>#[cfg]</code> 구문 외에도, Cargo는 의존성이 적용될 전체 타겟을 나열하는 것도 지원합니다.</p>
 <pre><code class="language-toml">[target.x86_64-pc-windows-gnu.dependencies]
 winhttp = "0.4.0"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [target.i686-unknown-linux-gnu.dependencies]
 openssl = "1.0.1"
 </code></pre>
@@ -2250,7 +2250,7 @@ openssl = "1.0.1"
 <p>사용자 정의 타겟 사양(예: <code>--target foo/bar.json</code>)을 사용하는 경우, <code>.json</code> 확장자를 제외한 기본 파일 이름을 사용하세요.</p>
 <pre><code class="language-toml">[target.bar.dependencies]
 winhttp = "0.4.0"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [target.my-special-i686-platform.dependencies]
 openssl = "1.0.1"
 native = { path = "native/i686" }
@@ -2303,7 +2303,7 @@ features = ["secure-password", "civet"]
 <pre><code class="language-toml">[package]
 name = "mypackage"
 version = "0.0.1"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [dependencies]
 foo = "0.1"
 bar = { git = "https://github.com/example/project.git", package = "foo" }
@@ -2335,13 +2335,13 @@ log-debug = ['bar/log-debug'] # using 'foo/log-debug' would be an error!
 <pre><code class="language-toml">[package]
 name = "bar"
 version = "0.2.0"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [dependencies]
 regex = { workspace = true, features = ["unicode"] }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [build-dependencies]
 cc.workspace = true
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [dev-dependencies]
 rand = { workspace = true, optional = true }
 </code></pre>
@@ -2385,7 +2385,7 @@ rand = { workspace = true, optional = true }
 <pre><code class="language-toml">[package]
 name = "my-library"
 version = "0.1.0"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [dependencies]
 uuid = "1.0"
 </code></pre>
@@ -2416,10 +2416,10 @@ uuid = { git = 'https://github.com/uuid-rs/uuid.git' }
 <pre><code class="language-toml">[package]
 name = "my-library"
 version = "0.1.0"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [dependencies]
 uuid = "1.0.1"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [patch.crates-io]
 uuid = { git = 'https://github.com/uuid-rs/uuid.git' }
 </code></pre>
@@ -2429,11 +2429,11 @@ uuid = { git = 'https://github.com/uuid-rs/uuid.git' }
 <pre><code class="language-toml">[package]
 name = "my-binary"
 version = "0.1.0"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [dependencies]
 my-library = { git = 'https://example.com/git/my-library' }
 uuid = "1.0"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [patch.crates-io]
 uuid = { git = 'https://github.com/uuid-rs/uuid.git' }
 </code></pre>
@@ -2448,7 +2448,7 @@ my-library = { path = "../my-library/경로" }
 <p>보통 파괴적 변경을 동반하는 크레이트의 새로운 주 버전으로 작업하는 경우를 살펴보겠습니다. 이전 크레이트의 예를 이어가자면, <code>uuid</code> 크레이트의 2.0.0 버전을 만들려고 합니다. 상위에 모든 변경 사항을 제출한 후, <code>my-library</code> 의 매니페스트를 다음과 같이 업데이트할 수 있습니다.</p>
 <pre><code class="language-toml">[dependencies]
 uuid = "2.0"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [patch.crates-io]
 uuid = { git = "https://github.com/uuid-rs/uuid.git", branch = "2.0.0" }
 </code></pre>
@@ -2456,11 +2456,11 @@ uuid = { git = "https://github.com/uuid-rs/uuid.git", branch = "2.0.0" }
 <pre><code class="language-toml">[package]
 name = "my-binary"
 version = "0.1.0"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [dependencies]
 my-library = { git = 'https://example.com/git/my-library' }
 uuid = "1.0"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [patch.crates-io]
 uuid = { git = 'https://github.com/uuid-rs/uuid.git', branch = '2.0.0' }
 </code></pre>
@@ -2478,10 +2478,10 @@ serde2 = { git = 'https://github.com/example/serde.git', package = 'serde', bran
 <pre><code class="language-toml">[patch.crates-io]
 foo = { git = 'https://github.com/example/foo.git' }
 bar = { path = 'my/local/bar' }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [dependencies.baz]
 git = 'https://github.com/example/baz.git'
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [patch.'https://github.com/example/baz']
 baz = { git = 'https://github.com/example/patched-baz.git', branch = 'my-branch' }
 </code></pre>
@@ -2533,31 +2533,31 @@ baz = { git = 'https://github.com/example/patched-baz.git', branch = 'my-branch'
 <p>대체 소스 구성은 <a href="#설정-1"><code>.cargo/config.toml</code></a> 을 통해 이루어지며 사용 가능한 키의 전체 세트는 다음과 같습니다.</p>
 <pre><code class="language-toml"># `source` 테이블은 소스 대체와 관련된 모든 키가 저장되는 곳입니다.
 [source]
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 # `source` 테이블 아래에는 해당 소스의 이름이 키가 되는 여러 테이블이 있습니다.
 # 예를 들어, 이 섹션은 이 `.cargo/config.toml` 파일을 포함하는 디렉토리를 기준으로
 # `vendor` 에 위치한 디렉토리에서 가져오는 `my-vendor-source` 라는 새 소스를 정의합니다.
 [source.my-vendor-source]
 directory = "vendor"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 # crates.io 기본 크레이트 소스는 "crates-io"라는 이름으로 사용할 수 있으며,
 # 여기서는 `replace-with` 키를 사용하여 위에서 정의한 소스로 대체됨을 나타냅니다.
 #
 # `replace-with` 키는 `[registries]` 테이블에 정의된 대체 레지스트리 이름을 참조할 수도 있습니다.
 [source.crates-io]
 replace-with = "my-vendor-source"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 # 각 소스는 소스 이름이 키가 되는 자체 테이블을 가집니다.
 [source.소스-이름]
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 # `소스-이름 ` 이 다른 곳에 정의된 `another-source` 로 대체됨을 나타냅니다.
 replace-with = "another-source"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 # 여러 종류의 소스를 지정할 수 있습니다 (아래에서 더 자세히 설명함):
 registry = "https://example.com/path/to/index"
 local-registry = "path/to/registry"
 directory = "path/to/vendor"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 # Git 소스는 선택적으로 브랜치/태그/리비전도 지정할 수 있습니다.
 git = "https://example.com/path/to/repo"
 # branch = "master"
@@ -2569,10 +2569,10 @@ git = "https://example.com/path/to/repo"
 <p>Registry sources can use <a href="#registry-protocols">either git or sparse HTTP protocol</a>:</p>
 <pre><code class="language-toml"># Git protocol
 registry = "ssh://git@example.com/path/to/index.git"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 # Sparse HTTP protocol  
 registry = "sparse+https://example.com/path/to/index"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 # HTTPS git protocol
 registry = "https://example.com/path/to/index"
 </code></pre>
@@ -2606,24 +2606,24 @@ registry = "https://example.com/path/to/index"
     let resolved = ResolveGraph::new();
     resolve_next(dep_queue, resolved, policy)
 }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 fn resolve_next(dep_queue: Queue, resolved: ResolveGraph, policy: Policy) -&gt; Option&lt;ResolveGraph&gt; {
     let Some(dep_spec) = policy.pick_next_dep(&amp;mut dep_queue) else {
         // 완료
         return Some(resolved);
     };
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
     if let Some(resolved) = policy.try_unify_version(dep_spec, resolved.clone()) {
         return Some(resolved);
     }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
     let dep_versions = dep_spec.lookup_versions()?;
     let mut dep_versions = policy.filter_versions(dep_spec, dep_versions);
     while let Some(dep_version) = policy.pick_next_version(&amp;mut dep_versions) {
         if policy.needs_version_unification(&amp;dep_version, &amp;resolved) {
             continue;
         }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
         let mut dep_queue = dep_queue.clone();
         dep_queue.enqueue(&amp;dep_version.dependencies);
         let mut resolved = resolved.clone();
@@ -2632,7 +2632,7 @@ fn resolve_next(dep_queue: Queue, resolved: ResolveGraph, policy: Policy) -&gt; 
             return Some(resolved);
         }
     }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
     // 유효한 해결책을 찾지 못함, 백트래킹(backtrack) 후 `pick_next_version` 수행
     None
 }
@@ -2666,7 +2666,7 @@ bitflags = "1.0"  # `&gt;=1.0.0,&lt;2.0.0` 을 의미함
 <pre><code class="language-toml"># 패키지 A
 [dependencies]
 bitflags = "1.0"  # `&gt;=1.0.0,&lt;2.0.0` 을 의미함
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 # 패키지 B
 [dependencies]
 bitflags = "1.1"  # `&gt;=1.1.0,&lt;2.0.0` 을 의미함
@@ -2675,7 +2675,7 @@ bitflags = "1.1"  # `&gt;=1.1.0,&lt;2.0.0` 을 의미함
 <pre><code class="language-toml"># 패키지 A
 [dependencies]
 log = "=0.4.11"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 # 패키지 B
 [dependencies]
 log = "=0.4.8"
@@ -2684,7 +2684,7 @@ log = "=0.4.8"
 <pre><code class="language-toml"># 패키지 A
 [dependencies]
 rand = "0.7"  # `&gt;=0.7.0,&lt;0.8.0` 을 의미함
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 # 패키지 B
 [dependencies]
 rand = "0.6"  # `&gt;=0.6.0,&lt;0.7.0` 을 의미함
@@ -2693,7 +2693,7 @@ rand = "0.6"  # `&gt;=0.6.0,&lt;0.7.0` 을 의미함
 <pre><code class="language-toml"># 패키지 A
 [dependencies]
 rand = "&gt;=0.6,&lt;0.8.0"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 # 패키지 B
 [dependencies]
 rand = "0.6"  # `&gt;=0.6.0,&lt;0.7.0` 을 의미함
@@ -2722,7 +2722,7 @@ bitflags = "1.3.0"
 <pre><code class="language-toml">[package]
 name = "my-cli"
 rust-version = "1.62"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [dependencies]
 clap = "4.0"  # 4.0.32로 해결됨
 </code></pre>
@@ -2735,7 +2735,7 @@ clap = "4.0"  # 4.0.32로 해결됨
 <pre><code class="language-toml">[package]
 name = "my-cli"
 rust-version = "1.62"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [dependencies]
 clap = "4.2"  # 4.5.20으로 해결됨
 </code></pre>
@@ -2745,10 +2745,10 @@ clap = "4.2"  # 4.5.20으로 해결됨
 <pre><code class="language-toml">[package]
 name = "a"
 rust-version = "1.62"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [package]
 name = "b"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [dependencies]
 clap = "4.2"  # 4.0.32로 해결됨 (패키지 a 때문)
 </code></pre>
@@ -2757,13 +2757,13 @@ clap = "4.2"  # 4.0.32로 해결됨 (패키지 a 때문)
 <pre><code class="language-toml">[package]
 name = "a"
 rust-version = "1.62"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [dependencies]
 clap = "4.2"  # 4.5.20으로 해결됨
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [package]
 name = "b"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [dependencies]
 clap = "4.5"  # 4.5.20으로 해결됨
 </code></pre>
@@ -2882,7 +2882,7 @@ resolver = "2"
 <pre><code class="language-console">$ cargo tree --workspace --target all --all-features --invert rand
 rand v0.8.5
 └── ...
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 rand v0.8.5
 └── ...
 </code></pre>
@@ -2891,7 +2891,7 @@ rand v0.8.5
 <pre><code class="language-console">$ cargo tree --workspace --target all --all-features --edges features --invert rand
 rand v0.8.5
 └── ...
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 rand v0.8.5
 └── ...
 </code></pre>
@@ -2900,7 +2900,7 @@ rand v0.8.5
 <pre><code class="language-console">$ cargo tree --workspace --target all --all-features --duplicates
 rand v0.7.3
 └── ...
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 rand v0.8.5
 └── ...
 </code></pre>
@@ -2908,7 +2908,7 @@ rand v0.8.5
 <pre><code class="language-toml"># 패키지 A
 [dependencies]
 rand = "0.7"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 # 패키지 B
 [dependencies]
 rand = "&gt;=0.6"  # 참고: 이와 같이 열린 요구 사항은 권장되지 않습니다
@@ -3005,7 +3005,7 @@ gif = ["dep:gif"]
 <pre><code class="language-toml">[dependencies]
 ravif = { version = "0.6.3", optional = true }
 rgb = { version = "0.8.25", optional = true }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [features]
 avif = ["dep:ravif", "dep:rgb"]
 </code></pre>
@@ -3029,7 +3029,7 @@ flate2 = { version = "1.0.3", default-features = false, features = ["zlib-rs"] }
 <p>의존성의 기능은 <code>[features]</code> 테이블에서도 활성화할 수 있습니다. 구문은 <code>"패키지-이름/기능-이름"</code> 입니다. 예를 들어 다음과 같습니다.</p>
 <pre><code class="language-toml">[dependencies]
 jpeg-decoder = { version = "0.1.20", default-features = false }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [features]
 # jpeg-decoder의 "rayon" 기능을 활성화하여 병렬 처리 지원을 활성화합니다.
 parallel = ["jpeg-decoder/rayon"]
@@ -3042,7 +3042,7 @@ parallel = ["jpeg-decoder/rayon"]
 <pre><code class="language-toml">[dependencies]
 serde = { version = "1.0.133", optional = true }
 rgb = { version = "0.8.25", optional = true }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [features]
 serde = ["dep:serde", "rgb?/serde"]
 </code></pre>
@@ -3064,11 +3064,11 @@ serde = ["dep:serde", "rgb?/serde"]
 <p>예를 들어, <a href="../reference/names/preludes.html#the-no_std-attribute"><code>no_std</code></a> 환경을 선택적으로 지원하고 싶다면 <code>no_std</code> 기능을 <strong>사용하지 마세요</strong>. 대신 <code>std</code> 를 <em>활성화하는</em> <code>std</code> 기능을 사용하세요. 예시:</p>
 <pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
 </span>#![no_std]
-
 <span class="boring">fn main() {
-</span>#[cfg(feature = "std")]
+</span>`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
+#[cfg(feature = "std")]
 extern crate std;
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 #[cfg(feature = "std")]
 pub fn function_that_requires_std() {
     // ...
@@ -3114,7 +3114,7 @@ resolver = "2"
 <pre><code class="language-sh"># This command is allowed with resolver = "2", regardless of which directory
 # you are in.
 cargo build -p foo -p bar --features foo-feat,bar-feat
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 # 이 명시적인 동등한 명령은 모든 리졸버 버전에서 작동합니다.
 cargo build -p foo -p bar --features foo/foo-feat,bar/bar-feat
 </code></pre>
@@ -3236,7 +3236,7 @@ overflow-checks = false     # Disable integer overflow checks.
 <p><code>strip</code> 옵션은 바이너리에서 심볼이나 디버그 정보를 제거하도록 rustc에 지시하는 <a href="../rustc/codegen-options/index.html#strip"><code>-C strip</code> 플래그</a> 를 제어합니다. 다음과 같이 활성화할 수 있습니다.</p>
 <pre><code class="language-toml">[package]
 # ...
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [profile.release]
 strip = "debuginfo"
 </code></pre>
@@ -3346,7 +3346,7 @@ rpath = false
 opt-level = 0
 codegen-units = 256
 debug = false # when possible
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [profile.release.build-override]
 opt-level = 0
 codegen-units = 256
@@ -3444,7 +3444,7 @@ opt-level = 3
 <h2 id="설정-형식"><a class="header" href="#설정-형식">설정 형식</a></h2>
 <p>설정 파일은 (매니페스트와 마찬가지로) <a href="https://toml.io/">TOML 형식</a> 으로 작성되며, 섹션(테이블) 내에 간단한 키-값 쌍이 포함됩니다. 다음은 모든 설정에 대한 요약이며, 자세한 설명은 아래에 나와 있습니다.</p>
 <pre><code class="language-toml">paths = ["/path/to/override"] # path dependency overrides
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [alias]     # command aliases
 b = "build"
 c = "check"
@@ -3453,7 +3453,7 @@ r = "run"
 rr = "run --release"
 recursive_example = "rr --example recursions"
 space_example = ["run", "--release", "--", "\"command list\""]
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [build]
 warnings = "warn"             # adjust the effective lint level for warnings
 jobs = 1                      # number of parallel jobs, defaults to # of CPUs
@@ -3468,15 +3468,15 @@ rustflags = ["…", "…"]        # custom flags to pass to all compiler invocat
 rustdocflags = ["…", "…"]     # custom flags to pass to rustdoc
 incremental = true            # whether or not to enable incremental compilation
 dep-info-basedir = "…"        # path for the base directory for targets in depfiles
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [credential-alias]
 # Provides a way to define aliases for credential providers.
 my-alias = ["/usr/bin/cargo-credential-example", "--argument", "value", "--flag"]
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [doc]
 browser = "chromium"          # browser to use with `cargo doc --open`,
                               # overrides the `BROWSER` environment variable
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [env]
 # Set ENV_VAR_NAME=value for any process run by Cargo
 ENV_VAR_NAME = "value"
@@ -3484,16 +3484,16 @@ ENV_VAR_NAME = "value"
 ENV_VAR_NAME_2 = { value = "value", force = true }
 # `value` is relative to the parent of `.cargo/config.toml`, env var will be the full absolute path
 ENV_VAR_NAME_3 = { value = "relative/path", relative = true }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [future-incompat-report]
 frequency = 'always' # when to display a notification about a future incompat report
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [cache]
 auto-clean-frequency = "1 day"   # How often to perform automatic cache cleaning
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [cargo-new]
 vcs = "none"              # VCS to use ('git', 'hg', 'pijul', 'fossil', 'none')
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [http]
 debug = false               # HTTP debugging
 proxy = "host:port"         # HTTP proxy in libcurl format
@@ -3507,21 +3507,21 @@ proxy-cainfo = "cert.pem"   # path to proxy Certificate Authority (CA) bundle
 check-revoke = true         # check for SSL certificate revocation
 multiplexing = true         # HTTP/2 multiplexing
 user-agent = "…"            # the user-agent header
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [install]
 root = "/some/path"         # `cargo install` destination directory
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [net]
 retry = 3                   # network retries
 git-fetch-with-cli = true   # use the `git` executable for git operations
 offline = true              # do not access the network
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [net.ssh]
 known-hosts = ["..."]       # known SSH host keys
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [patch.&lt;registry&gt;]
 # Same keys as for [patch] in Cargo.toml
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [profile.&lt;name&gt;]         # Modify profile settings via config.
 inherits = "dev"         # Inherits settings from [profile.dev].
 opt-level = 0            # Optimization level.
@@ -3539,25 +3539,25 @@ rpath = false            # Sets the rpath linking option.
 # Same keys for a normal profile.
 [profile.&lt;name&gt;.package.&lt;name&gt;]  # Override profile for a package.
 # Same keys for a normal profile (minus `panic`, `lto`, and `rpath`).
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [resolver]
 lockfile-path = "…"  # Overrides the path used for
 incompatible-rust-versions = "allow"  # Specifies how resolver reacts to these
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [registries.&lt;name&gt;]  # registries other than crates.io
 index = "…"          # URL of the registry index
 token = "…"          # authentication token for the registry
 credential-provider = "cargo:token" # The credential provider for this registry.
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [registries.crates-io]
 protocol = "sparse"  # The protocol to use to access crates.io.
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [registry]
 default = "…"        # name of the default registry
 token = "…"          # authentication token for crates.io
 credential-provider = "cargo:token"           # The credential provider for crates.io.
 global-credential-providers = ["cargo:token"] # The credential providers to use by default.
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [source.&lt;name&gt;]      # source definition and replacement
 replace-with = "…"   # replace this source with the given named source
 directory = "…"      # path to a directory source
@@ -3567,18 +3567,18 @@ git = "…"            # URL of a git repository source
 branch = "…"         # branch name for the git repository
 tag = "…"            # tag name for the git repository
 rev = "…"            # revision for the git repository
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [target.&lt;triple&gt;]
 linker = "…"              # linker to use
 runner = "…"              # wrapper to run executables
 rustflags = ["…", "…"]    # custom flags for `rustc`
 rustdocflags = ["…", "…"] # custom flags for `rustdoc`
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [target.&lt;cfg&gt;]
 linker = "…"            # linker to use
 runner = "…"            # wrapper to run executables
 rustflags = ["…", "…"]  # custom flags for `rustc`
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [target.&lt;triple&gt;.&lt;links&gt;] # `links` build script override
 rustc-link-lib = ["foo"]
 rustc-link-search = ["/path/to/foo"]
@@ -3588,7 +3588,7 @@ rustc-env = {key = "value"}
 rustc-cdylib-link-arg = ["…"]
 metadata_key1 = "value"
 metadata_key2 = "value"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [term]
 quiet = false                    # whether cargo output is quiet
 verbose = false                  # whether cargo provides verbose output
@@ -3607,7 +3607,7 @@ progress.term-integration = true # whether cargo reports progress to terminal em
 <p>Cargo는 <code>--config</code> 명령줄 옵션을 통해 임의의 설정 재정의를 허용합니다. 인수는 <code>KEY=VALUE</code> 와 같은 TOML 구문이거나 추가 설정 파일의 경로여야 합니다.</p>
 <pre><code class="language-console"># With `KEY=VALUE` in TOML syntax
 cargo --config net.git-fetch-with-cli=true fetch
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 # With a path to a configuration file
 cargo --config ./path/to/my/extra-config.toml fetch
 </code></pre>
@@ -3616,16 +3616,16 @@ cargo --config ./path/to/my/extra-config.toml fetch
 <p>Bourne 셸 구문을 사용한 몇 가지 예시는 다음과 같습니다.</p>
 <pre><code class="language-console"># Most shells will require escaping.
 cargo --config http.proxy=\"http://example.com\" …
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 # Spaces may be used.
 cargo --config "net.git-fetch-with-cli = true" …
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 # TOML array example. Single quotes make it easier to read and write.
 cargo --config 'build.rustdocflags = ["--html-in-header", "header.html"]' …
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 # Example of a complex TOML key.
 cargo --config "target.'cfg(all(target_arch = \"arm\", target_os = \"none\"))'.runner = 'my-runner'" …
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 # Example of overriding a profile setting.
 cargo --config profile.dev.package.image.opt-level=3 …
 </code></pre>
@@ -3644,7 +3644,7 @@ include = [
     "frodo.toml",
     "samwise.toml",
 ]
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 # inline tables for more control
 include = [
     { path = "required.toml" },
@@ -3699,7 +3699,7 @@ directory = "vendor"
 <p>Cargo 설정 파일과 동일한 형식을 따릅니다.</p>
 <pre><code class="language-toml">[registry]
 token = "…"   # crates.io용 액세스 토큰
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [registries.&lt;이름&gt;]
 token = "…"   # 명명된 레지스트리용 액세스 토큰
 </code></pre>
@@ -4372,7 +4372,7 @@ known-hosts = [
 linker = "arm-none-eabi-gcc"
 runner = "my-emulator"
 rustflags = ["…", "…"]
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [target.'cfg(all(target_arch = "arm", target_os = "none"))']
 runner = "my-arm-wrapper"
 rustflags = ["…", "…"]
@@ -4992,12 +4992,12 @@ metadata_key2 = "value"
 ├── build.rs
 └── src
     └── main.rs
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 1 directory, 3 files
 </code></pre>
 <p>여기에는 <code>build.rs</code> 빌드 스크립트가 있고 <code>main.rs</code> 에 바이너리 코드가 있습니다. 이 패키지의 기본적인 매니페스트는 다음과 같습니다.</p>
 <pre><code class="language-toml"># Cargo.toml
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [package]
 name = "hello-from-generated-code"
 version = "0.1.0"
@@ -5005,11 +5005,11 @@ edition = "2024"
 </code></pre>
 <p>빌드 스크립트 내부를 살펴보겠습니다.</p>
 <pre class="playground"><code class="language-rust no_run">// build.rs
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 use std::env;
 use std::fs;
 use std::path::Path;
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 fn main() {
     let out_dir = env::var_os("OUT_DIR").unwrap();
     let dest_path = Path::new(&amp;out_dir).join("hello.rs");
@@ -5035,9 +5035,9 @@ fn main() {
 </ul>
 <p>다음으로 라이브러리 자체를 살펴보겠습니다.</p>
 <pre><code class="language-rust ignore">// src/main.rs
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 include!(concat!(env!("OUT_DIR"), "/hello.rs"));
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 fn main() {
     println!("{}", message());
 }</code></pre>
@@ -5052,12 +5052,12 @@ fn main() {
 └── src
     ├── hello.c
     └── main.rs
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 1 directory, 4 files
 </code></pre>
 <p>이전과 꽤 비슷합니다! 다음은 매니페스트입니다.</p>
 <pre><code class="language-toml"># Cargo.toml
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [package]
 name = "hello-world-from-c"
 version = "0.1.0"
@@ -5065,14 +5065,14 @@ edition = "2024"
 </code></pre>
 <p>지금은 빌드 의존성을 사용하지 않을 것이므로, 이제 빌드 스크립트를 살펴보겠습니다.</p>
 <pre class="playground"><code class="language-rust no_run">// build.rs
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 use std::process::Command;
 use std::env;
 use std::path::Path;
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 fn main() {
     let out_dir = env::var("OUT_DIR").unwrap();
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
     // 이 접근 방식에는 몇 가지 단점이 있습니다. 아래 주석에서
     // 이 명령들의 이식성을 개선하는 방법을 자세히 설명합니다.
     Command::new("gcc").args(&amp;["src/hello.c", "-c", "-fPIC", "-o"])
@@ -5081,7 +5081,7 @@ fn main() {
     Command::new("ar").args(&amp;["crus", "libhello.a", "hello.o"])
                       .current_dir(&amp;Path::new(&amp;out_dir))
                       .status().unwrap();
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
     println!("cargo::rustc-link-search=native={}", out_dir);
     println!("cargo::rustc-link-lib=static=hello");
     println!("cargo::rerun-if-changed=src/hello.c");
@@ -5098,7 +5098,7 @@ cc = "1.0"
 </code></pre>
 <p>그리고 이 크레이트를 사용하도록 빌드 스크립트를 다시 작성합니다.</p>
 <pre><code class="language-rust ignore">// build.rs
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 fn main() {
     cc::Build::new()
         .file("src/hello.c")
@@ -5115,19 +5115,19 @@ fn main() {
 <p>여기서 모든 빌드 스크립트에 로직을 중복해서 작성하는 대신, 가능한 한 많은 기능을 공통 빌드 의존성에 맡기는 것의 큰 이점을 확인할 수 있습니다!</p>
 <p>다시 사례 연구로 돌아가서, <code>src</code> 디렉토리의 내용을 간단히 살펴보겠습니다.</p>
 <pre><code class="language-c">// src/hello.c
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 #include &lt;stdio.h&gt;
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 void hello() {
     printf("Hello, World!\n");
 }
 </code></pre>
 <pre><code class="language-rust ignore">// src/main.rs
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 // `#[link]` 속성이 없음에 주목하세요. 무엇을 링크할지 선택하는 책임을
 // 소스 파일에 하드코딩하는 대신 빌드 스크립트에 위임하고 있습니다.
 unsafe extern { fn hello(); }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 fn main() {
     unsafe { hello(); }
 }</code></pre>
@@ -5139,33 +5139,33 @@ fn main() {
 <p>이 예제에서는 시스템의 zlib 라이브러리에 대한 바인딩을 만들어 보겠습니다. zlib은 데이터 압축 기능을 제공하며 대부분의 유닉스 계열 시스템에서 흔히 볼 수 있는 라이브러리입니다. 이미 <a href="https://crates.io/crates/libz-sys"><code>libz-sys</code> 크레이트</a>에 잘 정리되어 있지만, 이 예제에서는 극도로 단순화된 버전을 만들어 보겠습니다. 전체 예제는 <a href="https://github.com/rust-lang/libz-sys">소스 코드</a> 를 확인하세요.</p>
 <p>라이브러리의 위치를 쉽게 찾기 위해 <a href="https://crates.io/crates/pkg-config"><code>pkg-config</code> 크레이트</a> 를 사용하겠습니다. 이 크레이트는 시스템의 <code>pkg-config</code> 유틸리티를 사용하여 라이브러리에 대한 정보를 찾습니다. 그리고 라이브러리 링크에 필요한 정보를 Cargo에 자동으로 알려줍니다. 이 방식은 <code>pkg-config</code> 가 설치된 유닉스 계열 시스템에서만 작동할 가능성이 높습니다. 먼저 매니페스트를 설정해 봅시다.</p>
 <pre><code class="language-toml"># Cargo.toml
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [package]
 name = "libz-sys"
 version = "0.1.0"
 edition = "2024"
 links = "z"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [build-dependencies]
 pkg-config = "0.3.16"
 </code></pre>
 <p><code>package</code> 테이블에 <code>links</code> 키를 포함했음에 주목하세요. 이는 우리가 <code>libz</code> 라이브러리에 링크하고 있음을 Cargo에 알려줍니다. 이를 활용하는 예제는 <a href="#using-another-sys-crate">“다른 sys 크레이트 사용하기”</a> 를 참조하세요.</p>
 <p>빌드 스크립트는 꽤 간단합니다.</p>
 <pre><code class="language-rust ignore">// build.rs
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 fn main() {
     pkg_config::Config::new().probe("zlib").unwrap();
     println!("cargo::rerun-if-changed=build.rs");
 }</code></pre>
 <p>기본적인 FFI 바인딩으로 예제를 마무리해 봅시다.</p>
 <pre><code class="language-rust ignore">// src/lib.rs
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 use std::os::raw::{c_uint, c_ulong};
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 unsafe extern "C" {
     pub fn crc32(crc: c_ulong, buf: *const u8, len: c_uint) -&gt; c_ulong;
 }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 #[test]
 fn test_crc32() {
     let s = "hello";
@@ -5184,21 +5184,21 @@ fn test_crc32() {
 <p><code>links</code> 키를 사용할 때, 크레이트는 자신을 의존하는 다른 크레이트들이 읽을 수 있는 메타데이터를 설정할 수 있습니다. 이는 크레이트 간에 정보를 주고받는 메커니즘을 제공합니다. 이 예제에서는 실제 <a href="https://crates.io/crates/libz-sys"><code>libz-sys</code> 크레이트</a>의 zlib을 사용하는 C 라이브러리를 만들어 보겠습니다.</p>
 <p>zlib에 의존하는 C 라이브러리가 있다면, <a href="https://crates.io/crates/libz-sys"><code>libz-sys</code> 크레이트</a> 를 활용하여 자동으로 찾거나 빌드할 수 있습니다. 이는 zlib이 보통 설치되지 않는 윈도우와 같은 환경에서 교차 플랫폼을 지원할 때 매우 유용합니다. <code>libz-sys</code> 는 다른 패키지들에게 zlib 헤더 파일의 위치를 알려주기 위해 <a href="https://github.com/rust-lang/libz-sys/blob/3c594e677c79584500da673f918c4d2101ac97a1/build.rs#L156"><code>include</code> 메타데이터를 설정</a>합니다. 우리의 빌드 스크립트는 <code>DEP_Z_INCLUDE</code> 환경 변수를 통해 해당 메타데이터를 읽을 수 있습니다. 다음은 그 예시입니다.</p>
 <pre><code class="language-toml"># Cargo.toml
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [package]
 name = "z_user"
 version = "0.1.0"
 edition = "2024"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [dependencies]
 libz-sys = "1.0.25"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [build-dependencies]
 cc = "1.0.46"
 </code></pre>
 <p>여기서는 <code>libz-sys</code> 를 포함시켰는데, 이는 최종 라이브러리에서 단 하나의 <code>libz</code> 만 사용되도록 보장하며, 우리 빌드 스크립트에서 해당 라이브러리에 접근할 수 있게 해줍니다.</p>
 <pre><code class="language-rust ignore">// build.rs
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 fn main() {
     let mut cfg = cc::Build::new();
     cfg.file("src/z_user.c");
@@ -5210,19 +5210,19 @@ fn main() {
 }</code></pre>
 <p><code>libz-sys</code> 가 모든 어려운 작업을 처리해 주므로, 이제 C 소스 코드에서 zlib 헤더를 포함할 수 있으며, 시스템에 미리 설치되어 있지 않더라도 헤더를 찾을 수 있습니다.</p>
 <pre><code class="language-c">// src/z_user.c
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 #include "zlib.h"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 // … zlib을 사용하는 나머지 코드들
 </code></pre>
 <h2 id="reading-target-configuration"><a class="header" href="#reading-target-configuration">Reading target configuration</a></h2>
 <p>When a build script needs to make decisions based on the target platform, it should read the <code>CARGO_CFG_*</code> environment variables rather than using <code>cfg!</code> or <code>#[cfg]</code> attributes. This is because the build script is compiled for and runs on the <em>host</em> machine, while <code>CARGO_CFG_*</code> variables reflect the <em>target</em> platform, an important distinction when cross-compiling.</p>
 <pre><code class="language-rust ignore">// build.rs
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 fn main() {
     // reads the TARGET configuration
     let target_os = std::env::var("CARGO_CFG_TARGET_OS").unwrap();
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
     if target_os == "windows" {
         println!("cargo::rustc-link-lib=userenv");
     } else if target_os == "linux" {
@@ -5238,13 +5238,13 @@ fn main() {
 <p>이 지시문은 <code>openssl-sys</code> 에 직접 의존하는 모든 크레이트에 <code>DEP_OPENSSL_VERSION_NUMBER</code> 환경 변수가 설정되도록 합니다.</p>
 <p>고수준 인터페이스를 제공하는 <code>openssl</code> 크레이트는 <code>openssl-sys</code> 를 의존성으로 지정합니다. <code>openssl</code> 빌드 스크립트는 <code>DEP_OPENSSL_VERSION_NUMBER</code> 환경 변수를 통해 <code>openssl-sys</code> 빌드 스크립트가 생성한 버전 정보를 읽을 수 있습니다. 이를 사용하여 다음과 같이 몇 가지 <a href="https://github.com/sfackler/rust-openssl/blob/dc72a8e2c429e46c275e528b61a733a66e7877fc/openssl/build.rs#L18-L36"><code>cfg</code> 값</a>을 생성합니다.</p>
 <pre><code class="language-rust ignore">// (build.rs의 일부)
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 println!("cargo::rustc-check-cfg=cfg(ossl101,ossl102)");
 println!("cargo::rustc-check-cfg=cfg(ossl110,ossl110g,ossl111)");
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 if let Ok(version) = env::var("DEP_OPENSSL_VERSION_NUMBER") {
     let version = u64::from_str_radix(&amp;version, 16).unwrap();
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
     if version &gt;= 0x1_00_01_00_0 {
         println!("cargo::rustc-cfg=ossl101");
     }
@@ -5263,7 +5263,7 @@ if let Ok(version) = env::var("DEP_OPENSSL_VERSION_NUMBER") {
 }</code></pre>
 <p>이러한 <code>cfg</code> 값들은 <a href="../reference/conditional-compilation.html#the-cfg-attribute"><code>cfg</code> 속성</a> 이나 <a href="../std/macro.cfg.html"><code>cfg</code> 매크로</a> 와 함께 사용하여 코드를 조건부로 포함할 수 있습니다. 예를 들어, SHA3 지원은 OpenSSL 1.1.1에서 추가되었으므로, 이전 버전에서는 <a href="https://github.com/sfackler/rust-openssl/blob/dc72a8e2c429e46c275e528b61a733a66e7877fc/openssl/src/hash.rs#L67-L85">조건부로 제외</a>됩니다.</p>
 <pre><code class="language-rust ignore">// (openssl 크레이트의 일부)
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 #[cfg(ossl111)]
 pub fn sha3_224() -&gt; MessageDigest {
     unsafe { MessageDigest(ffi::EVP_sha3_224()) }
@@ -5382,7 +5382,7 @@ pub fn sha3_224() -&gt; MessageDigest {
 query = ( "branch" | "tag" | "rev" ) "=" ref
 pkgname := name [ ("@" | ":" ) semver ]
 semver := digits [ "." digits [ "." digits [ "-" prerelease ] [ "+" build ]]]
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 kind = "registry" | "git" | "path"
 proto := "http" | "git" | "file" | ...
 </code></pre>
@@ -5528,7 +5528,7 @@ proto := "http" | "git" | "file" | ...
         "test": true
     },
     /* 컴파일러가 내보낸 메시지입니다.
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
     자세한 내용은 https://doc.rust-lang.org/rustc/json.html을 참조하세요.
     */
     "message": {
@@ -5591,7 +5591,7 @@ proto := "http" | "git" | "file" | ...
     */
     "fresh": true
 }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 </code></pre>
 <h3 id="빌드-스크립트-출력"><a class="header" href="#빌드-스크립트-출력">빌드 스크립트 출력</a></h3>
 <p>“build-script-executed” 메시지는 빌드 스크립트의 파싱된 출력물을 포함합니다. 빌드 스크립트가 실행되지 않더라도 이 메시지가 내보내질 수 있음에 유의하세요. 이 경우 이전에 캐시된 값을 표시합니다. 빌드 스크립트 출력에 대한 자세한 내용은 <a href="#빌드-스크립트-1">빌드 스크립트 장</a> 에서 찾을 수 있습니다.</p>
@@ -5667,7 +5667,7 @@ my-registry = { index = "https://my-intranet:8080/git/index" }
 name = "my-project"
 version = "0.1.0"
 edition = "2024"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [dependencies]
 other-crate = { version = "1.0", registry = "my-registry" }
 </code></pre>
@@ -6628,15 +6628,15 @@ global-credential-providers = ["cargo:token", "cargo-credential-1password --acco
 <h3 id="item-remove"><a class="header" href="#item-remove">메이저: 모든 공개 아이템의 이름 변경/이동/제거</a></h3>
 <p>공개적으로 노출된 <a href="../reference/items.html">아이템</a> 이 없으면 해당 아이템을 사용하는 모든 코드가 컴파일에 실패합니다.</p>
 <pre><code class="language-rust ignore">// 메이저 변경
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 전
 pub fn foo() {}
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 후
 // ... 아이템이 제거됨
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 중단될 수 있는 사용 예시
 fn main() {
@@ -6651,43 +6651,43 @@ fn main() {
 <h3 id="item-new"><a class="header" href="#item-new">마이너: 새로운 공개 아이템 추가</a></h3>
 <p>새로운 공개 <a href="../reference/items.html">아이템</a> 을 추가하는 것은 마이너 변경입니다.</p>
 <pre><code class="language-rust ignore">// 마이너 변경
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 전
 // ... 아이템 없음
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 후
 pub fn foo() {}
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 안전하게 작동할 라이브러리 사용 예시.
 // `foo` 는 이전에 존재하지 않았으므로 사용되지 않음.</code></pre>
 <p>드문 경우지만 와일드카드(glob) 임포트로 인해 <strong>중단되는 변경 사항(breaking change)</strong> 이 될 수 있습니다. 예를 들어, 새로운 트레이트를 추가하고, 어떤 프로젝트에서 해당 트레이트를 스코프로 가져오는 와일드카드 임포트를 사용하고 있으며, 새로운 트레이트가 구현된 타입과 충돌하는 연관 아이템을 도입하는 경우 모호함으로 인해 컴파일 오류가 발생할 수 있습니다. 예시:</p>
 <pre><code class="language-rust ignore">// 중단되는 변경 예시
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 전
 // ... 트레이트 없음
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 후
 pub trait NewTrait {
     fn foo(&amp;self) {}
 }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 impl NewTrait for i32 {}
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 중단될 수 있는 사용 예시
 use updated_crate::*;
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 pub trait LocalTrait {
     fn foo(&amp;self) {}
 }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 impl LocalTrait for i32 {}
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 fn main() {
     123i32.foo(); // 에러: 스코프 내에 적용 가능한 아이템이 여러 개 있음
 }</code></pre>
@@ -6730,7 +6730,7 @@ fn main() {
 <p>예를 들어, 비공개 필드 추가는 다른 비공개 필드가 이미 존재하거나 <code>non_exhaustive</code> 인 경우에만 가능합니다. 공개 필드는 비공개 필드가 있거나 <code>non_exhaustive</code> 이며, 추가로 인해 다른 필드의 레이아웃이 변경되지 않는 경우에 추가될 수 있습니다.</p>
 <p>However, this may change the size and alignment of the type. Care should be taken if the size or alignment changes. Code should not make assumptions about the size or alignment of types with private fields or <code>non_exhaustive</code> unless it has a documented size or alignment.</p>
 <pre><code class="language-rust ignore">// 마이너 변경
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 전
 #[derive(Default)]
@@ -6739,7 +6739,7 @@ pub struct Example {
     pub f1: i32,
     f2: i32, // 비공개 필드
 }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 후
 #[derive(Default)]
@@ -6749,7 +6749,7 @@ pub struct Example {
     f2: i32,
     f3: i32, // 새로운 필드
 }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 안전하게 작동할 라이브러리 사용 예시.
 fn main() {
@@ -6760,7 +6760,7 @@ fn main() {
 <p>열거형이 <code>non_exhaustive</code> 를 사용하는 경우, <code>repr(C)</code> 열거형에 변형(variant)을 추가하는 것은 일반적으로 안전합니다. 자세한 내용은 <a href="#enum-variant-new">enum-variant-new</a> 를 참조하세요.</p>
 <p>이는 타입의 크기와 정렬을 변경하기 때문에 중단되는 변경(breaking change)이 될 수 있습니다. 유사한 문제에 대해서는 <a href="#repr-c-private-change">repr-c-private-change</a> 를 참조하세요.</p>
 <pre><code class="language-rust ignore">// 마이너 변경
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 전
 #[repr(C)]
@@ -6769,7 +6769,7 @@ pub enum Example {
     Variant1 { f1: i16 },
     Variant2 { f1: i32 },
 }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 후
 #[repr(C)]
@@ -6779,7 +6779,7 @@ pub enum Example {
     Variant2 { f1: i32 },
     Variant3 { f1: i64 }, // 추가됨
 }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 안전하게 작동할 라이브러리 사용 예시.
 fn main() {
@@ -6789,14 +6789,14 @@ fn main() {
 <h4 id="repr-c-add"><a class="header" href="#repr-c-add">마이너: 기본 표현에 <code>repr(C)</code> 추가</a></h4>
 <p><a href="../reference/type-layout.html#the-default-representation">기본 표현(the default representation)</a> 을 사용하는 구조체, 공용체 또는 열거형에 <code>repr(C)</code> 를 추가하는 것은 안전합니다. 기본 표현을 사용하는 타입의 정렬, 레이아웃 또는 크기에 대해 사용자가 어떤 가정도 해서는 안 되기 때문에 이는 안전합니다.</p>
 <pre><code class="language-rust ignore">// 마이너 변경
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 전
 pub struct Example {
     pub f1: i32,
     pub f2: i16,
 }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 후
 #[repr(C)] // 추가됨
@@ -6804,7 +6804,7 @@ pub struct Example {
     pub f1: i32,
     pub f2: i16,
 }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 안전하게 작동할 라이브러리 사용 예시.
 fn main() {
@@ -6813,7 +6813,7 @@ fn main() {
 <h4 id="repr-int-enum-add"><a class="header" href="#repr-int-enum-add">마이너: 열거형에 <code>repr(&lt;int&gt;)</code> 추가</a></h4>
 <p><a href="../reference/type-layout.html#the-default-representation">기본 표현(the default representation)</a> 을 사용하는 열거형에 <code>repr(&lt;int&gt;)</code> <a href="../reference/type-layout.html#primitive-representations">원시 표현(primitive representation)</a> 을 추가하는 것은 안전합니다. 기본 표현을 사용하는 열거형의 정렬, 레이아웃 또는 크기에 대해 사용자가 어떤 가정도 해서는 안 되기 때문에 이는 안전합니다.</p>
 <pre><code class="language-rust ignore">// 마이너 변경
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 전
 pub enum E {
@@ -6821,7 +6821,7 @@ pub enum E {
     Variant2(i32),
     Variant3 { f1: f64 },
 }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 후
 #[repr(i32)] // 추가됨
@@ -6830,7 +6830,7 @@ pub enum E {
     Variant2(i32),
     Variant3 { f1: f64 },
 }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 안전하게 작동할 라이브러리 사용 예시.
 fn main() {
@@ -6839,18 +6839,18 @@ fn main() {
 <h4 id="repr-transparent-add"><a class="header" href="#repr-transparent-add">마이너: 기본 표현 구조체 또는 열거형에 <code>repr(transparent)</code> 추가</a></h4>
 <p><a href="../reference/type-layout.html#the-default-representation">기본 표현(the default representation)</a> 을 사용하는 구조체 또는 열거형에 <code>repr(transparent)</code> 를 추가하는 것은 안전합니다. 기본 표현을 사용하는 구조체 또는 열거형의 정렬, 레이아웃 또는 크기에 대해 사용자가 어떤 가정도 해서는 안 되기 때문에 이는 안전합니다.</p>
 <pre><code class="language-rust ignore">// 마이너 변경
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 전
 #[derive(Default)]
 pub struct Example&lt;T&gt;(T);
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 후
 #[derive(Default)]
 #[repr(transparent)] // 추가됨
 pub struct Example&lt;T&gt;(T);
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 안전하게 작동할 라이브러리 사용 예시.
 fn main() {
@@ -6860,14 +6860,14 @@ fn main() {
 <p>구조체 또는 공용체에 <code>repr(packed)</code> 를 추가하는 것은 중단되는 변경(breaking change)입니다. 타입을 <code>repr(packed)</code> 로 만들면 필드에 대한 참조를 가져오는 것이 무효화되거나, 불연속 클로저 캡처(disjoint closure captures)의 잘림(truncation)이 발생하는 등 코드를 중단시킬 수 있는 변경이 발생합니다.</p>
 <!-- TODO: If all fields are private, should this be safe to do? -->
 <pre><code class="language-rust ignore">// 메이저 변경
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 전
 pub struct Example {
     pub f1: u8,
     pub f2: u16,
 }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 후
 #[repr(packed)] // 추가됨
@@ -6875,7 +6875,7 @@ pub struct Example {
     pub f1: u8,
     pub f2: u16,
 }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 중단될 수 있는 사용 예시
 fn main() {
@@ -6883,16 +6883,16 @@ fn main() {
     let x = &amp;f.f2; // Error: error[E0793]: reference to field of packed struct is unaligned
 }</code></pre>
 <pre><code class="language-rust ignore">// 메이저 변경
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 전
 pub struct Example(pub i32, pub i32);
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 후
 #[repr(packed)]
 pub struct Example(pub i32, pub i32);
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 중단될 수 있는 사용 예시
 fn main() {
@@ -6909,29 +6909,29 @@ fn main() {
 <p>구조체, 공용체 또는 열거형에 <code>repr(align)</code> 을 추가하는 것은 중단되는 변경(breaking change)입니다. 타입을 <code>repr(align)</code> 으로 만들면 해당 타입을 <code>repr(packed)</code> 타입에서 사용하는 것이 중단됩니다. 이 두 조합은 허용되지 않기 때문입니다.</p>
 <!-- TODO: This seems like it should be extraordinarily rare. Should there be any exceptions carved out for this? -->
 <pre><code class="language-rust ignore">// 메이저 변경
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 전
 pub struct Aligned {
     pub a: i32,
 }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 후
 #[repr(align(8))] // 추가됨
 pub struct Aligned {
     pub a: i32,
 }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 중단될 수 있는 사용 예시
 use updated_crate::Aligned;
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 #[repr(packed)]
 pub struct Packed { // 에러: packed 타입은 전이적으로 `#[repr(align)]` 타입을 포함할 수 없음
     f1: Aligned,
 }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 fn main() {
     let p = Packed {
         f1: Aligned { a: 123 },
@@ -6941,7 +6941,7 @@ fn main() {
 <p>구조체 또는 공용체에서 <code>repr(packed)</code> 를 제거하는 것은 중단되는 변경(breaking change)입니다. 이는 외부 크레이트가 의존하고 있는 정렬이나 레이아웃을 변경할 수 있습니다.</p>
 <p>공개 필드가 있는 경우, <code>repr(packed)</code> 를 제거하면 불연속 클로저 캡처(disjoint closure captures) 방식이 변경될 수 있습니다. 어떤 경우에는 <a href="../edition-guide/rust-2021/disjoint-capture-in-closures.html">에디션 가이드</a> 에 설명된 것과 유사하게 코드가 중단될 수 있습니다.</p>
 <pre><code class="language-rust ignore">// 메이저 변경
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 전
 #[repr(C, packed)]
@@ -6949,7 +6949,7 @@ pub struct Packed {
     pub a: u8,
     pub b: u16,
 }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 후
 #[repr(C)] // packed 제거됨
@@ -6957,11 +6957,11 @@ pub struct Packed {
     pub a: u8,
     pub b: u16,
 }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 중단될 수 있는 사용 예시
 use updated_crate::Packed;
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 fn main() {
     let p = Packed { a: 1, b: 2 };
     // 타입 크기에 대한 어떤 가정.
@@ -6969,7 +6969,7 @@ fn main() {
     const _: () = assert!(std::mem::size_of::&lt;Packed&gt;() == 3); // Error: assertion failed
 }</code></pre>
 <pre><code class="language-rust ignore">// 메이저 변경
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 전
 #[repr(C, packed)]
@@ -6978,7 +6978,7 @@ pub struct Packed {
     pub b: i32,
 }
 unsafe impl Send for Packed {}
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 후
 #[repr(C)] // packed 제거됨
@@ -6987,19 +6987,19 @@ pub struct Packed {
     pub b: i32,
 }
 unsafe impl Send for Packed {}
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 중단될 수 있는 사용 예시
 use updated_crate::Packed;
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 fn main() {
     let mut x = 123;
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
     let p = Packed {
         a: &amp;mut x as *mut i32,
         b: 456,
     };
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
     // 구조체가 packed였을 때, 클로저는 Send인 `p` 를 캡처합니다.
     // `packed` 가 제거되면 Send가 아닌 `p.a` 를 캡처하게 됩니다.
     std::thread::spawn(move || unsafe {
@@ -7011,7 +7011,7 @@ fn main() {
 <p><code>N</code> 값이 공개 필드의 정렬보다 낮아지면, 해당 필드의 참조를 가져오려는 모든 코드가 중단됩니다.</p>
 <p>현재 값이 이미 타입의 자연스러운 정렬(natural alignment)과 같은 상태에서 이를 높이는 경우와 같이, <code>N</code> 에 대한 일부 변경은 정렬이나 레이아웃을 변경하지 않을 수도 있습니다.</p>
 <pre><code class="language-rust ignore">// 메이저 변경
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 전
 #[repr(packed(4))]
@@ -7019,7 +7019,7 @@ pub struct Packed {
     pub a: u8,
     pub b: u32,
 }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 후
 #[repr(packed(2))] // 2로 변경됨
@@ -7027,11 +7027,11 @@ pub struct Packed {
     pub a: u8,
     pub b: u32,
 }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 중단될 수 있는 사용 예시
 use updated_crate::Packed;
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 fn main() {
     let p = Packed { a: 1, b: 2 };
     let x = &amp;p.b; // Error: error[E0793]: reference to field of packed struct is unaligned
@@ -7041,7 +7041,7 @@ fn main() {
 <p><a href="#type-layout">타입 레이아웃</a> 에서 논의된 바와 같이 타입이 잘 정의되지 않은 경우(예: 비공개 필드가 있고 정렬이나 레이아웃이 문서화되지 않은 경우), 이러한 변경은 안전할 것입니다.</p>
 <p>현재 값이 이미 타입의 자연스러운 정렬보다 작거나 같은 상태에서 이를 줄이는 경우와 같이, <code>N</code> 에 대한 일부 변경은 정렬이나 레이아웃을 변경하지 않을 수도 있습니다.</p>
 <pre><code class="language-rust ignore">// 메이저 변경
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 전
 #[repr(align(8))]
@@ -7049,7 +7049,7 @@ pub struct Packed {
     pub a: u8,
     pub b: u32,
 }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 후
 #[repr(align(4))] // 4로 변경됨
@@ -7057,11 +7057,11 @@ pub struct Packed {
     pub a: u8,
     pub b: u32,
 }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 중단될 수 있는 사용 예시
 use updated_crate::Packed;
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 fn main() {
     let p = Packed { a: 1, b: 2 };
     // 타입 크기에 대한 어떤 가정.
@@ -7072,7 +7072,7 @@ fn main() {
 <p>구조체, 공용체 또는 열거형의 레이아웃이 잘 정의되어 있는 경우, <code>repr(align)</code> 을 제거하는 것은 중단되는 변경(breaking change)입니다. 이는 외부 크레이트가 의존하고 있는 정렬이나 레이아웃을 변경할 수 있습니다.</p>
 <p><a href="#type-layout">타입 레이아웃</a> 에서 논의된 바와 같이 타입이 잘 정의되지 않은 경우(예: 비공개 필드가 있고 정렬이 문서화되지 않은 경우), 이러한 변경은 안전할 것입니다.</p>
 <pre><code class="language-rust ignore">// 메이저 변경
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 전
 #[repr(C, align(8))]
@@ -7080,7 +7080,7 @@ pub struct Packed {
     pub a: u8,
     pub b: u32,
 }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 후
 #[repr(C)] // align 제거됨
@@ -7088,11 +7088,11 @@ pub struct Packed {
     pub a: u8,
     pub b: u32,
 }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 중단될 수 있는 사용 예시
 use updated_crate::Packed;
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 fn main() {
     let p = Packed { a: 1, b: 2 };
     // 타입 크기에 대한 어떤 가정.
@@ -7102,7 +7102,7 @@ fn main() {
 <h4 id="repr-c-shuffle"><a class="header" href="#repr-c-shuffle">메이저: <code>repr(C)</code> 타입의 공개 필드 순서 변경</a></h4>
 <p><code>repr(C)</code> 타입의 공개 필드 순서를 변경하는 것은 중단되는 변경(breaking change)입니다. 외부 크레이트가 필드의 특정 순서에 의존하고 있을 수 있습니다.</p>
 <pre><code class="language-rust ignore run-fail">// 메이저 변경
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 전
 #[repr(C)]
@@ -7110,7 +7110,7 @@ pub struct SpecificLayout {
     pub a: u8,
     pub b: u32,
 }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 후
 #[repr(C)]
@@ -7118,21 +7118,21 @@ pub struct SpecificLayout {
     pub b: u32, // 순서 변경됨
     pub a: u8,
 }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 중단될 수 있는 사용 예시
 use updated_crate::SpecificLayout;
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 unsafe extern "C" {
     // 이 C 함수는 C 헤더에 정의된 특정 레이아웃을 가정하고 있습니다.
     fn c_fn_get_b(x: &amp;SpecificLayout) -&gt; u32;
 }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 fn main() {
     let p = SpecificLayout { a: 1, b: 2 };
     unsafe { assert_eq!(c_fn_get_b(&amp;p), 2) } // 에러: 값이 2와 같지 않음
 }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 <span class="boring">mod cdep {
 </span><span class="boring">    // 이는 보통 빌드 스크립트에서 포함되는 내용을 시뮬레이션합니다.
 </span><span class="boring">    // 이 정의는 C 헤더에 있을 것입니다.
@@ -7150,7 +7150,7 @@ fn main() {
 <h4 id="repr-c-remove"><a class="header" href="#repr-c-remove">메이저: 구조체, 공용체 또는 열거형에서 <code>repr(C)</code> 제거</a></h4>
 <p>구조체, 공용체 또는 열거형에서 <code>repr(C)</code> 를 제거하는 것은 중단되는 변경(breaking change)입니다. 외부 크레이트가 해당 타입의 특정 레이아웃에 의존하고 있을 수 있습니다.</p>
 <pre><code class="language-rust ignore">// 메이저 변경
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 전
 #[repr(C)]
@@ -7158,7 +7158,7 @@ pub struct SpecificLayout {
     pub a: u8,
     pub b: u32,
 }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 후
 // repr(C) 제거됨
@@ -7166,21 +7166,21 @@ pub struct SpecificLayout {
     pub a: u8,
     pub b: u32,
 }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 중단될 수 있는 사용 예시
 use updated_crate::SpecificLayout;
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 unsafe extern "C" {
     // 이 C 함수는 C 헤더에 정의된 특정 레이아웃을 가정하고 있습니다.
     fn c_fn_get_b(x: &amp;SpecificLayout) -&gt; u32; // 에러: FFI 안전하지 않음
 }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 fn main() {
     let p = SpecificLayout { a: 1, b: 2 };
     unsafe { assert_eq!(c_fn_get_b(&amp;p), 2) }
 }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 <span class="boring">mod cdep {
 </span><span class="boring">    // 이는 보통 빌드 스크립트에서 포함되는 내용을 시뮬레이션합니다.
 </span><span class="boring">    // 이 정의는 C 헤더에 있을 것입니다.
@@ -7198,7 +7198,7 @@ fn main() {
 <h4 id="repr-int-enum-remove"><a class="header" href="#repr-int-enum-remove">메이저: 열거형에서 <code>repr(&lt;int&gt;)</code> 제거</a></h4>
 <p>열거형에서 <code>repr(&lt;int&gt;)</code> 를 제거하는 것은 중단되는 변경(breaking change)입니다. 외부 크레이트가 판별자(discriminant)가 특정 크기라고 가정하고 있을 수 있습니다. 예를 들어, 열거형의 <a href="../std/mem/fn.transmute.html"><code>std::mem::transmute</code></a> 이 실패할 수 있습니다.</p>
 <pre><code class="language-rust ignore">// 메이저 변경
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 전
 #[repr(u16)]
@@ -7207,7 +7207,7 @@ pub enum Example {
     Variant2,
     Variant3,
 }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 후
 // repr(u16) 제거됨
@@ -7216,10 +7216,10 @@ pub enum Example {
     Variant2,
     Variant3,
 }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 중단될 수 있는 사용 예시
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 fn main() {
     let e = updated_crate::Example::Variant2;
     let i: u16 = unsafe { std::mem::transmute(e) }; // 에러: 크기가 다른 타입 간에 transmute할 수 없음
@@ -7227,7 +7227,7 @@ fn main() {
 <h4 id="repr-int-enum-change"><a class="header" href="#repr-int-enum-change">메이저: <code>repr(&lt;int&gt;)</code> 열거형의 원시 표현 변경</a></h4>
 <p><code>repr(&lt;int&gt;)</code> 열거형의 원시 표현을 변경하는 것은 중단되는 변경(breaking change)입니다. 외부 크레이트가 판별자(discriminant)가 특정 크기라고 가정하고 있을 수 있습니다. 예를 들어, 열거형의 <a href="../std/mem/fn.transmute.html"><code>std::mem::transmute</code></a> 이 실패할 수 있습니다.</p>
 <pre><code class="language-rust ignore">// 메이저 변경
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 전
 #[repr(u16)]
@@ -7236,7 +7236,7 @@ pub enum Example {
     Variant2,
     Variant3,
 }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 후
 #[repr(u8)] // repr 크기가 변경됨
@@ -7245,10 +7245,10 @@ pub enum Example {
     Variant2,
     Variant3,
 }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 중단될 수 있는 사용 예시
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 fn main() {
     let e = updated_crate::Example::Variant2;
     let i: u16 = unsafe { std::mem::transmute(e) }; // 에러: 크기가 다른 타입 간에 transmute할 수 없음
@@ -7256,44 +7256,44 @@ fn main() {
 <h4 id="repr-transparent-remove"><a class="header" href="#repr-transparent-remove">메이저: 구조체 또는 열거형에서 <code>repr(transparent)</code> 제거</a></h4>
 <p>구조체 또는 열거형에서 <code>repr(transparent)</code> 를 제거하는 것은 중단되는 변경(breaking change)입니다. 외부 크레이트가 해당 타입이 투명 필드(transparent field)의 정렬, 레이아웃 또는 크기를 갖는 것에 의존하고 있을 수 있습니다.</p>
 <pre><code class="language-rust ignore">// 메이저 변경
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 전
 #[repr(transparent)]
 pub struct Transparent&lt;T&gt;(T);
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 후
 // repr 제거됨
 pub struct Transparent&lt;T&gt;(T);
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 중단될 수 있는 사용 예시
 #![deny(improper_ctypes)]
 use updated_crate::Transparent;
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 unsafe extern "C" {
     fn c_fn() -&gt; Transparent&lt;f64&gt;; // 에러: FFI 안전하지 않음
 }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 fn main() {}</code></pre>
 <h3 id="struct-add-private-field-when-public"><a class="header" href="#struct-add-private-field-when-public">메이저: 현재 모든 필드가 공개인 상태에서 비공개 구조체 필드 추가</a></h3>
 <p>이전에 모든 필드가 공개였던 구조체에 비공개 필드가 추가되면, <a href="../reference/expressions/struct-expr.html">구조체 리터럴</a> 을 사용하여 해당 구조체를 생성하려는 모든 코드가 중단됩니다.</p>
 <pre><code class="language-rust ignore">// 메이저 변경
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 전
 pub struct Foo {
     pub f1: i32,
 }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 후
 pub struct Foo {
     pub f1: i32,
     f2: i32,
 }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 중단될 수 있는 사용 예시
 fn main() {
@@ -7307,20 +7307,20 @@ fn main() {
 <h3 id="struct-add-public-field-when-no-private"><a class="header" href="#struct-add-public-field-when-no-private">메이저: 비공개 필드가 없는 상태에서 공개 필드 추가</a></h3>
 <p>모든 필드가 공개인 구조체에 공개 필드가 추가되면, <a href="../reference/expressions/struct-expr.html">구조체 리터럴</a> 을 사용하여 해당 구조체를 생성하려는 모든 코드가 중단됩니다.</p>
 <pre><code class="language-rust ignore">// 메이저 변경
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 전
 pub struct Foo {
     pub f1: i32,
 }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 후
 pub struct Foo {
     pub f1: i32,
     pub f2: i32,
 }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 중단될 수 있는 사용 예시
 fn main() {
@@ -7334,21 +7334,21 @@ fn main() {
 <h3 id="struct-private-fields-with-private"><a class="header" href="#struct-private-fields-with-private">마이너: 적어도 하나의 비공개 필드가 이미 존재하는 상태에서 비공개 필드 추가 또는 제거</a></h3>
 <p>구조체에 이미 적어도 하나의 비공개 필드가 있는 경우, 비공개 필드를 추가하거나 제거하는 것은 안전합니다.</p>
 <pre><code class="language-rust ignore">// 마이너 변경
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 전
 #[derive(Default)]
 pub struct Foo {
     f1: i32,
 }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 후
 #[derive(Default)]
 pub struct Foo {
     f2: f64,
 }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 안전하게 작동할 라이브러리 사용 예시.
 fn main() {
@@ -7358,17 +7358,17 @@ fn main() {
 <p>기존 코드가 <a href="../reference/expressions/struct-expr.html">구조체 리터럴</a> 을 사용하여 이를 생성할 수 없고, 그 내용을 철저하게 매칭(exhaustive match)할 수도 없기 때문에 이는 안전합니다.</p>
 <p>튜플 구조체의 경우, 튜플에 공개 필드가 포함되어 있고 비공개 필드의 추가 또는 제거가 공개 필드의 인덱스를 변경한다면 이는 <strong>메이저 변경</strong> 이라는 점에 유의하세요.</p>
 <pre><code class="language-rust ignore">// 메이저 변경
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 전
 #[derive(Default)]
 pub struct Foo(pub i32, i32);
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 후
 #[derive(Default)]
 pub struct Foo(f64, pub i32, i32);
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 중단될 수 있는 사용 예시
 fn main() {
@@ -7378,19 +7378,19 @@ fn main() {
 <h3 id="struct-tuple-normal-with-private"><a class="header" href="#struct-tuple-normal-with-private">마이너: (하나 이상의 필드가 있는) 모든 필드가 비공개인 튜플 구조체에서 일반 구조체로의 전환, 또는 그 반대</a></h3>
 <p>모든 필드가 비공개인 경우 튜플 구조체를 일반 구조체로 변경하는 것(또는 그 반대)은 안전합니다.</p>
 <pre><code class="language-rust ignore">// 마이너 변경
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 전
 #[derive(Default)]
 pub struct Foo(i32);
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 후
 #[derive(Default)]
 pub struct Foo {
     f1: i32,
 }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 안전하게 작동할 라이브러리 사용 예시.
 fn main() {
@@ -7401,20 +7401,20 @@ fn main() {
 <h3 id="enum-variant-new"><a class="header" href="#enum-variant-new">메이저: 새로운 열거형 변형(variant) 추가 (<code>non_exhaustive</code> 없이)</a></h3>
 <p>열거형이 <a href="../reference/attributes/type_system.html#the-non_exhaustive-attribute"><code>#[non_exhaustive]</code></a> 속성을 사용하지 않는 경우 새로운 열거형 변형을 추가하는 것은 중단되는 변경(breaking change)입니다.</p>
 <pre><code class="language-rust ignore">// 메이저 변경
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 전
 pub enum E {
     Variant1,
 }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 후
 pub enum E {
     Variant1,
     Variant2,
 }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 중단될 수 있는 사용 예시
 fn main() {
@@ -7431,19 +7431,19 @@ fn main() {
 <h3 id="enum-fields-new"><a class="header" href="#enum-fields-new">메이저: 열거형 변형에 새로운 필드 추가</a></h3>
 <p>열거형 변형의 모든 필드는 공개이므로 새로운 필드를 추가하면 생성자와 매칭의 컴파일이 실패하게 되어 중단되는 변경(breaking change)이 됩니다.</p>
 <pre><code class="language-rust ignore">// 메이저 변경
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 전
 pub enum E {
     Variant1 { f1: i32 },
 }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 후
 pub enum E {
     Variant1 { f1: i32, f2: i32 },
 }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 중단될 수 있는 사용 예시
 fn main() {
@@ -7476,22 +7476,22 @@ pub enum E {
 <h3 id="trait-new-item-no-default"><a class="header" href="#trait-new-item-no-default">메이저: 기본값이 없는 트레이트 아이템 추가</a></h3>
 <p>트레이트에 기본값이 없는 아이템을 추가하는 것은 중단되는 변경(breaking change)입니다. 이는 트레이트의 모든 구현체를 중단시킵니다.</p>
 <pre><code class="language-rust ignore">// 메이저 변경
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 전
 pub trait Trait {}
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 후
 pub trait Trait {
     fn foo(&amp;self);
 }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 중단될 수 있는 사용 예시
 use updated_crate::Trait;
 struct Foo;
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 impl Trait for Foo {}  // 에러: 모든 트레이트 아이템이 구현되지 않음</code></pre>
 <p>완화 전략:</p>
 <ul>
@@ -7501,13 +7501,13 @@ impl Trait for Foo {}  // 에러: 모든 트레이트 아이템이 구현되지 
 <h3 id="trait-item-signature"><a class="header" href="#trait-item-signature">메이저: 트레이트 아이템 시그니처의 모든 변경</a></h3>
 <p>트레이트 아이템 시그니처를 변경하는 것은 중단되는 변경(breaking change)입니다. 이는 트레이트의 외부 구현체를 중단시킬 수 있습니다.</p>
 <pre><code class="language-rust ignore">// 메이저 변경
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 전
 pub trait Trait {
     fn f(&amp;self, x: i32) {}
 }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 후
 pub trait Trait {
@@ -7515,12 +7515,12 @@ pub trait Trait {
     // 하지만 이 경우 트레이트 구현은 동일한 시그니처를 사용해야 합니다.
     fn f&lt;V&gt;(&amp;self, x: V) {}
 }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 중단될 수 있는 사용 예시
 use updated_crate::Trait;
 struct Foo;
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 impl Trait for Foo {
     fn f(&amp;self, x: i32) {}  // 에러: 트레이트 선언에 1개의 타입 매개변수가 있음
 }</code></pre>
@@ -7532,29 +7532,29 @@ impl Trait for Foo {
 <h3 id="trait-new-default-item"><a class="header" href="#trait-new-default-item">중단 가능성 있음: 기본값이 있는 트레이트 아이템 추가</a></h3>
 <p>기본값이 있는 트레이트 아이템을 추가하는 것은 일반적으로 안전합니다. 하지만 때때로 컴파일 오류를 일으킬 수 있습니다. 예를 들어, 다른 트레이트에 동일한 이름의 메서드가 존재하는 경우 모호함이 발생할 수 있습니다.</p>
 <pre><code class="language-rust ignore">// 중단되는 변경 예시
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 전
 pub trait Trait {}
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 후
 pub trait Trait {
     fn foo(&amp;self) {}
 }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 중단될 수 있는 사용 예시
 use updated_crate::Trait;
 struct Foo;
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 trait LocalTrait {
     fn foo(&amp;self) {}
 }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 impl Trait for Foo {}
 impl LocalTrait for Foo {}
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 fn main() {
     let x = Foo;
     x.foo(); // 에러: 스코프 내에 적용 가능한 아이템이 여러 개 있음
@@ -7568,25 +7568,25 @@ fn main() {
 <h3 id="trait-object-safety"><a class="header" href="#trait-object-safety">메이저: 트레이트를 객체 안전하지 않게 만드는 트레이트 아이템 추가</a></h3>
 <p>트레이트를 <a href="../reference/items/traits.html#object-safety">객체 안전(object safe)</a> 하지 않게 변경하는 트레이트 아이템을 추가하는 것은 중단되는 변경(breaking change)입니다.</p>
 <pre><code class="language-rust ignore">// 메이저 변경
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 전
 pub trait Trait {}
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 후
 pub trait Trait {
     // 연관 상수는 트레이트를 객체 안전하지 않게 만듭니다.
     const CONST: i32 = 123;
 }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 중단될 수 있는 사용 예시
 use updated_crate::Trait;
 struct Foo;
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 impl Trait for Foo {}
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 fn main() {
     let obj: Box&lt;dyn Trait&gt; = Box::new(Foo); // Error: the trait `updated_crate::Trait` is not dyn compatible
 }</code></pre>
@@ -7594,20 +7594,20 @@ fn main() {
 <h3 id="trait-new-parameter-no-default"><a class="header" href="#trait-new-parameter-no-default">메이저: 기본값 없이 타입 매개변수 추가</a></h3>
 <p>트레이트에 기본값 없이 타입 매개변수를 추가하는 것은 중단되는 변경(breaking change)입니다.</p>
 <pre><code class="language-rust ignore">// 메이저 변경
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 전
 pub trait Trait {}
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 후
 pub trait Trait&lt;T&gt; {}
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 중단될 수 있는 사용 예시
 use updated_crate::Trait;
 struct Foo;
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 impl Trait for Foo {}  // 에러: 제네릭이 누락됨</code></pre>
 <p>완화 전략:</p>
 <ul>
@@ -7616,47 +7616,47 @@ impl Trait for Foo {}  // 에러: 제네릭이 누락됨</code></pre>
 <h3 id="trait-new-parameter-default"><a class="header" href="#trait-new-parameter-default">마이너: 기본값이 있는 트레이트 타입 매개변수 추가</a></h3>
 <p>기본값이 있는 한 트레이트에 타입 매개변수를 추가하는 것은 안전합니다. 외부 구현체는 매개변수를 지정할 필요 없이 기본값을 사용하게 됩니다.</p>
 <pre><code class="language-rust ignore">// 마이너 변경
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 전
 pub trait Trait {}
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 후
 pub trait Trait&lt;T = i32&gt; {}
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 안전하게 작동할 라이브러리 사용 예시.
 use updated_crate::Trait;
 struct Foo;
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 impl Trait for Foo {}</code></pre>
 <h3 id="impl-item-new"><a class="header" href="#impl-item-new">중단 가능성 있음: 고유 아이템(inherent items) 추가</a></h3>
 <p>일반적으로 고유 아이템이 트레이트 아이템보다 우선순위를 갖기 때문에 구현에 고유 아이템을 추가하는 것은 안전할 것입니다. 그러나 이름이 구현된 트레이트 아이템과 같고 시그니처가 다른 경우 충돌이 발생하여 문제가 생길 수 있습니다.</p>
 <pre><code class="language-rust ignore">// 중단되는 변경 예시
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 전
 pub struct Foo;
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 후
 pub struct Foo;
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 impl Foo {
     pub fn foo(&amp;self) {}
 }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 중단될 수 있는 사용 예시
 use updated_crate::Foo;
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 trait Trait {
     fn foo(&amp;self, x: i32) {}
 }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 impl Trait for Foo {}
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 fn main() {
     let x = Foo;
     x.foo(1); // 에러: 이 메서드는 0개의 인수를 받지만 1개의 인수가 제공됨
@@ -7669,88 +7669,88 @@ fn main() {
 <h3 id="generic-bounds-tighten"><a class="header" href="#generic-bounds-tighten">메이저: 제네릭 바운드 강화</a></h3>
 <p>타입의 제네릭 바운드를 강화하는 것은 더 느슨한 바운드를 예상하는 사용자들을 중단시킬 수 있으므로 중단되는 변경(breaking change)입니다.</p>
 <pre><code class="language-rust ignore">// 메이저 변경
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 전
 pub struct Foo&lt;A&gt; {
     pub f1: A,
 }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 후
 pub struct Foo&lt;A: Eq&gt; {
     pub f1: A,
 }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 중단될 수 있는 사용 예시
 use updated_crate::Foo;
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 fn main() {
     let s = Foo { f1: 1.23 }; // 에러: 트레이트 바운드 `{float}: Eq` 가 충족되지 않음
 }</code></pre>
 <h3 id="generic-bounds-loosen"><a class="header" href="#generic-bounds-loosen">마이너: 제네릭 바운드 완화</a></h3>
 <p>타입의 제네릭 바운드를 완화하는 것은 허용되는 범위를 확장할 뿐이므로 안전합니다.</p>
 <pre><code class="language-rust ignore">// 마이너 변경
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 전
 pub struct Foo&lt;A: Clone&gt; {
     pub f1: A,
 }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 후
 pub struct Foo&lt;A&gt; {
     pub f1: A,
 }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 안전하게 작동할 라이브러리 사용 예시.
 use updated_crate::Foo;
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 fn main() {
     let s = Foo { f1: 123 };
 }</code></pre>
 <h3 id="generic-new-default"><a class="header" href="#generic-new-default">마이너: 기본값이 있는 타입 매개변수 추가</a></h3>
 <p>기본값이 있는 한 타입에 타입 매개변수를 추가하는 것은 안전합니다. 모든 기존 참조는 매개변수를 지정할 필요 없이 기본값을 사용하게 됩니다.</p>
 <pre><code class="language-rust ignore">// 마이너 변경
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 전
 #[derive(Default)]
 pub struct Foo {}
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 후
 #[derive(Default)]
 pub struct Foo&lt;A = i32&gt; {
     f1: A,
 }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 안전하게 작동할 라이브러리 사용 예시.
 use updated_crate::Foo;
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 fn main() {
     let s: Foo = Default::default();
 }</code></pre>
 <h3 id="generic-generalize-identical"><a class="header" href="#generic-generalize-identical">마이너: 타입을 제네릭을 사용하도록 일반화 (동일한 타입 사용)</a></h3>
 <p>구조체 또는 열거형 필드는 변경 결과가 모든 기존 사용 사례에 대해 동일한 타입이 되는 한, 구체적인 타입에서 제네릭 타입 매개변수로 변경할 수 있습니다. 예를 들어, 다음과 같은 변경은 허용됩니다.</p>
 <pre><code class="language-rust ignore">// 마이너 변경
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 전
 pub struct Foo(pub u8);
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 후
 pub struct Foo&lt;T = u8&gt;(pub T);
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 안전하게 작동할 라이브러리 사용 예시.
 use updated_crate::Foo;
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 fn main() {
     let s: Foo = Foo(123);
 }</code></pre>
@@ -7758,57 +7758,57 @@ fn main() {
 <h3 id="generic-generalize-different"><a class="header" href="#generic-generalize-different">메이저: 타입을 제네릭을 사용하도록 일반화 (다른 타입이 될 수 있음)</a></h3>
 <p>구조체 또는 열거형 필드를 구체적인 타입에서 제네릭 타입 매개변수로 변경하면 타입이 바뀔 수 있는 경우 중단될 수 있습니다.</p>
 <pre><code class="language-rust ignore">// 메이저 변경
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 전
 pub struct Foo&lt;T = u8&gt;(pub T, pub u8);
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 후
 pub struct Foo&lt;T = u8&gt;(pub T, pub T);
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 중단될 수 있는 사용 예시
 use updated_crate::Foo;
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 fn main() {
     let s: Foo&lt;f32&gt; = Foo(3.14, 123); // 에러: 타입 불일치
 }</code></pre>
 <h3 id="generic-more-generic"><a class="header" href="#generic-more-generic">마이너: 제네릭 타입을 더 일반적인 타입으로 변경</a></h3>
 <p>제네릭 타입을 더 일반적인 타입으로 변경하는 것은 안전합니다. 예를 들어, 다음은 원래 타입으로 기본 설정되는 제네릭 매개변수를 추가하는데, 모든 기존 사용자가 두 필드에 대해 동일한 타입을 사용하게 되며 기본 매개변수를 지정할 필요가 없기 때문에 안전합니다.</p>
 <pre><code class="language-rust ignore">// 마이너 변경
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 전
 pub struct Foo&lt;T&gt;(pub T, pub T);
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 후
 pub struct Foo&lt;T, U = T&gt;(pub T, pub U);
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 안전하게 작동할 라이브러리 사용 예시.
 use updated_crate::Foo;
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 fn main() {
     let s: Foo&lt;f32&gt; = Foo(1.0, 2.0);
 }</code></pre>
 <h3 id="generic-rpit-capture"><a class="header" href="#generic-rpit-capture">메이저: RPIT(Return Position Impl Trait)에서 더 많은 제네릭 매개변수 캡처</a></h3>
 <p><a href="../reference/types/impl-trait.html#abstract-return-types">RPIT(return-position impl trait)</a> 에서 추가적인 제네릭 매개변수를 캡처하는 것은 중단되는 변경(breaking change)입니다.</p>
 <pre><code class="language-rust ignore">// 메이저 변경
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 전
 pub fn f&lt;'a, 'b&gt;(x: &amp;'a str, y: &amp;'b str) -&gt; impl Iterator&lt;Item = char&gt; + use&lt;'a&gt; {
     x.chars()
 }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 후
 pub fn f&lt;'a, 'b&gt;(x: &amp;'a str, y: &amp;'b str) -&gt; impl Iterator&lt;Item = char&gt; + use&lt;'a, 'b&gt; {
     x.chars().chain(y.chars())
 }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 중단될 수 있는 사용 예시
 fn main() {
@@ -7827,15 +7827,15 @@ fn main() {
 <h3 id="fn-change-arity"><a class="header" href="#fn-change-arity">메이저: 함수 매개변수 추가/제거</a></h3>
 <p>함수의 매개변수 개수(arity)를 변경하는 것은 중단되는 변경(breaking change)입니다.</p>
 <pre><code class="language-rust ignore">// 메이저 변경
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 전
 pub fn foo() {}
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 후
 pub fn foo(x: i32) {}
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 중단될 수 있는 사용 예시
 fn main() {
@@ -7849,19 +7849,19 @@ fn main() {
 <h3 id="fn-generic-new"><a class="header" href="#fn-generic-new">중단 가능성 있음: 새로운 함수 타입 매개변수 도입</a></h3>
 <p>일반적으로 기본값이 없는 타입 매개변수를 추가하는 것은 안전하지만, 경우에 따라 중단 변경이 될 수 있습니다:</p>
 <pre><code class="language-rust ignore">// 중단되는 변경 예시
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 전
 pub fn foo&lt;T&gt;() {}
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 후
 pub fn foo&lt;T, U&gt;() {}
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 중단될 수 있는 사용 예시
 use updated_crate::foo;
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 fn main() {
     foo::&lt;u8&gt;(); // 에러: 함수는 2개의 제네릭 인수를 받지만 1개의 제네릭 인수가 제공됨
 }</code></pre>
@@ -7869,14 +7869,14 @@ fn main() {
 <h3 id="fn-generalize-compatible"><a class="header" href="#fn-generalize-compatible">마이너: 함수를 제네릭을 사용하도록 일반화 (원래 타입 지원)</a></h3>
 <p>함수의 매개변수 타입 또는 반환 값은 원래 타입으로 인스턴스화될 수 있는 한, 새로운 타입 매개변수 도입을 포함하여 제네릭을 사용하도록 <em>일반화</em> 될 수 있습니다. 예를 들어, 다음 변경은 허용됩니다:</p>
 <pre><code class="language-rust ignore">// 마이너 변경
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 전
 pub fn foo(x: u8) -&gt; u8 {
     x
 }
 pub fn bar&lt;T: Iterator&lt;Item = u8&gt;&gt;(t: T) {}
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 후
 use std::ops::Add;
@@ -7884,11 +7884,11 @@ pub fn foo&lt;T: Add&gt;(x: T) -&gt; T {
     x
 }
 pub fn bar&lt;T: IntoIterator&lt;Item = u8&gt;&gt;(t: T) {}
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 안전하게 작동할 라이브러리 사용 예시.
 use updated_crate::{bar, foo};
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 fn main() {
     foo(1);
     bar(vec![1, 2, 3].into_iter());
@@ -7896,24 +7896,24 @@ fn main() {
 <p>모든 기존 사용은 새 시그니처의 인스턴스화이기 때문입니다.</p>
 <p>다소 놀랍게도, 모든 트레이트가 자기 자신을 구현한다는 점을 고려하면 일반화는 트레이트 객체에도 적용됩니다.</p>
 <pre><code class="language-rust ignore">// 마이너 변경
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 전
 pub trait Trait {}
 pub fn foo(t: &amp;dyn Trait) {}
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 후
 pub trait Trait {}
 pub fn foo&lt;T: Trait + ?Sized&gt;(t: &amp;T) {}
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 안전하게 작동할 라이브러리 사용 예시.
 use updated_crate::{foo, Trait};
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 struct Foo;
 impl Trait for Foo {}
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 fn main() {
     let obj = Foo;
     foo(&amp;obj);
@@ -7921,42 +7921,42 @@ fn main() {
 <p>(<code>?Sized</code> 를 사용하는 것은 필수적입니다. 그렇지 않으면 원래의 시그니처를 복구할 수 없습니다.)</p>
 <p>이런 방식으로 제네릭을 도입하면 잠재적으로 타입 추론 실패가 발생할 수 있습니다. 이는 보통 드문 경우이며, 추가적인 타입 어노테이션으로 해결할 수 있으므로 일부 프로젝트에서는 허용 가능한 중단일 수 있습니다.</p>
 <pre><code class="language-rust ignore">// 중단되는 변경 예시
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 전
 pub fn foo() -&gt; i32 {
     0
 }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 후
 pub fn foo&lt;T: Default&gt;() -&gt; T {
     Default::default()
 }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 중단될 수 있는 사용 예시
 use updated_crate::foo;
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 fn main() {
     let x = foo(); // 에러: 타입 어노테이션이 필요함
 }</code></pre>
 <h3 id="fn-generalize-mismatch"><a class="header" href="#fn-generalize-mismatch">메이저: 타입 불일치가 발생하는 제네릭을 사용하도록 함수 일반화</a></h3>
 <p>제네릭 타입이 이전에 허용되었던 타입을 제한하거나 변경하는 경우 함수 매개변수나 반환 타입을 변경하는 것은 중단되는 변경(breaking change)입니다. 예를 들어, 다음은 기존 코드에서 충족되지 않을 수 있는 제네릭 제약 조건을 추가합니다.</p>
 <pre><code class="language-rust ignore">// 메이저 변경
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 전
 pub fn foo(x: Vec&lt;u8&gt;) {}
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 후
 pub fn foo&lt;T: Copy + IntoIterator&lt;Item = u8&gt;&gt;(x: T) {}
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 중단될 수 있는 사용 예시
 use updated_crate::foo;
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 fn main() {
     foo(vec![1, 2, 3]); // 에러: `Vec&lt;u8&gt;` 에 `Copy` 가 구현되지 않음
 }</code></pre>
@@ -7965,23 +7965,23 @@ fn main() {
 <p>하지만 아래 예시와 같이 <a href="../rustc/lints/listing/warn-by-default.html#unused-unsafe"><code>unused_unsafe</code></a> 린트가 트리거될 수 있으며, 이로 인해 <code>#![deny(warnings)]</code> 를 지정한 로컬 크레이트의 컴파일이 중단될 수 있습니다. <a href="#new-lints">새로운 린트 도입</a> 에 따라 업데이트 시 새로운 경고가 도입되는 것은 허용됩니다.</p>
 <p>반대 방향(안전한 함수를 <code>unsafe</code> 로 만들기)은 중단되는 변경입니다.</p>
 <pre><code class="language-rust ignore">// 마이너 변경
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 전
 pub unsafe fn foo() {}
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 후
 pub fn foo() {}
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 린트를 트리거하는 라이브러리 사용 예시
 use updated_crate::foo;
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 unsafe fn bar(f: unsafe fn()) {
     f()
 }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 fn main() {
     unsafe { foo() }; // 여기서 `unused_unsafe` 린트가 트리거됩니다.
     unsafe { bar(foo) };
@@ -7990,24 +7990,24 @@ fn main() {
 <h3 id="attr-no-std-to-std"><a class="header" href="#attr-no-std-to-std">메이저: <code>no_std</code> 지원에서 <code>std</code> 필요로 전환</a></h3>
 <p>라이브러리가 특별히 <a href="../reference/names/preludes.html#the-no_std-attribute"><code>no_std</code></a> 환경을 지원하는 경우, <code>std</code> 를 필요로 하는 새 릴리스를 만드는 것은 중단되는 변경입니다.</p>
 <pre><code class="language-rust ignore skip">// 메이저 변경
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 전
 #![no_std]
 pub fn foo() {}
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 후
 pub fn foo() {
     std::time::SystemTime::now();
 }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 중단될 수 있는 사용 예시
 // no_std 타겟에는 `std` 크레이트가 없기 때문에 링크에 실패합니다.
 #![no_std]
 use updated_crate::foo;
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 fn example() {
     foo();
 }</code></pre>
@@ -8024,57 +8024,57 @@ fn example() {
 </ul>
 <p>비공개 필드가 있는 구조체는 <a href="../reference/attributes/type_system.html#the-non_exhaustive-attribute"><code>#[non_exhaustive]</code></a> 사용 여부와 관계없이 <a href="../reference/expressions/struct-expr.html">구조체 리터럴</a> 구문을 사용하여 생성할 수 없습니다. 그러한 구조체에 <a href="../reference/attributes/type_system.html#the-non_exhaustive-attribute"><code>#[non_exhaustive]</code></a>를 추가하는 것은 중단되는 변경이 아닙니다.</p>
 <pre><code class="language-rust ignore">// 메이저 변경
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 전
 pub struct Foo {
     pub bar: usize,
 }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 pub enum Bar {
     X,
     Y(usize),
     Z { a: usize },
 }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 pub enum Quux {
     Var,
 }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 후
 #[non_exhaustive]
 pub struct Foo {
     pub bar: usize,
 }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 pub enum Bar {
     #[non_exhaustive]
     X,
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
     #[non_exhaustive]
     Y(usize),
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
     #[non_exhaustive]
     Z { a: usize },
 }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 #[non_exhaustive]
 pub enum Quux {
     Var,
 }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 중단될 수 있는 사용 예시
 use updated_crate::{Bar, Foo, Quux};
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 fn main() {
     let foo = Foo { bar: 0 }; // 에러: 구조체 식을 사용하여 non-exhaustive 구조체를 생성할 수 없음
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
     let bar_x = Bar::X; // 에러: 유닛 변형 `X` 는 비공개임
     let bar_y = Bar::Y(0); // 에러: 튜플 변형 `Y` 는 비공개임
     let bar_z = Bar::Z { a: 0 }; // 에러: 구조체 식을 사용하여 non-exhaustive 변형을 생성할 수 없음
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
     let q = Quux::Var;
     match q {
         Quux::Var =&gt; 0,
@@ -8109,19 +8109,19 @@ fn main() {
 <h3 id="new-lints"><a class="header" href="#new-lints">마이너: 새로운 린트 도입</a></h3>
 <p>라이브러리의 일부 변경으로 인해 해당 라이브러리 사용자에게 새로운 린트가 트리거될 수 있습니다. 이는 일반적으로 호환되는 변경으로 간주되어야 합니다.</p>
 <pre><code class="language-rust ignore dont-deny">// 마이너 변경
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 전
 pub fn foo() {}
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 변경 후
 #[deprecated]
 pub fn foo() {}
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ///////////////////////////////////////////////////////////
 // 안전하게 작동할 라이브러리 사용 예시.
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 fn main() {
     updated_crate::foo(); // 경고: 권장되지 않는(deprecated) 함수 사용
 }</code></pre>
@@ -8143,12 +8143,12 @@ fn main() {
 <h4 id="cargo-feature-add"><a class="header" href="#cargo-feature-add">마이너: 새로운 Cargo 기능 추가</a></h4>
 <p>새로운 <a href="#기능-1">Cargo 기능</a> 을 추가하는 것은 보통 안전합니다. 기능이 중단되는 변경을 일으키는 새로운 변화를 도입하는 경우, 엄격한 하위 호환성 요구 사항이 있는 프로젝트에 어려움을 줄 수 있습니다. 그런 시나리오에서는 해당 기능을 “default” 목록에 추가하는 것을 피하고, 기능을 활성화할 때의 결과를 문서화하는 것이 좋습니다.</p>
 <pre><code class="language-toml"># MINOR CHANGE
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ###########################################################
 # Before
 [features]
 # ..empty
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ###########################################################
 # After
 [features]
@@ -8157,12 +8157,12 @@ std = []
 <h4 id="cargo-feature-remove"><a class="header" href="#cargo-feature-remove">메이저: Cargo 기능 제거</a></h4>
 <p><a href="#기능-1">Cargo 기능</a> 을 제거하는 것은 보통 중단되는 변경입니다. 이는 해당 기능을 활성화한 모든 프로젝트에서 오류를 일으킵니다.</p>
 <pre><code class="language-toml"># MAJOR CHANGE
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ###########################################################
 # Before
 [features]
 logging = []
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ###########################################################
 # After
 [dependencies]
@@ -8176,13 +8176,13 @@ logging = []
 <h4 id="cargo-feature-remove-another"><a class="header" href="#cargo-feature-remove-another">메이저: 기능이나 공개 아이템을 변경하는 경우 기능 목록에서 기능 제거</a></h4>
 <p>다른 기능에서 특정 기능을 제거하는 경우, 해당 기능을 통해 그 기능이 제공될 것으로 기대하는 기존 사용자들에게는 중단될 수 있습니다.</p>
 <pre><code class="language-toml"># 중단되는 변경 예시
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ###########################################################
 # 변경 전
 [features]
 default = ["std"]
 std = []
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ###########################################################
 # 변경 후
 [features]
@@ -8193,12 +8193,12 @@ std = []
 <p><a href="#optional-dependencies">선택적 의존성(optional dependency)</a> 을 제거하는 것은 귀하의 라이브러리를 사용하는 프로젝트를 중단시킬 수 있습니다. 다른 프로젝트에서 <a href="#기능-1">Cargo 기능</a> 을 통해 해당 의존성을 활성화하고 있을 수 있기 때문입니다.</p>
 <p>선택적 의존성이 있을 때, Cargo는 의존성을 활성화하고 활성화 여부를 확인하는 메커니즘을 제공하기 위해 동일한 이름의 기능을 암시적으로 정의합니다. 이 문제는 <code>[features]</code> 표에서 <code>dep:</code> 구문을 사용하여 해당 암시적 기능을 비활성화함으로써 피할 수 있습니다. <code>dep:</code> 를 사용하면 선택적 의존성의 존재를 보다 의미 있는 이름 아래에 숨길 수 있으며, 이를 통해 보다 안전하게 수정할 수 있습니다.</p>
 <pre><code class="language-toml"># 중단되는 변경 예시
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ###########################################################
 # 변경 전
 [dependencies]
 curl = { version = "0.4.31", optional = true }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ###########################################################
 # 변경 후
 [dependencies]
@@ -8207,21 +8207,21 @@ curl = { version = "0.4.31", optional = true }
 <pre><code class="language-toml"># 마이너 변경
 #
 # 이 예제는 선택적 의존성을 사용하여 중단되는 변경을 피하는 방법을 보여줍니다.
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ###########################################################
 # 변경 전
 [dependencies]
 curl = { version = "0.4.31", optional = true }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [features]
 networking = ["dep:curl"]
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ###########################################################
 # 변경 후
 [dependencies]
 # 여기서 하나의 선택적 의존성이 다른 것으로 교체되었습니다.
 hyper = { version = "0.14.27", optional = true }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [features]
 networking = ["dep:hyper"]
 </code></pre>
@@ -8236,13 +8236,13 @@ networking = ["dep:hyper"]
 <h4 id="cargo-change-dep-feature"><a class="header" href="#cargo-change-dep-feature">마이너: 의존성 기능 변경</a></h4>
 <p>기능이 중단되는 변경을 도입하지 않는 한, 의존성의 기능을 변경하는 것은 보통 안전합니다.</p>
 <pre><code class="language-toml"># 마이너 변경
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ###########################################################
 # 변경 전
 [dependencies]
 rand = { version = "0.7.3", features = ["small_rng"] }
-
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ###########################################################
 # 변경 후
 [dependencies]
@@ -8251,12 +8251,12 @@ rand = "0.7.3"
 <h4 id="cargo-dep-add"><a class="header" href="#cargo-dep-add">마이너: 의존성 추가</a></h4>
 <p>새로운 의존성이 중단되는 변경을 초래하는 새로운 요구 사항을 도입하지 않는 한, 새로운 의존성을 추가하는 것은 보통 안전합니다. 예를 들어, 이전에 stable에서 작동하던 프로젝트에 nightly를 요구하는 새로운 의존성을 추가하는 것은 메이저 변경입니다.</p>
 <pre><code class="language-toml"># 마이너 변경
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ###########################################################
 # 변경 전
 [dependencies]
 # ..비어 있음
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 ###########################################################
 # 변경 후
 [dependencies]
@@ -8411,7 +8411,7 @@ serde = "1.0.219"
 </code></pre>
 <p>Should be written as:</p>
 <pre><code class="language-toml">[workspace.lints.cargo]
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [lints]
 workspace = true
 </code></pre>
@@ -8581,7 +8581,7 @@ this-lint-does-not-exist = "warn"
 <h3 id="예제-11"><a class="header" href="#예제-11">예제</a></h3>
 <pre><code class="language-toml">[package]
 name = "foo"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [dependencies]
 unused = "1"
 </code></pre>
@@ -8600,7 +8600,7 @@ name = "foo"
 <h3 id="예제-12"><a class="header" href="#예제-12">예제</a></h3>
 <pre><code class="language-toml">[workspace.dependencies]
 regex = "1"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [dependencies]
 </code></pre>
 <h2 id="unused_workspace_package_fields"><a class="header" href="#unused_workspace_package_fields"><code>unused_workspace_package_fields</code></a></h2>
@@ -8614,7 +8614,7 @@ regex = "1"
 <h3 id="예제-13"><a class="header" href="#예제-13">예제</a></h3>
 <pre><code class="language-toml">[workspace.package]
 edition = "2024"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [package]
 name = "foo"
 </code></pre>
@@ -8832,11 +8832,11 @@ artifact-dir = "out"
 name = "my-package"
 version = "0.1.0"
 metabuild = ["foo", "bar"]
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [build-dependencies]
 foo = "1.0"
 bar = "1.0"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [package.metadata.foo]
 extra-info = "qwerty"
 </code></pre>
@@ -8849,7 +8849,7 @@ extra-info = "qwerty"
 <p>Multiple Build Scripts feature allows you to have multiple build scripts in your package.</p>
 <p>Include <code>cargo-features</code> at the top of <code>Cargo.toml</code> and add <code>multiple-build-scripts</code> to enable feature. Add the paths of the build scripts as an array in <code>package.build</code>. For example:</p>
 <pre><code class="language-toml">cargo-features = ["multiple-build-scripts"]
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [package]
 name = "mypackage"
 version = "0.0.1"
@@ -8878,7 +8878,7 @@ public-dependency = true
 </code></pre>
 <p><code>public-dependency</code> 는 <code>cargo-features</code> 에서도 활성화할 수 있었으나, <strong>현재는 권장되지 않으며(deprecated) 곧 제거될 예정</strong> 입니다.</p>
 <pre><code class="language-toml">cargo-features = ["public-dependency"]
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [dependencies]
 my_dep = { version = "1.2.3", public = true }
 private_dep = "2.0.0" # 기본적으로 '비공개(private)'가 됩니다
@@ -8926,7 +8926,7 @@ my-dependency = "0.1.1"
 <p>이 기능을 활성화하려면 <code>.cargo/config.toml</code> 에서 <code>sbom</code> 필드를 설정하거나</p>
 <pre><code class="language-toml">[unstable]
 sbom = true
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [build]
 sbom = true
 </code></pre>
@@ -9180,7 +9180,7 @@ linker = "/path/to/target/linker"
       */
       "platform": null,
       /* 이 유닛의 "모드(mode)"입니다. 유효한 값:
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
          * "test" --- 테스트용으로 `rustc` 를 사용하여 빌드합니다.
          * "build" --- `rustc` 를 사용하여 빌드합니다.
          * "check" --- "check" 모드에서 `rustc` 를 사용하여 빌드합니다.
@@ -9230,10 +9230,10 @@ linker = "/path/to/target/linker"
 </ul>
 <p>이 기능은 <code>[profile]</code> 섹션에서 rustc에 직접 전달할 플래그를 지정할 수 있는 새로운 옵션을 제공합니다. 다음과 같이 활성화할 수 있습니다:</p>
 <pre><code class="language-toml">cargo-features = ["profile-rustflags"]
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [package]
 # ...
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [profile.release]
 rustflags = [ "-C", "..." ]
 </code></pre>
@@ -9241,7 +9241,7 @@ rustflags = [ "-C", "..." ]
 <pre><code class="language-toml"># .cargo/config.toml
 [unstable]
 profile-rustflags = true
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [profile.release]
 rustflags = [ "-C", "..." ]
 </code></pre>
@@ -9466,11 +9466,11 @@ timeout = 300  # in seconds
 <p><code>filename</code> 매개변수는 바이너리 확장자를 포함해서는 <strong>안 됩니다</strong>. <code>cargo</code> 가 적절한 확장자를 파악하여 바이너리에 직접 사용합니다.</p>
 <p><code>filename</code> 매개변수는 매니페스트의 <code>[[bin]]</code> 섹션에서만 사용할 수 있습니다.</p>
 <pre><code class="language-toml">cargo-features = ["different-binary-name"]
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [package]
 name =  "foo"
 version = "0.0.1"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [[bin]]
 name = "foo"
 filename = "007bar"
@@ -9488,7 +9488,7 @@ path = "src/main.rs"
 <pre><code class="language-toml"># 라이브러리에서 예제 수집 활성화
 [lib]
 doc-scrape-examples = true
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 # 예제 타겟에서 예제 수집 비활성화
 [[example]]
 name = "my-example"
@@ -9515,10 +9515,10 @@ doc-scrape-examples = false
 <p>예시:</p>
 <pre><code class="language-toml">[package]
 name = "foo"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [dependencies]
 serde = "1.0.117"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [profile.dev.package.foo]
 codegen-backend = "cranelift"
 </code></pre>
@@ -9526,7 +9526,7 @@ codegen-backend = "cranelift"
 <pre><code class="language-toml"># .cargo/config.toml
 [unstable]
 codegen-backend = true
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [profile.dev.package.foo]
 codegen-backend = "cranelift"
 </code></pre>
@@ -9580,16 +9580,16 @@ codegen-backend = "cranelift"
 [dependencies]
 clap = { version = "4.2", features = ["derive"] }
 ---
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 use clap::Parser;
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 #[derive(Parser, Debug)]
 #[clap(version)]
 struct Args {
     #[clap(short, long, help = "Path to config")]
     config: Option&lt;std::path::PathBuf&gt;,
 }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 fn main() {
     let args = Args::parse();
     println!("{:?}", args);
@@ -9647,10 +9647,10 @@ fn main() {
 </ul>
 <p>이는 생성된 바이너리에서 경로가 정제(sanitize)되는 방식을 제어하는 새로운 프로파일 설정을 추가합니다. 다음과 같이 활성화할 수 있습니다:</p>
 <pre><code class="language-toml">cargo-features = ["trim-paths"]
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [package]
 # ...
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [profile.release]
 trim-paths = ["diagnostics", "object"]
 </code></pre>
@@ -9658,7 +9658,7 @@ trim-paths = ["diagnostics", "object"]
 <pre><code class="language-toml"># .cargo/config.toml
 [unstable]
 trim-paths = true
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [profile.release]
 trim-paths = ["diagnostics", "object"]
 </code></pre>
@@ -9677,7 +9677,7 @@ trim-paths = ["diagnostics", "object"]
 <p><code>dev</code> 프로파일의 경우 기본값은 <code>none</code> 이며, <code>release</code> 프로파일의 경우 <code>object</code> 입니다. <code>Cargo.toml</code> 에 이 옵션을 지정하여 수동으로 재정의할 수 있습니다:</p>
 <pre><code class="language-toml">[profile.dev]
 trim-paths = "all"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [profile.release]
 trim-paths = ["object", "diagnostics"]
 </code></pre>
@@ -9703,7 +9703,7 @@ trim-paths = ["object", "diagnostics"]
 <h4 id="자동-gc-설정"><a class="header" href="#자동-gc-설정">자동 GC 설정</a></h4>
 <p>The <code>-Zgc</code> flag will enable Cargo to read extra configuration options related to garbage collection. The settings available are:</p>
 <pre><code class="language-toml"># Example config.toml file.
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 # Sub-table for defining specific settings for cleaning the global cache.
 [cache.global-clean]
 # Anything older than this duration will be deleted in the source cache.
@@ -9745,7 +9745,7 @@ cargo clean gc -Zgc --max-git-size=0 --max-download-size=100MB
 <p>여러 패키지가 동일한 API 네임스페이스에 참여할 수 있게 합니다.</p>
 <p>다음과 같이 활성화할 수 있습니다:</p>
 <pre><code class="language-toml">cargo-features = ["open-namespaces"]
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [package]
 # ...
 </code></pre>
@@ -9757,10 +9757,10 @@ cargo clean gc -Zgc --max-git-size=0 --max-download-size=100MB
 <p>Extends the <code>panic</code> profile setting to support the <a href="../rustc/codegen-options/index.html#panic"><code>immediate-abort</code></a> panic strategy. This can be enabled like so:</p>
 <pre><code class="language-toml"># Cargo.toml
 cargo-features = ["panic-immediate-abort"]
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [package]
 # ...
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [profile.release]
 panic = "immediate-abort"
 </code></pre>
@@ -9768,7 +9768,7 @@ panic = "immediate-abort"
 <pre><code class="language-toml"># .cargo/config.toml
 [unstable]
 panic-immediate-abort = true
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [profile.release]
 panic = "immediate-abort"
 </code></pre>
@@ -9789,7 +9789,7 @@ implicit-features = "warn"
 <p>이는 <a href="https://rust-lang.github.io/rfcs/2906-cargo-workspace-deduplicate.html">RFC 2906 <code>workspace-deduplicate</code></a>와 함께 작동합니다:</p>
 <pre><code class="language-toml">[workspace.lints.cargo]
 implicit-features = "warn"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [lints]
 workspace = true
 </code></pre>
@@ -9800,7 +9800,7 @@ workspace = true
 <p><code>path</code> 의존성은 <a href="#설정-1">설정</a> 이나 <a href="#built-in-path-bases">내장 경로 베이스</a> 중 하나에 있는 <code>[path-bases]</code> 테이블의 경로 베이스 이름을 <code>base</code> 키로 설정하여 베이스를 지정할 수 있습니다. 해당 경로 베이스의 값은 <code>path</code> 값 앞에 추가되어(필요한 경우 경로 구분자와 함께), Cargo가 의존성을 찾을 실제 위치를 생성합니다.</p>
 <p>예를 들어, <code>Cargo.toml</code> 에 다음이 포함되어 있다면:</p>
 <pre><code class="language-toml">cargo-features = ["path-bases"]
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [dependencies]
 foo = { base = "dev", path = "foo" }
 </code></pre>
@@ -9914,7 +9914,7 @@ dev = "/home/user/dev/rust/libraries/"
 <h2 id="unstable-editions"><a class="header" href="#unstable-editions"><code>unstable-editions</code></a></h2>
 <p>The <code>unstable-editions</code> value in the <code>cargo-features</code> list allows a <code>Cargo.toml</code> manifest to specify an edition that is not yet stable.</p>
 <pre><code class="language-toml">cargo-features = ["unstable-editions"]
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [package]
 name = "my-package"
 edition = "future"
@@ -9947,10 +9947,10 @@ edition = "future"
 <p>When enabled, Cargo writes build logs in JSONL format to the <code>$CARGO_HOME/log/</code> directory Each cargo invocation produces a log file named with a unique session ID. These logs contain timing information, rebuild reasons, and other build metadata that can be analyzed with the <code>cargo report</code> subcommands.</p>
 <p>To enable build analysis, add the following <a href="#설정-1">Cargo configuration</a>:</p>
 <pre><code class="language-toml"># Example config.toml file.
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [unstable]
 build-analysis = true
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 # Enable the build metric collection
 [build.analysis]
 enabled = true
@@ -16885,9 +16885,9 @@ requires the <code>-Z unstable-options</code> flag to enable (see
             "description": "Package description.",
             /* 패키지를 어디서 가져왔는지를 나타내는 "불투명" 식별자인 패키지의 소스 ID입니다.
                안정성 보장에 대해서는 위의 "호환성"을 참조하세요.
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
                경로 의존성 및 워크스페이스 멤버의 경우 null입니다.
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
                다른 의존성의 경우 다음 형식의 문자열입니다:
                - 레지스트리 기반 의존성의 경우 "registry+URL".
                  예: "registry+https://github.com/rust-lang/crates.io-index"
@@ -16895,7 +16895,7 @@ requires the <code>-Z unstable-options</code> flag to enable (see
                  예: "git+https://github.com/rust-lang/cargo?rev=5e85ba14aaa20f8133863373404cb0af69eeef2c#5e85ba14aaa20f8133863373404cb0af69eeef2c"
                - 스파스 레지스트리 의존성의 경우 "sparse+URL"
                  예: "sparse+https://my-sparse-registry.org"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
                `+` 뒤의 값은 명시적으로 정의되지 않았으며 Cargo 버전 간에 변경될 수 있으며,
                설정 파일의 레지스트리 정의와 같은 다른 것과 직접적인 관련이 없을 수 있습니다.
                향후 다른 `+` 접두사 식별자를 갖는 새로운 소스 종류가 추가될 수 있습니다.
@@ -26025,7 +26025,7 @@ requires the <code>-Z unstable-options</code> flag to enable (see
 <h2 id="https-인증"><a class="header" href="#https-인증">HTTPS 인증</a></h2>
 <p>HTTPS 인증에는 <a href="https://git-scm.com/book/en/v2/Git-Tools-Credential-Storage"><code>credential.helper</code></a> 메커니즘이 필요합니다. 여러 가지 자격 증명 헬퍼가 있으며, 글로벌 Git 설정 파일에서 사용할 헬퍼를 지정합니다.</p>
 <pre><code class="language-ini"># ~/.gitconfig
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [credential]
 helper = store
 </code></pre>

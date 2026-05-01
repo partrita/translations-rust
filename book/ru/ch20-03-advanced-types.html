@@ -96,7 +96,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-01ba4889.js";
+            window.path_to_searchindex_js = "searchindex-0481507b.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-f10b093a.js"></script>
@@ -252,19 +252,19 @@
 <p>Rust provides the ability to declare a <em>type alias</em> to give an existing type another name. For this we use the <code>type</code> keyword. For example, we can create the alias <code>Kilometers</code> to <code>i32</code> like so:</p>
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">fn main() {
 </span>    type Kilometers = i32;
-<span class="boring">
+<span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    let x: i32 = 5;
 </span><span class="boring">    let y: Kilometers = 5;
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    println!("x + y = {}", x + y);
 </span><span class="boring">}</span></code></pre>
 <p>Now the alias <code>Kilometers</code> is a <em>synonym</em> for <code>i32</code>; unlike the <code>Millimeters</code> and <code>Meters</code> types we created in Listing 20-16, <code>Kilometers</code> is not a separate, new type. Values that have the type <code>Kilometers</code> will be treated the same as values of type <code>i32</code>:</p>
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">fn main() {
 </span>    type Kilometers = i32;
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     let x: i32 = 5;
     let y: Kilometers = 5;
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     println!("x + y = {}", x + y);
 <span class="boring">}</span></code></pre>
 <p>Because <code>Kilometers</code> and <code>i32</code> are the same type, we can add values of both types and can pass <code>Kilometers</code> values to functions that take <code>i32</code> parameters. However, using this method, we don’t get the type-checking benefits that we get from the newtype pattern discussed earlier. In other words, if we mix up <code>Kilometers</code> and <code>i32</code> values somewhere, the compiler will not give us an error.</p>
@@ -274,11 +274,11 @@
 <figure class="listing" id="listing-20-25">
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">fn main() {
 </span>    let f: Box&lt;dyn Fn() + Send + 'static&gt; = Box::new(|| println!("hi"));
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     fn takes_long_type(f: Box&lt;dyn Fn() + Send + 'static&gt;) {
         // --код сокращён--
     }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     fn returns_long_type() -&gt; Box&lt;dyn Fn() + Send + 'static&gt; {
         // --код сокращён--
 <span class="boring">        Box::new(|| ())
@@ -290,13 +290,13 @@
 <figure class="listing" id="listing-20-26">
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">fn main() {
 </span>    type Thunk = Box&lt;dyn Fn() + Send + 'static&gt;;
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     let f: Thunk = Box::new(|| println!("hi"));
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     fn takes_long_type(f: Thunk) {
         // --код сокращён--
     }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     fn returns_long_type() -&gt; Thunk {
         // --код сокращён--
 <span class="boring">        Box::new(|| ())
@@ -308,35 +308,35 @@
 <p>Type aliases are also commonly used with the <code>Result&lt;T, E&gt;</code> type for reducing repetition. Consider the <code>std::io</code> module in the standard library. I/O operations often return a <code>Result&lt;T, E&gt;</code> to handle situations when operations fail to work. This library has a <code>std::io::Error</code> struct that represents all possible I/O errors. Many of the functions in <code>std::io</code> will be returning <code>Result&lt;T, E&gt;</code> where the <code>E</code> is <code>std::io::Error</code>, such as these functions in the <code>Write</code> trait:</p>
 <pre><code class="language-rust noplayground">use std::fmt;
 use std::io::Error;
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 pub trait Write {
     fn write(&amp;mut self, buf: &amp;[u8]) -&gt; Result&lt;usize, Error&gt;;
     fn flush(&amp;mut self) -&gt; Result&lt;(), Error&gt;;
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     fn write_all(&amp;mut self, buf: &amp;[u8]) -&gt; Result&lt;(), Error&gt;;
     fn write_fmt(&amp;mut self, fmt: fmt::Arguments) -&gt; Result&lt;(), Error&gt;;
 }</code></pre>
 <p>The <code>Result&lt;..., Error&gt;</code> is repeated a lot. As such, <code>std::io</code> has this type alias declaration:</p>
 <pre><code class="language-rust noplayground"><span class="boring">use std::fmt;
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span>type Result&lt;T&gt; = std::result::Result&lt;T, std::io::Error&gt;;
-<span class="boring">
+<span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">pub trait Write {
 </span><span class="boring">    fn write(&amp;mut self, buf: &amp;[u8]) -&gt; Result&lt;usize&gt;;
 </span><span class="boring">    fn flush(&amp;mut self) -&gt; Result&lt;()&gt;;
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    fn write_all(&amp;mut self, buf: &amp;[u8]) -&gt; Result&lt;()&gt;;
 </span><span class="boring">    fn write_fmt(&amp;mut self, fmt: fmt::Arguments) -&gt; Result&lt;()&gt;;
 </span><span class="boring">}</span></code></pre>
 <p>Because this declaration is in the <code>std::io</code> module, we can use the fully qualified alias <code>std::io::Result&lt;T&gt;</code>; that is, a <code>Result&lt;T, E&gt;</code> with the <code>E</code> filled in as <code>std::io::Error</code>. The <code>Write</code> trait function signatures end up looking like this:</p>
 <pre><code class="language-rust noplayground"><span class="boring">use std::fmt;
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">type Result&lt;T&gt; = std::result::Result&lt;T, std::io::Error&gt;;
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span>pub trait Write {
     fn write(&amp;mut self, buf: &amp;[u8]) -&gt; Result&lt;usize&gt;;
     fn flush(&amp;mut self) -&gt; Result&lt;()&gt;;
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     fn write_all(&amp;mut self, buf: &amp;[u8]) -&gt; Result&lt;()&gt;;
     fn write_fmt(&amp;mut self, fmt: fmt::Arguments) -&gt; Result&lt;()&gt;;
 }</code></pre>
@@ -352,36 +352,36 @@ pub trait Write {
 <figure class="listing" id="listing-20-27">
 <pre><code class="language-rust ignore"><span class="boring">use std::cmp::Ordering;
 </span><span class="boring">use std::io;
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">use rand::Rng;
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">fn main() {
 </span><span class="boring">    println!("Угадайте число!");
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    let secret_number = rand::thread_rng().gen_range(1..=100);
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    println!("Загаданное число: {secret_number}");
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    loop {
 </span><span class="boring">        println!("Введите свою догадку.");
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">        let mut guess = String::new();
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">        // --код сокращён--
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">        io::stdin()
 </span><span class="boring">            .read_line(&amp;mut guess)
 </span><span class="boring">            .expect("Не удалось прочесть ввод.");
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span>        let guess: u32 = match guess.trim().parse() {
             Ok(num) =&gt; num,
             Err(_) =&gt; continue,
         };
-<span class="boring">
+<span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">        println!("Вы предположили: {guess}");
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">        // --код сокращён--
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">        match guess.cmp(&amp;secret_number) {
 </span><span class="boring">            Ordering::Less =&gt; println!("Слишком маленькое!"),
 </span><span class="boring">            Ordering::Greater =&gt; println!("Слишком большое!"),
@@ -410,9 +410,9 @@ pub trait Write {
 </span><span class="boring">    Some(T),
 </span><span class="boring">    None,
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">use crate::Option::*;
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span>impl&lt;T&gt; Option&lt;T&gt; {
     pub fn unwrap(self) -&gt; T {
         match self {
@@ -425,7 +425,7 @@ pub trait Write {
 <p>One final expression that has the type <code>!</code> is a loop:</p>
 <pre><code class="language-rust ignore"><span class="boring">fn main() {
 </span>    print!("forever ");
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     loop {
         print!("and ever ");
     }

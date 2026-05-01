@@ -96,7 +96,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-ba1bddcc.js";
+            window.path_to_searchindex_js = "searchindex-18122752.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-a05ef4ad.js"></script>
@@ -271,7 +271,7 @@
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">fn main() {
 </span>    {                      // s is not valid here, since it's not yet declared
         let s = "hello";   // s는 이 시점부터 유효합니다.
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
         // s로 작업 수행
     }                      // 이 스코프는 이제 끝났고, s는 더 이상 유효하지 않습니다.
 <span class="boring">}</span></code></pre>
@@ -296,9 +296,9 @@ ignore --> section of Chapter 5, and when we talk about namespacing with modules
 <p>이러한 종류의 문자열은 <em>변경될 수 있습니다</em>:</p>
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">fn main() {
 </span>    let mut s = String::from("hello");
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
     s.push_str(", world!"); // push_str() appends a literal to a String
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
     println!("{s}"); // this will print `hello, world!`
 <span class="boring">}</span></code></pre>
 <p>그렇다면 여기서 차이점은 무엇일까요? 왜 <code>String</code> 은 변경될 수 있지만 리터럴은 변경될 수 없을까요? 차이점은 이 두 타입이 메모리를 다루는 방식에 있습니다.</p>
@@ -315,7 +315,7 @@ ignore --> section of Chapter 5, and when we talk about namespacing with modules
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">fn main() {
 </span>    {
         let s = String::from("hello"); // s는 이 시점부터 유효합니다.
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
         // s로 작업 수행
     }                                  // 이 스코프는 이제 끝났고, s는 더 이상 유효하지 않습니다.
 <span class="boring">}</span></code></pre>
@@ -360,7 +360,7 @@ string data on the heap, byte by byte." src="img/trpl04-01.svg" class="center" s
 <pre><code class="language-rust ignore does_not_compile"><span class="boring">fn main() {
 </span>    let s1 = String::from("hello");
     let s2 = s1;
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
     println!("{s1}, 월드!");
 <span class="boring">}</span></code></pre>
 <p>러스트가 유효하지 않은 참조를 사용하는 것을 막기 때문에 다음과 같은 오류가 발생합니다:</p>
@@ -382,7 +382,7 @@ help: consider cloning the value if the performance cost is acceptable
   |
 3 |     let s2 = s1.clone();
   |                ++++++++
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 For more information about this error, try `rustc --explain E0382`.
 error: could not compile `ownership` (bin "ownership") due to 1 previous error
 </code></pre>
@@ -400,7 +400,7 @@ access the heap data." src="img/trpl04-04.svg" class="center" style="width:
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">fn main() {
 </span>    let mut s = String::from("hello");
     s = String::from("아호이");
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
     println!(" {s}, 세상아!");
 <span class="boring">}</span></code></pre>
 <p>We initially declare a variable <code>s</code> and bind it to a <code>String</code> with the value <code>"hello"</code>. Then, we immediately create a new <code>String</code> with the value <code>"ahoy"</code> and assign it to <code>s</code>. At this point, nothing is referring to the original value on the heap at all. Figure 4-5 illustrates the stack and heap data now:</p>
@@ -417,7 +417,7 @@ data (hello) grayed out because it cannot be accessed anymore." src="img/trpl04-
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">fn main() {
 </span>    let s1 = String::from("hello");
     let s2 = s1.clone();
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
     println!("s1 = {s1}, s2 = {s2}");
 <span class="boring">}</span></code></pre>
 <p>이것은 잘 작동하며 그림 4-3에 표시된 동작, 즉 힙 데이터가 <em>복사되는</em> 동작을 명시적으로 생성합니다.</p>
@@ -427,7 +427,7 @@ data (hello) grayed out because it cannot be accessed anymore." src="img/trpl04-
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">fn main() {
 </span>    let x = 5;
     let y = x;
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
     println!("x = {x}, y = {y}");
 <span class="boring">}</span></code></pre>
 <p>But this code seems to contradict what we just learned: We don’t have a call to <code>clone</code>, but <code>x</code> is still valid and wasn’t moved into <code>y</code>.</p>
@@ -448,24 +448,24 @@ data (hello) grayed out because it cannot be accessed anymore." src="img/trpl04-
 <span class="file-name">Filename: src/main.rs</span>
 <pre class="playground"><code class="language-rust edition2024">fn main() {
     let s = String::from("hello");  // s가 스코프 안으로 들어옵니다
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
     takes_ownership(s);             // s's value moves into the function...
                                     // ... and so is no longer valid here
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
     let x = 5;                      // x가 스코프 안으로 들어옵니다
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
     makes_copy(x);                  // Because i32 implements the Copy trait,
                                     // x does NOT move into the function,
                                     // so it's okay to use x afterward.
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 } // Here, x goes out of scope, then s. However, because s's value was moved,
   // nothing special happens.
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 fn takes_ownership(some_string: String) { // some_string이 스코프 안으로 들어옵니다
     println!("{some_string}");
 } // 여기서 some_string이 스코프를 벗어나고 `drop` 이 호출됩니다. 배후의
   // 메모리가 해제됩니다.
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 fn makes_copy(some_integer: i32) { // some_integer가 스코프 안으로 들어옵니다
     println!("{some_integer}");
 } // 여기서 some_integer가 스코프를 벗어납니다. 특별한 일은 일어나지 않습니다.</code></pre>
@@ -479,9 +479,9 @@ fn makes_copy(some_integer: i32) { // some_integer가 스코프 안으로 들어
 <pre class="playground"><code class="language-rust edition2024">fn main() {
     let s1 = gives_ownership();        // gives_ownership은 반환 값을
                                        // s1으로 이동시킵니다
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
     let s2 = String::from("hello");    // s2가 스코프 안으로 들어옵니다
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
     let s3 = takes_and_gives_back(s2); // s2 is moved into
                                        // takes_and_gives_back, which also
                                        // moves its return value into s3
@@ -489,19 +489,19 @@ fn makes_copy(some_integer: i32) { // some_integer가 스코프 안으로 들어
 fn gives_ownership() -&gt; String {       // gives_ownership will move its
                                        // return value into the function
                                        // that calls it
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
     let some_string = String::from("yours"); // some_string이 스코프 안으로 들어옵니다
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
     some_string                        // some_string이 반환되어 호출한
                                        // 함수로
                                        // 이동합니다
 }
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 // 이 함수는 String을 가져와서 String을 반환합니다.
 fn takes_and_gives_back(a_string: String) -&gt; String {
     // a_string이 스코프 안으로
     // 들어옵니다
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
     a_string  // a_string이 반환되어 호출한 함수로 이동합니다
 }</code></pre>
 <figcaption><a href="#listing-4-4">Listing 4-4</a>: Transferring ownership of return values</figcaption>
@@ -513,15 +513,15 @@ fn takes_and_gives_back(a_string: String) -&gt; String {
 <span class="file-name">Filename: src/main.rs</span>
 <pre class="playground"><code class="language-rust edition2024">fn main() {
     let s1 = String::from("hello");
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
     let (s2, len) = calculate_length(s1);
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
     println!("'{s2}'의 길이는 {len}입니다.");
 }
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 fn calculate_length(s: String) -&gt; (String, usize) {
     let length = s.len(); // len()은 String의 길이를 반환합니다
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
     (s, length)
 }</code></pre>
 <figcaption><a href="#listing-4-5">Listing 4-5</a>: Returning ownership of parameters</figcaption>

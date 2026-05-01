@@ -93,7 +93,7 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-55effe88.js";
+            window.path_to_searchindex_js = "../searchindex-e23b9ebb.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../toc-20da6b24.js"></script>
@@ -642,7 +642,7 @@ CompoundAssignmentExpression</text>
 } else {
     println!("x는 다른 것");
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // `if` can be used as an expression.
 let y = if 12 * 15 &gt; 150 {
     "더 큼"
@@ -670,7 +670,7 @@ assert_eq!(y, "더 큼");
     // diverges. Without the semicolon, the `if` would be the tail expression
     // with type `()`, which would fail to match the return type `!`.
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 fn diverging_arms() -&gt; ! {
     // Diverges because all arms diverge
     if true {
@@ -692,7 +692,7 @@ fn diverging_arms() -&gt; ! {
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span>let dish = ("햄", "달걀");
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // This body will be skipped because the pattern is refuted.
 if let ("베이컨", b) = dish {
     println!("베이컨은 {}와(과) 함께 제공됩니다", b);
@@ -700,12 +700,12 @@ if let ("베이컨", b) = dish {
     // 대신 이 블록이 평가됩니다.
     println!("베이컨은 제공되지 않습니다");
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // This body will execute.
 if let ("햄", b) = dish {
     println!("햄은 {}와(과) 함께 제공됩니다", b);
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 if let _ = 5 {
     println!("반박할 수 없는 패턴은 항상 참입니다");
 }
@@ -747,7 +747,7 @@ if let E::X(n) | E::Y(n) = v {
 </span><span class="boring">fn main() {
 </span>fn single() {
     let outer_opt = Some(Some(1i32));
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
     if let Some(inner_opt) = outer_opt
         &amp;&amp; let Some(number) = inner_opt
         &amp;&amp; number == 1
@@ -761,7 +761,7 @@ if let E::X(n) | E::Y(n) = v {
 </span><span class="boring">fn main() {
 </span>fn nested() {
     let outer_opt = Some(Some(1i32));
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
     if let Some(inner_opt) = outer_opt {
         if let Some(number) = inner_opt {
             if number == 1 {

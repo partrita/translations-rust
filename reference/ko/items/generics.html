@@ -93,7 +93,7 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-55effe88.js";
+            window.path_to_searchindex_js = "../searchindex-e23b9ebb.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../toc-20da6b24.js"></script>
@@ -666,7 +666,7 @@ struct EitherOrderWorks&lt;const N: bool, U&gt;(U);
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span>// 상수 제네릭 매개변수를 사용할 수 있는 예시.
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // 아이템 자체의 시그니처에서 사용됨.
 fn foo&lt;const N: usize&gt;(arr: [i32; N]) {
     // 함수 본문 내에서 타입으로 사용됨.
@@ -674,19 +674,19 @@ fn foo&lt;const N: usize&gt;(arr: [i32; N]) {
     // 표현식으로 사용됩니다.
     println!("{}", N * 2);
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // 구조체의 필드로 사용됨.
 struct Foo&lt;const N: usize&gt;([i32; N]);
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 impl&lt;const N: usize&gt; Foo&lt;N&gt; {
     // 연관 상수로 사용됨.
     const CONST: usize = N * 4;
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 trait Trait {
     type Output;
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 impl&lt;const N: usize&gt; Trait for Foo&lt;N&gt; {
     // 연관 타입으로 사용됨.
     type Output = [i32; N];
@@ -713,7 +713,7 @@ fn foo&lt;const N: usize&gt;() {
 <pre class="playground"><code class="language-rust compile_fail edition2024"><span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span>// 상수 매개변수를 사용할 수 없는 예시.
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // 타입 내에서 다른 표현식과 결합하는 것은 허용되지 않습니다. 예를 들어
 // 여기 반환 타입에 있는 산술 표현식과 같은 경우입니다.
 fn bad_function&lt;const N: usize&gt;() -&gt; [u8; {N + 1}] {
@@ -742,7 +742,7 @@ fn bad_function&lt;const N: usize&gt;() -&gt; [u8; {N + 1}] {
 </span>struct S&lt;const N: i64&gt;;
 const C: i64 = 1;
 fn f&lt;const N: i64&gt;() -&gt; S&lt;N&gt; { S }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 let _ = f::&lt;1&gt;(); // Literal.
 let _ = f::&lt;-1&gt;(); // Negative literal.
 let _ = f::&lt;{ 1 + 2 }&gt;(); // Constant expression.
@@ -819,7 +819,7 @@ fn bar&lt;const N: usize&gt;() -&gt; Foo&lt;{ N }&gt; { todo!() } // ok
 </span>// ok
 struct Foo&lt;const N: usize&gt;;
 enum Bar&lt;const M: usize&gt; { A, B }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // 오류: 사용되지 않은 매개변수
 struct Baz&lt;T&gt;;
 struct Biz&lt;'a&gt;;
@@ -836,7 +836,7 @@ impl&lt;const N: usize&gt; Unconstrained {}
 trait Bar {}
 impl Bar for Foo&lt;true&gt; {}
 impl Bar for Foo&lt;false&gt; {}
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 fn needs_bar(_: impl Bar) {}
 fn generic&lt;const B: bool&gt;() {
     let v = Foo::&lt;B&gt;;

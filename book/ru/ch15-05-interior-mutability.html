@@ -96,7 +96,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-01ba4889.js";
+            window.path_to_searchindex_js = "searchindex-0481507b.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-f10b093a.js"></script>
@@ -283,7 +283,7 @@ help: consider changing this to be mutable
   |
 2 |     let mut x = 5;
   |         +++
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 For more information about this error, try `rustc --explain E0596`.
 error: could not compile `borrowing` (bin "borrowing") due to 1 previous error
 </code></pre>
@@ -301,13 +301,13 @@ error: could not compile `borrowing` (bin "borrowing") due to 1 previous error
 <pre><code class="language-rust noplayground">pub trait Messenger {
     fn send(&amp;self, msg: &amp;str);
 }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 pub struct LimitTracker&lt;'a, T: Messenger&gt; {
     messenger: &amp;'a T,
     value: usize,
     max: usize,
 }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 impl&lt;'a, T&gt; LimitTracker&lt;'a, T&gt;
 where
     T: Messenger,
@@ -319,12 +319,12 @@ where
             max,
         }
     }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     pub fn set_value(&amp;mut self, value: usize) {
         self.value = value;
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
         let percentage_of_max = self.value as f64 / self.max as f64;
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
         if percentage_of_max &gt;= 1.0 {
             self.messenger.send("Error: You are over your quota!");
         } else if percentage_of_max &gt;= 0.9 {
@@ -345,13 +345,13 @@ where
 <pre><code class="language-rust ignore does_not_compile"><span class="boring">pub trait Messenger {
 </span><span class="boring">    fn send(&amp;self, msg: &amp;str);
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">pub struct LimitTracker&lt;'a, T: Messenger&gt; {
 </span><span class="boring">    messenger: &amp;'a T,
 </span><span class="boring">    value: usize,
 </span><span class="boring">    max: usize,
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">impl&lt;'a, T&gt; LimitTracker&lt;'a, T&gt;
 </span><span class="boring">where
 </span><span class="boring">    T: Messenger,
@@ -363,12 +363,12 @@ where
 </span><span class="boring">            max,
 </span><span class="boring">        }
 </span><span class="boring">    }
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    pub fn set_value(&amp;mut self, value: usize) {
 </span><span class="boring">        self.value = value;
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">        let percentage_of_max = self.value as f64 / self.max as f64;
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">        if percentage_of_max &gt;= 1.0 {
 </span><span class="boring">            self.messenger.send("Error: You are over your quota!");
 </span><span class="boring">        } else if percentage_of_max &gt;= 0.9 {
@@ -380,15 +380,15 @@ where
 </span><span class="boring">        }
 </span><span class="boring">    }
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span>#[cfg(test)]
 mod tests {
     use super::*;
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     struct MockMessenger {
         sent_messages: Vec&lt;String&gt;,
     }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     impl MockMessenger {
         fn new() -&gt; MockMessenger {
             MockMessenger {
@@ -396,20 +396,20 @@ mod tests {
             }
         }
     }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     impl Messenger for MockMessenger {
         fn send(&amp;self, message: &amp;str) {
             self.sent_messages.push(String::from(message));
         }
     }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     #[test]
     fn it_sends_an_over_75_percent_warning_message() {
         let mock_messenger = MockMessenger::new();
         let mut limit_tracker = LimitTracker::new(&amp;mock_messenger, 100);
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
         limit_tracker.set_value(80);
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
         assert_eq!(mock_messenger.sent_messages.len(), 1);
     }
 }</code></pre>
@@ -434,7 +434,7 @@ help: consider changing this to be a mutable reference in the `impl` method and 
 56 |     impl Messenger for MockMessenger {
 57 ~         fn send(&amp;mut self, message: &amp;str) {
    |
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 For more information about this error, try `rustc --explain E0596`.
 error: could not compile `limit-tracker` (lib test) due to 1 previous error
 </code></pre>
@@ -445,13 +445,13 @@ error: could not compile `limit-tracker` (lib test) due to 1 previous error
 <pre><code class="language-rust noplayground"><span class="boring">pub trait Messenger {
 </span><span class="boring">    fn send(&amp;self, msg: &amp;str);
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">pub struct LimitTracker&lt;'a, T: Messenger&gt; {
 </span><span class="boring">    messenger: &amp;'a T,
 </span><span class="boring">    value: usize,
 </span><span class="boring">    max: usize,
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">impl&lt;'a, T&gt; LimitTracker&lt;'a, T&gt;
 </span><span class="boring">where
 </span><span class="boring">    T: Messenger,
@@ -463,12 +463,12 @@ error: could not compile `limit-tracker` (lib test) due to 1 previous error
 </span><span class="boring">            max,
 </span><span class="boring">        }
 </span><span class="boring">    }
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    pub fn set_value(&amp;mut self, value: usize) {
 </span><span class="boring">        self.value = value;
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">        let percentage_of_max = self.value as f64 / self.max as f64;
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">        if percentage_of_max &gt;= 1.0 {
 </span><span class="boring">            self.messenger.send("Error: You are over your quota!");
 </span><span class="boring">        } else if percentage_of_max &gt;= 0.9 {
@@ -480,16 +480,16 @@ error: could not compile `limit-tracker` (lib test) due to 1 previous error
 </span><span class="boring">        }
 </span><span class="boring">    }
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span>#[cfg(test)]
 mod tests {
     use super::*;
     use std::cell::RefCell;
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     struct MockMessenger {
         sent_messages: RefCell&lt;Vec&lt;String&gt;&gt;,
     }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     impl MockMessenger {
         fn new() -&gt; MockMessenger {
             MockMessenger {
@@ -497,21 +497,21 @@ mod tests {
             }
         }
     }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     impl Messenger for MockMessenger {
         fn send(&amp;self, message: &amp;str) {
             self.sent_messages.borrow_mut().push(String::from(message));
         }
     }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     #[test]
     fn it_sends_an_over_75_percent_warning_message() {
         // --код сокращён--
 <span class="boring">        let mock_messenger = MockMessenger::new();
 </span><span class="boring">        let mut limit_tracker = LimitTracker::new(&amp;mock_messenger, 100);
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">        limit_tracker.set_value(80);
-</span>
+</span>Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
         assert_eq!(mock_messenger.sent_messages.borrow().len(), 1);
     }
 }</code></pre>
@@ -532,13 +532,13 @@ mod tests {
 <pre><code class="language-rust ignore panics"><span class="boring">pub trait Messenger {
 </span><span class="boring">    fn send(&amp;self, msg: &amp;str);
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">pub struct LimitTracker&lt;'a, T: Messenger&gt; {
 </span><span class="boring">    messenger: &amp;'a T,
 </span><span class="boring">    value: usize,
 </span><span class="boring">    max: usize,
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">impl&lt;'a, T&gt; LimitTracker&lt;'a, T&gt;
 </span><span class="boring">where
 </span><span class="boring">    T: Messenger,
@@ -550,12 +550,12 @@ mod tests {
 </span><span class="boring">            max,
 </span><span class="boring">        }
 </span><span class="boring">    }
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    pub fn set_value(&amp;mut self, value: usize) {
 </span><span class="boring">        self.value = value;
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">        let percentage_of_max = self.value as f64 / self.max as f64;
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">        if percentage_of_max &gt;= 1.0 {
 </span><span class="boring">            self.messenger.send("Error: You are over your quota!");
 </span><span class="boring">        } else if percentage_of_max &gt;= 0.9 {
@@ -567,16 +567,16 @@ mod tests {
 </span><span class="boring">        }
 </span><span class="boring">    }
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">#[cfg(test)]
 </span><span class="boring">mod tests {
 </span><span class="boring">    use super::*;
 </span><span class="boring">    use std::cell::RefCell;
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    struct MockMessenger {
 </span><span class="boring">        sent_messages: RefCell&lt;Vec&lt;String&gt;&gt;,
 </span><span class="boring">    }
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    impl MockMessenger {
 </span><span class="boring">        fn new() -&gt; MockMessenger {
 </span><span class="boring">            MockMessenger {
@@ -584,24 +584,24 @@ mod tests {
 </span><span class="boring">            }
 </span><span class="boring">        }
 </span><span class="boring">    }
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span>    impl Messenger for MockMessenger {
         fn send(&amp;self, message: &amp;str) {
             let mut one_borrow = self.sent_messages.borrow_mut();
             let mut two_borrow = self.sent_messages.borrow_mut();
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
             one_borrow.push(String::from(message));
             two_borrow.push(String::from(message));
         }
     }
-<span class="boring">
+<span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    #[test]
 </span><span class="boring">    fn it_sends_an_over_75_percent_warning_message() {
 </span><span class="boring">        let mock_messenger = MockMessenger::new();
 </span><span class="boring">        let mut limit_tracker = LimitTracker::new(&amp;mock_messenger, 100);
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">        limit_tracker.set_value(80);
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">        assert_eq!(mock_messenger.sent_messages.borrow().len(), 1);
 </span><span class="boring">    }
 </span><span class="boring">}</span></code></pre>
@@ -612,24 +612,24 @@ mod tests {
    Compiling limit-tracker v0.1.0 (file:///projects/limit-tracker)
     Finished `test` profile [unoptimized + debuginfo] target(s) in 0.91s
      Running unittests src/lib.rs (target/debug/deps/limit_tracker-e599811fa246dbde)
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 running 1 test
 test tests::it_sends_an_over_75_percent_warning_message ... FAILED
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 failures:
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 ---- tests::it_sends_an_over_75_percent_warning_message stdout ----
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 thread 'tests::it_sends_an_over_75_percent_warning_message' panicked at src/lib.rs:60:53:
 RefCell already borrowed
 note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
-
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 failures:
     tests::it_sends_an_over_75_percent_warning_message
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 error: test failed, to rerun pass `--lib`
 </code></pre>
 <p>Notice that the code panicked with the message <code>already borrowed: BorrowMutError</code>. This is how <code>RefCell&lt;T&gt;</code> handles violations of the borrowing rules at runtime.</p>
@@ -646,21 +646,21 @@ enum List {
     Cons(Rc&lt;RefCell&lt;i32&gt;&gt;, Rc&lt;List&gt;),
     Nil,
 }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 use crate::List::{Cons, Nil};
 use std::cell::RefCell;
 use std::rc::Rc;
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 fn main() {
     let value = Rc::new(RefCell::new(5));
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     let a = Rc::new(Cons(Rc::clone(&amp;value), Rc::new(Nil)));
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     let b = Cons(Rc::new(RefCell::new(3)), Rc::clone(&amp;a));
     let c = Cons(Rc::new(RefCell::new(4)), Rc::clone(&amp;a));
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     *value.borrow_mut() += 10;
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     println!("a after = {a:?}");
     println!("b after = {b:?}");
     println!("c after = {c:?}");

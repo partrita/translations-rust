@@ -96,7 +96,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-ba1bddcc.js";
+            window.path_to_searchindex_js = "searchindex-18122752.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-a05ef4ad.js"></script>
@@ -250,7 +250,7 @@ ignore --> section, in that both hold multiple related values. Like tuples, the 
     email: String,
     sign_in_count: u64,
 }
-<span class="boring">
+<span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">fn main() {}</span></code></pre>
 <figcaption><a href="#listing-5-1">Listing 5-1</a>: A <code>User</code> struct definition</figcaption>
 </figure>
@@ -263,7 +263,7 @@ ignore --> section, in that both hold multiple related values. Like tuples, the 
 </span><span class="boring">    email: String,
 </span><span class="boring">    sign_in_count: u64,
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span>fn main() {
     let user1 = User {
         active: true,
@@ -283,7 +283,7 @@ ignore --> section, in that both hold multiple related values. Like tuples, the 
 </span><span class="boring">    email: String,
 </span><span class="boring">    sign_in_count: u64,
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span>fn main() {
     let mut user1 = User {
         active: true,
@@ -291,7 +291,7 @@ ignore --> section, in that both hold multiple related values. Like tuples, the 
         email: String::from("someone@example.com"),
         sign_in_count: 1,
     };
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
     user1.email = String::from("anotheremail@example.com");
 }</code></pre>
 <figcaption><a href="#listing-5-3">Listing 5-3</a>: Changing the value in the <code>email</code> field of a <code>User</code> instance</figcaption>
@@ -306,7 +306,7 @@ ignore --> section, in that both hold multiple related values. Like tuples, the 
 </span><span class="boring">    email: String,
 </span><span class="boring">    sign_in_count: u64,
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span>fn build_user(email: String, username: String) -&gt; User {
     User {
         active: true,
@@ -315,7 +315,7 @@ ignore --> section, in that both hold multiple related values. Like tuples, the 
         sign_in_count: 1,
     }
 }
-<span class="boring">
+<span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">fn main() {
 </span><span class="boring">    let user1 = build_user(
 </span><span class="boring">        String::from("someone@example.com"),
@@ -337,7 +337,7 @@ ignore --> section, in that both hold multiple related values. Like tuples, the 
 </span><span class="boring">    email: String,
 </span><span class="boring">    sign_in_count: u64,
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span>fn build_user(email: String, username: String) -&gt; User {
     User {
         active: true,
@@ -346,7 +346,7 @@ ignore --> section, in that both hold multiple related values. Like tuples, the 
         sign_in_count: 1,
     }
 }
-<span class="boring">
+<span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">fn main() {
 </span><span class="boring">    let user1 = build_user(
 </span><span class="boring">        String::from("someone@example.com"),
@@ -369,17 +369,17 @@ ignore --> section, in that both hold multiple related values. Like tuples, the 
 </span><span class="boring">    email: String,
 </span><span class="boring">    sign_in_count: u64,
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span>fn main() {
     // --생략--
-<span class="boring">
+<span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">    let user1 = User {
 </span><span class="boring">        email: String::from("someone@example.com"),
 </span><span class="boring">        username: String::from("someusername123"),
 </span><span class="boring">        active: true,
 </span><span class="boring">        sign_in_count: 1,
 </span><span class="boring">    };
-</span>
+</span>제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
     let user2 = User {
         active: user1.active,
         username: user1.username,
@@ -398,17 +398,17 @@ ignore --> section, in that both hold multiple related values. Like tuples, the 
 </span><span class="boring">    email: String,
 </span><span class="boring">    sign_in_count: u64,
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span>fn main() {
     // --생략--
-<span class="boring">
+<span class="boring">제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 </span><span class="boring">    let user1 = User {
 </span><span class="boring">        email: String::from("someone@example.com"),
 </span><span class="boring">        username: String::from("someusername123"),
 </span><span class="boring">        active: true,
 </span><span class="boring">        sign_in_count: 1,
 </span><span class="boring">    };
-</span>
+</span>제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
     let user2 = User {
         email: String::from("another@example.com"),
         ..user1
@@ -427,7 +427,7 @@ ignore --> section, in that both hold multiple related values. Like tuples, the 
 <span class="file-name">Filename: src/main.rs</span>
 <pre class="playground"><code class="language-rust edition2024">struct Color(i32, i32, i32);
 struct Point(i32, i32, i32);
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 fn main() {
     let black = Color(0, 0, 0);
     let origin = Point(0, 0, 0);
@@ -441,7 +441,7 @@ fn main() {
 <figure class="listing">
 <span class="file-name">Filename: src/main.rs</span>
 <pre class="playground"><code class="language-rust edition2024">struct AlwaysEqual;
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 fn main() {
     let subject = AlwaysEqual;
 }</code></pre>
@@ -460,7 +460,7 @@ fn main() {
     email: &amp;str,
     sign_in_count: u64,
 }
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 fn main() {
     let user1 = User {
         active: true,
@@ -485,7 +485,7 @@ help: consider introducing a named lifetime parameter
 2 |     active: bool,
 3 ~     username: &amp;'a str,
   |
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 error[E0106]: missing lifetime specifier
  --&gt; src/main.rs:4:12
   |
@@ -499,7 +499,7 @@ help: consider introducing a named lifetime parameter
 3 |     username: &amp;str,
 4 ~     email: &amp;'a str,
   |
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 For more information about this error, try `rustc --explain E0106`.
 error: could not compile `structs` (bin "structs") due to 2 previous errors
 </code></pre>

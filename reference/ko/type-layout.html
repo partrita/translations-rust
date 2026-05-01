@@ -93,7 +93,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-55effe88.js";
+            window.path_to_searchindex_js = "searchindex-e23b9ebb.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-20da6b24.js"></script>
@@ -432,7 +432,7 @@ struct PackedStruct {
     second: i8,
     third: i32
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // C 표현, 정렬이 8로 높아짐
 #[repr(C, align(8))]
 struct AlignedStruct {
@@ -521,22 +521,22 @@ fn padding_needed_for(offset: usize, alignment: usize) -&gt; usize {
         0
     }
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 struct.alignment = struct.fields().map(|field| field.alignment).max();
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 let current_offset = 0;
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 for field in struct.fields_in_declaration_order() {
     // 현재 오프셋을 증가시켜 이 필드의 정렬의 배수가 되도록 합니다.
     // 첫 번째 필드의 경우, 이는 항상 0이 됩니다.
     // 건너뛴 바이트를 패딩 바이트라고 합니다.
     current_offset += padding_needed_for(current_offset, field.alignment);
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
     struct[field].offset = current_offset;
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
     current_offset += field.size;
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 struct.size = current_offset + padding_needed_for(current_offset, struct.alignment);</code></pre>
 <div class="alert alert-warning">
 <blockquote>
@@ -573,24 +573,24 @@ union Union {
     f1: u16,
     f2: [u8; 4],
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 assert_eq!(std::mem::size_of::&lt;Union&gt;(), 4);  // f2에서 옴
 assert_eq!(std::mem::align_of::&lt;Union&gt;(), 2); // f1에서 옴
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 assert_eq!(std::mem::offset_of!(Union, f1), 0);
 assert_eq!(std::mem::offset_of!(Union, f2), 0);
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 #[repr(C)]
 union SizeRoundedUp {
    a: u32,
    b: [u16; 3],
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 assert_eq!(std::mem::size_of::&lt;SizeRoundedUp&gt;(), 8);  // b에서 크기 6,
                                                       // a의 정렬에 따라
                                                       // 8로 올림.
 assert_eq!(std::mem::align_of::&lt;SizeRoundedUp&gt;(), 4); // a에서 옴
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 assert_eq!(std::mem::offset_of!(SizeRoundedUp, a), 0);
 assert_eq!(std::mem::offset_of!(SizeRoundedUp, b), 0);
 <span class="boring">}</span></code></pre>
@@ -653,18 +653,18 @@ enum MyEnum {
     C { x: u32, y: u8 },
     D,
  }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // ... 이 구조체와.
 #[repr(C)]
 struct MyEnumRepr {
     tag: MyEnumDiscriminant,
     payload: MyEnumFields,
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // 이것은 판별자 열거형입니다.
 #[repr(C)]
 enum MyEnumDiscriminant { A, B, C, D }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // 이것은 변형 공용체입니다.
 #[repr(C)]
 union MyEnumFields {
@@ -673,19 +673,19 @@ union MyEnumFields {
     C: MyCFields,
     D: MyDFields,
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 #[repr(C)]
 #[derive(Copy, Clone)]
 struct MyAFields(u32);
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 #[repr(C)]
 #[derive(Copy, Clone)]
 struct MyBFields(f32, u64);
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 #[repr(C)]
 #[derive(Copy, Clone)]
 struct MyCFields { x: u32, y: u8 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // 이 구조체는 생략될 수 있으며(0크기 타입임), C/C++ 헤더에 있어야 합니다.
 #[repr(C)]
 #[derive(Copy, Clone)]
@@ -731,7 +731,7 @@ enum MyEnum {
     C { x: u32, y: u8 },
     D,
  }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // ... 이 공용체와.
 #[repr(C)]
 union MyEnumRepr {
@@ -740,24 +740,24 @@ union MyEnumRepr {
     C: MyVariantC,
     D: MyVariantD,
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // 이것은 판별자 열거형입니다.
 #[repr(u8)]
 #[derive(Copy, Clone)]
 enum MyEnumDiscriminant { A, B, C, D }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 #[repr(C)]
 #[derive(Clone, Copy)]
 struct MyVariantA(MyEnumDiscriminant, u32);
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 #[repr(C)]
 #[derive(Clone, Copy)]
 struct MyVariantB(MyEnumDiscriminant, f32, u64);
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 #[repr(C)]
 #[derive(Clone, Copy)]
 struct MyVariantC { tag: MyEnumDiscriminant, x: u32, y: u8 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 #[repr(C)]
 #[derive(Clone, Copy)]
 struct MyVariantD(MyEnumDiscriminant);
@@ -777,12 +777,12 @@ enum MyEnum {
     C { x: u32, y: u8 },
     D,
  }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // ...
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 #[repr(u8)] // 따라서 여기서 `C` 대신 `u8` 이 사용됨
 enum MyEnumDiscriminant { A, B, C, D }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // ...
 <span class="boring">}</span></code></pre>
 <p>예를 들어, <code>repr(C, u8)</code> 열거형은 257개의 고유한 판별자(“태그”)를 가질 수 없는 반면, <code>repr(C)</code> 속성만 있는 동일한 열거형은 문제없이 컴파일됩니다.</p>
@@ -794,19 +794,19 @@ enum EnumC {
     Variant0(u8),
     Variant1,
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 #[repr(C, u8)]
 enum Enum8 {
     Variant0(u8),
     Variant1,
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 #[repr(C, u16)]
 enum Enum16 {
     Variant0(u8),
     Variant1,
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // The size of the C representation is platform dependent
 assert_eq!(std::mem::size_of::&lt;EnumC&gt;(), 8);
 // 판별자를 위한 1바이트와 Enum8::Variant0의 값을 위한 1바이트

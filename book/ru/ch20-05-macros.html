@@ -96,7 +96,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-01ba4889.js";
+            window.path_to_searchindex_js = "searchindex-0481507b.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-f10b093a.js"></script>
@@ -305,7 +305,7 @@ macro_rules! vec {
 <figure class="listing" id="listing-20-36">
 <span class="file-name">Filename: src/lib.rs</span>
 <pre><code class="language-rust ignore">use proc_macro::TokenStream;
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 #[some_attribute]
 pub fn some_name(input: TokenStream) -&gt; TokenStream {
 }</code></pre>
@@ -321,10 +321,10 @@ pub fn some_name(input: TokenStream) -&gt; TokenStream {
 <span class="file-name">Filename: src/main.rs</span>
 <pre><code class="language-rust ignore does_not_compile">use hello_macro::HelloMacro;
 use hello_macro_derive::HelloMacro;
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 #[derive(HelloMacro)]
 struct Pancakes;
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 fn main() {
     Pancakes::hello_macro();
 }</code></pre>
@@ -345,15 +345,15 @@ fn main() {
 <figure class="listing" id="listing-20-39">
 <span class="file-name">Filename: src/main.rs</span>
 <pre><code class="language-rust ignore">use hello_macro::HelloMacro;
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 struct Pancakes;
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 impl HelloMacro for Pancakes {
     fn hello_macro() {
         println!("Hello, Macro! My name is Pancakes!");
     }
 }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 fn main() {
     Pancakes::hello_macro();
 }</code></pre>
@@ -370,7 +370,7 @@ fn main() {
 <span class="file-name">Filename: hello_macro_derive/Cargo.toml</span>
 <pre><code class="language-toml">[lib]
 proc-macro = true
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 [dependencies]
 syn = "2.0"
 quote = "1.0"
@@ -381,13 +381,13 @@ quote = "1.0"
 <span class="file-name">Filename: hello_macro_derive/src/lib.rs</span>
 <pre><code class="language-rust ignore does_not_compile">use proc_macro::TokenStream;
 use quote::quote;
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 #[proc_macro_derive(HelloMacro)]
 pub fn hello_macro_derive(input: TokenStream) -&gt; TokenStream {
     // Construct a representation of Rust code as a syntax tree
     // that we can manipulate.
     let ast = syn::parse(input).unwrap();
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     // Build the trait implementation.
     impl_hello_macro(&amp;ast)
 }</code></pre>
@@ -401,7 +401,7 @@ pub fn hello_macro_derive(input: TokenStream) -&gt; TokenStream {
 <figure class="listing" id="listing-20-41">
 <pre><code class="language-rust ignore">DeriveInput {
     // --код сокращён--
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     ident: Ident {
         ident: "Pancakes",
         span: #0 bytes(95..103)
@@ -426,17 +426,17 @@ pub fn hello_macro_derive(input: TokenStream) -&gt; TokenStream {
 <span class="file-name">Filename: hello_macro_derive/src/lib.rs</span>
 <pre><code class="language-rust ignore"><span class="boring">use proc_macro::TokenStream;
 </span><span class="boring">use quote::quote;
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">#[proc_macro_derive(HelloMacro)]
 </span><span class="boring">pub fn hello_macro_derive(input: TokenStream) -&gt; TokenStream {
 </span><span class="boring">    // Construct a representation of Rust code as a syntax tree
 </span><span class="boring">    // that we can manipulate
 </span><span class="boring">    let ast = syn::parse(input).unwrap();
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    // Build the trait implementation
 </span><span class="boring">    impl_hello_macro(&amp;ast)
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span>fn impl_hello_macro(ast: &amp;syn::DeriveInput) -&gt; TokenStream {
     let name = &amp;ast.ident;
     let generated = quote! {

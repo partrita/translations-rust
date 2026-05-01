@@ -96,7 +96,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-01ba4889.js";
+            window.path_to_searchindex_js = "searchindex-0481507b.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-f10b093a.js"></script>
@@ -281,7 +281,7 @@
     Cons(i32, List),
     Nil,
 }
-<span class="boring">
+<span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">fn main() {}</span></code></pre>
 <figcaption><a href="#listing-15-2">Listing 15-2</a>: The first attempt at defining an enum to represent a cons list data structure of <code>i32</code> values</figcaption>
 </figure>
@@ -295,11 +295,11 @@
 </span><span class="boring">    Cons(i32, List),
 </span><span class="boring">    Nil,
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span>// --код сокращён--
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 use crate::List::{Cons, Nil};
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 fn main() {
     let list = Cons(1, Cons(2, Cons(3, Nil)));
 }</code></pre>
@@ -322,7 +322,7 @@ help: insert some indirection (e.g., a `Box`, `Rc`, or `&amp;`) to break the cyc
   |
 2 |     Cons(i32, Box&lt;List&gt;),
   |               ++++    +
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 error[E0391]: cycle detected when computing when `List` needs drop
  --&gt; src/main.rs:1:1
   |
@@ -332,7 +332,7 @@ error[E0391]: cycle detected when computing when `List` needs drop
   = note: ...which immediately requires computing when `List` needs drop again
   = note: cycle used when computing whether `List` needs drop
   = note: see https://rustc-dev-guide.rust-lang.org/overview.html#queries and https://rustc-dev-guide.rust-lang.org/query.html for more information
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 Some errors have detailed explanations: E0072, E0391.
 For more information about an error, try `rustc --explain E0072`.
 error: could not compile `cons-list` (bin "cons-list") due to 2 previous errors
@@ -348,7 +348,7 @@ error: could not compile `cons-list` (bin "cons-list") due to 2 previous errors
     Write(String),
     ChangeColor(i32, i32, i32),
 }
-<span class="boring">
+<span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">fn main() {}</span></code></pre>
 <p>To determine how much space to allocate for a <code>Message</code> value, Rust goes through each of the variants to see which variant needs the most space. Rust sees that <code>Message::Quit</code> doesn’t need any space, <code>Message::Move</code> needs enough space to store two <code>i32</code> values, and so forth. Because only one variant will be used, the most space a <code>Message</code> value will need is the space it would take to store the largest of its variants.</p>
 <p>Contrast this with what happens when Rust tries to determine how much space a recursive type like the <code>List</code> enum in Listing 15-2 needs. The compiler starts by looking at the <code>Cons</code> variant, which holds a value of type <code>i32</code> and a value of type <code>List</code>. Therefore, <code>Cons</code> needs an amount of space equal to the size of an <code>i32</code> plus the size of a <code>List</code>. To figure out how much memory the <code>List</code> type needs, the compiler looks at the variants, starting with the <code>Cons</code> variant. The <code>Cons</code> variant holds a value of type <code>i32</code> and a value of type <code>List</code>, and this process continues infinitely, as shown in Figure 15-1.</p>
@@ -375,9 +375,9 @@ after doing automatic regeneration, look at listings/ch15-smart-pointers/listing
     Cons(i32, Box&lt;List&gt;),
     Nil,
 }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 use crate::List::{Cons, Nil};
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 fn main() {
     let list = Cons(1, Box::new(Cons(2, Box::new(Cons(3, Box::new(Nil))))));
 }</code></pre>

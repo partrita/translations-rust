@@ -93,7 +93,7 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-55effe88.js";
+            window.path_to_searchindex_js = "../searchindex-e23b9ebb.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../toc-20da6b24.js"></script>
@@ -571,7 +571,7 @@ trait NonDispatchable {
     // 제네릭은 vtable과 호환되지 않습니다.
     fn typed&lt;T&gt;(&amp;self, x: T) where Self: Sized {}
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 struct S;
 impl NonDispatchable for S {
     fn returns(&amp;self) -&gt; Self where Self: Sized { S }
@@ -587,13 +587,13 @@ obj.typed(1);  // 오류: 제네릭 타입으로 호출할 수 없음
 </span>// dyn 호환이 아닌 트레잇의 예시.
 trait DynIncompatible {
     const CONST: i32 = 1;  // 오류: 연관 상수를 가질 수 없음
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
     fn foo() {}  // 오류: Sized 없는 연관 함수
     fn returns(&amp;self) -&gt; Self; // 오류: 반환 타입에 `Self` 가 있음
     fn typed&lt;T&gt;(&amp;self, x: T) {} // 오류: 제네릭 타입 매개변수가 있음
     fn nested(self: Rc&lt;Box&lt;Self&gt;&gt;) {} // ERROR: nested receiver cannot be dispatched on
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 struct S;
 impl DynIncompatible for S {
     fn returns(&amp;self) -&gt; Self { S }
@@ -604,7 +604,7 @@ let obj: Box&lt;dyn DynIncompatible&gt; = Box::new(S); // 오류
 </span><span class="boring">fn main() {
 </span>// `Self: Sized` 트레잇은 dyn 호환이 아닙니다.
 trait TraitWithSize where Self: Sized {}
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 struct S;
 impl TraitWithSize for S {}
 let obj: Box&lt;dyn TraitWithSize&gt; = Box::new(S); // 오류
@@ -614,7 +614,7 @@ let obj: Box&lt;dyn TraitWithSize&gt; = Box::new(S); // 오류
 </span>// `Self` 가 타입 인수인 경우 dyn 호환이 아닙니다.
 trait Super&lt;A&gt; {}
 trait WithSelf: Super&lt;Self&gt; where Self: Sized {}
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 struct S;
 impl&lt;A&gt; Super&lt;A&gt; for S {}
 impl WithSelf for S {}
@@ -790,21 +790,21 @@ trait T {
         $vis fn $name(&amp;self) {}
     };
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 trait T1 {
     // 빈 `vis` 는 허용됩니다.
     create_method! { method_of_t1 }
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 struct S;
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 impl S {
     // 여기서 가시성은 허용됩니다.
     create_method! { pub method_of_s }
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 impl T1 for S {}
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 fn main() {
     let s = S;
     s.method_of_t1();

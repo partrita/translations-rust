@@ -93,7 +93,7 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-55effe88.js";
+            window.path_to_searchindex_js = "../searchindex-e23b9ebb.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../toc-20da6b24.js"></script>
@@ -1013,7 +1013,7 @@ return {
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span>// foo는 A와 B에 대해 제네릭합니다.
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 fn foo&lt;A, B&gt;(x: A, y: B) {
 <span class="boring">}
 </span><span class="boring">}</span></code></pre>
@@ -1038,11 +1038,11 @@ fn foo&lt;A, B&gt;(x: A, y: B) {
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span>use std::fmt::Debug;
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 fn foo&lt;T&gt;(x: &amp;[T]) where T: Debug {
     // 세부 사항 생략
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 foo(&amp;[1, 2]);
 <span class="boring">}</span></code></pre>
 <p>타입 매개변수 <code>T</code> 를 <code>i32</code> 로 인스턴스화할 것입니다.</p>
@@ -1092,7 +1092,7 @@ bar();</code></pre>
 </span><span class="boring">fn main() {
 </span>// "C" ABI를 가진 함수를 선언합니다.
 extern "C" fn new_i32() -&gt; i32 { 0 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // "stdcall" ABI를 가진 함수를 선언합니다.
 <span class="boring">#[cfg(any(windows, target_arch = "x86"))]
 </span>extern "stdcall" fn new_i32_stdcall() -&gt; i32 { 0 }
@@ -1231,12 +1231,12 @@ fn example&lt;'a&gt;(x: &amp;'a str) -&gt; impl Future&lt;Output = usize&gt; + '
 async unsafe fn unsafe_example(x: *const i32) -&gt; i32 {
   *x
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 async fn safe_example() {
     // 함수를 처음 호출하려면 `unsafe` 블록이 필요합니다.
     let p = 22;
     let future = unsafe { unsafe_example(&amp;p) };
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
     // 하지만 여기서는 `unsafe` 블록이 필요하지 않습니다. 이는 `p` 의 값을 읽을 것입니다.
     let q = future.await;
 }

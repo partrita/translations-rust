@@ -97,7 +97,7 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-56895a7e.js";
+            window.path_to_searchindex_js = "../searchindex-40d30f76.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../toc-6b0c3669.js"></script>
@@ -281,7 +281,7 @@
 <pre><code class="language-toml">[package]
 name = "my-library"
 version = "0.1.0"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [dependencies]
 uuid = "1.0"
 </code></pre>
@@ -312,10 +312,10 @@ uuid = { git = 'https://github.com/uuid-rs/uuid.git' }
 <pre><code class="language-toml">[package]
 name = "my-library"
 version = "0.1.0"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [dependencies]
 uuid = "1.0.1"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [patch.crates-io]
 uuid = { git = 'https://github.com/uuid-rs/uuid.git' }
 </code></pre>
@@ -325,11 +325,11 @@ uuid = { git = 'https://github.com/uuid-rs/uuid.git' }
 <pre><code class="language-toml">[package]
 name = "my-binary"
 version = "0.1.0"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [dependencies]
 my-library = { git = 'https://example.com/git/my-library' }
 uuid = "1.0"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [patch.crates-io]
 uuid = { git = 'https://github.com/uuid-rs/uuid.git' }
 </code></pre>
@@ -344,7 +344,7 @@ my-library = { path = "../my-library/경로" }
 <p>보통 파괴적 변경을 동반하는 크레이트의 새로운 주 버전으로 작업하는 경우를 살펴보겠습니다. 이전 크레이트의 예를 이어가자면, <code>uuid</code> 크레이트의 2.0.0 버전을 만들려고 합니다. 상위에 모든 변경 사항을 제출한 후, <code>my-library</code> 의 매니페스트를 다음과 같이 업데이트할 수 있습니다.</p>
 <pre><code class="language-toml">[dependencies]
 uuid = "2.0"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [patch.crates-io]
 uuid = { git = "https://github.com/uuid-rs/uuid.git", branch = "2.0.0" }
 </code></pre>
@@ -352,11 +352,11 @@ uuid = { git = "https://github.com/uuid-rs/uuid.git", branch = "2.0.0" }
 <pre><code class="language-toml">[package]
 name = "my-binary"
 version = "0.1.0"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [dependencies]
 my-library = { git = 'https://example.com/git/my-library' }
 uuid = "1.0"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [patch.crates-io]
 uuid = { git = 'https://github.com/uuid-rs/uuid.git', branch = '2.0.0' }
 </code></pre>
@@ -374,10 +374,10 @@ serde2 = { git = 'https://github.com/example/serde.git', package = 'serde', bran
 <pre><code class="language-toml">[patch.crates-io]
 foo = { git = 'https://github.com/example/foo.git' }
 bar = { path = 'my/local/bar' }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [dependencies.baz]
 git = 'https://github.com/example/baz.git'
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [patch.'https://github.com/example/baz']
 baz = { git = 'https://github.com/example/patched-baz.git', branch = 'my-branch' }
 </code></pre>

@@ -96,7 +96,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-01ba4889.js";
+            window.path_to_searchindex_js = "searchindex-0481507b.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-f10b093a.js"></script>
@@ -246,7 +246,7 @@
 <p><span class="filename">Файл: src/main.rs</span></p>
 <pre class="playground"><code class="language-rust edition2024">fn main() {
     let number = 3;
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     if number &lt; 5 {
         println!("условие оказалось истинно");
     } else {
@@ -265,7 +265,7 @@
 <p>Изменим значение <code>number</code> на значение, которое сделает условие ложным:</p>
 <pre><code class="language-rust ignore"><span class="boring">fn main() {
 </span>    let number = 7;
-<span class="boring">
+<span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    if number &lt; 5 {
 </span><span class="boring">        println!("условие оказалось истинно");
 </span><span class="boring">    } else {
@@ -283,7 +283,7 @@
 <p><span class="filename">Файл: src/main.rs</span></p>
 <pre><code class="language-rust ignore does_not_compile">fn main() {
     let number = 3;
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     if number {
         println!("number было тройкой");
     }
@@ -296,7 +296,7 @@ error[E0308]: mismatched types
   |
 4 |     if number {
   |        ^^^^^^ expected `bool`, found integer
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 For more information about this error, try `rustc --explain E0308`.
 error: could not compile `branches` (bin "branches") due to 1 previous error
 </code></pre>
@@ -304,7 +304,7 @@ error: could not compile `branches` (bin "branches") due to 1 previous error
 <p><span class="filename">Файл: src/main.rs</span></p>
 <pre class="playground"><code class="language-rust edition2024">fn main() {
     let number = 3;
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     if number != 0 {
         println!("number оказалось не равно нулю");
     }
@@ -315,7 +315,7 @@ error: could not compile `branches` (bin "branches") due to 1 previous error
 <p><span class="filename">Файл: src/main.rs</span></p>
 <pre class="playground"><code class="language-rust edition2024">fn main() {
     let number = 6;
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     if number % 4 == 0 {
         println!("number делится на 4");
     } else if number % 3 == 0 {
@@ -342,7 +342,7 @@ number делится 3
 <pre class="playground"><code class="language-rust edition2024">fn main() {
     let condition = true;
     let number = if condition { 5 } else { 6 };
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     println!("Значение number: {number}");
 }</code></pre>
 <figcaption><a href="#listing-3-2">Listing 3-2</a>: Assigning the result of an <code>if</code> expression to a variable</figcaption>
@@ -358,9 +358,9 @@ number делится 3
 <p><span class="filename">Файл: src/main.rs</span></p>
 <pre><code class="language-rust ignore does_not_compile">fn main() {
     let condition = true;
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     let number = if condition { 5 } else { "шесть" };
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     println!("Значение number: {number}");
 }</code></pre>
 <p>Если попытаться скомпилировать этот код, мы получим ошибку. Значения ветвей <code>if</code> и <code>else</code> имеют разные типы, и Rust как раз указывает, где находится ошибка:</p>
@@ -373,7 +373,7 @@ error[E0308]: `if` and `else` have incompatible types
   |                                 -          ^^^^^^^ expected integer, found `&amp;str`
   |                                 |
   |                                 expected because of this
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 For more information about this error, try `rustc --explain E0308`.
 error: could not compile `branches` (bin "branches") due to 1 previous error
 </code></pre>
@@ -414,15 +414,15 @@ CTRL-C
 <p>One of the uses of a <code>loop</code> is to retry an operation you know might fail, such as checking whether a thread has completed its job. You might also need to pass the result of that operation out of the loop to the rest of your code. To do this, you can add the value you want returned after the <code>break</code> expression you use to stop the loop; that value will be returned out of the loop so that you can use it, as shown here:</p>
 <pre class="playground"><code class="language-rust edition2024">fn main() {
     let mut counter = 0;
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     let result = loop {
         counter += 1;
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
         if counter == 10 {
             break counter * 2;
         }
     };
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     println!("result равна {result}");
 }</code></pre>
 <p>Before the loop, we declare a variable named <code>counter</code> and initialize it to <code>0</code>. Then, we declare a variable named <code>result</code> to hold the value returned from the loop. On every iteration of the loop, we add <code>1</code> to the <code>counter</code> variable, and then check whether the <code>counter</code> is equal to <code>10</code>. When it is, we use the <code>break</code> keyword with the value <code>counter * 2</code>. After the loop, we use a semicolon to end the statement that assigns the value to <code>result</code>. Finally, we print the value in <code>result</code>, which in this case is <code>20</code>.</p>
@@ -436,7 +436,7 @@ CTRL-C
     'counting_up: loop {
         println!("count = {count}");
         let mut remaining = 10;
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
         loop {
             println!("remaining = {remaining}");
             if remaining == 9 {
@@ -447,7 +447,7 @@ CTRL-C
             }
             remaining -= 1;
         }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
         count += 1;
     }
     println!("Окончательное значение count = {count}");
@@ -475,13 +475,13 @@ remaining = 10
 <span class="file-name">Filename: src/main.rs</span>
 <pre class="playground"><code class="language-rust edition2024">fn main() {
     let mut number = 3;
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     while number != 0 {
         println!("{number}!");
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
         number -= 1;
     }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     println!("ПОЕХАЛИ!!!");
 }</code></pre>
 <figcaption><a href="#listing-3-3">Listing 3-3</a>: Using a <code>while</code> loop to run code while a condition evaluates to <code>true</code></figcaption>
@@ -494,10 +494,10 @@ remaining = 10
 <pre class="playground"><code class="language-rust edition2024">fn main() {
     let a = [10, 20, 30, 40, 50];
     let mut index = 0;
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     while index &lt; 5 {
         println!("элемент: {}", a[index]);
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
         index += 1;
     }
 }</code></pre>
@@ -521,7 +521,7 @@ remaining = 10
 <span class="file-name">Filename: src/main.rs</span>
 <pre class="playground"><code class="language-rust edition2024">fn main() {
     let a = [10, 20, 30, 40, 50];
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     for element in a {
         println!("элемент: {element}");
     }

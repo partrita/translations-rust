@@ -93,7 +93,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-55effe88.js";
+            window.path_to_searchindex_js = "searchindex-e23b9ebb.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-20da6b24.js"></script>
@@ -620,7 +620,7 @@ MacroInvocation</text>
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span>let (x, y) = (1, 2);               // "(x, y)"는 반박 불가능한 패턴입니다
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 if let (a, 3) = (1, 2) {           // "(a, 3)"은 반박 가능하며, 일치하지 않을 수 있습니다
     panic!("여기에 도달해서는 안 됩니다");
 } else if let (a, 4) = (3, 4) {    // "(a, 4)"는 반박 가능하며, 일치하게 됩니다
@@ -813,7 +813,7 @@ fn sum(x: i32, y: i32) -&gt; i32 {
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span>let x = 2;
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 match x {
     e @ 1 ..= 5 =&gt; println!("범위 요소 {}를 얻음", e),
     _ =&gt; println!("아무거나"),
@@ -834,7 +834,7 @@ match x {
     None =&gt; (),
     Some(value) =&gt; (),
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 match a {
     None =&gt; (),
     Some(ref value) =&gt; (),
@@ -1064,10 +1064,10 @@ _</text>
 </span><span class="boring">let x = 20;
 </span>let (a, _) = (10, x);   // x는 항상 _와 매치됩니다
 <span class="boring">assert_eq!(a, 10);
-</span>
+</span>   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // 함수/클로저 매개변수를 무시합니다
 let real_part = |a: f64, _: f64| { a };
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // 구조체의 필드를 무시합니다
 <span class="boring">struct RGBA {
 </span><span class="boring">   r: f32,
@@ -1080,7 +1080,7 @@ let real_part = |a: f64, _: f64| { a };
 <span class="boring">assert_eq!(color.r, red);
 </span><span class="boring">assert_eq!(color.g, green);
 </span><span class="boring">assert_eq!(color.b, blue);
-</span>
+</span>   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // 어떤 값이든 Some이면 허용합니다
 <span class="boring">let x = Some(10);
 </span>if let Some(_) = x {}
@@ -1148,27 +1148,27 @@ RestPattern</text>
     [one] =&gt; println!("단일 요소 {}", one),
     [head, tail @ ..] =&gt; println!("head={} tail={:?}", head, tail),
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 match slice {
     // "!"여야 하는 마지막 요소를 제외한 모든 것을 무시합니다.
     [.., "!"] =&gt; println!("!!!"),
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
     // `start` 는 "z"여야 하는 마지막 요소를 제외한 모든 것의 슬라이스입니다.
     [start @ .., "z"] =&gt; println!("다음으로 시작함: {:?}", start),
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
     // `end` 는 "a"여야 하는 첫 번째 요소를 제외한 모든 것의 슬라이스입니다.
     ["a", end @ ..] =&gt; println!("다음으로 끝남: {:?}", end),
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
     // 'whole'은 전체 슬라이스이고 `last` 는 마지막 요소입니다
     whole @ [.., last] =&gt; println!("{:?}의 마지막 요소는 {}입니다", whole, last),
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
     rest =&gt; println!("{:?}", rest),
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 if let [.., penultimate, _] = slice {
     println!("마지막에서 두 번째는 {}입니다", penultimate);
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 <span class="boring">let tuple = (1, 2, 3, 4, 5);
 </span>// The rest pattern may also be used in tuple and tuple
 // struct patterns.
@@ -1626,7 +1626,7 @@ PathExpression</text>
     'α'..='ω' =&gt; true,
     _ =&gt; false,
 };
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 <span class="boring">let ph = 10;
 </span>println!("{}", match ph {
     0..7 =&gt; "산성",
@@ -1634,13 +1634,13 @@ PathExpression</text>
     8..=14 =&gt; "염기성",
     _ =&gt; unreachable!(),
 });
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 <span class="boring">let uint: u32 = 5;
 </span>match uint {
     0 =&gt; "0입니다!",
     1.. =&gt; "양수입니다!",
 };
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // 상수에 대한 경로 사용:
 <span class="boring">const TROPOSPHERE_MIN : u8 = 6;
 </span><span class="boring">const TROPOSPHERE_MAX : u8 = 20;
@@ -1659,7 +1659,7 @@ PathExpression</text>
     MESOSPHERE_MIN..=MESOSPHERE_MAX =&gt; "중간권",
     _ =&gt; "아마도 외계 공간",
 });
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 <span class="boring">pub mod binary {
 </span><span class="boring">    pub const MEGA : u64 = 1024*1024;
 </span><span class="boring">    pub const GIGA : u64 = 1024*1024*1024;
@@ -1669,7 +1669,7 @@ PathExpression</text>
 </span>if let size @ binary::MEGA..=binary::GIGA = n_items * bytes_per_item {
     println!("크기가 적절하며 {}바이트를 차지함", size);
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 <span class="boring">trait MaxValue {
 </span><span class="boring">    const MAX: u64;
 </span><span class="boring">}
@@ -1791,10 +1791,10 @@ PatternWithoutRange</text>
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span>let int_reference = &amp;3;
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 let a = match *int_reference { 0 =&gt; "0", _ =&gt; "some" };
 let b = match int_reference { &amp;0 =&gt; "0", _ =&gt; "some" };
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 assert_eq!(a, b);
 <span class="boring">}</span></code></pre>
 <div class="rule" id="r-patterns.ref.ref-ref"><a class="rule-link" href="#r-patterns.ref.ref-ref" title="patterns.ref.ref-ref"><span>[patterns<wbr>.ref<wbr>.ref-ref]</span></a>
@@ -2151,7 +2151,7 @@ StructPatternEtCetera</text>
     Point {x: 10, ..} =&gt; (),
     Point {..} =&gt; (),
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 <span class="boring">struct PointTuple (
 </span><span class="boring">    u32,
 </span><span class="boring">    u32,
@@ -2164,7 +2164,7 @@ StructPatternEtCetera</text>
     PointTuple {0: 10, ..} =&gt; (),
     PointTuple {..} =&gt; (),
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 <span class="boring">enum Message {
 </span><span class="boring">    Quit,
 </span><span class="boring">    Move { x: i32, y: i32 },
@@ -2558,7 +2558,7 @@ Pattern</text>
 </span><span class="boring">fn main() {
 </span>let pair = (10, "ten");
 let (a, b) = pair;
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 assert_eq!(a, 10);
 assert_eq!(b, "ten");
 <span class="boring">}</span></code></pre>

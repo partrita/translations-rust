@@ -93,7 +93,7 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-55effe88.js";
+            window.path_to_searchindex_js = "../searchindex-e23b9ebb.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../toc-20da6b24.js"></script>
@@ -391,15 +391,15 @@ TraitBound</text>
 <pre class="playground"><code class="language-rust edition2024">trait Printable {
     fn stringify(&amp;self) -&gt; String;
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 impl Printable for i32 {
     fn stringify(&amp;self) -&gt; String { self.to_string() }
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 fn print(a: Box&lt;dyn Printable&gt;) {
     println!("{}", a.stringify());
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 fn main() {
     print(Box::new(10) as Box&lt;dyn Printable&gt;);
 }</code></pre>

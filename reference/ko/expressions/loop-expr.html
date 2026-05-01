@@ -93,7 +93,7 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-55effe88.js";
+            window.path_to_searchindex_js = "../searchindex-e23b9ebb.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../toc-20da6b24.js"></script>
@@ -488,7 +488,7 @@ BlockExpression</text>
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span>let mut i = 0;
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 while i &lt; 10 {
     println!("hello");
     i = i + 1;
@@ -505,11 +505,11 @@ while i &lt; 10 {
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span>let mut x = vec![1, 2, 3];
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 while let Some(y) = x.pop() {
     println!("y = {}", y);
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 while let _ = 5 {
     println!("반박할 수 없는 패턴은 항상 참입니다");
     break;
@@ -554,7 +554,7 @@ while let Some(v @ 1) | Some(v @ 2) = vals.pop() {
 <p>The following is an example of chaining multiple expressions, mixing <code>let</code> bindings and boolean expressions, and with expressions able to reference pattern bindings from previous expressions:</p>
 <pre class="playground"><code class="language-rust edition2024">fn main() {
     let outer_opt = Some(Some(1i32));
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
     while let Some(inner_opt) = outer_opt
         &amp;&amp; let Some(number) = inner_opt
         &amp;&amp; number == 1
@@ -651,7 +651,7 @@ BlockExpression</text>
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span>let v = &amp;["사과", "케이크", "커피"];
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 for text in v {
     println!("저는 {}를 좋아합니다.", text);
 }

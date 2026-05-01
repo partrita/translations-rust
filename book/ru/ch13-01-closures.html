@@ -96,7 +96,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-01ba4889.js";
+            window.path_to_searchindex_js = "searchindex-0481507b.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-f10b093a.js"></script>
@@ -254,20 +254,20 @@ enum ShirtColor {
     Red,
     Blue,
 }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 struct Inventory {
     shirts: Vec&lt;ShirtColor&gt;,
 }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 impl Inventory {
     fn giveaway(&amp;self, user_preference: Option&lt;ShirtColor&gt;) -&gt; ShirtColor {
         user_preference.unwrap_or_else(|| self.most_stocked())
     }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     fn most_stocked(&amp;self) -&gt; ShirtColor {
         let mut num_red = 0;
         let mut num_blue = 0;
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
         for color in &amp;self.shirts {
             match color {
                 ShirtColor::Red =&gt; num_red += 1,
@@ -281,19 +281,19 @@ impl Inventory {
         }
     }
 }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 fn main() {
     let store = Inventory {
         shirts: vec![ShirtColor::Blue, ShirtColor::Red, ShirtColor::Blue],
     };
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     let user_pref1 = Some(ShirtColor::Red);
     let giveaway1 = store.giveaway(user_pref1);
     println!(
         "The user with preference {:?} gets {:?}",
         user_pref1, giveaway1
     );
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     let user_pref2 = None;
     let giveaway2 = store.giveaway(user_pref2);
     println!(
@@ -325,14 +325,14 @@ The user with preference None gets Blue
 <span class="file-name">Filename: src/main.rs</span>
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">use std::thread;
 </span><span class="boring">use std::time::Duration;
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">fn generate_workout(intensity: u32, random_number: u32) {
 </span>    let expensive_closure = |num: u32| -&gt; u32 {
         println!("calculating slowly...");
         thread::sleep(Duration::from_secs(2));
         num
     };
-<span class="boring">
+<span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    if intensity &lt; 25 {
 </span><span class="boring">        println!("Today, do {} pushups!", expensive_closure(intensity));
 </span><span class="boring">        println!("Next, do {} situps!", expensive_closure(intensity));
@@ -347,11 +347,11 @@ The user with preference None gets Blue
 </span><span class="boring">        }
 </span><span class="boring">    }
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">fn main() {
 </span><span class="boring">    let simulated_user_specified_value = 10;
 </span><span class="boring">    let simulated_random_number = 7;
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    generate_workout(simulated_user_specified_value, simulated_random_number);
 </span><span class="boring">}</span></code></pre>
 <figcaption><a href="#listing-13-2">Listing 13-2</a>: Adding optional type annotations of the parameter and return value types in the closure</figcaption>
@@ -367,7 +367,7 @@ let add_one_v4 = |x|               x + 1  ;</code></pre>
 <span class="file-name">Filename: src/main.rs</span>
 <pre><code class="language-rust ignore does_not_compile"><span class="boring">fn main() {
 </span>    let example_closure = |x| x;
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     let s = example_closure(String::from("hello"));
     let n = example_closure(5);
 <span class="boring">}</span></code></pre>
@@ -400,7 +400,7 @@ help: try using a conversion method
   |
 5 |     let n = example_closure(5.to_string());
   |                              ++++++++++++
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 For more information about this error, try `rustc --explain E0308`.
 error: could not compile `closure-example` (bin "closure-example") due to 1 previous error
 </code></pre>
@@ -413,9 +413,9 @@ error: could not compile `closure-example` (bin "closure-example") due to 1 prev
 <pre class="playground"><code class="language-rust edition2024">fn main() {
     let list = vec![1, 2, 3];
     println!("Before defining closure: {list:?}");
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     let only_borrows = || println!("From closure: {list:?}");
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     println!("Before calling closure: {list:?}");
     only_borrows();
     println!("After calling closure: {list:?}");
@@ -439,9 +439,9 @@ After calling closure: [1, 2, 3]
 <pre class="playground"><code class="language-rust edition2024">fn main() {
     let mut list = vec![1, 2, 3];
     println!("Before defining closure: {list:?}");
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     let mut borrows_mutably = || list.push(7);
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     borrows_mutably();
     println!("After calling closure: {list:?}");
 }</code></pre>
@@ -461,11 +461,11 @@ After calling closure: [1, 2, 3, 7]
 <figure class="listing" id="listing-13-6">
 <span class="file-name">Filename: src/main.rs</span>
 <pre class="playground"><code class="language-rust edition2024">use std::thread;
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 fn main() {
     let list = vec![1, 2, 3];
     println!("Before defining closure: {list:?}");
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     thread::spawn(move || println!("From thread: {list:?}"))
         .join()
         .unwrap();
@@ -510,14 +510,14 @@ struct Rectangle {
     width: u32,
     height: u32,
 }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 fn main() {
     let mut list = [
         Rectangle { width: 10, height: 1 },
         Rectangle { width: 3, height: 5 },
         Rectangle { width: 7, height: 12 },
     ];
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     list.sort_by_key(|r| r.width);
     println!("{list:#?}");
 }</code></pre>
@@ -552,17 +552,17 @@ struct Rectangle {
     width: u32,
     height: u32,
 }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 fn main() {
     let mut list = [
         Rectangle { width: 10, height: 1 },
         Rectangle { width: 3, height: 5 },
         Rectangle { width: 7, height: 12 },
     ];
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     let mut sort_operations = vec![];
     let value = String::from("closure called");
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     list.sort_by_key(|r| {
         sort_operations.push(value);
         r.width
@@ -591,7 +591,7 @@ help: consider cloning the value if the performance cost is acceptable
    |
 18 |         sort_operations.push(value.clone());
    |                                   ++++++++
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 For more information about this error, try `rustc --explain E0507`.
 error: could not compile `rectangles` (bin "rectangles") due to 1 previous error
 </code></pre>
@@ -603,14 +603,14 @@ struct Rectangle {
     width: u32,
     height: u32,
 }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 fn main() {
     let mut list = [
         Rectangle { width: 10, height: 1 },
         Rectangle { width: 3, height: 5 },
         Rectangle { width: 7, height: 12 },
     ];
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     let mut num_sort_operations = 0;
     list.sort_by_key(|r| {
         num_sort_operations += 1;

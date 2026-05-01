@@ -93,7 +93,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-55effe88.js";
+            window.path_to_searchindex_js = "searchindex-e23b9ebb.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-20da6b24.js"></script>
@@ -269,14 +269,14 @@
 </span>fn initialization_example() {
     let init_after_if: ();
     let uninit_after_if: ();
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
     if random_bool() {
         init_after_if = ();
         uninit_after_if = ();
     } else {
         init_after_if = ();
     }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
     init_after_if; // ok
     // uninit_after_if; // err: 초기화되지 않았을 가능성이 있는 `uninit_after_if` 사용
 }

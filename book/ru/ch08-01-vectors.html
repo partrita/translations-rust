@@ -96,7 +96,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-01ba4889.js";
+            window.path_to_searchindex_js = "searchindex-0481507b.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-f10b093a.js"></script>
@@ -262,7 +262,7 @@
 <figure class="listing" id="listing-8-3">
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">fn main() {
 </span>    let mut v = Vec::new();
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     v.push(5);
     v.push(6);
     v.push(7);
@@ -277,10 +277,10 @@
 <figure class="listing" id="listing-8-4">
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">fn main() {
 </span>    let v = vec![1, 2, 3, 4, 5];
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     let third: &amp;i32 = &amp;v[2];
     println!("Третий элемент: {third}");
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     let third: Option&lt;&amp;i32&gt; = v.get(2);
     match third {
         Some(third) =&gt; println!("Третий элемент: {third}"),
@@ -294,7 +294,7 @@
 <figure class="listing" id="listing-8-5">
 <pre class="playground"><code class="language-rust should_panic panics edition2024"><span class="boring">fn main() {
 </span>    let v = vec![1, 2, 3, 4, 5];
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     let does_not_exist = &amp;v[100];
     let does_not_exist = v.get(100);
 <span class="boring">}</span></code></pre>
@@ -306,11 +306,11 @@
 <figure class="listing" id="listing-8-6">
 <pre><code class="language-rust ignore does_not_compile"><span class="boring">fn main() {
 </span>    let mut v = vec![1, 2, 3, 4, 5];
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     let first = &amp;v[0];
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     v.push(6);
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     println!("Первый элемент: {first}");
 <span class="boring">}</span></code></pre>
 <figcaption><a href="#listing-8-6">Listing 8-6</a>: Attempting to add an element to a vector while holding a reference to an item</figcaption>
@@ -329,7 +329,7 @@ error[E0502]: cannot borrow `v` as mutable because it is also borrowed as immuta
 7 |
 8 |     println!("The first element is: {first}");
   |                                      ----- immutable borrow later used here
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 For more information about this error, try `rustc --explain E0502`.
 error: could not compile `collections` (bin "collections") due to 1 previous error
 </code></pre>
@@ -370,7 +370,7 @@ error: could not compile `collections` (bin "collections") due to 1 previous err
         Float(f64),
         Text(String),
     }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     let row = vec![
         SpreadsheetCell::Int(3),
         SpreadsheetCell::Text(String::from("синий")),
@@ -388,7 +388,7 @@ error: could not compile `collections` (bin "collections") due to 1 previous err
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">fn main() {
 </span>    {
         let v = vec![1, 2, 3, 4];
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
         // какая-нибудь работа с v
     } // &lt;- здесь v покидает область видимости и высвобождается
 <span class="boring">}</span></code></pre>

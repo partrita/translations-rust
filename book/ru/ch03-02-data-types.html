@@ -96,7 +96,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-01ba4889.js";
+            window.path_to_searchindex_js = "searchindex-0481507b.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-f10b093a.js"></script>
@@ -259,7 +259,7 @@ help: consider giving `guess` an explicit type
   |
 2 |     let guess: /* Type */ = "42".parse().expect("Не число!");
   |              ++++++++++++
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 For more information about this error, try `rustc --explain E0284`.
 error: could not compile `no_type_annotations` (bin "no_type_annotations") due to 1 previous error
 </code></pre>
@@ -323,7 +323,7 @@ error: could not compile `no_type_annotations` (bin "no_type_annotations") due t
 <p><span class="filename">Файл: src/main.rs</span></p>
 <pre class="playground"><code class="language-rust edition2024">fn main() {
     let x = 2.0; // f64
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     let y: f32 = 3.0; // f32
 }</code></pre>
 <p>Числа с плавающей точкой реализованы в соответствии со стандартом IEEE-754.</p>
@@ -333,17 +333,17 @@ error: could not compile `no_type_annotations` (bin "no_type_annotations") due t
 <pre class="playground"><code class="language-rust edition2024">fn main() {
     // сложение
     let sum = 5 + 10;
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     // вычитание
     let difference = 95.5 - 4.3;
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     // умножение
     let product = 4 * 30;
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     // деление
     let quotient = 56.7 / 32.2;
     let truncated = -5 / 3; // будет равно -1
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     // остаток от деления
     let remainder = 43 % 5;
 }</code></pre>
@@ -353,7 +353,7 @@ error: could not compile `no_type_annotations` (bin "no_type_annotations") due t
 <p><span class="filename">Файл: src/main.rs</span></p>
 <pre class="playground"><code class="language-rust edition2024">fn main() {
     let t = true;
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     let f: bool = false; // с явной аннотацией типа
 }</code></pre>
 <p>Основным местом, где используются логические значения, являются условные выражения, вроде выражения <code>if</code>. Мы расскажем о том, как раюотают выражения <code>if</code>, в разделе <a href="ch03-05-control-flow.html#Управление-потоком">“Управление потоком”</a><!-- ignore -->.</p>
@@ -379,9 +379,9 @@ error: could not compile `no_type_annotations` (bin "no_type_annotations") due t
 <p><span class="filename">Файл: src/main.rs</span></p>
 <pre class="playground"><code class="language-rust edition2024">fn main() {
     let tup = (500, 6.4, 1);
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     let (x, y, z) = tup;
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     println!("Значение y: {y}");
 }</code></pre>
 <p>Эта программа создаёт кортеж и связывает с ним переменную <code>tup</code>. Затем она использует <code>let</code> и применяет шаблон, чтобы извлечь из <code>tup</code> три отдельных переменных: <code>x</code>, <code>y</code> и <code>z</code>. Это называется <em>деструктуризацией</em>, поскольку разбивает единый кортеж на три части. Наконец, программа печатает значение <code>y</code>, то есть <code>6.4</code>.</p>
@@ -389,11 +389,11 @@ error: could not compile `no_type_annotations` (bin "no_type_annotations") due t
 <p><span class="filename">Файл: src/main.rs</span></p>
 <pre class="playground"><code class="language-rust edition2024">fn main() {
     let x: (i32, f64, u8) = (500, 6.4, 1);
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     let five_hundred = x.0;
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     let six_point_four = x.1;
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     let one = x.2;
 }</code></pre>
 <p>Эта программа создаёт кортеж <code>x</code> и затем получает каждый его элемент, используя обращение по индексу. Как и в большинстве языков программирования, индексация начинается с нуля.</p>
@@ -431,7 +431,7 @@ error: could not compile `no_type_annotations` (bin "no_type_annotations") due t
 <p><span class="filename">Файл: src/main.rs</span></p>
 <pre class="playground"><code class="language-rust edition2024">fn main() {
     let a = [1, 2, 3, 4, 5];
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     let first = a[0];
     let second = a[1];
 }</code></pre>
@@ -440,25 +440,25 @@ error: could not compile `no_type_annotations` (bin "no_type_annotations") due t
 <p>Давайте посмотрим, что будет, если попытаться получить доступ к элементу, который находится за пределами массива. Допустим, вы пишете вот такой код, похожий на игру в угадайку из Главы 2, и запускаете его. Программа запросит у пользователя индекс для обращения к массиву:</p>
 <p><span class="filename">Файл: src/main.rs</span></p>
 <pre><code class="language-rust ignore panics">use std::io;
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 fn main() {
     let a = [1, 2, 3, 4, 5];
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     println!("Пожалуйста, введите индекс элемента массива.");
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     let mut index = String::new();
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     io::stdin()
         .read_line(&amp;mut index)
         .expect("Не удалось прочесть ввод.");
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     let index: usize = index
         .trim()
         .parse()
         .expect("Введено не число");
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     let element = a[index];
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     println!("Значение элемента массива по индексу {index}: {element}");
 }</code></pre>
 <p>Этот код компилируется без проблем. Если вы запустите этот код с помощью <code>cargo run</code> и введёте <code>0</code>, <code>1</code>, <code>2</code>, <code>3</code> или <code>4</code>, программа напечатает вывод с соответствующим индексу элементом массива. Если же вы введёте какое-нибудь выходящее за пределы массива число (например, <code>10</code>), вы увидите вывод вроде такого:</p>

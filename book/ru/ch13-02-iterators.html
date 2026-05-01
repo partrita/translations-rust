@@ -96,7 +96,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-01ba4889.js";
+            window.path_to_searchindex_js = "searchindex-0481507b.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-f10b093a.js"></script>
@@ -245,7 +245,7 @@
 <span class="file-name">Filename: src/main.rs</span>
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">fn main() {
 </span>    let v1 = vec![1, 2, 3];
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     let v1_iter = v1.iter();
 <span class="boring">}</span></code></pre>
 <figcaption><a href="#listing-13-10">Listing 13-10</a>: Creating an iterator</figcaption>
@@ -256,9 +256,9 @@
 <span class="file-name">Filename: src/main.rs</span>
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">fn main() {
 </span>    let v1 = vec![1, 2, 3];
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     let v1_iter = v1.iter();
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     for val in v1_iter {
         println!("Got: {val}");
     }
@@ -273,9 +273,9 @@
 </span><span class="boring">fn main() {
 </span>pub trait Iterator {
     type Item;
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     fn next(&amp;mut self) -&gt; Option&lt;Self::Item&gt;;
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     // methods with default implementations elided
 }
 <span class="boring">}</span></code></pre>
@@ -289,9 +289,9 @@
 </span>    #[test]
     fn iterator_demonstration() {
         let v1 = vec![1, 2, 3];
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
         let mut v1_iter = v1.iter();
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
         assert_eq!(v1_iter.next(), Some(&amp;1));
         assert_eq!(v1_iter.next(), Some(&amp;2));
         assert_eq!(v1_iter.next(), Some(&amp;3));
@@ -312,11 +312,11 @@
 </span>    #[test]
     fn iterator_sum() {
         let v1 = vec![1, 2, 3];
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
         let v1_iter = v1.iter();
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
         let total: i32 = v1_iter.sum();
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
         assert_eq!(total, 6);
     }
 <span class="boring">}</span></code></pre>
@@ -330,7 +330,7 @@
 <span class="file-name">Filename: src/main.rs</span>
 <pre class="playground"><code class="language-rust not_desired_behavior edition2024"><span class="boring">fn main() {
 </span>    let v1: Vec&lt;i32&gt; = vec![1, 2, 3];
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     v1.iter().map(|x| x + 1);
 <span class="boring">}</span></code></pre>
 <figcaption><a href="#listing-13-14">Listing 13-14</a>: Calling the iterator adapter <code>map</code> to create a new iterator</figcaption>
@@ -350,7 +350,7 @@ help: use `let _ = ...` to ignore the resulting value
   |
 4 |     let _ = v1.iter().map(|x| x + 1);
   |     +++++++
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 warning: `iterators` (bin "iterators") generated 1 warning
     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.47s
      Running `target/debug/iterators`
@@ -362,9 +362,9 @@ warning: `iterators` (bin "iterators") generated 1 warning
 <span class="file-name">Filename: src/main.rs</span>
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">fn main() {
 </span>    let v1: Vec&lt;i32&gt; = vec![1, 2, 3];
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     let v2: Vec&lt;_&gt; = v1.iter().map(|x| x + 1).collect();
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     assert_eq!(v2, vec![2, 3, 4]);
 <span class="boring">}</span></code></pre>
 <figcaption><a href="#listing-13-15">Listing 13-15</a>: Calling the <code>map</code> method to create a new iterator, and then calling the <code>collect</code> method to consume the new iterator and create a vector</figcaption>
@@ -384,15 +384,15 @@ struct Shoe {
     size: u32,
     style: String,
 }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 fn shoes_in_size(shoes: Vec&lt;Shoe&gt;, shoe_size: u32) -&gt; Vec&lt;Shoe&gt; {
     shoes.into_iter().filter(|s| s.size == shoe_size).collect()
 }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 #[cfg(test)]
 mod tests {
     use super::*;
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     #[test]
     fn filters_by_size() {
         let shoes = vec![
@@ -409,9 +409,9 @@ mod tests {
                 style: String::from("boot"),
             },
         ];
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
         let in_my_size = shoes_in_size(shoes, 10);
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
         assert_eq!(
             in_my_size,
             vec![

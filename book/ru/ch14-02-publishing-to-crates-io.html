@@ -96,7 +96,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-01ba4889.js";
+            window.path_to_searchindex_js = "searchindex-0481507b.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-f10b093a.js"></script>
@@ -281,10 +281,10 @@ cargo test
 copy just the doc-tests section below
 -->
 <pre><code class="language-text">   Doc-tests my_crate
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 running 1 test
 test src/lib.rs - add_one (line 5) ... ok
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.27s
 </code></pre>
 <p>Now, if we change either the function or the example so that the <code>assert_eq!</code> in the example panics, and run <code>cargo test</code> again, we’ll see that the doc tests catch that the example and the code are out of sync with each other!</p>
@@ -299,7 +299,7 @@ test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; fini
 //!
 //! `my_crate` is a collection of utilities to make performing certain
 //! calculations more convenient.
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 /// Adds one to the number given.
 // --snip--
 <span class="boring">///
@@ -333,7 +333,7 @@ test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; fini
 <pre><code class="language-rust noplayground test_harness">//! # Art
 //!
 //! A library for modeling artistic concepts.
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 pub mod kinds {
     /// The primary colors according to the RYB color model.
     pub enum PrimaryColor {
@@ -341,7 +341,7 @@ pub mod kinds {
         Yellow,
         Blue,
     }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     /// The secondary colors according to the RYB color model.
     pub enum SecondaryColor {
         Orange,
@@ -349,10 +349,10 @@ pub mod kinds {
         Purple,
     }
 }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 pub mod utils {
     use crate::kinds::*;
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     /// Combines two primary colors in equal amounts to create
     /// a secondary color.
     pub fn mix(c1: PrimaryColor, c2: PrimaryColor) -&gt; SecondaryColor {
@@ -371,7 +371,7 @@ pub mod utils {
 <span class="file-name">Filename: src/main.rs</span>
 <pre><code class="language-rust ignore">use art::kinds::PrimaryColor;
 use art::utils::mix;
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 fn main() {
     let red = PrimaryColor::Red;
     let yellow = PrimaryColor::Yellow;
@@ -386,11 +386,11 @@ fn main() {
 <pre><code class="language-rust ignore">//! # Art
 //!
 //! A library for modeling artistic concepts.
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 pub use self::kinds::PrimaryColor;
 pub use self::kinds::SecondaryColor;
 pub use self::utils::mix;
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 pub mod kinds {
     // --код сокращён--
 <span class="boring">    /// The primary colors according to the RYB color model.
@@ -399,7 +399,7 @@ pub mod kinds {
 </span><span class="boring">        Yellow,
 </span><span class="boring">        Blue,
 </span><span class="boring">    }
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    /// The secondary colors according to the RYB color model.
 </span><span class="boring">    pub enum SecondaryColor {
 </span><span class="boring">        Orange,
@@ -407,11 +407,11 @@ pub mod kinds {
 </span><span class="boring">        Purple,
 </span><span class="boring">    }
 </span>}
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 pub mod utils {
     // --код сокращён--
 <span class="boring">    use crate::kinds::*;
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    /// Combines two primary colors in equal amounts to create
 </span><span class="boring">    /// a secondary color.
 </span><span class="boring">    pub fn mix(c1: PrimaryColor, c2: PrimaryColor) -&gt; SecondaryColor {
@@ -428,7 +428,7 @@ pub mod utils {
 <span class="file-name">Filename: src/main.rs</span>
 <pre><code class="language-rust ignore">use art::PrimaryColor;
 use art::mix;
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 fn main() {
     // --код сокращён--
 <span class="boring">    let red = PrimaryColor::Red;
@@ -466,7 +466,7 @@ warning: manifest has no description, license, license-file, documentation, home
 See https://doc.rust-lang.org/cargo/reference/manifest.html#package-metadata for more info.
 --snip--
 error: failed to publish to registry at https://crates.io
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 Caused by:
   the remote server responded with an error (status 400 Bad Request): missing or empty metadata fields: description, license. Please see https://doc.rust-lang.org/cargo/reference/manifest.html for more information on configuring these fields
 </code></pre>
@@ -486,7 +486,7 @@ version = "0.1.0"
 edition = "2024"
 description = "A fun game where you guess what number the computer has chosen."
 license = "MIT OR Apache-2.0"
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 [dependencies]
 </code></pre>
 <p><a href="https://doc.rust-lang.org/cargo/">Cargo’s documentation</a> describes other metadata you can specify to ensure that others can discover and use your crate more easily.</p>

@@ -96,7 +96,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-01ba4889.js";
+            window.path_to_searchindex_js = "searchindex-0481507b.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-f10b093a.js"></script>
@@ -251,7 +251,7 @@
     Dime,
     Quarter,
 }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 fn value_in_cents(coin: Coin) -&gt; u8 {
     match coin {
         Coin::Penny =&gt; 1,
@@ -260,7 +260,7 @@ fn value_in_cents(coin: Coin) -&gt; u8 {
         Coin::Quarter =&gt; 25,
     }
 }
-<span class="boring">
+<span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">fn main() {}</span></code></pre>
 <figcaption><a href="#listing-6-3">Listing 6-3</a>: An enum and a <code>match</code> expression that has the variants of the enum as its patterns</figcaption>
 </figure>
@@ -275,7 +275,7 @@ fn value_in_cents(coin: Coin) -&gt; u8 {
 </span><span class="boring">    Dime,
 </span><span class="boring">    Quarter,
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span>fn value_in_cents(coin: Coin) -&gt; u8 {
     match coin {
         Coin::Penny =&gt; {
@@ -287,7 +287,7 @@ fn value_in_cents(coin: Coin) -&gt; u8 {
         Coin::Quarter =&gt; 25,
     }
 }
-<span class="boring">
+<span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">fn main() {}</span></code></pre>
 <h3 id="связывание-со-значениями-с-помощью-шаблонов"><a class="header" href="#связывание-со-значениями-с-помощью-шаблонов">Связывание со значениями с помощью шаблонов</a></h3>
 <p>У ветвей выражения <code>match</code> есть ещё одна полезная особенность: они могут привязываться к частям тех значений, которые совпали с шаблоном. Благодаря этому возможно извлекать значения из вариантов перечисления.</p>
@@ -299,14 +299,14 @@ enum UsState {
     Alaska,
     // --код сокращён--
 }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 enum Coin {
     Penny,
     Nickel,
     Dime,
     Quarter(UsState),
 }
-<span class="boring">
+<span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">fn main() {}</span></code></pre>
 <figcaption><a href="#listing-6-4">Listing 6-4</a>: A <code>Coin</code> enum in which the <code>Quarter</code> variant also holds a <code>UsState</code> value</figcaption>
 </figure>
@@ -318,14 +318,14 @@ enum Coin {
 </span><span class="boring">    Alaska,
 </span><span class="boring">    // --код сокращён--
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">enum Coin {
 </span><span class="boring">    Penny,
 </span><span class="boring">    Nickel,
 </span><span class="boring">    Dime,
 </span><span class="boring">    Quarter(UsState),
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span>fn value_in_cents(coin: Coin) -&gt; u8 {
     match coin {
         Coin::Penny =&gt; 1,
@@ -337,7 +337,7 @@ enum Coin {
         }
     }
 }
-<span class="boring">
+<span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">fn main() {
 </span><span class="boring">    value_in_cents(Coin::Quarter(UsState::Alaska));
 </span><span class="boring">}</span></code></pre>
@@ -356,7 +356,7 @@ enum Coin {
             Some(i) =&gt; Some(i + 1),
         }
     }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     let five = Some(5);
     let six = plus_one(five);
     let none = plus_one(None);
@@ -371,7 +371,7 @@ enum Coin {
 <span class="boring">            Some(i) =&gt; Some(i + 1),
 </span><span class="boring">        }
 </span><span class="boring">    }
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    let five = Some(5);
 </span><span class="boring">    let six = plus_one(five);
 </span><span class="boring">    let none = plus_one(None);
@@ -384,7 +384,7 @@ enum Coin {
 </span>            Some(i) =&gt; Some(i + 1),
 <span class="boring">        }
 </span><span class="boring">    }
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    let five = Some(5);
 </span><span class="boring">    let six = plus_one(five);
 </span><span class="boring">    let none = plus_one(None);
@@ -398,7 +398,7 @@ enum Coin {
 <span class="boring">            Some(i) =&gt; Some(i + 1),
 </span><span class="boring">        }
 </span><span class="boring">    }
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    let five = Some(5);
 </span><span class="boring">    let six = plus_one(five);
 </span><span class="boring">    let none = plus_one(None);
@@ -413,7 +413,7 @@ enum Coin {
             Some(i) =&gt; Some(i + 1),
         }
     }
-<span class="boring">
+<span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    let five = Some(5);
 </span><span class="boring">    let six = plus_one(five);
 </span><span class="boring">    let none = plus_one(None);
@@ -438,7 +438,7 @@ help: ensure that all possible cases are being handled by adding a match arm wit
 4 ~             Some(i) =&gt; Some(i + 1),
 5 ~             None =&gt; todo!(),
   |
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 For more information about this error, try `rustc --explain E0004`.
 error: could not compile `enums` (bin "enums") due to 1 previous error
 </code></pre>
@@ -452,7 +452,7 @@ error: could not compile `enums` (bin "enums") due to 1 previous error
         7 =&gt; remove_fancy_hat(),
         other =&gt; move_player(other),
     }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     fn add_fancy_hat() {}
     fn remove_fancy_hat() {}
     fn move_player(num_spaces: u8) {}
@@ -468,7 +468,7 @@ error: could not compile `enums` (bin "enums") due to 1 previous error
         7 =&gt; remove_fancy_hat(),
         _ =&gt; reroll(),
     }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     fn add_fancy_hat() {}
     fn remove_fancy_hat() {}
     fn reroll() {}
@@ -482,7 +482,7 @@ error: could not compile `enums` (bin "enums") due to 1 previous error
         7 =&gt; remove_fancy_hat(),
         _ =&gt; (),
     }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     fn add_fancy_hat() {}
     fn remove_fancy_hat() {}
 <span class="boring">}</span></code></pre>

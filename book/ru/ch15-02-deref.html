@@ -96,7 +96,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-01ba4889.js";
+            window.path_to_searchindex_js = "searchindex-0481507b.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-f10b093a.js"></script>
@@ -252,7 +252,7 @@
 <pre class="playground"><code class="language-rust edition2024">fn main() {
     let x = 5;
     let y = &amp;x;
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     assert_eq!(5, x);
     assert_eq!(5, *y);
 }</code></pre>
@@ -270,7 +270,7 @@ error[E0277]: can't compare `{integer}` with `&amp;{integer}`
   |
   = help: the trait `PartialEq&lt;&amp;{integer}&gt;` is not implemented for `{integer}`
   = note: this error originates in the macro `assert_eq` (in Nightly builds, run with -Z macro-backtrace for more info)
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 For more information about this error, try `rustc --explain E0277`.
 error: could not compile `deref-example` (bin "deref-example") due to 1 previous error
 </code></pre>
@@ -282,7 +282,7 @@ error: could not compile `deref-example` (bin "deref-example") due to 1 previous
 <pre class="playground"><code class="language-rust edition2024">fn main() {
     let x = 5;
     let y = Box::new(x);
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     assert_eq!(5, x);
     assert_eq!(5, *y);
 }</code></pre>
@@ -298,13 +298,13 @@ error: could not compile `deref-example` (bin "deref-example") due to 1 previous
 <figure class="listing" id="listing-15-8">
 <span class="file-name">Filename: src/main.rs</span>
 <pre class="playground"><code class="language-rust edition2024">struct MyBox&lt;T&gt;(T);
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 impl&lt;T&gt; MyBox&lt;T&gt; {
     fn new(x: T) -&gt; MyBox&lt;T&gt; {
         MyBox(x)
     }
 }
-<span class="boring">
+<span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">fn main() {}</span></code></pre>
 <figcaption><a href="#listing-15-8">Listing 15-8</a>: Defining a <code>MyBox&lt;T&gt;</code> type</figcaption>
 </figure>
@@ -313,17 +313,17 @@ impl&lt;T&gt; MyBox&lt;T&gt; {
 <figure class="listing" id="listing-15-9">
 <span class="file-name">Filename: src/main.rs</span>
 <pre><code class="language-rust ignore does_not_compile"><span class="boring">struct MyBox&lt;T&gt;(T);
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">impl&lt;T&gt; MyBox&lt;T&gt; {
 </span><span class="boring">    fn new(x: T) -&gt; MyBox&lt;T&gt; {
 </span><span class="boring">        MyBox(x)
 </span><span class="boring">    }
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span>fn main() {
     let x = 5;
     let y = MyBox::new(x);
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     assert_eq!(5, x);
     assert_eq!(5, *y);
 }</code></pre>
@@ -337,7 +337,7 @@ error[E0614]: type `MyBox&lt;{integer}&gt;` cannot be dereferenced
    |
 14 |     assert_eq!(5, *y);
    |                   ^^ can't be dereferenced
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 For more information about this error, try `rustc --explain E0614`.
 error: could not compile `deref-example` (bin "deref-example") due to 1 previous error
 </code></pre>
@@ -349,27 +349,27 @@ error: could not compile `deref-example` (bin "deref-example") due to 1 previous
 <figure class="listing" id="listing-15-10">
 <span class="file-name">Filename: src/main.rs</span>
 <pre class="playground"><code class="language-rust edition2024">use std::ops::Deref;
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 impl&lt;T&gt; Deref for MyBox&lt;T&gt; {
     type Target = T;
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     fn deref(&amp;self) -&gt; &amp;Self::Target {
         &amp;self.0
     }
 }
-<span class="boring">
+<span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">struct MyBox&lt;T&gt;(T);
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">impl&lt;T&gt; MyBox&lt;T&gt; {
 </span><span class="boring">    fn new(x: T) -&gt; MyBox&lt;T&gt; {
 </span><span class="boring">        MyBox(x)
 </span><span class="boring">    }
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">fn main() {
 </span><span class="boring">    let x = 5;
 </span><span class="boring">    let y = MyBox::new(x);
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    assert_eq!(5, x);
 </span><span class="boring">    assert_eq!(5, *y);
 </span><span class="boring">}</span></code></pre>
@@ -395,7 +395,7 @@ ignore --> in Chapter 5 that <code>.0</code> accesses the first value in a tuple
 <pre class="playground"><code class="language-rust edition2024">fn hello(name: &amp;str) {
     println!("Hello, {name}!");
 }
-<span class="boring">
+<span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">fn main() {}</span></code></pre>
 <figcaption><a href="#listing-15-11">Listing 15-11</a>: A <code>hello</code> function that has the parameter <code>name</code> of type <code>&amp;str</code></figcaption>
 </figure>
@@ -403,27 +403,27 @@ ignore --> in Chapter 5 that <code>.0</code> accesses the first value in a tuple
 <figure class="listing" id="listing-15-12">
 <span class="file-name">Filename: src/main.rs</span>
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">use std::ops::Deref;
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">impl&lt;T&gt; Deref for MyBox&lt;T&gt; {
 </span><span class="boring">    type Target = T;
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    fn deref(&amp;self) -&gt; &amp;T {
 </span><span class="boring">        &amp;self.0
 </span><span class="boring">    }
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">struct MyBox&lt;T&gt;(T);
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">impl&lt;T&gt; MyBox&lt;T&gt; {
 </span><span class="boring">    fn new(x: T) -&gt; MyBox&lt;T&gt; {
 </span><span class="boring">        MyBox(x)
 </span><span class="boring">    }
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">fn hello(name: &amp;str) {
 </span><span class="boring">    println!("Hello, {name}!");
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span>fn main() {
     let m = MyBox::new(String::from("Rust"));
     hello(&amp;m);
@@ -435,27 +435,27 @@ ignore --> in Chapter 5 that <code>.0</code> accesses the first value in a tuple
 <figure class="listing" id="listing-15-13">
 <span class="file-name">Filename: src/main.rs</span>
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">use std::ops::Deref;
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">impl&lt;T&gt; Deref for MyBox&lt;T&gt; {
 </span><span class="boring">    type Target = T;
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    fn deref(&amp;self) -&gt; &amp;T {
 </span><span class="boring">        &amp;self.0
 </span><span class="boring">    }
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">struct MyBox&lt;T&gt;(T);
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">impl&lt;T&gt; MyBox&lt;T&gt; {
 </span><span class="boring">    fn new(x: T) -&gt; MyBox&lt;T&gt; {
 </span><span class="boring">        MyBox(x)
 </span><span class="boring">    }
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">fn hello(name: &amp;str) {
 </span><span class="boring">    println!("Hello, {name}!");
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span>fn main() {
     let m = MyBox::new(String::from("Rust"));
     hello(&amp;(*m)[..]);

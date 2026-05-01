@@ -93,7 +93,7 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-55effe88.js";
+            window.path_to_searchindex_js = "../searchindex-e23b9ebb.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../toc-20da6b24.js"></script>
@@ -503,18 +503,18 @@ _</text>
 </ul>
 <p><code>use</code> 선언의 예:</p>
 <pre class="playground"><code class="language-rust edition2024">use std::collections::hash_map::{self, HashMap};
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 fn foo&lt;T&gt;(_: T){}
 fn bar(map1: HashMap&lt;String, usize&gt;, map2: hash_map::HashMap&lt;String, usize&gt;){}
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 fn main() {
     // use 선언은 함수 내부에도 존재할 수 있습니다
     use std::option::Option::{Some, None};
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
     // 'foo(vec![std::option::Option::Some(1.0f64),
     // std::option::Option::None]);'와 동일합니다.
     foo(vec![Some(1.0f64), None]);
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
     // `hash_map` 과 `HashMap` 모두 스코프에 있습니다.
     let map1 = HashMap::new();
     let map2 = hash_map::HashMap::new();
@@ -540,7 +540,7 @@ fn main() {
         pub fn baz() {}
     }
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 fn main() {
     quux::bar();
     quux::baz();
@@ -575,10 +575,10 @@ fn main() {
 </span>mod stuff {
     pub struct Foo(pub i32);
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // `Foo` 타입과 `Foo` 생성자를 임포트합니다.
 use stuff::Foo;
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 fn example() {
     let ctor = Foo; // 값 네임스페이스에서 `Foo` 를 사용합니다.
     let x: Foo = ctor(123); // 타입 네임스페이스에서 `Foo` 를 사용합니다.
@@ -618,7 +618,7 @@ mod bar {
 </span><span class="boring">fn main() {
 </span>// 함수 `foo` 에 대한 비공개 별칭 `bar` 를 생성합니다.
 use inner::foo as bar;
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 mod inner {
     pub fn foo() {}
 }
@@ -711,10 +711,10 @@ use S::{self as _}; // ERROR: Structs cannot be parents of `self`.
     pub mod foo {}
     pub fn foo() {}
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // 이는 `foo` 모듈만 임포트합니다. `foo` 함수는 값 네임스페이스에 존재하므로 임포트되지 않습니다.
 use bar::foo::{self};
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 fn main() {
     foo(); //~ 오류: `foo` 는 모듈입니다.
 }</code></pre>
@@ -730,7 +730,7 @@ fn main() {
 </span><span class="boring">fn main() {
 </span>// `bar` 에 대한 비공개 별칭을 생성합니다.
 use foo::*;
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 mod foo {
     fn i_am_private() {}
     enum Example {
@@ -760,7 +760,7 @@ use clashing::*;
 struct Foo {
     field: f32,
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 fn do_stuff() {
     // `clashing::Foo` 의 생성자를 사용합니다.
     let f1 = Foo(123);
@@ -770,7 +770,7 @@ fn do_stuff() {
     // 글로브 임포트로 인해 `Bar` 도 스코프에 있습니다.
     let z = Bar {};
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 mod clashing {
     pub struct Foo(pub i32);
     pub struct Bar {}
@@ -819,13 +819,13 @@ mod clashing {
     pub trait Zoo {
         fn zoo(&amp;self) {}
     }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
     impl&lt;T&gt; Zoo for T {}
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 use self::foo::Zoo as _;
 struct Zoo;  // 밑줄 임포트는 이 아이템과의 이름 충돌을 방지합니다.
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 fn main() {
     let z = Zoo;
     z.zoo();
@@ -839,7 +839,7 @@ fn main() {
 </span>macro_rules! m {
     ($item: item) =&gt; { $item $item }
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 m!(use std as _;);
 // 다음과 같이 확장됩니다:
 // use std as _;

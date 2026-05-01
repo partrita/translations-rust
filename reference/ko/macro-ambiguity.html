@@ -93,7 +93,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-55effe88.js";
+            window.path_to_searchindex_js = "searchindex-e23b9ebb.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-20da6b24.js"></script>
@@ -526,19 +526,19 @@
             ~~~~~~~~   ~~~~~~~                ~
                 |         |                   |
 FIRST:   { $d:ident }  { $e:expr }          { h }
-
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 INPUT:  $(  $d:ident   $e:expr   );*    $( $( h )* );*    $( f ; )+
             ~~~~~~~~~~~~~~~~~~             ~~~~~~~           ~~~
                         |                      |               |
 FIRST:          { $d:ident }               { h, ε }         { f }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 INPUT:  $(  $d:ident   $e:expr   );*    $( $( h )* );*    $( f ; )+   g
         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~    ~~~~~~~~~~~~~~    ~~~~~~~~~   ~
                         |                       |              |       |
 FIRST:        { $d:ident, ε }            {  h, ε, ;  }      { f }   { g }
-
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 INPUT:  $(  $d:ident   $e:expr   );*    $( $( h )* );*    $( f ; )+   g
         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
                                         |

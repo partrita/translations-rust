@@ -93,7 +93,7 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-55effe88.js";
+            window.path_to_searchindex_js = "../searchindex-e23b9ebb.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../toc-20da6b24.js"></script>
@@ -647,10 +647,10 @@ assert_eq!(b, c);
 </span><span class="boring">fn main() {
 </span>"foo"; r"foo";                     // foo
 "\"foo\""; r#""foo""#;             // "foo"
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 "foo #\"# bar";
 r##"foo #"# bar"##;                // foo #"# bar
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 "\x52"; "R"; r"R";                 // R
 "\\x52"; r"\x52";                  // \x52
 <span class="boring">}</span></code></pre>
@@ -776,10 +776,10 @@ b'\xA0';                           // 160
 </span><span class="boring">fn main() {
 </span>b"foo"; br"foo";                     // foo
 b"\"foo\""; br#""foo""#;             // "foo"
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 b"foo #\"# bar";
 br##"foo #"# bar"##;                 // foo #"# bar
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 b"\x52"; b"R"; br"R";                // R
 b"\\x52"; br"\x52";                  // \x52
 <span class="boring">}</span></code></pre>
@@ -844,17 +844,17 @@ b"\\x52"; br"\x52";                  // \x52
 </span><span class="boring">fn main() {
 </span>c"foo"; cr"foo";                     // foo
 c"\"foo\""; cr#""foo""#;             // "foo"
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 c"foo #\"# bar";
 cr##"foo #"# bar"##;                 // foo #"# bar
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 c"\x52"; c"R"; cr"R";                // R
 c"\\x52"; cr"\x52";                  // \x52
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 c"æ";                                // 라틴어 소문자 AE (U+00E6)
 c"\u{00E6}";                         // 라틴어 소문자 AE (U+00E6)
 c"\xC3\xA6";                         // 라틴어 소문자 AE (U+00E6)
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 c"\xE6".to_bytes();                  // [230]
 c"\u{00E6}".to_bytes();              // [195, 166]
 <span class="boring">}</span></code></pre>
@@ -900,16 +900,16 @@ c"\u{00E6}".to_bytes();              // [195, 166]
 123u32;                            // u32 타입
 123_u32;                           // u32 타입
 let a: u64 = 123;                  // u64 타입
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 0xff;                              // i32 타입
 0xff_u8;                           // u8 타입
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 0o70;                              // i32 타입
 0o70_i16;                          // i16 타입
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 0b1111_1111_1001_0000;             // i32 타입
 0b1111_1111_1001_0000i64;          // i64 타입
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 0usize;                            // usize 타입
 <span class="boring">}</span></code></pre>
 <div class="rule" id="r-expr.literal.int.representation"><a class="rule-link" href="#r-expr.literal.int.representation" title="expr.literal.int.representation"><span>[expr<wbr>.literal<wbr>.int<wbr>.representation]</span></a>

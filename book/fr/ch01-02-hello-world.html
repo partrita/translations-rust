@@ -96,10 +96,10 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-5b6c4c3f.js";
+            window.path_to_searchindex_js = "searchindex-380cec70.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="toc-44dad460.js"></script>
+        <script src="toc-09667002.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -294,7 +294,7 @@ Hello, world!
 <p>Ces lignes définissent une fonction dans Rust. La fonction <code>main</code> est spéciale : c’est toujours le premier code qui est exécuté dans tous les programmes en Rust. Ici, la première ligne déclare une fonction qui s’appelle <code>main</code>, qui n’a pas de paramètre et qui ne retourne aucune valeur. S’il y avait des paramètres, ils seraient placés entre les parenthèses (<code>()</code>).</p>
 <p>Le corps de la fonction est placé entre accolades <code>{}</code>. Rust a besoin d’avoir ces accolades autour du corps de chaque fonction. C’est une bonne pratique d’insérer l’accolade ouvrante sur la même ligne que la déclaration de la fonction, en ajoutant une espace entre les deux.</p>
 <section class="note" aria-role="note">
-<p>Note : si vous souhaitez formater le code de tous vos projets Rust de manière standardisée, vous pouvez utiliser un outil de formatage automatique tel que <code>rustfmt</code> (pour en savoir plus sur <code>rustfmt</code>, voir l’<a href="appendix-04-useful-development-tools.html">annexe D</a><!-- ignore -->). L’équipe de Rust a intégré cet outil dans la distribution standard de Rust, comme pour <code>rustc</code> par exemple, donc  il est probablement déjà installé sur votre ordinateur ! Consultez la documentation en ligne pour en savoir plus.</p>
+<p>Note : si vous souhaitez formater le code de tous vos projets Rust de manière standardisée, vous pouvez utiliser un outil de formatage automatique tel que <code>rustfmt</code> (pour en savoir plus sur <code>rustfmt</code>, voir l’<a href="appendix-04-useful-development-tools.html">annexe D</a><!-- ignore -->). L’équipe de Rust a intégré cet outil dans la distribution standard de Rust, comme pour <code>rustc</code> par exemple, donc il est probablement déjà installé sur votre ordinateur ! Consultez la documentation en ligne pour en savoir plus.</p>
 </section>
 <p>Le corps de la fonction <code>main</code> contient le code suivant :</p>
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">#![allow(unused)]
@@ -317,14 +317,14 @@ Hello, world!
 <pre><code class="language-console">$ ls
 main  main.rs
 </code></pre>
-<p>Avec Linux et macOS, vous devriez voir deux fichiers. Avec PowerShell sous Windows, vous devriez voir les trois mêmes fichiers que vous verriez en utilisant CMD.  Avec CMD sous Windows, vous devez saisir la commande suivante :</p>
-<pre><code class="language-cmd">&gt; dir /B %= the /B option says to only show the file names =%
+<p>Avec Linux et macOS, vous devriez voir deux fichiers. Avec PowerShell sous Windows, vous devriez voir les trois mêmes fichiers que vous verriez en utilisant CMD. Avec CMD sous Windows, vous devez saisir la commande suivante :</p>
+<pre><code class="language-cmd">&gt; dir /B %= l'option /B demande à n'afficher que les noms de fichiers =%
 main.exe
 main.pdb
 main.rs
 </code></pre>
 <p>Ceci affiche le fichier de code source avec l’extension <em>.rs</em>, le fichier exécutable (<em>main.exe</em> sous Windows, mais <em>main</em> sur toutes les autres plateformes) et, quand on utilise Windows, un fichier qui contient des informations de débogage avec l’extension <em>.pdb</em>. Dans ce répertoire, vous pouvez exécuter le fichier <em>main</em> ou <em>main.exe</em> comme ceci :</p>
-<pre><code class="language-console">$ ./main # or .\main on Windows
+<pre><code class="language-console">$ ./main # ou .\main.exe sous Windows
 </code></pre>
 <p>Si <em>main.rs</em> est votre programme “Hello, world!”, cette ligne affiche <code>Hello, world!</code> dans votre terminal.</p>
 <p>Si vous connaissez un langage dynamique, comme Ruby, Python, ou JavaScript, vous n’avez peut-être pas l’habitude de compiler puis lancer votre programme dans des étapes séparées. Rust est un langage à <em>compilation anticipée</em>, ce qui veut dire que vous pouvez compiler le programme et le donner à quelqu’un d’autre, et il peut l’exécuter sans avoir Rust d’installé. Si vous donnez à quelqu’un un fichier <em>.rb</em>, <em>.py</em> ou <em>.js</em>, il a besoin d’avoir respectivement un interpréteur Ruby, Python, ou Javascript d’installé. Cependant, avec ces langages, vous n’avez besoin que d’une seule commande pour compiler et exécuter votre programme. Dans la conception d’un langage, tout est une question de compromis.</p>

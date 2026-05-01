@@ -93,7 +93,7 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-55effe88.js";
+            window.path_to_searchindex_js = "../searchindex-e23b9ebb.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../toc-20da6b24.js"></script>
@@ -475,7 +475,7 @@ assert_eq!(x, ());
     // There are no conditional statements, so this entire function body is diverging.
     loop {}
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 fn control_flow_diverging() -&gt; ! {
     // All paths are diverging, so this entire function body is diverging.
     if true {
@@ -484,7 +484,7 @@ fn control_flow_diverging() -&gt; ! {
         loop {}
     }
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 fn control_flow_not_diverging() -&gt; () {
     // Some paths are not diverging, so this entire block is not diverging.
     if true {
@@ -493,7 +493,7 @@ fn control_flow_not_diverging() -&gt; () {
         loop {}
     }
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // Note: This makes use of the unstable never type which is only available on
 // Rust's nightly channel. This is done for illustration purposes. It is
 // possible to encounter this scenario in stable Rust, but requires a more
@@ -501,9 +501,9 @@ fn control_flow_not_diverging() -&gt; () {
 struct Foo {
     x: !,
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 fn make&lt;T&gt;() -&gt; T { loop {} }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 fn diverging_place_read() -&gt; ! {
     let foo = Foo { x: make() };
     // A read of a place expression produces a diverging block.
@@ -847,7 +847,7 @@ BlockExpression</text>
     assert_eq!(*a, 13);
     assert_eq!(*a.offset(1), 17);
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 <span class="boring">unsafe fn an_unsafe_fn() -&gt; i32 { 10 }
 </span>let a = unsafe { an_unsafe_fn() };
 <span class="boring">}</span></code></pre>

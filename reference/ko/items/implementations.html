@@ -93,7 +93,7 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-55effe88.js";
+            window.path_to_searchindex_js = "../searchindex-e23b9ebb.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../toc-20da6b24.js"></script>
@@ -585,12 +585,12 @@ AssociatedItem</text>
 <p>하나의 타입은 여러 개의 고유 구현을 가질 수도 있습니다. 구현 타입은 반드시 원본 타입 정의와 동일한 크레이트 내에서 정의되어야 합니다.</p>
 <pre class="playground"><code class="language-rust edition2024">pub mod color {
     pub struct Color(pub u8, pub u8, pub u8);
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
     impl Color {
         pub const WHITE: Color = Color(255, 255, 255);
     }
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 mod values {
     use super::color::Color;
     impl Color {
@@ -599,18 +599,18 @@ mod values {
         }
     }
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 pub use self::color::Color;
 fn main() {
     // 같은 모듈 내의 구현 타입과 구현에 대한 실제 경로.
     color::Color::WHITE;
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
     // 서로 다른 모듈에 있는 구현 블록들도 여전히 타입을 통한 경로로 접근됩니다.
     color::Color::red();
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
     // 구현 타입에 대해 다시 내보내기(re-exported)된 경로들도 작동합니다.
     Color::red();
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
     // 작동하지 않습니다. `values` 내의 사용(use)이 pub이 아니기 때문입니다.
     // values::Color::red();
 }</code></pre>
@@ -651,13 +651,13 @@ fn main() {
     radius: f64,
     center: Point,
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 impl Copy for Circle {}
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 impl Clone for Circle {
     fn clone(&amp;self) -&gt; Circle { *self }
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 impl Shape for Circle {
     fn draw(&amp;self, s: Surface) { do_draw_circle(s, *self); }
     fn bounding_box(&amp;self) -&gt; BoundingBox {
@@ -756,17 +756,17 @@ impl Seq&lt;bool&gt; for u32 {
 </span><span class="boring">struct ConstGenericStruct&lt;const N: usize&gt;([(); N]);
 </span>// T는 GenericTrait의 인수가 됨으로써 제약합니다.
 impl&lt;T&gt; GenericTrait&lt;T&gt; for i32 { /* ... */ }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // T는 GenericStruct의 인수가 됨으로써 제약합니다.
 impl&lt;T&gt; Trait for GenericStruct&lt;T&gt; { /* ... */ }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // 마찬가지로, N은 ConstGenericStruct의 인수가 됨으로써 제약합니다.
 impl&lt;const N: usize&gt; Trait for ConstGenericStruct&lt;N&gt; { /* ... */ }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // T는 트레잇을 제약하는 제네릭 매개변수인 타입 `U` 에 대한 바운드의
 // 연관 타입 안에 있음으로써 제약합니다.
 impl&lt;T, U&gt; GenericTrait&lt;U&gt; for u32 where U: HasAssocType&lt;Ty = T&gt; { /* ... */ }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // 이전과 비슷하지만, 타입이 `(U, isize)` 라는 점이 다릅니다. `U` 는 `T` 를 포함하는
 // 타입 내부에 나타나며, 타입 자체는 아닙니다.
 impl&lt;T, U&gt; GenericStruct&lt;U&gt; where (U, isize): HasAssocType&lt;Ty = T&gt; { /* ... */ }
@@ -776,21 +776,21 @@ impl&lt;T, U&gt; GenericStruct&lt;U&gt; where (U, isize): HasAssocType&lt;Ty = T
 </span><span class="boring">fn main() {
 </span>// The rest of these are errors, since they have type or const parameters that
 // do not constrain.
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // T는 전혀 나타나지 않으므로 제약하지 않습니다.
 impl&lt;T&gt; Struct { /* ... */ }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // N도 같은 이유로 제약하지 않습니다.
 impl&lt;const N: usize&gt; Struct { /* ... */ }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // 구현 내부에서의 T의 사용은 구현을 제약하지 않습니다.
 impl&lt;T&gt; Struct {
     fn uses_t(t: &amp;T) { /* ... */ }
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // T는 U에 대한 바운드의 연관 타입으로 사용되지만, U가 제약하지 않습니다.
 impl&lt;T, U&gt; Struct where U: HasAssocType&lt;Ty = T&gt; { /* ... */ }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // T는 바운드에서 사용되지만, 연관 타입으로서가 아니므로 제약하지 않습니다.
 impl&lt;T, U&gt; GenericTrait&lt;U&gt; for u32 where U: GenericTrait&lt;T&gt; {}
 <span class="boring">}</span></code></pre>

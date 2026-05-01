@@ -92,7 +92,7 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-63cf9974.js";
+            window.path_to_searchindex_js = "../searchindex-ddd16eb2.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../toc-8ce05715.js"></script>
@@ -247,7 +247,7 @@
 <h2 id="세부-정보"><a class="header" href="#세부-정보">세부 정보</a></h2>
 <p>Rust 1.53까지는 배열에 대한 <em>참조</em> 만 <code>IntoIterator</code> 를 구현합니다. 즉, <code>&amp;[1, 2, 3]</code> 및 <code>&amp;mut [1, 2, 3]</code> 에 대해 반복할 수 있지만 <code>[1, 2, 3]</code> 에 대해서는 직접 반복할 수 없습니다.</p>
 <pre><code class="language-rust ignore">for &amp;e in &amp;[1, 2, 3] {} // 정상 :)
-
+심지어 `panic!(123)` 과 같이 문자열이 아닌 것도 허용하는데, 이는 드물고 거의 유용하지 않습니다. 왜냐하면 놀라울 정도로 도움이 되지 않는 메시지인 `panicked at 'Box&lt;Any&gt;'` 를 생성하기 때문입니다.
 for e in [1, 2, 3] {} // 오류 :(</code></pre>
 <p>이것은 <a href="https://github.com/rust-lang/rust/issues/25725">오래된 문제</a> 였지만 해결책은 보이는 것처럼 간단하지 않습니다. 단순히 <a href="https://github.com/rust-lang/rust/pull/65819">트레이트 구현을 추가</a> 하면 기존 코드가 깨질 것입니다. <code>array.into_iter()</code> 는 <a href="https://doc.rust-lang.org/book/ch05-03-method-syntax.html#wheres-the---operator">메서드 호출 구문이 작동하는 방식</a> 때문에 암시적으로 <code>(&amp;array).into_iter()</code> 를 호출하므로 오늘날 이미 컴파일됩니다. 트레이트 구현을 추가하면 의미가 변경됩니다.</p>
 <p>일반적으로 이러한 유형의 손상(트레이트 구현 추가)은 ‘사소한’ 것으로 분류되어 허용됩니다. 그러나 이 경우에는 너무 많은 코드가 깨질 것입니다.</p>

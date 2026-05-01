@@ -93,7 +93,7 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-55effe88.js";
+            window.path_to_searchindex_js = "../searchindex-e23b9ebb.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../toc-20da6b24.js"></script>
@@ -644,7 +644,7 @@ fn foo_avx2() {}
 </span><span class="boring">#[cfg(target_feature = "sse2")] {
 </span>#[target_feature(enable = "sse")]
 fn foo_sse() {}
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 fn bar() {
     // 여기서 `foo_sse` 를 호출하는 것은 안전하지 않습니다. 비록 타겟 플랫폼에서
     // `sse` 가 기본적으로 활성화되어 있거나 컴파일러 플래그로 수동 활성화되어 있더라도,
@@ -653,14 +653,14 @@ fn bar() {
         foo_sse();
     }
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 #[target_feature(enable = "sse")]
 fn bar_sse() {
     // 여기서 `foo_sse` 를 호출하는 것은 안전합니다.
     foo_sse();
     || foo_sse();
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 #[target_feature(enable = "sse2")]
 fn bar_sse2() {
     // `sse2` 는 `sse` 를 포함하므로 여기서 `foo_sse` 를 호출하는 것은 안전합니다.
@@ -1058,7 +1058,7 @@ fn g() {
     println!("{}", std::panic::Location::caller());
     f();
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 fn calls_g() {
     g(); // &lt;-- g()가 이 위치를 두 번 출력함 (한 번은 자기 자신, 한 번은 f()로부터)
 }
@@ -1080,7 +1080,7 @@ fn h() {
     println!("{}", std::panic::Location::caller());
     g();
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 fn calls_h() {
     h(); // &lt;-- 이 위치를 세 번 출력함 (한 번은 자기 자신, 한 번은 g()로부터, 한 번은 f()로부터)
 }

@@ -96,7 +96,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-01ba4889.js";
+            window.path_to_searchindex_js = "searchindex-0481507b.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-f10b093a.js"></script>
@@ -247,13 +247,13 @@
 <pre class="playground"><code class="language-rust edition2024">use crate::List::{Cons, Nil};
 use std::cell::RefCell;
 use std::rc::Rc;
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 #[derive(Debug)]
 enum List {
     Cons(i32, RefCell&lt;Rc&lt;List&gt;&gt;),
     Nil,
 }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 impl List {
     fn tail(&amp;self) -&gt; Option&lt;&amp;RefCell&lt;Rc&lt;List&gt;&gt;&gt; {
         match self {
@@ -262,7 +262,7 @@ impl List {
         }
     }
 }
-<span class="boring">
+<span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">fn main() {}</span></code></pre>
 <figcaption><a href="#listing-15-25">Listing 15-25</a>: A cons list definition that holds a <code>RefCell&lt;T&gt;</code> so that we can modify what a <code>Cons</code> variant is referring to</figcaption>
 </figure>
@@ -273,13 +273,13 @@ impl List {
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">use crate::List::{Cons, Nil};
 </span><span class="boring">use std::cell::RefCell;
 </span><span class="boring">use std::rc::Rc;
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">#[derive(Debug)]
 </span><span class="boring">enum List {
 </span><span class="boring">    Cons(i32, RefCell&lt;Rc&lt;List&gt;&gt;),
 </span><span class="boring">    Nil,
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">impl List {
 </span><span class="boring">    fn tail(&amp;self) -&gt; Option&lt;&amp;RefCell&lt;Rc&lt;List&gt;&gt;&gt; {
 </span><span class="boring">        match self {
@@ -288,26 +288,26 @@ impl List {
 </span><span class="boring">        }
 </span><span class="boring">    }
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span>fn main() {
     let a = Rc::new(Cons(5, RefCell::new(Rc::new(Nil))));
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     println!("a initial rc count = {}", Rc::strong_count(&amp;a));
     println!("a next item = {:?}", a.tail());
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     let b = Rc::new(Cons(10, RefCell::new(Rc::clone(&amp;a))));
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     println!("a rc count after b creation = {}", Rc::strong_count(&amp;a));
     println!("b initial rc count = {}", Rc::strong_count(&amp;b));
     println!("b next item = {:?}", b.tail());
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     if let Some(link) = a.tail() {
         *link.borrow_mut() = Rc::clone(&amp;b);
     }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     println!("b rc count after changing a = {}", Rc::strong_count(&amp;b));
     println!("a rc count after changing a = {}", Rc::strong_count(&amp;a));
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     // Uncomment the next line to see that we have a cycle;
     // it will overflow the stack.
     // println!("a next item = {:?}", a.tail());
@@ -350,19 +350,19 @@ a rc count after changing a = 2
 <p><span class="filename">Файл: src/main.rs</span></p>
 <pre class="playground"><code class="language-rust edition2024">use std::cell::RefCell;
 use std::rc::Rc;
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 #[derive(Debug)]
 struct Node {
     value: i32,
     children: RefCell&lt;Vec&lt;Rc&lt;Node&gt;&gt;&gt;,
 }
-<span class="boring">
+<span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">fn main() {
 </span><span class="boring">    let leaf = Rc::new(Node {
 </span><span class="boring">        value: 3,
 </span><span class="boring">        children: RefCell::new(vec![]),
 </span><span class="boring">    });
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    let branch = Rc::new(Node {
 </span><span class="boring">        value: 5,
 </span><span class="boring">        children: RefCell::new(vec![Rc::clone(&amp;leaf)]),
@@ -374,19 +374,19 @@ struct Node {
 <span class="file-name">Filename: src/main.rs</span>
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">use std::cell::RefCell;
 </span><span class="boring">use std::rc::Rc;
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">#[derive(Debug)]
 </span><span class="boring">struct Node {
 </span><span class="boring">    value: i32,
 </span><span class="boring">    children: RefCell&lt;Vec&lt;Rc&lt;Node&gt;&gt;&gt;,
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span>fn main() {
     let leaf = Rc::new(Node {
         value: 3,
         children: RefCell::new(vec![]),
     });
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     let branch = Rc::new(Node {
         value: 5,
         children: RefCell::new(vec![Rc::clone(&amp;leaf)]),
@@ -402,31 +402,31 @@ struct Node {
 <p><span class="filename">Файл: src/main.rs</span></p>
 <pre class="playground"><code class="language-rust edition2024">use std::cell::RefCell;
 use std::rc::{Rc, Weak};
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 #[derive(Debug)]
 struct Node {
     value: i32,
     parent: RefCell&lt;Weak&lt;Node&gt;&gt;,
     children: RefCell&lt;Vec&lt;Rc&lt;Node&gt;&gt;&gt;,
 }
-<span class="boring">
+<span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">fn main() {
 </span><span class="boring">    let leaf = Rc::new(Node {
 </span><span class="boring">        value: 3,
 </span><span class="boring">        parent: RefCell::new(Weak::new()),
 </span><span class="boring">        children: RefCell::new(vec![]),
 </span><span class="boring">    });
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    println!("leaf parent = {:?}", leaf.parent.borrow().upgrade());
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    let branch = Rc::new(Node {
 </span><span class="boring">        value: 5,
 </span><span class="boring">        parent: RefCell::new(Weak::new()),
 </span><span class="boring">        children: RefCell::new(vec![Rc::clone(&amp;leaf)]),
 </span><span class="boring">    });
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    *leaf.parent.borrow_mut() = Rc::downgrade(&amp;branch);
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    println!("leaf parent = {:?}", leaf.parent.borrow().upgrade());
 </span><span class="boring">}</span></code></pre>
 <p>A node will be able to refer to its parent node but doesn’t own its parent. In Listing 15-28, we update <code>main</code> to use this new definition so that the <code>leaf</code> node will have a way to refer to its parent, <code>branch</code>.</p>
@@ -434,31 +434,31 @@ struct Node {
 <span class="file-name">Filename: src/main.rs</span>
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">use std::cell::RefCell;
 </span><span class="boring">use std::rc::{Rc, Weak};
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">#[derive(Debug)]
 </span><span class="boring">struct Node {
 </span><span class="boring">    value: i32,
 </span><span class="boring">    parent: RefCell&lt;Weak&lt;Node&gt;&gt;,
 </span><span class="boring">    children: RefCell&lt;Vec&lt;Rc&lt;Node&gt;&gt;&gt;,
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span>fn main() {
     let leaf = Rc::new(Node {
         value: 3,
         parent: RefCell::new(Weak::new()),
         children: RefCell::new(vec![]),
     });
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     println!("leaf parent = {:?}", leaf.parent.borrow().upgrade());
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     let branch = Rc::new(Node {
         value: 5,
         parent: RefCell::new(Weak::new()),
         children: RefCell::new(vec![Rc::clone(&amp;leaf)]),
     });
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     *leaf.parent.borrow_mut() = Rc::downgrade(&amp;branch);
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     println!("leaf parent = {:?}", leaf.parent.borrow().upgrade());
 }</code></pre>
 <figcaption><a href="#listing-15-28">Listing 15-28</a>: A <code>leaf</code> node with a weak reference to its parent node, <code>branch</code></figcaption>
@@ -480,49 +480,49 @@ children: RefCell { value: [] } }] } })
 <span class="file-name">Filename: src/main.rs</span>
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">use std::cell::RefCell;
 </span><span class="boring">use std::rc::{Rc, Weak};
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">#[derive(Debug)]
 </span><span class="boring">struct Node {
 </span><span class="boring">    value: i32,
 </span><span class="boring">    parent: RefCell&lt;Weak&lt;Node&gt;&gt;,
 </span><span class="boring">    children: RefCell&lt;Vec&lt;Rc&lt;Node&gt;&gt;&gt;,
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span>fn main() {
     let leaf = Rc::new(Node {
         value: 3,
         parent: RefCell::new(Weak::new()),
         children: RefCell::new(vec![]),
     });
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     println!(
         "leaf strong = {}, weak = {}",
         Rc::strong_count(&amp;leaf),
         Rc::weak_count(&amp;leaf),
     );
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     {
         let branch = Rc::new(Node {
             value: 5,
             parent: RefCell::new(Weak::new()),
             children: RefCell::new(vec![Rc::clone(&amp;leaf)]),
         });
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
         *leaf.parent.borrow_mut() = Rc::downgrade(&amp;branch);
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
         println!(
             "branch strong = {}, weak = {}",
             Rc::strong_count(&amp;branch),
             Rc::weak_count(&amp;branch),
         );
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
         println!(
             "leaf strong = {}, weak = {}",
             Rc::strong_count(&amp;leaf),
             Rc::weak_count(&amp;leaf),
         );
     }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     println!("leaf parent = {:?}", leaf.parent.borrow().upgrade());
     println!(
         "leaf strong = {}, weak = {}",

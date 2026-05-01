@@ -96,7 +96,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-01ba4889.js";
+            window.path_to_searchindex_js = "searchindex-0481507b.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-f10b093a.js"></script>
@@ -244,7 +244,7 @@
 <p>As you saw in Chapter 6, you can match patterns against literals directly. The following code gives some examples:</p>
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">fn main() {
 </span>    let x = 1;
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     match x {
         1 =&gt; println!("one"),
         2 =&gt; println!("two"),
@@ -260,13 +260,13 @@
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">fn main() {
 </span>    let x = Some(5);
     let y = 10;
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     match x {
         Some(50) =&gt; println!("Got 50"),
         Some(y) =&gt; println!("Matched, y = {y}"),
         _ =&gt; println!("Default case, x = {x:?}"),
     }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     println!("at the end: x = {x:?}, y = {y}");
 <span class="boring">}</span></code></pre>
 <figcaption><a href="#listing-19-11">Listing 19-11</a>: A <code>match</code> expression with an arm that introduces a new variable which shadows an existing variable <code>y</code></figcaption>
@@ -282,7 +282,7 @@
 <p>In <code>match</code> expressions, you can match multiple patterns using the <code>|</code> syntax, which is the pattern <em>or</em> operator. For example, in the following code, we match the value of <code>x</code> against the match arms, the first of which has an <em>or</em> option, meaning if the value of <code>x</code> matches either of the values in that arm, that arm’s code will run:</p>
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">fn main() {
 </span>    let x = 1;
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     match x {
         1 | 2 =&gt; println!("one or two"),
         3 =&gt; println!("three"),
@@ -294,7 +294,7 @@
 <p>The <code>..=</code> syntax allows us to match to an inclusive range of values. In the following code, when a pattern matches any of the values within the given range, that arm will execute:</p>
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">fn main() {
 </span>    let x = 5;
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     match x {
         1..=5 =&gt; println!("one through five"),
         _ =&gt; println!("something else"),
@@ -305,7 +305,7 @@
 <p>Here is an example using ranges of <code>char</code> values:</p>
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">fn main() {
 </span>    let x = 'c';
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     match x {
         'a'..='j' =&gt; println!("early ASCII letter"),
         'k'..='z' =&gt; println!("late ASCII letter"),
@@ -325,10 +325,10 @@
     x: i32,
     y: i32,
 }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 fn main() {
     let p = Point { x: 0, y: 7 };
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     let Point { x: a, y: b } = p;
     assert_eq!(0, a);
     assert_eq!(7, b);
@@ -342,10 +342,10 @@ fn main() {
     x: i32,
     y: i32,
 }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 fn main() {
     let p = Point { x: 0, y: 7 };
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     let Point { x, y } = p;
     assert_eq!(0, x);
     assert_eq!(7, y);
@@ -361,10 +361,10 @@ fn main() {
 </span><span class="boring">    x: i32,
 </span><span class="boring">    y: i32,
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span>fn main() {
     let p = Point { x: 0, y: 7 };
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     match p {
         Point { x, y: 0 } =&gt; println!("On the x axis at {x}"),
         Point { x: 0, y } =&gt; println!("On the y axis at {y}"),
@@ -391,10 +391,10 @@ fn main() {
     Write(String),
     ChangeColor(i32, i32, i32),
 }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 fn main() {
     let msg = Message::ChangeColor(0, 160, 255);
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     match msg {
         Message::Quit =&gt; {
             println!("The Quit variant has no data to destructure.");
@@ -425,17 +425,17 @@ fn main() {
     Rgb(i32, i32, i32),
     Hsv(i32, i32, i32),
 }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 enum Message {
     Quit,
     Move { x: i32, y: i32 },
     Write(String),
     ChangeColor(Color),
 }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 fn main() {
     let msg = Message::ChangeColor(Color::Hsv(0, 160, 255));
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     match msg {
         Message::ChangeColor(Color::Rgb(r, g, b)) =&gt; {
             println!("Change color to red {r}, green {g}, and blue {b}");
@@ -458,7 +458,7 @@ fn main() {
 </span><span class="boring">        x: i32,
 </span><span class="boring">        y: i32,
 </span><span class="boring">    }
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span>    let ((feet, inches), Point { x, y }) = ((3, 10), Point { x: 3, y: -10 });
 <span class="boring">}</span></code></pre>
 <p>This code lets us break complex types into their component parts so that we can use the values we’re interested in separately.</p>
@@ -474,7 +474,7 @@ fn main() {
 <pre class="playground"><code class="language-rust edition2024">fn foo(_: i32, y: i32) {
     println!("This code only uses the y parameter: {y}");
 }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 fn main() {
     foo(3, 4);
 }</code></pre>
@@ -490,7 +490,7 @@ fn main() {
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">fn main() {
 </span>    let mut setting_value = Some(5);
     let new_setting_value = Some(10);
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     match (setting_value, new_setting_value) {
         (Some(_), Some(_)) =&gt; {
             println!("Can't overwrite an existing customized value");
@@ -499,7 +499,7 @@ fn main() {
             setting_value = new_setting_value;
         }
     }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     println!("setting is {setting_value:?}");
 <span class="boring">}</span></code></pre>
 <figcaption><a href="#listing-19-18">Listing 19-18</a>: Using an underscore within patterns that match <code>Some</code> variants when we don’t need to use the value inside the <code>Some</code></figcaption>
@@ -510,7 +510,7 @@ fn main() {
 <figure class="listing" id="listing-19-19">
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">fn main() {
 </span>    let numbers = (2, 4, 8, 16, 32);
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     match numbers {
         (first, _, third, _, fifth) =&gt; {
             println!("Some numbers: {first}, {third}, {fifth}");
@@ -537,11 +537,11 @@ fn main() {
 <figure class="listing" id="listing-19-21">
 <pre><code class="language-rust ignore does_not_compile"><span class="boring">fn main() {
 </span>    let s = Some(String::from("Hello!"));
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     if let Some(_s) = s {
         println!("found a string");
     }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     println!("{s:?}");
 <span class="boring">}</span></code></pre>
 <figcaption><a href="#listing-19-21">Listing 19-21</a>: An unused variable starting with an underscore still binds the value, which might take ownership of the value.</figcaption>
@@ -550,11 +550,11 @@ fn main() {
 <figure class="listing" id="listing-19-22">
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">fn main() {
 </span>    let s = Some(String::from("Hello!"));
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     if let Some(_) = s {
         println!("found a string");
     }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     println!("{s:?}");
 <span class="boring">}</span></code></pre>
 <figcaption><a href="#listing-19-22">Listing 19-22</a>: Using an underscore does not bind the value.</figcaption>
@@ -570,9 +570,9 @@ fn main() {
         y: i32,
         z: i32,
     }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     let origin = Point { x: 0, y: 0, z: 0 };
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     match origin {
         Point { x, .. } =&gt; println!("x is {x}"),
     }
@@ -585,7 +585,7 @@ fn main() {
 <span class="file-name">Filename: src/main.rs</span>
 <pre class="playground"><code class="language-rust edition2024">fn main() {
     let numbers = (2, 4, 8, 16, 32);
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     match numbers {
         (first, .., last) =&gt; {
             println!("Some numbers: {first}, {last}");
@@ -600,7 +600,7 @@ fn main() {
 <span class="file-name">Filename: src/main.rs</span>
 <pre><code class="language-rust ignore does_not_compile">fn main() {
     let numbers = (2, 4, 8, 16, 32);
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     match numbers {
         (.., second, ..) =&gt; {
             println!("Some numbers: {second}")
@@ -619,7 +619,7 @@ error: `..` can only be used once per tuple pattern
   |          --          ^^ can only be used once per tuple pattern
   |          |
   |          previously used here
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 error: could not compile `patterns` (bin "patterns") due to 1 previous error
 </code></pre>
 <p>It’s impossible for Rust to determine how many values in the tuple to ignore before matching a value with <code>second</code> and then how many further values to ignore thereafter. This code could mean that we want to ignore <code>2</code>, bind <code>second</code> to <code>4</code>, and then ignore <code>8</code>, <code>16</code>, and <code>32</code>; or that we want to ignore <code>2</code> and <code>4</code>, bind <code>second</code> to <code>8</code>, and then ignore <code>16</code> and <code>32</code>; and so forth. The variable name <code>second</code> doesn’t mean anything special to Rust, so we get a compiler error because using <code>..</code> in two places like this is ambiguous.</p>
@@ -631,7 +631,7 @@ error: could not compile `patterns` (bin "patterns") due to 1 previous error
 <figure class="listing" id="listing-19-26">
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">fn main() {
 </span>    let num = Some(4);
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     match num {
         Some(x) if x % 2 == 0 =&gt; println!("The number {x} is even"),
         Some(x) =&gt; println!("The number {x} is odd"),
@@ -649,13 +649,13 @@ error: could not compile `patterns` (bin "patterns") due to 1 previous error
 <pre class="playground"><code class="language-rust edition2024">fn main() {
     let x = Some(5);
     let y = 10;
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     match x {
         Some(50) =&gt; println!("Got 50"),
         Some(n) if n == y =&gt; println!("Matched, n = {n}"),
         _ =&gt; println!("Default case, x = {x:?}"),
     }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     println!("at the end: x = {x:?}, y = {y}");
 }</code></pre>
 <figcaption><a href="#listing-19-27">Listing 19-27</a>: Using a match guard to test for equality with an outer variable</figcaption>
@@ -667,7 +667,7 @@ error: could not compile `patterns` (bin "patterns") due to 1 previous error
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">fn main() {
 </span>    let x = 4;
     let y = false;
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     match x {
         4 | 5 | 6 if y =&gt; println!("yes"),
         _ =&gt; println!("no"),
@@ -691,9 +691,9 @@ error: could not compile `patterns` (bin "patterns") due to 1 previous error
 </span>    enum Message {
         Hello { id: i32 },
     }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     let msg = Message::Hello { id: 5 };
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     match msg {
         Message::Hello { id: id @ 3..=7 } =&gt; {
             println!("Found an id in range: {id}")

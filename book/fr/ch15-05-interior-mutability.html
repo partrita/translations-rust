@@ -96,10 +96,10 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-5b6c4c3f.js";
+            window.path_to_searchindex_js = "searchindex-380cec70.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="toc-44dad460.js"></script>
+        <script src="toc-09667002.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -248,7 +248,7 @@
 <p>Contrairement à <code>Rc&lt;T&gt;</code>, le type <code>RefCell&lt;T&gt;</code> représente une propriété unique de la donnée qu’il contient. Qu’est-ce qui rend donc <code>RefCell&lt;T&gt;</code> différent d’un type comme <code>Box&lt;T&gt;</code> ? Souvenez-vous des règles d’emprunt que vous avez apprises au chapitre 4 :</p>
 <ul>
 <li>At any given time, you can have <em>either</em> one mutable reference or any number of immutable references (but not both).</li>
-<li>References must always be valid.</li>
+<li>Les références doivent toujours être en vigueur.</li>
 </ul>
 <p>With references and <code>Box&lt;T&gt;</code>, the borrowing rules’ invariants are enforced at compile time. With <code>RefCell&lt;T&gt;</code>, these invariants are enforced <em>at runtime</em>. With references, if you break these rules, you’ll get a compiler error. With <code>RefCell&lt;T&gt;</code>, if you break these rules, your program will panic and exit.</p>
 <p>Les avantages de vérifier les règles d’emprunt au moment de la compilation est que les erreurs vont se produire plus tôt dans le processus de développement et qu’il n’y a pas d’impact sur les performances à l’exécution car toute l’analyse a déjà été faite au préalable. Pour ces raisons, la vérification des règles d’emprunt au moment de compilation est le meilleur choix à faire dans la majorité des cas, ce qui explique pourquoi c’est le choix par défaut de Rust.</p>

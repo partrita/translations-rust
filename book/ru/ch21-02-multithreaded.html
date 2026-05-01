@@ -96,7 +96,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-01ba4889.js";
+            window.path_to_searchindex_js = "searchindex-0481507b.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-f10b093a.js"></script>
@@ -256,23 +256,23 @@
     time::Duration,
 };
 // --код сокращён--
-<span class="boring">
+<span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">fn main() {
 </span><span class="boring">    let listener = TcpListener::bind("127.0.0.1:7878").unwrap();
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    for stream in listener.incoming() {
 </span><span class="boring">        let stream = stream.unwrap();
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">        handle_connection(stream);
 </span><span class="boring">    }
 </span><span class="boring">}
-</span>
+</span>Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 fn handle_connection(mut stream: TcpStream) {
     // --код сокращён--
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 <span class="boring">    let buf_reader = BufReader::new(&amp;stream);
 </span><span class="boring">    let request_line = buf_reader.lines().next().unwrap().unwrap();
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span>    let (status_line, filename) = match &amp;request_line[..] {
         "GET / HTTP/1.1" =&gt; ("HTTP/1.1 200 OK", "hello.html"),
         "GET /sleep HTTP/1.1" =&gt; {
@@ -281,15 +281,15 @@ fn handle_connection(mut stream: TcpStream) {
         }
         _ =&gt; ("HTTP/1.1 404 NOT FOUND", "404.html"),
     };
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     // --код сокращён--
-<span class="boring">
+<span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    let contents = fs::read_to_string(filename).unwrap();
 </span><span class="boring">    let length = contents.len();
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    let response =
 </span><span class="boring">        format!("{status_line}\r\nContent-Length: {length}\r\n\r\n{contents}");
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    stream.write_all(response.as_bytes()).unwrap();
 </span>}</code></pre>
 <figcaption><a href="#listing-21-10">Listing 21-10</a>: Simulating a slow request by sleeping for five seconds</figcaption>
@@ -320,23 +320,23 @@ fn handle_connection(mut stream: TcpStream) {
 </span><span class="boring">    thread,
 </span><span class="boring">    time::Duration,
 </span><span class="boring">};
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span>fn main() {
     let listener = TcpListener::bind("127.0.0.1:7878").unwrap();
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     for stream in listener.incoming() {
         let stream = stream.unwrap();
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
         thread::spawn(|| {
             handle_connection(stream);
         });
     }
 }
-<span class="boring">
+<span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">fn handle_connection(mut stream: TcpStream) {
 </span><span class="boring">    let buf_reader = BufReader::new(&amp;stream);
 </span><span class="boring">    let request_line = buf_reader.lines().next().unwrap().unwrap();
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    let (status_line, filename) = match &amp;request_line[..] {
 </span><span class="boring">        "GET / HTTP/1.1" =&gt; ("HTTP/1.1 200 OK", "hello.html"),
 </span><span class="boring">        "GET /sleep HTTP/1.1" =&gt; {
@@ -345,13 +345,13 @@ fn handle_connection(mut stream: TcpStream) {
 </span><span class="boring">        }
 </span><span class="boring">        _ =&gt; ("HTTP/1.1 404 NOT FOUND", "404.html"),
 </span><span class="boring">    };
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    let contents = fs::read_to_string(filename).unwrap();
 </span><span class="boring">    let length = contents.len();
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    let response =
 </span><span class="boring">        format!("{status_line}\r\nContent-Length: {length}\r\n\r\n{contents}");
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    stream.write_all(response.as_bytes()).unwrap();
 </span><span class="boring">}</span></code></pre>
 <figcaption><a href="#listing-21-11">Listing 21-11</a>: Spawning a new thread for each stream</figcaption>
@@ -371,24 +371,24 @@ fn handle_connection(mut stream: TcpStream) {
 </span><span class="boring">    thread,
 </span><span class="boring">    time::Duration,
 </span><span class="boring">};
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span>fn main() {
     let listener = TcpListener::bind("127.0.0.1:7878").unwrap();
     let pool = ThreadPool::new(4);
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     for stream in listener.incoming() {
         let stream = stream.unwrap();
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
         pool.execute(|| {
             handle_connection(stream);
         });
     }
 }
-<span class="boring">
+<span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">fn handle_connection(mut stream: TcpStream) {
 </span><span class="boring">    let buf_reader = BufReader::new(&amp;stream);
 </span><span class="boring">    let request_line = buf_reader.lines().next().unwrap().unwrap();
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    let (status_line, filename) = match &amp;request_line[..] {
 </span><span class="boring">        "GET / HTTP/1.1" =&gt; ("HTTP/1.1 200 OK", "hello.html"),
 </span><span class="boring">        "GET /sleep HTTP/1.1" =&gt; {
@@ -397,13 +397,13 @@ fn handle_connection(mut stream: TcpStream) {
 </span><span class="boring">        }
 </span><span class="boring">        _ =&gt; ("HTTP/1.1 404 NOT FOUND", "404.html"),
 </span><span class="boring">    };
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    let contents = fs::read_to_string(filename).unwrap();
 </span><span class="boring">    let length = contents.len();
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    let response =
 </span><span class="boring">        format!("{status_line}\r\nContent-Length: {length}\r\n\r\n{contents}");
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    stream.write_all(response.as_bytes()).unwrap();
 </span><span class="boring">}</span></code></pre>
 <figcaption><a href="#listing-21-12">Listing 21-12</a>: Our ideal <code>ThreadPool</code> interface</figcaption>
@@ -420,7 +420,7 @@ error[E0433]: failed to resolve: use of undeclared type `ThreadPool`
    |
 11 |     let pool = ThreadPool::new(4);
    |                ^^^^^^^^^^ use of undeclared type `ThreadPool`
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 For more information about this error, try `rustc --explain E0433`.
 error: could not compile `hello` (bin "hello") due to 1 previous error
 </code></pre>
@@ -441,24 +441,24 @@ error: could not compile `hello` (bin "hello") due to 1 previous error
 </span><span class="boring">    thread,
 </span><span class="boring">    time::Duration,
 </span><span class="boring">};
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">fn main() {
 </span><span class="boring">    let listener = TcpListener::bind("127.0.0.1:7878").unwrap();
 </span><span class="boring">    let pool = ThreadPool::new(4);
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    for stream in listener.incoming() {
 </span><span class="boring">        let stream = stream.unwrap();
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">        pool.execute(|| {
 </span><span class="boring">            handle_connection(stream);
 </span><span class="boring">        });
 </span><span class="boring">    }
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">fn handle_connection(mut stream: TcpStream) {
 </span><span class="boring">    let buf_reader = BufReader::new(&amp;stream);
 </span><span class="boring">    let request_line = buf_reader.lines().next().unwrap().unwrap();
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    let (status_line, filename) = match &amp;request_line[..] {
 </span><span class="boring">        "GET / HTTP/1.1" =&gt; ("HTTP/1.1 200 OK", "hello.html"),
 </span><span class="boring">        "GET /sleep HTTP/1.1" =&gt; {
@@ -467,13 +467,13 @@ error: could not compile `hello` (bin "hello") due to 1 previous error
 </span><span class="boring">        }
 </span><span class="boring">        _ =&gt; ("HTTP/1.1 404 NOT FOUND", "404.html"),
 </span><span class="boring">    };
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    let contents = fs::read_to_string(filename).unwrap();
 </span><span class="boring">    let length = contents.len();
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    let response =
 </span><span class="boring">        format!("{status_line}\r\nContent-Length: {length}\r\n\r\n{contents}");
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    stream.write_all(response.as_bytes()).unwrap();
 </span><span class="boring">}</span></code></pre>
 </figure>
@@ -485,7 +485,7 @@ error[E0599]: no function or associated item named `new` found for struct `Threa
    |
 12 |     let pool = ThreadPool::new(4);
    |                            ^^^ function or associated item not found in `ThreadPool`
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 For more information about this error, try `rustc --explain E0599`.
 error: could not compile `hello` (bin "hello") due to 1 previous error
 </code></pre>
@@ -493,7 +493,7 @@ error: could not compile `hello` (bin "hello") due to 1 previous error
 <figure class="listing">
 <span class="file-name">Filename: src/lib.rs</span>
 <pre><code class="language-rust noplayground">pub struct ThreadPool;
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 impl ThreadPool {
     pub fn new(size: usize) -&gt; ThreadPool {
         ThreadPool
@@ -510,7 +510,7 @@ error[E0599]: no method named `execute` found for struct `ThreadPool` in the cur
    |
 17 |         pool.execute(|| {
    |         -----^^^^^^^ method not found in `ThreadPool`
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 For more information about this error, try `rustc --explain E0599`.
 error: could not compile `hello` (bin "hello") due to 1 previous error
 </code></pre>
@@ -526,13 +526,13 @@ error: could not compile `hello` (bin "hello") due to 1 previous error
 <figure class="listing">
 <span class="file-name">Filename: src/lib.rs</span>
 <pre><code class="language-rust noplayground"><span class="boring">pub struct ThreadPool;
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span>impl ThreadPool {
     // --код сокращён--
 <span class="boring">    pub fn new(size: usize) -&gt; ThreadPool {
 </span><span class="boring">        ThreadPool
 </span><span class="boring">    }
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span>    pub fn execute&lt;F&gt;(&amp;self, f: F)
     where
         F: FnOnce() + Send + 'static,
@@ -556,7 +556,7 @@ error: could not compile `hello` (bin "hello") due to 1 previous error
 <figure class="listing" id="listing-21-13">
 <span class="file-name">Filename: src/lib.rs</span>
 <pre><code class="language-rust noplayground"><span class="boring">pub struct ThreadPool;
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span>impl ThreadPool {
     /// Create a new ThreadPool.
     ///
@@ -567,10 +567,10 @@ error: could not compile `hello` (bin "hello") due to 1 previous error
     /// The `new` function will panic if the size is zero.
     pub fn new(size: usize) -&gt; ThreadPool {
         assert!(size &gt; 0);
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
         ThreadPool
     }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     // --код сокращён--
 <span class="boring">    pub fn execute&lt;F&gt;(&amp;self, f: F)
 </span><span class="boring">    where
@@ -595,11 +595,11 @@ error: could not compile `hello` (bin "hello") due to 1 previous error
 <figure class="listing" id="listing-21-14">
 <span class="file-name">Filename: src/lib.rs</span>
 <pre><code class="language-rust ignore not_desired_behavior">use std::thread;
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 pub struct ThreadPool {
     threads: Vec&lt;thread::JoinHandle&lt;()&gt;&gt;,
 }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 impl ThreadPool {
     // --код сокращён--
 <span class="boring">    /// Create a new ThreadPool.
@@ -611,17 +611,17 @@ impl ThreadPool {
 </span><span class="boring">    /// The `new` function will panic if the size is zero.
 </span>    pub fn new(size: usize) -&gt; ThreadPool {
         assert!(size &gt; 0);
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
         let mut threads = Vec::with_capacity(size);
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
         for _ in 0..size {
             // create some threads and store them in the vector
         }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
         ThreadPool { threads }
     }
     // --код сокращён--
-<span class="boring">
+<span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    pub fn execute&lt;F&gt;(&amp;self, f: F)
 </span><span class="boring">    where
 </span><span class="boring">        F: FnOnce() + Send + 'static,
@@ -652,11 +652,11 @@ impl ThreadPool {
 <figure class="listing" id="listing-21-15">
 <span class="file-name">Filename: src/lib.rs</span>
 <pre><code class="language-rust noplayground">use std::thread;
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 pub struct ThreadPool {
     workers: Vec&lt;Worker&gt;,
 }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 impl ThreadPool {
     // --код сокращён--
 <span class="boring">    /// Create a new ThreadPool.
@@ -668,33 +668,33 @@ impl ThreadPool {
 </span><span class="boring">    /// The `new` function will panic if the size is zero.
 </span>    pub fn new(size: usize) -&gt; ThreadPool {
         assert!(size &gt; 0);
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
         let mut workers = Vec::with_capacity(size);
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
         for id in 0..size {
             workers.push(Worker::new(id));
         }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
         ThreadPool { workers }
     }
     // --код сокращён--
-<span class="boring">
+<span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    pub fn execute&lt;F&gt;(&amp;self, f: F)
 </span><span class="boring">    where
 </span><span class="boring">        F: FnOnce() + Send + 'static,
 </span><span class="boring">    {
 </span><span class="boring">    }
 </span>}
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 struct Worker {
     id: usize,
     thread: thread::JoinHandle&lt;()&gt;,
 }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 impl Worker {
     fn new(id: usize) -&gt; Worker {
         let thread = thread::spawn(|| {});
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
         Worker { id, thread }
     }
 }</code></pre>
@@ -721,14 +721,14 @@ impl Worker {
 <figure class="listing" id="listing-21-16">
 <span class="file-name">Filename: src/lib.rs</span>
 <pre><code class="language-rust noplayground">use std::{sync::mpsc, thread};
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 pub struct ThreadPool {
     workers: Vec&lt;Worker&gt;,
     sender: mpsc::Sender&lt;Job&gt;,
 }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 struct Job;
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 impl ThreadPool {
     // --код сокращён--
 <span class="boring">    /// Create a new ThreadPool.
@@ -740,35 +740,35 @@ impl ThreadPool {
 </span><span class="boring">    /// The `new` function will panic if the size is zero.
 </span>    pub fn new(size: usize) -&gt; ThreadPool {
         assert!(size &gt; 0);
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
         let (sender, receiver) = mpsc::channel();
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
         let mut workers = Vec::with_capacity(size);
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
         for id in 0..size {
             workers.push(Worker::new(id));
         }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
         ThreadPool { workers, sender }
     }
     // --код сокращён--
-<span class="boring">
+<span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    pub fn execute&lt;F&gt;(&amp;self, f: F)
 </span><span class="boring">    where
 </span><span class="boring">        F: FnOnce() + Send + 'static,
 </span><span class="boring">    {
 </span><span class="boring">    }
 </span>}
-<span class="boring">
+<span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">struct Worker {
 </span><span class="boring">    id: usize,
 </span><span class="boring">    thread: thread::JoinHandle&lt;()&gt;,
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">impl Worker {
 </span><span class="boring">    fn new(id: usize) -&gt; Worker {
 </span><span class="boring">        let thread = thread::spawn(|| {});
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">        Worker { id, thread }
 </span><span class="boring">    }
 </span><span class="boring">}</span></code></pre>
@@ -779,14 +779,14 @@ impl ThreadPool {
 <figure class="listing" id="listing-21-17">
 <span class="file-name">Filename: src/lib.rs</span>
 <pre><code class="language-rust ignore does_not_compile"><span class="boring">use std::{sync::mpsc, thread};
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">pub struct ThreadPool {
 </span><span class="boring">    workers: Vec&lt;Worker&gt;,
 </span><span class="boring">    sender: mpsc::Sender&lt;Job&gt;,
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">struct Job;
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span>impl ThreadPool {
     // --код сокращён--
 <span class="boring">    /// Create a new ThreadPool.
@@ -798,40 +798,40 @@ impl ThreadPool {
 </span><span class="boring">    /// The `new` function will panic if the size is zero.
 </span>    pub fn new(size: usize) -&gt; ThreadPool {
         assert!(size &gt; 0);
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
         let (sender, receiver) = mpsc::channel();
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
         let mut workers = Vec::with_capacity(size);
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
         for id in 0..size {
             workers.push(Worker::new(id, receiver));
         }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
         ThreadPool { workers, sender }
     }
     // --код сокращён--
-<span class="boring">
+<span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    pub fn execute&lt;F&gt;(&amp;self, f: F)
 </span><span class="boring">    where
 </span><span class="boring">        F: FnOnce() + Send + 'static,
 </span><span class="boring">    {
 </span><span class="boring">    }
 </span>}
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 // --код сокращён--
-
-<span class="boring">
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
+<span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">struct Worker {
 </span><span class="boring">    id: usize,
 </span><span class="boring">    thread: thread::JoinHandle&lt;()&gt;,
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span>impl Worker {
     fn new(id: usize, receiver: mpsc::Receiver&lt;Job&gt;) -&gt; Worker {
         let thread = thread::spawn(|| {
             receiver;
         });
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
         Worker { id, thread }
     }
 }</code></pre>
@@ -863,7 +863,7 @@ help: consider moving the expression out of the loop so it is only moved once
 26 ~         for id in 0..size {
 27 ~             workers.push(value);
    |
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 For more information about this error, try `rustc --explain E0382`.
 error: could not compile `hello` (lib) due to 1 previous error
 </code></pre>
@@ -877,14 +877,14 @@ error: could not compile `hello` (lib) due to 1 previous error
     thread,
 };
 // --код сокращён--
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 <span class="boring">pub struct ThreadPool {
 </span><span class="boring">    workers: Vec&lt;Worker&gt;,
 </span><span class="boring">    sender: mpsc::Sender&lt;Job&gt;,
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">struct Job;
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span>impl ThreadPool {
     // --код сокращён--
 <span class="boring">    /// Create a new ThreadPool.
@@ -896,43 +896,43 @@ error: could not compile `hello` (lib) due to 1 previous error
 </span><span class="boring">    /// The `new` function will panic if the size is zero.
 </span>    pub fn new(size: usize) -&gt; ThreadPool {
         assert!(size &gt; 0);
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
         let (sender, receiver) = mpsc::channel();
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
         let receiver = Arc::new(Mutex::new(receiver));
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
         let mut workers = Vec::with_capacity(size);
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
         for id in 0..size {
             workers.push(Worker::new(id, Arc::clone(&amp;receiver)));
         }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
         ThreadPool { workers, sender }
     }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     // --код сокращён--
-<span class="boring">
+<span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    pub fn execute&lt;F&gt;(&amp;self, f: F)
 </span><span class="boring">    where
 </span><span class="boring">        F: FnOnce() + Send + 'static,
 </span><span class="boring">    {
 </span><span class="boring">    }
 </span>}
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 // --код сокращён--
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 <span class="boring">struct Worker {
 </span><span class="boring">    id: usize,
 </span><span class="boring">    thread: thread::JoinHandle&lt;()&gt;,
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span>impl Worker {
     fn new(id: usize, receiver: Arc&lt;Mutex&lt;mpsc::Receiver&lt;Job&gt;&gt;&gt;) -&gt; Worker {
         // --код сокращён--
 <span class="boring">        let thread = thread::spawn(|| {
 </span><span class="boring">            receiver;
 </span><span class="boring">        });
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">        Worker { id, thread }
 </span>    }
 }</code></pre>
@@ -948,16 +948,16 @@ error: could not compile `hello` (lib) due to 1 previous error
 </span><span class="boring">    sync::{Arc, Mutex, mpsc},
 </span><span class="boring">    thread,
 </span><span class="boring">};
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">pub struct ThreadPool {
 </span><span class="boring">    workers: Vec&lt;Worker&gt;,
 </span><span class="boring">    sender: mpsc::Sender&lt;Job&gt;,
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span>// --код сокращён--
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 type Job = Box&lt;dyn FnOnce() + Send + 'static&gt;;
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 impl ThreadPool {
     // --код сокращён--
 <span class="boring">    /// Create a new ThreadPool.
@@ -969,43 +969,43 @@ impl ThreadPool {
 </span><span class="boring">    /// The `new` function will panic if the size is zero.
 </span><span class="boring">    pub fn new(size: usize) -&gt; ThreadPool {
 </span><span class="boring">        assert!(size &gt; 0);
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">        let (sender, receiver) = mpsc::channel();
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">        let receiver = Arc::new(Mutex::new(receiver));
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">        let mut workers = Vec::with_capacity(size);
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">        for id in 0..size {
 </span><span class="boring">            workers.push(Worker::new(id, Arc::clone(&amp;receiver)));
 </span><span class="boring">        }
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">        ThreadPool { workers, sender }
 </span><span class="boring">    }
-</span>
+</span>Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     pub fn execute&lt;F&gt;(&amp;self, f: F)
     where
         F: FnOnce() + Send + 'static,
     {
         let job = Box::new(f);
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
         self.sender.send(job).unwrap();
     }
 }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 // --код сокращён--
-<span class="boring">
+<span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">struct Worker {
 </span><span class="boring">    id: usize,
 </span><span class="boring">    thread: thread::JoinHandle&lt;()&gt;,
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">impl Worker {
 </span><span class="boring">    fn new(id: usize, receiver: Arc&lt;Mutex&lt;mpsc::Receiver&lt;Job&gt;&gt;&gt;) -&gt; Worker {
 </span><span class="boring">        let thread = thread::spawn(|| {
 </span><span class="boring">            receiver;
 </span><span class="boring">        });
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">        Worker { id, thread }
 </span><span class="boring">    }
 </span><span class="boring">}</span></code></pre>
@@ -1019,14 +1019,14 @@ impl ThreadPool {
 </span><span class="boring">    sync::{Arc, Mutex, mpsc},
 </span><span class="boring">    thread,
 </span><span class="boring">};
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">pub struct ThreadPool {
 </span><span class="boring">    workers: Vec&lt;Worker&gt;,
 </span><span class="boring">    sender: mpsc::Sender&lt;Job&gt;,
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">type Job = Box&lt;dyn FnOnce() + Send + 'static&gt;;
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">impl ThreadPool {
 </span><span class="boring">    /// Create a new ThreadPool.
 </span><span class="boring">    ///
@@ -1037,49 +1037,49 @@ impl ThreadPool {
 </span><span class="boring">    /// The `new` function will panic if the size is zero.
 </span><span class="boring">    pub fn new(size: usize) -&gt; ThreadPool {
 </span><span class="boring">        assert!(size &gt; 0);
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">        let (sender, receiver) = mpsc::channel();
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">        let receiver = Arc::new(Mutex::new(receiver));
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">        let mut workers = Vec::with_capacity(size);
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">        for id in 0..size {
 </span><span class="boring">            workers.push(Worker::new(id, Arc::clone(&amp;receiver)));
 </span><span class="boring">        }
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">        ThreadPool { workers, sender }
 </span><span class="boring">    }
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    pub fn execute&lt;F&gt;(&amp;self, f: F)
 </span><span class="boring">    where
 </span><span class="boring">        F: FnOnce() + Send + 'static,
 </span><span class="boring">    {
 </span><span class="boring">        let job = Box::new(f);
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">        self.sender.send(job).unwrap();
 </span><span class="boring">    }
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">struct Worker {
 </span><span class="boring">    id: usize,
 </span><span class="boring">    thread: thread::JoinHandle&lt;()&gt;,
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span>// --код сокращён--
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 impl Worker {
     fn new(id: usize, receiver: Arc&lt;Mutex&lt;mpsc::Receiver&lt;Job&gt;&gt;&gt;) -&gt; Worker {
         let thread = thread::spawn(move || {
             loop {
                 let job = receiver.lock().unwrap().recv().unwrap();
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
                 println!("Worker {id} got a job; executing.");
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
                 job();
             }
         });
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
         Worker { id, thread }
     }
 }</code></pre>
@@ -1106,7 +1106,7 @@ warning: field `workers` is never read
   |     ^^^^^^^
   |
   = note: `#[warn(dead_code)]` on by default
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 warning: fields `id` and `thread` are never read
   --&gt; src/lib.rs:48:5
    |
@@ -1116,7 +1116,7 @@ warning: fields `id` and `thread` are never read
    |     ^^
 49 |     thread: thread::JoinHandle&lt;()&gt;,
    |     ^^^^^^
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 warning: `hello` (lib) generated 2 warnings
     Finished `dev` profile [unoptimized + debuginfo] target(s) in 4.91s
      Running `target/debug/hello`
@@ -1143,14 +1143,14 @@ Worker 2 got a job; executing.
 </span><span class="boring">    sync::{Arc, Mutex, mpsc},
 </span><span class="boring">    thread,
 </span><span class="boring">};
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">pub struct ThreadPool {
 </span><span class="boring">    workers: Vec&lt;Worker&gt;,
 </span><span class="boring">    sender: mpsc::Sender&lt;Job&gt;,
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">type Job = Box&lt;dyn FnOnce() + Send + 'static&gt;;
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">impl ThreadPool {
 </span><span class="boring">    /// Create a new ThreadPool.
 </span><span class="boring">    ///
@@ -1161,46 +1161,46 @@ Worker 2 got a job; executing.
 </span><span class="boring">    /// The `new` function will panic if the size is zero.
 </span><span class="boring">    pub fn new(size: usize) -&gt; ThreadPool {
 </span><span class="boring">        assert!(size &gt; 0);
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">        let (sender, receiver) = mpsc::channel();
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">        let receiver = Arc::new(Mutex::new(receiver));
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">        let mut workers = Vec::with_capacity(size);
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">        for id in 0..size {
 </span><span class="boring">            workers.push(Worker::new(id, Arc::clone(&amp;receiver)));
 </span><span class="boring">        }
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">        ThreadPool { workers, sender }
 </span><span class="boring">    }
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    pub fn execute&lt;F&gt;(&amp;self, f: F)
 </span><span class="boring">    where
 </span><span class="boring">        F: FnOnce() + Send + 'static,
 </span><span class="boring">    {
 </span><span class="boring">        let job = Box::new(f);
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">        self.sender.send(job).unwrap();
 </span><span class="boring">    }
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">struct Worker {
 </span><span class="boring">    id: usize,
 </span><span class="boring">    thread: thread::JoinHandle&lt;()&gt;,
 </span><span class="boring">}
 </span>// --код сокращён--
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 impl Worker {
     fn new(id: usize, receiver: Arc&lt;Mutex&lt;mpsc::Receiver&lt;Job&gt;&gt;&gt;) -&gt; Worker {
         let thread = thread::spawn(move || {
             while let Ok(job) = receiver.lock().unwrap().recv() {
                 println!("Worker {id} got a job; executing.");
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
                 job();
             }
         });
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
         Worker { id, thread }
     }
 }</code></pre>

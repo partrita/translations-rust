@@ -93,7 +93,7 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-55effe88.js";
+            window.path_to_searchindex_js = "../searchindex-e23b9ebb.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../toc-20da6b24.js"></script>
@@ -269,10 +269,10 @@ let x = &amp;mut foo::&lt;i32&gt;;
 </span><span class="boring">fn main() {
 </span><span class="boring">let want_i32 = false;
 </span><span class="boring">fn foo&lt;T&gt;() { }
-</span>
+</span>   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // 여기서 `foo_ptr_1` 은 함수 포인터 타입 `fn()` 을 가집니다
 let foo_ptr_1: fn() = foo::&lt;i32&gt;;
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // ... `foo_ptr_2` 도 마찬가지입니다 - 이 코드는 타입 검사를 통과합니다.
 let foo_ptr_2 = if want_i32 {
     foo::&lt;i32&gt;

@@ -97,7 +97,7 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-56895a7e.js";
+            window.path_to_searchindex_js = "../searchindex-40d30f76.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../toc-6b0c3669.js"></script>
@@ -254,7 +254,7 @@ $ tree .
 ├── Cargo.toml
 └── src
     └── main.rs
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 1 directory, 2 files
 </code></pre>
 <p><code>Cargo.toml</code> 을 자세히 살펴봅시다:</p>
@@ -262,9 +262,9 @@ $ tree .
 name = "hello_world"
 version = "0.1.0"
 edition = "2024"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [dependencies]
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 </code></pre>
 <p>이것을 <a href="../appendix/glossary.html#manifest" title="&quot;매니페스트&quot; (용어집 항목)"><em><strong>매니페스트</strong></em></a>라고 하며, Cargo가 패키지를 컴파일하는 데 필요한 모든 메타데이터를 포함합니다. 이 파일은 <a href="https://toml.io/">TOML</a> 형식(/tɑməl/로 발음)으로 작성되었습니다.</p>
 <p><code>src/main.rs</code> 의 내용은 다음과 같습니다:</p>

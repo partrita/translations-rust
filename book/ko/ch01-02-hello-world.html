@@ -96,7 +96,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-ba1bddcc.js";
+            window.path_to_searchindex_js = "searchindex-18122752.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-a05ef4ad.js"></script>
@@ -289,7 +289,7 @@ Hello, world!
 <h3 id="the-anatomy-of-a-rust-program"><a class="header" href="#the-anatomy-of-a-rust-program">The Anatomy of a Rust Program</a></h3>
 <p>이 “Hello, world!” 프로그램을 자세히 살펴보겠습니다. 여기 퍼즐의 첫 번째 조각이 있습니다:</p>
 <pre class="playground"><code class="language-rust edition2024">fn main() {
-
+제네릭 타입 파라미터를 사용할 때, 제네릭 타입에 대한 기본 구체 타입을 지정할 수 있습니다. 이렇게 하면 기본 타입이 작동하는 경우 트레이트 구현자가 구체 타입을 지정할 필요가 없습니다. 제네릭 타입을 선언할 때 `&lt;PlaceholderType=ConcreteType&gt;` 문법을 사용하여 기본 타입을 지정합니다.
 }</code></pre>
 <p>These lines define a function named <code>main</code>. The <code>main</code> function is special: It is always the first code that runs in every executable Rust program. Here, the first line declares a function named <code>main</code> that has no parameters and returns nothing. If there were parameters, they would go inside the parentheses (<code>()</code>).</p>
 <p>함수 본문은 <code>{}</code> 로 묶여 있습니다. Rust는 모든 함수 본문에 중괄호를 요구합니다. 여는 중괄호를 함수 선언과 같은 줄에 배치하고 그 사이에 공백 하나를 추가하는 것이 좋은 스타일입니다.</p>

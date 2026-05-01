@@ -93,7 +93,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-55effe88.js";
+            window.path_to_searchindex_js = "searchindex-e23b9ebb.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-20da6b24.js"></script>
@@ -1079,61 +1079,61 @@ BLOCK_COMMENT</text>
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span>//! 이 크레이트의 암시적 익명 모듈에 적용되는 문서 주석
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 pub mod outer_module {
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
     //!  - 내부 라인 문서
     //!! - 여전히 내부 라인 문서 (하지만 시작에 느낌표가 있음)
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
     /*!  - 내부 블록 문서 */
     /*!! - 여전히 내부 블록 문서 (하지만 시작에 느낌표가 있음) */
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
     //   - 단순 주석
     ///  - 외부 라인 문서 (정확히 슬래시 3개)
     //// - 단순 주석
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
     /*   - 단순 주석 */
     /**  - 외부 블록 문서 (정확히) 별표 2개 */
     /*** - 단순 주석 */
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
     pub mod inner_module {}
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
     pub mod nested_comments {
         /* Rust에서는 /* /* 주석을 중첩할 수 있습니다 */ */ */
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
         // 세 가지 유형의 블록 주석은 다른 유형 내에 포함되거나 중첩될 수 있습니다:
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
         /*   /* */  /** */  /*! */  */
         /*!  /* */  /** */  /*! */  */
         /**  /* */  /** */  /*! */  */
         pub mod dummy_item {}
     }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
     pub mod degenerate_cases {
         // 비어 있는 내부 라인 문서
         //!
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
         // 비어 있는 내부 블록 문서
         /*!*/
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
         // 비어 있는 라인 주석
         //
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
         // 비어 있는 외부 라인 문서
         ///
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
         // 비어 있는 블록 주석
         /**/
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
         pub mod dummy_item {}
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
         // 비어 있는 2-별표 블록은 문서 블록이 아니라 블록 주석입니다.
         /***/
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
     }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
     /* 다음은 외부 문서 주석이 문서를 받을 항목을 요구하기 때문에 허용되지 않습니다 */
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
     /// 내 항목은 어디에 있나요?
 <span class="boring">  mod boo {}
 </span>}

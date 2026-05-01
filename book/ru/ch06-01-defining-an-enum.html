@@ -96,7 +96,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-01ba4889.js";
+            window.path_to_searchindex_js = "searchindex-0481507b.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-f10b093a.js"></script>
@@ -247,15 +247,15 @@
     V4,
     V6,
 }
-<span class="boring">
+<span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">fn main() {
 </span><span class="boring">    let four = IpAddrKind::V4;
 </span><span class="boring">    let six = IpAddrKind::V6;
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    route(IpAddrKind::V4);
 </span><span class="boring">    route(IpAddrKind::V6);
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">fn route(ip_kind: IpAddrKind) {}</span></code></pre>
 <p><code>IpAddrKind</code> теперь является пользовательским типом данных, который мы можем использовать в любом другом месте нашего кода.</p>
 <h3 id="значения-перечислений"><a class="header" href="#значения-перечислений">Значения перечислений</a></h3>
@@ -264,45 +264,45 @@
 </span><span class="boring">    V4,
 </span><span class="boring">    V6,
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">fn main() {
 </span>    let four = IpAddrKind::V4;
     let six = IpAddrKind::V6;
-<span class="boring">
+<span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    route(IpAddrKind::V4);
 </span><span class="boring">    route(IpAddrKind::V6);
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">fn route(ip_kind: IpAddrKind) {}</span></code></pre>
 <p>Обратите внимание, что варианты перечисления находятся в пространстве имён вместе с его идентификатором, а для их обособления мы используем двойное двоеточие. Это удобно тем, что теперь оба значения <code>IpAddrKind::V4</code> и <code>IpAddrKind::V6</code> относятся к одному типу: <code>IpAddrKind</code>. Затем мы можем, например, определить функцию, которая принимает любой из вариантов <code>IpAddrKind</code>:</p>
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">enum IpAddrKind {
 </span><span class="boring">    V4,
 </span><span class="boring">    V6,
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">fn main() {
 </span><span class="boring">    let four = IpAddrKind::V4;
 </span><span class="boring">    let six = IpAddrKind::V6;
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    route(IpAddrKind::V4);
 </span><span class="boring">    route(IpAddrKind::V6);
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span>fn route(ip_kind: IpAddrKind) {}</code></pre>
 <p>Можно вызвать эту функцию с любым из вариантов:</p>
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">enum IpAddrKind {
 </span><span class="boring">    V4,
 </span><span class="boring">    V6,
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">fn main() {
 </span><span class="boring">    let four = IpAddrKind::V4;
 </span><span class="boring">    let six = IpAddrKind::V6;
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span>    route(IpAddrKind::V4);
     route(IpAddrKind::V6);
 <span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">fn route(ip_kind: IpAddrKind) {}</span></code></pre>
 <p>Использование перечислений имеет ещё больше преимуществ. Если поразмыслить о нашем типе IP-адреса, то выяснится, что на данный момент у нас нет возможности хранить собственно <em>сам</em> IP-адрес; мы пока можем знать лишь его тип. Учитывая, что недавно (в Главе 5) вы узнали о структурах, у вас может возникнуть соблазн решить эту проблему с помощью структур, как показано в Листинге 6-1.</p>
 <figure class="listing" id="listing-6-1">
@@ -311,17 +311,17 @@
         V4,
         V6,
     }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     struct IpAddr {
         kind: IpAddrKind,
         address: String,
     }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     let home = IpAddr {
         kind: IpAddrKind::V4,
         address: String::from("127.0.0.1"),
     };
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     let loopback = IpAddr {
         kind: IpAddrKind::V6,
         address: String::from("::1"),
@@ -336,9 +336,9 @@
         V4(String),
         V6(String),
     }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     let home = IpAddr::V4(String::from("127.0.0.1"));
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     let loopback = IpAddr::V6(String::from("::1"));
 <span class="boring">}</span></code></pre>
 <p>We attach data to each variant of the enum directly, so there is no need for an extra struct. Here, it’s also easier to see another detail of how enums work: The name of each enum variant that we define also becomes a function that constructs an instance of the enum. That is, <code>IpAddr::V4()</code> is a function call that takes a <code>String</code> argument and returns an instance of the <code>IpAddr</code> type. We automatically get this constructor function defined as a result of defining the enum.</p>
@@ -348,9 +348,9 @@
         V4(u8, u8, u8, u8),
         V6(String),
     }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     let home = IpAddr::V4(127, 0, 0, 1);
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     let loopback = IpAddr::V6(String::from("::1"));
 <span class="boring">}</span></code></pre>
 <p>We’ve shown several different ways to define data structures to store version four and version six IP addresses. However, as it turns out, wanting to store IP addresses and encode which kind they are is so common that <a href="../std/net/enum.IpAddr.html">the standard library has a definition we can use!</a><!-- ignore --> Let’s look at how the standard library defines <code>IpAddr</code>. It has the exact enum and variants that we’ve defined and used, but it embeds the address data inside the variants in the form of two different structs, which are defined differently for each variant:</p>
@@ -359,11 +359,11 @@
 </span>struct Ipv4Addr {
     // --код сокращён--
 }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 struct Ipv6Addr {
     // --код сокращён--
 }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 enum IpAddr {
     V4(Ipv4Addr),
     V6(Ipv6Addr),
@@ -379,7 +379,7 @@ enum IpAddr {
     Write(String),
     ChangeColor(i32, i32, i32),
 }
-<span class="boring">
+<span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">fn main() {}</span></code></pre>
 <figcaption><a href="#listing-6-2">Listing 6-2</a>: A <code>Message</code> enum whose variants each store different amounts and types of values</figcaption>
 </figure>
@@ -398,7 +398,7 @@ struct MoveMessage {
 }
 struct WriteMessage(String); // кортежная структура
 struct ChangeColorMessage(i32, i32, i32); // кортежная структура
-<span class="boring">
+<span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">fn main() {}</span></code></pre>
 <p>Но если мы используем различные структуры, каждая из которых имеет свои собственные типы, мы не можем легко определять функции, которые принимают любые типы сообщений, как это можно сделать с помощью единого перечисления типа <code>Message</code>, объявленного в Листинге 6-2.</p>
 <p>There is one more similarity between enums and structs: Just as we’re able to define methods on structs using <code>impl</code>, we’re also able to define methods on enums. Here’s a method named <code>call</code> that we could define on our <code>Message</code> enum:</p>
@@ -409,13 +409,13 @@ struct ChangeColorMessage(i32, i32, i32); // кортежная структур
 </span><span class="boring">        Write(String),
 </span><span class="boring">        ChangeColor(i32, i32, i32),
 </span><span class="boring">    }
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span>    impl Message {
         fn call(&amp;self) {
             // здесь — тело метода
         }
     }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     let m = Message::Write(String::from("hello"));
     m.call();
 <span class="boring">}</span></code></pre>
@@ -446,7 +446,7 @@ struct ChangeColorMessage(i32, i32, i32); // кортежная структур
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">fn main() {
 </span>    let some_number = Some(5);
     let some_char = Some('e');
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     let absent_number: Option&lt;i32&gt; = None;
 <span class="boring">}</span></code></pre>
 <p>The type of <code>some_number</code> is <code>Option&lt;i32&gt;</code>. The type of <code>some_char</code> is <code>Option&lt;char&gt;</code>, which is a different type. Rust can infer these types because we’ve specified a value inside the <code>Some</code> variant. For <code>absent_number</code>, Rust requires us to annotate the overall <code>Option</code> type: The compiler can’t infer the type that the corresponding <code>Some</code> variant will hold by looking only at a <code>None</code> value. Here, we tell Rust that we mean for <code>absent_number</code> to be of type <code>Option&lt;i32&gt;</code>.</p>
@@ -455,7 +455,7 @@ struct ChangeColorMessage(i32, i32, i32); // кортежная структур
 <pre><code class="language-rust ignore does_not_compile"><span class="boring">fn main() {
 </span>    let x: i8 = 5;
     let y: Option&lt;i8&gt; = Some(5);
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     let sum = x + y;
 <span class="boring">}</span></code></pre>
 <p>Если мы запустим этот код, то получим такое сообщение об ошибке:</p>
@@ -473,7 +473,7 @@ error[E0277]: cannot add `Option&lt;i8&gt;` to `i8`
             `&amp;i8` implements `Add`
             `i8` implements `Add&lt;&amp;i8&gt;`
             `i8` implements `Add`
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 For more information about this error, try `rustc --explain E0277`.
 error: could not compile `enums` (bin "enums") due to 1 previous error
 </code></pre>

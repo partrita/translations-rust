@@ -93,7 +93,7 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-55effe88.js";
+            window.path_to_searchindex_js = "../searchindex-e23b9ebb.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../toc-20da6b24.js"></script>
@@ -618,7 +618,7 @@ Expression</text>
     Dog,
     Cat,
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 let mut a: Animal = Animal::Dog;
 a = Animal::Cat;
 <span class="boring">}</span></code></pre>
@@ -632,7 +632,7 @@ a = Animal::Cat;
     Dog(String, f64),
     Cat { name: String, weight: f64 },
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 let mut a: Animal = Animal::Dog("Cocoa".to_string(), 37.2);
 a = Animal::Cat { name: "Spotty".to_string(), weight: 2.7 };
 <span class="boring">}</span></code></pre>
@@ -688,7 +688,7 @@ a = Animal::Cat { name: "Spotty".to_string(), weight: 2.7 };
     TupleLike(i32),
     StructLike { value: i32 },
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 use Examples::*; // 모든 변형에 대한 별칭을 생성합니다.
 let x = UnitLike; // 상수 아이템의 경로 표현식.
 let x = UnitLike {}; // 구조체 표현식.
@@ -756,7 +756,7 @@ enum Enum {
     Baz = 123,      // 123
     Quux,           // 124
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 let baz_discriminant = Foo::Baz as u32;
 assert_eq!(baz_discriminant, 123);
 <span class="boring">}</span></code></pre>
@@ -774,7 +774,7 @@ assert_eq!(baz_discriminant, 123);
     SharedA = 1,
     SharedB = 1
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 enum SharedDiscriminantError2 {
     Zero,       // 0
     One,        // 1
@@ -792,7 +792,7 @@ enum OverflowingDiscriminantError {
     Max = 255,
     MaxPlusOne // 256이어야 하지만, 열거형을 오버플로합니다.
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 #[repr(u8)]
 enum OverflowingDiscriminantError2 {
     MaxMinusOne = 254, // 254
@@ -840,7 +840,7 @@ enum E&lt;'a, T, const N: u32&gt; {
     Bar,
     Baz,
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 assert_eq!(0, Enum::Foo as isize);
 assert_eq!(1, Enum::Bar as isize);
 assert_eq!(2, Enum::Baz as isize);
@@ -856,11 +856,11 @@ assert_eq!(2, Enum::Baz as isize);
     Struct{},
     Unit,
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 assert_eq!(0, Fieldless::Tuple() as isize);
 assert_eq!(1, Fieldless::Struct{} as isize);
 assert_eq!(2, Fieldless::Unit as isize);
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 #[repr(u8)]
 enum FieldlessWithDiscriminants {
     First = 10,
@@ -869,7 +869,7 @@ enum FieldlessWithDiscriminants {
     Struct{},
     Unit,
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 assert_eq!(10, FieldlessWithDiscriminants::First as u8);
 assert_eq!(11, FieldlessWithDiscriminants::Tuple() as u8);
 assert_eq!(20, FieldlessWithDiscriminants::Second as u8);
@@ -889,17 +889,17 @@ enum Enum {
     Tuple(bool),
     Struct{a: bool},
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 impl Enum {
     fn discriminant(&amp;self) -&gt; u8 {
         unsafe { *(self as *const Self as *const u8) }
     }
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 let unit_like = Enum::Unit;
 let tuple_like = Enum::Tuple(true);
 let struct_like = Enum::Struct{a: false};
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 assert_eq!(0, unit_like.discriminant());
 assert_eq!(1, tuple_like.discriminant());
 assert_eq!(2, struct_like.discriminant());
@@ -937,17 +937,17 @@ let y: u32 = x; // 타입 불일치 오류
     ($vis:vis $name:ident) =&gt; {
         enum $name {
             $vis Unit,
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
             $vis Tuple(u8, u16),
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
             $vis Struct { f: u8 },
         }
     }
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // 빈 `vis` 는 허용됩니다.
 mac_variant! { E }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // 검증되기 전에 제거되므로 허용됩니다.
 #[cfg(false)]
 enum E {

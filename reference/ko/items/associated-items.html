@@ -93,7 +93,7 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-55effe88.js";
+            window.path_to_searchindex_js = "../searchindex-e23b9ebb.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../toc-20da6b24.js"></script>
@@ -399,7 +399,7 @@ Function</text>
 <pre class="playground"><code class="language-rust edition2024">struct Struct {
     field: i32
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 impl Struct {
     fn new() -&gt; Struct {
         Struct {
@@ -407,7 +407,7 @@ impl Struct {
         }
     }
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 fn main () {
     let _struct = Struct::new();
 }</code></pre>
@@ -420,11 +420,11 @@ fn main () {
 </span>trait Num {
     fn from_i32(n: i32) -&gt; Self;
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 impl Num for f64 {
     fn from_i32(n: i32) -&gt; f64 { n as f64 }
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // 이 경우 이 4가지는 모두 동일합니다.
 let _: f64 = Num::from_i32(42);
 let _: f64 = &lt;_ as Num&gt;::from_i32(42);
@@ -529,13 +529,13 @@ impl Example {
 </span>struct Circle {
     // ...
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 impl Shape for Circle {
     // ...
 <span class="boring">  fn draw(&amp;self, _: Surface) {}
 </span><span class="boring">  fn bounding_box(&amp;self) -&gt; BoundingBox { 0i32 }
 </span>}
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 <span class="boring">impl Circle {
 </span><span class="boring">    fn new() -&gt; Circle { Circle{} }
 </span><span class="boring">}
@@ -623,48 +623,48 @@ type Assoc&lt;Params&gt; where WhereBounds = Type; // 사용 중단됨(deprecate
     // 연관 타입 선언
     type Assoc;
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 struct Struct;
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 struct OtherStruct;
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 impl AssociatedType for Struct {
     // 연관 타입 정의
     type Assoc = OtherStruct;
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 impl OtherStruct {
     fn new() -&gt; OtherStruct {
         OtherStruct
     }
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 fn main() {
     // &lt;Struct as AssociatedType&gt;::Assoc와 같이 OtherStruct를 참조하기 위해 연관 타입을 사용함
     let _other_struct: OtherStruct = &lt;Struct as AssociatedType&gt;::Assoc::new();
 }</code></pre>
 <p>제네릭과 where 절을 사용한 연관 타입의 예시:</p>
 <pre class="playground"><code class="language-rust edition2024">struct ArrayLender&lt;'a, T&gt;(&amp;'a mut [T; 16]);
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 trait Lend {
     // 제네릭 연관 타입 선언
     type Lender&lt;'a&gt; where Self: 'a;
     fn lend&lt;'a&gt;(&amp;'a mut self) -&gt; Self::Lender&lt;'a&gt;;
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 impl&lt;T&gt; Lend for [T; 16] {
     // 제네릭 연관 타입 정의
     type Lender&lt;'a&gt; = ArrayLender&lt;'a, T&gt; where Self: 'a;
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
     fn lend&lt;'a&gt;(&amp;'a mut self) -&gt; Self::Lender&lt;'a&gt; {
         ArrayLender(self)
     }
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 fn borrow&lt;'a, T: Lend&gt;(array: &amp;'a mut T) -&gt; &lt;T as Lend&gt;::Lender&lt;'a&gt; {
     array.lend()
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 fn main() {
     let mut array = [0usize; 16];
     let lender = borrow(&amp;mut array);
@@ -786,26 +786,26 @@ fn main() {
 <p>연관 상수 정의는 참조될 때만 <a href="../const_eval.html">상수 평가</a> 를 거칩니다. 또한, <a href="generics.html">제네릭 매개변수</a> 를 포함하는 정의는 모노모르포화(monomorphization) 후에 평가됩니다.</p>
 <pre class="playground"><code class="language-rust compile_fail edition2024">struct Struct;
 struct GenericStruct&lt;const ID: i32&gt;;
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 impl Struct {
     // 정의가 즉시 평가되지 않음
     const PANIC: () = panic!("컴파일 타임 패닉");
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 impl&lt;const ID: i32&gt; GenericStruct&lt;ID&gt; {
     // 정의가 즉시 평가되지 않음
     const NON_ZERO: () = if ID == 0 {
         panic!("모순")
     };
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 fn main() {
     // Struct::PANIC을 참조하면 컴파일 오류가 발생함
     let _ = Struct::PANIC;
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
     // 괜찮음, ID가 0이 아님
     let _ = GenericStruct::&lt;1&gt;::NON_ZERO;
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
     // ID=0으로 NON_ZERO를 평가할 때 발생하는 컴파일 오류
     let _ = GenericStruct::&lt;0&gt;::NON_ZERO;
 }</code></pre>
@@ -814,13 +814,13 @@ fn main() {
 <pre class="playground"><code class="language-rust edition2024">trait ConstantId {
     const ID: i32;
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 struct Struct;
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 impl ConstantId for Struct {
     const ID: i32 = 1;
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 fn main() {
     assert_eq!(1, Struct::ID);
 }</code></pre>
@@ -828,16 +828,16 @@ fn main() {
 <pre class="playground"><code class="language-rust edition2024">trait ConstantIdDefault {
     const ID: i32 = 1;
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 struct Struct;
 struct OtherStruct;
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 impl ConstantIdDefault for Struct {}
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 impl ConstantIdDefault for OtherStruct {
     const ID: i32 = 5;
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 fn main() {
     assert_eq!(1, Struct::ID);
     assert_eq!(5, OtherStruct::ID);

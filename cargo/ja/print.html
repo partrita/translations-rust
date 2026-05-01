@@ -98,10 +98,10 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-e7154e31.js";
+            window.path_to_searchindex_js = "searchindex-6652732b.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="toc-91b7193b.js"></script>
+        <script src="toc-eaea3cac.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -335,7 +335,7 @@ Hello, world!
 <h1 id="cargo-ガイド"><a class="header" href="#cargo-ガイド">Cargo ガイド</a></h1>
 <p>This guide will give you all that you need to know about how to use Cargo to develop Rust packages.</p>
 <ul>
-<li><a href="#why-cargo-exists">Why Cargo Exists</a></li>
+<li><a href="#なぜ-cargo-か">Why Cargo Exists</a></li>
 <li><a href="#新しいパッケージを作る">Creating a New Package</a></li>
 <li><a href="#working-on-an-existing-cargo-package">Working on an Existing Cargo Package</a></li>
 <li><a href="#依存関係">Dependencies</a></li>
@@ -348,7 +348,7 @@ Hello, world!
 <li><a href="#optimizing-build-performance">Optimizing Build Performance</a></li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div>
-<h1 id="why-cargo-exists"><a class="header" href="#why-cargo-exists">Why Cargo Exists</a></h1>
+<h1 id="なぜ-cargo-か"><a class="header" href="#なぜ-cargo-か">なぜ Cargo か</a></h1>
 <h2 id="preliminaries"><a class="header" href="#preliminaries">Preliminaries</a></h2>
 <p>In Rust, as you may know, a library or executable program is called a <a href="#crate" title="&quot;crate&quot; (glossary entry)"><em>crate</em></a>. Crates are compiled using the Rust compiler, <code>rustc</code>. When starting with Rust, the first source code most people encounter is that of the classic “hello world” program, which they compile by invoking <code>rustc</code> directly:</p>
 <pre><code class="language-console">$ rustc hello.rs
@@ -5010,7 +5010,7 @@ metadata_key2 = "value"
 1 directory, 3 files
 </code></pre>
 <p>Here we can see that we have a <code>build.rs</code> build script and our binary in <code>main.rs</code>. This package has a basic manifest:</p>
-<pre><code class="language-toml"># Cargo.toml
+<pre><code class="language-toml"># 
 
 [package]
 name = "hello-from-generated-code"
@@ -5070,7 +5070,7 @@ fn main() {
 1 directory, 4 files
 </code></pre>
 <p>Pretty similar to before! Next, the manifest:</p>
-<pre><code class="language-toml"># Cargo.toml
+<pre><code class="language-toml"># 
 
 [package]
 name = "hello-world-from-c"
@@ -5153,7 +5153,7 @@ fn main() {
 <p>Quite frequently a Rust crate wants to link to a native library provided on the system to bind its functionality or just use it as part of an implementation detail. This is quite a nuanced problem when it comes to performing this in a platform-agnostic fashion. It is best, if possible, to farm out as much of this as possible to make this as easy as possible for consumers.</p>
 <p>For this example, we will be creating a binding to the system’s zlib library. This is a library that is commonly found on most Unix-like systems that provides data compression. This is already wrapped up in the <a href="https://crates.io/crates/libz-sys"><code>libz-sys</code> crate</a>, but for this example, we’ll do an extremely simplified version. Check out <a href="https://github.com/rust-lang/libz-sys">the source code</a> for the full example.</p>
 <p>To make it easy to find the location of the library, we will use the <a href="https://crates.io/crates/pkg-config"><code>pkg-config</code> crate</a>. This crate uses the system’s <code>pkg-config</code> utility to discover information about a library. It will automatically tell Cargo what is needed to link the library. This will likely only work on Unix-like systems with <code>pkg-config</code> installed. Let’s start by setting up the manifest:</p>
-<pre><code class="language-toml"># Cargo.toml
+<pre><code class="language-toml"># 
 
 [package]
 name = "libz-sys"
@@ -5198,7 +5198,7 @@ fn test_crc32() {
 <h2 id="using-another-sys-crate"><a class="header" href="#using-another-sys-crate">Using another <code>sys</code> crate</a></h2>
 <p>When using the <code>links</code> key, crates may set metadata that can be read by other crates that depend on it. This provides a mechanism to communicate information between crates. In this example, we’ll be creating a C library that makes use of zlib from the real <a href="https://crates.io/crates/libz-sys"><code>libz-sys</code> crate</a>.</p>
 <p>If you have a C library that depends on zlib, you can leverage the <a href="https://crates.io/crates/libz-sys"><code>libz-sys</code> crate</a> to automatically find it or build it. This is great for cross-platform support, such as Windows where zlib is not usually installed. <code>libz-sys</code> <a href="https://github.com/rust-lang/libz-sys/blob/3c594e677c79584500da673f918c4d2101ac97a1/build.rs#L156">sets the <code>include</code> metadata</a> to tell other packages where to find the header files for zlib. Our build script can read that metadata with the <code>DEP_Z_INCLUDE</code> environment variable. Here’s an example:</p>
-<pre><code class="language-toml"># Cargo.toml
+<pre><code class="language-toml"># 
 
 [package]
 name = "z_user"
@@ -5378,7 +5378,7 @@ pub fn sha3_224() -&gt; MessageDigest {
 </div>
 <h2 id="dep-info-files"><a class="header" href="#dep-info-files">Dep-info files</a></h2>
 <p>Next to each compiled artifact is a file called a “dep info” file with a <code>.d</code> suffix. This file is a Makefile-like syntax that indicates all of the file dependencies required to rebuild the artifact. These are intended to be used with external build systems so that they can detect if Cargo needs to be re-executed. The paths in the file are absolute by default. See the <a href="#builddep-info-basedir"><code>build.dep-info-basedir</code></a> config option to use relative paths.</p>
-<pre><code class="language-Makefile"># Example dep-info file found in target/debug/foo.d
+<pre><code class="language-Makefile">
 /path/to/myproj/target/debug/foo: /path/to/myproj/src/lib.rs /path/to/myproj/src/main.rs
 </code></pre>
 <h2 id="shared-cache"><a class="header" href="#shared-cache">Shared cache</a></h2>
@@ -9809,7 +9809,7 @@ cargo clean gc -Zgc --max-git-size=0 --max-download-size=100MB
 <li>Upstream Tracking Issue: <a href="https://github.com/rust-lang/rust/issues/147286">rust-lang/rust#147286</a></li>
 </ul>
 <p>Extends the <code>panic</code> profile setting to support the <a href="../rustc/codegen-options/index.html#panic"><code>immediate-abort</code></a> panic strategy. This can be enabled like so:</p>
-<pre><code class="language-toml"># Cargo.toml
+<pre><code class="language-toml"># 
 cargo-features = ["panic-immediate-abort"]
 
 [package]

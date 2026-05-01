@@ -93,7 +93,7 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-55effe88.js";
+            window.path_to_searchindex_js = "../searchindex-e23b9ebb.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../toc-20da6b24.js"></script>
@@ -426,16 +426,16 @@ let name: &amp;'static str = (|| "Rust")();
 <pre class="playground"><code class="language-rust edition2024">trait Pretty {
     fn print(&amp;self);
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 trait Ugly {
     fn print(&amp;self);
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 struct Foo;
 impl Pretty for Foo {
     fn print(&amp;self) {}
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 struct Bar;
 impl Pretty for Bar {
     fn print(&amp;self) {}
@@ -443,21 +443,21 @@ impl Pretty for Bar {
 impl Ugly for Bar {
     fn print(&amp;self) {}
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 fn main() {
     let f = Foo;
     let b = Bar;
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
     // `Foo` 에 대해 `print` 라고 불리는 아이템이 하나만 있기 때문에 이렇게 할 수 있습니다
     f.print();
     // 더 명시적이며, `Foo` 의 경우 필요하지 않습니다
     Foo::print(&amp;f);
     // 간결함을 선호하지 않는다면
     &lt;Foo as Pretty&gt;::print(&amp;f);
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
     // b.print(); // 오류: 여러 개의 'print' 발견됨
     // Bar::print(&amp;b); // 여전히 오류: 여러 개의 `print` 발견됨
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
     // `print` 를 정의하는 스코프 내 아이템 때문에 필요함
     &lt;Bar as Pretty&gt;::print(&amp;b);
 }</code></pre>

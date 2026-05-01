@@ -93,7 +93,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-55effe88.js";
+            window.path_to_searchindex_js = "searchindex-e23b9ebb.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-20da6b24.js"></script>
@@ -386,7 +386,7 @@
 fn foo() {
     println!("C 런타임은 정적으로 링크되어야 함");
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 #[cfg(not(target_feature = "crt-static"))]
 fn foo() {
     println!("C 런타임은 동적으로 링크되어야 함");
@@ -394,10 +394,10 @@ fn foo() {
 <span class="boring">}</span></code></pre>
 <p>또한 Cargo 빌드 스크립트는 <a href="../cargo/reference/environment-variables.html#environment-variables-cargo-sets-for-build-scripts">환경 변수</a> 를 통해 이 기능에 대해 알 수 있습니다. 빌드 스크립트에서는 다음과 같이 링크 여부를 감지할 수 있습니다:</p>
 <pre class="playground"><code class="language-rust edition2024">use std::env;
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 fn main() {
     let linkage = env::var("CARGO_CFG_TARGET_FEATURE").unwrap_or(String::new());
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
     if linkage.contains("crt-static") {
         println!("C 런타임은 정적으로 링크될 것임");
     } else {

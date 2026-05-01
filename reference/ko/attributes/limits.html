@@ -93,7 +93,7 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-55effe88.js";
+            window.path_to_searchindex_js = "../searchindex-e23b9ebb.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../toc-20da6b24.js"></script>
@@ -265,24 +265,24 @@
 
 <pre class="playground"><code class="language-rust compile_fail edition2024"><span class="boring">#![allow(unused)]
 </span>#![recursion_limit = "4"]
-
-<span class="boring">fn main() {
-</span>macro_rules! a {
+<span class="boring">   fn main() {
+</span>[식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
+macro_rules! a {
     () =&gt; { a!(1); };
     (1) =&gt; { a!(2); };
     (2) =&gt; { a!(3); };
     (3) =&gt; { a!(4); };
     (4) =&gt; { };
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // 이는 4보다 큰 재귀 깊이를 요구하므로 확장에 실패합니다.
 a!{}
 <span class="boring">}</span></code></pre>
 <pre class="playground"><code class="language-rust compile_fail edition2024"><span class="boring">#![allow(unused)]
 </span>#![recursion_limit = "1"]
-
-<span class="boring">fn main() {
-</span>// 이는 자동 역참조를 위해 두 번의 재귀 단계가 필요하므로 실패합니다.
+<span class="boring">   fn main() {
+</span>[식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
+// 이는 자동 역참조를 위해 두 번의 재귀 단계가 필요하므로 실패합니다.
 (|_: &amp;u8| {})(&amp;&amp;&amp;1);
 <span class="boring">}</span></code></pre>
 <!-- template:attributes -->

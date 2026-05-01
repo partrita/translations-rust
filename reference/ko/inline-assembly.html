@@ -93,7 +93,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-55effe88.js";
+            window.path_to_searchindex_js = "searchindex-e23b9ebb.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-20da6b24.js"></script>
@@ -268,7 +268,7 @@
 </span><span class="boring">fn main() {
 </span><span class="boring">#[cfg(target_arch = "x86_64")] {
 </span>use std::arch::asm;
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // 시프트와 덧셈을 사용하여 x에 6을 곱합니다.
 let mut x: u64 = 4;
 unsafe {
@@ -1697,7 +1697,7 @@ assert_eq!(y, 1);
 <span class="boring">#[cfg(not(target_arch = "x86_64"))] core::compile_error!("이 아키텍처에서는 테스트가 지원되지 않습니다");</span></code></pre>
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">fn main() {}
 </span>fn foo() {}
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 <span class="boring">#[cfg(target_arch = "x86_64")]
 </span>// 하지만 `const` 와 `sym` 은 모두 허용됩니다.
 core::arch::global_asm!("/* {} {} */", const 0, sym foo);</code></pre>
@@ -1772,23 +1772,23 @@ unsafe { core::arch::asm!("", in("ax") 5, in("al") 4i8); }
 </span><span class="boring">fn main() {
 </span><span class="boring">#[cfg(target_arch = "x86_64")] {
 </span>extern "C" fn foo() {}
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // 정수는 허용됩니다...
 let y: i64 = 5;
 unsafe { core::arch::asm!("/* {} */", in(reg) y); }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // 포인터도 허용되며...
 let py = &amp;raw const y;
 unsafe { core::arch::asm!("/* {} */", in(reg) py); }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // 부동 소수점 역시 허용됩니다...
 let f = 1.0f32;
 unsafe { core::arch::asm!("/* {} */", in(xmm_reg) f); }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // 함수 포인터와 simd 벡터까지도 허용됩니다.
 let func: extern "C" fn() = foo;
 unsafe { core::arch::asm!("/* {} */", in(reg) func); }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 let z = unsafe { core::arch::x86_64::_mm_set_epi64x(1, 0) };
 unsafe { core::arch::asm!("/* {} */", in(xmm_reg) z); }
 <span class="boring">}
@@ -1952,7 +1952,7 @@ unsafe { core::arch::asm!("/* {} */", in(reg) x); }
 </span>let x = 5i32;
 let y = -1i8;
 let z = unsafe { core::arch::x86_64::_mm_set_epi64x(1, 0) };
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // `reg` 는 `i32` 에 유효하고, `reg_byte` 는 `i8` 에 유효하며, `xmm_reg` 는 `__m128i` 에 유효합니다.
 // `tmm0` 는 입력이나 출력으로 사용할 수 없지만, 클로버(clobber)할 수는 있습니다.
 unsafe { core::arch::asm!("/* {} {} {} */", in(reg) x, in(reg_byte) y, in(xmm_reg) z, out("tmm0") _); }
@@ -2242,7 +2242,7 @@ unsafe { core::arch::asm!("/* {:er}", in(reg) 5i32); }
 </span><span class="boring">fn main() {
 </span><span class="boring">#[cfg(target_arch = "x86_64")] {
 </span>let mut x = 0x10u16;
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // `xchg` 를 사용한 u16::swap_bytes
 // `{x}` 의 하위 절반은 `{x:l}` 로, 상위 절반은 `{x:h}` 로 참조됩니다.
 unsafe { core::arch::asm!("xchg {x:l}, {x:h}", x = inout(reg_abcd) x); }
@@ -2265,7 +2265,7 @@ assert_eq!(x, 0x1000u16);
 </span><span class="boring">fn main() {
 </span><span class="boring">#[cfg(target_arch = "x86_64")] {
 </span>extern "C" fn foo() -&gt; i32 { 0 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 let z: i32;
 // 함수를 호출하려면, 피호출자 저장(callee saved) 레지스터를 클로버하고 있음을 컴파일러에 알려야 합니다.
 unsafe { core::arch::asm!("call {}", sym foo, out("rax") z, clobber_abi("C")); }
@@ -2281,7 +2281,7 @@ assert_eq!(z, 0);
 </span><span class="boring">#[cfg(target_arch = "x86_64")] {
 </span>extern "sysv64" fn foo() -&gt; i32 { 0 }
 extern "win64" fn bar(x: i32) -&gt; i32 { x + 1 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 let z: i32;
 // 심지어 서로 다른 규약과 서로 다른 저장된 레지스터를 가진 여러 함수를 호출할 수도 있습니다.
 unsafe {
@@ -2307,7 +2307,7 @@ assert_eq!(z, 1);
 </span><span class="boring">fn main() {
 </span><span class="boring">#[cfg(target_arch = "x86_64")] {
 </span>extern "C" fn foo(x: i32) -&gt; i32 { 0 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 let z: i32;
 // 실수로 겹치지 않도록 명시적 레지스터를 사용해야 합니다.
 unsafe {
@@ -2419,7 +2419,7 @@ unsafe {
         options(nomem)
     )
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // Writing to outside memory from assembly when `nomem` is
 // specified is also undefined behaviour
 unsafe {
@@ -2841,11 +2841,11 @@ core::arch::global_asm!("", options(nomem));
     out("st(4)") _, out("st(5)") _, out("st(6)") _, out("st(7)") _,
     out("eax") top
   );}
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
   assert_eq!(top &amp; 0x7, 0);
   out
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 pub fn main() {
 <span class="boring">#[cfg(target_arch = "x86_64")]{
 </span>  assert_eq!(fadd(1.0, 1.0), 2.0);
@@ -3032,7 +3032,7 @@ extern "sysv64-unwind" fn unwinding_naked() {
         f = sym may_panic,
     )
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 extern "sysv64-unwind" fn may_panic() {
     panic!("unwind");
 }
@@ -3149,9 +3149,9 @@ unsafe {
         len = out(reg) len
     );
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 let s = unsafe { core::str::from_utf8_unchecked(core::slice::from_raw_parts(bytes, len)) };
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 assert_eq!(s, "Hello World!");
 <span class="boring">}
 </span><span class="boring">}</span></code></pre>

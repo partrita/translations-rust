@@ -97,7 +97,7 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-56895a7e.js";
+            window.path_to_searchindex_js = "../searchindex-40d30f76.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../toc-6b0c3669.js"></script>
@@ -268,7 +268,7 @@
 <h2 id="설정-형식"><a class="header" href="#설정-형식">설정 형식</a></h2>
 <p>설정 파일은 (매니페스트와 마찬가지로) <a href="https://toml.io/">TOML 형식</a> 으로 작성되며, 섹션(테이블) 내에 간단한 키-값 쌍이 포함됩니다. 다음은 모든 설정에 대한 요약이며, 자세한 설명은 아래에 나와 있습니다.</p>
 <pre><code class="language-toml">paths = ["/path/to/override"] # path dependency overrides
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [alias]     # command aliases
 b = "build"
 c = "check"
@@ -277,7 +277,7 @@ r = "run"
 rr = "run --release"
 recursive_example = "rr --example recursions"
 space_example = ["run", "--release", "--", "\"command list\""]
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [build]
 warnings = "warn"             # adjust the effective lint level for warnings
 jobs = 1                      # number of parallel jobs, defaults to # of CPUs
@@ -292,15 +292,15 @@ rustflags = ["…", "…"]        # custom flags to pass to all compiler invocat
 rustdocflags = ["…", "…"]     # custom flags to pass to rustdoc
 incremental = true            # whether or not to enable incremental compilation
 dep-info-basedir = "…"        # path for the base directory for targets in depfiles
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [credential-alias]
 # Provides a way to define aliases for credential providers.
 my-alias = ["/usr/bin/cargo-credential-example", "--argument", "value", "--flag"]
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [doc]
 browser = "chromium"          # browser to use with `cargo doc --open`,
                               # overrides the `BROWSER` environment variable
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [env]
 # Set ENV_VAR_NAME=value for any process run by Cargo
 ENV_VAR_NAME = "value"
@@ -308,16 +308,16 @@ ENV_VAR_NAME = "value"
 ENV_VAR_NAME_2 = { value = "value", force = true }
 # `value` is relative to the parent of `.cargo/config.toml`, env var will be the full absolute path
 ENV_VAR_NAME_3 = { value = "relative/path", relative = true }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [future-incompat-report]
 frequency = 'always' # when to display a notification about a future incompat report
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [cache]
 auto-clean-frequency = "1 day"   # How often to perform automatic cache cleaning
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [cargo-new]
 vcs = "none"              # VCS to use ('git', 'hg', 'pijul', 'fossil', 'none')
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [http]
 debug = false               # HTTP debugging
 proxy = "host:port"         # HTTP proxy in libcurl format
@@ -331,21 +331,21 @@ proxy-cainfo = "cert.pem"   # path to proxy Certificate Authority (CA) bundle
 check-revoke = true         # check for SSL certificate revocation
 multiplexing = true         # HTTP/2 multiplexing
 user-agent = "…"            # the user-agent header
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [install]
 root = "/some/path"         # `cargo install` destination directory
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [net]
 retry = 3                   # network retries
 git-fetch-with-cli = true   # use the `git` executable for git operations
 offline = true              # do not access the network
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [net.ssh]
 known-hosts = ["..."]       # known SSH host keys
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [patch.&lt;registry&gt;]
 # Same keys as for [patch] in Cargo.toml
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [profile.&lt;name&gt;]         # Modify profile settings via config.
 inherits = "dev"         # Inherits settings from [profile.dev].
 opt-level = 0            # Optimization level.
@@ -363,25 +363,25 @@ rpath = false            # Sets the rpath linking option.
 # Same keys for a normal profile.
 [profile.&lt;name&gt;.package.&lt;name&gt;]  # Override profile for a package.
 # Same keys for a normal profile (minus `panic`, `lto`, and `rpath`).
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [resolver]
 lockfile-path = "…"  # Overrides the path used for
 incompatible-rust-versions = "allow"  # Specifies how resolver reacts to these
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [registries.&lt;name&gt;]  # registries other than crates.io
 index = "…"          # URL of the registry index
 token = "…"          # authentication token for the registry
 credential-provider = "cargo:token" # The credential provider for this registry.
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [registries.crates-io]
 protocol = "sparse"  # The protocol to use to access crates.io.
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [registry]
 default = "…"        # name of the default registry
 token = "…"          # authentication token for crates.io
 credential-provider = "cargo:token"           # The credential provider for crates.io.
 global-credential-providers = ["cargo:token"] # The credential providers to use by default.
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [source.&lt;name&gt;]      # source definition and replacement
 replace-with = "…"   # replace this source with the given named source
 directory = "…"      # path to a directory source
@@ -391,18 +391,18 @@ git = "…"            # URL of a git repository source
 branch = "…"         # branch name for the git repository
 tag = "…"            # tag name for the git repository
 rev = "…"            # revision for the git repository
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [target.&lt;triple&gt;]
 linker = "…"              # linker to use
 runner = "…"              # wrapper to run executables
 rustflags = ["…", "…"]    # custom flags for `rustc`
 rustdocflags = ["…", "…"] # custom flags for `rustdoc`
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [target.&lt;cfg&gt;]
 linker = "…"            # linker to use
 runner = "…"            # wrapper to run executables
 rustflags = ["…", "…"]  # custom flags for `rustc`
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [target.&lt;triple&gt;.&lt;links&gt;] # `links` build script override
 rustc-link-lib = ["foo"]
 rustc-link-search = ["/path/to/foo"]
@@ -412,7 +412,7 @@ rustc-env = {key = "value"}
 rustc-cdylib-link-arg = ["…"]
 metadata_key1 = "value"
 metadata_key2 = "value"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [term]
 quiet = false                    # whether cargo output is quiet
 verbose = false                  # whether cargo provides verbose output
@@ -431,7 +431,7 @@ progress.term-integration = true # whether cargo reports progress to terminal em
 <p>Cargo는 <code>--config</code> 명령줄 옵션을 통해 임의의 설정 재정의를 허용합니다. 인수는 <code>KEY=VALUE</code> 와 같은 TOML 구문이거나 추가 설정 파일의 경로여야 합니다.</p>
 <pre><code class="language-console"># With `KEY=VALUE` in TOML syntax
 cargo --config net.git-fetch-with-cli=true fetch
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 # With a path to a configuration file
 cargo --config ./path/to/my/extra-config.toml fetch
 </code></pre>
@@ -440,16 +440,16 @@ cargo --config ./path/to/my/extra-config.toml fetch
 <p>Bourne 셸 구문을 사용한 몇 가지 예시는 다음과 같습니다.</p>
 <pre><code class="language-console"># Most shells will require escaping.
 cargo --config http.proxy=\"http://example.com\" …
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 # Spaces may be used.
 cargo --config "net.git-fetch-with-cli = true" …
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 # TOML array example. Single quotes make it easier to read and write.
 cargo --config 'build.rustdocflags = ["--html-in-header", "header.html"]' …
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 # Example of a complex TOML key.
 cargo --config "target.'cfg(all(target_arch = \"arm\", target_os = \"none\"))'.runner = 'my-runner'" …
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 # Example of overriding a profile setting.
 cargo --config profile.dev.package.image.opt-level=3 …
 </code></pre>
@@ -468,7 +468,7 @@ include = [
     "frodo.toml",
     "samwise.toml",
 ]
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 # inline tables for more control
 include = [
     { path = "required.toml" },
@@ -523,7 +523,7 @@ directory = "vendor"
 <p>Cargo 설정 파일과 동일한 형식을 따릅니다.</p>
 <pre><code class="language-toml">[registry]
 token = "…"   # crates.io용 액세스 토큰
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [registries.&lt;이름&gt;]
 token = "…"   # 명명된 레지스트리용 액세스 토큰
 </code></pre>
@@ -1196,7 +1196,7 @@ known-hosts = [
 linker = "arm-none-eabi-gcc"
 runner = "my-emulator"
 rustflags = ["…", "…"]
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [target.'cfg(all(target_arch = "arm", target_os = "none"))']
 runner = "my-arm-wrapper"
 rustflags = ["…", "…"]

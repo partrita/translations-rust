@@ -93,7 +93,7 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-55effe88.js";
+            window.path_to_searchindex_js = "../searchindex-e23b9ebb.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../toc-20da6b24.js"></script>
@@ -644,7 +644,7 @@ let mut array = [-2, 3, 9];
 </span>// 같은 의미:
 let a = &amp;&amp;  10;
 let a = &amp; &amp; 10;
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // 같은 의미:
 let a = &amp;&amp;&amp;&amp;  mut 10;
 let a = &amp;&amp; &amp;&amp; mut 10;
@@ -678,7 +678,7 @@ struct Packed {
     f1: u8,
     f2: u16,
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 let packed = Packed { f1: 1, f2: 2 };
 // `&amp;packed.f2` 는 정렬되지 않은 참조를 생성하므로 정의되지 않은 동작이 됩니다!
 let raw_f2 = &amp;raw const packed.f2;
@@ -688,11 +688,11 @@ assert_eq!(unsafe { raw_f2.read_unaligned() }, 2);
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span>use std::mem::MaybeUninit;
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 struct Demo {
     field: bool,
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 let mut uninit = MaybeUninit::&lt;Demo&gt;::uninit();
 // `&amp;uninit.as_mut().field` 는 초기화되지 않은 `bool` 에 대한 참조를 생성하므로,
 // 정의되지 않은 동작이 됩니다!
@@ -2473,25 +2473,25 @@ x = y;
 </span><span class="boring">struct Struct { x: u32, y: u32 }
 </span><span class="boring">let (mut a, mut b) = (0, 0);
 </span>(a, b) = (3, 4);
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 [a, b] = [3, 4];
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 Struct { x: a, y: b } = Struct { x: 3, y: 4};
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // 다음과 같이 탈설탕됩니다:
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 {
     let (_a, _b) = (3, 4);
     a = _a;
     b = _b;
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 {
     let [_a, _b] = [3, 4];
     a = _a;
     b = _b;
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 {
     let Struct { x: _a, y: _b } = Struct { x: 3, y: 4};
     a = _a;
@@ -2910,7 +2910,7 @@ assert!(x == 6);
 </span><span class="boring">
 </span>trait Equate {}
 impl&lt;T&gt; Equate for (T, T) {}
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 fn f1(x: (u8,)) {
     let mut order = vec![];
     // The RHS is evaluated first as both operands are of primitive
@@ -2918,7 +2918,7 @@ fn f1(x: (u8,)) {
     { order.push(2); x }.0 += { order.push(1); x }.0;
     assert!(order.is_sorted());
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 fn f2(x: (Wrapping&lt;u8&gt;,)) {
     let mut order = vec![];
     // The LHS is evaluated first as `Wrapping&lt;_&gt;` is not a primitive
@@ -2926,7 +2926,7 @@ fn f2(x: (Wrapping&lt;u8&gt;,)) {
     { order.push(1); x }.0 += { order.push(2); (0u8,) }.0;
     assert!(order.is_sorted());
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 fn f3&lt;T: AddAssign&lt;u8&gt; + Copy&gt;(x: (T,)) where (T, u8): Equate {
     let mut order = vec![];
     // The LHS is evaluated first as one of the operands is a generic
@@ -2935,7 +2935,7 @@ fn f3&lt;T: AddAssign&lt;u8&gt; + Copy&gt;(x: (T,)) where (T, u8): Equate {
     { order.push(1); x }.0 += { order.push(2); (0u8,) }.0;
     assert!(order.is_sorted());
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 fn main() {
     f1((0u8,));
     f2((Wrapping(0u8),));

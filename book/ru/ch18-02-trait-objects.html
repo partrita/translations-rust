@@ -96,7 +96,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-01ba4889.js";
+            window.path_to_searchindex_js = "searchindex-0481507b.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-f10b093a.js"></script>
@@ -262,7 +262,7 @@
 <pre><code class="language-rust noplayground"><span class="boring">pub trait Draw {
 </span><span class="boring">    fn draw(&amp;self);
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span>pub struct Screen {
     pub components: Vec&lt;Box&lt;dyn Draw&gt;&gt;,
 }</code></pre>
@@ -274,11 +274,11 @@
 <pre><code class="language-rust noplayground"><span class="boring">pub trait Draw {
 </span><span class="boring">    fn draw(&amp;self);
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">pub struct Screen {
 </span><span class="boring">    pub components: Vec&lt;Box&lt;dyn Draw&gt;&gt;,
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span>impl Screen {
     pub fn run(&amp;self) {
         for component in self.components.iter() {
@@ -294,11 +294,11 @@
 <pre><code class="language-rust noplayground"><span class="boring">pub trait Draw {
 </span><span class="boring">    fn draw(&amp;self);
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span>pub struct Screen&lt;T: Draw&gt; {
     pub components: Vec&lt;T&gt;,
 }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 impl&lt;T&gt; Screen&lt;T&gt;
 where
     T: Draw,
@@ -320,11 +320,11 @@ where
 <pre><code class="language-rust noplayground"><span class="boring">pub trait Draw {
 </span><span class="boring">    fn draw(&amp;self);
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">pub struct Screen {
 </span><span class="boring">    pub components: Vec&lt;Box&lt;dyn Draw&gt;&gt;,
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">impl Screen {
 </span><span class="boring">    pub fn run(&amp;self) {
 </span><span class="boring">        for component in self.components.iter() {
@@ -332,13 +332,13 @@ where
 </span><span class="boring">        }
 </span><span class="boring">    }
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span>pub struct Button {
     pub width: u32,
     pub height: u32,
     pub label: String,
 }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 impl Draw for Button {
     fn draw(&amp;self) {
         // code to actually draw a button
@@ -351,19 +351,19 @@ impl Draw for Button {
 <figure class="listing" id="listing-18-8">
 <span class="file-name">Filename: src/main.rs</span>
 <pre><code class="language-rust ignore">use gui::Draw;
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 struct SelectBox {
     width: u32,
     height: u32,
     options: Vec&lt;String&gt;,
 }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 impl Draw for SelectBox {
     fn draw(&amp;self) {
         // code to actually draw a select box
     }
 }
-<span class="boring">
+<span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">fn main() {}</span></code></pre>
 <figcaption><a href="#listing-18-8">Listing 18-8</a>: Another crate using <code>gui</code> and implementing the <code>Draw</code> trait on a <code>SelectBox</code> struct</figcaption>
 </figure>
@@ -371,21 +371,21 @@ impl Draw for SelectBox {
 <figure class="listing" id="listing-18-9">
 <span class="file-name">Filename: src/main.rs</span>
 <pre><code class="language-rust ignore"><span class="boring">use gui::Draw;
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">struct SelectBox {
 </span><span class="boring">    width: u32,
 </span><span class="boring">    height: u32,
 </span><span class="boring">    options: Vec&lt;String&gt;,
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">impl Draw for SelectBox {
 </span><span class="boring">    fn draw(&amp;self) {
 </span><span class="boring">        // code to actually draw a select box
 </span><span class="boring">    }
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span>use gui::{Button, Screen};
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 fn main() {
     let screen = Screen {
         components: vec![
@@ -405,7 +405,7 @@ fn main() {
             }),
         ],
     };
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     screen.run();
 }</code></pre>
 <figcaption><a href="#listing-18-9">Listing 18-9</a>: Using trait objects to store values of different types that implement the same trait</figcaption>
@@ -417,12 +417,12 @@ fn main() {
 <figure class="listing" id="listing-18-10">
 <span class="file-name">Filename: src/main.rs</span>
 <pre><code class="language-rust ignore does_not_compile">use gui::Screen;
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 fn main() {
     let screen = Screen {
         components: vec![Box::new(String::from("Hi"))],
     };
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     screen.run();
 }</code></pre>
 <figcaption><a href="#listing-18-10">Listing 18-10</a>: Attempting to use a type that doesn’t implement the trait object’s trait</figcaption>
@@ -438,7 +438,7 @@ error[E0277]: the trait bound `String: Draw` is not satisfied
   |
   = help: the trait `Draw` is implemented for `Button`
   = note: required for the cast from `Box&lt;String&gt;` to `Box&lt;dyn Draw&gt;`
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 For more information about this error, try `rustc --explain E0277`.
 error: could not compile `gui` (bin "gui") due to 1 previous error
 </code></pre>

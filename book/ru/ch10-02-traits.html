@@ -96,7 +96,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-01ba4889.js";
+            window.path_to_searchindex_js = "searchindex-0481507b.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-f10b093a.js"></script>
@@ -266,27 +266,27 @@
 <pre><code class="language-rust noplayground"><span class="boring">pub trait Summary {
 </span><span class="boring">    fn summarize(&amp;self) -&gt; String;
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span>pub struct NewsArticle {
     pub headline: String,
     pub location: String,
     pub author: String,
     pub content: String,
 }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 impl Summary for NewsArticle {
     fn summarize(&amp;self) -&gt; String {
         format!("{} ({} из {})", self.headline, self.author, self.location)
     }
 }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 pub struct SocialPost {
     pub username: String,
     pub content: String,
     pub reply: bool,
     pub repost: bool,
 }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 impl Summary for SocialPost {
     fn summarize(&amp;self) -&gt; String {
         format!("{}: {}", self.username, self.content)
@@ -297,7 +297,7 @@ impl Summary for SocialPost {
 <p>Реализация трейта для типа аналогична реализации обычных методов. Разница в том, что после <code>impl</code> мы указываем имя трейта, который мы хотим реализовать, затем используем ключевое слово <code>for</code>, а затем указываем имя типа, для которого мы хотим сделать реализацию трейта. Внутри блока <code>impl</code> мы помещаем сигнатуру метода, объявленную в трейте. Вместо точки с запятой в конце, после каждой сигнатуры пишутся фигурные скобки, и тело метода заполняется конкретным кодом, реализующим поведение, которое мы хотим получить от методов трейта для конкретного типа.</p>
 <p>Now that the library has implemented the <code>Summary</code> trait on <code>NewsArticle</code> and <code>SocialPost</code>, users of the crate can call the trait methods on instances of <code>NewsArticle</code> and <code>SocialPost</code> in the same way we call regular methods. The only difference is that the user must bring the trait into scope as well as the types. Here’s an example of how a binary crate could use our <code>aggregator</code> library crate:</p>
 <pre><code class="language-rust ignore">use aggregator::{SocialPost, Summary};
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 fn main() {
     let post = SocialPost {
         username: String::from("horse_ebooks"),
@@ -307,7 +307,7 @@ fn main() {
         reply: false,
         repost: false,
     };
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     println!("1 new post: {}", post.summarize());
 }</code></pre>
 <p>This code prints <code>1 new post: horse_ebooks: of course, as you probably already know, people</code>.</p>
@@ -325,23 +325,23 @@ fn main() {
         String::from("(Читать далее...)")
     }
 }
-<span class="boring">
+<span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">pub struct NewsArticle {
 </span><span class="boring">    pub headline: String,
 </span><span class="boring">    pub location: String,
 </span><span class="boring">    pub author: String,
 </span><span class="boring">    pub content: String,
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">impl Summary for NewsArticle {}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">pub struct SocialPost {
 </span><span class="boring">    pub username: String,
 </span><span class="boring">    pub content: String,
 </span><span class="boring">    pub reply: bool,
 </span><span class="boring">    pub repost: bool,
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">impl Summary for SocialPost {
 </span><span class="boring">    fn summarize(&amp;self) -&gt; String {
 </span><span class="boring">        format!("{}: {}", self.username, self.content)
@@ -352,7 +352,7 @@ fn main() {
 <p>Для использования реализации по умолчанию при создании сводки экземпляров <code>NewsArticle</code>, мы указываем пустой блок при <code>impl Summary for NewsArticle {}</code>.</p>
 <p>Хотя мы больше не определяем метод <code>summarize</code> непосредственно на <code>NewsArticle</code>, мы предоставили реализацию по умолчанию и указали, что <code>NewsArticle</code> реализует трейт <code>Summary</code>. В результате мы всё ещё можем вызвать метод <code>summarize</code> у экземпляра <code>NewsArticle</code>; например, вот так:</p>
 <pre><code class="language-rust ignore"><span class="boring">use aggregator::{self, NewsArticle, Summary};
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">fn main() {
 </span>    let article = NewsArticle {
         headline: String::from("«Питтсбург Пингвинз» выиграли Кубок Стэнли!"),
@@ -363,7 +363,7 @@ fn main() {
              хоккейной командой в НХЛ.",
         ),
     };
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     println!("Новости! {}", article.summarize());
 <span class="boring">}</span></code></pre>
 <p>Этот код печатает <code>Новости! (Читать далее...)</code>.</p>
@@ -371,19 +371,19 @@ fn main() {
 <p>Реализации по умолчанию могут вызывать другие методы в том же трейте, даже если эти другие методы не имеют реализации по умолчанию. Таким образом, трейт может предоставить много полезной функциональности, а от разработчиков требует указывать только небольшую его часть. Например, мы могли бы определить трейт <code>Summary</code>, имеющий метод <code>summarize_author</code> без реализации по умолчанию, а затем определить метод <code>summarize</code> который имеет реализацию по умолчанию, вызывающую метод <code>summarize_author</code>:</p>
 <pre><code class="language-rust noplayground">pub trait Summary {
     fn summarize_author(&amp;self) -&gt; String;
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     fn summarize(&amp;self) -&gt; String {
         format!("(Читать далее, от {}...)", self.summarize_author())
     }
 }
-<span class="boring">
+<span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">pub struct SocialPost {
 </span><span class="boring">    pub username: String,
 </span><span class="boring">    pub content: String,
 </span><span class="boring">    pub reply: bool,
 </span><span class="boring">    pub repost: bool,
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">impl Summary for SocialPost {
 </span><span class="boring">    fn summarize_author(&amp;self) -&gt; String {
 </span><span class="boring">        format!("@{}", self.username)
@@ -392,19 +392,19 @@ fn main() {
 <p>Чтобы использовать такую версию трейта <code>Summary</code>, при реализации трейта для типа нужно определить только метод <code>summarize_author</code>:</p>
 <pre><code class="language-rust ignore"><span class="boring">pub trait Summary {
 </span><span class="boring">    fn summarize_author(&amp;self) -&gt; String;
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">    fn summarize(&amp;self) -&gt; String {
 </span><span class="boring">        format!("(Читать далее, от {}...)", self.summarize_author())
 </span><span class="boring">    }
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">pub struct SocialPost {
 </span><span class="boring">    pub username: String,
 </span><span class="boring">    pub content: String,
 </span><span class="boring">    pub reply: bool,
 </span><span class="boring">    pub repost: bool,
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span>impl Summary for SocialPost {
     fn summarize_author(&amp;self) -&gt; String {
         format!("@{}", self.username)
@@ -412,7 +412,7 @@ fn main() {
 }</code></pre>
 <p>After we define <code>summarize_author</code>, we can call <code>summarize</code> on instances of the <code>SocialPost</code> struct, and the default implementation of <code>summarize</code> will call the definition of <code>summarize_author</code> that we’ve provided. Because we’ve implemented <code>summarize_author</code>, the <code>Summary</code> trait has given us the behavior of the <code>summarize</code> method without requiring us to write any more code. Here’s what that looks like:</p>
 <pre><code class="language-rust ignore"><span class="boring">use aggregator::{self, SocialPost, Summary};
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">fn main() {
 </span>    let post = SocialPost {
         username: String::from("horse_ebooks"),
@@ -422,7 +422,7 @@ fn main() {
         reply: false,
         repost: false,
     };
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
     println!("1 new post: {}", post.summarize());
 <span class="boring">}</span></code></pre>
 <p>This code prints <code>1 new post: (Read more from @horse_ebooks...)</code>.</p>
@@ -434,33 +434,33 @@ fn main() {
 <pre><code class="language-rust ignore"><span class="boring">pub trait Summary {
 </span><span class="boring">    fn summarize(&amp;self) -&gt; String;
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">pub struct NewsArticle {
 </span><span class="boring">    pub headline: String,
 </span><span class="boring">    pub location: String,
 </span><span class="boring">    pub author: String,
 </span><span class="boring">    pub content: String,
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">impl Summary for NewsArticle {
 </span><span class="boring">    fn summarize(&amp;self) -&gt; String {
 </span><span class="boring">        format!("{} ({} из {})", self.headline, self.author, self.location)
 </span><span class="boring">    }
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">pub struct SocialPost {
 </span><span class="boring">    pub username: String,
 </span><span class="boring">    pub content: String,
 </span><span class="boring">    pub reply: bool,
 </span><span class="boring">    pub repost: bool,
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">impl Summary for SocialPost {
 </span><span class="boring">    fn summarize(&amp;self) -&gt; String {
 </span><span class="boring">        format!("{}: {}", self.username, self.content)
 </span><span class="boring">    }
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span>pub fn notify(item: &amp;impl Summary) {
     println!("Срочные новости! {}", item.summarize());
 }</code></pre>
@@ -503,33 +503,33 @@ where
 <pre><code class="language-rust ignore"><span class="boring">pub trait Summary {
 </span><span class="boring">    fn summarize(&amp;self) -&gt; String;
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">pub struct NewsArticle {
 </span><span class="boring">    pub headline: String,
 </span><span class="boring">    pub location: String,
 </span><span class="boring">    pub author: String,
 </span><span class="boring">    pub content: String,
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">impl Summary for NewsArticle {
 </span><span class="boring">    fn summarize(&amp;self) -&gt; String {
 </span><span class="boring">        format!("{} ({} из {})", self.headline, self.author, self.location)
 </span><span class="boring">    }
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">pub struct SocialPost {
 </span><span class="boring">    pub username: String,
 </span><span class="boring">    pub content: String,
 </span><span class="boring">    pub reply: bool,
 </span><span class="boring">    pub repost: bool,
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">impl Summary for SocialPost {
 </span><span class="boring">    fn summarize(&amp;self) -&gt; String {
 </span><span class="boring">        format!("{}: {}", self.username, self.content)
 </span><span class="boring">    }
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span>fn returns_summarizable() -&gt; impl Summary {
     SocialPost {
         username: String::from("horse_ebooks"),
@@ -546,33 +546,33 @@ where
 <pre><code class="language-rust ignore does_not_compile"><span class="boring">pub trait Summary {
 </span><span class="boring">    fn summarize(&amp;self) -&gt; String;
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">pub struct NewsArticle {
 </span><span class="boring">    pub headline: String,
 </span><span class="boring">    pub location: String,
 </span><span class="boring">    pub author: String,
 </span><span class="boring">    pub content: String,
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">impl Summary for NewsArticle {
 </span><span class="boring">    fn summarize(&amp;self) -&gt; String {
 </span><span class="boring">        format!("{} ({} из {})", self.headline, self.author, self.location)
 </span><span class="boring">    }
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">pub struct SocialPost {
 </span><span class="boring">    pub username: String,
 </span><span class="boring">    pub content: String,
 </span><span class="boring">    pub reply: bool,
 </span><span class="boring">    pub repost: bool,
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span><span class="boring">impl Summary for SocialPost {
 </span><span class="boring">    fn summarize(&amp;self) -&gt; String {
 </span><span class="boring">        format!("{}: {}", self.username, self.content)
 </span><span class="boring">    }
 </span><span class="boring">}
-</span><span class="boring">
+</span><span class="boring">Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 </span>fn returns_summarizable(switch: bool) -&gt; impl Summary {
     if switch {
         NewsArticle {
@@ -603,18 +603,18 @@ where
 <figure class="listing" id="listing-10-15">
 <span class="file-name">Filename: src/lib.rs</span>
 <pre><code class="language-rust noplayground">use std::fmt::Display;
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 struct Pair&lt;T&gt; {
     x: T,
     y: T,
 }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 impl&lt;T&gt; Pair&lt;T&gt; {
     fn new(x: T, y: T) -&gt; Self {
         Self { x, y }
     }
 }
-
+Если у вас есть опыт работы с C или C++, вам могут вспомниться `gcc` или `clang`. После успешной компиляции Rust создаст исполняемый бинарный файл.
 impl&lt;T: Display + PartialOrd&gt; Pair&lt;T&gt; {
     fn cmp_display(&amp;self) {
         if self.x &gt;= self.y {

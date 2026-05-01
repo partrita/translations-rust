@@ -96,10 +96,10 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-5b6c4c3f.js";
+            window.path_to_searchindex_js = "searchindex-380cec70.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="toc-44dad460.js"></script>
+        <script src="toc-09667002.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -273,7 +273,7 @@ pub fn add_one(x: i32) -&gt; i32 {
 <li><strong>Safety</strong>: If the function is <code>unsafe</code> to call (we discuss unsafety in Chapter 20), there should be a section explaining why the function is unsafe and covering the invariants that the function expects callers to uphold.</li>
 </ul>
 <p>Most documentation comments don’t need all of these sections, but this is a good checklist to remind you of the aspects of your code users will be interested in knowing about.</p>
-<h4 id="documentation-comments-as-tests"><a class="header" href="#documentation-comments-as-tests">Documentation Comments as Tests</a></h4>
+<h4 id="les-commentaires-de-documentation-pour-faire-des-tests"><a class="header" href="#les-commentaires-de-documentation-pour-faire-des-tests">Les commentaires de documentation pour faire des tests</a></h4>
 <p>Adding example code blocks in your documentation comments can help demonstrate how to use your library and has an additional bonus: Running <code>cargo test</code> will run the code examples in your documentation as tests! Nothing is better than documentation with examples. But nothing is worse than examples that don’t work because the code has changed since the documentation was written. If we run <code>cargo test</code> with the documentation for the <code>add_one</code> function from Listing 14-1, we will see a section in the test results that looks like this:</p>
 <!-- manual-regeneration
 cd listings/ch14-more-about-cargo/listing-14-01/
@@ -451,7 +451,7 @@ abcdefghijklmnopqrstuvwxyz012345
 <p>Your crate will need a unique name. While you’re working on a crate locally, you can name a crate whatever you’d like. However, crate names on <a href="https://crates.io/">crates.io</a><!-- ignore --> are allocated on a first-come, first-served basis. Once a crate name is taken, no one else can publish a crate with that name. Before attempting to publish a crate, search for the name you want to use. If the name has been used, you will need to find another name and edit the <code>name</code> field in the <em>Cargo.toml</em> file under the <code>[package]</code> section to use the new name for publishing, like so:</p>
 <p><span class="filename">Fichier : Cargo.toml</span></p>
 <pre><code class="language-toml">[package]
-name = "guessing_game"
+name = "jeu_du_plus_ou_du_moins"
 </code></pre>
 <p>Même si vous avez choisi un nom unique, lorsque vous lancez <code>cargo publish</code> pour publier la crate à ce stade, vous allez avoir un avertissement suivi par une erreur :</p>
 <!-- manual-regeneration
@@ -473,7 +473,7 @@ Caused by:
 <p>This results in an error because you’re missing some crucial information: A description and license are required so that people will know what your crate does and under what terms they can use it. In <em>Cargo.toml</em>, add a description that’s just a sentence or two, because it will appear with your crate in search results. For the <code>license</code> field, you need to give a <em>license identifier value</em>. The <a href="https://spdx.org/licenses/">Linux Foundation’s Software Package Data Exchange (SPDX)</a> lists the identifiers you can use for this value. For example, to specify that you’ve licensed your crate using the MIT License, add the <code>MIT</code> identifier:</p>
 <p><span class="filename">Fichier : Cargo.toml</span></p>
 <pre><code class="language-toml">[package]
-name = "guessing_game"
+name = "jeu_du_plus_ou_du_moins"
 license = "MIT"
 </code></pre>
 <p>Si vous voulez utiliser une licence qui n’apparaît pas dans le SPDX, vous devez placer le texte de cette licence dans un fichier, inclure ce fichier dans votre projet puis utiliser <code>licence-file</code> pour renseigner le nom de ce fichier plutôt que d’utiliser la clé <code>licence</code>.</p>
@@ -481,7 +481,7 @@ license = "MIT"
 <p>With a unique name, the version, your description, and a license added, the <em>Cargo.toml</em> file for a project that is ready to publish might look like this:</p>
 <p><span class="filename">Fichier : Cargo.toml</span></p>
 <pre><code class="language-toml">[package]
-name = "guessing_game"
+name = "jeu_du_plus_ou_du_moins"
 version = "0.1.0"
 edition = "2024"
 description = "A fun game where you guess what number the computer has chosen."

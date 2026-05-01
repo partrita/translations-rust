@@ -93,7 +93,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-55effe88.js";
+            window.path_to_searchindex_js = "searchindex-e23b9ebb.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-20da6b24.js"></script>
@@ -671,30 +671,30 @@ TokenTree</text>
 </span><span class="boring">fn main() {
 </span>// 표현식으로 사용됩니다.
 let x = vec![1,2,3];
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // 문으로 사용됩니다.
 println!("안녕하세요!");
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // 패턴에서 사용됩니다.
 macro_rules! pat {
     ($i:ident) =&gt; (Some($i))
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 if let pat!(x) = Some(1) {
     assert_eq!(x, 1);
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // 유형에서 사용됩니다.
 macro_rules! Tuple {
     { $A:ty, $B:ty } =&gt; { ($A, $B) };
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 type N2 = Tuple!(i32, i32);
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // 항목으로 사용됩니다.
 <span class="boring">use std::cell::RefCell;
 </span>thread_local!(static FOO: RefCell&lt;u32&gt; = RefCell::new(1));
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // Used as an associated item.
 macro_rules! const_maker {
     ($t:ty, $v:tt) =&gt; { const CONST: $t = $v; };
@@ -702,7 +702,7 @@ macro_rules! const_maker {
 trait T {
     const_maker!{i32, 7}
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // Macro calls within macros.
 macro_rules! example {
     () =&gt; { println!("매크로 내의 매크로 호출!") };

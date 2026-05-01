@@ -97,7 +97,7 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-56895a7e.js";
+            window.path_to_searchindex_js = "../searchindex-40d30f76.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../toc-6b0c3669.js"></script>
@@ -279,7 +279,7 @@
 <h3 id="루트-패키지"><a class="header" href="#루트-패키지">루트 패키지</a></h3>
 <p><a href="#the-workspace-section"><code>[workspace]</code> 섹션</a>이 이미 <code>[package]</code> 를 정의한 <code>Cargo.toml</code> 에 추가된 경우, 해당 패키지는 워크스페이스의 <em>루트 패키지</em> 입니다. <em>워크스페이스 루트</em> 는 워크스페이스의 <code>Cargo.toml</code> 이 위치한 디렉토리입니다.</p>
 <pre><code class="language-toml">[workspace]
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [package]
 name = "hello_world" # 패키지 이름
 version = "0.1.0"    # 현재 버전 (semver 준수)
@@ -352,7 +352,7 @@ default-members = ["path/to/member2", "path/to/member3/foo"]
 <pre><code class="language-toml"># [프로젝트_디렉토리]/Cargo.toml
 [workspace]
 members = ["bar"]
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [workspace.package]
 version = "1.2.3"
 authors = ["Nice Folks"]
@@ -382,7 +382,7 @@ documentation.workspace = true
 <pre><code class="language-toml"># [프로젝트_디렉토리]/Cargo.toml
 [workspace]
 members = ["bar"]
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [workspace.dependencies]
 cc = "1.0.73"
 rand = "0.8.5"
@@ -392,13 +392,13 @@ regex = { version = "1.6.0", default-features = false, features = ["std"] }
 [package]
 name = "bar"
 version = "0.2.0"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [dependencies]
 regex = { workspace = true, features = ["unicode"] }
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [build-dependencies]
 cc.workspace = true
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [dev-dependencies]
 rand.workspace = true
 </code></pre>
@@ -412,7 +412,7 @@ rand.workspace = true
 <pre><code class="language-toml"># [프로젝트_디렉토리]/Cargo.toml
 [workspace]
 members = ["crates/*"]
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [workspace.lints.rust]
 unsafe_code = "forbid"
 </code></pre>
@@ -420,7 +420,7 @@ unsafe_code = "forbid"
 [package]
 name = "bar"
 version = "0.1.0"
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [lints]
 workspace = true
 </code></pre>
@@ -431,7 +431,7 @@ workspace = true
 <p><code>workspace.metadata</code> 테이블은 Cargo에 의해 무시되며 경고가 발생하지 않습니다. 이 섹션은 <code>Cargo.toml</code> 에 워크스페이스 구성을 저장하려는 도구에 사용할 수 있습니다. 예를 들어 다음과 같습니다.</p>
 <pre><code class="language-toml">[workspace]
 members = ["member1", "member2"]
-
+`git/checkouts` Git 소스가 사용되는 경우, `git/db` 내의 bare repo에서 필요한 repo 커밋이 이 디렉토리로 체크아웃됩니다. 이는 해당 의존성에 지정된 커밋의 repo에 포함된 실제 파일을 컴파일러에 제공합니다. 동일한 repo의 다른 커밋을 여러 번 체크아웃할 수 있습니다.
 [workspace.metadata.webcontents]
 root = "웹프로젝트/경로"
 tool = ["npm", "run", "build"]

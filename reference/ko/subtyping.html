@@ -93,7 +93,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-55effe88.js";
+            window.path_to_searchindex_js = "searchindex-e23b9ebb.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-20da6b24.js"></script>
@@ -268,11 +268,11 @@
 </span>// 여기서 'a는 'static으로 대체됩니다
 let subtype: &amp;(for&lt;'a&gt; fn(&amp;'a i32) -&gt; &amp;'a i32) = &amp;((|x| x) as fn(&amp;_) -&gt; &amp;_);
 let supertype: &amp;(fn(&amp;'static i32) -&gt; &amp;'static i32) = subtype;
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // 이는 트레잇 객체에 대해서도 유사하게 작동합니다
 let subtype: &amp;(dyn for&lt;'a&gt; Fn(&amp;'a i32) -&gt; &amp;'a i32) = &amp;|x| x;
 let supertype: &amp;(dyn Fn(&amp;'static i32) -&gt; &amp;'static i32) = subtype;
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // 하나의 고차원 라이프타임을 다른 것으로 대체할 수도 있습니다
 let subtype: &amp;(for&lt;'a, 'b&gt; fn(&amp;'a i32, &amp;'b i32)) = &amp;((|x, y| {}) as fn(&amp;_, &amp;_));
 let supertype: &amp;for&lt;'c&gt; fn(&amp;'c i32, &amp;'c i32) = subtype;
@@ -339,7 +339,7 @@ struct Variance&lt;'a, 'b, 'c, T, U: 'a&gt; {
     y: *const T,            // T에 대해 공변적
     z: UnsafeCell&lt;&amp;'b f64&gt;, // 'b에 대해 불변적
     w: *mut U,              // U에 대해 불변적이며, 전체 구조체를 불변적으로 만듦
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
     f: fn(&amp;'c ()) -&gt; &amp;'c () // 공변적이면서 동시에 반변적이므로, 구조체 내에서 'c를 불변적으로 만듭니다.
 }
 <span class="boring">}</span></code></pre>
@@ -358,7 +358,7 @@ struct Variance&lt;'a, 'b, 'c, T, U: 'a&gt; {
     // 공변적 위치에서 'long을 자유롭게 줄일 수 있습니다.
     let _: (&amp;'short u32, UnsafeCell&lt;&amp;'long u32&gt;) = x;
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 fn takes_fn_ptr&lt;'short, 'middle: 'short&gt;(
     // 'middle은 공변적 위치와 반변적 위치 모두에서 사용됩니다.
     f: fn(&amp;'middle ()) -&gt; &amp;'middle (),

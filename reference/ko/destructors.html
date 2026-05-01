@@ -93,7 +93,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-55effe88.js";
+            window.path_to_searchindex_js = "searchindex-e23b9ebb.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-20da6b24.js"></script>
@@ -272,27 +272,27 @@
 <pre class="playground"><code class="language-rust edition2024"><span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span>struct PrintOnDrop(&amp;'static str);
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 impl Drop for PrintOnDrop {
     fn drop(&amp;mut self) {
         println!("{}", self.0);
     }
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 let mut overwritten = PrintOnDrop("덮어써질 때 드롭됨");
 overwritten = PrintOnDrop("스코프가 끝날 때 드롭됨");
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 let tuple = (PrintOnDrop("튜플 첫 번째"), PrintOnDrop("튜플 두 번째"));
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 let moved;
 // 할당 시 소멸자가 실행되지 않음.
 moved = PrintOnDrop("이동될 때 드롭됨");
 // 지금 드롭되지만, 그 후에는 초기화되지 않은 상태가 됩니다.
 moved;
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // 초기화되지 않은 상태에서는 드롭되지 않습니다.
 let uninitialized: PrintOnDrop;
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // 부분 이동 후에는 남아 있는 필드만 드롭됩니다.
 let mut partial_move = (PrintOnDrop("first"), PrintOnDrop("잊힘(forgotten)"));
 // 부분 이동을 수행하여 `partial_move.0` 만 초기화된 상태로 남깁니다.
@@ -429,7 +429,7 @@ fn patterns_in_parameters(
     (x, _): (PrintOnDrop, PrintOnDrop),
     (_, y): (PrintOnDrop, PrintOnDrop),
 ) {}
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // 드롭 순서는 3 2 0 1입니다.
 patterns_in_parameters(
     (PrintOnDrop("0"), PrintOnDrop("1")),
@@ -486,7 +486,7 @@ let declared_last = PrintOnDrop("바깥쪽 스코프에서 먼저 드롭됨");
     }
     _ =&gt; unreachable!(),
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 match PrintOnDrop("Dropped in the enclosing temporary scope") {
     // When guard evaluation fails, control-flow leaves the arm scope,
     // causing bindings and temporaries from earlier pattern-matching
@@ -543,14 +543,14 @@ fn or_pattern_drop_order&lt;T&gt;(
 //   subpattern, where the bindings are declared in the opposite
 //   order, is matched.
 ) {}
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // Here we match the first subpattern, and the drops happen according
 // to the declaration order in the first subpattern.
 or_pattern_drop_order(Ok([
     PrintOnDrop("Declared first, dropped last"),
     PrintOnDrop("Declared last, dropped first"),
 ]));
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // Here we match the second subpattern, and the drops still happen
 // according to the declaration order in the first subpattern.
 or_pattern_drop_order(Err([
@@ -620,7 +620,7 @@ or_pattern_drop_order(Err([
 </span><span class="boring">    }
 </span><span class="boring">}
 </span>let local_var = PrintOnDrop("지역 변수");
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // 조건이 평가되면 드롭됨
 if PrintOnDrop("If 조건").0 == "If 조건" {
     // 블록 끝에서 드롭됨
@@ -628,7 +628,7 @@ if PrintOnDrop("If 조건").0 == "If 조건" {
 } else {
     unreachable!()
 };
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 if let "if let 스크루티니" = PrintOnDrop("if let 스크루티니").0 {
     PrintOnDrop("if let 결과절").0
     // `if let 결과절` 이 여기서 드롭됨
@@ -638,21 +638,21 @@ else {
     PrintOnDrop("if let else").0
     // `if let else` 가 여기서 드롭됨
 };
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 while let x = PrintOnDrop("while let scrutinee").0 {
     PrintOnDrop("while let loop body").0;
     break;
     // `while let loop body` dropped here.
     // `while let scrutinee` dropped here.
 }
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // 첫 번째 || 이전에 드롭됨
 (PrintOnDrop("첫 번째 피연산자").0 == ""
 // ) 이전에 드롭됨
 || PrintOnDrop("두 번째 피연산자").0 == "")
 // ; 이전에 드롭됨
 || PrintOnDrop("세 번째 피연산자").0 == "";
-
+   [식별자](../identifiers.md) `:` [_타입_](../types.md#type-expressions)
 // 스크루티니는 함수의 끝에서 지역 변수들 이전에 드롭됩니다
 // (이것이 함수 본문 블록의 꼬리 표현식이기 때문입니다).
 match PrintOnDrop("최종 표현식의 매치된 값") {
